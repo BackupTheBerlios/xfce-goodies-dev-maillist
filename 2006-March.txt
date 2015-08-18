@@ -1,0 +1,1887 @@
+From bugzilla-daemon at xfce.org  Wed Mar  1 13:02:52 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  1 Mar 2006 12:02:52 +0000 (UTC)
+Subject: [Bug 1519]  New: genmon plugin for svn panel has truncated output
+Message-ID: <20060301120252.E3521F2926@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1519
+
+           Summary: genmon plugin for svn panel has truncated output
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: genmon
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: xfce-bugs at badcode.de
+
+
+Since several svn revisions (now at 20141) the xfce4-genmon-plugin-2.0 i use has
+its output truncated. If I put a new genmon instance in my panel I only see
+"(ge" of the initial "(genmon)" label. It never resizes larger than that. It
+seems to be stuck in a fixed square box.
+
+Reproducible: Always
+Steps to Reproduce:
+1. compile svn panel and xfce4-genmon-plugin-2.0
+2. put plugin in panel
+Actual Results:  
+output is truncated
+
+Expected Results:  
+the whole output from the command and the label should be visible
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From foxy at on-the-hill.me.uk  Wed Mar  1 20:44:32 2006
+From: foxy at on-the-hill.me.uk (Foxy)
+Date: Wed, 01 Mar 2006 19:44:32 +0000
+Subject: xfapplet plugin fvom svn
+Message-ID: <4405F9A0.9090408@on-the-hill.me.uk>
+
+I am trying to compile it but has the following error:
+
+> checking for libxfce4panel-1.0 >= 4.3.20... 4.3.28
+> checking LIBXFCE4PANEL_CFLAGS... -I/usr/include/xfce4/ -I/usr/include/xfce4 -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/atk-1.0
+> checking LIBXFCE4PANEL_LIBS... -lxfce4panel -lxfcegui4 -lgtk-x11-2.0 -lxfce4util -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lm -lpangocairo-1.0 -lfontconfig -lXext -lXrender -lXinerama -lXi -lXrandr -lXcursor -lXfixes -lpango-1.0 -lcairo -lX11 -lgobject-2.0 -lgmodule-2.0 -ldl -lglib-2.0
+> checking for libxfce4panel-1.0 localedir... not found
+> *** You need a bleeding edge version of xfce4-panel svn to ***
+> *** compile xfce4-xfapplet-plugin.         
+
+However I've got a xfce4-panel and xfce4-panel-dev from svn: 4.3.0 r19871.
+
+
+
+From awbess at gmail.com  Wed Mar  1 20:53:15 2006
+From: awbess at gmail.com (Adriano Winter Bess)
+Date: Wed, 1 Mar 2006 16:53:15 -0300
+Subject: xfapplet plugin fvom svn
+In-Reply-To: <4405F9A0.9090408@on-the-hill.me.uk>
+References: <4405F9A0.9090408@on-the-hill.me.uk>
+Message-ID: <20060301195315.GD2349@icablenet.com.br>
+
+On Wed, Mar 01, 2006 at 07:44:32PM +0000, Foxy wrote:
+> [...]
+> However I've got a xfce4-panel and xfce4-panel-dev from svn: 4.3.0 r19871.
+
+You need xfce4-panel >= r19874:
+
+------------------------------------------------------------------------
+r19874 | jasper | 2006-02-14 18:11:02 -0200 (Ter, 14 Fev 2006) | 1 line
+
+Add localedir variable at the request of Adriano Winter Bess.
+------------------------------------------------------------------------
+
+Regards,
+Adriano
+-- 
+Adriano Winter Bess
+ICQ: 21569917
+Irc: nyquide
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060301/69cbfbc4/attachment.pgp>
+
+From jasper at xfce.org  Wed Mar  1 20:55:55 2006
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Wed, 01 Mar 2006 20:55:55 +0100
+Subject: xfapplet plugin fvom svn
+In-Reply-To: <4405F9A0.9090408@on-the-hill.me.uk>
+References: <4405F9A0.9090408@on-the-hill.me.uk>
+Message-ID: <4405FC4B.6080504@xfce.org>
+
+Foxy schreef:
+> I am trying to compile it but has the following error:
+> 
+>> checking for libxfce4panel-1.0 >= 4.3.20... 4.3.28
+>> checking LIBXFCE4PANEL_CFLAGS... -I/usr/include/xfce4/ 
+>> -I/usr/include/xfce4 -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include 
+>> -I/usr/include/pango-1.0 -I/usr/include/cairo -I/usr/include/glib-2.0 
+>> -I/usr/lib/glib-2.0/include -I/usr/include/atk-1.0
+>> checking LIBXFCE4PANEL_LIBS... -lxfce4panel -lxfcegui4 -lgtk-x11-2.0 
+>> -lxfce4util -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lm 
+>> -lpangocairo-1.0 -lfontconfig -lXext -lXrender -lXinerama -lXi 
+>> -lXrandr -lXcursor -lXfixes -lpango-1.0 -lcairo -lX11 -lgobject-2.0 
+>> -lgmodule-2.0 -ldl -lglib-2.0
+>> checking for libxfce4panel-1.0 localedir... not found
+>> *** You need a bleeding edge version of xfce4-panel svn to ***
+>> *** compile xfce4-xfapplet-plugin.         
+> 
+> However I've got a xfce4-panel and xfce4-panel-dev from svn: 4.3.0 r19871.
+> 
+
+What does this give you:
+
+pkg-config --variable=localedir libxfce4panel-1.0
+
+
+
+
+From foxy at on-the-hill.me.uk  Wed Mar  1 21:48:28 2006
+From: foxy at on-the-hill.me.uk (Foxy)
+Date: Wed, 01 Mar 2006 20:48:28 +0000
+Subject: xfapplet plugin fvom svn
+In-Reply-To: <4405FC4B.6080504@xfce.org>
+References: <4405F9A0.9090408@on-the-hill.me.uk> <4405FC4B.6080504@xfce.org>
+Message-ID: <4406089C.2030604@on-the-hill.me.uk>
+
+Jasper Huijsmans wrote:
+> Foxy schreef:
+>> I am trying to compile it but has the following error:
+>>
+>>> checking for libxfce4panel-1.0 >= 4.3.20... 4.3.28
+>>> checking LIBXFCE4PANEL_CFLAGS... -I/usr/include/xfce4/ 
+>>> -I/usr/include/xfce4 -I/usr/include/gtk-2.0 
+>>> -I/usr/lib/gtk-2.0/include -I/usr/include/pango-1.0 
+>>> -I/usr/include/cairo -I/usr/include/glib-2.0 
+>>> -I/usr/lib/glib-2.0/include -I/usr/include/atk-1.0
+>>> checking LIBXFCE4PANEL_LIBS... -lxfce4panel -lxfcegui4 -lgtk-x11-2.0 
+>>> -lxfce4util -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lm 
+>>> -lpangocairo-1.0 -lfontconfig -lXext -lXrender -lXinerama -lXi 
+>>> -lXrandr -lXcursor -lXfixes -lpango-1.0 -lcairo -lX11 -lgobject-2.0 
+>>> -lgmodule-2.0 -ldl -lglib-2.0
+>>> checking for libxfce4panel-1.0 localedir... not found
+>>> *** You need a bleeding edge version of xfce4-panel svn to ***
+>>> *** compile xfce4-xfapplet-plugin.         
+>>
+>> However I've got a xfce4-panel and xfce4-panel-dev from svn: 4.3.0 
+>> r19871.
+>>
+>
+> What does this give you:
+>
+> pkg-config --variable=localedir libxfce4panel-1.0
+>
+>
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+it gives me nothing :(
+
+
+From jasper at xfce.org  Wed Mar  1 22:18:10 2006
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Wed, 01 Mar 2006 22:18:10 +0100
+Subject: xfapplet plugin fvom svn
+In-Reply-To: <4406089C.2030604@on-the-hill.me.uk>
+References: <4405F9A0.9090408@on-the-hill.me.uk> <4405FC4B.6080504@xfce.org> <4406089C.2030604@on-the-hill.me.uk>
+Message-ID: <44060F92.8070508@xfce.org>
+
+Foxy schreef:
+> Jasper Huijsmans wrote:
+>> Foxy schreef:
+>>> I am trying to compile it but has the following error:
+>>>
+>>>> checking for libxfce4panel-1.0 >= 4.3.20... 4.3.28
+>>>> checking LIBXFCE4PANEL_CFLAGS... -I/usr/include/xfce4/ 
+>>>> -I/usr/include/xfce4 -I/usr/include/gtk-2.0 
+>>>> -I/usr/lib/gtk-2.0/include -I/usr/include/pango-1.0 
+>>>> -I/usr/include/cairo -I/usr/include/glib-2.0 
+>>>> -I/usr/lib/glib-2.0/include -I/usr/include/atk-1.0
+>>>> checking LIBXFCE4PANEL_LIBS... -lxfce4panel -lxfcegui4 -lgtk-x11-2.0 
+>>>> -lxfce4util -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lm 
+>>>> -lpangocairo-1.0 -lfontconfig -lXext -lXrender -lXinerama -lXi 
+>>>> -lXrandr -lXcursor -lXfixes -lpango-1.0 -lcairo -lX11 -lgobject-2.0 
+>>>> -lgmodule-2.0 -ldl -lglib-2.0
+>>>> checking for libxfce4panel-1.0 localedir... not found
+>>>> *** You need a bleeding edge version of xfce4-panel svn to ***
+>>>> *** compile xfce4-xfapplet-plugin.         
+>>>
+>>> However I've got a xfce4-panel and xfce4-panel-dev from svn: 4.3.0 
+>>> r19871.
+>>>
+>>
+>> What does this give you:
+>>
+>> pkg-config --variable=localedir libxfce4panel-1.0
+
+> it gives me nothing :(
+
+Then you need a newer version, but Adriano already explained that better.
+
+	Jasper
+
+
+
+From awbess at gmail.com  Wed Mar  1 22:36:30 2006
+From: awbess at gmail.com (Adriano Winter Bess)
+Date: Wed, 1 Mar 2006 18:36:30 -0300
+Subject: xfapplet plugin fvom svn
+In-Reply-To: <44060F92.8070508@xfce.org>
+References: <4405F9A0.9090408@on-the-hill.me.uk> <4405FC4B.6080504@xfce.org> <4406089C.2030604@on-the-hill.me.uk> <44060F92.8070508@xfce.org>
+Message-ID: <20060301213629.GA3322@icablenet.com.br>
+
+The configure error message for not founding localedir info in
+libxfce4panel-1.0.pc now (xfapplet r1146) states explicitly the need for
+xfce4-panel >= r19874.
+
+Regards,
+Adriano
+-- 
+Adriano Winter Bess
+ICQ: 21569917
+Irc: nyquide
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060301/8014e077/attachment.pgp>
+
+From masse_nicolas at yahoo.fr  Mon Mar 13 23:32:08 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Mon, 13 Mar 2006 23:32:08 +0100
+Subject: web site
+Message-ID: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr>
+
+Hi everybody!
+
+Just wanna say you that I' ve rewritten a part of the site. When it's not the best-looking site i've seen so long, I think this is already going a bit better.
+I hope I will have some time now to fill some more content, and make it a little better looking.
+Also, i'm having an idea: I think that improving the site so that it will be a good one at the launch of xfce 4.4 would be nice. I would like to make it the repository we talk about when we were speaking of directory.xfce.org (you know, the one we never see so far).
+But it will also require some work on the base code, not only the visual. (at least, it will be a good exercise for me since i'm not a web expert.)
+Now if some of you can contribute or give me advices,... :)
+
+bountykiller
+
+
+From bugzilla-daemon at xfce.org  Tue Mar 14 01:30:57 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 14 Mar 2006 00:30:57 +0000 (UTC)
+Subject: [Bug 1064] Weather Plugin Hangs Panel If Not Network Access.
+In-Reply-To: <bug-1064-590@http.bugzilla.xfce.org/>
+Message-ID: <20060314003057.34562F2A2F@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1064
+
+
+
+
+
+------- Comment #2 from jamesm at bluebottle.com  2006-03-14 00:30 UTC -------
+Is this a dupe of 657?
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From jasper at xfce.org  Tue Mar 14 20:28:56 2006
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Tue, 14 Mar 2006 20:28:56 +0100
+Subject: web site
+In-Reply-To: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr>
+References: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr>
+Message-ID: <44171978.6070509@xfce.org>
+
+masse_nicolas at yahoo.fr schreef:
+> Hi everybody!
+> 
+> Just wanna say you that I' ve rewritten a part of the site. When it's not the best-looking site i've seen so long, I think this is already going a bit better.
+> I hope I will have some time now to fill some more content, and make it a little better looking.
+> Also, i'm having an idea: I think that improving the site so that it will be a good one at the launch of xfce 4.4 would be nice. I would like to make it the repository we talk about when we were speaking of directory.xfce.org (you know, the one we never see so far).
+> But it will also require some work on the base code, not only the visual. (at least, it will be a good exercise for me since i'm not a web expert.)
+> Now if some of you can contribute or give me advices,... :)
+> 
+
+I can give you moral support for now: Yes! Go bountykiller!
+
+Seriously, I'm glad you are still willing to do this. If you have 
+trouble with some things, I'd be happy to help and -- like everyone 
+else, I guess -- I'd be happy to test anything you have ready.
+
+Thanks a lot,
+
+	Jasper
+
+
+
+From stefan at desire.ch  Wed Mar 15 16:20:03 2006
+From: stefan at desire.ch (Stefan Ott)
+Date: Wed, 15 Mar 2006 16:20:03 +0100
+Subject: web site
+In-Reply-To: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr>
+References: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr>
+Message-ID: <20060315152003.GB4363@cheddar.desire.ch>
+
+
+On Mon, Mar 13, 2006 at 11:32:08PM +0100, masse_nicolas at yahoo.fr wrote:
+> Hi everybody!
+> 
+> Just wanna say you that I' ve rewritten a part of the site. When it's not the best-looking site i've seen so long, I think this is already going a bit better.
+> I hope I will have some time now to fill some more content, and make it a little better looking.
+> Also, i'm having an idea: I think that improving the site so that it will be a good one at the launch of xfce 4.4 would be nice. I would like to make it the repository we talk about when we were speaking of directory.xfce.org (you know, the one we never see so far).
+> But it will also require some work on the base code, not only the visual. (at least, it will be a good exercise for me since i'm not a web expert.)
+> Now if some of you can contribute or give me advices,... :)
+
+Much nicer, indeed. However, one small issue: You seem to have lost the
+entry for my radio-plugin :)
+
+Btw, if you need assistance (maybe to correct the html or to help with
+php), just tell me, I'll be glad to help.
+
+Regards
+Stefan
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+"Quelli come me si svegliano alle tre e dicono che i giorni sono corti"
+  -- Luciano Ligabue
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060315/75257c4e/attachment.pgp>
+
+From stefan at desire.ch  Wed Mar 15 16:23:22 2006
+From: stefan at desire.ch (Stefan Ott)
+Date: Wed, 15 Mar 2006 16:23:22 +0100
+Subject: web site
+In-Reply-To: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr>
+References: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr>
+Message-ID: <20060315152322.GC4363@cheddar.desire.ch>
+
+Another idea: Is the webpage somewhere on SVN or CVS, so that other
+people could do small corrections / changes without interfering with
+your work?
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+"Quelli come me si svegliano alle tre e dicono che i giorni sono corti"
+  -- Luciano Ligabue
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060315/12ea22d8/attachment.pgp>
+
+From awbess at gmail.com  Wed Mar 15 17:57:10 2006
+From: awbess at gmail.com (Adriano Winter Bess)
+Date: Wed, 15 Mar 2006 13:57:10 -0300
+Subject: web site
+In-Reply-To: <20060315152003.GB4363@cheddar.desire.ch>
+References: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr> <20060315152003.GB4363@cheddar.desire.ch>
+Message-ID: <20060315165710.GA2166@icablenet.com.br>
+
+On Wed, Mar 15, 2006 at 04:20:03PM +0100, Stefan Ott wrote:
+> [...]
+> Much nicer, indeed. However, one small issue: You seem to have lost the
+> entry for my radio-plugin :)
+
+The same for xfapplet ;)
+
+About the new website, I think it's really cool. Very nice work!
+
+Regards,
+Adriano
+-- 
+Adriano Winter Bess
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060315/1723d78d/attachment.pgp>
+
+From masse_nicolas at yahoo.fr  Wed Mar 15 21:42:46 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Wed, 15 Mar 2006 21:42:46 +0100
+Subject: web site
+In-Reply-To: <20060315165710.GA2166@icablenet.com.br>
+References: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr>
+	<20060315152003.GB4363@cheddar.desire.ch>
+	<20060315165710.GA2166@icablenet.com.br>
+Message-ID: <20060315214246.554e277f.masse_nicolas@yahoo.fr>
+
+On Wed, 15 Mar 2006 13:57:10 -0300
+Adriano Winter Bess <awbess at gmail.com> wrote:
+
+> On Wed, Mar 15, 2006 at 04:20:03PM +0100, Stefan Ott wrote:
+> > [...]
+> > Much nicer, indeed. However, one small issue: You seem to have lost the
+> > entry for my radio-plugin :)
+> 
+> The same for xfapplet ;)
+> 
+> About the new website, I think it's really cool. Very nice work!
+> 
+> Regards,
+> Adriano
+> -- 
+> Adriano Winter Bess
+> 
+> 
+Wow, didn't realize I lost that content. It's repaired now. Sorry.
+I'm also happy to see that some people like my work. 
+Now about the location of the files, they are on the berlios server, but not in any svn or cvs system.
+But you can easily grab them and post them using scp.
+(the command is something like :
+ scp bountykiller at shell.berlios.de:/home/groups/xfce-goodies/htdocs/* /home/nic/xfce-goodies/web-site/ )
+Also I will ask you if I have any question (but for now I don't have lot of time to hard work on this...)
+
+
+Boutykiller
+
+
+From awbess at gmail.com  Wed Mar 15 22:17:18 2006
+From: awbess at gmail.com (Adriano Winter Bess)
+Date: Wed, 15 Mar 2006 18:17:18 -0300
+Subject: web site
+In-Reply-To: <20060315214246.554e277f.masse_nicolas@yahoo.fr>
+References: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr> <20060315152003.GB4363@cheddar.desire.ch> <20060315165710.GA2166@icablenet.com.br> <20060315214246.554e277f.masse_nicolas@yahoo.fr>
+Message-ID: <20060315211718.GB2230@icablenet.com.br>
+
+On Wed, Mar 15, 2006 at 09:42:46PM +0100, masse_nicolas at yahoo.fr wrote:
+> Wow, didn't realize I lost that content. It's repaired now. Sorry.
+
+Links for screenshots of Verve, Radio and XfApplet plugin are still broken ;)
+
+Regards,
+Adriano
+-- 
+Adriano Winter Bess
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060315/5e593ea2/attachment.pgp>
+
+From masse_nicolas at yahoo.fr  Wed Mar 15 22:30:09 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Wed, 15 Mar 2006 22:30:09 +0100
+Subject: web site
+In-Reply-To: <20060315211718.GB2230@icablenet.com.br>
+References: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr>
+	<20060315152003.GB4363@cheddar.desire.ch>
+	<20060315165710.GA2166@icablenet.com.br>
+	<20060315214246.554e277f.masse_nicolas@yahoo.fr>
+	<20060315211718.GB2230@icablenet.com.br>
+Message-ID: <20060315223009.088d2ecf.masse_nicolas@yahoo.fr>
+
+On Wed, 15 Mar 2006 18:17:18 -0300
+Adriano Winter Bess <awbess at gmail.com> wrote:
+
+> On Wed, Mar 15, 2006 at 09:42:46PM +0100, masse_nicolas at yahoo.fr wrote:
+> > Wow, didn't realize I lost that content. It's repaired now. Sorry.
+> 
+> Links for screenshots of Verve, Radio and XfApplet plugin are still broken ;)
+> 
+> Regards,
+> Adriano
+> -- 
+> Adriano Winter Bess
+> 
+> 
+Fixed, thanks.
+
+Bountykiller
+
+
+From stefan at desire.ch  Thu Mar 16 04:54:41 2006
+From: stefan at desire.ch (Stefan Ott)
+Date: Thu, 16 Mar 2006 04:54:41 +0100
+Subject: web site
+In-Reply-To: <20060315214246.554e277f.masse_nicolas@yahoo.fr>
+References: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr> <20060315152003.GB4363@cheddar.desire.ch> <20060315165710.GA2166@icablenet.com.br> <20060315214246.554e277f.masse_nicolas@yahoo.fr>
+Message-ID: <20060316035441.GF4363@cheddar.desire.ch>
+
+Hi again
+
+On Wed, Mar 15, 2006 at 09:42:46PM +0100, masse_nicolas at yahoo.fr wrote:
+
+[...]
+
+> Now about the location of the files, they are on the berlios server, but not in any svn or cvs system.
+> But you can easily grab them and post them using scp.
+> (the command is something like :
+>  scp bountykiller at shell.berlios.de:/home/groups/xfce-goodies/htdocs/* /home/nic/xfce-goodies/web-site/ )
+
+Okay, I corrected some minor details (please update your local copy if
+you like / agree with the changes, overwrite them otherwise), and I
+noticed the following issues which should/could be fixed (I'll gladly
+do the fixing myself after a brief discussion):
+
+ - I'd prefer the list of available plugins to be sorted by name instead
+   of chronoligically - others?
+ - Also, I'd preter the plugin name to be a link to the (corresponding?)
+   download section. The screenshot could be reachable via some kind of
+   cute little camera icon (or something like that). To see what I mean,
+   I created a little example (only the first couple of items are the
+   way I mean) on http://stefan.desire.ch/xfce/packages.html (I know,
+   the screenshot icon sucks, but it's the only one I could find - maybe
+   an eye would be better).
+ - How about removing (commenting out) the nonexisting parts / sections
+   of the website for the time being?
+ - Should we really provide all that information on SVN? IMHO, the
+   people who don't know about "svn update" should not be running
+   svn-versions of the panel plugins...
+ - One little design issue: The left sub-navigation thing doesn't always
+   have the same width - might be nicerOA.
+
+Those are just some thoughts I had. Feel free to disagree :)
+
+Regards
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+"Quelli come me si svegliano alle tre e dicono che i giorni sono corti"
+  -- Luciano Ligabue
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 191 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060316/c0559bc9/attachment.pgp>
+
+From stefan at desire.ch  Thu Mar 16 15:12:40 2006
+From: stefan at desire.ch (Stefan Ott)
+Date: Thu, 16 Mar 2006 15:12:40 +0100
+Subject: web site
+In-Reply-To: <20060316035441.GF4363@cheddar.desire.ch>
+References: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr> <20060315152003.GB4363@cheddar.desire.ch> <20060315165710.GA2166@icablenet.com.br> <20060315214246.554e277f.masse_nicolas@yahoo.fr> <20060316035441.GF4363@cheddar.desire.ch>
+Message-ID: <20060316141240.GG4363@cheddar.desire.ch>
+
+On Thu, Mar 16, 2006 at 04:54:41AM +0100, Stefan Ott wrote:
+
+>  - I'd prefer the list of available plugins to be sorted by name instead
+>    of chronoligically - others?
+
+Or maybe, even better, create some kind of categories (system
+monitoring, media, networking, ...) - would be easier to browse than a
+never-ending list...
+
+Just a thought.
+
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+"Quelli come me si svegliano alle tre e dicono che i giorni sono corti"
+  -- Luciano Ligabue
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 191 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060316/cdfee03a/attachment.pgp>
+
+From masse_nicolas at yahoo.fr  Thu Mar 16 21:58:06 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Thu, 16 Mar 2006 21:58:06 +0100
+Subject: web site
+In-Reply-To: <20060316035441.GF4363@cheddar.desire.ch>
+References: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr>
+	<20060315152003.GB4363@cheddar.desire.ch>
+	<20060315165710.GA2166@icablenet.com.br>
+	<20060315214246.554e277f.masse_nicolas@yahoo.fr>
+	<20060316035441.GF4363@cheddar.desire.ch>
+Message-ID: <20060316215806.bebfd719.masse_nicolas@yahoo.fr>
+
+On Thu, 16 Mar 2006 04:54:41 +0100
+Stefan Ott <stefan at desire.ch> wrote:
+
+> Hi again
+> 
+> On Wed, Mar 15, 2006 at 09:42:46PM +0100, masse_nicolas at yahoo.fr wrote:
+> 
+> [...]
+> 
+> 
+>Just a thought.
+> Okay, I corrected some minor details (please update your local copy if
+> you like / agree with the changes, overwrite them otherwise), and I
+> noticed the following issues which should/could be fixed (I'll gladly
+> do the fixing myself after a brief discussion):
+> 
+>  - I'd prefer the list of available plugins to be sorted by name instead
+>    of chronoligically - others?
+>    ....
+>    Or maybe, even better, create some kind of categories (system
+>    monitoring, media, networking, ...) - would be easier to browse than a
+>    never-ending list...
+
+I agree with the idea of categories. I don't really like this "never-ending" list to.
+I personnalt thought of something like:
+
+NEWEST:
+the 3 or 4 last panel plugins
+All:
+Categorie 1:                    Categorie2:
+  xfce4-xyz-plugin                xfce4-12-plugin
+  xfce4-abc-plugin                xfce4-23-plugin
+  xfce4-de-plugin                 xfce4-34-plugin
+  xfce4-fghi-plugin
+
+Categorie 3:                   Categorie 4:
+...
+
+the idea of having the most recent before the rest is that people who 
+already visited the site in the past would be mainly interested in the
+last released and/or updated ones.
+
+>  - Also, I'd preter the plugin name to be a link to the (corresponding?)
+>    download section. The screenshot could be reachable via some kind of
+>    cute little camera icon (or something like that). To see what I mean,
+>    I created a little example (only the first couple of items are the
+>    way I mean) on http://stefan.desire.ch/xfce/packages.html (I know,
+>    the screenshot icon sucks, but it's the only one I could find - maybe
+>    an eye would be better).
+No objections. I also tought to make the name being a link to a page to the 
+description of the plugin (note: we are speaking of the plugins, but it can 
+also be true for the rest.) Having an icon near the name of the plugin is also 
+a good idea
+
+>  - How about removing (commenting out) the nonexisting parts / sections
+>    of the website for the time being?
+NO. Fill them instead ;)
+
+>  - Should we really provide all that information on SVN? IMHO, the
+>    people who don't know about "svn update" should not be running
+>    svn-versions of the panel plugins...
+The thing is that there isn't enough stuff in the realesed files section.
+For example, we can sort the version of the packages depending on the xfce/panel/...
+version.
+But I don't think I provide too much information about svn. (People can be interested
+in it)
+
+>  - One little design issue: The left sub-navigation thing doesn't always
+>    have the same width - might be nicerOA.
+> 
+Possible. I'm definitivly not a web designer...
+
+> Those are just some thoughts I had. Feel free to disagree :)
+> 
+> Regards
+
+Thanks for all,
+Boutykiller
+
+
+From stefan at desire.ch  Fri Mar 17 04:49:48 2006
+From: stefan at desire.ch (Stefan Ott)
+Date: Fri, 17 Mar 2006 04:49:48 +0100
+Subject: web site
+In-Reply-To: <20060316215806.bebfd719.masse_nicolas@yahoo.fr>
+References: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr> <20060315152003.GB4363@cheddar.desire.ch> <20060315165710.GA2166@icablenet.com.br> <20060315214246.554e277f.masse_nicolas@yahoo.fr> <20060316035441.GF4363@cheddar.desire.ch> <20060316215806.bebfd719.masse_nicolas@yahoo.fr>
+Message-ID: <20060317034947.GJ4363@cheddar.desire.ch>
+
+On Thu, Mar 16, 2006 at 09:58:06PM +0100, masse_nicolas at yahoo.fr wrote:
+
+> I agree with the idea of categories. I don't really like this "never-ending" list to.
+> I personnalt thought of something like:
+> 
+> NEWEST:
+> the 3 or 4 last panel plugins
+> All:
+> Categorie 1:                    Categorie2:
+>   xfce4-xyz-plugin                xfce4-12-plugin
+>   xfce4-abc-plugin                xfce4-23-plugin
+>   xfce4-de-plugin                 xfce4-34-plugin
+>   xfce4-fghi-plugin
+> 
+> Categorie 3:                   Categorie 4:
+> ...
+> 
+> the idea of having the most recent before the rest is that people who 
+> already visited the site in the past would be mainly interested in the
+> last released and/or updated ones.
+
+I took the liberty of creating a little demo:
+http://stefan.desire.ch/xfce/categorized.html (I realize that not
+everything is categorized and the links are wrong - I got bored
+after some time :)
+
+> I'm definitivly not a web designer...
+
+I am, sort of (at least I know my html/css/php - the visual design usually
+remains questionable :), thus I'd offer my help. Plus I have some spare
+time at hand.
+
+I would also suggest to put the plugin information into a database (or
+at least a text file) to keep the site maintainable. A textfile would
+have the advantage for us not to need any kind of web-backend and user
+management...
+
+What do you (and the others) think of this?
+
+Regards
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+"Quelli come me si svegliano alle tre e dicono che i giorni sono corti"
+  -- Luciano Ligabue
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 191 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060317/9d5d3d74/attachment.pgp>
+
+From sasoiliev at mamul.org  Sat Mar 18 01:48:45 2006
+From: sasoiliev at mamul.org (Alexander Iliev)
+Date: Sat, 18 Mar 2006 02:48:45 +0200
+Subject: A question about translations
+Message-ID: <441B58ED.8070502@mamul.org>
+
+Hi.
+
+I finally decided to add translation support to
+xfce4-xkb-plugin, but I ran into some problems.
+
+Here's what I did:
+
+  * marked all translatable string with _(s);
+  * added AC_PROG_INTLTOOL to configure.ac;
+  * added po to SUBDIRS in Makefile.am;
+  * created a po/ dir with POTFILES.in and ChangeLog;
+  * added -DPACKAGE_LOCALE_DIR=\"$(localedir)\" to
+    xfce4_xkb_plugin_CFLAGS in panel-plugin/Makefile.am;
+  * added @INTLTOOL_DESKTOP_RULE@ in panel-plugin/Makefile.am;
+  * ran ./autogen.sh;
+  * ran make xfce4-xkb-plugin.pot from po/;
+  * copied xfce4-xkb-plugin.pot to bg.po and translated
+    the messages;
+  * ran make && su -c "make install";
+  * export LC_MESSAGES=bg and restarted the panel to
+    test the translation.
+
+The bg.mo file installed properly in
+$PREFIX/share/locale/bg/LC_MESSAGES/xfce4-xkb-plugin.mo.
+
+Unfortunately the messages remained in english, so
+my question is - how can I check what went wrong and
+why the translation does not load?
+
+btw, the .desktop file translation works fine - the name
+and comment for the plugin appear in bulgarian in the
+plugin add dialog.
+
+Regards,
+-- 
+Alexander Iliev
+
+
+From masse_nicolas at yahoo.fr  Sat Mar 18 14:39:40 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Sat, 18 Mar 2006 14:39:40 +0100
+Subject: web site
+In-Reply-To: <20060317034947.GJ4363@cheddar.desire.ch>
+References: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr>
+	<20060315152003.GB4363@cheddar.desire.ch>
+	<20060315165710.GA2166@icablenet.com.br>
+	<20060315214246.554e277f.masse_nicolas@yahoo.fr>
+	<20060316035441.GF4363@cheddar.desire.ch>
+	<20060316215806.bebfd719.masse_nicolas@yahoo.fr>
+	<20060317034947.GJ4363@cheddar.desire.ch>
+Message-ID: <20060318143940.d9fc7c4f.masse_nicolas@yahoo.fr>
+
+On Fri, 17 Mar 2006 04:49:48 +0100
+Stefan Ott <stefan at desire.ch> wrote:
+
+> On Thu, Mar 16, 2006 at 09:58:06PM +0100, masse_nicolas at yahoo.fr wrote:
+> 
+> > I agree with the idea of categories. I don't really like this "never-ending" list to.
+> > I personnalt thought of something like:
+> > 
+> > NEWEST:
+> > the 3 or 4 last panel plugins
+> > All:
+> > Categorie 1:                    Categorie2:
+> >   xfce4-xyz-plugin                xfce4-12-plugin
+> >   xfce4-abc-plugin                xfce4-23-plugin
+> >   xfce4-de-plugin                 xfce4-34-plugin
+> >   xfce4-fghi-plugin
+> > 
+> > Categorie 3:                   Categorie 4:
+> > ...
+> > 
+> > the idea of having the most recent before the rest is that people who 
+> > already visited the site in the past would be mainly interested in the
+> > last released and/or updated ones.
+> 
+> I took the liberty of creating a little demo:
+> http://stefan.desire.ch/xfce/categorized.html (I realize that not
+> everything is categorized and the links are wrong - I got bored
+> after some time :)
+> 
+
+2 things:
+-I like the menu on the left
+-I think that in general, we are using too large fonts. Also the left menu 
+(wich is nice) take too much place.
+
+But I think this is going the right way.
+
+> > I'm definitivly not a web designer...
+> 
+> I am, sort of (at least I know my html/css/php - the visual design usually
+> remains questionable :), thus I'd offer my help. Plus I have some spare
+> time at hand.
+> 
+Coooooooollllll
+
+> I would also suggest to put the plugin information into a database (or
+> at least a text file) to keep the site maintainable. A textfile would
+> have the advantage for us not to need any kind of web-backend and user
+> management...
+> 
+> What do you (and the others) think of this?
+> 
+
+I already thought at that possibility, and I think it will rapidly become usefull, 
+and even necessary. Also I'm more in favor of a database backend, because I think
+it would be easier to program (not matter of file format for example), and offer
+us more flexibility. 
+Also i can look at the database schema when I would have some time.
+
+> Regards
+> -- 
+> Stefan Ott
+> http://www.desire.ch/
+> 
+> "Quelli come me si svegliano alle tre e dicono che i giorni sono corti"
+>   -- Luciano Ligabue
+> 
+
+
+From bugzilla-daemon at xfce.org  Sat Mar 18 23:22:00 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat, 18 Mar 2006 22:22:00 +0000 (UTC)
+Subject: [Bug 1586] New: Weather plugin should have be updatable on demand
+Message-ID: <bug-1586-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1586
+
+           Summary: Weather plugin should have be updatable on demand
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC (x86)
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: weather
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: jamesm at bluebottle.com
+
+
+In the preferences, the user should be able to tell the weather plugin how
+often to update.  Also, it would be nice to have an "Update Now" button.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sat Mar 18 23:39:40 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat, 18 Mar 2006 22:39:40 +0000 (UTC)
+Subject: [Bug 1586] Weather plugin should have be updatable on demand
+In-Reply-To: <bug-1586-590@http.bugzilla.xfce.org/>
+Message-ID: <20060318223940.ECE83F2A2F@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1586
+
+
+
+
+
+------- Comment #1 from pollux at xfce.org  2006-03-18 22:39 UTC -------
+actually a middle click on the plugin refreshes it
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sat Mar 18 23:40:56 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat, 18 Mar 2006 22:40:56 +0000 (UTC)
+Subject: [Bug 1064] Weather Plugin Hangs Panel If Not Network Access.
+In-Reply-To: <bug-1064-590@http.bugzilla.xfce.org/>
+Message-ID: <20060318224056.A6CD0F2A2F@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1064
+
+
+pollux at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |DUPLICATE
+
+
+
+
+------- Comment #3 from pollux at xfce.org  2006-03-18 22:40 UTC -------
+yep it's a duplicate
+
+*** This bug has been marked as a duplicate of 657 ***
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sat Mar 18 23:40:56 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat, 18 Mar 2006 22:40:56 +0000 (UTC)
+Subject: [Bug 657] Panel takes long time to load when weather plugin cannot contact information site
+In-Reply-To: <bug-657-590@http.bugzilla.xfce.org/>
+Message-ID: <20060318224056.C495AF2A32@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=657
+
+
+pollux at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |erikharrison at gmail.com
+
+
+
+
+------- Comment #3 from pollux at xfce.org  2006-03-18 22:40 UTC -------
+*** Bug 1064 has been marked as a duplicate of this bug. ***
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From stefan at desire.ch  Sun Mar 19 01:04:11 2006
+From: stefan at desire.ch (Stefan Ott)
+Date: Sun, 19 Mar 2006 01:04:11 +0100
+Subject: web site
+In-Reply-To: <20060318143940.d9fc7c4f.masse_nicolas@yahoo.fr>
+References: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr> <20060315152003.GB4363@cheddar.desire.ch> <20060315165710.GA2166@icablenet.com.br> <20060315214246.554e277f.masse_nicolas@yahoo.fr> <20060316035441.GF4363@cheddar.desire.ch> <20060316215806.bebfd719.masse_nicolas@yahoo.fr> <20060317034947.GJ4363@cheddar.desire.ch> <20060318143940.d9fc7c4f.masse_nicolas@yahoo.fr>
+Message-ID: <20060319000411.GT4363@cheddar.desire.ch>
+
+On Sat, Mar 18, 2006 at 02:39:40PM +0100, masse_nicolas at yahoo.fr wrote:
+
+> 2 things:
+> -I like the menu on the left
+> -I think that in general, we are using too large fonts. Also the left menu 
+> (wich is nice) take too much place.
+> 
+> But I think this is going the right way.
+
+I created some new suggestions:
+http://stefan.desire.ch/xfce/categorized.php
+http://stefan.desire.ch/xfce/categorized2.php
+http://stefan.desire.ch/xfce/categorized3.php
+
+Indeed, you're right about the font size. I basically just changed that
+and slightly optimized the positioning of the main content in version 1.
+However, personally I prefer the way the submenu is in the second
+version, as having it on the side creates a lot of blank screen space
+further down the page. In version 3, I additionally changed the main
+menu in a way which IMHO makes it more readable (better signal-to-noise
+ratio). Opinions?
+
+> > > I'm definitivly not a web designer...
+> > I would also suggest to put the plugin information into a database (or
+> > at least a text file) to keep the site maintainable. A textfile would
+> > have the advantage for us not to need any kind of web-backend and user
+> > management...
+> > 
+> > What do you (and the others) think of this?
+> > 
+> 
+> I already thought at that possibility, and I think it will rapidly become usefull, 
+> and even necessary. Also I'm more in favor of a database backend, because I think
+> it would be easier to program (not matter of file format for example), and offer
+> us more flexibility. 
+> Also i can look at the database schema when I would have some time.
+
+I "ordered" a database on berlios which, according to the message I
+received, should be ready in a couple of hours. I'll create a table in
+there as soon as it's ready and fill it with some content unless you'd
+prefer to do the scheme on your own. I'll definitely NOT fill the table
+before we agree on the scheme :)
+
+Regards
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+"Quelli come me si svegliano alle tre e dicono che i giorni sono corti"
+  -- Luciano Ligabue
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 191 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060319/93ecf93e/attachment.pgp>
+
+From daichi at xfce.org  Sun Mar 19 05:31:21 2006
+From: daichi at xfce.org (Daichi Kawahata)
+Date: Sun, 19 Mar 2006 13:31:21 +0900
+Subject: A question about translations
+In-Reply-To: <441B58ED.8070502@mamul.org>
+References: <441B58ED.8070502@mamul.org>
+Message-ID: <20060319133121.1a1b4bec.daichi@xfce.org>
+
+On Sat, 18 Mar 2006 02:48:45 +0200
+Alexander Iliev wrote:
+
+> Hi.
+
+Hi,
+
+> I finally decided to add translation support to
+> xfce4-xkb-plugin, but I ran into some problems.
+
+(snip)
+
+> The bg.mo file installed properly in
+> $PREFIX/share/locale/bg/LC_MESSAGES/xfce4-xkb-plugin.mo.
+> 
+> Unfortunately the messages remained in english, so
+> my question is - how can I check what went wrong and
+> why the translation does not load?
+> 
+> btw, the .desktop file translation works fine - the name
+> and comment for the plugin appear in bulgarian in the
+> plugin add dialog.
+
+Really sorry, I've modified them for i18n support without
+letting you know, and it should work in rev. 1177.
+
+FYI, I'll attach the patch (xfce4-xkb-plugin.patch),
+screen shot (xfce4-xkb-plugin.jpg), guess the problem
+was the order of `config.h' in the xfce4-xkb-plugin.c
+(xfce4-xkb-plugin.c.patch).
+
+Regards,
+-- 
+Daichi
+
+Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-xkb-plugin.patch
+Type: text/x-patch
+Size: 9035 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060319/cd69824b/attachment.bin>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-xkb-plugin.jpg
+Type: image/jpeg
+Size: 15445 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060319/cd69824b/attachment.jpg>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-xkb-plugin.c.patch
+Type: text/x-patch
+Size: 404 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060319/cd69824b/attachment-0001.bin>
+
+From daichi at xfce.org  Sun Mar 19 09:40:54 2006
+From: daichi at xfce.org (Daichi Kawahata)
+Date: Sun, 19 Mar 2006 17:40:54 +0900
+Subject: A question about translations
+In-Reply-To: <20060319133121.1a1b4bec.daichi@xfce.org>
+References: <441B58ED.8070502@mamul.org>
+	<20060319133121.1a1b4bec.daichi@xfce.org>
+Message-ID: <20060319174054.e3971edb.daichi@xfce.org>
+
+On Sun, 19 Mar 2006 13:31:21 +0900
+Daichi Kawahata wrote:
+
+> Really sorry, I've modified them for i18n support
+> without letting you know, and it should work in
+> rev. 1177.
+
+In rev. 1179, some strings are marked as translatable,
+thank you.
+
+-- 
+Daichi
+
+Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+
+
+From masse_nicolas at yahoo.fr  Sun Mar 19 19:50:06 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Sun, 19 Mar 2006 19:50:06 +0100
+Subject: web site
+In-Reply-To: <20060319000411.GT4363@cheddar.desire.ch>
+References: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr>
+	<20060315152003.GB4363@cheddar.desire.ch>
+	<20060315165710.GA2166@icablenet.com.br>
+	<20060315214246.554e277f.masse_nicolas@yahoo.fr>
+	<20060316035441.GF4363@cheddar.desire.ch>
+	<20060316215806.bebfd719.masse_nicolas@yahoo.fr>
+	<20060317034947.GJ4363@cheddar.desire.ch>
+	<20060318143940.d9fc7c4f.masse_nicolas@yahoo.fr>
+	<20060319000411.GT4363@cheddar.desire.ch>
+Message-ID: <20060319195006.b7e248c2.masse_nicolas@yahoo.fr>
+
+On Sun, 19 Mar 2006 01:04:11 +0100
+Stefan Ott <stefan at desire.ch> wrote:
+
+> On Sat, Mar 18, 2006 at 02:39:40PM +0100, masse_nicolas at yahoo.fr wrote:
+> 
+> > 2 things:
+> > -I like the menu on the left
+> > -I think that in general, we are using too large fonts. Also the left menu 
+> > (wich is nice) take too much place.
+> > 
+> > But I think this is going the right way.
+> 
+> I created some new suggestions:
+> http://stefan.desire.ch/xfce/categorized.php
+> http://stefan.desire.ch/xfce/categorized2.php
+> http://stefan.desire.ch/xfce/categorized3.php
+> 
+> Indeed, you're right about the font size. I basically just changed that
+> and slightly optimized the positioning of the main content in version 1.
+font is still too big.
+
+> However, personally I prefer the way the submenu is in the second
+> version, as having it on the side creates a lot of blank screen space
+> further down the page.
+The blank on the left is not a prob for me.
+Also, if you prefer this is always possible to move this menu on th left, where more space is available. But I don't really like the fact of having 2 menu displayed on 2 line.
+
+> In version 3, I additionally changed the main
+> menu in a way which IMHO makes it more readable (better signal-to-noise
+> ratio). Opinions?
+> 
+Not bad at all.
+
+> > > > I'm definitivly not a web designer...
+> > > I would also suggest to put the plugin information into a database (or
+> > > at least a text file) to keep the site maintainable. A textfile would
+> > > have the advantage for us not to need any kind of web-backend and user
+> > > management...
+> > > 
+> > > What do you (and the others) think of this?
+> > > 
+> > 
+> > I already thought at that possibility, and I think it will rapidly become usefull, 
+> > and even necessary. Also I'm more in favor of a database backend, because I think
+> > it would be easier to program (not matter of file format for example), and offer
+> > us more flexibility. 
+> > Also i can look at the database schema when I would have some time.
+> 
+> I "ordered" a database on berlios which, according to the message I
+> received, should be ready in a couple of hours. I'll create a table in
+> there as soon as it's ready and fill it with some content unless you'd
+> prefer to do the scheme on your own. I'll definitely NOT fill the table
+> before we agree on the scheme :)
+> 
+I think we wouls use more than only one table ;)
+Okay, I will look at how we can store all the stuff into tables.
+
+
+> Regards
+> -- 
+> Stefan Ott
+> http://www.desire.ch/
+> 
+> "Quelli come me si svegliano alle tre e dicono che i giorni sono corti"
+>   -- Luciano Ligabue
+> 
+
+
+From stefan at desire.ch  Mon Mar 20 02:01:07 2006
+From: stefan at desire.ch (Stefan Ott)
+Date: Mon, 20 Mar 2006 02:01:07 +0100
+Subject: web site
+In-Reply-To: <20060319195006.b7e248c2.masse_nicolas@yahoo.fr>
+References: <20060313233208.7a02c02f.masse_nicolas@yahoo.fr>	<20060315152003.GB4363@cheddar.desire.ch>	<20060315165710.GA2166@icablenet.com.br>	<20060315214246.554e277f.masse_nicolas@yahoo.fr>	<20060316035441.GF4363@cheddar.desire.ch>	<20060316215806.bebfd719.masse_nicolas@yahoo.fr>	<20060317034947.GJ4363@cheddar.desire.ch>	<20060318143940.d9fc7c4f.masse_nicolas@yahoo.fr>	<20060319000411.GT4363@cheddar.desire.ch> <20060319195006.b7e248c2.masse_nicolas@yahoo.fr>
+Message-ID: <441DFED3.6090306@desire.ch>
+
+masse_nicolas at yahoo.fr wrote:
+> font is still too big.
+> 
+>>However, personally I prefer the way the submenu is in the second
+>>version, as having it on the side creates a lot of blank screen space
+>>further down the page.
+> 
+> The blank on the left is not a prob for me.
+> Also, if you prefer this is always possible to move this menu on th left, where more space is available. But I don't really like the fact of having 2 menu displayed on 2 line.
+
+how about these?
+http://stefan.desire.ch/xfce/categorized4.php
+http://stefan.desire.ch/xfce/categorized5.php
+
+> I think we wouls use more than only one table ;)
+> Okay, I will look at how we can store all the stuff into tables.
+
+would you use different tables for plugins, applications and artwork? or 
+just split off the plugins, because they have a category attribute? i 
+think we could squeeze them all in the same table and have tables with 
+categories and types (app/plugin/art) additionally although, if we use 
+phpmyadmin to manage the data, it might be easier to just use ENUM 
+fields instead of seperate tables. anyway, i'll leave the decision to you :)
+
+regards
+Stefan
+
+
+From stsp at stsp.in-berlin.de  Mon Mar 20 18:08:16 2006
+From: stsp at stsp.in-berlin.de (Stefan Sperling)
+Date: Mon, 20 Mar 2006 18:08:16 +0100
+Subject: [PATCH] NetBSD support for xfce4-battery-plugin
+Message-ID: <20060320170816.GA1800@dice.bliss.lan>
+
+Hello,
+
+I've switched my notebook to NetBSD, and when I found out that
+the XFCE battery plugin had no support for NetBSD, I decided to
+add support myself.
+
+The attached patch makes it work with APM on NetBSD.
+In fact things work very similar to OpenBSD, so the patch
+is quite small.
+
+The only problem that I've found so far is that the panel
+crashes if I tick "Display power" in the configuration dialogue.
+I don't really understand why that tickbox exists if the plugin
+is running in APM mode, since the code that runs when the display_power
+flag is set seems to be interested only in things like fan speed
+and temperature. Which I always thought were ACPI-only features.
+Somebody else with more knowledge of the code should take a look
+at this. I don't know if the same crash occurs on OpenBSD, too...
+
+thanks,
+-- 
+stefan
+http://stsp.in-berlin.de                                 PGP Key: 0xF59D25F0
+-------------- next part --------------
+diff -urN xfce4-battery-plugin-0.3.0.orig/panel-plugin/battmon.c xfce4-battery-plugin-0.3.0/panel-plugin/battmon.c
+--- xfce4-battery-plugin-0.3.0.orig/panel-plugin/battmon.c	2005-08-06 11:30:51.000000000 +0200
++++ xfce4-battery-plugin-0.3.0/panel-plugin/battmon.c	2006-03-20 17:41:18.000000000 +0100
+@@ -37,6 +37,11 @@
+ #elif __OpenBSD__
+ #include <sys/param.h>
+ #include <machine/apmvar.h>
++#elif __NetBSD__
++#include <sys/param.h>
++#include <sys/ioctl.h>
++#include <machine/apmvar.h>
++#define APMDEVICE "/dev/apm"
+ #elif __linux__
+ #include <apm.h>
+ #endif
+@@ -152,12 +157,6 @@
+ gboolean
+ detect_battery_info(t_battmon *battmon)
+ {
+-#ifdef __OpenBSD__
+-	struct apm_power_info apm;
+-#else
+-	struct apm_info apm;
+-#endif
+-
+ #ifdef __FreeBSD__
+   /* This is how I read the information from the APM subsystem under
+      FreeBSD.  Each time this functions is called (once every second)
+@@ -166,7 +165,7 @@
+      except that is does not work on FreeBSD  
+      
+   */
+-	
++	struct apm_info apm;
+   	int fd;
+ 
+ 	/* First check to see if ACPI is available */
+@@ -193,27 +192,32 @@
+   	fd = open(APMDEVICE, O_RDONLY);
+   	if (fd == -1) return FALSE;
+ 
+-  	if (ioctl(fd, APMIO_GETINFO, &apm) == -1)
++  	if (ioctl(fd, APMIO_GETINFO, &apm) == -1) {
++		close(fd);
+      		return FALSE;
+-
++	}
+   	close(fd);
+   	battmon->method = BM_USE_APM;
+ #endif
+   	return TRUE;
+-#elif __OpenBSD__
++#elif defined(__OpenBSD__) || defined(__NetBSD__)
+   /* Code for OpenBSD by Joe Ammond <jra at twinight.org>. Using the same
+      procedure as for FreeBSD.
++     Made to work on NetBSD by Stefan Sperling <stsp at stsp.in-berlin.de>
+   */
++	struct apm_power_info apm;
+   	int fd;
+ 
+   	battmon->method = BM_BROKEN;
+   	fd = open(APMDEVICE, O_RDONLY);
+   	if (fd == -1) return FALSE;
+-  	if (ioctl(fd, APM_IOC_GETPOWER, &apm) == -1)
++  	if (ioctl(fd, APM_IOC_GETPOWER, &apm) == -1) {
++		close(fd);
+     		return FALSE;
++	}
+   	close(fd);
+   	battmon->method = BM_USE_APM;
+-  
++ 
+   	return TRUE;
+ #elif __linux__
+ 	/* First check to see if ACPI is available */
+@@ -250,11 +254,6 @@
+ static gboolean
+ update_apm_status(t_battmon *battmon)
+ {
+-#ifdef __OpenBSD__
+-	struct apm_power_info apm;
+-#else
+-	struct apm_info apm;
+-#endif
+ 	int charge=0;
+ 	gboolean fan=FALSE;
+ 	const char *temp;
+@@ -262,24 +261,27 @@
+ 	gboolean acline;
+ 	gchar buffer[128];
+ 
+-
+-#ifdef __OpenBSD__
++#if defined(__OpenBSD__) || defined(__NetBSD__)
+   /* Code for OpenBSD by Joe Ammond <jra at twinight.org>. Using the same
+      procedure as for FreeBSD.
++     Made to work on NetBSD by Stefan Sperling <stsp at stsp.in-berlin.de>
+   */
++	struct apm_power_info apm;
+   	int fd;
+ 
+   	battmon->method = BM_BROKEN;
+   	fd = open(APMDEVICE, O_RDONLY);
+   	if (fd == -1) return TRUE;
+-  	if (ioctl(fd, APM_IOC_GETPOWER, &apminfo) == -1)
++  	if (ioctl(fd, APM_IOC_GETPOWER, &apm) == -1) {
++		close(fd);
+     		return TRUE;
+-  	close(fd);
++	}
++   	close(fd);
+   	charge = apm.battery_life;
+   	time_remaining = apm.minutes_left;
+   	acline = apm.ac_state ? TRUE : FALSE;
+-	
+ #else
++	struct apm_info apm;
+ #ifdef DEBUG
+ 	printf("updating battery status...\n");
+ #endif
+@@ -347,9 +349,10 @@
+   	 fd = open(APMDEVICE, O_RDONLY);
+   	 if (fd == -1) return TRUE;
+ 
+-  	 if (ioctl(fd, APMIO_GETINFO, &apm) == -1)
+-     		return TRUE;
+-
++  	 if (ioctl(fd, APMIO_GETINFO, &apm) == -1) {
++		close(fd);
++		return TRUE;
++	 }
+   	 close(fd);
+ 
+   	 acline = apm.ai_acline ? TRUE : FALSE;
+diff -urN xfce4-battery-plugin-0.3.0.orig/panel-plugin/libacpi.c xfce4-battery-plugin-0.3.0/panel-plugin/libacpi.c
+--- xfce4-battery-plugin-0.3.0.orig/panel-plugin/libacpi.c	2003-09-09 15:49:16.000000000 +0200
++++ xfce4-battery-plugin-0.3.0/panel-plugin/libacpi.c	2006-03-20 17:25:30.000000000 +0100
+@@ -42,6 +42,14 @@
+ #include <dirent.h>
+ 
+ #if HAVE_SYSCTL
++
++#ifdef __NetBSD__
++#include <sys/param.h>
++/* CTLTYPE does not exist in NetBSD headers.
++ * Defining it to 0x0f here won't do any harm though. */
++#define CTLTYPE 0x0f
++#endif
++
+ #include <sys/sysctl.h>
+ #include <err.h>
+ #include <errno.h>
+
+From bugzilla-daemon at xfce.org  Tue Mar 21 15:11:15 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 21 Mar 2006 14:11:15 +0000 (UTC)
+Subject: [Bug 1519] genmon plugin for svn panel has truncated output
+In-Reply-To: <bug-1519-590@http.bugzilla.xfce.org/>
+Message-ID: <20060321141115.58FD5F2927@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1519
+
+
+
+
+
+------- Comment #1 from xfce-bugs at badcode.de  2006-03-21 14:11 UTC -------
+Created an attachment (id=480)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=480&action=view)
+fix for the described problem
+
+The patch fixes the problem, but I don't know if it's a good solution
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue Mar 21 16:06:18 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 21 Mar 2006 15:06:18 +0000 (UTC)
+Subject: [Bug 1590] xfce panel crashes with glib2 2.10
+In-Reply-To: <bug-1590-590@http.bugzilla.xfce.org/>
+Message-ID: <20060321150618.73822F2A30@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1590
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+         AssignedTo|jasper at xfce.org             |xfce-goodies-dev at berlios.de
+          Component|xfce4-panel                 |weather
+            Product|Xfce                        |Xfce Panel Plugins
+   Target Milestone|unknown                     |---
+            Version|4.2.3.2                     |unspecified
+
+
+
+
+------- Comment #1 from jasper at xfce.org  2006-03-21 15:06 UTC -------
+Actually, it is the weather plugin that is crashing. It does not look like it
+will be very hard to fix.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue Mar 21 16:07:28 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 21 Mar 2006 15:07:28 +0000 (UTC)
+Subject: [Bug 1586] Weather plugin should have be updatable on demand
+In-Reply-To: <bug-1586-590@http.bugzilla.xfce.org/>
+Message-ID: <20060321150728.46DDEF2A2F@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1586
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+           Severity|normal                      |enhancement
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From par.johansson at gmail.com  Wed Mar 22 09:30:56 2006
+From: par.johansson at gmail.com (=?ISO-8859-1?Q?P=E4r_Johansson?=)
+Date: Wed, 22 Mar 2006 09:30:56 +0100
+Subject: Suggestions for battery plugin
+Message-ID: <8becb9d30603220030n7c68a31ch98e7bcadcd6270cd@mail.gmail.com>
+
+Greetings!
+
+This is my first mail to this list, although I've been using Xfce for about
+two years.
+
+I really like the battery plugin and have a few suggestions that would make
+it (in my opinion) even better. I'm using the xfce4-battery-plugin version
+0.3.0-2 package for Debian/testing.
+
+1. When charging from AC, it would be nice to see how long it will take to
+charge it to 100%. Running 'acpitool -B' shows "Remaining capacity : 25230
+mWh, 85.90%, 00:31:53", could that time estimate be shown in the battery
+plugin tooltip, perhaps?
+
+2. The ability to run commands at certain percentages of remaining battery
+power is really useful. However, it would be even more useful if you could
+type any command into the box instead of having to choose a program. For
+instance, I would like to run 'sudo hibernate' when the battery level is
+critical.
+
+
+
+
+--
+P?r Johansson
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060322/df40d94c/attachment.html>
+
+From par.johansson at gmail.com  Wed Mar 22 22:43:49 2006
+From: par.johansson at gmail.com (=?ISO-8859-1?Q?P=E4r_Johansson?=)
+Date: Wed, 22 Mar 2006 22:43:49 +0100
+Subject: Suggestions for battery plugin
+In-Reply-To: <8becb9d30603220030n7c68a31ch98e7bcadcd6270cd@mail.gmail.com>
+References: <8becb9d30603220030n7c68a31ch98e7bcadcd6270cd@mail.gmail.com>
+Message-ID: <8becb9d30603221343h2f714a50if9b4aa2f95adf741@mail.gmail.com>
+
+On 3/22/06, P?r Johansson <par.johansson at gmail.com> wrote:
+>
+> 2. The ability to run commands at certain percentages of remaining battery
+> power is really useful. However, it would be even more useful if you could
+> type any command into the box instead of having to choose a program. For
+> instance, I would like to run 'sudo hibernate' when the battery level is
+> critical.
+>
+
+I realized this is already possible, you just have to select "Run command"
+in the Critical battery action droplist.
+
+Sorry!
+
+Regards,
+
+--
+P?r Johansson
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060322/07745043/attachment.html>
+
+From bugzilla-daemon at xfce.org  Sun Mar 26 09:18:33 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun, 26 Mar 2006 07:18:33 +0000 (UTC)
+Subject: [Bug 1610] New: Does not correct report if AC plugged in or not
+Message-ID: <bug-1610-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1610
+
+           Summary: Does not correct report if AC plugged in or not
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Other
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: battery
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: jamesm at bluebottle.com
+
+
+Mine usually says 180% and 00:00 when it's on AC power.
+
+Using a dell inspiron 4150, kernel 2.6.15, debian linux
+
+james at laptop:~$ acpi -V
+     Battery 1: charged, 100%, rate information unavailable.
+     Thermal 1: ok, 59.0 degrees C
+  AC Adapter 1: on-line
+james at laptop:~$
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Mar 26 13:52:55 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun, 26 Mar 2006 11:52:55 +0000 (UTC)
+Subject: [Bug 1610] Does not correct report if AC plugged in or not
+In-Reply-To: <bug-1610-590@http.bugzilla.xfce.org/>
+Message-ID: <20060326115255.686CAF2A2F@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1610
+
+
+
+
+
+------- Comment #1 from genthree at gmail.com  2006-03-26 11:52 UTC -------
+Confirmed... Thanx!
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Sun Mar 26 16:37:58 2006
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Sun, 26 Mar 2006 16:37:58 +0200
+Subject: thunar-archive-plugin 0.1.0
+Message-ID: <4426A746.7000309@unix-ag.uni-siegen.de>
+
+I imported the plugin to Xfce Goodies SVN, uploaded a tarball and
+created a website for the thunar-archive-plugin 0.1.0, which I posted
+earlier this month on the mailinglist.
+
+Download:
+http://developer.berlios.de/project/showfiles.php?group_id=910&release_id=9574
+
+Website (with screenshots):
+http://xfce.org/~benny/projects/thunar-archive-plugin/index.html
+
+It still depends on File Roller, so its probably not yet usable for
+Xubuntu. Support for Xarchiver will be added once Xarchiver supports the
+required cmdline switches.
+
+Benedikt
+
+PS: Could the Xfce Goodies website maintainer please add
+thunar-archive-plugin there (together with thunar-media-tags-plugin
+under "File Manager Plugins"/"Thunar Plugins" :-)?
+
+
+From jannis at xfce.org  Sun Mar 26 18:21:01 2006
+From: jannis at xfce.org (Jannis Pohlmann)
+Date: Sun, 26 Mar 2006 18:21:01 +0200
+Subject: thunar-archive-plugin 0.1.0
+In-Reply-To: <4426A746.7000309@unix-ag.uni-siegen.de>
+References: <4426A746.7000309@unix-ag.uni-siegen.de>
+Message-ID: <20060326182101.be20d200.jannis@xfce.org>
+
+On Sun, 26 Mar 2006 16:37:58 +0200
+Benedikt Meurer <benedikt.meurer at unix-ag.uni-siegen.de> wrote:
+
+> I imported the plugin to Xfce Goodies SVN, uploaded a tarball and
+> created a website for the thunar-archive-plugin 0.1.0, which I posted
+> earlier this month on the mailinglist.
+> 
+> Download:
+> http://developer.berlios.de/project/showfiles.php?group_id=910&release_id=9574
+> 
+> Website (with screenshots):
+> http://xfce.org/~benny/projects/thunar-archive-plugin/index.html
+> 
+> It still depends on File Roller, so its probably not yet usable for
+> Xubuntu. Support for Xarchiver will be added once Xarchiver supports
+> the required cmdline switches.
+> 
+> Benedikt
+> 
+> PS: Could the Xfce Goodies website maintainer please add
+> thunar-archive-plugin there (together with thunar-media-tags-plugin
+> under "File Manager Plugins"/"Thunar Plugins" :-)?
+
+Done.
+
+- Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 191 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060326/52ae17e0/attachment.pgp>
+
+From bugzilla-daemon at xfce.org  Mon Mar 27 11:44:16 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 27 Mar 2006 09:44:16 +0000 (UTC)
+Subject: [Bug 1590] xfce panel crashes with glib2 2.10
+In-Reply-To: <bug-1590-590@http.bugzilla.xfce.org/>
+Message-ID: <20060327094416.E5380F2A2F@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1590
+
+
+corsac at corsac.net changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |corsac at corsac.net
+
+
+
+
+------- Comment #2 from corsac at corsac.net  2006-03-27 09:44 UTC -------
+Jasper, do you have any information on this bug ? I'd like to fix it (there are
+few debian users which suffers from the bug, and I guess lots of other people).
+
+I guess there is a g_free() which shouldn't be there but I couldn't find which
+one, as I am very new at glib programming.
+
+If you need some help looking at the code, please tell :)
+
+Regards,
+
+Yves-Alexis Perez
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue Mar 28 02:12:26 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 28 Mar 2006 00:12:26 +0000 (UTC)
+Subject: [Bug 1590] xfce panel crashes with glib2 2.10
+In-Reply-To: <bug-1590-590@http.bugzilla.xfce.org/>
+Message-ID: <20060328001226.4411FF2A31@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1590
+
+
+
+
+
+------- Comment #3 from jaredcasper at gmail.com  2006-03-28 00:12 UTC -------
+Created an attachment (id=490)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=490&action=view)
+proposed patch for weather plugin
+
+Finally found the right place to send this... hope this helps
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue Mar 28 12:58:48 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 28 Mar 2006 10:58:48 +0000 (UTC)
+Subject: [Bug 1590] xfce panel crashes with glib2 2.10
+In-Reply-To: <bug-1590-590@http.bugzilla.xfce.org/>
+Message-ID: <20060328105848.B18B9F2A2F@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1590
+
+
+
+
+
+------- Comment #4 from corsac at corsac.net  2006-03-28 10:58 UTC -------
+This patch don't fix the problem, I still have 
+
+*** glibc detected *** free(): invalid pointer: 0x1042e450 ***
+
+
+Regards,
+
+Yves-Alexis Perez
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Mar 29 06:22:38 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 29 Mar 2006 04:22:38 +0000 (UTC)
+Subject: [Bug 876] System Monitor Plugin should also have a left click launcher option
+In-Reply-To: <bug-876-590@http.bugzilla.xfce.org/>
+Message-ID: <20060329042238.D5E95F2927@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=876
+
+
+
+
+
+------- Comment #1 from eburner at softhome.net  2006-03-29 04:22 UTC -------
+even hard coded to launch xfce4-taskmanager would be an improvement
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+

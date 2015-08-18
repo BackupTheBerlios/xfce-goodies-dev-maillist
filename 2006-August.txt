@@ -1,0 +1,1884 @@
+From bugzilla-daemon at xfce.org  Wed Aug  2 09:50:10 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  2 Aug 2006 07:50:10 +0000 (UTC)
+Subject: [Bug 2106] New: systemload plugin crashes when trying to change bar
+	color.
+Message-ID: <bug-2106-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2106
+
+           Summary: systemload plugin crashes when trying to change bar
+                    color.
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Macintosh
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: systemload
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: corsac at corsac.net
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux ppc; en-US; rv:1.8.0.4)
+Gecko/20060608 (Debian-1.8.0.4-2) Epiphany/2.14
+Build Identifier: Mozilla/5.0 (X11; U; Linux ppc; en-US; rv:1.8.0.4)
+Gecko/20060608 (Debian-1.8.0.4-2) Epiphany/2.14
+
+When one tries to change the bars color in the systemload plugin (xfce4-panel
+4.3.90.2, xfce4-systemload-plugin 0.4), the plugin disappears.
+
+.xsession-errors contains:
+
+** (xfce4-panel:3110): CRITICAL **: An item was unexpectedly removed: "System
+Load Monitor".
+
+An strace on the running process shows a segmentation fault:
+
+open("/usr/lib/gconv/ISO8859-15.so", O_RDONLY) = 4
+read(4, "\177ELF\1\2\1\0\0\0\0\0\0\0\0\0\0\3\0\24\0\0\0\1\0\0\5"..., 512) = 512
+fstat64(4, {st_mode=S_IFREG|0644, st_size=9544, ...}) = 0
+mmap(0xeefd000, 73960, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) =
+0xeefd000
+mprotect(0xeeff000, 65768, PROT_NONE)   = 0
+mmap(0xef0e000, 8192, PROT_READ|PROT_WRITE|PROT_EXEC,
+MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x1000) = 0xef0e000
+close(4)                                = 0
+mprotect(0xef0e000, 4096, PROT_READ)    = 0
+open("/usr/share/locale/en_IE at euro/LC_MESSAGES/atk10.mo", O_RDONLY) = -1 ENOENT
+(No such file or directory)
+open("/usr/share/locale/en at euro/LC_MESSAGES/atk10.mo", O_RDONLY) = -1 ENOENT
+(No such file or directory)
+open("/usr/share/locale/en_IE/LC_MESSAGES/atk10.mo", O_RDONLY) = -1 ENOENT (No
+such file or directory)
+open("/usr/share/locale/en/LC_MESSAGES/atk10.mo", O_RDONLY) = -1 ENOENT (No
+such file or directory)
+--- SIGSEGV (Segmentation fault) @ 0 (0) ---
+Process 22054 detached
+
+I don't really know if I can gdb the running process, currently gdb seems to
+detach when I try gdb --pid <PID>
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. add systemload plugin to panel
+2. try to change a bar color
+3.
+
+Actual Results:  
+plugin crashes
+
+Expected Results:  
+should display a color chooser
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Aug  2 10:43:33 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  2 Aug 2006 08:43:33 +0000 (UTC)
+Subject: [Bug 2106] systemload plugin crashes when trying to change bar color.
+In-Reply-To: <bug-2106-590@http.bugzilla.xfce.org/>
+Message-ID: <20060802084333.F194BF2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2106
+
+
+
+
+
+------- Comment #1 from corsac at corsac.net  2006-08-02 08:43 UTC -------
+Here is a backtrace from gdb. I guess the "no symbol times available" means I
+should install some packages with debugging symbols of gtk ?
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0f600130 in g_type_check_instance_cast () from /usr/lib/libgobject-2.0.so.0
+(gdb) bt full
+#0  0x0f600130 in g_type_check_instance_cast ()
+   from /usr/lib/libgobject-2.0.so.0
+No symbol table info available.
+#1  0x100040a4 in ?? ()
+No symbol table info available.
+#2  0x0f5ee0b0 in g_cclosure_marshal_VOID__VOID ()
+   from /usr/lib/libgobject-2.0.so.0
+No symbol table info available.
+#3  0x0f5dd38c in g_closure_invoke () from /usr/lib/libgobject-2.0.so.0
+No symbol table info available.
+#4  0x0f5f1954 in g_signal_chain_from_overridden ()
+   from /usr/lib/libgobject-2.0.so.0
+No symbol table info available.
+#5  0x0f5f2c5c in g_signal_emit_valist () from /usr/lib/libgobject-2.0.so.0
+No symbol table info available.
+#6  0x0f5f2e2c in g_signal_emit () from /usr/lib/libgobject-2.0.so.0
+No symbol table info available.
+#7  0x0fc48f80 in gtk_button_clicked () from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#8  0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#9  0x0fc4b3a4 in _gtk_button_set_depressed ()
+---Type <return> to continue, or q <return> to quit---
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#10 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#11 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#12 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#13 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#14 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#15 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#16 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+---Type <return> to continue, or q <return> to quit---
+#17 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#18 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#19 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#20 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#21 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#22 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#23 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#24 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+---Type <return> to continue, or q <return> to quit---
+No symbol table info available.
+#25 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#26 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#27 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#28 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#29 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#30 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#31 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#32 0x0fc4b3a4 in _gtk_button_set_depressed ()
+---Type <return> to continue, or q <return> to quit---
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#33 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#34 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+Previous frame inner to this frame (corrupt stack?)
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Aug  2 11:17:04 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  2 Aug 2006 09:17:04 +0000 (UTC)
+Subject: [Bug 2106] systemload plugin crashes when trying to change bar color.
+In-Reply-To: <bug-2106-590@http.bugzilla.xfce.org/>
+Message-ID: <20060802091704.DEED0F2A29@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2106
+
+
+
+
+
+------- Comment #2 from corsac at corsac.net  2006-08-02 09:17 UTC -------
+Created an attachment (id=699)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=699&action=view)
+Stacktrace with gtk debuggin symbols
+
+Backtrace from xfce4-systemload plugin with debugging symbols.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Aug  2 11:35:48 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  2 Aug 2006 09:35:48 +0000 (UTC)
+Subject: [Bug 2106] systemload plugin crashes when trying to change bar color.
+In-Reply-To: <bug-2106-590@http.bugzilla.xfce.org/>
+Message-ID: <20060802093548.0D1C8F2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2106
+
+
+corsac at corsac.net changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+    Attachment #699|backtrace.log               |backtrace.txt
+           filename|                            |
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Aug  2 11:36:29 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  2 Aug 2006 09:36:29 +0000 (UTC)
+Subject: [Bug 2106] systemload plugin crashes when trying to change bar color.
+In-Reply-To: <bug-2106-590@http.bugzilla.xfce.org/>
+Message-ID: <20060802093629.6E9ABF2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2106
+
+
+corsac at corsac.net changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+    Attachment #699|text/x-log                  |text/plain
+          mime type|                            |
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Aug  2 12:53:58 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  2 Aug 2006 10:53:58 +0000 (UTC)
+Subject: [Bug 2108] New: Systemload-plugin crash when changing color
+Message-ID: <bug-2108-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2108
+
+           Summary: Systemload-plugin crash when changing color
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Other
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: systemload
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: maxschleiss at bluewin.ch
+
+
+Hi,
+the plugin seems to crash as soon as you try changing the color.
+Here is a backtrace as Brian told me to do here
+http://foo-projects.org/pipermail/xfce/2006-August/018266.html
+Hope this is of any help.
+Cheers
+Max
+
+#0  0xb7ac8958 in g_type_check_instance_cast () from
+/usr/lib/libgobject-2.0.so.0
+#1  0x0804b4ed in change_color (global=0x8090a98, count=0) at systemload.c:684
+#2  0xb7abf1a8 in g_cclosure_marshal_VOID__VOID () from
+/usr/lib/libgobject-2.0.so.0
+#3  0xb7aa8a1b in g_closure_invoke () from /usr/lib/libgobject-2.0.so.0
+#4  0xb7abdbb6 in g_signal_has_handler_pending () from
+/usr/lib/libgobject-2.0.so.0
+#5  0xb7abeac8 in g_signal_emit_valist () from /usr/lib/libgobject-2.0.so.0
+#6  0xb7abedb6 in g_signal_emit () from /usr/lib/libgobject-2.0.so.0
+#7  0xb7c9b891 in gtk_button_clicked () from /usr/lib/libgtk-x11-2.0.so.0
+#8  0xb7c9d42c in gtk_button_get_alignment () from /usr/lib/libgtk-x11-2.0.so.0
+#9  0xb7abf1a8 in g_cclosure_marshal_VOID__VOID () from
+/usr/lib/libgobject-2.0.so.0
+#10 0xb7aa8d59 in g_cclosure_new_swap () from /usr/lib/libgobject-2.0.so.0
+#11 0xb7aa8a1b in g_closure_invoke () from /usr/lib/libgobject-2.0.so.0
+#12 0xb7abd4a7 in g_signal_has_handler_pending () from
+/usr/lib/libgobject-2.0.so.0
+#13 0xb7abeac8 in g_signal_emit_valist () from /usr/lib/libgobject-2.0.so.0
+#14 0xb7abedb6 in g_signal_emit () from /usr/lib/libgobject-2.0.so.0
+#15 0xb7c9b7f1 in gtk_button_released () from /usr/lib/libgtk-x11-2.0.so.0
+#16 0xb7c9c911 in gtk_button_set_relief () from /usr/lib/libgtk-x11-2.0.so.0
+#17 0xb7d6e410 in gtk_marshal_VOID__UINT_STRING () from
+/usr/lib/libgtk-x11-2.0.so.0
+#18 0xb7aa8d59 in g_cclosure_new_swap () from /usr/lib/libgobject-2.0.so.0
+#19 0xb7aa8a1b in g_closure_invoke () from /usr/lib/libgobject-2.0.so.0
+#20 0xb7abd72b in g_signal_has_handler_pending () from
+/usr/lib/libgobject-2.0.so.0
+#21 0xb7abe81d in g_signal_emit_valist () from /usr/lib/libgobject-2.0.so.0
+#22 0xb7abedb6 in g_signal_emit () from /usr/lib/libgobject-2.0.so.0
+#23 0xb7e67014 in gtk_widget_activate () from /usr/lib/libgtk-x11-2.0.so.0
+#24 0xb7d6c877 in gtk_propagate_event () from /usr/lib/libgtk-x11-2.0.so.0
+#25 0xb7d6cbaf in gtk_main_do_event () from /usr/lib/libgtk-x11-2.0.so.0
+#26 0xb7bf54c1 in gdk_event_get_graphics_expose () from
+/usr/lib/libgdk-x11-2.0.so.0
+#27 0xb7a39b97 in g_main_context_dispatch () from /usr/lib/libglib-2.0.so.0
+#28 0xb7a3b524 in g_main_context_acquire () from /usr/lib/libglib-2.0.so.0
+---Type <return> to continue, or q <return> to quit---
+#29 0xb7a3b84a in g_main_loop_run () from /usr/lib/libglib-2.0.so.0
+#30 0xb7d6be53 in gtk_main () from /usr/lib/libgtk-x11-2.0.so.0
+#31 0x0804cbf1 in main (argc=7, argv=0xbfd5aff4) at systemload.c:981
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu Aug  3 22:17:58 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu,  3 Aug 2006 20:17:58 +0000 (UTC)
+Subject: [Bug 1157] GTK critical error fixup on specific laptops
+In-Reply-To: <bug-1157-590@http.bugzilla.xfce.org/>
+Message-ID: <20060803201758.AB107F2A29@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1157
+
+
+nick at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+            Summary|GTK critical error fixup on |GTK critical error fixup on
+                   |specific laptops            |specific laptops
+
+
+
+
+------- Comment #2 from nick at xfce.org  2006-08-03 20:17 UTC -------
+This should be fixed in trunk, using:
+    charge = CLAMP (charge, 0, 100);
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu Aug  3 22:31:16 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu,  3 Aug 2006 20:31:16 +0000 (UTC)
+Subject: [Bug 1206] weather plugin build error on solaris 10 x86
+In-Reply-To: <bug-1206-590@http.bugzilla.xfce.org/>
+Message-ID: <20060803203116.C3EDFF2A29@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1206
+
+
+nick at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #4 from nick at xfce.org  2006-08-03 20:31 UTC -------
+A bit late... but it's fixed in trunk. Thanks for the patch.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu Aug  3 22:35:31 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu,  3 Aug 2006 20:35:31 +0000 (UTC)
+Subject: [Bug 1068] panel crashes when adding xfce4-battery applet
+In-Reply-To: <bug-1068-590@http.bugzilla.xfce.org/>
+Message-ID: <20060803203531.5E8A5F2A29@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1068
+
+
+
+
+
+------- Comment #1 from nick at xfce.org  2006-08-03 20:35 UTC -------
+Old version of the battery plugin. Does this still happen with 0.3.0?
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu Aug  3 22:40:29 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu,  3 Aug 2006 20:40:29 +0000 (UTC)
+Subject: [Bug 1945] clipman crashes noisily when I copy binary junk
+In-Reply-To: <bug-1945-590@http.bugzilla.xfce.org/>
+Message-ID: <20060803204029.A5127F2A29@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1945
+
+
+
+
+
+------- Comment #6 from nick at xfce.org  2006-08-03 20:40 UTC -------
+I can't do anything about this problem, is probably a gtk bug in
+gtk_clipboard_wait_for_text ().
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu Aug  3 22:43:23 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu,  3 Aug 2006 20:43:23 +0000 (UTC)
+Subject: [Bug 1792] Weather plugin doesn't persist across logins
+In-Reply-To: <bug-1792-590@http.bugzilla.xfce.org/>
+Message-ID: <20060803204323.3332CF2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1792
+
+
+nick at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #2 from nick at xfce.org  2006-08-03 20:43 UTC -------
+AFAIK all these problems are solved in trunk, please reopen if not.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri Aug  4 00:05:25 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu,  3 Aug 2006 22:05:25 +0000 (UTC)
+Subject: [Bug 1945] clipman crashes noisily when I copy binary junk
+In-Reply-To: <bug-1945-590@http.bugzilla.xfce.org/>
+Message-ID: <20060803220525.8B5E0F2A29@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1945
+
+
+
+
+
+------- Comment #7 from dooglus at gmail.com  2006-08-03 22:05 UTC -------
+OK, thanks for looking into it.
+
+I've raised this bug in the GNOME tracker:
+
+http://bugzilla.gnome.org/show_bug.cgi?id=349856
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri Aug  4 04:12:12 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri,  4 Aug 2006 02:12:12 +0000 (UTC)
+Subject: [Bug 1068] panel crashes when adding xfce4-battery applet
+In-Reply-To: <bug-1068-590@http.bugzilla.xfce.org/>
+Message-ID: <20060804021212.76469F2A29@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1068
+
+
+
+
+
+------- Comment #2 from mike.massonnet at gmail.com  2006-08-04 02:12 UTC -------
+I have been using the version 0.3 for two months ago and it never crashed.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri Aug  4 10:47:44 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri,  4 Aug 2006 08:47:44 +0000 (UTC)
+Subject: [Bug 2104] Allow popup via command and, optionally,
+	at the pointer position.
+In-Reply-To: <bug-2104-590@http.bugzilla.xfce.org/>
+Message-ID: <20060804084744.854A6F2A2A@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2104
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+         AssignedTo|xfce-goodies-dev at berlios.de |jasper at xfce.org
+
+
+
+
+------- Comment #2 from jasper at xfce.org  2006-08-04 08:47 UTC -------
+Hmm, we need to change bugzilla to assign the windowlist bugs to me...
+
+Anyway, I'm not sure what to do with this ;-) On one hand it is a cool feature
+and for some people it will be very useful. On the other hand, I would like the
+panel plugins to remain as simple as possible and I'm not entirely convinced
+about the usefulness for the 'average user' of Xfce (whoever that may be ;-).
+
+I probably won't add it before 4.4.0, but I will certainly consider it for a
+later release.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Aug  6 17:33:31 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  6 Aug 2006 15:33:31 +0000 (UTC)
+Subject: [Bug 2126] New: Use Pango native ellipsize;
+	highlight the active window item
+Message-ID: <bug-2126-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2126
+
+           Summary: Use Pango native ellipsize; highlight the active window
+                    item
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC (x86)
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: windowlist
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: linux at youmustbejoking.demon.co.uk
+
+
+I noticed that the width at which truncation occurs causes display oddness
+where the "remove workspace" text is somewhat longer than the truncated text.
+Also, it doesn't properly cope with UTF-8 because it assumes that one character
+== one byte.
+
+I noticed a question about why the active window isn't highlighted (in #xine)
+and decided to have a look... this is a trivial enhancement and is most easily
+done at the same time.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Aug  6 17:35:02 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  6 Aug 2006 15:35:02 +0000 (UTC)
+Subject: [Bug 2126] Use Pango native ellipsize;
+	highlight the active window item
+In-Reply-To: <bug-2126-590@http.bugzilla.xfce.org/>
+Message-ID: <20060806153502.B4652F2A29@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2126
+
+
+
+
+
+------- Comment #1 from linux at youmustbejoking.demon.co.uk  2006-08-06 15:35 UTC -------
+Created an attachment (id=708)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=708&action=view)
+Use Pango native ellipsize; highlight the active window item
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Aug  6 17:38:28 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  6 Aug 2006 15:38:28 +0000 (UTC)
+Subject: [Bug 2126] Use Pango native ellipsize;
+	highlight the active window item
+In-Reply-To: <bug-2126-590@http.bugzilla.xfce.org/>
+Message-ID: <20060806153828.234AFF2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2126
+
+
+
+
+
+------- Comment #2 from linux at youmustbejoking.demon.co.uk  2006-08-06 15:38 UTC -------
+See also bug 2127 (xfdesktop's window list menu).
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Aug  6 17:40:52 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  6 Aug 2006 15:40:52 +0000 (UTC)
+Subject: [Bug 2128] New: Improved ellipsization etc.
+Message-ID: <bug-2128-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2128
+
+           Summary: Improved ellipsization etc.
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC (x86)
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: clipman
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: linux at youmustbejoking.demon.co.uk
+
+
+Ellipsization (as it stands) is somewhat broken: it doesn't properly take into
+account that one character isn't necessarily one byte (or, for that matter, one
+glyph) or the width of each glyph.
+
+Also, replacement of tabs, LFs and CRs need not be done: the label could be put
+into single-line mode (with the effect that you'll get [000A] and [000D]
+instead).
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Aug  6 17:41:17 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  6 Aug 2006 15:41:17 +0000 (UTC)
+Subject: [Bug 2128] Improved ellipsization etc.
+In-Reply-To: <bug-2128-590@http.bugzilla.xfce.org/>
+Message-ID: <20060806154117.A72D8F2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2128
+
+
+
+
+
+------- Comment #1 from linux at youmustbejoking.demon.co.uk  2006-08-06 15:41 UTC -------
+Created an attachment (id=710)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=710&action=view)
+Improve the ellipsization
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Aug  6 17:58:43 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  6 Aug 2006 15:58:43 +0000 (UTC)
+Subject: [Bug 2128] Improved ellipsization etc.
+In-Reply-To: <bug-2128-590@http.bugzilla.xfce.org/>
+Message-ID: <20060806155843.9371FF2A29@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2128
+
+
+
+
+
+------- Comment #2 from nick at xfce.org  2006-08-06 15:58 UTC -------
+Although I agree with you there is one problem now, the title that is generated
+has the same length (thus size) as the clip, and it gets fully utf8 validated.
+Both consume time and memory.
+
+Maybe it's better to use g_strndup (txt, chars+5), so all the 'visible'
+characters have all their needed bytes?
+
+If there is a decent solution for this, I'll apply the patch.
+
+Thanks in advance,
+Nick
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Aug  6 18:23:18 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  6 Aug 2006 16:23:18 +0000 (UTC)
+Subject: [Bug 2128] Improved ellipsization etc.
+In-Reply-To: <bug-2128-590@http.bugzilla.xfce.org/>
+Message-ID: <20060806162318.0BD0BF2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2128
+
+
+
+
+
+------- Comment #3 from linux at youmustbejoking.demon.co.uk  2006-08-06 16:23 UTC -------
+chars+5 is not really any better. This really needs to be done according to the
+width of the rendered string. chars*6 is closer and is likely to be enough to
+cover use of combining marks, but is still (potentially) leaving the string
+short  if you have a lot of narrow glyphs.
+
+Also, what if an option to control the position of the ellipsis is added?
+
+Generating the title once would seem to be more appropriate, despite the memory
+usage. As things stand, it turns out that clipman_regenerate_titles() can be
+removed without side-effects.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Aug  6 19:14:52 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  6 Aug 2006 17:14:52 +0000 (UTC)
+Subject: [Bug 2128] Improved ellipsization etc.
+In-Reply-To: <bug-2128-590@http.bugzilla.xfce.org/>
+Message-ID: <20060806171452.CF364F2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2128
+
+
+
+
+
+------- Comment #4 from linux at youmustbejoking.demon.co.uk  2006-08-06 17:14 UTC -------
+MAXCHARS*8 should cover it, at least with PANGO_ELLIPSIZE_END. *6 will probably
+cover it too, but *8 leaves a margin for error. (There's still at least the
+pathological case - lots of zero-width (non-)joiners - but it's probably safe
+to ignore that.)
+
+It *won't* cover it if PANGO_ELLIPSIZE_MIDDLE is used, at least not for long
+selections.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Aug  7 00:08:20 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  6 Aug 2006 22:08:20 +0000 (UTC)
+Subject: [Bug 2128] Improved ellipsization etc.
+In-Reply-To: <bug-2128-590@http.bugzilla.xfce.org/>
+Message-ID: <20060806220820.8645DF2A29@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2128
+
+
+nick at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #5 from nick at xfce.org  2006-08-06 22:08 UTC -------
+I've committed you patch, removed the regenerate_title function and
+added strndup (length*8), which could save some time/mem on huge
+amounts of text.
+
+I think an ellipses position option is a bit overkill, remember we're still
+using Xfce :-).
+
+Thanks for your time,
+Nick
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Aug  7 03:36:45 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  7 Aug 2006 01:36:45 +0000 (UTC)
+Subject: [Bug 2128] Improved ellipsization etc.
+In-Reply-To: <bug-2128-590@http.bugzilla.xfce.org/>
+Message-ID: <20060807013645.1E66DF2A29@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2128
+
+
+
+
+
+------- Comment #6 from linux at youmustbejoking.demon.co.uk  2006-08-07 01:36 UTC -------
+length*8 combined with the removal of regenerate_title is a bad choice. To
+demonstrate:
+
+1. Set the length to 10 characters.
+2. Select the whole of the initial description of this BTS entry.
+3. Look at the clipman menu. Ellipsization is fine.
+4. Set the length to 120 characters.
+5. Look at the clipman menu. Whoops, no ellipsization.
+
+The more non-ASCII glyphs are present, the sooner this will become obvious.
+
+From bugzilla-daemon at xfce.org  Mon Aug  7 03:53:08 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  7 Aug 2006 01:53:08 +0000 (UTC)
+Subject: [Bug 2128] Improved ellipsization etc.
+In-Reply-To: <bug-2128-590@http.bugzilla.xfce.org/>
+Message-ID: <20060807015308.8D53AF2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2128
+
+
+
+
+
+------- Comment #7 from linux at youmustbejoking.demon.co.uk  2006-08-07 01:53 UTC -------
+Created an attachment (id=712)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=712&action=view)
+Properly truncate UTF-8 strings & fix a null dereference.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Aug  7 08:12:48 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  7 Aug 2006 06:12:48 +0000 (UTC)
+Subject: [Bug 2128] Improved ellipsization etc.
+In-Reply-To: <bug-2128-590@http.bugzilla.xfce.org/>
+Message-ID: <20060807061248.1309AF2A29@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2128
+
+
+
+
+
+------- Comment #8 from nick at xfce.org  2006-08-07 06:12 UTC -------
+Committed, thanks
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Aug  7 10:50:04 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  7 Aug 2006 08:50:04 +0000 (UTC)
+Subject: [Bug 2126] Use Pango native ellipsize;
+	highlight the active window item
+In-Reply-To: <bug-2126-590@http.bugzilla.xfce.org/>
+Message-ID: <20060807085004.43A4AF2A2A@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2126
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+         AssignedTo|xfce-goodies-dev at berlios.de |jasper at xfce.org
+
+
+
+
+------- Comment #3 from jasper at xfce.org  2006-08-07 08:50 UTC -------
+Ok, I'll have a look as soon as I can. Sounds like a nice improvement. Thanks.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Aug  7 21:55:33 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  7 Aug 2006 19:55:33 +0000 (UTC)
+Subject: [Bug 2135] New: weather plugin crashes when searching for "paris" in
+	location area
+Message-ID: <bug-2135-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2135
+
+           Summary: weather plugin crashes when searching for "paris" in
+                    location area
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Macintosh
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: weather
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: corsac at corsac.net
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux ppc; en-US; rv:1.8.0.4)
+Gecko/20060608 (Debian-1.8.0.4-2) Epiphany/2.14
+Build Identifier: Mozilla/5.0 (X11; U; Linux ppc; en-US; rv:1.8.0.4)
+Gecko/20060608 (Debian-1.8.0.4-2) Epiphany/2.14
+
+Hi,
+
+I have a problem with the weather plugin (0.5 on xfce4 4.4beta/4.3.90.2). When
+I add it to the panel and tries to find a location code, in the "Search weather
+location code" window, If I try to search for "paris", the plugin crash.
+
+I attach gdb and strace outputs from the plugin, it seems that it can't parse
+the opened page, or something.
+
+The opened page is: http://xoap.weather.com/search/search?where=paris
+I see nothing wrong between it and, for example,
+http://xoap.weather.com/search/search?where=rome (entering "rome" in the search
+bar works fine).
+
+If you need more informations, please ask.
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. add the weather plugin
+2. clic on the "search" icon for location code
+3. search for paris
+
+Actual Results:  
+Crashes the plugin
+
+Expected Results:  
+Should find the area code for Paris
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Aug  7 21:56:11 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  7 Aug 2006 19:56:11 +0000 (UTC)
+Subject: [Bug 2135] weather plugin crashes when searching for "paris" in
+	location area
+In-Reply-To: <bug-2135-590@http.bugzilla.xfce.org/>
+Message-ID: <20060807195611.7EBC9F2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2135
+
+
+
+
+
+------- Comment #1 from corsac at corsac.net  2006-08-07 19:56 UTC -------
+Created an attachment (id=715)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=715&action=view)
+gdb output from weather plugin
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Aug  7 21:56:41 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  7 Aug 2006 19:56:41 +0000 (UTC)
+Subject: [Bug 2135] weather plugin crashes when searching for "paris" in
+	location area
+In-Reply-To: <bug-2135-590@http.bugzilla.xfce.org/>
+Message-ID: <20060807195641.153F2F2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2135
+
+
+
+
+
+------- Comment #2 from corsac at corsac.net  2006-08-07 19:56 UTC -------
+Created an attachment (id=716)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=716&action=view)
+strace output from weather plugin
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Aug  7 23:54:15 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  7 Aug 2006 21:54:15 +0000 (UTC)
+Subject: [Bug 2135] weather plugin crashes when searching for "paris" in
+	location area
+In-Reply-To: <bug-2135-590@http.bugzilla.xfce.org/>
+Message-ID: <20060807215415.68D1CF2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2135
+
+
+
+
+
+------- Comment #3 from nick at xfce.org  2006-08-07 21:54 UTC -------
+I can not reproduce this with the svn version. So, can you try 0.6 beta 2?
+
+http://www.foo-projects.org/~nick/plugins/xfce4-weather-plugin-0.5.90.2.tar.bz2
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue Aug  8 07:32:56 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue,  8 Aug 2006 05:32:56 +0000 (UTC)
+Subject: [Bug 2137] New: weather plugin crashes when xfce-mcs-manager is
+	refreshed
+Message-ID: <bug-2137-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2137
+
+           Summary: weather plugin crashes when xfce-mcs-manager is
+                    refreshed
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Macintosh
+               URL: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=381925
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: weather
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: corsac at corsac.net
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux ppc; en-US; rv:1.8.0.4)
+Gecko/20060608 (Debian-1.8.0.4-2) Epiphany/2.14
+Build Identifier: Mozilla/5.0 (X11; U; Linux ppc; en-US; rv:1.8.0.4)
+Gecko/20060608 (Debian-1.8.0.4-2) Epiphany/2.14
+
+A debian user noticed that when xfce-mcs-manager was refreshed (pkill -USR1 -f
+xfce-mcs-manager) the weather plugin crashed. Gdb output isn't really useful
+(i've attached it, though).
+
+On debian, we use to refresh xfce-mcs-manager each time a new component is
+added/upgraded/removed so it is in a consistent state with the system. So when
+there is a system upgrade, the weather plugin disappears from the panel.
+
+Regards,
+
+Yves-Alexis Perez
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. add xfce4-weather-plugin in the panel
+2. pkill -USR1 -f xfce-mcs-manager
+3.
+
+Actual Results:  
+weather plugin crashes
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue Aug  8 07:33:30 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue,  8 Aug 2006 05:33:30 +0000 (UTC)
+Subject: [Bug 2137] weather plugin crashes when xfce-mcs-manager is refreshed
+In-Reply-To: <bug-2137-590@http.bugzilla.xfce.org/>
+Message-ID: <20060808053330.EBEDDF2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2137
+
+
+
+
+
+------- Comment #1 from corsac at corsac.net  2006-08-08 05:33 UTC -------
+Created an attachment (id=718)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=718&action=view)
+GDB Weather plugin crash when mcs-manager is refreshed
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue Aug  8 07:46:26 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue,  8 Aug 2006 05:46:26 +0000 (UTC)
+Subject: [Bug 2137] weather plugin crashes when xfce-mcs-manager is refreshed
+In-Reply-To: <bug-2137-590@http.bugzilla.xfce.org/>
+Message-ID: <20060808054626.DE242F2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2137
+
+
+corsac at corsac.net changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #2 from corsac at corsac.net  2006-08-08 05:46 UTC -------
+This bug seems fixed too with the 0.5.90.2 version you provided for the "paris"
+crash bug.
+
+Thanks :)
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue Aug  8 08:06:25 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue,  8 Aug 2006 06:06:25 +0000 (UTC)
+Subject: [Bug 2135] weather plugin crashes when searching for "paris" in
+	location area
+In-Reply-To: <bug-2135-590@http.bugzilla.xfce.org/>
+Message-ID: <20060808060625.0784AF2A29@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2135
+
+
+corsac at corsac.net changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #4 from corsac at corsac.net  2006-08-08 06:06 UTC -------
+it works, thanks :)
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Aug  9 11:29:14 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  9 Aug 2006 09:29:14 +0000 (UTC)
+Subject: [Bug 2141] New: cpugraph leaks memory
+Message-ID: <bug-2141-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2141
+
+           Summary: cpugraph leaks memory
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC (x86)
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: cpugraph
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: a.hoch at arcor.de
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux i686; de; rv:1.8.0.5)
+Gecko/20060719 Firefox/1.5.0.5
+Build Identifier: Mozilla/5.0 (X11; U; Linux i686; de; rv:1.8.0.5)
+Gecko/20060719 Firefox/1.5.0.5
+
+When running for a longer time, one day or so, cpugraph is using about 35mb of
+memory.
+The following fixed it for me:
+
+--- cpu.c.old   2006-08-09 11:02:40.446805504 +0200
++++ cpu.c       2006-08-09 01:26:29.950955461 +0200
+@@ -244,7 +244,7 @@
+ void
+ UpdateTooltip (CPUGraph * base)
+ {
+-    char tooltip[32];
++    static char tooltip[32];
+
+     sprintf (tooltip, "Usage: %ld%%", base->m_CPUUsage);
+     gtk_tooltips_set_tip (GTK_TOOLTIPS (base->m_Tooltip),
+
+
+Reproducible: Always
+
+Steps to Reproduce:
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Aug  9 11:46:01 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  9 Aug 2006 09:46:01 +0000 (UTC)
+Subject: [Bug 2141] cpugraph leaks memory
+In-Reply-To: <bug-2141-590@http.bugzilla.xfce.org/>
+Message-ID: <20060809094601.10B8FF2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2141
+
+
+
+
+
+------- Comment #1 from nick at xfce.org  2006-08-09 09:46 UTC -------
+It's better to free the tooltip:
+
+void
+UpdateTooltip (CPUGraph * base)
+{
+    gchar *tooltip;
+
+    tooltip = g_strdup_printf ("Usage: %ld%%", base->m_CPUUsage);
+    gtk_tooltips_set_tip (GTK_TOOLTIPS (base->m_Tooltip), 
+                          base->m_FrameWidget->parent, tooltip, NULL);
+    g_free (tooltip);
+}
+
+Maybe "char tooltip[32]" > "const char tooltip[32]" will also work.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Aug  9 16:27:35 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  9 Aug 2006 14:27:35 +0000 (UTC)
+Subject: [Bug 2141] cpugraph leaks memory
+In-Reply-To: <bug-2141-590@http.bugzilla.xfce.org/>
+Message-ID: <20060809142735.1464DF2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2141
+
+
+
+
+
+------- Comment #2 from benny at xfce.org  2006-08-09 14:27 UTC -------
+Ehm, that's definitely not the cause of a memory leak.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Aug  9 20:18:51 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  9 Aug 2006 18:18:51 +0000 (UTC)
+Subject: [Bug 1898] Wavelan plugin for 4.4 does not work for all cards
+In-Reply-To: <bug-1898-590@http.bugzilla.xfce.org/>
+Message-ID: <20060809181851.64059F2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1898
+
+
+jw+xfce at jameswestby.net changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #3 from jw+xfce at jameswestby.net  2006-08-09 18:18 UTC -------
+I have just fixed this issue (I hope). 
+
+The new version is available from 
+
+http://jameswestby.net/debian/
+
+Let me know if it doesn't fix the issue for you.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu Aug 10 10:49:34 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 10 Aug 2006 08:49:34 +0000 (UTC)
+Subject: [Bug 2141] cpugraph leaks memory
+In-Reply-To: <bug-2141-590@http.bugzilla.xfce.org/>
+Message-ID: <20060810084934.B4195F2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2141
+
+
+
+
+
+------- Comment #3 from a.hoch at arcor.de  2006-08-10 08:49 UTC -------
+ok, you're right.
+the problem only appears when using LED-mode. everything is fine in normal
+mode.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu Aug 10 21:40:39 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 10 Aug 2006 19:40:39 +0000 (UTC)
+Subject: [Bug 1518] Wavelan plugin doesn't auto-hide when wifi card not present
+In-Reply-To: <bug-1518-590@http.bugzilla.xfce.org/>
+Message-ID: <20060810194039.35061F2A2A@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1518
+
+
+
+
+
+------- Comment #1 from jw+xfce at jameswestby.net  2006-08-10 19:40 UTC -------
+I have fixed this in 0.5.2 release, shortly to be released to
+
+http://jameswestby.net/debian/
+
+I have added the option to hide when the device is not found, with a warning
+that this will make it hard to remove or configure the plugin when there is no
+device.
+
+(I will close the bug if I am granted and account with sufficient permissions)
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sat Aug 12 11:45:06 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat, 12 Aug 2006 09:45:06 +0000 (UTC)
+Subject: [Bug 2141] cpugraph leaks memory
+In-Reply-To: <bug-2141-590@http.bugzilla.xfce.org/>
+Message-ID: <20060812094506.5225BF2A29@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2141
+
+
+
+
+
+------- Comment #4 from pollux at xfce.org  2006-08-12 09:45 UTC -------
+the DrawGraph function doesn't unref all the GdkGC it can create maybe it could
+be the cause of such memleak
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Aug 13 21:19:58 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun, 13 Aug 2006 19:19:58 +0000 (UTC)
+Subject: [Bug 477] battery plugin does not account for second battery
+In-Reply-To: <bug-477-590@http.bugzilla.xfce.org/>
+Message-ID: <20060813191958.D68D8F2A2B@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=477
+
+
+
+
+
+------- Comment #4 from jujucece at gmail.com  2006-08-13 19:19 UTC -------
+In my Dell D600 LapTop, I've also 2 batteries (the extra one is in the media
+bay), and I use the xfce-genmon-plugin to monitor the 2 batteries.
+
+For more infos, see the screenshot in:
+http://goodies.xfce.org/projects/panel-plugins/xfce4-genmon-plugin
+
+The source archive includes an "example" script to monitor 2 batteries, if you
+know a bit of shell scripting, you can easily fit it to your needs.
+(Personnaly, I use "zenity" to display an alert box when the batteries reach a
+very low level.)
+
+But it's a bit more complicated than just using a dedicated plugin...
+
+Juju
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Aug 13 21:26:31 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun, 13 Aug 2006 19:26:31 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060813192631.BDBBEF2A2A@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+hongqn at gmail.com changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |hongqn at gmail.com
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Aug 16 11:57:26 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 16 Aug 2006 09:57:26 +0000 (UTC)
+Subject: [Bug 2108] Systemload-plugin crash when changing color
+In-Reply-To: <bug-2108-590@http.bugzilla.xfce.org/>
+Message-ID: <20060816095726.1409FF2A29@mocha.foo-projects.org>
+
+Do not reply to this email.  To comment on this bug, please visit:
+http://bugzilla.xfce.org/show_bug.cgi?id=2108
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |DUPLICATE
+
+
+
+
+------- Comment #1 from jasper at xfce.org  2006-08-16 09:57 UTC -------
+
+
+*** This bug has been marked as a duplicate of bug 2106 ***
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Aug 16 11:57:26 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 16 Aug 2006 09:57:26 +0000 (UTC)
+Subject: [Bug 2106] systemload plugin crashes when trying to change bar color.
+In-Reply-To: <bug-2106-590@http.bugzilla.xfce.org/>
+Message-ID: <20060816095726.24AD9F2A2B@mocha.foo-projects.org>
+
+Do not reply to this email.  To comment on this bug, please visit:
+http://bugzilla.xfce.org/show_bug.cgi?id=2106
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |maxschleiss at bluewin.ch
+
+
+
+
+------- Comment #3 from jasper at xfce.org  2006-08-16 09:57 UTC -------
+*** Bug 2108 has been marked as a duplicate of this bug. ***
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Aug 16 12:21:15 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 16 Aug 2006 10:21:15 +0000 (UTC)
+Subject: [Bug 2106] systemload plugin crashes when trying to change bar color.
+In-Reply-To: <bug-2106-590@http.bugzilla.xfce.org/>
+Message-ID: <20060816102115.A09D3F2A29@mocha.foo-projects.org>
+
+Do not reply to this email.  To comment on this bug, please visit:
+http://bugzilla.xfce.org/show_bug.cgi?id=2106
+
+
+
+
+
+------- Comment #4 from jasper at xfce.org  2006-08-16 10:21 UTC -------
+Created an attachment (id=739)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=739&action=view)
+Fix crash when changing bar color.
+
+A pointer to the properties dialog was not initialized properly.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Aug 16 13:50:50 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 16 Aug 2006 11:50:50 +0000 (UTC)
+Subject: [Bug 2141] cpugraph leaks memory
+In-Reply-To: <bug-2141-590@http.bugzilla.xfce.org/>
+Message-ID: <20060816115050.B6C6FF2A28@mocha.foo-projects.org>
+
+Do not reply to this email.  To comment on this bug, please visit:
+http://bugzilla.xfce.org/show_bug.cgi?id=2141
+
+
+
+
+
+------- Comment #5 from jasper at xfce.org  2006-08-16 11:50 UTC -------
+Created an attachment (id=740)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=740&action=view)
+Free gc's
+
+In two modes a gc isn't freed after use. This was the only obvious memory leak
+I could find, but I didn't look very thoroughly.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Aug 16 15:35:39 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 16 Aug 2006 13:35:39 +0000 (UTC)
+Subject: [Bug 2106] systemload plugin crashes when trying to change bar color.
+In-Reply-To: <bug-2106-590@http.bugzilla.xfce.org/>
+Message-ID: <20060816133539.E6718F2A29@mocha.foo-projects.org>
+
+Do not reply to this email.  To comment on this bug, please visit:
+http://bugzilla.xfce.org/show_bug.cgi?id=2106
+
+
+
+
+
+------- Comment #5 from jasper at xfce.org  2006-08-16 13:35 UTC -------
+Ok, committed in SVN revision 1905. If you could try this patch, or update from
+SVN, that would be helpful.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Aug 16 15:38:42 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 16 Aug 2006 13:38:42 +0000 (UTC)
+Subject: [Bug 2106] systemload plugin crashes when trying to change bar color.
+In-Reply-To: <bug-2106-590@http.bugzilla.xfce.org/>
+Message-ID: <20060816133842.B0F5FF2A29@mocha.foo-projects.org>
+
+Do not reply to this email.  To comment on this bug, please visit:
+http://bugzilla.xfce.org/show_bug.cgi?id=2106
+
+
+
+
+
+------- Comment #6 from jasper at xfce.org  2006-08-16 13:38 UTC -------
+(In reply to comment #5)
+> Ok, committed in SVN revision 1905. If you could try this patch, or update from
+> SVN, that would be helpful.
+> 
+
+Oops, sorry, that's revision 1906.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Aug 16 15:41:29 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 16 Aug 2006 13:41:29 +0000 (UTC)
+Subject: [Bug 2141] cpugraph leaks memory
+In-Reply-To: <bug-2141-590@http.bugzilla.xfce.org/>
+Message-ID: <20060816134129.98D94F2A28@mocha.foo-projects.org>
+
+Do not reply to this email.  To comment on this bug, please visit:
+http://bugzilla.xfce.org/show_bug.cgi?id=2141
+
+
+
+
+
+------- Comment #6 from jasper at xfce.org  2006-08-16 13:41 UTC -------
+Ok, I committed the changes with revision 1906. It would be helpful if you
+could test the patch or update from SVN.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Aug 16 15:44:23 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 16 Aug 2006 13:44:23 +0000 (UTC)
+Subject: [Bug 2106] systemload plugin crashes when trying to change bar color.
+In-Reply-To: <bug-2106-590@http.bugzilla.xfce.org/>
+Message-ID: <20060816134423.2756DF2A29@mocha.foo-projects.org>
+
+Do not reply to this email.  To comment on this bug, please visit:
+http://bugzilla.xfce.org/show_bug.cgi?id=2106
+
+
+corsac at corsac.net changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #7 from corsac at corsac.net  2006-08-16 13:44 UTC -------
+It works with patch applied. Thank you :)
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+

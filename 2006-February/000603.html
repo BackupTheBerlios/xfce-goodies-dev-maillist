@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> xfce4-messenger-plugin
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-February/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20xfce4-messenger-plugin&In-Reply-To=%3C20060211104043.GA32289%40lucifer.localdomain%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000602.html">
+   <LINK REL="Next"  HREF="000586.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>xfce4-messenger-plugin</H1>
+    <B>Pasi Orovuo</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20xfce4-messenger-plugin&In-Reply-To=%3C20060211104043.GA32289%40lucifer.localdomain%3E"
+       TITLE="xfce4-messenger-plugin">pasi.ov at gmail.com
+       </A><BR>
+    <I>Sat Feb 11 11:40:43 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000602.html">xfce4-messenger-plugin
+</A></li>
+        <LI>Next message: <A HREF="000586.html">Update: porting plugins
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#603">[ date ]</a>
+              <a href="thread.html#603">[ thread ]</a>
+              <a href="subject.html#603">[ subject ]</a>
+              <a href="author.html#603">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, Feb 10, 2006 at 09:54:49PM +0100, <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">masse_nicolas at yahoo.fr</A> wrote:
+&gt;<i> &gt; 
+</I>&gt;<i> &gt; Doesn't work? Could you please elaborate on this? Doesn't compile? Error
+</I>&gt;<i> &gt; messages? Anything?
+</I>&gt;<i> &gt; 
+</I>&gt;<i> Compile and install OK. In fact, the things is just that it doesn't display any message.
+</I>&gt;<i> 
+</I>
+That's odd. Are you sure your session bus is functioning properly? The
+plugin prints error messages about DBus connectivity problems, so
+~/.xsession-errors might contain some info. You could also try running
+`dbus-monitor` and see how it reacts when you send a message to the
+plugin.
+
+&gt;<i> &gt; 
+</I>&gt;<i> &gt; Currently, both the icon and the label in the panel can be hidden in the
+</I>&gt;<i> &gt; preferences, when only the popup is shown on received message.
+</I>&gt;<i> &gt; 
+</I>&gt;<i> so hiding both icon and label is perhaps the right config for me.
+</I>&gt;<i> 
+</I>
+That's my preferred config as well.
+
+&gt;<i> &gt; If the label would only be visible when a message is received, it would
+</I>&gt;<i> &gt; cause other panel items to move to make space for the label. I'd guess
+</I>&gt;<i> &gt; it'd get very annoying...
+</I>&gt;<i> &gt; 
+</I>&gt;<i> Possible, but I would like to test it once (no a big prob tough). 
+</I>&gt;<i> 
+</I>
+This is pretty easy to implement, so I try to remember to add it.
+
+&gt;<i> Ok, i've added you. we just have to get a name now.... what about something like xfce4-notification-plugin? (perhaps not funny enough)
+</I>&gt;<i> 
+</I>
+That's definitely the most descriptive candidate, and that's what it's
+going to be. I'll import the sources in a few days, thanks!
+
+&gt;<i> &gt; Perhaps I could exploit the possibility further, and add Xfmedia Remote
+</I>&gt;<i> &gt; plugin there as well... though I've no idea where Xfmedia is currently
+</I>&gt;<i> &gt; going.
+</I>&gt;<i> &gt; 
+</I>&gt;<i> sure. Also for xfmedia, I know it was in a great rewritte state a month ago. This is probably still the case.
+</I>&gt;<i> 
+</I>
+Yeah, Brian's quite busy with other stuff, so the refactoring is
+proceeding quite slowly, but the plugin should work fine with the
+current svn version. It's only a matter of keeping the plugin updated.
+
+&gt;<i> &gt; 
+</I>&gt;<i> Bountykiller
+</I>
+-Pasi
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000602.html">xfce4-messenger-plugin
+</A></li>
+	<LI>Next message: <A HREF="000586.html">Update: porting plugins
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#603">[ date ]</a>
+              <a href="thread.html#603">[ thread ]</a>
+              <a href="subject.html#603">[ subject ]</a>
+              <a href="author.html#603">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

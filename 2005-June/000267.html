@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> battery-plugin: temperature (patch inside)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-June/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20battery-plugin%3A%20temperature%20%28patch%20inside%29&In-Reply-To=%3C1118349970.11496.4.camel%40localhost.localdomain%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000263.html">
+   <LINK REL="Next"  HREF="000269.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>battery-plugin: temperature (patch inside)</H1>
+    <B>Ralf Meyer</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20battery-plugin%3A%20temperature%20%28patch%20inside%29&In-Reply-To=%3C1118349970.11496.4.camel%40localhost.localdomain%3E"
+       TITLE="battery-plugin: temperature (patch inside)">ranf at gmx.net
+       </A><BR>
+    <I>Thu Jun  9 22:46:10 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000263.html">xfce4-mount-plugin updated
+</A></li>
+        <LI>Next message: <A HREF="000269.html">sensors plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#267">[ date ]</a>
+              <a href="thread.html#267">[ thread ]</a>
+              <a href="subject.html#267">[ subject ]</a>
+              <a href="author.html#267">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I've seen different behavior of battpanel on two different laptops.
+One showed the temperature, the other didn't.
+The culprit is:
+in libacpi.c there it only tries to open
+  /proc/acpi/thermal_zone/THRM/temperature
+while on the 2nd laptop it has to be
+  /proc/acpi/thermal_zone/ATF0/temperature
+
+By looking at the source I saw that it also checks for the fan.
+I made a change there as well.
+
+Here is a simple patch:
+-- 
+bye 
+  ranf
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: patch
+Type: text/x-patch
+Size: 1570 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050609/b52ebb5d/attachment.bin">https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050609/b52ebb5d/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000263.html">xfce4-mount-plugin updated
+</A></li>
+	<LI>Next message: <A HREF="000269.html">sensors plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#267">[ date ]</a>
+              <a href="thread.html#267">[ thread ]</a>
+              <a href="subject.html#267">[ subject ]</a>
+              <a href="author.html#267">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

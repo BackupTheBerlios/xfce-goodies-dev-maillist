@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> A question about translations
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-March/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20A%20question%20about%20translations&In-Reply-To=%3C20060319133121.1a1b4bec.daichi%40xfce.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000674.html">
+   <LINK REL="Next"  HREF="000682.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>A question about translations</H1>
+    <B>Daichi Kawahata</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20A%20question%20about%20translations&In-Reply-To=%3C20060319133121.1a1b4bec.daichi%40xfce.org%3E"
+       TITLE="A question about translations">daichi at xfce.org
+       </A><BR>
+    <I>Sun Mar 19 05:31:21 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000674.html">A question about translations
+</A></li>
+        <LI>Next message: <A HREF="000682.html">A question about translations
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#681">[ date ]</a>
+              <a href="thread.html#681">[ thread ]</a>
+              <a href="subject.html#681">[ subject ]</a>
+              <a href="author.html#681">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sat, 18 Mar 2006 02:48:45 +0200
+Alexander Iliev wrote:
+
+&gt;<i> Hi.
+</I>
+Hi,
+
+&gt;<i> I finally decided to add translation support to
+</I>&gt;<i> xfce4-xkb-plugin, but I ran into some problems.
+</I>
+(snip)
+
+&gt;<i> The bg.mo file installed properly in
+</I>&gt;<i> $PREFIX/share/locale/bg/LC_MESSAGES/xfce4-xkb-plugin.mo.
+</I>&gt;<i> 
+</I>&gt;<i> Unfortunately the messages remained in english, so
+</I>&gt;<i> my question is - how can I check what went wrong and
+</I>&gt;<i> why the translation does not load?
+</I>&gt;<i> 
+</I>&gt;<i> btw, the .desktop file translation works fine - the name
+</I>&gt;<i> and comment for the plugin appear in bulgarian in the
+</I>&gt;<i> plugin add dialog.
+</I>
+Really sorry, I've modified them for i18n support without
+letting you know, and it should work in rev. 1177.
+
+FYI, I'll attach the patch (xfce4-xkb-plugin.patch),
+screen shot (xfce4-xkb-plugin.jpg), guess the problem
+was the order of `config.h' in the xfce4-xkb-plugin.c
+(xfce4-xkb-plugin.c.patch).
+
+Regards,
+-- 
+Daichi
+
+Language Codes: <A HREF="http://www.w3.org/WAI/ER/IG/ert/iso639.htm">http://www.w3.org/WAI/ER/IG/ert/iso639.htm</A>
+Country Codes: <A HREF="http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt">http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt</A>
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-xkb-plugin.patch
+Type: text/x-patch
+Size: 9035 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060319/cd69824b/attachment.bin">https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060319/cd69824b/attachment.bin</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-xkb-plugin.jpg
+Type: image/jpeg
+Size: 15445 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060319/cd69824b/attachment.jpg">https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060319/cd69824b/attachment.jpg</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-xkb-plugin.c.patch
+Type: text/x-patch
+Size: 404 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060319/cd69824b/attachment-0001.bin">https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060319/cd69824b/attachment-0001.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000674.html">A question about translations
+</A></li>
+	<LI>Next message: <A HREF="000682.html">A question about translations
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#681">[ date ]</a>
+              <a href="thread.html#681">[ thread ]</a>
+              <a href="subject.html#681">[ subject ]</a>
+              <a href="author.html#681">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

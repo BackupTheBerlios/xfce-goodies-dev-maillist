@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> How to get to Xfce 4.4
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-January/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20How%20to%20get%20to%20Xfce%204.4&In-Reply-To=%3C43C12889.2040405%40xfce.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000545.html">
+   <LINK REL="Next"  HREF="000550.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>How to get to Xfce 4.4</H1>
+    <B>Jasper Huijsmans</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20How%20to%20get%20to%20Xfce%204.4&In-Reply-To=%3C43C12889.2040405%40xfce.org%3E"
+       TITLE="How to get to Xfce 4.4">jasper at xfce.org
+       </A><BR>
+    <I>Sun Jan  8 15:58:17 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000545.html">How to get to Xfce 4.4
+</A></li>
+        <LI>Next message: <A HREF="000550.html">How to get to Xfce 4.4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#546">[ date ]</a>
+              <a href="thread.html#546">[ thread ]</a>
+              <a href="subject.html#546">[ subject ]</a>
+              <a href="author.html#546">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&#321;ukasz Hejnak schreef:
+&gt;<i> Hello :)
+</I>&gt;<i> 
+</I>&gt;<i> Jasper Huijsmans napisa&#322;(a):
+</I>&gt;&gt;<i> * I think what we need most is people checking out SVN and report * I 
+</I>&gt;&gt;<i> don't now if xfprint and xfce4-appfinder need any work. Danny is busy 
+</I>&gt;&gt;<i> porting xfce4-mixer to the new panel framework. The mailwatch plugin 
+</I>&gt;&gt;<i> seems to work very well.
+</I>&gt;&gt;<i> problems. It needs to work in as many situations as possible.
+</I>&gt;<i> well here I found an error just lately and I'm trying to fix it, but 
+</I>&gt;<i> can't seem to do it the right way.
+</I>&gt;<i> I've got the panel set up in vertical and the mixer doesn't display 
+</I>&gt;<i> right, it's just a thin horizontal line with a button on the side, 
+</I>&gt;<i> though I can control the sound level by middle-scroll.
+</I>
+I leave that one for Danny to fix.
+
+&gt;<i> 
+</I>&gt;<i> As for the Panel Actions, I think it would be good to enable an command 
+</I>&gt;<i> input box in it, so to allow the user to set an action on screen-lock, 
+</I>&gt;<i> logout, reboot and halt.
+</I>&gt;<i> i.e. I don't use sudo, and built my own type of a &quot;user shutdown system&quot;
+</I>&gt;<i> so I'd like to set the action performed by the reboot/halt command 
+</I>&gt;<i> within the settings, though maybe it's just me, and people like me 
+</I>&gt;<i> should stick to the code ;]
+</I>&gt;<i> 
+</I>
+Hmm. Logout is performed by the session manager. I don't really want to 
+add special purpose code to the panel. I don't remember if the session 
+manager allows custom shutdown commands.
+
+For the screensaver the panel uses the xflock4 script. It might be 
+easier to modify that instead.
+
+&gt;<i> About the clock, I think it would be good to be able to set the font, 
+</I>&gt;<i> the clock is displayed with. Cause the LED option is too big, and the 
+</I>&gt;<i> number's option is too small (I use 1280x1024 screen size).
+</I>&gt;<i> 
+</I>
+The clock could be improved a lot, but I don't think I will have the 
+time to work on it. I would take a patch for this one, if someone else 
+were to write it.
+
+Other possible improvements: support for different time zones, support 
+for showing the date and support for user-defined formats (like the 
+date-time plugin). The dialog must remain simple though, so that will be 
+a bit of a challenge ;-)
+
+&gt;<i> Again about the panel, I was thinking of another option to display 
+</I>&gt;<i> multicommand activators. Right now there's an arrow informing of the 
+</I>&gt;<i> possibility to show a small menu of other available commands.
+</I>&gt;<i> I was thinking of an option to hide the arrow (making the whole icon 
+</I>&gt;<i> smaller, and thus giving more space in the panel for others), and enable 
+</I>&gt;<i> the same function by middle clicking on the icon (AFAIK it doesn't do 
+</I>&gt;<i> anything right now) and maybe just putting a small mark on the icon 
+</I>&gt;<i> telling that there is a menu.
+</I>&gt;<i> 
+</I>
+Not before 4.4 I think. Middle click is not a very convenient way to 
+access the menu though. I already does pop up the menu if you hold the 
+left mouse button, so maybe that would be enough?
+
+Other ideas for the launcher include putting the last-used item on the 
+panel (there's even a patch for that), but I think I will leave that 
+until after 4.4 to decide.
+
+&gt;&gt;<i> Translations
+</I>&gt;&gt;<i> ============
+</I>&gt;<i> so I guess somebody is already taking care of the Polish translation,
+</I>&gt;<i> but if any help would be needed on this, I'll be glad to help.
+</I>&gt;<i> 
+</I>
+You could always join the xfce-i18n mailing list are ask the current 
+Polish translator directly if he needs any help.
+
+&gt;&gt;<i> Website
+</I>&gt;&gt;<i> =======
+</I>&gt;<i> Do You need any mirrors? I'm currently running my own server with some 
+</I>&gt;<i> of the standard services (wftpd,apache,exim,php) and a 1MBit limitless 
+</I>&gt;<i> connection, so I could do for a mirror, if not the whole page, maybe at 
+</I>&gt;<i> least the ftp sections, though I'd preffer http dir's instead of anon ftp.
+</I>&gt;<i> 
+</I>
+Mirrors for source tarballs and binary packages are always welcome. You 
+probably want to wait for at least the beta releases with that though. 
+There's no need to mirror the web site itself, I think.
+
+&gt;<i> Other than those, I'm completely satisfied with xfce svn as of friday :)
+</I>&gt;<i> I try to keep up doing svn builds once a week or two.
+</I>
+Thanks!
+
+	Jasper
+
+&gt;<i> 
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000545.html">How to get to Xfce 4.4
+</A></li>
+	<LI>Next message: <A HREF="000550.html">How to get to Xfce 4.4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#546">[ date ]</a>
+              <a href="thread.html#546">[ thread ]</a>
+              <a href="subject.html#546">[ subject ]</a>
+              <a href="author.html#546">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

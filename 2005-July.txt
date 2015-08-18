@@ -1,0 +1,2187 @@
+From xotazu at cvc.uab.es  Fri Jul  1 12:07:12 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Fri, 01 Jul 2005 12:07:12 +0200
+Subject: xfce4-taskmanager version 0.3.1
+In-Reply-To: <20050701100007.32709.98159.Mailman@bat.berlios.de>
+References: <20050701100007.32709.98159.Mailman@bat.berlios.de>
+Message-ID: <20050701120712.482812af@cvc131.uab.es>
+
+	Hi:
+
+	There is another bug with sorting. When clicking on column
+title twice I receive a segmentation fault:
+
+	I tried to show processes ordered by mem size with higher
+memory on top of list. First click order them in ascending order, but
+when I click again to order them by descending order, I receive the seg
+fault.
+
+cheers
+
+Xavier
+
+On Fri, 01 Jul 2005 12:00:07 +0200
+xfce-goodies-dev-request at berlios.de wrote:
+
+> >
+> > There seems to be a bug. I use "more options" and try to sort 
+> > processes my used memory. It not correctly sorts them. Processes
+> > with 
+> > >100MB are listed above 10MB but between it??s not correct sortet.
+> > >The 
+> > list can be 12MB 24MB 13MB...
+> >
+> > Try to fix it.
+> 
+> Fixed with 0.3.1
+
+
+From xotazu at cvc.uab.es  Fri Jul  1 12:54:22 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Fri, 01 Jul 2005 12:54:22 +0200
+Subject: xfc xmms2 graphical client
+In-Reply-To: <20050701100007.32709.98159.Mailman@bat.berlios.de>
+References: <20050701100007.32709.98159.Mailman@bat.berlios.de>
+Message-ID: <20050701125422.1c2e396e@cvc131.uab.es>
+
+
+	Hi:
+
+	Since I want to start learning programming GUI interfaces in
+Linux, I would like to start trying to code a graphical client for the
+new xmms2 daemon/client architecture
+(http://wiki.xmms2.xmms.se/index.php/Main_Page) using XFC. Some weeks
+ago I coded my first XFC program which reads an image from file and
+show it on screen ... :-)
+
+	Could you open to me an account on berlios to start a goodie
+project? Do you prefer that I send a first version of this client in
+order to create this goodie project?
+
+cheers
+
+Xavier
+
+
+From webmaster at nebulon.de  Fri Jul  1 15:52:08 2005
+From: webmaster at nebulon.de (Johannes Zellner)
+Date: Fri, 01 Jul 2005 15:52:08 +0200
+Subject: xfce4-taskmanager version 0.3.1
+In-Reply-To: <20050701120712.482812af@cvc131.uab.es>
+References: <20050701100007.32709.98159.Mailman@bat.berlios.de> <20050701120712.482812af@cvc131.uab.es>
+Message-ID: <42C54A88.1060007@nebulon.de>
+
+Xavier Otazu schrieb:
+
+>	Hi:
+>
+>	There is another bug with sorting. When clicking on column
+>title twice I receive a segmentation fault:
+>
+>	I tried to show processes ordered by mem size with higher
+>memory on top of list. First click order them in ascending order, but
+>when I click again to order them by descending order, I receive the seg
+>fault.
+>
+>cheers
+>
+>Xavier
+>  
+>
+Hm .... i can't reproduce the bug :(
+Appears this segfault everytime you sort the mem column like this ?
+
+Bye
+    Johannes
+
+>On Fri, 01 Jul 2005 12:00:07 +0200
+>xfce-goodies-dev-request at berlios.de wrote:
+>
+>  
+>
+>>>There seems to be a bug. I use "more options" and try to sort 
+>>>processes my used memory. It not correctly sorts them. Processes
+>>>with 
+>>>      
+>>>
+>>>>100MB are listed above 10MB but between it??s not correct sortet.
+>>>>The 
+>>>>        
+>>>>
+>>>list can be 12MB 24MB 13MB...
+>>>
+>>>Try to fix it.
+>>>      
+>>>
+>>Fixed with 0.3.1
+>>    
+>>
+>_______________________________________________
+>xfce-goodies-dev mailing list
+>xfce-goodies-dev at lists.berlios.de
+>http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+>  
+>
+
+
+
+From dbobadil at gmail.com  Fri Jul  1 16:32:27 2005
+From: dbobadil at gmail.com (Daniel Bobadilla)
+Date: Fri, 1 Jul 2005 10:32:27 -0400
+Subject: Howto to submit a new xfce-panel-plugin?
+Message-ID: <50080c08050701073240225f7b@mail.gmail.com>
+
+Howto to submit a new xfce-panel-plugin?
+   Any ideas
+
+
+From xotazu at cvc.uab.es  Sat Jul  2 20:09:55 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Sat, 02 Jul 2005 20:09:55 +0200 (CEST)
+Subject: xfce4-taskmanager version 0.3.1
+In-Reply-To: <20050702100008.9038.52121.Mailman@bat.berlios.de>
+References: <20050702100008.9038.52121.Mailman@bat.berlios.de>
+Message-ID: <Pine.LNX.4.60.0507022006240.30552@cvc131.uab.es>
+
+ 	Hi:
+
+> Hm .... i can't reproduce the bug :(
+> Appears this segfault everytime you sort the mem column like this ?
+>
+>Bye
+>    Johannes
+
+ 	The problem does not appear in Slackware 10.1, but it appears in 
+Slackware 10.0. May be it is a GTK/pango/other_sw version issue!?
+
+Xavier
+
+
+From xotazu at cvc.uab.es  Mon Jul  4 16:48:05 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Mon, 04 Jul 2005 16:48:05 +0200
+Subject: xfce4-taskmanager version 0.3.1
+In-Reply-To: <20050703100008.13095.11148.Mailman@bat.berlios.de>
+References: <20050703100008.13095.11148.Mailman@bat.berlios.de>
+Message-ID: <20050704164805.4ae033a5@cvc131.uab.es>
+
+	Hello:
+
+	More details.
+
+	On slackware 10.0 the problem only appears when clicking a
+second time on (optional) columns PPID, VM-Size or RSS. The other
+columns work fine.
+
+cheers
+
+Xavier
+
+
+On Sun, 03 Jul 2005 12:00:08 +0200
+xfce-goodies-dev-request at berlios.de wrote:
+
+>  	Hi:
+> 
+> > Hm .... i can't reproduce the bug :(
+> > Appears this segfault everytime you sort the mem column like this ?
+> >
+> >Bye
+> >    Johannes
+> 
+>  	The problem does not appear in Slackware 10.1, but it
+> appears in Slackware 10.0. May be it is a GTK/pango/other_sw version
+> issue!?
+> 
+> Xavier
+
+
+From bugzilla-daemon at xfce.org  Tue Jul  5 17:35:22 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue,  5 Jul 2005 15:35:22 +0000 (UTC)
+Subject: [Bug 1059]  New: DateTime Too Complicated
+Message-ID: <20050705153522.D03FE1F719C@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1059
+
+           Summary: DateTime Too Complicated
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Keywords: usability
+          Severity: enhancement
+          Priority: Medium
+         Component: datetime
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: erikharrison at gmail.com
+
+
+Upgrading from an old SVN pull of the panel to the July 1st snapshot resulted in my panel loosing the 
+datetime plugin. Readding the plugin showed that it's interface has changed fundamentally it seems, 
+from a simple point and click to entering format strings. Also, removing the date from the view in the 
+plugin is non-obvious (removing the format string entirely).
+
+It should be possible to switch between 12 hour am/pm times and 24 hours military times without 
+reading a man page.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue Jul  5 06:27:19 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue,  5 Jul 2005 04:27:19 +0000 (UTC)
+Subject: [Bug 1055]  New: Can't change tasklist settings
+Message-ID: <20050705042719.7CDA41F70D5@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1055
+
+           Summary: Can't change tasklist settings
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: major
+          Priority: Medium
+         Component: taskbar
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: erikharrison at gmail.com
+
+
+I'm actually filing this for the new tasklist plugin in SVN.
+
+Removal of the small vertical bar on the left of the panel has removed the only
+reliable area for getting the plugin context menu for the tasklist. As a result,
+I  can't get to the settings for the plugin, nor can I remove it without editing
+the config file
+
+Reproducible: Always
+Steps to Reproduce:
+1. 
+2. 
+3.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Jul  6 06:21:03 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  6 Jul 2005 04:21:03 +0000 (UTC)
+Subject: [Bug 1055] Can't change tasklist settings
+Message-ID: <20050706042103.23D161F715E@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1055
+
+
+erikharrison at gmail.com changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+         AssignedTo|xfce-goodies-dev at berlios.de |jasper at xfce.org
+
+
+
+
+------- Additional Comments From erikharrison at gmail.com  2005-07-06 04:21 UTC -------
+I created this bug while very tired, and forgot basically how Bugzilla works.
+
+Reassigning to Jasper, since this is against the tasklist and not the taskbar.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Fri Jul  1 17:25:16 2005
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Fri, 01 Jul 2005 17:25:16 +0200
+Subject: xfc xmms2 graphical client
+In-Reply-To: <20050701125422.1c2e396e@cvc131.uab.es>
+References: <20050701100007.32709.98159.Mailman@bat.berlios.de> <20050701125422.1c2e396e@cvc131.uab.es>
+Message-ID: <42C5605C.3040305@unix-ag.uni-siegen.de>
+
+Xavier Otazu wrote:
+> 
+> 	Hi:
+> 
+> 	Since I want to start learning programming GUI interfaces in
+> Linux, I would like to start trying to code a graphical client for the
+> new xmms2 daemon/client architecture
+> (http://wiki.xmms2.xmms.se/index.php/Main_Page) using XFC. Some weeks
+> ago I coded my first XFC program which reads an image from file and
+> show it on screen ... :-)
+> 
+> 	Could you open to me an account on berlios to start a goodie
+> project? Do you prefer that I send a first version of this client in
+> order to create this goodie project?
+
+Having atleast a proof of concept would be nice. But nevertheless, you 
+can send me your login name and I'll add you to the project.
+
+BTW: I think Bernhard recently migrated the repositories to SVN, maybe a 
+short introduction would be helpful? ;)
+
+> cheers
+> Xavier
+
+Benedikt
+
+
+From jasper at xfce.org  Wed Jul  6 20:24:01 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Wed, 06 Jul 2005 20:24:01 +0200
+Subject: Howto to submit a new xfce-panel-plugin?
+References: <50080c08050701073240225f7b@mail.gmail.com>
+Message-ID: <pan.2005.07.06.18.24.01.111728@xfce.org>
+
+Op Fri, 01 Jul 2005 10:32:27 -0400, schreef Daniel Bobadilla:
+
+> Howto to submit a new xfce-panel-plugin?
+>    Any ideas
+
+Hmm, maybe we should add something about this on the website...
+
+Anyway, you can get access to the xfce-goodies project by sending your
+berlios login name to anyone with maintainer permissions (e.g. to me or
+benny or bernhard, or...) and after you've been added to the project, you
+can import your sources in SVN and do file releases.
+
+What kind of panel plugin were you talking about?
+
+	Jasper
+
+
+
+
+From dbobadil at gmail.com  Thu Jul  7 01:19:58 2005
+From: dbobadil at gmail.com (Daniel Bobadilla)
+Date: Wed, 6 Jul 2005 19:19:58 -0400
+Subject: Howto to submit a new xfce-panel-plugin?
+In-Reply-To: <pan.2005.07.06.18.24.01.111728@xfce.org>
+References: <50080c08050701073240225f7b@mail.gmail.com>
+	 <pan.2005.07.06.18.24.01.111728@xfce.org>
+Message-ID: <50080c0805070616193ed9c1c2@mail.gmail.com>
+
+An screenshot plugin for the xfce4-panel
+
+2005/7/6, Jasper Huijsmans <jasper at xfce.org>:
+> Op Fri, 01 Jul 2005 10:32:27 -0400, schreef Daniel Bobadilla:
+> 
+> > Howto to submit a new xfce-panel-plugin?
+> >    Any ideas
+> 
+> Hmm, maybe we should add something about this on the website...
+> 
+> Anyway, you can get access to the xfce-goodies project by sending your
+> berlios login name to anyone with maintainer permissions (e.g. to me or
+> benny or bernhard, or...) and after you've been added to the project, you
+> can import your sources in SVN and do file releases.
+> 
+> What kind of panel plugin were you talking about?
+> 
+>         Jasper
+> 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+
+
+From bugzilla-daemon at xfce.org  Thu Jul  7 02:10:26 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu,  7 Jul 2005 00:10:26 +0000 (UTC)
+Subject: [Bug 1064]  New: Weather Plugin Hangs Panel If Not Network Access.
+Message-ID: <20050707001026.0B0811F70D5@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1064
+
+           Summary: Weather Plugin Hangs Panel If Not Network Access.
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: weather
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: erikharrison at gmail.com
+
+
+If there is no network access then the weather plugin hangs the panel (at least
+SVN), until a network timeout occurs.
+
+Is this fixable without out of process plugins?
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu Jul  7 02:15:53 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu,  7 Jul 2005 00:15:53 +0000 (UTC)
+Subject: [Bug 1064] Weather Plugin Hangs Panel If Not Network Access.
+Message-ID: <20050707001553.569F71F70D5@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1064
+
+
+
+
+
+------- Additional Comments From benny at xfce.org  2005-07-07 00:15 UTC -------
+Sure, the plugin could simply use non-blocking I/O on the socket.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From jasper at xfce.org  Thu Jul  7 07:57:31 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Thu, 07 Jul 2005 07:57:31 +0200
+Subject: Howto to submit a new xfce-panel-plugin?
+In-Reply-To: <50080c0805070616193ed9c1c2@mail.gmail.com>
+References: <50080c08050701073240225f7b@mail.gmail.com>
+	 <pan.2005.07.06.18.24.01.111728@xfce.org>
+	 <50080c0805070616193ed9c1c2@mail.gmail.com>
+Message-ID: <1120715852.4071.2.camel@localhost>
+
+Op wo, 06-07-2005 te 19:19 -0400, schreef Daniel Bobadilla:
+> An screenshot plugin for the xfce4-panel
+
+Ok, sounds interesting. Just let me know your berlios login name and we
+can get started.
+
+	Jasper
+
+
+
+
+From dbobadil at gmail.com  Thu Jul  7 15:51:23 2005
+From: dbobadil at gmail.com (Daniel Bobadilla)
+Date: Thu, 7 Jul 2005 09:51:23 -0400
+Subject: Howto to submit a new xfce-panel-plugin?
+In-Reply-To: <1120715852.4071.2.camel@localhost>
+References: <50080c08050701073240225f7b@mail.gmail.com>
+	 <pan.2005.07.06.18.24.01.111728@xfce.org>
+	 <50080c0805070616193ed9c1c2@mail.gmail.com>
+	 <1120715852.4071.2.camel@localhost>
+Message-ID: <50080c08050707065149e06823@mail.gmail.com>
+
+OK , I'll make an account on berlios site, cheers!
+
+
+2005/7/7, Jasper Huijsmans <jasper at xfce.org>:
+> Op wo, 06-07-2005 te 19:19 -0400, schreef Daniel Bobadilla:
+> > An screenshot plugin for the xfce4-panel
+> 
+> Ok, sounds interesting. Just let me know your berlios login name and we
+> can get started.
+> 
+>         Jasper
+> 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+
+
+From bugzilla-daemon at xfce.org  Fri Jul  8 07:23:56 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri,  8 Jul 2005 05:23:56 +0000 (UTC)
+Subject: [Bug 1065]  New: panel crashes when clicking on weather plugin
+Message-ID: <20050708052356.85B551F7136@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1065
+
+           Summary: panel crashes when clicking on weather plugin
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: weather
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: iron at ironiq.hu
+
+
+I have an x86_64 (amd64) machine with x86_64 specific distro (frugalware). I've
+noticed that if i've clicked on the weather plugin to get the forecast, the
+panel have gone to segfault.
+
+Reproducible: Always
+Steps to Reproduce:
+1. Add the weather plugin to the panel
+2. Click on it
+
+
+Actual Results:  
+The panel crashes. After restarting panel, everything ok until i click on the
+plugin again.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From spam at paulisageek.com  Fri Jul 15 19:48:32 2005
+From: spam at paulisageek.com (Paul Tarjan)
+Date: Fri, 15 Jul 2005 17:48:32 +0000 (UTC)
+Subject: Gmail Plugin
+References: <edd1dbc305062112362cdc73c0@mail.gmail.com>
+Message-ID: <loom.20050715T194702-793@post.gmane.org>
+
+Ralph Allan Rice <ralph.rice <at> gmail.com> writes:
+
+> 
+> Hello everyone,
+> 
+> I am very new to the list and I am sorry for intruding.  I was
+> wondering if anyone has been working on a mail notification xfce-panel
+> plugin for GMail.   I recently noticed that Google has an Atom XML
+> interface (https://mail.google.com/mail/feed/atom) where you can find
+> out if you have new messages.
+> 
+> Anyway, as far as I can tell, there is no xfce panel plugin currently
+> that handles GMail, but I think it would be a great addition.
+> 
+> If no one is working on it, I would like to get my hands dirty at it.
+> 
+> Thanks,
+> Ralph
+> 
+
+I would love to see this developed. It could be similar to gnome's
+mail-notification application (which presently doesn't work with Gmail, but I'm
+informing them of this Atom).
+
+If someone wants to hold my hand during this exercise I could code it up.
+
+Thanks
+
+Paul
+
+
+
+
+
+From noreply at berlios.de  Sun Jul 17 04:22:11 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Sat, 16 Jul 2005 18:22:11 -0800 (AKDT)
+Subject: [Bug #4600] fix to battery plugin acpi percent>100
+Message-ID: <200507170222.j6H2MBWb002969@unicorn.berlios.de>
+
+Bug #4600, was updated on 2005-Jul-16 18:22
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: xfce4-battery-plugin
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: aurther
+Assigned to : none
+Summary: fix to battery plugin acpi percent>100
+
+Details: ACPI battery percent is shown as greater than zero. This is due to a quirk in the way kernel reports battery capacity in /proc/
+
+Result is that when the battery is fully charged the plugin spits out an error message every second and shows battery percentage >100
+
+Fix:
+to file libacpi.c
+
+560c560
+<             acpistate->percentage = percent;
+---
+>             acpistate->percentage = (percent>100?100:percent);
+
+(sorry for the haphazard bug report... but i have a feeling that this code is not being maintained)
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=4600&group_id=910
+
+
+From bugzilla-daemon at xfce.org  Tue Jul 19 16:52:21 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 19 Jul 2005 14:52:21 +0000 (UTC)
+Subject: [Bug 1080] panel ontopness broken
+Message-ID: <20050719145221.ACA5F1F7049@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1080
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+         AssignedTo|xfce-goodies-dev at berlios.de |jasper at xfce.org
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-07-19 14:52 UTC -------
+Due to changes in focus handling, the panel is now always on top. Maximization
+should not cover the panel area, though.
+
+If the application is trying to emulate some fullscreen behaviour you could try
+using Alt-F11 keybinding to use real fullscreen.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue Jul 19 16:48:27 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 19 Jul 2005 14:48:27 +0000 (UTC)
+Subject: [Bug 1080] panel ontopness broken
+Message-ID: <20050719144827.9C48E1F7046@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1080
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+          Component|taskbar                     |xfce4-panel
+            Product|Xfce Panel Plugins          |Xfce
+   Target Milestone|---                         |unknown
+            Version|unspecified                 |unknown
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From stefan at desire.ch  Tue Jul 26 15:14:11 2005
+From: stefan at desire.ch (Stefan Ott)
+Date: Tue, 26 Jul 2005 15:14:11 +0200
+Subject: xfce4-hwsensors-plugin
+Message-ID: <20050726131411.GD11490@desire.ch>
+
+Hello
+
+I created a new xfce panel plugin based on the xfce4-sensors-plugin,
+currently called xfce4-hwsensors-plugin. I announced this in the forum
+and benny told me, this was the right place. So here I am :)
+
+Benny said he's prefer to see the two projects merged. As I made
+substantial changes to the UI and some internal parts, it probably won't
+be easy to merge the projects in a way which allows the plugin to look
+like the current sensors plugin, thus a merge would probably mean that
+the current plugin is to be replaced by mine. That was also the reason
+why I decided to create a new project instead of sending a huge patch to
+the original author.
+
+The plugin still has some small issues but it should work. The current
+URL is http://tools.desire.ch/xfce4-hwsensors-plugin/ (for those who'd
+like to take a look). Debian packages for sid x86 are available from the
+same website.
+
+Cheers
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+"Give a man a fire and he's warm for a day, but set fire to him and he's
+warm for the rest of his life."  -- Terry Pratchett, Jingo
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050726/33699b5b/attachment.pgp>
+
+From theli at ukr.net  Tue Jul 26 15:34:39 2005
+From: theli at ukr.net (Anton Romanov)
+Date: Tue, 26 Jul 2005 16:34:39 +0300
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <20050726131411.GD11490@desire.ch>
+References: <20050726131411.GD11490@desire.ch>
+Message-ID: <20050726163439.603338d9@theli>
+
+On Tue, 26 Jul 2005 15:14:11 +0200
+Stefan Ott <stefan at desire.ch> wrote:
+
+> thus a merge would probably mean that
+> the current plugin is to be replaced by mine. 
+why?
+maybe someone liked old look  ..
+i do.
+
+let's just have an alternative :)
+
+-- 
+
+Linux theli 2.6.11-gentoo-r6 #4 SMP Wed Jun 29 17:40:15 EEST 2005 i686 Intel(R) Celeron(R) CPU 2.00GHz GenuineIntel GNU/Linux
+
+
+From stefan at desire.ch  Tue Jul 26 15:52:47 2005
+From: stefan at desire.ch (Stefan Ott)
+Date: Tue, 26 Jul 2005 15:52:47 +0200
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <20050726163439.603338d9@theli>
+References: <20050726131411.GD11490@desire.ch> <20050726163439.603338d9@theli>
+Message-ID: <20050726135247.GE11490@desire.ch>
+
+On Tue, Jul 26, 2005 at 04:34:39PM +0300, Anton Romanov wrote:
+> On Tue, 26 Jul 2005 15:14:11 +0200
+> Stefan Ott <stefan at desire.ch> wrote:
+> 
+> > thus a merge would probably mean that
+> > the current plugin is to be replaced by mine. 
+> why?
+> maybe someone liked old look  ..
+> i do.
+> 
+> let's just have an alternative :)
+
+that's exactly what I meant - don't replace a tool if the replacement
+can't offer all the features the original can.
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+"Give a man a fire and he's warm for a day, but set fire to him and he's
+warm for the rest of his life."  -- Terry Pratchett, Jingo
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050726/09f7641c/attachment.pgp>
+
+From timystery at arcor.de  Tue Jul 26 17:12:40 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Tue, 26 Jul 2005 17:12:40 +0200
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <20050726131411.GD11490@desire.ch>
+References: <20050726131411.GD11490@desire.ch>
+Message-ID: <1122390760.1827.7.camel@TIM3000>
+
+Am Dienstag, den 26.07.2005, 15:14 +0200 schrieb Stefan Ott:
+> Hello
+> 
+> I created a new xfce panel plugin based on the xfce4-sensors-plugin,
+> currently called xfce4-hwsensors-plugin. I announced this in the forum
+> and benny told me, this was the right place. So here I am :)
+> 
+> Benny said he's prefer to see the two projects merged. As I made
+> substantial changes to the UI and some internal parts, it probably won't
+> be easy to merge the projects in a way which allows the plugin to look
+> like the current sensors plugin, thus a merge would probably mean that
+> the current plugin is to be replaced by mine. That was also the reason
+> why I decided to create a new project instead of sending a huge patch to
+> the original author.
+
+actually, looking at the "next generation", i can't imagine that the
+changes were so huge. thus, regarding the display, 
+
+> 
+> The plugin still has some small issues but it should work. The current
+> URL is http://tools.desire.ch/xfce4-hwsensors-plugin/ (for those who'd
+> like to take a look). Debian packages for sid x86 are available from the
+> same website.
+> 
+> Cheers
+
+i just think that adding a checkbox or radio button menu "display
+graphically" <--> "display numerically" whould be the only difference in
+the UI; internally this switch could handle everything.
+
+besides, why didn't you use version 0.5.0 to apply your changes?
+
+as a further note: both my two temperature sensors with 45?C and 32?C
+had no green bar...
+
+
+bye, fabian
+
+
+
+
+
+From stefan at desire.ch  Wed Jul 27 00:29:41 2005
+From: stefan at desire.ch (Stefan Ott)
+Date: Wed, 27 Jul 2005 00:29:41 +0200
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <1122390760.1827.7.camel@TIM3000>
+References: <20050726131411.GD11490@desire.ch> <1122390760.1827.7.camel@TIM3000>
+Message-ID: <20050726222941.GG11490@desire.ch>
+
+Hi
+
+On Tue, Jul 26, 2005 at 05:12:40PM +0200, Fabian Nowak wrote:
+
+> actually, looking at the "next generation", i can't imagine that the
+> changes were so huge. thus, regarding the display, 
+
+> i just think that adding a checkbox or radio button menu "display
+> graphically" <--> "display numerically" whould be the only difference in
+> the UI; internally this switch could handle everything.
+
+well, we could try to implement that.
+
+> besides, why didn't you use version 0.5.0 to apply your changes?
+
+because 0.3.0 was the latest one i could find on
+http://developer.berlios.de/project/showfiles.php?group_id=910. where
+can i get a copy of version 0.5.0?
+
+> as a further note: both my two temperature sensors with 45?C and 32?C
+> had no green bar...
+
+did you set a reasonable maximum? the default is 7000, so you probably
+won't see anything for a value of 45...
+
+regards
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+"Give a man a fire and he's warm for a day, but set fire to him and he's
+warm for the rest of his life."  -- Terry Pratchett, Jingo
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050727/3a991a09/attachment.pgp>
+
+From timystery at arcor.de  Wed Jul 27 10:40:34 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Wed, 27 Jul 2005 10:40:34 +0200
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <20050726222941.GG11490@desire.ch>
+References: <20050726131411.GD11490@desire.ch>
+	 <1122390760.1827.7.camel@TIM3000>  <20050726222941.GG11490@desire.ch>
+Message-ID: <1122453634.1737.10.camel@TIM3000>
+
+Am Mittwoch, den 27.07.2005, 00:29 +0200 schrieb Stefan Ott:
+> Hi
+> 
+> On Tue, Jul 26, 2005 at 05:12:40PM +0200, Fabian Nowak wrote:
+> 
+> > actually, looking at the "next generation", i can't imagine that the
+> > changes were so huge. thus, regarding the display, 
+> 
+> > i just think that adding a checkbox or radio button menu "display
+> > graphically" <--> "display numerically" whould be the only difference in
+> > the UI; internally this switch could handle everything.
+> 
+> well, we could try to implement that.
+
+so it's up to you, you have the changes ;)
+
+but i'm not quite sure, if one tooltip for the whole plugin wouldn't be
+better...
+
+> 
+> > besides, why didn't you use version 0.5.0 to apply your changes?
+> 
+> because 0.3.0 was the latest one i could find on
+> http://developer.berlios.de/project/showfiles.php?group_id=910. where
+> can i get a copy of version 0.5.0?
+
+actually, by svn or try
+http://mitglied.lycos.de/timshome/download/xfce4-sensors-plugin-0.5.0.tar.gz or  http://mitglied.lycos.de/timshome/download/xfce4-sensors-plugin-0.5.0.tar.bz2
+> 
+> > as a further note: both my two temperature sensors with 45?C and 32?C
+> > had no green bar...
+> 
+> did you set a reasonable maximum? the default is 7000, so you probably
+> won't see anything for a value of 45...
+
+aehm, i didn't set anything because i'm not used to setting many values
+in Xfce ;)
+the 0.5.0 code contains some trivial checks for sensor values and tries
+to classify temperature, speed i.e. rpm, voltage. this could be used to
+automatically find maximum values, like 70?C for temp, 5000rpm for fans,
+and perhaps 13V for valotages, 7000 for any other.
+
+> 
+> regards
+
+bye, fabian
+
+
+
+
+From timystery at arcor.de  Wed Jul 27 12:11:57 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Wed, 27 Jul 2005 12:11:57 +0200
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <20050726222941.GG11490@desire.ch>
+References: <20050726131411.GD11490@desire.ch>
+	 <1122390760.1827.7.camel@TIM3000>  <20050726222941.GG11490@desire.ch>
+Message-ID: <1122459117.7517.2.camel@TIM3000>
+
+> because 0.3.0 was the latest one i could find on
+> http://developer.berlios.de/project/showfiles.php?group_id=910. where
+> can i get a copy of version 0.5.0?
+
+ok, now all is up on berlios, even version 0.5.1 with enabled i18n. so
+if anyone might be interested in tranlating (stefan: it and fr?), he's
+very welcome
+
+bye, fabian
+
+
+
+
+From mpol at gmx.net  Wed Jul 27 12:09:40 2005
+From: mpol at gmx.net (Marcel Pol)
+Date: Wed, 27 Jul 2005 12:09:40 +0200
+Subject: new plugin: quicklauncher
+In-Reply-To: <20050217190923.95958.qmail@web26008.mail.ukl.yahoo.com>
+References: <20050217190923.95958.qmail@web26008.mail.ukl.yahoo.com>
+Message-ID: <42E75D64.7010503@gmx.net>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+masse nicolas wrote:
+| I'll be waiting a few feedback from the users touching
+| at it.
+
+I'm having problems compiling it on Mandriva Cooker with Xfce 4.2.2 and
+gcc 4.0.1:
+
+[...]
+gcc -DHAVE_CONFIG_H -I. -I. -I.. -DPACKAGE_LOCALE_DIR=\"\" -DXTHREADS
+- -D_REENTRANT -DXUSE_MTSAFE_API -I/usr/include/xfce4 -I/usr/X11R6/include
+- -I/usr/include/libxml2 -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include
+- -I/usr/include/pango-1.0 -I/usr/include/freetype2
+- -I/usr/include/freetype2/freetype2
+- -I/usr/include/freetype2/freetype2/config -I/usr/include/glib-2.0
+- -I/usr/lib/glib-2.0/include -I/usr/include/atk-1.0
+- -DXFCE_PANEL_THREADED=1 "-DXFCE_PANEL_LOCK()=gdk_threads_enter()"
+"-DXFCE_PANEL_UNLOCK()=gdk_threads_leave()" -g -O2 -MT
+libquicklauncher_la-callbacks.lo -MD -MP -MF
+.deps/libquicklauncher_la-callbacks.Tpo -c callbacks.c  -fPIC -DPIC -o
+.libs/libquicklauncher_la-callbacks.o
+In file included from /usr/include/xfce4/libxfce4util/libxfce4util.h:34,
+~                 from types.h:27,
+~                 from callbacks.h:19,
+~                 from callbacks.c:29:
+/usr/include/xfce4/libxfce4util/i18n.h:94:2: warning: #warning "National
+language support requested but GETTEXT_PACKAGE undefined"
+callbacks.c:33: error: static declaration of '_icon_window' follows
+non-static declaration
+callbacks.h:23: error: previous declaration of '_icon_window' was here
+make[2]: *** [libquicklauncher_la-callbacks.lo] Error 1
+make[2]: Leaving directory
+`/home/mpol/rpm/SOURCES/xfce4-quicklauncher-plugin-0.8/panel-plugin'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory
+`/home/mpol/rpm/SOURCES/xfce4-quicklauncher-plugin-0.8'
+make: *** [all] Error 2
+
+Maybe it's a gcc 4.0.1 error?
+Regards,
+- --
+Marcel Pol
+
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+Comment: Using GnuPG with Thunderbird - http://enigmail.mozdev.org
+
+iD8DBQFC511kMgeuL0xhZZ4RAsjOAKCTxmB5ozEhXulQs2g3AZklFpQ1dgCffkz/
+75IJGzdphX6Gq37Bj/lXMWQ=
+=6yen
+-----END PGP SIGNATURE-----
+
+
+From pollux at xfce.org  Wed Jul 27 12:14:23 2005
+From: pollux at xfce.org (=?ISO-8859-1?Q?Jean-Fran=E7ois?= Wauthy)
+Date: Wed, 27 Jul 2005 12:14:23 +0200
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <1122459117.7517.2.camel@TIM3000>
+References: <20050726131411.GD11490@desire.ch>
+	 <1122390760.1827.7.camel@TIM3000>  <20050726222941.GG11490@desire.ch>
+	 <1122459117.7517.2.camel@TIM3000>
+Message-ID: <1122459263.13162.0.camel@localhost>
+
+Le mercredi 27 juillet 2005 ? 12:11 +0200, Fabian Nowak a ?crit :
+> > because 0.3.0 was the latest one i could find on
+> > http://developer.berlios.de/project/showfiles.php?group_id=910. where
+> > can i get a copy of version 0.5.0?
+> 
+> ok, now all is up on berlios, even version 0.5.1 with enabled i18n. so
+> if anyone might be interested in tranlating (stefan: it and fr?), he's
+> very welcome
+
+you can send a mail to the xfce-i18n ML to tell to the people there they
+can translate that one too now...
+
+cheers
+-- 
+Jean-Fran?ois Wauthy <pollux at xfce.org>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050727/fd8951f1/attachment.pgp>
+
+From theli at ukr.net  Wed Jul 27 12:31:39 2005
+From: theli at ukr.net (Anton Romanov)
+Date: Wed, 27 Jul 2005 13:31:39 +0300
+Subject: xkb plugin
+Message-ID: <20050727133139.647ede96@theli>
+
+why there are no files for xkb plugin under 0.3.3 release?
+
+
+From masse_nicolas at yahoo.fr  Wed Jul 27 13:50:47 2005
+From: masse_nicolas at yahoo.fr (Nicolas Masse)
+Date: Wed, 27 Jul 2005 13:50:47 +0200
+Subject: new plugin: quicklauncher
+In-Reply-To: <42E75D64.7010503@gmx.net>
+References: <20050217190923.95958.qmail@web26008.mail.ukl.yahoo.com>
+	<42E75D64.7010503@gmx.net>
+Message-ID: <20050727135047.37aad256.masse_nicolas@yahoo.fr>
+
+First of all, many thanks for reporting the bug.
+Well, can you try the version in SVN please? I think this is fixed.
+
+
+On Wed, 27 Jul 2005 12:09:40 +0200
+Marcel Pol <mpol at gmx.net> wrote:
+
+> -----BEGIN PGP SIGNED MESSAGE-----
+> Hash: SHA1
+> 
+> masse nicolas wrote:
+> | I'll be waiting a few feedback from the users touching
+> | at it.
+> 
+> I'm having problems compiling it on Mandriva Cooker with Xfce 4.2.2 and
+> gcc 4.0.1:
+> 
+> [...]
+> gcc -DHAVE_CONFIG_H -I. -I. -I.. -DPACKAGE_LOCALE_DIR=\"\" -DXTHREADS
+> - -D_REENTRANT -DXUSE_MTSAFE_API -I/usr/include/xfce4 -I/usr/X11R6/include
+> - -I/usr/include/libxml2 -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include
+> - -I/usr/include/pango-1.0 -I/usr/include/freetype2
+> - -I/usr/include/freetype2/freetype2
+> - -I/usr/include/freetype2/freetype2/config -I/usr/include/glib-2.0
+> - -I/usr/lib/glib-2.0/include -I/usr/include/atk-1.0
+> - -DXFCE_PANEL_THREADED=1 "-DXFCE_PANEL_LOCK()=gdk_threads_enter()"
+> "-DXFCE_PANEL_UNLOCK()=gdk_threads_leave()" -g -O2 -MT
+> libquicklauncher_la-callbacks.lo -MD -MP -MF
+> .deps/libquicklauncher_la-callbacks.Tpo -c callbacks.c  -fPIC -DPIC -o
+> .libs/libquicklauncher_la-callbacks.o
+> In file included from /usr/include/xfce4/libxfce4util/libxfce4util.h:34,
+> ~                 from types.h:27,
+> ~                 from callbacks.h:19,
+> ~                 from callbacks.c:29:
+> /usr/include/xfce4/libxfce4util/i18n.h:94:2: warning: #warning "National
+> language support requested but GETTEXT_PACKAGE undefined"
+> callbacks.c:33: error: static declaration of '_icon_window' follows
+> non-static declaration
+> callbacks.h:23: error: previous declaration of '_icon_window' was here
+> make[2]: *** [libquicklauncher_la-callbacks.lo] Error 1
+> make[2]: Leaving directory
+> `/home/mpol/rpm/SOURCES/xfce4-quicklauncher-plugin-0.8/panel-plugin'
+> make[1]: *** [all-recursive] Error 1
+> make[1]: Leaving directory
+> `/home/mpol/rpm/SOURCES/xfce4-quicklauncher-plugin-0.8'
+> make: *** [all] Error 2
+> 
+> Maybe it's a gcc 4.0.1 error?
+> Regards,
+> - --
+> Marcel Pol
+> 
+> 
+> -----BEGIN PGP SIGNATURE-----
+> Version: GnuPG v1.4.0 (GNU/Linux)
+> Comment: Using GnuPG with Thunderbird - http://enigmail.mozdev.org
+> 
+> iD8DBQFC511kMgeuL0xhZZ4RAsjOAKCTxmB5ozEhXulQs2g3AZklFpQ1dgCffkz/
+> 75IJGzdphX6Gq37Bj/lXMWQ=
+> =6yen
+> -----END PGP SIGNATURE-----
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Wed Jul 27 15:16:24 2005
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Wed, 27 Jul 2005 15:16:24 +0200
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <1122453634.1737.10.camel@TIM3000>
+References: <20050726131411.GD11490@desire.ch>	 <1122390760.1827.7.camel@TIM3000>  <20050726222941.GG11490@desire.ch> <1122453634.1737.10.camel@TIM3000>
+Message-ID: <42E78928.9070109@unix-ag.uni-siegen.de>
+
+Fabian Nowak wrote:
+>>>actually, looking at the "next generation", i can't imagine that the
+>>>changes were so huge. thus, regarding the display, 
+>>
+>>>i just think that adding a checkbox or radio button menu "display
+>>>graphically" <--> "display numerically" whould be the only difference in
+>>>the UI; internally this switch could handle everything.
+>>
+>>well, we could try to implement that.
+> 
+> so it's up to you, you have the changes ;)
+
+ From my POV, we're talking solely about UI differences here. I don't 
+see any need to have two plugins that do exactly the same and differ 
+only in parts of the UI. This would turn into a real maintaince 
+overhead: Duplicated translations, duplicated bug fixes, duplicated Unix 
+ports, duplicated package maintaince, etc. And all this for no real 
+benefit. I'd really welcome if you could just merge your projects and 
+add a radio button (or whatever) to switch between the different UIs.
+
+> bye, fabian
+
+greets,
+Benedikt
+
+
+From rmg57 at telus.net  Wed Jul 27 15:30:13 2005
+From: rmg57 at telus.net (Myles Green)
+Date: Wed, 27 Jul 2005 07:30:13 -0600
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <20050726222941.GG11490@desire.ch>
+References: <20050726131411.GD11490@desire.ch>
+	 <1122390760.1827.7.camel@TIM3000>  <20050726222941.GG11490@desire.ch>
+Message-ID: <1122471013.8673.9.camel@localhost.localdomain>
+
+On Wed, 2005-27-07 at 00:29 +0200, Stefan Ott wrote:
+> Hi
+> 
+> On Tue, Jul 26, 2005 at 05:12:40PM +0200, Fabian Nowak wrote:
+> 
+> > actually, looking at the "next generation", i can't imagine that the
+> > changes were so huge. thus, regarding the display, 
+> 
+> > i just think that adding a checkbox or radio button menu "display
+> > graphically" <--> "display numerically" whould be the only difference in
+> > the UI; internally this switch could handle everything.
+> 
+> well, we could try to implement that.
+> 
+> > besides, why didn't you use version 0.5.0 to apply your changes?
+> 
+> because 0.3.0 was the latest one i could find on
+> http://developer.berlios.de/project/showfiles.php?group_id=910. where
+> can i get a copy of version 0.5.0?
+> 
+> > as a further note: both my two temperature sensors with 45?C and 32?C
+> > had no green bar...
+> 
+> did you set a reasonable maximum? the default is 7000, so you probably
+> won't see anything for a value of 45...
+> 
+> regards
+
+Well, for what it's worth, I happen to like what Stefan is doing as it
+matches up with such plugins as the system load plugin, the netload
+plugin, and the disk performance plugin all of which I happen to be
+using ATM. At the same time, there is nothing wrong with the freedom to
+choose. So, I say combine the two or keep them separate; it's up to
+Stefan and Fabian to either work together or not. Again, the freedom to
+choose :-)
+
+Have a nice day folks!
+
+Best,
+Myles
+-- 
+Robert M. Green :: Calgary AB Canada
+Debian GNU/Linux Unstable "Sid"
+"Linux *is* user-friendly, it's just 
+picky about who it's friends are!"
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050727/d17469e7/attachment.pgp>
+
+From mpol at gmx.net  Wed Jul 27 15:31:19 2005
+From: mpol at gmx.net (Marcel Pol)
+Date: Wed, 27 Jul 2005 15:31:19 +0200
+Subject: new plugin: quicklauncher
+In-Reply-To: <20050727135047.37aad256.masse_nicolas@yahoo.fr>
+References: <20050217190923.95958.qmail@web26008.mail.ukl.yahoo.com>	<42E75D64.7010503@gmx.net> <20050727135047.37aad256.masse_nicolas@yahoo.fr>
+Message-ID: <42E78CA7.4040207@gmx.net>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Nicolas Masse wrote:
+| First of all, many thanks for reporting the bug.
+| Well, can you try the version in SVN please? I think this is fixed.
+
+Thanks, it's fixed indeed.
+
+- --
+Marcel Pol
+
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+Comment: Using GnuPG with Thunderbird - http://enigmail.mozdev.org
+
+iD8DBQFC54ynMgeuL0xhZZ4RArYUAJ4lWdUjfbxOnzxy+VGg8TSi8M9ESACaAqH6
+lUbCjzcip+y55NYPbK2Ej7I=
+=bbiT
+-----END PGP SIGNATURE-----
+
+
+From timystery at arcor.de  Wed Jul 27 16:43:30 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Wed, 27 Jul 2005 16:43:30 +0200
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <42E78928.9070109@unix-ag.uni-siegen.de>
+References: <20050726131411.GD11490@desire.ch>
+	 <1122390760.1827.7.camel@TIM3000>  <20050726222941.GG11490@desire.ch>
+	 <1122453634.1737.10.camel@TIM3000> <42E78928.9070109@unix-ag.uni-siegen.de>
+Message-ID: <1122475410.21940.4.camel@TIM3000>
+
+Am Mittwoch, den 27.07.2005, 15:16 +0200 schrieb Benedikt Meurer:
+> Fabian Nowak wrote:
+> >>>actually, looking at the "next generation", i can't imagine that the
+> >>>changes were so huge. thus, regarding the display, 
+> >>
+> >>>i just think that adding a checkbox or radio button menu "display
+> >>>graphically" <--> "display numerically" whould be the only difference in
+> >>>the UI; internally this switch could handle everything.
+> >>
+> >>well, we could try to implement that.
+> > 
+> > so it's up to you, you have the changes ;)
+> 
+>  From my POV, we're talking solely about UI differences here. I don't 
+> see any need to have two plugins that do exactly the same and differ 
+> only in parts of the UI. This would turn into a real maintaince 
+> overhead: Duplicated translations, duplicated bug fixes, duplicated Unix 
+> ports, duplicated package maintaince, etc. And all this for no real 
+> benefit. I'd really welcome if you could just merge your projects and 
+> add a radio button (or whatever) to switch between the different UIs.
+
+Well, i thought i expressed myself clearly: it is possible to implement
+this switch option and with very few overhead handle the modification. 
+
+but i am not going to implment it as it was neither my idea to make the
+plugin more graphically nor does it fit my needs/wishes as a user, so i
+encourage stefan to implement all that stuff, but on base of 0.5.1, and
+become another project maintainer.
+
+but let's see what stefan has in mind... ;)
+
+greets, fabian
+
+
+
+
+From stefan at desire.ch  Wed Jul 27 17:00:56 2005
+From: stefan at desire.ch (Stefan Ott)
+Date: Wed, 27 Jul 2005 17:00:56 +0200
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <1122475410.21940.4.camel@TIM3000>
+References: <20050726131411.GD11490@desire.ch> <1122390760.1827.7.camel@TIM3000> <20050726222941.GG11490@desire.ch> <1122453634.1737.10.camel@TIM3000> <42E78928.9070109@unix-ag.uni-siegen.de> <1122475410.21940.4.camel@TIM3000>
+Message-ID: <20050727150056.GL11490@desire.ch>
+
+On Wed, Jul 27, 2005 at 04:43:30PM +0200, Fabian Nowak wrote:
+
+> Well, i thought i expressed myself clearly: it is possible to implement
+> this switch option and with very few overhead handle the modification. 
+> 
+> but i am not going to implment it as it was neither my idea to make the
+> plugin more graphically nor does it fit my needs/wishes as a user, so i
+> encourage stefan to implement all that stuff, but on base of 0.5.1, and
+> become another project maintainer.
+> 
+> but let's see what stefan has in mind... ;)
+
+Okay, I'm going to implement the switch and port my UI to the current
+0.5.1 version. It might take a couple of days, though :)
+
+It's good to hear that you implemented some sort of
+sensors-value-autodetection as manually setting the limits *is* rather
+annoying.
+
+Regards
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+"Give a man a fire and he's warm for a day, but set fire to him and he's
+warm for the rest of his life."  -- Terry Pratchett, Jingo
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050727/747409a1/attachment.pgp>
+
+From gildur at gmail.com  Thu Jul 28 19:06:05 2005
+From: gildur at gmail.com (Piotr Wolny)
+Date: Thu, 28 Jul 2005 19:06:05 +0200
+Subject: xfce4-websearch-plugin
+Message-ID: <42E9107D.8060702@gmail.com>
+
+Hello,
+
+i've just released first version of new Xfce plugin -
+xfce4-websearch-plugin. It allows to select browser and
+search engine (Google, Yahoo, ...) and provide a query on
+Xfce panel. It is available at:
+http://developer.berlios.de/project/showfiles.php?group_id=910
+
+Best regards,
+Piotr Wolny
+
+
+From timystery at arcor.de  Fri Jul 29 10:39:06 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Fri, 29 Jul 2005 10:39:06 +0200
+Subject: xfce4-websearch-plugin
+In-Reply-To: <42E9107D.8060702@gmail.com>
+References: <42E9107D.8060702@gmail.com>
+Message-ID: <1122626346.10272.2.camel@TIM3000>
+
+hi!
+
+nice plugin, so I translated it into german, see attached file. it
+perfectyl works with opera until now.
+
+i did'nt wrtie to xfce4-dev as its a translation topic and i doubt you
+are already inscribed to xfce-i18n at xfce.org mailing list.
+
+greets, fabian
+
+
+Am Donnerstag, den 28.07.2005, 19:06 +0200 schrieb Piotr Wolny:
+> Hello,
+> 
+> i've just released first version of new Xfce plugin -
+> xfce4-websearch-plugin. It allows to select browser and
+> search engine (Google, Yahoo, ...) and provide a query on
+> Xfce panel. It is available at:
+> http://developer.berlios.de/project/showfiles.php?group_id=910
+> 
+> Best regards,
+> Piotr Wolny
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: de.po.gz
+Type: application/x-gzip
+Size: 501 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050729/beb1e78c/attachment.bin>
+
+From noreply at berlios.de  Fri Jul 29 12:20:19 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Fri, 29 Jul 2005 12:20:19 +0200 (CEST)
+Subject: [Bug #4707] xfce4-netload-plugin "Error in ictl(sockfd)"
+Message-ID: <200507291020.j6TAKJfs006493@unicorn.berlios.de>
+
+Bug #4707, was updated on 2005-Jul-29 12:20
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: None
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: easylin
+Assigned to : none
+Summary: xfce4-netload-plugin "Error in ictl(sockfd)"
+
+Details: xfce4-netload-plugin with "Error in ictl(sockfd): Device not configured"  
+
+FreeBSD 5.4
+xfce4-netload-plugin 0.3.2
+
+when I configure a network interface, which were not "ifconfig .. up".
+it will appear non-stop messages behinde X
+
+Error in ictl(sockfd): Device not configured
+
+I think this "Warning" message should not so be bothersome...
+
+--
+Dependency: expat-1.95.8_3
+Dependency: pkgconfig-0.17.2
+Dependency: xorg-fonts-encodings-6.8.2
+Dependency: freetype2-2.1.10
+Dependency: jpeg-6b_3
+Dependency: xorg-libraries-6.8.2
+Dependency: libiconv-1.9.2_1
+Dependency: png-1.2.8_2
+Dependency: fontconfig-2.2.3,1
+Dependency: perl-5.8.7
+Dependency: bitstream-vera-1.10_1
+Dependency: gettext-0.14.5
+Dependency: libxml2-2.6.20
+Dependency: startup-notification-0.8_1
+Dependency: glib-2.6.5_1
+Dependency: xorg-fonts-truetype-6.8.2
+Dependency: tiff-3.7.3
+Dependency: libXft-2.1.7
+Dependency: shared-mime-info-0.16_1
+Dependency: libxfce4util-4.2.2
+Dependency: atk-1.9.1
+Dependency: pango-1.8.2
+Dependency: hicolor-icon-theme-0.5
+Dependency: gtk-2.6.8
+Dependency: dbh-1.0.24
+Dependency: libxfce4gui-4.2.2
+Dependency: xfce4-panel-4.2.2
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=4707&group_id=910
+
+
+From gildur at gmail.com  Fri Jul 29 19:28:44 2005
+From: gildur at gmail.com (Piotr Wolny)
+Date: Fri, 29 Jul 2005 19:28:44 +0200
+Subject: xfce4-websearch-plugin
+In-Reply-To: <1122626346.10272.2.camel@TIM3000>
+References: <42E9107D.8060702@gmail.com> <1122626346.10272.2.camel@TIM3000>
+Message-ID: <42EA674C.4090103@gmail.com>
+
+Fabian Nowak wrote:
+> nice plugin, so I translated it into german, see attached file. it
+> perfectyl works with opera until now.
+
+Thanks! I've added your translation to svn repository.
+
+Best regards,
+Piotr
+
+
+
+From stefan at desire.ch  Sat Jul 30 23:52:22 2005
+From: stefan at desire.ch (Stefan Ott)
+Date: Sat, 30 Jul 2005 23:52:22 +0200
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <1122471013.8673.9.camel@localhost.localdomain>
+References: <20050726131411.GD11490@desire.ch> <1122390760.1827.7.camel@TIM3000> <20050726222941.GG11490@desire.ch> <1122471013.8673.9.camel@localhost.localdomain>
+Message-ID: <20050730215222.GD17696@desire.ch>
+
+On Wed, Jul 27, 2005 at 07:30:13AM -0600, Myles Green wrote:
+
+> Well, for what it's worth, I happen to like what Stefan is doing as it
+> matches up with such plugins as the system load plugin, the netload
+> plugin, and the disk performance plugin all of which I happen to be
+> using ATM. At the same time, there is nothing wrong with the freedom to
+> choose. So, I say combine the two or keep them separate; it's up to
+> Stefan and Fabian to either work together or not. Again, the freedom to
+> choose :-)
+
+Okay, the new interface has been ported to the current svn version of
+the sensors plugin. Feel free to try it and send feedback - thanks.
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+"Give a man a fire and he's warm for a day, but set fire to him and he's
+warm for the rest of his life."  -- Terry Pratchett, Jingo
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050730/b237a75d/attachment.pgp>
+
+From rmg57 at telus.net  Sun Jul 31 07:40:54 2005
+From: rmg57 at telus.net (Myles Green)
+Date: Sat, 30 Jul 2005 23:40:54 -0600
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <20050730215222.GD17696@desire.ch>
+References: <20050726131411.GD11490@desire.ch>
+	 <1122390760.1827.7.camel@TIM3000> <20050726222941.GG11490@desire.ch>
+	 <1122471013.8673.9.camel@localhost.localdomain>
+	 <20050730215222.GD17696@desire.ch>
+Message-ID: <1122788454.24846.4.camel@localhost.localdomain>
+
+On Sat, 2005-30-07 at 23:52 +0200, Stefan Ott wrote:
+> Okay, the new interface has been ported to the current svn version of
+> the sensors plugin. Feel free to try it and send feedback - thanks.
+
+I've currently got the 0.0.1 .deb package installed, easy enough to
+remove though. Where is the svn located? I'd like to check it out.
+
+Thx
+Myles
+-- 
+Robert M. Green :: Calgary AB Canada
+Debian GNU/Linux Unstable "Sid"
+"Linux *is* user-friendly, it's just 
+picky about who it's friends are!"
+
+
+
+From timystery at arcor.de  Sun Jul 31 09:58:38 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Sun, 31 Jul 2005 09:58:38 +0200
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <1122788454.24846.4.camel@localhost.localdomain>
+References: <20050726131411.GD11490@desire.ch>
+	 <1122390760.1827.7.camel@TIM3000> <20050726222941.GG11490@desire.ch>
+	 <1122471013.8673.9.camel@localhost.localdomain>
+	 <20050730215222.GD17696@desire.ch>
+	 <1122788454.24846.4.camel@localhost.localdomain>
+Message-ID: <1122796719.5741.2.camel@TIM3000>
+
+Am Samstag, den 30.07.2005, 23:40 -0600 schrieb Myles Green:
+> On Sat, 2005-30-07 at 23:52 +0200, Stefan Ott wrote:
+> > Okay, the new interface has been ported to the current svn version of
+> > the sensors plugin. Feel free to try it and send feedback - thanks.
+> 
+> I've currently got the 0.0.1 .deb package installed, easy enough to
+> remove though. Where is the svn located? I'd like to check it out.
+
+svn checkout
+svn://svn.berlios.de/xfce-goodies/xfce4-sensors-plugin/trunk
+
+
+> Thx
+> Myles
+
+You're welcome, Fabian
+
+
+
+From rmg57 at telus.net  Sun Jul 31 15:26:20 2005
+From: rmg57 at telus.net (Myles Green)
+Date: Sun, 31 Jul 2005 07:26:20 -0600
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <1122796719.5741.2.camel@TIM3000>
+References: <20050726131411.GD11490@desire.ch>
+	 <1122390760.1827.7.camel@TIM3000> <20050726222941.GG11490@desire.ch>
+	 <1122471013.8673.9.camel@localhost.localdomain>
+	 <20050730215222.GD17696@desire.ch>
+	 <1122788454.24846.4.camel@localhost.localdomain>
+	 <1122796719.5741.2.camel@TIM3000>
+Message-ID: <1122816380.30539.3.camel@localhost.localdomain>
+
+On Sun, 2005-31-07 at 09:58 +0200, Fabian Nowak wrote:
+> Am Samstag, den 30.07.2005, 23:40 -0600 schrieb Myles Green:
+> > On Sat, 2005-30-07 at 23:52 +0200, Stefan Ott wrote:
+> > > Okay, the new interface has been ported to the current svn version of
+> > > the sensors plugin. Feel free to try it and send feedback - thanks.
+> > 
+> > I've currently got the 0.0.1 .deb package installed, easy enough to
+> > remove though. Where is the svn located? I'd like to check it out.
+> 
+> svn checkout
+> svn://svn.berlios.de/xfce-goodies/xfce4-sensors-plugin/trunk
+
+Ah! Many thanks, just checked out revision 754, will let you (all) know
+how it turns out.
+
+Best,
+Myles
+-- 
+Robert M. Green :: Calgary AB Canada
+Debian GNU/Linux Unstable "Sid"
+"Linux *is* user-friendly, it's just 
+picky about who it's friends are!"
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050731/509bf6c2/attachment.pgp>
+
+From rmg57 at telus.net  Sun Jul 31 15:37:42 2005
+From: rmg57 at telus.net (Myles Green)
+Date: Sun, 31 Jul 2005 07:37:42 -0600
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <1122816380.30539.3.camel@localhost.localdomain>
+References: <20050726131411.GD11490@desire.ch>
+	 <1122390760.1827.7.camel@TIM3000> <20050726222941.GG11490@desire.ch>
+	 <1122471013.8673.9.camel@localhost.localdomain>
+	 <20050730215222.GD17696@desire.ch>
+	 <1122788454.24846.4.camel@localhost.localdomain>
+	 <1122796719.5741.2.camel@TIM3000>
+	 <1122816380.30539.3.camel@localhost.localdomain>
+Message-ID: <1122817062.30539.10.camel@localhost.localdomain>
+
+On Sun, 2005-31-07 at 07:26 -0600, Myles Green wrote:
+> Ah! Many thanks, just checked out revision 754, will let you (all)
+> know
+> how it turns out.
+> 
+Oops! I did  a plain "./configure" (no flags etc.) followed by make as
+the mortal user (ie. non-root user). The output of make follows:
+
+make  all-recursive
+make[1]: Entering directory `/home/myles/tmp/xfce4-sensors-plugin'
+Making all in panel-plugin
+make[2]: Entering directory
+`/home/myles/tmp/xfce4-sensors-plugin/panel-plugin'
+if /bin/sh ../libtool --tag=CC --mode=compile gcc -DHAVE_CONFIG_H -I.
+-I. -I.. -DG_LOG_DOMAIN=\"xfce4-sensors-plugin\"   -DXTHREADS
+-I/usr/include/xfce4 -I/usr/X11R6/include -I/usr/include/libxml2
+-I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include
+-I/usr/include/pango-1.0 -I/usr/include/freetype2
+-I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include
+-I/usr/include/atk-1.0   -DXFCE_PANEL_THREADED=1 -DXFCE_PANEL_LOCK
+\(\)=gdk_threads_enter\(\) -DXFCE_PANEL_UNLOCK\(\)=gdk_threads_leave\(\)
+-DPACKAGE_LOCALE_DIR=\"/usr/local/share/locale\" -g -O2 -MT
+libsensors_la-sensors.lo -MD -MP -MF ".deps/libsensors_la-sensors.Tpo"
+-c -o libsensors_la-sensors.lo `test -f 'sensors.c' || echo
+'./'`sensors.c; \
+then mv -f ".deps/libsensors_la-sensors.Tpo"
+".deps/libsensors_la-sensors.Plo"; else rm -f
+".deps/libsensors_la-sensors.Tpo"; exit 1; fi
+mkdir .libs
+ gcc -DHAVE_CONFIG_H -I. -I. -I.. -DG_LOG_DOMAIN=\"xfce4-sensors-plugin
+\" -DXTHREADS -I/usr/include/xfce4 -I/usr/X11R6/include
+-I/usr/include/libxml2 -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include
+-I/usr/include/pango-1.0 -I/usr/include/freetype2
+-I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include
+-I/usr/include/atk-1.0 -DXFCE_PANEL_THREADED=1
+"-DXFCE_PANEL_LOCK()=gdk_threads_enter()"
+"-DXFCE_PANEL_UNLOCK()=gdk_threads_leave()" -DPACKAGE_LOCALE_DIR=
+\"/usr/local/share/locale\" -g -O2 -MT libsensors_la-sensors.lo -MD -MP
+-MF .deps/libsensors_la-sensors.Tpo -c sensors.c  -fPIC -DPIC
+-o .libs/libsensors_la-sensors.o
+In file included from sensors.c:21:
+sensors.h:40:29: error: sensors/sensors.h: No such file or directory
+In file included from sensors.c:21:
+sensors.h:126: warning: no semicolon at end of struct or union
+sensors.h:126: error: syntax error before '*' token
+sensors.h:169: error: syntax error before '}' token
+sensors.h:170: warning: data definition has no type or storage class
+sensors.h:178: error: syntax error before 't_sensors'
+sensors.h:178: warning: no semicolon at end of struct or union
+sensors.h:198: error: syntax error before '}' token
+sensors.h:199: warning: data definition has no type or storage class
+sensors.c: In function 'sensors_show_panel':
+sensors.c:28: error: 'st' undeclared (first use in this function)
+sensors.c:28: error: (Each undeclared identifier is reported only once
+sensors.c:28: error: for each function it appears in.)
+sensors.c:28: error: syntax error before ')' token
+sensors.c: At top level:
+sensors.c:78: error: syntax error before 't_sensors'
+sensors.c: In function 'sensors_get_percentage':
+sensors.c:80: error: 'st' undeclared (first use in this function)
+sensors.c:80: error: 'chipNum' undeclared (first use in this function)
+sensors.c:80: error: 'feature' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:92: error: syntax error before '*' token
+sensors.c: In function 'sensors_remove_graphical_panel':
+sensors.c:95: error: 'st' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:113: error: syntax error before '*' token
+sensors.c: In function 'sensors_update_graphical_panel':
+sensors.c:117: error: 'st' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:139: error: syntax error before '*' token
+sensors.c: In function 'sensors_add_graphical_panel':
+sensors.c:142: error: 'st' undeclared (first use in this function)
+sensors.c: In function 'sensors_set_orientation':
+sensors.c:220: error: 'st' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:252: error: syntax error before '*' token
+sensors.c: In function 'sensors_show_graphical_panel':
+sensors.c:254: error: 'st' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:265: error: syntax error before '*' token
+sensors.c: In function 'sensors_show_text_panel':
+sensors.c:274: error: 'st' undeclared (first use in this function)
+sensors.c: In function 'sensors_date_tooltip':
+sensors.c:425: error: 'st' undeclared (first use in this function)
+sensors.c:425: error: syntax error before ')' token
+sensors.c: At top level:
+sensors.c:525: error: syntax error before '*' token
+sensors.c: In function 'create_panel_widget':
+sensors.c:527: error: 'st' undeclared (first use in this function)
+sensors.c: In function 'execute_command':
+sensors.c:555: error: 'st' undeclared (first use in this function)
+sensors.c:555: error: syntax error before ')' token
+sensors.c: At top level:
+sensors.c:620: error: syntax error before '*' token
+sensors.c: In function 'sensors_new':
+sensors.c:625: error: 'st' undeclared (first use in this function)
+sensors.c:625: error: syntax error before ')' token
+sensors.c: In function 'sensors_free':
+sensors.c:789: error: 'st' undeclared (first use in this function)
+sensors.c: In function 'sensors_attach_callback':
+sensors.c:825: error: 'st' undeclared (first use in this function)
+sensors.c: In function 'sensors_set_size':
+sensors.c:836: error: 'st' undeclared (first use in this function)
+sensors.c:836: error: syntax error before ')' token
+sensors.c: At top level:
+sensors.c:844: error: syntax error before 't_sensors'
+sensors.c: In function 'getIdFromAddress':
+sensors.c:847: error: 'st' undeclared (first use in this function)
+sensors.c:847: error: 'chip' undeclared (first use in this function)
+sensors.c:848: error: 'addr' undeclared (first use in this function)
+sensors.c: In function 'sensors_write_config':
+sensors.c:864: error: 'st' undeclared (first use in this function)
+sensors.c:864: error: syntax error before ')' token
+sensors.c:869: warning: pointer targets in passing argument 3 of
+'xmlNewTextChild' differ in signedness
+sensors.c:871: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:871: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:874: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:874: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:877: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:877: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:880: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:880: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:883: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:883: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:886: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:886: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:890: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:890: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:893: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:893: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:897: warning: pointer targets in passing argument 3 of
+'xmlNewTextChild' differ in signedness
+sensors.c:899: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:899: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:903: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:903: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:912: warning: pointer targets in passing argument 3 of
+'xmlNewTextChild' differ in signedness
+sensors.c:915: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:915: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:918: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:918: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:921: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:921: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:924: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:924: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:927: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:927: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:930: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:930: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:933: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:933: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c: In function 'sensors_read_config':
+sensors.c:949: error: 'st' undeclared (first use in this function)
+sensors.c:949: error: syntax error before ')' token
+sensors.c:957: warning: pointer targets in passing argument 2 of
+'xmlStrEqual' differ in signedness
+sensors.c:962: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:968: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:974: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:980: warning: pointer targets in passing argument 1 of
+'g_strdup' differ in signedness
+sensors.c:986: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:992: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:999: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:1003: warning: pointer targets in passing argument 1 of
+'g_strdup' differ in signedness
+sensors.c:1016: warning: pointer targets in passing argument 2 of
+'xmlStrEqual' differ in signedness
+sensors.c:1024: warning: pointer targets in passing argument 1 of
+'g_strdup' differ in signedness
+sensors.c:1030: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:1049: warning: pointer targets in passing argument 2 of
+'xmlStrEqual' differ in signedness
+sensors.c:1057: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:1064: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:1075: warning: pointer targets in passing argument 1 of
+'g_strdup' differ in signedness
+sensors.c:1082: warning: pointer targets in passing argument 1 of
+'g_strdup' differ in signedness
+sensors.c:1089: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:1096: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:1103: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c: At top level:
+sensors.c:1137: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'show_title_toggled':
+sensors.c:1139: error: 'sd' undeclared (first use in this function)
+sensors.c:1140: error: 'widget' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1150: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'show_labels_toggled':
+sensors.c:1152: error: 'sd' undeclared (first use in this function)
+sensors.c:1153: error: 'widget' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1163: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'new_ui_toggled':
+sensors.c:1165: error: 'sd' undeclared (first use in this function)
+sensors.c:1169: error: 'widget' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1178: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'sensor_entry_changed':
+sensors.c:1183: error: 'widget' undeclared (first use in this function)
+sensors.c:1186: error: 'sd' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1199: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'gtk_font_size_change':
+sensors.c:1203: error: 'widget' undeclared (first use in this function)
+sensors.c:1205: error: 'sd' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1221: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'adjustment_value_changed':
+sensors.c:1225: error: 'sd' undeclared (first use in this function)
+sensors.c:1226: error: 'widget' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1242: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'execCommand_toggled':
+sensors.c:1244: error: 'sd' undeclared (first use in this function)
+sensors.c:1245: error: 'widget' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1258: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'minimum_changed':
+sensors.c:1260: error: 'new_value' undeclared (first use in this
+function)
+sensors.c:1263: error: 'sd' undeclared (first use in this function)
+sensors.c:1268: error: 'path_str' undeclared (first use in this
+function)
+sensors.c: At top level:
+sensors.c:1294: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'maximum_changed':
+sensors.c:1296: error: 'new_value' undeclared (first use in this
+function)
+sensors.c:1299: error: 'sd' undeclared (first use in this function)
+sensors.c:1304: error: 'path_str' undeclared (first use in this
+function)
+sensors.c: At top level:
+sensors.c:1330: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'gtk_cell_color_edited':
+sensors.c:1335: error: 'new_color' undeclared (first use in this
+function)
+sensors.c:1346: error: 'sd' undeclared (first use in this function)
+sensors.c:1351: error: 'path_str' undeclared (first use in this
+function)
+sensors.c: At top level:
+sensors.c:1375: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'gtk_cell_text_edited':
+sensors.c:1379: error: 'sd' undeclared (first use in this function)
+sensors.c:1387: error: 'path_str' undeclared (first use in this
+function)
+sensors.c:1394: error: 'new_text' undeclared (first use in this
+function)
+sensors.c: At top level:
+sensors.c:1412: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'gtk_cell_toggle':
+sensors.c:1416: error: 'sd' undeclared (first use in this function)
+sensors.c:1424: error: 'path_str' undeclared (first use in this
+function)
+sensors.c: At top level:
+sensors.c:1453: error: syntax error before '*' token
+sensors.c: In function 'init_widgets':
+sensors.c:1458: error: 'sd' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1535: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'add_ui_style_box':
+sensors.c:1546: error: 'sd' undeclared (first use in this function)
+sensors.c:1548: error: 'sg' undeclared (first use in this function)
+sensors.c:1551: error: 'vbox' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1559: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'add_labels_box':
+sensors.c:1567: error: 'sd' undeclared (first use in this function)
+sensors.c:1574: error: 'sg' undeclared (first use in this function)
+sensors.c:1577: error: 'vbox' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1585: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'add_title_box':
+sensors.c:1596: error: 'sd' undeclared (first use in this function)
+sensors.c:1598: error: 'sg' undeclared (first use in this function)
+sensors.c:1601: error: 'vbox' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1609: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'add_type_box':
+sensors.c:1617: error: 'vbox' undeclared (first use in this function)
+sensors.c:1621: error: 'sg' undeclared (first use in this function)
+sensors.c:1625: error: 'sd' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1635: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'add_sensor_settings_box':
+sensors.c:1646: error: 'sd' undeclared (first use in this function)
+sensors.c:1654: warning: passing argument 1 of 'gtk_label_new' makes
+pointer from integer without a cast
+sensors.c:1734: error: 'vbox' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1745: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'add_font_size_box':
+sensors.c:1753: error: 'sd' undeclared (first use in this function)
+sensors.c:1767: error: 'vbox' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1779: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'add_update_time_box':
+sensors.c:1789: error: 'sd' undeclared (first use in this function)
+sensors.c:1800: error: 'vbox' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1812: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'add_command_box':
+sensors.c:1818: error: 'sd' undeclared (first use in this function)
+sensors.c:1832: error: 'vbox' undeclared (first use in this function)
+sensors.c: In function 'apply_options_callback':
+sensors.c:1850: error: 'sd' undeclared (first use in this function)
+sensors.c:1850: error: syntax error before ')' token
+sensors.c:1851: error: 'st' undeclared (first use in this function)
+sensors.c: In function 'sensors_create_options':
+sensors.c:1870: error: 'sd' undeclared (first use in this function)
+sensors.c:1874: error: syntax error before ')' token
+sensors.c: In function 'create_sensors_control':
+sensors.c:1926: error: 'sensors' undeclared (first use in this function)
+make[2]: *** [libsensors_la-sensors.lo] Error 1
+make[2]: Leaving directory
+`/home/myles/tmp/xfce4-sensors-plugin/panel-plugin'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/home/myles/tmp/xfce4-sensors-plugin'
+make: *** [all] Error 2
+
+FWIW, I have sensors working already and showing up just fine in
+gkrellm.
+
+Suggestions on where to go from here would be appreciated...
+
+Best,
+Myles
+-- 
+Robert M. Green :: Calgary AB Canada
+Debian GNU/Linux Unstable "Sid"
+"Linux *is* user-friendly, it's just 
+picky about who it's friends are!"
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050731/149c5c83/attachment.pgp>
+
+From timystery at arcor.de  Sun Jul 31 16:15:31 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Sun, 31 Jul 2005 16:15:31 +0200
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <1122817062.30539.10.camel@localhost.localdomain>
+References: <20050726131411.GD11490@desire.ch>
+	 <1122390760.1827.7.camel@TIM3000> <20050726222941.GG11490@desire.ch>
+	 <1122471013.8673.9.camel@localhost.localdomain>
+	 <20050730215222.GD17696@desire.ch>
+	 <1122788454.24846.4.camel@localhost.localdomain>
+	 <1122796719.5741.2.camel@TIM3000>
+	 <1122816380.30539.3.camel@localhost.localdomain>
+	 <1122817062.30539.10.camel@localhost.localdomain>
+Message-ID: <1122819331.14610.1.camel@TIM3000>
+
+you need libsensors3-dev or whatever the headers files are named. thus,
+he cannot find sensors/sensors.h in your /usr/include:... paths.
+
+greets, fabian
+
+
+
+From stefan at desire.ch  Sun Jul 31 16:17:44 2005
+From: stefan at desire.ch (Stefan Ott)
+Date: Sun, 31 Jul 2005 16:17:44 +0200
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <1122819331.14610.1.camel@TIM3000>
+References: <20050726131411.GD11490@desire.ch> <1122390760.1827.7.camel@TIM3000> <20050726222941.GG11490@desire.ch> <1122471013.8673.9.camel@localhost.localdomain> <20050730215222.GD17696@desire.ch> <1122788454.24846.4.camel@localhost.localdomain> <1122796719.5741.2.camel@TIM3000> <1122816380.30539.3.camel@localhost.localdomain> <1122817062.30539.10.camel@localhost.localdomain> <1122819331.14610.1.camel@TIM3000>
+Message-ID: <20050731141744.GG17696@desire.ch>
+
+isn't it the plugin's sensors.h which is missing?
+
+On Sun, Jul 31, 2005 at 04:15:31PM +0200, Fabian Nowak wrote:
+> you need libsensors3-dev or whatever the headers files are named. thus,
+> he cannot find sensors/sensors.h in your /usr/include:... paths.
+> 
+> greets, fabian
+> 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+"Give a man a fire and he's warm for a day, but set fire to him and he's
+warm for the rest of his life."  -- Terry Pratchett, Jingo
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050731/766aacfc/attachment.pgp>
+
+From stefan at desire.ch  Sun Jul 31 16:20:27 2005
+From: stefan at desire.ch (Stefan Ott)
+Date: Sun, 31 Jul 2005 16:20:27 +0200
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <1122819331.14610.1.camel@TIM3000>
+References: <20050726131411.GD11490@desire.ch> <1122390760.1827.7.camel@TIM3000> <20050726222941.GG11490@desire.ch> <1122471013.8673.9.camel@localhost.localdomain> <20050730215222.GD17696@desire.ch> <1122788454.24846.4.camel@localhost.localdomain> <1122796719.5741.2.camel@TIM3000> <1122816380.30539.3.camel@localhost.localdomain> <1122817062.30539.10.camel@localhost.localdomain> <1122819331.14610.1.camel@TIM3000>
+Message-ID: <20050731142026.GH17696@desire.ch>
+
+sorry for my previous comment, you are of course right.
+
+On Sun, Jul 31, 2005 at 04:15:31PM +0200, Fabian Nowak wrote:
+> you need libsensors3-dev or whatever the headers files are named. thus,
+> he cannot find sensors/sensors.h in your /usr/include:... paths.
+> 
+> greets, fabian
+> 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+"Give a man a fire and he's warm for a day, but set fire to him and he's
+warm for the rest of his life."  -- Terry Pratchett, Jingo
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050731/00fa6423/attachment.pgp>
+
+From rmg57 at telus.net  Sun Jul 31 20:06:56 2005
+From: rmg57 at telus.net (Myles Green)
+Date: Sun, 31 Jul 2005 12:06:56 -0600
+Subject: xfce4-hwsensors-plugin
+In-Reply-To: <1122819331.14610.1.camel@TIM3000>
+References: <20050726131411.GD11490@desire.ch>
+	 <1122390760.1827.7.camel@TIM3000> <20050726222941.GG11490@desire.ch>
+	 <1122471013.8673.9.camel@localhost.localdomain>
+	 <20050730215222.GD17696@desire.ch>
+	 <1122788454.24846.4.camel@localhost.localdomain>
+	 <1122796719.5741.2.camel@TIM3000>
+	 <1122816380.30539.3.camel@localhost.localdomain>
+	 <1122817062.30539.10.camel@localhost.localdomain>
+	 <1122819331.14610.1.camel@TIM3000>
+Message-ID: <1122833216.20192.0.camel@localhost.localdomain>
+
+On Sun, 2005-31-07 at 16:15 +0200, Fabian Nowak wrote:
+> you need libsensors3-dev or whatever the headers files are named. thus,
+> he cannot find sensors/sensors.h in your /usr/include:... paths.
+
+Yes, of course... doh! Thanks!
+
+Best,
+Myles
+
+-- 
+Robert M. Green :: Calgary AB Canada
+Debian GNU/Linux Unstable "Sid"
+"Linux *is* user-friendly, it's just 
+picky about who it's friends are!"
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050731/23fed499/attachment.pgp>
+

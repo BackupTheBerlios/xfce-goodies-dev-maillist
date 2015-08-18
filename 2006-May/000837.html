@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bug 1791] Battery plugin doesn't resize correctly
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-May/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%201791%5D%20Battery%20plugin%20doesn%27t%20resize%20correctly&In-Reply-To=%3C20060511213814.C8ED5F29FA%40mocha.foo-projects.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000836.html">
+   <LINK REL="Next"  HREF="000838.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bug 1791] Battery plugin doesn't resize correctly</H1>
+    <B>bugzilla-daemon at xfce.org</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%201791%5D%20Battery%20plugin%20doesn%27t%20resize%20correctly&In-Reply-To=%3C20060511213814.C8ED5F29FA%40mocha.foo-projects.org%3E"
+       TITLE="[Bug 1791] Battery plugin doesn't resize correctly">bugzilla-daemon at xfce.org
+       </A><BR>
+    <I>Thu May 11 23:38:14 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000836.html">[Bug 1791] Battery plugin doesn't resize correctly
+</A></li>
+        <LI>Next message: <A HREF="000838.html">[Bug 1791] Battery plugin doesn't resize correctly
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#837">[ date ]</a>
+              <a href="thread.html#837">[ thread ]</a>
+              <a href="subject.html#837">[ subject ]</a>
+              <a href="author.html#837">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+<A HREF="http://bugzilla.xfce.org/show_bug.cgi?id=1791">http://bugzilla.xfce.org/show_bug.cgi?id=1791</A>
+
+
+
+
+
+------- Comment #12 from <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">corsac at corsac.net</A>  2006-05-11 21:38 UTC -------
+Tried 0.0.3.
+
+Infos stay at what they were when plugin was loaded (here, 95% charged). And
+progressbar still doesnt have the same size as other ones.
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">corsac at hidalgo</A>: lshal | grep battery                                        [~]
+udi = '/org/freedesktop/Hal/devices/pmu_battery_0_0'
+  battery.remaining_time = 786  (0x312)  (int)
+  info.udi = '/org/freedesktop/Hal/devices/pmu_battery_0_0'  (string)
+  battery.charge_level.percentage = 96  (0x60)  (int)
+  battery.charge_level.rate = 581  (0x245)  (int)
+  battery.charge_level.design = 3199  (0xc7f)  (int)
+  battery.charge_level.last_full = 3199  (0xc7f)  (int)
+  battery.charge_level.current = 3072  (0xc00)  (int)
+  battery.rechargeable.is_discharging = false  (bool)
+  battery.rechargeable.is_charging = true  (bool)
+  battery.is_rechargeable = true  (bool)
+  battery.present = true  (bool)
+  info.capabilities = {'battery'} (string list)
+  info.category = 'battery'  (string)
+  battery.type = 'primary'  (string)
+  info.product = 'Battery Bay'  (string)
+  linux.pmu_path = '/proc/pmu/battery_0'  (string)
+
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">corsac at hidalgo</A>: lshal -m                                                    [~]
+
+Start monitoring devicelist:
+-------------------------------------------------
+pmu_battery_0_0 property battery.remaining_time = 8099 (0x1fa3)
+pmu_battery_0_0 property battery.charge_level.rate = 1381 (0x565)
+pmu_battery_0_0 property battery.charge_level.percentage = 96 (0x60)
+pmu_battery_0_0 property battery.remaining_time = 8083 (0x1f93)
+pmu_battery_0_0 property battery.charge_level.current = 3101 (0xc1d)
+pmu_battery_0_0 property battery.remaining_time removed
+pmu_battery_0_0 property battery.rechargeable.is_discharging = false
+pmu_info_1 property ac_adapter.present = true
+pmu_battery_0_0 property battery.remaining_time = 440 (0x1b8) (new)
+pmu_battery_0_0 property battery.charge_level.rate = 801 (0x321)
+pmu_battery_0_0 property battery.rechargeable.is_charging = true
+pmu_battery_0_0 property battery.remaining_time = 449 (0x1c1)
+pmu_battery_0_0 property battery.charge_level.current = 3099 (0xc1b)
+pmu_battery_0_0 property battery.remaining_time = 530 (0x212)
+pmu_battery_0_0 property battery.charge_level.rate = 678 (0x2a6)
+pmu_battery_0_0 property battery.remaining_time = 515 (0x203)
+pmu_battery_0_0 property battery.charge_level.current = 3102 (0xc1e)
+pmu_battery_0_0 property battery.remaining_time = 565 (0x235)
+pmu_battery_0_0 property battery.charge_level.rate = 617 (0x269)
+pmu_battery_0_0 property battery.charge_level.percentage = 97 (0x61)
+pmu_battery_0_0 property battery.remaining_time = 554 (0x22a)
+pmu_battery_0_0 property battery.charge_level.current = 3104 (0xc20)
+pmu_battery_0_0 property battery.remaining_time = 590 (0x24e)
+pmu_battery_0_0 property battery.charge_level.rate = 579 (0x243)
+pmu_battery_0_0 property battery.remaining_time = 572 (0x23c)
+pmu_battery_0_0 property battery.charge_level.current = 3107 (0xc23)
+pmu_battery_0_0 property battery.remaining_time = 598 (0x256)
+pmu_battery_0_0 property battery.charge_level.rate = 553 (0x229)
+pmu_battery_0_0 property battery.remaining_time = 585 (0x249)
+pmu_battery_0_0 property battery.charge_level.current = 3109 (0xc25)
+pmu_battery_0_0 property battery.remaining_time = 607 (0x25f)
+pmu_battery_0_0 property battery.charge_level.rate = 533 (0x215)
+pmu_battery_0_0 property battery.remaining_time = 594 (0x252)
+pmu_battery_0_0 property battery.charge_level.current = 3111 (0xc27)
+
+
+-- 
+Configure bugmail: <A HREF="http://bugzilla.xfce.org/userprefs.cgi?tab=email">http://bugzilla.xfce.org/userprefs.cgi?tab=email</A>
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000836.html">[Bug 1791] Battery plugin doesn't resize correctly
+</A></li>
+	<LI>Next message: <A HREF="000838.html">[Bug 1791] Battery plugin doesn't resize correctly
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#837">[ date ]</a>
+              <a href="thread.html#837">[ thread ]</a>
+              <a href="subject.html#837">[ subject ]</a>
+              <a href="author.html#837">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

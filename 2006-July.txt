@@ -1,0 +1,156 @@
+From bugzilla-daemon at xfce.org  Wed Jul 26 19:47:52 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 26 Jul 2006 17:47:52 +0000 (UTC)
+Subject: [Bug 2071] New: fixed translations
+Message-ID: <bug-2071-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2071
+
+           Summary: fixed translations
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Other
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: systemload
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: sas at 321.hu
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.4)
+Gecko/20060406 Firefox/1.5.0.4 (Debian-1.5.dfsg+1.5.0.4-1)
+Build Identifier: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.4)
+Gecko/20060406 Firefox/1.5.0.4 (Debian-1.5.dfsg+1.5.0.4-1)
+
+please release 0.4.1 wrong chinese and hungarian translations fixed
+
+Reproducible: Always
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri Jul 28 12:31:54 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri, 28 Jul 2006 10:31:54 +0000 (UTC)
+Subject: [Bug 477] battery plugin does not account for second battery
+In-Reply-To: <bug-477-590@http.bugzilla.xfce.org/>
+Message-ID: <20060728103154.33217F29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=477
+
+
+
+
+
+------- Comment #3 from mats.lundqvist at gmail.com  2006-07-28 10:31 UTC -------
+I've got the same problem as Aaron does. The plugin only accounts for one
+battery on my Thinkpad X40. The main battery is BAT0 and the external is BAT2.
+The applet only indicates the level for BAT2 when BAT0 is present.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri Jul 28 12:33:11 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri, 28 Jul 2006 10:33:11 +0000 (UTC)
+Subject: [Bug 477] battery plugin does not account for second battery
+In-Reply-To: <bug-477-590@http.bugzilla.xfce.org/>
+Message-ID: <20060728103311.34450F29F8@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=477
+
+
+mats.lundqvist at gmail.com changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |mats.lundqvist at gmail.com
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Jul 31 22:45:00 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 31 Jul 2006 20:45:00 +0000 (UTC)
+Subject: [Bug 2104] New: Allow popup via command and, optionally,
+	at the pointer position.
+Message-ID: <bug-2104-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2104
+
+           Summary: Allow popup via command and, optionally, at the pointer
+                    position.
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Other
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: windowlist
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: linux at youmustbejoking.demon.co.uk
+
+
+Useful for desktops other than xfdesktop. (I'm currently using it with
+rox-filer, itself hacked to allow commands to be executed on pinboard clicks.)
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Jul 31 22:46:46 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 31 Jul 2006 20:46:46 +0000 (UTC)
+Subject: [Bug 2104] Allow popup via command and, optionally,
+	at the pointer position.
+In-Reply-To: <bug-2104-590@http.bugzilla.xfce.org/>
+Message-ID: <20060731204646.8B223F2A28@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=2104
+
+
+
+
+
+------- Comment #1 from linux at youmustbejoking.demon.co.uk  2006-07-31 20:46 UTC -------
+Created an attachment (id=697)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=697&action=view)
+Window list popup binary (xfce4-popup-windowlist) & support code
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+

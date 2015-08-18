@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-February/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20ANNOUNCE%3A%20Verve%200.1.0%20-%20A%20panel%20command%20line%20plugin&In-Reply-To=%3C20060214231003.2a8209dd.jannis%40xfce.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000632.html">
+   <LINK REL="Next"  HREF="000634.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>ANNOUNCE: Verve 0.1.0 - A panel command line plugin</H1>
+    <B>Jannis Pohlmann</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20ANNOUNCE%3A%20Verve%200.1.0%20-%20A%20panel%20command%20line%20plugin&In-Reply-To=%3C20060214231003.2a8209dd.jannis%40xfce.org%3E"
+       TITLE="ANNOUNCE: Verve 0.1.0 - A panel command line plugin">jannis at xfce.org
+       </A><BR>
+    <I>Tue Feb 14 23:10:03 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000632.html">ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+</A></li>
+        <LI>Next message: <A HREF="000634.html">ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#633">[ date ]</a>
+              <a href="thread.html#633">[ thread ]</a>
+              <a href="subject.html#633">[ subject ]</a>
+              <a href="author.html#633">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wed, 15 Feb 2006 07:03:07 +0900
+Daichi Kawahata &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">daichi at xfce.org</A>&gt; wrote:
+
+&gt;<i> On Tue, 14 Feb 2006 22:00:56 +0100
+</I>&gt;<i> Jannis Pohlmann wrote:
+</I>&gt;<i> 
+</I>&gt;<i> &gt; &gt; &gt; &gt; and a property dialog keeps showing English as-is (confirmed
+</I>&gt;<i> &gt; &gt; &gt; &gt; GETTEXT_PACKAGE is &quot;verve-plugin&quot;, a message object located
+</I>&gt;<i> &gt; &gt; &gt; &gt; in the
+</I>&gt;<i> &gt; &gt; &gt; &gt; &quot;/usr/local/share/locale/ja/LC_MESSAGES/verve-plugin.mo&quot;).
+</I>&gt;<i> &gt; &gt; &gt; 
+</I>&gt;<i> &gt; &gt; &gt; I'm still having this problem, too. Any ideas what might cause
+</I>&gt;<i> &gt; &gt; &gt; this? Do I have to call g_set_application_name or something like
+</I>&gt;<i> &gt; &gt; &gt; that when running it as an external plugin?
+</I>&gt;<i> &gt; &gt; 
+</I>&gt;<i> &gt; &gt; You forgot to include &lt;config.h&gt;
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; True. But after adding it to verve-plugin.c, nothing changed. I
+</I>&gt;<i> &gt; still don't get the correct translation.
+</I>&gt;<i> 
+</I>&gt;<i> Hmm, by including that missing header, it gets worked here
+</I>&gt;<i> (verve.jpg), thanks Jasper. For what it's worth, I attach a patch
+</I>&gt;<i> just being added a function xfce_panel_plugin_menu_show_configure()
+</I>&gt;<i> in it (ignore the others, nothing but a style change).
+</I>
+Ah, yes, sorry. It also works here now. I included the config.h below
+all other includes, which of course doesn't make any sense.
+
+BTW, there also is a xfce_panel_plugin_menu_show_configure() call a few
+lines above the line you placed yours! Hehe.
+
+- Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060214/fa348b86/attachment.pgp">https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060214/fa348b86/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000632.html">ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+</A></li>
+	<LI>Next message: <A HREF="000634.html">ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#633">[ date ]</a>
+              <a href="thread.html#633">[ thread ]</a>
+              <a href="subject.html#633">[ subject ]</a>
+              <a href="author.html#633">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

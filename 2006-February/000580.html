@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bug #6291] xfce4-netload-plugin-0.3.3 crashes panel
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-February/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%20%236291%5D%20xfce4-netload-plugin-0.3.3%20crashes%20panel&In-Reply-To=%3C200602032138.k13LcxGx008957%40unicorn.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000579.html">
+   <LINK REL="Next"  HREF="000581.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bug #6291] xfce4-netload-plugin-0.3.3 crashes panel</H1>
+    <B>noreply at berlios.de</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%20%236291%5D%20xfce4-netload-plugin-0.3.3%20crashes%20panel&In-Reply-To=%3C200602032138.k13LcxGx008957%40unicorn.berlios.de%3E"
+       TITLE="[Bug #6291] xfce4-netload-plugin-0.3.3 crashes panel">noreply at berlios.de
+       </A><BR>
+    <I>Fri Feb  3 22:38:59 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000579.html">xkb-plugin: missing layout
+</A></li>
+        <LI>Next message: <A HREF="000581.html">[Patch #810] fix for 6291: Typo causes buffer overflow
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#580">[ date ]</a>
+              <a href="thread.html#580">[ thread ]</a>
+              <a href="subject.html#580">[ subject ]</a>
+              <a href="author.html#580">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bug #6291, was updated on 2006-Feb-03 22:38
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: None
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: cwickert
+Assigned to : none
+Summary: xfce4-netload-plugin-0.3.3 crashes panel
+
+Details: # rpm -q xfce4-netload-plugin xfce4-panel
+xfce4-netload-plugin-0.3.3-3.fc4 
+xfce4-panel-4.2.3-1.fc4
+
+#  xfce4-panel
+
+(....add netload-plugin to panel ....)
+
+*** buffer overflow detected ***: xfce4-panel terminated
+======= Backtrace: =========
+/lib/libc.so.6(__chk_fail+0x41)[0xa20c45]
+/usr/lib/xfce4/panel-plugins/libnetload.so(get_current_netload+0x0)[0x38f417]
+/usr/lib/xfce4/panel-plugins/libnetload.so(get_current_netload+0x8a)[0x38f4a1]
+/usr/lib/xfce4/panel-plugins/libnetload.so[0x38b7a4]
+/usr/lib/libglib-2.0.so.0[0xbaafe6]
+/usr/lib/libglib-2.0.so.0(g_main_context_dispatch+0x1dc)[0xba94ce]
+/usr/lib/libglib-2.0.so.0[0xbac4d6]
+/usr/lib/libglib-2.0.so.0(g_main_loop_run+0x1a1)[0xbac7c3]
+/usr/lib/libgtk-x11-2.0.so.0(gtk_dialog_run+0x18b)[0x4669781]
+xfce4-panel(controls_dialog+0x590)[0x8053123]
+xfce4-panel(insert_control+0x86)[0x8052a32]
+xfce4-panel[0x8050b6d]
+/usr/lib/libgobject-2.0.so.0(g_cclosure_marshal_VOID__INT+0x51)[0xc6aa42]
+/usr/lib/libgobject-2.0.so.0(g_closure_invoke+0x10a)[0xc5f285]
+/usr/lib/libgobject-2.0.so.0[0xc6d75b]
+/usr/lib/libgobject-2.0.so.0(g_signal_emit_valist+0x6ab)[0xc6eeb0]
+/usr/lib/libgobject-2.0.so.0(g_signal_emit+0x29)[0xc6f223]
+/usr/lib/libgtk-x11-2.0.so.0(gtk_dialog_response+0x5a)[0x46694ff]
+/usr/lib/libgtk-x11-2.0.so.0[0x4669560]
+/usr/lib/libgobject-2.0.so.0(g_cclosure_marshal_VOID__VOID+0x47)[0xc6a7e7]
+/usr/lib/libgobject-2.0.so.0(g_closure_invoke+0x10a)[0xc5f285]
+/usr/lib/libgobject-2.0.so.0[0xc6d75b]
+/usr/lib/libgobject-2.0.so.0(g_signal_emit_valist+0x6ab)[0xc6eeb0]
+/usr/lib/libgobject-2.0.so.0(g_signal_emit+0x29)[0xc6f223]
+/usr/lib/libgtk-x11-2.0.so.0(gtk_button_clicked+0x56)[0x4620b9c]
+/usr/lib/libgtk-x11-2.0.so.0[0x4622300]
+/usr/lib/libgobject-2.0.so.0(g_cclosure_marshal_VOID__VOID+0x47)[0xc6a7e7]
+/usr/lib/libgobject-2.0.so.0[0xc5ed9b]
+/usr/lib/libgobject-2.0.so.0(g_closure_invoke+0x10a)[0xc5f285]
+/usr/lib/libgobject-2.0.so.0[0xc6d3b0]
+/usr/lib/libgobject-2.0.so.0(g_signal_emit_valist+0x6ab)[0xc6eeb0]
+/usr/lib/libgobject-2.0.so.0(g_signal_emit+0x29)[0xc6f223]
+/usr/lib/libgtk-x11-2.0.so.0(gtk_button_released+0x53)[0x4620b16]
+/usr/lib/libgtk-x11-2.0.so.0[0x4621a05]
+/usr/lib/libgtk-x11-2.0.so.0[0x46dabe2]
+/usr/lib/libgobject-2.0.so.0[0xc5ed9b]
+/usr/lib/libgobject-2.0.so.0(g_closure_invoke+0x10a)[0xc5f285]
+/usr/lib/libgobject-2.0.so.0[0xc6d8e7]
+/usr/lib/libgobject-2.0.so.0(g_signal_emit_valist+0x41e)[0xc6ec23]
+/usr/lib/libgobject-2.0.so.0(g_signal_emit+0x29)[0xc6f223]
+/usr/lib/libgtk-x11-2.0.so.0[0x47b6743]
+/usr/lib/libgtk-x11-2.0.so.0(gtk_propagate_event+0xc1)[0x46d9348]
+/usr/lib/libgtk-x11-2.0.so.0(gtk_main_do_event+0x329)[0x46d9784]
+/usr/lib/libgdk-x11-2.0.so.0[0x2e9df6]
+/usr/lib/libglib-2.0.so.0(g_main_context_dispatch+0x1dc)[0xba94ce]
+/usr/lib/libglib-2.0.so.0[0xbac4d6]
+/usr/lib/libglib-2.0.so.0(g_main_loop_run+0x1a1)[0xbac7c3]
+/usr/lib/libgtk-x11-2.0.so.0(gtk_main+0xb4)[0x46d8a46]
+xfce4-panel(main+0x3c9)[0x80587ea]
+/lib/libc.so.6(__libc_start_main+0xdf)[0x957d5f]
+xfce4-panel[0x8050a91]
+======= Memory map: ========
+00101000-00115000 r-xp 00000000 03:03 2526951    /usr/lib/libgdk_pixbuf-2.0.so.0.600.10
+00115000-00117000 rwxp 00013000 03:03 2526951    /usr/lib/libgdk_pixbuf-2.0.so.0.600.10
+00117000-00118000 r-xp 00000000 03:03 2583809    /usr/lib/gconv/ISO8859-1.so
+00118000-0011a000 rwxp 00000000 03:03 2583809    /usr/lib/gconv/ISO8859-1.so
+0011a000-0011b000 r-xp 00000000 03:03 65411      /usr/lib/gtk-2.0/2.4.0/loaders/svg_loader.so
+0011b000-0011c000 rwxp 00001000 03:03 65411      /usr/lib/gtk-2.0/2.4.0/loaders/svg_loader.so
+0011c000-00151000 r-xp 00000000 03:03 3499423    /lib/libssl.so.0.9.7f
+00151000-00154000 rwxp 00035000 03:03 3499423    /lib/libssl.so.0.9.7f
+00154000-00177000 r-xp 00000000 03:03 2528531    /usr/lib/libk5crypto.so.3.0
+00177000-00178000 rwxp 00023000 03:03 2528531    /usr/lib/libk5crypto.so.3.0
+00178000-0017c000 r-xp 00000000 03:03 2715699    /usr/lib/gtk-2.0/2.4.0/loaders/libpixbufloader-png.so
+0017c000-0017d000 rwxp 00003000 03:03 2715699    /usr/lib/gtk-2.0/2.4.0/loaders/libpixbufloader-png.so
+0017d000-00180000 r-xp 00000000 03:03 2747956    /usr/lib/xfce4/panel-plugins/libswitcher.so
+00180000-00181000 rwxp 00002000 03:03 2747956    /usr/lib/xfce4/panel-plugins/libswitcher.so
+00181000-00185000 r-xp 00000000 03Abgebrochen
+
+I guess this is caused by a typo (?) in
+panel-plugin/wormulon/linux.c
+
+This patch works fine for me:
+
+--- panel-plugin/wormulon/linux.c.orig	2006-02-03 20:48:17.000000000 +0100
++++ panel-plugin/wormulon/linux.c	2005-08-01 00:56:38.000000000 +0200
+@@ -101,11 +101,11 @@
+ 
+     /* do not parse the first two lines as they only contain static garbage */
+     fseek(proc_net_dev, 0, SEEK_SET);
+-    fgets(buffer, BUFSIZ-1, proc_net_dev);
+-    fgets(buffer, BUFSIZ-1, proc_net_dev);
++    fgets(buffer, BUFSIZE-1, proc_net_dev);
++    fgets(buffer, BUFSIZE-1, proc_net_dev);
+ 
+     interfacefound = 0;
+-    while (fgets(buffer, BUFSIZ-1, proc_net_dev) != NULL)
++    while (fgets(buffer, BUFSIZE-1, proc_net_dev) != NULL)
+     {
+         /* find the device name and substitute ':' with '\0' */
+         ptr = buffer;
+
+
+for more information see:
+<A HREF="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=179686">https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=179686</A>
+
+For detailed info, follow this link:
+<A HREF="http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=6291&amp;group_id=910">http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=6291&amp;group_id=910</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000579.html">xkb-plugin: missing layout
+</A></li>
+	<LI>Next message: <A HREF="000581.html">[Patch #810] fix for 6291: Typo causes buffer overflow
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#580">[ date ]</a>
+              <a href="thread.html#580">[ thread ]</a>
+              <a href="subject.html#580">[ subject ]</a>
+              <a href="author.html#580">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

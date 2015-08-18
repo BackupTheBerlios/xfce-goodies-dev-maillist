@@ -1,0 +1,80 @@
+From xotazu at cvc.uab.es  Mon Oct  9 16:46:56 2006
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Mon, 09 Oct 2006 16:46:56 +0200
+Subject: Notes plugin
+In-Reply-To: <mailman.103.1159524058.24087.xfce-goodies-dev@lists.berlios.de>
+References: <mailman.103.1159524058.24087.xfce-goodies-dev@lists.berlios.de>
+Message-ID: <20061009164656.643ef5bc@cvc131.uab.es>
+
+
+
+	Hello:
+
+	I found one of the last features of the notes goodies very
+annoying. It is the tabbed behaviour.
+
+	Please, could you (the developer) make the notes dettachable?
+That is, could you make possible to have notes in different windows,
+similar to the old behaviour? It could be an optional behaviour,
+but please, maintain it ... ;-)
+
+cheers
+
+Xavier
+
+
+From mmassonnet at gmail.com  Mon Oct  9 18:16:04 2006
+From: mmassonnet at gmail.com (Mike Massonnet)
+Date: Mon, 9 Oct 2006 18:16:04 +0200
+Subject: Notes plugin
+In-Reply-To: <20061009164656.643ef5bc@cvc131.uab.es>
+References: <mailman.103.1159524058.24087.xfce-goodies-dev@lists.berlios.de>
+	<20061009164656.643ef5bc@cvc131.uab.es>
+Message-ID: <20061009181604.674e85c0@lapt0p>
+
+Mon, 09 Oct 2006 16:46:56 +0200 - Xavier Otazu <xotazu at cvc.uab.es>
+wrote :
+
+> 	Hello:
+
+Hi
+
+> 	I found one of the last features of the notes goodies very
+> annoying. It is the tabbed behaviour.
+
+  I have noted some others already :P  ...
+
+> 
+> 	Please, could you (the developer) make the notes dettachable?
+> That is, could you make possible to have notes in different windows,
+> similar to the old behaviour? It could be an optional behaviour,
+> but please, maintain it ... ;-)
+
+  ... At least this one is not written in hard in my todo :)
+
+  You got me there with something I am going to add in the future. The
+problem is that the notes plugin does not support multiple windows at
+the moment.  This is not very hard, but still needs some rewrites. 
+
+> cheers
+> 
+> Xavier
+
+Cheers,
+And thanks for your feedback ;)
+Mike
+PS: you are posting on the old mailing list, the new mailing list is
+goodies-dev: http://foo-projects.org/mailman/listinfo/goodies-dev
+-- 
+ http://massonnet.org/ Mike Massonnet (mmassonnet)        _
+                                                       ,_( ))___     (`
+ GnuPG 0--" 0xF8C80F97                                  \'    _ `\    )
+ C4DA 431D 52F9 F930 3E5B  3E3D 546C 89D9 F8C8 0F97     =`---<___/---' 
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20061009/dd9d1ec2/attachment.pgp>
+

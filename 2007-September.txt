@@ -1,0 +1,33 @@
+From h.aling at home.nl  Tue Sep  4 09:47:27 2007
+From: h.aling at home.nl (Harold Aling)
+Date: Tue, 4 Sep 2007 09:47:27 +0200
+Subject: Small patch to fix LDADD in xfce4-cpu-graph
+Message-ID: <7d67c6acf2b1bedd4e96df82fc85f2e6@localhost>
+
+
+Dear list,
+
+Here's a very simple patch to enable cpugraph to be compiled with
+--as-needed as described here:
+http://wiki.xfce.org/panel_plugins_howto#testing_and_releasing_the_plugin
+
+
+Index: panel-plugin/Makefile.am
+===================================================================
+--- panel-plugin/Makefile.am    (revision 3136)
++++ panel-plugin/Makefile.am    (working copy)
+@@ -5,7 +5,7 @@
+        -DPACKAGE_LOCALE_DIR=\"$(localedir)\"                   \
+        @LIBXFCE4PANEL_CFLAGS@
+ 
+-xfce4_cpugraph_plugin_LDFLAGS =                                        \
++xfce4_cpugraph_plugin_LDADD =                                  \
+        @LIBXFCE4PANEL_LIBS@
+ 
+ xfce4_cpugraph_plugin_SOURCES =                                        \
+
+
+-H-
+
+
+

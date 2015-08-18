@@ -1,0 +1,3116 @@
+From michael at flex-it.be  Sun May  1 00:12:23 2005
+From: michael at flex-it.be (Michael De Nil)
+Date: Sun, 01 May 2005 00:12:23 +0200
+Subject: xfce4-battery-plugin bug
+In-Reply-To: <20050426124709.GA5244@baudolino.home.nl>
+References: <425AD2A8.8040002@flex-it.be> <426E3304.2070100@flex-it.be> <20050426124709.GA5244@baudolino.home.nl>
+Message-ID: <427402C7.7010209@flex-it.be>
+
+Jasper Huijsmans wrote:
+
+>On Tue, Apr 26, 2005 at 02:24:36PM +0200, Michael De Nil wrote:
+>  
+>
+>>Michael De Nil wrote:
+>>
+>>    
+>>
+>>>Hello,
+>>>
+>>>I am using Xfce4 on my notebook and like it a lot.
+>>>However, there is a small bug in the battery plugin: when 
+>>>disconnecting the power supply, the plugin keeps telling that the 
+>>>battery is charging, which causes the plugin not to warn when the 
+>>>battery status is getting critical (causing the notebook to drop out 
+>>>suddenly, when I forget to plug in the power cord).
+>>>
+>>>I found a patch at 
+>>>http://developer.berlios.de/patch/?func=detailpatch&patch_id=252&group_id=910, 
+>>>which seems to be applied to CVS. However the last release of 
+>>>xfce4-battery-plugin that I can find is from september 2003 
+>>>(http://developer.berlios.de/project/showfiles.php?group_id=910).
+>>>
+>>>Since I am using the debian packages from 
+>>>http://www.os-cillation.de/debian (which are afaik based on releases), 
+>>>I have to recompile the battery plugin with the patch each time the 
+>>>package is reinstalled.
+>>>
+>>>Is would be nice if someone could create a new release for the battery 
+>>>plugin, so that in later releases of the debian packages this bug will 
+>>>be solved.
+>>>
+>>>
+>>>      
+>>>
+>>ping...
+>>
+>>is anyone maintaining the xfce4-battery-plugin?
+>>
+>>    
+>>
+>
+>Hi, I don't know, but you could try to find the author's email, either
+>on the main page, or in the source files and send him a personal mail.
+>  
+>
+I CC't both authors in my previous post, but without any reaction...
+
+Could someone create a new release from the latest source on cvs? (works 
+fine and contains fix, which makes the package usable with recent kernels).
+
+
+Thanks,
+    Michael
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050501/a625cedb/attachment.html>
+
+From bugzilla-daemon at xfce.org  Sun May  8 19:05:08 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  8 May 2005 17:05:08 +0000 (UTC)
+Subject: [Bug 670] Panel crashes when closing one of the folded apps with right click and context menu
+Message-ID: <20050508170508.94E571F7091@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=670
+
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-05-08 17:05 UTC -------
+Reporter can you please try with Xfce 4.2. Without additional information i'll
+have no option but to close the report.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From florent.bouchez at ens-lyon.org  Mon May  9 14:08:06 2005
+From: florent.bouchez at ens-lyon.org (Florent Bouchez)
+Date: Mon, 09 May 2005 14:08:06 +0200
+Subject: xfce speedfreq panel plugin
+Message-ID: <427F52A6.5060505@ens-lyon.org>
+
+Hi everybody. I used to get tired of using "speedfreq -p" every time I 
+wanted to change the cpu policy so I wrote an xfce panel plugin. What 
+can I do to bring it to the world ? (if I'm not the only one who find it 
+useful). There is an archive there if you are interested :
+
+http://perso.ens-lyon.fr/florent.bouchez/informatique/misc/xfce4-speedfreq-plugin-0.0.1.tar.gz
+
+It is not complete (eg there is no support for the "fixed" policy), but 
+I don't need much more so I won't do it unless other people are 
+interested in.
+
+
+Thanks
+
+Florent
+
+
+
+-- 
+###/
+##/
+#/ \O
+#|/\/>
+#| /
+/
+
+
+From bugzilla-daemon at xfce.org  Mon May  9 15:45:12 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  9 May 2005 13:45:12 +0000 (UTC)
+Subject: [Bug 477] battery plugin does not account for second battery
+Message-ID: <20050509134512.560A51F7072@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=477
+
+
+
+
+
+------- Additional Comments From clauretano at gmail.com  2005-05-09 13:45 UTC -------
+I am experiencing the same with my Thinkpad T42. The battery monitor in Gnome
+does this properly (the way it is done in windows) by treating the two batteries
+as one larger battery. Dividing total current capacity by total maximum capacity
+gives a battery capacity percentage that is linear with respect to time. If
+multiple entries lie in the battery folder, add them together, otherwise just
+repond the only one that is there.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon May  9 15:46:34 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  9 May 2005 13:46:34 +0000 (UTC)
+Subject: [Bug 477] battery plugin does not account for second battery
+Message-ID: <20050509134634.1000B1F7072@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=477
+
+
+clauretano at gmail.com changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |clauretano at gmail.com
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From jasper at xfce.org  Mon May  9 21:12:24 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Mon, 09 May 2005 21:12:24 +0200
+Subject: xfce speedfreq panel plugin
+In-Reply-To: <427F52A6.5060505@ens-lyon.org>
+References: <427F52A6.5060505@ens-lyon.org>
+Message-ID: <427FB618.1080706@xfce.org>
+
+Florent Bouchez wrote:
+> Hi everybody. I used to get tired of using "speedfreq -p" every time I 
+> wanted to change the cpu policy so I wrote an xfce panel plugin. What 
+> can I do to bring it to the world ? (if I'm not the only one who find it 
+> useful). There is an archive there if you are interested :
+> 
+> http://perso.ens-lyon.fr/florent.bouchez/informatique/misc/xfce4-speedfreq-plugin-0.0.1.tar.gz 
+> 
+> 
+> It is not complete (eg there is no support for the "fixed" policy), but 
+> I don't need much more so I won't do it unless other people are 
+> interested in.
+> 
+
+You are very welcome to host it on the xfce goodies project. If you just 
+get an account on developer.berlios.de and send me your login name, I 
+can add you to the project.
+
+It certainly sounds useful and I believe people have asked for something 
+like this before.
+
+	Jasper
+
+
+From bugzilla-daemon at xfce.org  Tue May 17 17:46:57 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 17 May 2005 15:46:57 +0000 (UTC)
+Subject: [Bug 971]  New: memory leak
+Message-ID: <20050517154657.BD2411F7077@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=971
+
+           Summary: memory leak
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: minor
+          Priority: Low
+         Component: netload
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: aguelzow at taliesin.ca
+
+
+In panel-plugin/wormulon/linux.c in the function checkinterface the system
+function if_nameindex() is called to obtain a listing of interface names.
+According to the documentation for if_nameindex, the array returned by
+if_nameindex is supposed to be freed by calling if_freenameindex. This code
+appears to fail to do this.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bernhard.walle at gmx.de  Tue May 17 19:53:19 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Tue, 17 May 2005 19:53:19 +0200
+Subject: Switch to Subversion
+Message-ID: <flnpl2-96i.ln1@news.bwalle.de>
+
+Hello,
+
+after Xfce has moved to SVN my question: What do you think about
+xfce-goodies moving to SVN, too. Users of CVS might become familar with
+SVN very quickly so I see no problems.
+
+
+Regards,
+Bernhard
+
+
+
+From bugzilla-daemon at xfce.org  Tue May 17 21:08:55 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 17 May 2005 19:08:55 +0000 (UTC)
+Subject: [Bug 971] memory leak
+Message-ID: <20050517190855.B7F5E1F7141@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=971
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+         AssignedTo|xfce-goodies-dev at berlios.de |bernhard.walle at gmx.de
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From noreply at berlios.de  Thu May 19 01:56:50 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Thu, 19 May 2005 00:56:50 +0100 (WAT)
+Subject: [Bug #4058] Added support for Solaris
+Message-ID: <200505182356.j4INuofp026023@unicorn.berlios.de>
+
+Bug #4058, was updated on 2005-May-19 00:56
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: xfce4-systemload-plugin
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: aalmroth
+Assigned to : none
+Summary: Added support for Solaris
+
+Details: Added support for Solaris SPARC/x86 by adding sections for SVR4 in the files cpu.c, uptime.c and memswap.c;
+
+Diff files;
+
+cpu.c.orig,cpu.c:
+257a258,261
+> #elif defined(__SVR4)  /* Solaris, actually */
+> /* Added by Phil Brown for CSW build of xfce 4.0 */
+> /* Added again by Andreas Almroth for CSW build of xfce 4.2.1 */
+> /* 2005-05-18 tidying up */
+258a263,356
+> #include <fcntl.h>
+> #include <limits.h>
+> #include <stdio.h>
+> #include <stdlib.h>
+> #include <string.h>
+> #include <errno.h>
+> #include <sys/stat.h>
+> #include <sys/types.h>
+> #include <sys/time.h>
+> #include <kstat.h>
+> #include <sys/param.h>
+> #include <sys/sysconfig.h>
+> 
+> #include <sys/sysinfo.h>
+> 
+> #define MAXCPUS 10 /* get real, we wont have more than 10 cpus for a GUI box*/
+> cpu_stat_t olddata[MAXCPUS], newdata[MAXCPUS];
+> 
+> /* for use by read_uptime() */
+> gulong solaris_uptime_secs;
+> 
+> gulong read_cpuload(){
+>   static int hz=100; /* temp value just in case */
+>   static kstat_ctl_t *kc = NULL;
+>   kstat_t     *ks = NULL;
+>   kstat_named_t *kn = NULL;
+>   static int ncpus=-1;
+>   int count=0;
+>   uint_t tickstotal=0, ticksused=0;
+>   
+>   if(ncpus==-1){
+>     ncpus=_sysconfig(_CONFIG_NPROC_CONF);
+>     /*                printf("DEBUG-systemload: ncpus=%d\n", ncpus);*/
+>     hz=HZ;
+>   }
+>   if(kc==NULL){
+>     memset(olddata, 0, sizeof(cpu_stat_t)*MAXCPUS);
+>     kc=kstat_open();
+>   }
+>   
+>   /* cheat and calculate uptime in here also */
+>   /* although couldn't we do this from one of the cpu_stat structs?*/
+>   ks=kstat_lookup(kc, "unix", 0, "system_misc" );
+>   /*  printf("DEBUG-systemload: ks=%p\n",ks);*/
+>   
+>   /* random "just do it" kinda thing here */
+>   kstat_read(kc, ks, 0);
+>   
+>   kn=kstat_data_lookup(ks, "lbolt");
+>   solaris_uptime_secs=kn->value.ui32 / hz;
+>   
+>   
+>   for(count=0;count<ncpus;count++){
+>     /* It might be slow parsing this every time.
+>      * Should probably cache it
+>      */
+>     ks=kstat_lookup(kc, "cpu_stat", 0, NULL /*"cpu_stat"*/ );
+>     if(ks==NULL){
+>       printf("DEBUG: null output for kstat on cpu%d\n",count);
+>       continue;
+>     }
+>     
+>     kstat_read(kc, ks, &newdata[count]);
+>   }
+>   
+>   if(olddata[0].cpu_sysinfo.cpu[CPU_KERNEL]==0){
+>     /* first time here. Nothing to compare to */
+>     memcpy(olddata, newdata, sizeof(cpu_stat_t)*MAXCPUS);
+>     return 0;
+>     
+>   }
+>   
+>   for(count=0;count<ncpus;count++){
+>     ticksused += newdata[count].cpu_sysinfo.cpu[CPU_USER] -
+>       olddata[count].cpu_sysinfo.cpu[CPU_USER];
+>     ticksused += newdata[count].cpu_sysinfo.cpu[CPU_KERNEL] -
+>       olddata[count].cpu_sysinfo.cpu[CPU_KERNEL];
+>     
+>     
+>     tickstotal += newdata[count].cpu_sysinfo.cpu[CPU_USER] -
+>       olddata[count].cpu_sysinfo.cpu[CPU_USER];
+>     tickstotal += newdata[count].cpu_sysinfo.cpu[CPU_KERNEL] -
+>       olddata[count].cpu_sysinfo.cpu[CPU_KERNEL];
+>     tickstotal += newdata[count].cpu_sysinfo.cpu[CPU_IDLE] -
+>       olddata[count].cpu_sysinfo.cpu[CPU_IDLE];
+>     tickstotal += newdata[count].cpu_sysinfo.cpu[CPU_WAIT] -
+>       olddata[count].cpu_sysinfo.cpu[CPU_WAIT];
+>   }
+>   
+>   memcpy(olddata, newdata, sizeof(cpu_stat_t)*MAXCPUS);
+>   
+>   return ((ticksused * 100) / tickstotal) ;
+> }
+> 
+260c358
+< #error "Your plattform is not yet supported"
+---
+> #error "Your platform is not yet supported"
+
+
+uptime.c.orig, uptime.c:
+112a113
+> #elif defined(__SVR4) /* Solaris */
+113a115,124
+> extern gulong solaris_uptime_secs;
+> gulong read_uptime()
+> {
+>       /* we already have kstat open in cpu.c
+>        * so do the reading there, not here
+>        */
+>       return solaris_uptime_secs;
+> }
+> 
+> 
+
+memswap.c.orig, memswap.c:
+442a443,446
+> #elif defined(__SVR4) /* well, actually this is for Solaris */
+> /* Added by Phil Brown for CSW build of xfce 4.0 */
+> /* Added again by Andreas Almroth for CSW build of xfce 4.2.1 */
+> /* 2005-05-18 tidying up with using kstat and new swapctl */
+443a448,571
+> #include <stdio.h>
+> #include <stdlib.h> 
+> #include <unistd.h>
+> #include <sys/stat.h>
+> #include <sys/swap.h>
+> #include <vm/anon.h>
+> #include <kstat.h>
+> #include <sys/sysinfo.h>
+> 
+> static kstat_ctl_t     *kc         = NULL;
+> static kstat_t         *sys_pagesp = NULL;
+> static int             pagesize    = -1;
+> static unsigned long   physmem     = 0;
+> static unsigned long   freemem     = 0;
+> static swaptbl_t *swap_entries = NULL;
+> 
+> int alloc_table() {
+>   int num;
+>   int i;
+> 
+>   num = swapctl(SC_GETNSWP,0);
+> 
+>   if (num == 0)
+>     return -1;
+>   
+>   swap_entries = (swaptbl_t *)malloc(num * sizeof(swapent_t) + 
+>                                    sizeof(struct swaptable));
+>     
+>   if (swap_entries == NULL)
+>       return -1;
+> 
+>   for (i = 0; i < (num + 1); i++)
+>     swap_entries->swt_ent[i].ste_path = malloc(MAXPATHLEN);
+>     
+>   swap_entries->swt_n = num + 1;
+> 
+>   return num + 1;
+> }
+> 
+> gint read_memswap(gulong *mem, gulong *swap, gulong *MT, gulong *MU, gulong *ST, gulong *SU)
+> {
+>   kstat_named_t *kn;
+>   uint64_t swap_total = 0;
+>   uint64_t swap_free  = 0;
+> 
+>   int num;
+>   int i,n;
+> 
+>   /* Read page size first time */
+>   if(pagesize == -1){
+>      pagesize = sysconf(_SC_PAGESIZE);
+>   }
+> 
+>   /* Open kstat first time and read total memory */
+>   if (kc == NULL) {
+>     kc = kstat_open(); /* Should check for rc */
+> 
+>     sys_pagesp = kstat_lookup(kc, "unix", 0, "system_pages");
+>     
+>     kstat_read(kc,sys_pagesp,0);
+>     
+>     kn = kstat_data_lookup(sys_pagesp,"physmem");
+>     
+>     if (kn != NULL)
+>       physmem = (kn->value.ul * pagesize) >> 10;
+>     else
+>       physmem = 0;
+>   }
+> 
+>   /* Read current free memory */
+> 
+>   kstat_read(kc,sys_pagesp,0);
+> 
+>   kn = kstat_data_lookup(sys_pagesp,"freemem");
+> 
+>   freemem = (kn->value.ul * pagesize) >> 10;
+> 
+>   *mem = ((physmem - freemem) * 100) / physmem;
+>   *MT  = physmem;
+>   *MU  = physmem - freemem;
+> 
+>   /* Get swapctl stats */
+> 
+>   if (swap_entries == NULL) {
+>     if ((num = alloc_table()) == -1) {
+>       *swap = 0;
+>       *ST   = 0;
+>       *SU   = 0;
+>       return 0;
+>     }
+>   }
+>   else
+>     num = swap_entries->swt_n;
+> 
+>   n = swapctl(SC_LIST,swap_entries);
+> 
+>   if (n > num) {
+>     /* Geesh, someone added swap, clean up and allocate again */
+>     for (i = 0; i < num; i++)
+>       free(swap_entries->swt_ent[i].ste_path);
+> 
+>     free(swap_entries);
+> 
+>     swap_entries = NULL;
+> 
+>     if ((num = alloc_table()) == -1)
+>       *swap = 0;
+>       *ST   = 0;
+>       *SU   = 0;
+>       return 0;
+>   }
+>   
+>   for (i = 0; i < n; i++) {
+>     swap_total += (swap_entries->swt_ent[i].ste_pages);
+>     swap_free  += (swap_entries->swt_ent[i].ste_free);
+>   }
+> 
+>   *swap = ((swap_total - swap_free) * 100) / swap_total;
+>   *ST = (gulong)(swap_total * pagesize) /1024;
+>   *SU = (gulong)((swap_total - swap_free) * pagesize) / 1024;
+> 
+>   return 0;
+> }
+> 
+445c573
+< #error "Your platform is not yet support"
+---
+> #error "Your platform is not yet supported"
+
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=4058&group_id=910
+
+
+From noreply at berlios.de  Thu May 19 16:50:55 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Thu, 19 May 2005 08:50:55 -0600 (MDT)
+Subject: [Patch #445] Addition of UTC option to datetime-plugin (Feature req #434)
+Message-ID: <200505191450.j4JEotpc019331@unicorn.berlios.de>
+
+Patch #445 has been updated. 
+
+Project: xfce-goodies
+Category: None
+Status: Open
+Submitted by: aguelzow
+Assigned to : none
+Summary: Addition of UTC option to datetime-plugin (Feature req #434)
+
+-------------------------------------------------------
+For more info, visit:
+
+http://developer.berlios.de/patch/?func=detailpatch&patch_id=445&group_id=910
+
+
+From masse_nicolas at yahoo.fr  Fri May 20 13:14:10 2005
+From: masse_nicolas at yahoo.fr (masse nicolas)
+Date: Fri, 20 May 2005 13:14:10 +0200 (CEST)
+Subject: Fwd: Xfce 4 quiclauncher plugin version 0.8 compile problem!
+Message-ID: <20050520111410.25010.qmail@web26008.mail.ukl.yahoo.com>
+
+Remarque : message transf?r? en pi?ce jointe.
+
+
+
+	
+
+	
+		
+_____________________________________________________________________________ 
+D?couvrez le nouveau Yahoo! Mail : 1 Go d'espace de stockage pour vos mails, photos et vid?os ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com
+-------------- next part --------------
+An embedded message was scrubbed...
+From: Pasi Rehtonen <rehto81 at gmail.com>
+Subject: Xfce 4 quiclauncher plugin version 0.8 compile problem!
+Date: Fri, 20 May 2005 12:13:40 +0300
+Size: 2215
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050520/30faff9e/attachment.mht>
+
+From masse_nicolas at yahoo.fr  Fri May 20 13:14:58 2005
+From: masse_nicolas at yahoo.fr (masse nicolas)
+Date: Fri, 20 May 2005 13:14:58 +0200 (CEST)
+Subject: Xfce 4 quiclauncher plugin version 0.8 compile problem!
+In-Reply-To: 6667
+Message-ID: <20050520111458.89309.qmail@web26010.mail.ukl.yahoo.com>
+
+Hmmm, seems there is probs with translations. Not
+surprising since it's the first time I work with
+gettext. In fact I don't know what the t-fr.gmo file
+is. 
+I will take a look at that as soon as I can.
+Also, can you fill the bugs at the Xfce-Goodies
+website? 
+
+Many thanks,
+Masse Nicolas.
+
+--- Pasi Rehtonen <rehto81 at gmail.com> a ?crit:
+> When I try to compile the plugin, the compiling
+> fails and gives an error: 
+> 
+> make[3]: Entering directory
+>
+`/home/pasi/Imutukset/xfce4-quicklauncher-plugin-0.8/po'
+> : --update fr.po xfce4-quicklauncher-plugin.pot
+> rm -f fr.gmo && : -c --statistics -o fr.gmo fr.po
+> mv: cannot stat `t-fr.gmo': No such file or
+> directory
+> make[3]: *** [fr.gmo] Error 1
+> make[3]: Leaving directory
+>
+`/home/pasi/Imutukset/xfce4-quicklauncher-plugin-0.8/po'
+> make[2]: *** [stamp-po] Error 2
+> make[2]: Leaving directory
+>
+`/home/pasi/Imutukset/xfce4-quicklauncher-plugin-0.8/po'
+> make[1]: *** [all-recursive] Error 1
+> make[1]: Leaving directory
+>
+`/home/pasi/Imutukset/xfce4-quicklauncher-plugin-0.8'
+> make: *** [all] Error 2
+> 
+> Can you help me with this?
+> 
+> Regards 
+> Pasi Rehtonen
+> 
+
+
+	
+
+	
+		
+__________________________________________________________________
+D?couvrez le nouveau Yahoo! Mail : 250 Mo d'espace de stockage pour vos mails ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com/
+
+
+From jasper at xfce.org  Fri May 20 13:26:14 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Fri, 20 May 2005 13:26:14 +0200
+Subject: Xfce 4 quiclauncher plugin version 0.8 compile problem!
+In-Reply-To: <20050520111458.89309.qmail@web26010.mail.ukl.yahoo.com>
+References: <20050520111458.89309.qmail@web26010.mail.ukl.yahoo.com>
+Message-ID: <20050520112614.GA19593@baudolino.home.nl>
+
+On Fri, May 20, 2005 at 01:14:58PM +0200, masse nicolas wrote:
+> Hmmm, seems there is probs with translations. Not
+> surprising since it's the first time I work with
+> gettext. In fact I don't know what the t-fr.gmo file
+> is. 
+> I will take a look at that as soon as I can.
+> Also, can you fill the bugs at the Xfce-Goodies
+> website? 
+> 
+
+Ehm, could it be that this version is not in xfce-goodies CVS?
+
+
+
+From masse_nicolas at yahoo.fr  Fri May 20 15:32:15 2005
+From: masse_nicolas at yahoo.fr (masse nicolas)
+Date: Fri, 20 May 2005 15:32:15 +0200 (CEST)
+Subject: Xfce 4 quiclauncher plugin version 0.8 compile problem!
+In-Reply-To: 6667
+Message-ID: <20050520133215.25481.qmail@web26004.mail.ukl.yahoo.com>
+
+I did'nt update Xfce-Goodies cvs last time,sorry.
+.........done
+
+--- Jasper Huijsmans <jasper at xfce.org> a ?crit:
+> On Fri, May 20, 2005 at 01:14:58PM +0200, masse
+> nicolas wrote:
+> > Hmmm, seems there is probs with translations. Not
+> > surprising since it's the first time I work with
+> > gettext. In fact I don't know what the t-fr.gmo
+> file
+> > is. 
+> > I will take a look at that as soon as I can.
+> > Also, can you fill the bugs at the Xfce-Goodies
+> > website? 
+> > 
+> 
+> Ehm, could it be that this version is not in
+> xfce-goodies CVS?
+> 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+>
+http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+
+
+	
+
+	
+		
+_____________________________________________________________________________ 
+D?couvrez le nouveau Yahoo! Mail : 1 Go d'espace de stockage pour vos mails, photos et vid?os ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com
+
+
+From jasper at xfce.org  Fri May 20 16:01:28 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Fri, 20 May 2005 16:01:28 +0200
+Subject: Xfce 4 quiclauncher plugin version 0.8 compile problem!
+In-Reply-To: <20050520133215.25481.qmail@web26004.mail.ukl.yahoo.com>
+References: <20050520133215.25481.qmail@web26004.mail.ukl.yahoo.com>
+Message-ID: <20050520140128.GB19593@baudolino.home.nl>
+
+On Fri, May 20, 2005 at 03:32:15PM +0200, masse nicolas wrote:
+> I did'nt update Xfce-Goodies cvs last time,sorry.
+> .........done
+> 
+
+Alright, looks like you used gettextize to generate stuff. For Xfce we use
+glib-gettextize, which makes things a lot simpler. Actually, since 4.2.2 we
+use the xfce4-dev-tools package (only available from svn) and don't keep any
+generated files around.
+
+It would be a lot easier if you would use one of these options as well, if
+only for consistency. I think you should be able to simply copy a
+po/Makefile.in.in from another plugin, remove the intl/ directory (it's not
+needed), and rerun autogen.sh. 
+
+If you want I can do it for you. Just let me know.
+
+	Jasper
+
+
+> --- Jasper Huijsmans <jasper at xfce.org> a ?crit:
+> > On Fri, May 20, 2005 at 01:14:58PM +0200, masse
+> > nicolas wrote:
+> > > Hmmm, seems there is probs with translations. Not
+> > > surprising since it's the first time I work with
+> > > gettext. In fact I don't know what the t-fr.gmo
+> > file
+> > > is. 
+> > > I will take a look at that as soon as I can.
+> > > Also, can you fill the bugs at the Xfce-Goodies
+> > > website? 
+> > > 
+> > 
+> > Ehm, could it be that this version is not in
+> > xfce-goodies CVS?
+> > 
+> > _______________________________________________
+> > xfce-goodies-dev mailing list
+> > xfce-goodies-dev at lists.berlios.de
+> >
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> > 
+> 
+> 
+> 	
+> 
+> 	
+> 		
+> _____________________________________________________________________________ 
+> D?couvrez le nouveau Yahoo! Mail : 1 Go d'espace de stockage pour vos mails, photos et vid?os ! 
+> Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+From aguelzow at taliesin.ca  Fri May 20 16:42:55 2005
+From: aguelzow at taliesin.ca (Andreas J. Guelzow)
+Date: Fri, 20 May 2005 08:42:55 -0600
+Subject: Xfce 4 quiclauncher plugin version 0.8 compile problem!
+In-Reply-To: <20050520140128.GB19593@baudolino.home.nl>
+References: <20050520133215.25481.qmail@web26004.mail.ukl.yahoo.com>
+	 <20050520140128.GB19593@baudolino.home.nl>
+Message-ID: <1116600175.16499.1.camel@localhost>
+
+On Fri, 2005-20-05 at 16:01 +0200, Jasper Huijsmans wrote:
+> It would be a lot easier if you would use one of these options as well, if
+> only for consistency. I think you should be able to simply copy a
+> po/Makefile.in.in from another plugin
+
+I think one doesn't even need to copy po/Makefile.in.in. It seems to be
+generated. (At least it was generated in modemlights-plugin.)
+
+ANdreas
+-- 
+Prof. Dr. Andreas J. Guelzow
+Dept. of Mathematical & Computing Sciences
+Concordia University College of Alberta
+
+
+
+From jasper at xfce.org  Fri May 20 16:46:05 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Fri, 20 May 2005 16:46:05 +0200
+Subject: Xfce 4 quiclauncher plugin version 0.8 compile problem!
+In-Reply-To: <20050520140128.GB19593@baudolino.home.nl>
+References: <20050520133215.25481.qmail@web26004.mail.ukl.yahoo.com> <20050520140128.GB19593@baudolino.home.nl>
+Message-ID: <20050520144605.GD19593@baudolino.home.nl>
+
+On Fri, May 20, 2005 at 04:01:28PM +0200, Jasper Huijsmans wrote:
+> On Fri, May 20, 2005 at 03:32:15PM +0200, masse nicolas wrote:
+> > I did'nt update Xfce-Goodies cvs last time,sorry.
+> > .........done
+> > 
+> 
+> Alright, looks like you used gettextize to generate stuff. For Xfce we use
+> glib-gettextize, which makes things a lot simpler. Actually, since 4.2.2 we
+> use the xfce4-dev-tools package (only available from svn) and don't keep any
+> generated files around.
+> 
+> It would be a lot easier if you would use one of these options as well, if
+> only for consistency. I think you should be able to simply copy a
+> po/Makefile.in.in from another plugin, remove the intl/ directory (it's not
+> needed), and rerun autogen.sh. 
+> 
+> If you want I can do it for you. Just let me know.
+> 
+
+In fact, I have just done it and it seems to work for me. Should I commit?
+
+
+
+
+From jasper at xfce.org  Fri May 20 16:50:41 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Fri, 20 May 2005 16:50:41 +0200
+Subject: Xfce 4 quiclauncher plugin version 0.8 compile problem!
+In-Reply-To: <1116600175.16499.1.camel@localhost>
+References: <20050520133215.25481.qmail@web26004.mail.ukl.yahoo.com> <20050520140128.GB19593@baudolino.home.nl> <1116600175.16499.1.camel@localhost>
+Message-ID: <20050520145041.GE19593@baudolino.home.nl>
+
+On Fri, May 20, 2005 at 08:42:55AM -0600, Andreas J. Guelzow wrote:
+> On Fri, 2005-20-05 at 16:01 +0200, Jasper Huijsmans wrote:
+> > It would be a lot easier if you would use one of these options as well, if
+> > only for consistency. I think you should be able to simply copy a
+> > po/Makefile.in.in from another plugin
+> 
+> I think one doesn't even need to copy po/Makefile.in.in. It seems to be
+> generated. (At least it was generated in modemlights-plugin.)
+> 
+
+Yeah, it is, but only if you use the xfce4-devtools, and quicklauncher does
+not at the moment, so this is the least-intrusive solution.
+
+
+From masse_nicolas at yahoo.fr  Fri May 20 17:09:44 2005
+From: masse_nicolas at yahoo.fr (masse nicolas)
+Date: Fri, 20 May 2005 17:09:44 +0200 (CEST)
+Subject: Xfce 4 quiclauncher plugin version 0.8 compile problem!
+In-Reply-To: 6667
+Message-ID: <20050520150945.92671.qmail@web26008.mail.ukl.yahoo.com>
+
+--- Jasper Huijsmans <jasper at xfce.org> a ?crit:
+> On Fri, May 20, 2005 at 04:01:28PM +0200, Jasper
+> Huijsmans wrote:
+> > On Fri, May 20, 2005 at 03:32:15PM +0200, masse
+> nicolas wrote:
+> > > I did'nt update Xfce-Goodies cvs last
+> time,sorry.
+> > > .........done
+> > > 
+> > 
+> > Alright, looks like you used gettextize to
+> generate stuff. For Xfce we use
+> > glib-gettextize, which makes things a lot simpler.
+> Actually, since 4.2.2 we
+> > use the xfce4-dev-tools package (only available
+> from svn) and don't keep any
+> > generated files around.
+
+In fact I look on the tutorial on the XFC website. 
+> > 
+> > It would be a lot easier if you would use one of
+> these options as well, if
+> > only for consistency. I think you should be able
+> to simply copy a
+> > po/Makefile.in.in from another plugin, remove the
+> intl/ directory (it's not
+> > needed), and rerun autogen.sh. 
+> > 
+> > If you want I can do it for you. Just let me know.
+> > 
+> 
+> In fact, I have just done it and it seems to work
+> for me. Should I commit?
+> 
+
+Yes, do :). This way I can look and try to learn how
+it work. (I already made some change here, but for me
+it does not make any difference).
+I hope it can remove the bug.... 
+
+
+
+	
+
+	
+		
+_____________________________________________________________________________ 
+D?couvrez le nouveau Yahoo! Mail : 1 Go d'espace de stockage pour vos mails, photos et vid?os ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com
+
+
+From jasper at xfce.org  Fri May 20 17:48:32 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Fri, 20 May 2005 17:48:32 +0200
+Subject: Xfce 4 quiclauncher plugin version 0.8 compile problem!
+In-Reply-To: <20050520150945.92671.qmail@web26008.mail.ukl.yahoo.com>
+References: <20050520150945.92671.qmail@web26008.mail.ukl.yahoo.com>
+Message-ID: <428E06D0.9050106@xfce.org>
+
+masse nicolas wrote:
+>>>
+>>>If you want I can do it for you. Just let me know.
+>>>
+>>
+>>In fact, I have just done it and it seems to work
+>>for me. Should I commit?
+>>
+> 
+> 
+> Yes, do :). This way I can look and try to learn how
+> it work. (I already made some change here, but for me
+> it does not make any difference).
+> I hope it can remove the bug.... 
+> 
+
+Done. Try it now.
+
+Here's what I did:
+
+  * configure.ac: remove GNU_GETTEXT macros and replace with BM_I18N,
+    change version to 0.8.1.
+  * po/Makefile.in.in: copy from weather plugin
+  * Makefile.am, intl/: remove everything in intl/ directory.
+  * run ./autogen.sh.
+
+Let's hope that will work,
+
+	Jasper
+
+
+From bernhard.walle at gmx.de  Fri May 20 17:45:11 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Fri, 20 May 2005 17:45:11 +0200
+Subject: Switch to Subversion
+In-Reply-To: <flnpl2-96i.ln1@news.bwalle.de>
+References: <flnpl2-96i.ln1@news.bwalle.de>
+Message-ID: <79d1m2-gd5.ln1@news.bwalle.de>
+
+Hello,
+
+* Bernhard Walle [17.05.2005 19:53]:
+> 
+> after Xfce has moved to SVN my question: What do you think about
+> xfce-goodies moving to SVN, too. Users of CVS might become familar with
+> SVN very quickly so I see no problems.
+
+really no opinions? I could do the convert, that would be not the problem.
+
+
+Regards,
+ Bernhard
+
+
+
+From jasper at xfce.org  Fri May 20 20:14:00 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Fri, 20 May 2005 20:14:00 +0200
+Subject: Switch to Subversion
+In-Reply-To: <79d1m2-gd5.ln1@news.bwalle.de>
+References: <flnpl2-96i.ln1@news.bwalle.de> <79d1m2-gd5.ln1@news.bwalle.de>
+Message-ID: <428E28E8.5050401@xfce.org>
+
+Bernhard Walle wrote:
+> Hello,
+> 
+> * Bernhard Walle [17.05.2005 19:53]:
+> 
+>>after Xfce has moved to SVN my question: What do you think about
+>>xfce-goodies moving to SVN, too. Users of CVS might become familar with
+>>SVN very quickly so I see no problems.
+> 
+> 
+> really no opinions? I could do the convert, that would be not the problem.
+> 
+
+Yes, sorry, I'm all for it. I really enjoy the new Xfce SVN as well.
+
+There was an idea that perhaps the goodies could now be hosted on the 
+Xfce svn server as well, but it will probably take a bit of time to work 
+out a proposal for this and how to manage permissions and accounts. So, 
+it wouldn't be a bad idea to move to svn on berlios, whether we are 
+going to move eventually or not.
+
+Note that I don't actually have any code on xfce-goodies, so other 
+people may want to comment as well ;-)
+
+	Jasper
+
+
+From aguelzow at taliesin.ca  Fri May 20 21:30:35 2005
+From: aguelzow at taliesin.ca (Andreas J. Guelzow)
+Date: Fri, 20 May 2005 13:30:35 -0600
+Subject: Switch to Subversion
+In-Reply-To: <428E28E8.5050401@xfce.org>
+References: <flnpl2-96i.ln1@news.bwalle.de> <79d1m2-gd5.ln1@news.bwalle.de>
+	 <428E28E8.5050401@xfce.org>
+Message-ID: <1116617435.17188.3.camel@localhost>
+
+On Fri, 2005-20-05 at 20:14 +0200, Jasper Huijsmans wrote:
+> Note that I don't actually have any code on xfce-goodies, so other 
+> people may want to comment as well ;-)
+
+Well, I do have code on xfce-goodies, even if only for a few days
+now :-) so perhaps I should comment:
+
+I was quite surprised that xfce-goodies was still using cvs since xfce
+core is using svn. I see no reason why we shouldn't move with the times,
+especially is somebody else wants to do the organize the move and tell
+those of us you have never used svn what the svn commands corresponding
+to the common cvs commands are.
+
+Andreas
+-- 
+Prof. Dr. Andreas J. Guelzow
+Dept. of Mathematical & Computing Sciences
+Concordia University College of Alberta
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050520/a3fed57f/attachment.pgp>
+
+From koorek at o2.pl  Mon May 23 09:55:04 2005
+From: koorek at o2.pl (Robert Kurowski)
+Date: Mon, 23 May 2005 09:55:04 +0200
+Subject: fsguard plugin license
+Message-ID: <20050523095504.17287a22@localhost>
+
+Hi!
+
+I couldn't find any license info in tarball. It's some sort of
+open-source, but is it GPL ?
+
+-- 
+Robert 'koorek' Kurowski	Jabber:	koorek at pld-linux.org
+
+
+From bernhard.walle at gmx.de  Mon May 23 20:10:24 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Mon, 23 May 2005 20:10:24 +0200
+Subject: Voting: Move to SVN
+Message-ID: <gti9m2-fd6.ln1@news.bwalle.de>
+
+Hello,
+
+I think a vote would be a good idea. End should be Mon, 30th May 2005,
+00:00 UTC.
+
+
+Vote 1: Don't change anything, CVS is ok
+
+Vote 2: Move to SVN, following layout
+             /
+                plugin_a/
+                   trunk/
+                   tags/
+                   branches/
+                plugin_b/
+                   trunk/
+                   tags/
+                   branches/
+
+Vote 3: Move to SVN, following layout
+              /
+                 trunk/
+                    plugin_a/
+                    plugin_b/
+                 tags/
+                    plugin_a-0.0.1/
+                    plugin_b-0.0.1/
+                 branches/
+
+- - - - - - - - - - - - - - - - - - - - - - - - -
+
+Quote this and make a cross:
+
+  [ ]  Vote 1
+  [ ]  Vote 2
+  [ ]  Vote 3
+
+- - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+Regards,
+  Bernhard
+
+
+
+From bernhard.walle at gmx.de  Mon May 23 20:46:04 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Mon, 23 May 2005 20:46:04 +0200
+Subject: Voting: Move to SVN
+In-Reply-To: <gti9m2-fd6.ln1@news.bwalle.de>
+References: <gti9m2-fd6.ln1@news.bwalle.de>
+Message-ID: <c0l9m2-e37.ln1@news.bwalle.de>
+
+My vote:
+
+> - - - - - - - - - - - - - - - - - - - - - - - - -
+> 
+> Quote this and make a cross:
+> 
+>   [ ]  Vote 1
+>   [X]  Vote 2
+>   [ ]  Vote 3
+> 
+> - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+Regards,
+Bernhard
+
+
+
+From jasper at xfce.org  Mon May 23 21:00:44 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Mon, 23 May 2005 21:00:44 +0200
+Subject: fsguard plugin license
+In-Reply-To: <20050523095504.17287a22@localhost>
+References: <20050523095504.17287a22@localhost>
+Message-ID: <4292285C.9030902@xfce.org>
+
+Robert Kurowski wrote:
+> Hi!
+> 
+> I couldn't find any license info in tarball. It's some sort of
+> open-source, but is it GPL ?
+> 
+
+Hmm, that's unfortunate. If no licence is specified, it has to be at 
+least GPL-compatible since the panel plugin code is GPL.
+
+	Jasper
+
+
+From yogi4list at dataline-gmbh.de  Mon May 23 21:02:48 2005
+From: yogi4list at dataline-gmbh.de (=?UTF-8?B?SsO8cmdlbiBCdXNzZQ==?=)
+Date: Mon, 23 May 2005 21:02:48 +0200
+Subject: Voting: Move to SVN
+In-Reply-To: <gti9m2-fd6.ln1@news.bwalle.de>
+References: <gti9m2-fd6.ln1@news.bwalle.de>
+Message-ID: <429228D8.6060002@dataline-gmbh.de>
+
+Quote this and make a cross:
+
+   [ ]  Vote 1
+   [X]  Vote 2
+   [ ]  Vote 3
+
+
+Bis denne
+J?rgen
+
+
+From jasper at xfce.org  Mon May 23 21:05:47 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Mon, 23 May 2005 21:05:47 +0200
+Subject: Voting: Move to SVN
+In-Reply-To: <gti9m2-fd6.ln1@news.bwalle.de>
+References: <gti9m2-fd6.ln1@news.bwalle.de>
+Message-ID: <4292298B.4020801@xfce.org>
+
+Bernhard Walle wrote:
+> Hello,
+> 
+> I think a vote would be a good idea. End should be Mon, 30th May 2005,
+> 00:00 UTC.
+> 
+
+Cool, a deadline, smart thinking ;-)
+
+> - - - - - - - - - - - - - - - - - - - - - - - - -
+> 
+> Quote this and make a cross:
+> 
+>   [ ]  Vote 1
+>   [X]  Vote 2
+>   [ ]  Vote 3
+> 
+> - - - - - - - - - - - - - - - - - - - - - - - - -
+
+We don't have a coordinated release schedule, so it makes sense to keep 
+every module separate.
+
+thanks for doing this,
+
+	Jasper
+
+
+From aguelzow at taliesin.ca  Mon May 23 21:10:27 2005
+From: aguelzow at taliesin.ca (Andreas J. Guelzow)
+Date: Mon, 23 May 2005 13:10:27 -0600
+Subject: Voting: Move to SVN
+In-Reply-To: <gti9m2-fd6.ln1@news.bwalle.de>
+References: <gti9m2-fd6.ln1@news.bwalle.de>
+Message-ID: <1116875427.23470.0.camel@localhost>
+
+On Mon, 2005-23-05 at 20:10 +0200, Bernhard Walle wrote:
+> - - - - - - - - - - - - - - - - - - - - - - - - -
+> 
+> Quote this and make a cross:
+> 
+>   [ ]  Vote 1
+>   [X]  Vote 2
+>   [ ]  Vote 3
+> 
+> - - - - - - - - - - - - - - - - - - - - - - - - -
+
+-- 
+Andreas J. Guelzow
+Taliesin Software, Shelties, Pyr Sheps
+and Shetland Sheep
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050523/a1e52b7d/attachment.pgp>
+
+From bernhard.walle at gmx.de  Mon May 23 21:35:04 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Mon, 23 May 2005 21:35:04 +0200
+Subject: Voting: Move to SVN
+In-Reply-To: <4292298B.4020801@xfce.org>
+References: <gti9m2-fd6.ln1@news.bwalle.de> <4292298B.4020801@xfce.org>
+Message-ID: <8sn9m2-128.ln1@news.bwalle.de>
+
+Hello,
+
+* Jasper Huijsmans [23.05.2005 21:05]:
+> 
+> We don't have a coordinated release schedule, so it makes sense to keep 
+> every module separate.
+
+Yes, this makes sense. So what do you suggest:
+
+ a) Moving all modules to SVN if the author doesn't complain.
+ b) Moving only that modules to SVN whose author whish this.
+
+
+
+Regards,
+ Bernhard
+
+
+
+From noreply at berlios.de  Wed May 25 14:50:07 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Wed, 25 May 2005 15:50:07 +0300 (EEST)
+Subject: [Patch #452] small xkb plugin fixes
+Message-ID: <200505251250.j4PCo7SP018196@unicorn.berlios.de>
+
+Patch #452 has been updated. 
+
+Project: xfce-goodies
+Category: None
+Status: Open
+Submitted by: sheckley
+Assigned to : none
+Summary: small xkb plugin fixes
+
+-------------------------------------------------------
+For more info, visit:
+
+http://developer.berlios.de/patch/?func=detailpatch&patch_id=452&group_id=910
+
+
+From noreply at berlios.de  Wed May 25 14:51:42 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Wed, 25 May 2005 15:51:42 +0300 (EEST)
+Subject: [Bug #4101] small xkb plugin bugs
+Message-ID: <200505251251.j4PCpgog018248@unicorn.berlios.de>
+
+Bug #4101, was updated on 2005-May-25 15:51
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: None
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: sheckley
+Assigned to : none
+Summary: small xkb plugin bugs
+
+Details: - display_type (IMAGE or TEXT) is not initialized
+- settings dialog uses both gtk_container_add() and gtk_box_pack_start() for it's widgets
+- the image (flag) is not always redysplayed properly - may be a gtk+/xorg/xdamage bug
+
+The patch is ID 000452, URL http://developer.berlios.de/patch/index.php?func=detailpatch&patch_id=452&group_id=910
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=4101&group_id=910
+
+
+From jasper at xfce.org  Wed May 25 19:53:15 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Wed, 25 May 2005 19:53:15 +0200
+Subject: Voting: Move to SVN
+In-Reply-To: <8sn9m2-128.ln1@news.bwalle.de>
+References: <gti9m2-fd6.ln1@news.bwalle.de> <4292298B.4020801@xfce.org> <8sn9m2-128.ln1@news.bwalle.de>
+Message-ID: <4294BB8B.60802@xfce.org>
+
+Bernhard Walle wrote:
+> Hello,
+> 
+> * Jasper Huijsmans [23.05.2005 21:05]:
+> 
+>>We don't have a coordinated release schedule, so it makes sense to keep 
+>>every module separate.
+> 
+> 
+> Yes, this makes sense. So what do you suggest:
+> 
+>  a) Moving all modules to SVN if the author doesn't complain.
+>  b) Moving only that modules to SVN whose author whish this.
+> 
+
+I think (a). Otherwise the inertia would kill our plans for world 
+domination ;-)
+
+
+From masse_nicolas at yahoo.fr  Wed May 25 20:07:28 2005
+From: masse_nicolas at yahoo.fr (masse nicolas)
+Date: Wed, 25 May 2005 20:07:28 +0200 (CEST)
+Subject: Voting: Move to SVN
+In-Reply-To: 6667
+Message-ID: <20050525180729.85704.qmail@web26008.mail.ukl.yahoo.com>
+
+--- Jasper Huijsmans <jasper at xfce.org> a ?crit:
+> Bernhard Walle wrote:
+> > Hello,
+> > 
+> > * Jasper Huijsmans [23.05.2005 21:05]:
+> > 
+> >>We don't have a coordinated release schedule, so
+> it makes sense to keep 
+> >>every module separate.
+> > 
+> > 
+> > Yes, this makes sense. So what do you suggest:
+> > 
+> >  a) Moving all modules to SVN if the author
+> doesn't complain.
+> >  b) Moving only that modules to SVN whose author
+> whish this.
+> > 
+> 
+> I think (a). Otherwise the inertia would kill our
+> plans for world 
+> domination ;-)
+
+Having the modules on different servers will certainly
+be harder to manage. So I think (a) also. 
+
+
+
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+>
+http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+
+
+	
+
+	
+		
+_____________________________________________________________________________ 
+D?couvrez le nouveau Yahoo! Mail : 1 Go d'espace de stockage pour vos mails, photos et vid?os ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com
+
+
+From jean-baptiste.dulong at no-log.org  Wed May 25 21:18:14 2005
+From: jean-baptiste.dulong at no-log.org (jean-baptiste dulong)
+Date: Wed, 25 May 2005 21:18:14 +0200
+Subject: need help in plugin development....xfce4-mount-plugin
+Message-ID: <4294CF76.3090009@no-log.org>
+
+Hi,
+I'm working on the xfce4-mount-plugin and would like to add a new 
+functionality. I'd like the plugin to launch a command upon a 
+successfull mount (eg: a terminal). The command won't depend on a 
+specific device but will be a general options for the plugin.
+Therefore I added an element in the structure that hold the plugin 
+(Control->data) to store that command :
+
+typedef struct
+{
+	/* added string to hold command value */
+	char * on_mount_cmd ;
+	GtkWidget * button ;
+	GtkWidget * menu ;
+	GPtrArray * pdisks ;
+	GPtrArray * pdisk_display ;
+} t_mounter ;
+
+I also added a mounter_read_config and a mounter_write_config function 
+to store and restore the option value.
+My next step (before implementing a graphical interface for the user to 
+change the options) is to actually use the value in on_mount_cmd when 
+mounting a device.
+For mounting a device, I catch an event from a menu item with this 
+simple function :
+
+static void on_activate_disk_display(GtkWidget * widget,t_disk * disk)
+{
+	if (disk != NULL)
+	{
+		if (disk->mount_info != NULL)
+		{
+			disk_umount(disk);
+		}
+		else
+		{
+			disk_mount(disk);					 
+/*exec_cmd_silent(g_strconcat(mt->on_mount_cmd,disk->mount_point,NULL),FALSE,TRUE);*/
+		}
+	}
+}
+And this function would love to use mt->on_mount_cmd to launch 
+something, but we don't have access to it and the gpointer element in 
+the callback function is already used, we need a pointer on the t_disk * 
+disk element.
+So is there a way to access the Control->data from some function like 
+this one ?? Is it possible to add argument to the function with a 
+pointer to Control->data ?? Is there a magic spell ??
+
+If all this doesn't sound clear at all, leave it, I'll spend my 
+desperate nights on it... :-))
+If the answer is trivial, it will help anyway...
+
+
+-- 
+---------------------------------------------------
+Jean-Baptiste Dulong
+---------------------------------------------------
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: mount-plugin.c
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050525/96848c5c/attachment.c>
+
+From fourdan at xfce.org  Wed May 25 23:50:42 2005
+From: fourdan at xfce.org (Olivier Fourdan)
+Date: Wed, 25 May 2005 23:50:42 +0200
+Subject: need help in plugin development....xfce4-mount-plugin
+In-Reply-To: <4294CF76.3090009@no-log.org>
+References: <4294CF76.3090009@no-log.org>
+Message-ID: <1117057842.6589.38.camel@shuttle>
+
+Hi
+
+Why not putting all the required fields in the structure and pass a
+pointer to that structure? This way, you'll be able to access all the
+required data...
+
+Just a quick thought, might be irrelevant in your case, dunno...
+
+HTH
+Olivier.
+
+On Wed, 2005-05-25 at 21:18 +0200, jean-baptiste dulong wrote:
+> Hi,
+> I'm working on the xfce4-mount-plugin and would like to add a new 
+> functionality. I'd like the plugin to launch a command upon a 
+> successfull mount (eg: a terminal). The command won't depend on a 
+> specific device but will be a general options for the plugin.
+> Therefore I added an element in the structure that hold the plugin 
+> (Control->data) to store that command :
+> 
+> typedef struct
+> {
+> 	/* added string to hold command value */
+> 	char * on_mount_cmd ;
+> 	GtkWidget * button ;
+> 	GtkWidget * menu ;
+> 	GPtrArray * pdisks ;
+> 	GPtrArray * pdisk_display ;
+> } t_mounter ;
+> 
+> I also added a mounter_read_config and a mounter_write_config function 
+> to store and restore the option value.
+> My next step (before implementing a graphical interface for the user to 
+> change the options) is to actually use the value in on_mount_cmd when 
+> mounting a device.
+> For mounting a device, I catch an event from a menu item with this 
+> simple function :
+> 
+> static void on_activate_disk_display(GtkWidget * widget,t_disk * disk)
+> {
+> 	if (disk != NULL)
+> 	{
+> 		if (disk->mount_info != NULL)
+> 		{
+> 			disk_umount(disk);
+> 		}
+> 		else
+> 		{
+> 			disk_mount(disk);					 
+> /*exec_cmd_silent(g_strconcat(mt->on_mount_cmd,disk->mount_point,NULL),FALSE,TRUE);*/
+> 		}
+> 	}
+> }
+> And this function would love to use mt->on_mount_cmd to launch 
+> something, but we don't have access to it and the gpointer element in 
+> the callback function is already used, we need a pointer on the t_disk * 
+> disk element.
+> So is there a way to access the Control->data from some function like 
+> this one ?? Is it possible to add argument to the function with a 
+> pointer to Control->data ?? Is there a magic spell ??
+> 
+> If all this doesn't sound clear at all, leave it, I'll spend my 
+> desperate nights on it... :-))
+> If the answer is trivial, it will help anyway...
+> 
+> 
+> plain text document attachment (mount-plugin.c)
+> /* mount-plugin.c */
+> 
+> /*
+> Copyright (C) 2005 Jean-Baptiste jb_dul at yahoo.com
+> 
+> This program is free software; you can redistribute it and/or 
+> modify it under the terms of the GNU General Public License 
+> as published by the Free Software Foundation; either 
+> version 2 of the License, or (at your option) any later 
+> version.
+> 
+> This program is distributed in the hope that it will be useful,
+> but WITHOUT ANY WARRANTY; without even the implied warranty of
+> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> GNU General Public License for more details.
+> 
+> You should have received a copy of the GNU General Public License
+> along with this program; if not, write to the Free Software
+> Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+> */
+> #include "devices.h"
+> #include <gtk/gtk.h>
+> 
+> 
+> /* for debugging */
+> #include <libxfce4util/debug.h>
+> 
+> #include <panel/xfce.h>
+> #include <panel/plugins.h>
+> #include <libxfcegui4/libxfcegui4.h>
+> #include "icons.h"
+> 
+> /*--------- graphical interface ----------*/
+> typedef struct 
+> {
+> 	char * on_mount_cmd ;
+> 	GtkWidget * button ;
+> 	GtkWidget * menu ;
+> 	GPtrArray * pdisks ; /* contains pointers to struct t_disk */
+> 	GPtrArray * pdisk_display ; /*contains pointers to t_disk_display */
+> } t_mounter ;
+> /*---------------------------------*/
+> 
+> typedef struct
+> {
+> 	GtkWidget * menu_item ;
+> 	GtkWidget * hbox ;
+> 	GtkWidget * label_disk ;
+> 	GtkWidget * label_mount_info ;
+> 	GtkWidget * progress_bar ;
+> } t_disk_display ;
+> /*------------------------------------------------*/
+> 
+> 
+> /*---------------- on_activate_disk_display ---------------*/
+> static void on_activate_disk_display(GtkWidget * widget,t_disk * disk)
+> {
+> 	if (disk != NULL)
+> 	{
+> 		if (disk->mount_info != NULL)
+> 		{/*disk is mounted*/
+> 			disk_umount(disk);
+> 			/* disk->mount_info is freed by disk_mount */
+> 		}
+> 		else
+> 		{/*disk is not mounted*/
+> 			disk_mount(disk);
+> 			/* needs a refresh, a global refresh is done whe the window becomes visible*/
+> 			//exec_cmd_silent(g_strconcat(mt->on_mount_cmd,disk->mount_point,NULL),FALSE,TRUE);
+> 		}
+> 	}
+> }
+> 
+> /*---------------------------------------------------------*/
+> 
+> /*-------------------- disk_display_new -----------------*/
+> /*create a new t_disk_display from t_disk infos */
+> static t_disk_display * disk_display_new(t_disk * disk)
+> {
+> 	if (disk != NULL) 
+> 	{
+> 		t_disk_display * dd ;
+> 		dd = g_new0(t_disk_display,1) ;
+> 		dd->menu_item = gtk_menu_item_new();
+> 		g_signal_connect(G_OBJECT(dd->menu_item),"activate",G_CALLBACK(on_activate_disk_display),disk);
+> 		
+> 		dd->hbox = gtk_hbox_new(FALSE,10);
+> 		gtk_container_add(GTK_CONTAINER(dd->menu_item), dd->hbox);
+> 		
+> 		dd->label_disk = gtk_label_new(g_strconcat(disk->device," -> ",disk->mount_point,NULL));
+> 		/*change to uniform label size*/
+> 		gtk_label_set_width_chars(GTK_LABEL(dd->label_disk),28);
+> 		gtk_label_set_justify(GTK_LABEL(dd->label_disk),GTK_JUSTIFY_LEFT);
+> 		gtk_box_pack_start(GTK_BOX(dd->hbox),dd->label_disk,FALSE,TRUE,0);
+> 		
+> 		dd->label_mount_info = gtk_label_new("");
+> 		/*change to uniform label size*/
+> 		gtk_label_set_width_chars(GTK_LABEL(dd->label_mount_info),25);
+> 		gtk_label_set_use_markup(GTK_LABEL(dd->label_mount_info),TRUE);
+> 		gtk_label_set_justify(GTK_LABEL(dd->label_mount_info),GTK_JUSTIFY_RIGHT);
+> 		gtk_box_pack_start(GTK_BOX(dd->hbox),dd->label_mount_info,TRUE,TRUE,0);
+> 		
+> 		dd->progress_bar = gtk_progress_bar_new();
+> 		gtk_box_pack_start(GTK_BOX(dd->hbox),dd->progress_bar,TRUE,TRUE,0);
+> 		return dd ;
+> 	}
+> 	return NULL ;
+> }
+> /*-----------------------------------------------------------*/
+> 
+> 
+> /*-------------------- disk_display_refresh -----------------*/
+> static void disk_display_refresh(t_disk_display * disk_display, t_mount_info * mount_info)
+> {
+> 	TRACE("enters disk_display_refresh");
+> 	if (disk_display != NULL)
+> 	{
+> 		if (mount_info != NULL)
+> 		{	/* device is mounted */
+> 			char * text ;
+> 			char * used = get_size_human_readable(mount_info->used);
+> 			//DBG("used is now : %s",used);
+> 			char * size = get_size_human_readable(mount_info->size);
+> 			//DBG("size is now : %s",size);
+> 			char * avail = get_size_human_readable(mount_info->avail);
+> 			//DBG("avail is now : %s",size);
+> 			text = g_strdup_printf("[%s/%s] %s free", used ,size,avail );
+> 			//DBG("text is now : %s",text);
+> 			
+> 			g_free(used);
+> 			g_free(size);
+> 			g_free(avail);
+> 			//text = g_strdup_printf("mounted on : %s\t[%g Mb/%g Mb] %g Mb free",mount_info->mounted_on, mount_info->used, mount_info->size, mount_info->avail);
+> 			gtk_label_set_text(GTK_LABEL(disk_display->label_mount_info),text);
+> 			
+> 			gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(disk_display->progress_bar),((gdouble)mount_info->percent / 100) );
+> 			gtk_widget_show(GTK_WIDGET(disk_display->progress_bar));
+> 		}
+> 		else /* mount_info == NULL */
+> 		{
+> 			/*remove mount info */
+> 			gtk_label_set_markup(GTK_LABEL(disk_display->label_mount_info),"<span foreground=\"#FF0000\">not mounted</span>");
+> 			gtk_widget_hide(GTK_WIDGET(disk_display->progress_bar));
+> 
+> 		}
+> 	}
+> 	TRACE("leaves disk_display_refresh");
+> }
+> /*----------------------------------------------*/
+> 
+> /*--------------- mounter_data_free -----------------*/
+> static void mounter_data_free(t_mounter * mt)
+> {
+> 	TRACE ("enters mounter_data_free");
+> 	disks_free(&(mt->pdisks));
+> 	g_ptr_array_free(mt->pdisk_display,TRUE);
+> 	mt->pdisk_display = NULL;
+> 	gtk_widget_destroy(GTK_WIDGET(mt->menu));
+> 	mt->menu = NULL ;
+> 	TRACE ("leaves mounter_data_free");
+> }
+> /*----------------------------------------------*/
+> 
+> /*--------------- mounter_free -----------------*/
+> static void mounter_free(Control * control)
+> {
+> 	TRACE ("enters mounter_free");
+> 	t_mounter * mt = (t_mounter*) control->data ;
+> 	mounter_data_free(mt);
+> 	g_free(mt->on_mount_cmd);
+> 	g_free(mt);
+> 	TRACE ("leaves mounter_free");
+> }
+> /*----------------------------------------------*/
+> /*---------------- mounter_data_new --------------------------*/
+> static void mounter_data_new(t_mounter * mt)
+> {
+> 	int i ;
+> 	t_disk * disk ;
+> 	t_disk_display * disk_display ;
+> 	
+> 	/*get static infos from /etc/fstab */
+> 	mt->pdisks = disks_new();
+> 	
+> 	/* get dynamic infos on mounts */
+> 	disks_refresh(mt->pdisks);
+> 	
+> 	/* menu with menu_item */
+> 	mt->menu = gtk_menu_new();
+> 	/* gtk_menu_shell_append(GTK_MENU_SHELL(mt->menu),gtk_menu_item_new_with_label("devices")); */
+> 	/* gtk_menu_shell_append(GTK_MENU_SHELL(mt->menu),gtk_separator_menu_item_new());*/
+> 	
+> 	mt->pdisk_display = g_ptr_array_sized_new(mt->pdisks->len) ;
+> 	for(i=0;i < mt->pdisks->len;i++)
+> 	{
+> 		disk = g_ptr_array_index(mt->pdisks,i); //get the disk 
+> 		disk_display = disk_display_new(disk) ;// creates a disk_display
+> 		disk_display_refresh(disk_display,disk->mount_info) ;//fill in mount infos
+> 		gtk_menu_shell_append(GTK_MENU_SHELL(mt->menu),disk_display->menu_item);//add the mnu_item to the menu
+> 		g_ptr_array_add(mt->pdisk_display,disk_display); //add to the array
+> 	}
+> 	gtk_widget_show_all(mt->menu);
+> 	
+> 	return ;
+> }
+> /*------------------------------------------------------*/
+> 
+> /*---------------------- mounter_refresh ---------------*/
+> static void mounter_refresh(t_mounter * mt)
+> {
+> 	TRACE ("enters mounter_refresh");
+> 	
+> 	mounter_data_free(mt);
+> 	mounter_data_new(mt);
+> 
+> 	TRACE ("leaves mounter_refresh");
+> 	
+> }
+> /*---------------------------------------------------------*/
+> 
+> /* --------------plugin event --------------------------------*/
+> static gboolean on_button_press(GtkWidget * widget , GdkEventButton * event,t_mounter * mounter)
+> {
+> 	TRACE("enters on_button_pressed");
+> 	if (mounter != NULL && event->button == 1)
+> 	{
+> 		
+> 		mounter_refresh(mounter); // refreshs infos regarding mounts data
+> 		gtk_menu_popup(GTK_MENU(mounter->menu),NULL,NULL,NULL,NULL,0,event->time);
+> 		return TRUE;
+> 	}
+> 	TRACE("leaves on_button_pressed");
+> 	return FALSE ;
+> }
+> /*------------------------------------------------------*/
+> 
+> /*---------------------- mounter_read_config --------------------*/
+> static void
+> mounter_read_config (Control * control, xmlNodePtr node)
+> {
+>     xmlChar *value;
+>     t_mounter *mt;
+> 
+>     if (!node || !node->children)
+> 	return;
+> 
+>     mt = (t_mounter *) control->data;
+> 
+>     /* on_mount_cmd */
+> 
+>     value = xmlGetProp (node, (const xmlChar *) "on_mount_cmd");
+>     if (value)
+>     {
+> 	g_free (mt->on_mount_cmd);
+> 	mt->on_mount_cmd = (char *) value;
+>     }
+> 
+> 
+> }
+> /*-------------------------------------------------------*/
+> 
+> /*------------------- mounter_write_config -----------------------*/
+> static void
+> mounter_write_config (Control * control, xmlNodePtr parent)
+> {
+>     char value[5];
+>     t_mounter * mt;
+> 
+>     mt = (t_mounter *) control->data;
+> 
+>     xmlSetProp (parent, "on_mount_cmd", mt->on_mount_cmd);
+> }
+> /*----------------------------------------------------------*/
+> 
+> /*--------------- mounter_attach_callback -----*/
+> void mounter_attach_callback(Control * control, const char *signal, GCallback callback, gpointer data)
+> {
+> 	TRACE ("enters mounter_attach_callback");
+> 	t_mounter * mounter = (t_mounter*)control->data ;
+> 	
+> 	g_signal_connect(G_OBJECT(mounter->button),signal,callback,data);
+> 	TRACE ("leaves mounter_attach_callback");
+> 
+> }
+> /*--------------------------------------------*/
+> 
+> /*------------------- create_mounter -------------------*/
+> static gboolean create_mounter_control (Control * control)
+> {
+> 	TRACE ("enters create_mounter_control");
+> 
+> 	t_mounter * mounter ;
+> 	
+> 	mounter = g_new0(t_mounter,1);
+> 
+> 	/* default mount command */
+> 	mounter->on_mount_cmd = "";	
+> 
+> 	/*plugin button */
+> 	
+> 	GdkPixbuf * pb ;
+> 	pb = gdk_pixbuf_new_from_inline (sizeof(icon_plugin), icon_plugin, FALSE, NULL);
+> 	mounter->button = xfce_iconbutton_new_from_pixbuf (pb);
+> 	gtk_button_set_relief(GTK_BUTTON(mounter->button),GTK_RELIEF_NONE);
+> 
+> 	add_tooltip(GTK_WIDGET(mounter->button),"devices");
+> 
+> 	/*-------------------------------------------------------------*/
+> 	g_signal_connect(G_OBJECT(mounter->button),"button_press_event",G_CALLBACK(on_button_press),mounter);
+> 	gtk_widget_show(mounter->button);
+> 	
+> 	/*get the data*/	
+> 	mounter_data_new(mounter);
+> 
+> 	gtk_container_add(GTK_CONTAINER(control->base), mounter->button);
+> 	control->data = mounter ;
+> 	TRACE ("leaves create_mounter_control");
+> 	return TRUE;
+> 	
+> }
+> 
+> /*--------------------------------------------------------*/
+> 
+> 
+> 
+> G_MODULE_EXPORT void
+> xfce_control_class_init (ControlClass * cc)
+> {
+>     TRACE ("enters xfce_control_class_init");
+>     xfce_textdomain (GETTEXT_PACKAGE, LOCALEDIR, "UTF-8");
+>     cc->name = "mount-plugin";
+>     cc->caption = "mount/display devices";
+>     cc->create_control = (CreateControlFunc) create_mounter_control;
+>     cc->attach_callback = mounter_attach_callback;
+>     cc->free = mounter_free;
+> 
+>     cc->read_config = mounter_read_config;
+>     cc->write_config = mounter_write_config;
+>     cc->create_options = NULL;
+>     cc->set_theme = NULL;
+> 
+>     /* cc->set_size = NULL;
+>      * cc->set_orientation = NULL;
+>      * cc->about = NULL;
+>      */
+> 
+>     /* Additional API calls */
+> 
+>     /* use if there should be only one instance per screen */
+>     control_class_set_unique (cc, TRUE);
+> 
+>     /* use if the gmodule should not be unloaded *
+>      * (usually because of library issues)       */
+>     /*control_class_set_unloadable (cc, FALSE);*/
+> 
+>     /* use to set an icon to represent the module        *
+>      * (you could even update it when the theme changes) */
+>      /*
+>     if (1)
+>     {
+> 	GdkPixbuf *pixbuf;
+> 
+> 	pixbuf = xfce_icon_theme_load (xfce_icon_theme_get_for_screen (NULL),
+>                                        "sampleicon.png", 48);
+> 
+>         if (pixbuf)
+>         {
+>             control_class_set_icon (cc, pixbuf);
+>             g_object_unref (pixbuf);
+>         }
+>     }
+>     */
+>     TRACE ("leaves xfce_control_class_init");
+>     
+> }
+> 
+> /* Macro that checks panel API version */
+> XFCE_PLUGIN_CHECK_INIT
+
+
+
+
+From fourdan at xfce.org  Wed May 25 23:54:15 2005
+From: fourdan at xfce.org (Olivier Fourdan)
+Date: Wed, 25 May 2005 23:54:15 +0200
+Subject: need help in plugin development....xfce4-mount-plugin
+In-Reply-To: <4294CF76.3090009@no-log.org>
+References: <4294CF76.3090009@no-log.org>
+Message-ID: <1117058055.6589.40.camel@shuttle>
+
+Hi
+... or maybe simply using g_object_set_data()/g_object_get_data() could
+help too.
+
+Cheers,
+Olivier.
+
+On Wed, 2005-05-25 at 21:18 +0200, jean-baptiste dulong wrote:
+> Hi,
+> I'm working on the xfce4-mount-plugin and would like to add a new 
+> functionality. I'd like the plugin to launch a command upon a 
+> successfull mount (eg: a terminal). The command won't depend on a 
+> specific device but will be a general options for the plugin.
+> Therefore I added an element in the structure that hold the plugin 
+> (Control->data) to store that command :
+> 
+> typedef struct
+> {
+> 	/* added string to hold command value */
+> 	char * on_mount_cmd ;
+> 	GtkWidget * button ;
+> 	GtkWidget * menu ;
+> 	GPtrArray * pdisks ;
+> 	GPtrArray * pdisk_display ;
+> } t_mounter ;
+> 
+> I also added a mounter_read_config and a mounter_write_config function 
+> to store and restore the option value.
+> My next step (before implementing a graphical interface for the user to 
+> change the options) is to actually use the value in on_mount_cmd when 
+> mounting a device.
+> For mounting a device, I catch an event from a menu item with this 
+> simple function :
+> 
+> static void on_activate_disk_display(GtkWidget * widget,t_disk * disk)
+> {
+> 	if (disk != NULL)
+> 	{
+> 		if (disk->mount_info != NULL)
+> 		{
+> 			disk_umount(disk);
+> 		}
+> 		else
+> 		{
+> 			disk_mount(disk);					 
+> /*exec_cmd_silent(g_strconcat(mt->on_mount_cmd,disk->mount_point,NULL),FALSE,TRUE);*/
+> 		}
+> 	}
+> }
+> And this function would love to use mt->on_mount_cmd to launch 
+> something, but we don't have access to it and the gpointer element in 
+> the callback function is already used, we need a pointer on the t_disk * 
+> disk element.
+> So is there a way to access the Control->data from some function like 
+> this one ?? Is it possible to add argument to the function with a 
+> pointer to Control->data ?? Is there a magic spell ??
+> 
+> If all this doesn't sound clear at all, leave it, I'll spend my 
+> desperate nights on it... :-))
+> If the answer is trivial, it will help anyway...
+> 
+> 
+> plain text document attachment (mount-plugin.c)
+> /* mount-plugin.c */
+> 
+> /*
+> Copyright (C) 2005 Jean-Baptiste jb_dul at yahoo.com
+> 
+> This program is free software; you can redistribute it and/or 
+> modify it under the terms of the GNU General Public License 
+> as published by the Free Software Foundation; either 
+> version 2 of the License, or (at your option) any later 
+> version.
+> 
+> This program is distributed in the hope that it will be useful,
+> but WITHOUT ANY WARRANTY; without even the implied warranty of
+> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> GNU General Public License for more details.
+> 
+> You should have received a copy of the GNU General Public License
+> along with this program; if not, write to the Free Software
+> Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+> */
+> #include "devices.h"
+> #include <gtk/gtk.h>
+> 
+> 
+> /* for debugging */
+> #include <libxfce4util/debug.h>
+> 
+> #include <panel/xfce.h>
+> #include <panel/plugins.h>
+> #include <libxfcegui4/libxfcegui4.h>
+> #include "icons.h"
+> 
+> /*--------- graphical interface ----------*/
+> typedef struct 
+> {
+> 	char * on_mount_cmd ;
+> 	GtkWidget * button ;
+> 	GtkWidget * menu ;
+> 	GPtrArray * pdisks ; /* contains pointers to struct t_disk */
+> 	GPtrArray * pdisk_display ; /*contains pointers to t_disk_display */
+> } t_mounter ;
+> /*---------------------------------*/
+> 
+> typedef struct
+> {
+> 	GtkWidget * menu_item ;
+> 	GtkWidget * hbox ;
+> 	GtkWidget * label_disk ;
+> 	GtkWidget * label_mount_info ;
+> 	GtkWidget * progress_bar ;
+> } t_disk_display ;
+> /*------------------------------------------------*/
+> 
+> 
+> /*---------------- on_activate_disk_display ---------------*/
+> static void on_activate_disk_display(GtkWidget * widget,t_disk * disk)
+> {
+> 	if (disk != NULL)
+> 	{
+> 		if (disk->mount_info != NULL)
+> 		{/*disk is mounted*/
+> 			disk_umount(disk);
+> 			/* disk->mount_info is freed by disk_mount */
+> 		}
+> 		else
+> 		{/*disk is not mounted*/
+> 			disk_mount(disk);
+> 			/* needs a refresh, a global refresh is done whe the window becomes visible*/
+> 			//exec_cmd_silent(g_strconcat(mt->on_mount_cmd,disk->mount_point,NULL),FALSE,TRUE);
+> 		}
+> 	}
+> }
+> 
+> /*---------------------------------------------------------*/
+> 
+> /*-------------------- disk_display_new -----------------*/
+> /*create a new t_disk_display from t_disk infos */
+> static t_disk_display * disk_display_new(t_disk * disk)
+> {
+> 	if (disk != NULL) 
+> 	{
+> 		t_disk_display * dd ;
+> 		dd = g_new0(t_disk_display,1) ;
+> 		dd->menu_item = gtk_menu_item_new();
+> 		g_signal_connect(G_OBJECT(dd->menu_item),"activate",G_CALLBACK(on_activate_disk_display),disk);
+> 		
+> 		dd->hbox = gtk_hbox_new(FALSE,10);
+> 		gtk_container_add(GTK_CONTAINER(dd->menu_item), dd->hbox);
+> 		
+> 		dd->label_disk = gtk_label_new(g_strconcat(disk->device," -> ",disk->mount_point,NULL));
+> 		/*change to uniform label size*/
+> 		gtk_label_set_width_chars(GTK_LABEL(dd->label_disk),28);
+> 		gtk_label_set_justify(GTK_LABEL(dd->label_disk),GTK_JUSTIFY_LEFT);
+> 		gtk_box_pack_start(GTK_BOX(dd->hbox),dd->label_disk,FALSE,TRUE,0);
+> 		
+> 		dd->label_mount_info = gtk_label_new("");
+> 		/*change to uniform label size*/
+> 		gtk_label_set_width_chars(GTK_LABEL(dd->label_mount_info),25);
+> 		gtk_label_set_use_markup(GTK_LABEL(dd->label_mount_info),TRUE);
+> 		gtk_label_set_justify(GTK_LABEL(dd->label_mount_info),GTK_JUSTIFY_RIGHT);
+> 		gtk_box_pack_start(GTK_BOX(dd->hbox),dd->label_mount_info,TRUE,TRUE,0);
+> 		
+> 		dd->progress_bar = gtk_progress_bar_new();
+> 		gtk_box_pack_start(GTK_BOX(dd->hbox),dd->progress_bar,TRUE,TRUE,0);
+> 		return dd ;
+> 	}
+> 	return NULL ;
+> }
+> /*-----------------------------------------------------------*/
+> 
+> 
+> /*-------------------- disk_display_refresh -----------------*/
+> static void disk_display_refresh(t_disk_display * disk_display, t_mount_info * mount_info)
+> {
+> 	TRACE("enters disk_display_refresh");
+> 	if (disk_display != NULL)
+> 	{
+> 		if (mount_info != NULL)
+> 		{	/* device is mounted */
+> 			char * text ;
+> 			char * used = get_size_human_readable(mount_info->used);
+> 			//DBG("used is now : %s",used);
+> 			char * size = get_size_human_readable(mount_info->size);
+> 			//DBG("size is now : %s",size);
+> 			char * avail = get_size_human_readable(mount_info->avail);
+> 			//DBG("avail is now : %s",size);
+> 			text = g_strdup_printf("[%s/%s] %s free", used ,size,avail );
+> 			//DBG("text is now : %s",text);
+> 			
+> 			g_free(used);
+> 			g_free(size);
+> 			g_free(avail);
+> 			//text = g_strdup_printf("mounted on : %s\t[%g Mb/%g Mb] %g Mb free",mount_info->mounted_on, mount_info->used, mount_info->size, mount_info->avail);
+> 			gtk_label_set_text(GTK_LABEL(disk_display->label_mount_info),text);
+> 			
+> 			gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(disk_display->progress_bar),((gdouble)mount_info->percent / 100) );
+> 			gtk_widget_show(GTK_WIDGET(disk_display->progress_bar));
+> 		}
+> 		else /* mount_info == NULL */
+> 		{
+> 			/*remove mount info */
+> 			gtk_label_set_markup(GTK_LABEL(disk_display->label_mount_info),"<span foreground=\"#FF0000\">not mounted</span>");
+> 			gtk_widget_hide(GTK_WIDGET(disk_display->progress_bar));
+> 
+> 		}
+> 	}
+> 	TRACE("leaves disk_display_refresh");
+> }
+> /*----------------------------------------------*/
+> 
+> /*--------------- mounter_data_free -----------------*/
+> static void mounter_data_free(t_mounter * mt)
+> {
+> 	TRACE ("enters mounter_data_free");
+> 	disks_free(&(mt->pdisks));
+> 	g_ptr_array_free(mt->pdisk_display,TRUE);
+> 	mt->pdisk_display = NULL;
+> 	gtk_widget_destroy(GTK_WIDGET(mt->menu));
+> 	mt->menu = NULL ;
+> 	TRACE ("leaves mounter_data_free");
+> }
+> /*----------------------------------------------*/
+> 
+> /*--------------- mounter_free -----------------*/
+> static void mounter_free(Control * control)
+> {
+> 	TRACE ("enters mounter_free");
+> 	t_mounter * mt = (t_mounter*) control->data ;
+> 	mounter_data_free(mt);
+> 	g_free(mt->on_mount_cmd);
+> 	g_free(mt);
+> 	TRACE ("leaves mounter_free");
+> }
+> /*----------------------------------------------*/
+> /*---------------- mounter_data_new --------------------------*/
+> static void mounter_data_new(t_mounter * mt)
+> {
+> 	int i ;
+> 	t_disk * disk ;
+> 	t_disk_display * disk_display ;
+> 	
+> 	/*get static infos from /etc/fstab */
+> 	mt->pdisks = disks_new();
+> 	
+> 	/* get dynamic infos on mounts */
+> 	disks_refresh(mt->pdisks);
+> 	
+> 	/* menu with menu_item */
+> 	mt->menu = gtk_menu_new();
+> 	/* gtk_menu_shell_append(GTK_MENU_SHELL(mt->menu),gtk_menu_item_new_with_label("devices")); */
+> 	/* gtk_menu_shell_append(GTK_MENU_SHELL(mt->menu),gtk_separator_menu_item_new());*/
+> 	
+> 	mt->pdisk_display = g_ptr_array_sized_new(mt->pdisks->len) ;
+> 	for(i=0;i < mt->pdisks->len;i++)
+> 	{
+> 		disk = g_ptr_array_index(mt->pdisks,i); //get the disk 
+> 		disk_display = disk_display_new(disk) ;// creates a disk_display
+> 		disk_display_refresh(disk_display,disk->mount_info) ;//fill in mount infos
+> 		gtk_menu_shell_append(GTK_MENU_SHELL(mt->menu),disk_display->menu_item);//add the mnu_item to the menu
+> 		g_ptr_array_add(mt->pdisk_display,disk_display); //add to the array
+> 	}
+> 	gtk_widget_show_all(mt->menu);
+> 	
+> 	return ;
+> }
+> /*------------------------------------------------------*/
+> 
+> /*---------------------- mounter_refresh ---------------*/
+> static void mounter_refresh(t_mounter * mt)
+> {
+> 	TRACE ("enters mounter_refresh");
+> 	
+> 	mounter_data_free(mt);
+> 	mounter_data_new(mt);
+> 
+> 	TRACE ("leaves mounter_refresh");
+> 	
+> }
+> /*---------------------------------------------------------*/
+> 
+> /* --------------plugin event --------------------------------*/
+> static gboolean on_button_press(GtkWidget * widget , GdkEventButton * event,t_mounter * mounter)
+> {
+> 	TRACE("enters on_button_pressed");
+> 	if (mounter != NULL && event->button == 1)
+> 	{
+> 		
+> 		mounter_refresh(mounter); // refreshs infos regarding mounts data
+> 		gtk_menu_popup(GTK_MENU(mounter->menu),NULL,NULL,NULL,NULL,0,event->time);
+> 		return TRUE;
+> 	}
+> 	TRACE("leaves on_button_pressed");
+> 	return FALSE ;
+> }
+> /*------------------------------------------------------*/
+> 
+> /*---------------------- mounter_read_config --------------------*/
+> static void
+> mounter_read_config (Control * control, xmlNodePtr node)
+> {
+>     xmlChar *value;
+>     t_mounter *mt;
+> 
+>     if (!node || !node->children)
+> 	return;
+> 
+>     mt = (t_mounter *) control->data;
+> 
+>     /* on_mount_cmd */
+> 
+>     value = xmlGetProp (node, (const xmlChar *) "on_mount_cmd");
+>     if (value)
+>     {
+> 	g_free (mt->on_mount_cmd);
+> 	mt->on_mount_cmd = (char *) value;
+>     }
+> 
+> 
+> }
+> /*-------------------------------------------------------*/
+> 
+> /*------------------- mounter_write_config -----------------------*/
+> static void
+> mounter_write_config (Control * control, xmlNodePtr parent)
+> {
+>     char value[5];
+>     t_mounter * mt;
+> 
+>     mt = (t_mounter *) control->data;
+> 
+>     xmlSetProp (parent, "on_mount_cmd", mt->on_mount_cmd);
+> }
+> /*----------------------------------------------------------*/
+> 
+> /*--------------- mounter_attach_callback -----*/
+> void mounter_attach_callback(Control * control, const char *signal, GCallback callback, gpointer data)
+> {
+> 	TRACE ("enters mounter_attach_callback");
+> 	t_mounter * mounter = (t_mounter*)control->data ;
+> 	
+> 	g_signal_connect(G_OBJECT(mounter->button),signal,callback,data);
+> 	TRACE ("leaves mounter_attach_callback");
+> 
+> }
+> /*--------------------------------------------*/
+> 
+> /*------------------- create_mounter -------------------*/
+> static gboolean create_mounter_control (Control * control)
+> {
+> 	TRACE ("enters create_mounter_control");
+> 
+> 	t_mounter * mounter ;
+> 	
+> 	mounter = g_new0(t_mounter,1);
+> 
+> 	/* default mount command */
+> 	mounter->on_mount_cmd = "";	
+> 
+> 	/*plugin button */
+> 	
+> 	GdkPixbuf * pb ;
+> 	pb = gdk_pixbuf_new_from_inline (sizeof(icon_plugin), icon_plugin, FALSE, NULL);
+> 	mounter->button = xfce_iconbutton_new_from_pixbuf (pb);
+> 	gtk_button_set_relief(GTK_BUTTON(mounter->button),GTK_RELIEF_NONE);
+> 
+> 	add_tooltip(GTK_WIDGET(mounter->button),"devices");
+> 
+> 	/*-------------------------------------------------------------*/
+> 	g_signal_connect(G_OBJECT(mounter->button),"button_press_event",G_CALLBACK(on_button_press),mounter);
+> 	gtk_widget_show(mounter->button);
+> 	
+> 	/*get the data*/	
+> 	mounter_data_new(mounter);
+> 
+> 	gtk_container_add(GTK_CONTAINER(control->base), mounter->button);
+> 	control->data = mounter ;
+> 	TRACE ("leaves create_mounter_control");
+> 	return TRUE;
+> 	
+> }
+> 
+> /*--------------------------------------------------------*/
+> 
+> 
+> 
+> G_MODULE_EXPORT void
+> xfce_control_class_init (ControlClass * cc)
+> {
+>     TRACE ("enters xfce_control_class_init");
+>     xfce_textdomain (GETTEXT_PACKAGE, LOCALEDIR, "UTF-8");
+>     cc->name = "mount-plugin";
+>     cc->caption = "mount/display devices";
+>     cc->create_control = (CreateControlFunc) create_mounter_control;
+>     cc->attach_callback = mounter_attach_callback;
+>     cc->free = mounter_free;
+> 
+>     cc->read_config = mounter_read_config;
+>     cc->write_config = mounter_write_config;
+>     cc->create_options = NULL;
+>     cc->set_theme = NULL;
+> 
+>     /* cc->set_size = NULL;
+>      * cc->set_orientation = NULL;
+>      * cc->about = NULL;
+>      */
+> 
+>     /* Additional API calls */
+> 
+>     /* use if there should be only one instance per screen */
+>     control_class_set_unique (cc, TRUE);
+> 
+>     /* use if the gmodule should not be unloaded *
+>      * (usually because of library issues)       */
+>     /*control_class_set_unloadable (cc, FALSE);*/
+> 
+>     /* use to set an icon to represent the module        *
+>      * (you could even update it when the theme changes) */
+>      /*
+>     if (1)
+>     {
+> 	GdkPixbuf *pixbuf;
+> 
+> 	pixbuf = xfce_icon_theme_load (xfce_icon_theme_get_for_screen (NULL),
+>                                        "sampleicon.png", 48);
+> 
+>         if (pixbuf)
+>         {
+>             control_class_set_icon (cc, pixbuf);
+>             g_object_unref (pixbuf);
+>         }
+>     }
+>     */
+>     TRACE ("leaves xfce_control_class_init");
+>     
+> }
+> 
+> /* Macro that checks panel API version */
+> XFCE_PLUGIN_CHECK_INIT
+
+
+
+
+From jean-baptiste.dulong at no-log.org  Thu May 26 17:48:13 2005
+From: jean-baptiste.dulong at no-log.org (jean-baptiste dulong)
+Date: Thu, 26 May 2005 17:48:13 +0200
+Subject: need help in plugin development....xfce4-mount-plugin
+In-Reply-To: <1117058055.6589.40.camel@shuttle>
+References: <4294CF76.3090009@no-log.org> <1117058055.6589.40.camel@shuttle>
+Message-ID: <4295EFBD.7050307@no-log.org>
+
+great !
+that should work.
+thanks a lot
+merci.
+
+Olivier Fourdan a ?crit :
+> Hi
+> ... or maybe simply using g_object_set_data()/g_object_get_data() could
+> help too.
+> 
+> Cheers,
+> Olivier.
+> 
+> On Wed, 2005-05-25 at 21:18 +0200, jean-baptiste dulong wrote:
+> 
+>>Hi,
+>>I'm working on the xfce4-mount-plugin and would like to add a new 
+>>functionality. I'd like the plugin to launch a command upon a 
+>>successfull mount (eg: a terminal). The command won't depend on a 
+>>specific device but will be a general options for the plugin.
+>>Therefore I added an element in the structure that hold the plugin 
+>>(Control->data) to store that command :
+>>
+>>typedef struct
+>>{
+>>	/* added string to hold command value */
+>>	char * on_mount_cmd ;
+>>	GtkWidget * button ;
+>>	GtkWidget * menu ;
+>>	GPtrArray * pdisks ;
+>>	GPtrArray * pdisk_display ;
+>>} t_mounter ;
+>>
+>>I also added a mounter_read_config and a mounter_write_config function 
+>>to store and restore the option value.
+>>My next step (before implementing a graphical interface for the user to 
+>>change the options) is to actually use the value in on_mount_cmd when 
+>>mounting a device.
+>>For mounting a device, I catch an event from a menu item with this 
+>>simple function :
+>>
+>>static void on_activate_disk_display(GtkWidget * widget,t_disk * disk)
+>>{
+>>	if (disk != NULL)
+>>	{
+>>		if (disk->mount_info != NULL)
+>>		{
+>>			disk_umount(disk);
+>>		}
+>>		else
+>>		{
+>>			disk_mount(disk);					 
+>>/*exec_cmd_silent(g_strconcat(mt->on_mount_cmd,disk->mount_point,NULL),FALSE,TRUE);*/
+>>		}
+>>	}
+>>}
+>>And this function would love to use mt->on_mount_cmd to launch 
+>>something, but we don't have access to it and the gpointer element in 
+>>the callback function is already used, we need a pointer on the t_disk * 
+>>disk element.
+>>So is there a way to access the Control->data from some function like 
+>>this one ?? Is it possible to add argument to the function with a 
+>>pointer to Control->data ?? Is there a magic spell ??
+>>
+>>If all this doesn't sound clear at all, leave it, I'll spend my 
+>>desperate nights on it... :-))
+>>If the answer is trivial, it will help anyway...
+>>
+>>
+>>plain text document attachment (mount-plugin.c)
+>>/* mount-plugin.c */
+>>
+>>/*
+>>Copyright (C) 2005 Jean-Baptiste jb_dul at yahoo.com
+>>
+>>This program is free software; you can redistribute it and/or 
+>>modify it under the terms of the GNU General Public License 
+>>as published by the Free Software Foundation; either 
+>>version 2 of the License, or (at your option) any later 
+>>version.
+>>
+>>This program is distributed in the hope that it will be useful,
+>>but WITHOUT ANY WARRANTY; without even the implied warranty of
+>>MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+>>GNU General Public License for more details.
+>>
+>>You should have received a copy of the GNU General Public License
+>>along with this program; if not, write to the Free Software
+>>Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+>>*/
+>>#include "devices.h"
+>>#include <gtk/gtk.h>
+>>
+>>
+>>/* for debugging */
+>>#include <libxfce4util/debug.h>
+>>
+>>#include <panel/xfce.h>
+>>#include <panel/plugins.h>
+>>#include <libxfcegui4/libxfcegui4.h>
+>>#include "icons.h"
+>>
+>>/*--------- graphical interface ----------*/
+>>typedef struct 
+>>{
+>>	char * on_mount_cmd ;
+>>	GtkWidget * button ;
+>>	GtkWidget * menu ;
+>>	GPtrArray * pdisks ; /* contains pointers to struct t_disk */
+>>	GPtrArray * pdisk_display ; /*contains pointers to t_disk_display */
+>>} t_mounter ;
+>>/*---------------------------------*/
+>>
+>>typedef struct
+>>{
+>>	GtkWidget * menu_item ;
+>>	GtkWidget * hbox ;
+>>	GtkWidget * label_disk ;
+>>	GtkWidget * label_mount_info ;
+>>	GtkWidget * progress_bar ;
+>>} t_disk_display ;
+>>/*------------------------------------------------*/
+>>
+>>
+>>/*---------------- on_activate_disk_display ---------------*/
+>>static void on_activate_disk_display(GtkWidget * widget,t_disk * disk)
+>>{
+>>	if (disk != NULL)
+>>	{
+>>		if (disk->mount_info != NULL)
+>>		{/*disk is mounted*/
+>>			disk_umount(disk);
+>>			/* disk->mount_info is freed by disk_mount */
+>>		}
+>>		else
+>>		{/*disk is not mounted*/
+>>			disk_mount(disk);
+>>			/* needs a refresh, a global refresh is done whe the window becomes visible*/
+>>			//exec_cmd_silent(g_strconcat(mt->on_mount_cmd,disk->mount_point,NULL),FALSE,TRUE);
+>>		}
+>>	}
+>>}
+>>
+>>/*---------------------------------------------------------*/
+>>
+>>/*-------------------- disk_display_new -----------------*/
+>>/*create a new t_disk_display from t_disk infos */
+>>static t_disk_display * disk_display_new(t_disk * disk)
+>>{
+>>	if (disk != NULL) 
+>>	{
+>>		t_disk_display * dd ;
+>>		dd = g_new0(t_disk_display,1) ;
+>>		dd->menu_item = gtk_menu_item_new();
+>>		g_signal_connect(G_OBJECT(dd->menu_item),"activate",G_CALLBACK(on_activate_disk_display),disk);
+>>		
+>>		dd->hbox = gtk_hbox_new(FALSE,10);
+>>		gtk_container_add(GTK_CONTAINER(dd->menu_item), dd->hbox);
+>>		
+>>		dd->label_disk = gtk_label_new(g_strconcat(disk->device," -> ",disk->mount_point,NULL));
+>>		/*change to uniform label size*/
+>>		gtk_label_set_width_chars(GTK_LABEL(dd->label_disk),28);
+>>		gtk_label_set_justify(GTK_LABEL(dd->label_disk),GTK_JUSTIFY_LEFT);
+>>		gtk_box_pack_start(GTK_BOX(dd->hbox),dd->label_disk,FALSE,TRUE,0);
+>>		
+>>		dd->label_mount_info = gtk_label_new("");
+>>		/*change to uniform label size*/
+>>		gtk_label_set_width_chars(GTK_LABEL(dd->label_mount_info),25);
+>>		gtk_label_set_use_markup(GTK_LABEL(dd->label_mount_info),TRUE);
+>>		gtk_label_set_justify(GTK_LABEL(dd->label_mount_info),GTK_JUSTIFY_RIGHT);
+>>		gtk_box_pack_start(GTK_BOX(dd->hbox),dd->label_mount_info,TRUE,TRUE,0);
+>>		
+>>		dd->progress_bar = gtk_progress_bar_new();
+>>		gtk_box_pack_start(GTK_BOX(dd->hbox),dd->progress_bar,TRUE,TRUE,0);
+>>		return dd ;
+>>	}
+>>	return NULL ;
+>>}
+>>/*-----------------------------------------------------------*/
+>>
+>>
+>>/*-------------------- disk_display_refresh -----------------*/
+>>static void disk_display_refresh(t_disk_display * disk_display, t_mount_info * mount_info)
+>>{
+>>	TRACE("enters disk_display_refresh");
+>>	if (disk_display != NULL)
+>>	{
+>>		if (mount_info != NULL)
+>>		{	/* device is mounted */
+>>			char * text ;
+>>			char * used = get_size_human_readable(mount_info->used);
+>>			//DBG("used is now : %s",used);
+>>			char * size = get_size_human_readable(mount_info->size);
+>>			//DBG("size is now : %s",size);
+>>			char * avail = get_size_human_readable(mount_info->avail);
+>>			//DBG("avail is now : %s",size);
+>>			text = g_strdup_printf("[%s/%s] %s free", used ,size,avail );
+>>			//DBG("text is now : %s",text);
+>>			
+>>			g_free(used);
+>>			g_free(size);
+>>			g_free(avail);
+>>			//text = g_strdup_printf("mounted on : %s\t[%g Mb/%g Mb] %g Mb free",mount_info->mounted_on, mount_info->used, mount_info->size, mount_info->avail);
+>>			gtk_label_set_text(GTK_LABEL(disk_display->label_mount_info),text);
+>>			
+>>			gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(disk_display->progress_bar),((gdouble)mount_info->percent / 100) );
+>>			gtk_widget_show(GTK_WIDGET(disk_display->progress_bar));
+>>		}
+>>		else /* mount_info == NULL */
+>>		{
+>>			/*remove mount info */
+>>			gtk_label_set_markup(GTK_LABEL(disk_display->label_mount_info),"<span foreground=\"#FF0000\">not mounted</span>");
+>>			gtk_widget_hide(GTK_WIDGET(disk_display->progress_bar));
+>>
+>>		}
+>>	}
+>>	TRACE("leaves disk_display_refresh");
+>>}
+>>/*----------------------------------------------*/
+>>
+>>/*--------------- mounter_data_free -----------------*/
+>>static void mounter_data_free(t_mounter * mt)
+>>{
+>>	TRACE ("enters mounter_data_free");
+>>	disks_free(&(mt->pdisks));
+>>	g_ptr_array_free(mt->pdisk_display,TRUE);
+>>	mt->pdisk_display = NULL;
+>>	gtk_widget_destroy(GTK_WIDGET(mt->menu));
+>>	mt->menu = NULL ;
+>>	TRACE ("leaves mounter_data_free");
+>>}
+>>/*----------------------------------------------*/
+>>
+>>/*--------------- mounter_free -----------------*/
+>>static void mounter_free(Control * control)
+>>{
+>>	TRACE ("enters mounter_free");
+>>	t_mounter * mt = (t_mounter*) control->data ;
+>>	mounter_data_free(mt);
+>>	g_free(mt->on_mount_cmd);
+>>	g_free(mt);
+>>	TRACE ("leaves mounter_free");
+>>}
+>>/*----------------------------------------------*/
+>>/*---------------- mounter_data_new --------------------------*/
+>>static void mounter_data_new(t_mounter * mt)
+>>{
+>>	int i ;
+>>	t_disk * disk ;
+>>	t_disk_display * disk_display ;
+>>	
+>>	/*get static infos from /etc/fstab */
+>>	mt->pdisks = disks_new();
+>>	
+>>	/* get dynamic infos on mounts */
+>>	disks_refresh(mt->pdisks);
+>>	
+>>	/* menu with menu_item */
+>>	mt->menu = gtk_menu_new();
+>>	/* gtk_menu_shell_append(GTK_MENU_SHELL(mt->menu),gtk_menu_item_new_with_label("devices")); */
+>>	/* gtk_menu_shell_append(GTK_MENU_SHELL(mt->menu),gtk_separator_menu_item_new());*/
+>>	
+>>	mt->pdisk_display = g_ptr_array_sized_new(mt->pdisks->len) ;
+>>	for(i=0;i < mt->pdisks->len;i++)
+>>	{
+>>		disk = g_ptr_array_index(mt->pdisks,i); //get the disk 
+>>		disk_display = disk_display_new(disk) ;// creates a disk_display
+>>		disk_display_refresh(disk_display,disk->mount_info) ;//fill in mount infos
+>>		gtk_menu_shell_append(GTK_MENU_SHELL(mt->menu),disk_display->menu_item);//add the mnu_item to the menu
+>>		g_ptr_array_add(mt->pdisk_display,disk_display); //add to the array
+>>	}
+>>	gtk_widget_show_all(mt->menu);
+>>	
+>>	return ;
+>>}
+>>/*------------------------------------------------------*/
+>>
+>>/*---------------------- mounter_refresh ---------------*/
+>>static void mounter_refresh(t_mounter * mt)
+>>{
+>>	TRACE ("enters mounter_refresh");
+>>	
+>>	mounter_data_free(mt);
+>>	mounter_data_new(mt);
+>>
+>>	TRACE ("leaves mounter_refresh");
+>>	
+>>}
+>>/*---------------------------------------------------------*/
+>>
+>>/* --------------plugin event --------------------------------*/
+>>static gboolean on_button_press(GtkWidget * widget , GdkEventButton * event,t_mounter * mounter)
+>>{
+>>	TRACE("enters on_button_pressed");
+>>	if (mounter != NULL && event->button == 1)
+>>	{
+>>		
+>>		mounter_refresh(mounter); // refreshs infos regarding mounts data
+>>		gtk_menu_popup(GTK_MENU(mounter->menu),NULL,NULL,NULL,NULL,0,event->time);
+>>		return TRUE;
+>>	}
+>>	TRACE("leaves on_button_pressed");
+>>	return FALSE ;
+>>}
+>>/*------------------------------------------------------*/
+>>
+>>/*---------------------- mounter_read_config --------------------*/
+>>static void
+>>mounter_read_config (Control * control, xmlNodePtr node)
+>>{
+>>    xmlChar *value;
+>>    t_mounter *mt;
+>>
+>>    if (!node || !node->children)
+>>	return;
+>>
+>>    mt = (t_mounter *) control->data;
+>>
+>>    /* on_mount_cmd */
+>>
+>>    value = xmlGetProp (node, (const xmlChar *) "on_mount_cmd");
+>>    if (value)
+>>    {
+>>	g_free (mt->on_mount_cmd);
+>>	mt->on_mount_cmd = (char *) value;
+>>    }
+>>
+>>
+>>}
+>>/*-------------------------------------------------------*/
+>>
+>>/*------------------- mounter_write_config -----------------------*/
+>>static void
+>>mounter_write_config (Control * control, xmlNodePtr parent)
+>>{
+>>    char value[5];
+>>    t_mounter * mt;
+>>
+>>    mt = (t_mounter *) control->data;
+>>
+>>    xmlSetProp (parent, "on_mount_cmd", mt->on_mount_cmd);
+>>}
+>>/*----------------------------------------------------------*/
+>>
+>>/*--------------- mounter_attach_callback -----*/
+>>void mounter_attach_callback(Control * control, const char *signal, GCallback callback, gpointer data)
+>>{
+>>	TRACE ("enters mounter_attach_callback");
+>>	t_mounter * mounter = (t_mounter*)control->data ;
+>>	
+>>	g_signal_connect(G_OBJECT(mounter->button),signal,callback,data);
+>>	TRACE ("leaves mounter_attach_callback");
+>>
+>>}
+>>/*--------------------------------------------*/
+>>
+>>/*------------------- create_mounter -------------------*/
+>>static gboolean create_mounter_control (Control * control)
+>>{
+>>	TRACE ("enters create_mounter_control");
+>>
+>>	t_mounter * mounter ;
+>>	
+>>	mounter = g_new0(t_mounter,1);
+>>
+>>	/* default mount command */
+>>	mounter->on_mount_cmd = "";	
+>>
+>>	/*plugin button */
+>>	
+>>	GdkPixbuf * pb ;
+>>	pb = gdk_pixbuf_new_from_inline (sizeof(icon_plugin), icon_plugin, FALSE, NULL);
+>>	mounter->button = xfce_iconbutton_new_from_pixbuf (pb);
+>>	gtk_button_set_relief(GTK_BUTTON(mounter->button),GTK_RELIEF_NONE);
+>>
+>>	add_tooltip(GTK_WIDGET(mounter->button),"devices");
+>>
+>>	/*-------------------------------------------------------------*/
+>>	g_signal_connect(G_OBJECT(mounter->button),"button_press_event",G_CALLBACK(on_button_press),mounter);
+>>	gtk_widget_show(mounter->button);
+>>	
+>>	/*get the data*/	
+>>	mounter_data_new(mounter);
+>>
+>>	gtk_container_add(GTK_CONTAINER(control->base), mounter->button);
+>>	control->data = mounter ;
+>>	TRACE ("leaves create_mounter_control");
+>>	return TRUE;
+>>	
+>>}
+>>
+>>/*--------------------------------------------------------*/
+>>
+>>
+>>
+>>G_MODULE_EXPORT void
+>>xfce_control_class_init (ControlClass * cc)
+>>{
+>>    TRACE ("enters xfce_control_class_init");
+>>    xfce_textdomain (GETTEXT_PACKAGE, LOCALEDIR, "UTF-8");
+>>    cc->name = "mount-plugin";
+>>    cc->caption = "mount/display devices";
+>>    cc->create_control = (CreateControlFunc) create_mounter_control;
+>>    cc->attach_callback = mounter_attach_callback;
+>>    cc->free = mounter_free;
+>>
+>>    cc->read_config = mounter_read_config;
+>>    cc->write_config = mounter_write_config;
+>>    cc->create_options = NULL;
+>>    cc->set_theme = NULL;
+>>
+>>    /* cc->set_size = NULL;
+>>     * cc->set_orientation = NULL;
+>>     * cc->about = NULL;
+>>     */
+>>
+>>    /* Additional API calls */
+>>
+>>    /* use if there should be only one instance per screen */
+>>    control_class_set_unique (cc, TRUE);
+>>
+>>    /* use if the gmodule should not be unloaded *
+>>     * (usually because of library issues)       */
+>>    /*control_class_set_unloadable (cc, FALSE);*/
+>>
+>>    /* use to set an icon to represent the module        *
+>>     * (you could even update it when the theme changes) */
+>>     /*
+>>    if (1)
+>>    {
+>>	GdkPixbuf *pixbuf;
+>>
+>>	pixbuf = xfce_icon_theme_load (xfce_icon_theme_get_for_screen (NULL),
+>>                                       "sampleicon.png", 48);
+>>
+>>        if (pixbuf)
+>>        {
+>>            control_class_set_icon (cc, pixbuf);
+>>            g_object_unref (pixbuf);
+>>        }
+>>    }
+>>    */
+>>    TRACE ("leaves xfce_control_class_init");
+>>    
+>>}
+>>
+>>/* Macro that checks panel API version */
+>>XFCE_PLUGIN_CHECK_INIT
+> 
+> 
+> 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+
+-- 
+---------------------------------------------------
+Jean-Baptiste Dulong
+---------------------------------------------------
+
+
+From xotazu at cvc.uab.es  Thu May 26 20:53:55 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Thu, 26 May 2005 20:53:55 +0200
+Subject: xfce4-mount-plugin problem
+In-Reply-To: <0IH40022Y1MMYA00@venezia.uab.es>
+References: <0IH40022Y1MMYA00@venezia.uab.es>
+Message-ID: <20050526205355.432d148b@cvc131.uab.es>
+
+ 	Hi:
+ 
+ 	I sent this message to the xfce-dev list, but this is the
+ right list. I am sorry for the noise.
+ 
+ 
+ 	There is a problem with mount plugin 0.1 (I do not use 0.2
+ because I do not have gtk 2.6). I do not know if it is solved on 0.2.
+ 
+ 	Sometimes, when I click on the mount plugin panel freezes, it
+ does not respond to mouse click, and I event cannot change to another
+ workspace using the configured shorcut. After some time (around 1 or 2
+ minutes) it "de-freezes", but it freezes again when I click (either
+ left or right button) on the plugin.
+ 
+ 	I remove it from panel, but when adding it, it freezes again.
+ 
+ Here I attach a backtrace when process freezes
+ 
+ #0  0x4083eeb1 in statfs () from /lib/libc.so.6
+ #1  0x40bb2305 in disks_refresh ()
+    from /opt/xfce/lib/xfce4/panel-plugins/libmount.so
+ #2  0x40bb25c1 in disks_refresh ()
+    from /opt/xfce/lib/xfce4/panel-plugins/libmount.so
+ #3  0x40192714 in gtk_marshal_VOID__UINT_STRING ()
+    from /usr/lib/libgtk-x11-2.0.so.0
+ #4  0x405482c0 in g_closure_invoke () from /usr/lib/libgobject-2.0.
+ so.0 #5  0x4055c2c5 in g_signal_emit_by_name () from /usr/lib/
+ libgobject-2.0. so.0 #6  0x4055b07e in g_signal_emit_valist () from /
+ usr/lib/libgobject- 2.0.so.0 #7  0x4055b5a4 in g_signal_emit () from /
+ usr/lib/libgobject- 2.0.so.0 #8  0x402915f7 in gtk_widget_send_expose
+ () from /usr/lib/ libgtk-x11-2.0.so.0 #9  0x40190cb2 in
+ gtk_propagate_event () from /usr/ lib/libgtk-x11-2.0.so.0 #10
+ 0x4018fa06 in gtk_main_do_event () from / usr/lib/libgtk-x11-2.0.so.0
+ #11 0x40385985 in gdk_x11_register_standard_event_type () from /usr/
+ lib/libgdk-x11-2.0. so.0 #12 0x4059bf72 in g_main_depth () from /usr/
+ lib/libglib-2.0.so.0 #13 0x4059d048 in g_main_context_dispatch ()
+ from /usr/lib/libglib-2.0. so.0 #14 0x4059d380 in
+ g_main_context_dispatch () from /usr/lib/libglib- 2.0.so.0 #15
+ 0x4059d9c3 in g_main_loop_run () from /usr/lib/libglib-2.0. so.0 #16
+ 0x4018f2c3 in gtk_main () from /usr/lib/libgtk-x11-2.0.so.0 #17
+ 0x08058c27 in main ()
+ 
+ 
+ cheers
+ 
+ Xavier
+
+
+From xotazu at cvc.uab.es  Thu May 26 21:24:03 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Thu, 26 May 2005 21:24:03 +0200
+Subject: xfce4-mount-plugin problem
+In-Reply-To: <20050526205355.432d148b@cvc131.uab.es>
+References: <0IH40022Y1MMYA00@venezia.uab.es>
+ <20050526205355.432d148b@cvc131.uab.es>
+Message-ID: <20050526212403.353fd61b@cvc131.uab.es>
+
+	Hi:
+
+
+	The problem was solved when I unmounted a remote windows
+directory using samba. Are samba directories 'supported' by this
+plugin? If not, it would be agood idea to include support.
+
+	Sorry again for the noise ...
+
+cheers
+
+Xavier
+
+
+On Thu, 26 May 2005 20:53:55 +0200
+Xavier Otazu <xotazu at cvc.uab.es> wrote:
+
+> 
+>  	Hi:
+>  
+>  	I sent this message to the xfce-dev list, but this is the
+>  right list. I am sorry for the noise.
+>  
+>  
+>  	There is a problem with mount plugin 0.1 (I do not use 0.2
+>  because I do not have gtk 2.6). I do not know if it is solved on 0.2.
+>  
+>  	Sometimes, when I click on the mount plugin panel freezes, it
+>  does not respond to mouse click, and I event cannot change to another
+>  workspace using the configured shorcut. After some time (around 1 or
+> 2 minutes) it "de-freezes", but it freezes again when I click (either
+>  left or right button) on the plugin.
+>  
+>  	I remove it from panel, but when adding it, it freezes again.
+>  
+>  Here I attach a backtrace when process freezes
+>  
+>  #0  0x4083eeb1 in statfs () from /lib/libc.so.6
+>  #1  0x40bb2305 in disks_refresh ()
+>     from /opt/xfce/lib/xfce4/panel-plugins/libmount.so
+>  #2  0x40bb25c1 in disks_refresh ()
+>     from /opt/xfce/lib/xfce4/panel-plugins/libmount.so
+>  #3  0x40192714 in gtk_marshal_VOID__UINT_STRING ()
+>     from /usr/lib/libgtk-x11-2.0.so.0
+>  #4  0x405482c0 in g_closure_invoke () from /usr/lib/libgobject-2.0.
+>  so.0 #5  0x4055c2c5 in g_signal_emit_by_name () from /usr/lib/
+>  libgobject-2.0. so.0 #6  0x4055b07e in g_signal_emit_valist () from /
+>  usr/lib/libgobject- 2.0.so.0 #7  0x4055b5a4 in g_signal_emit ()
+> from / usr/lib/libgobject- 2.0.so.0 #8  0x402915f7 in
+> gtk_widget_send_expose () from /usr/lib/ libgtk-x11-2.0.so.0 #9
+> 0x40190cb2 in gtk_propagate_event () from /usr/ lib/libgtk-x11-2.0.
+> so.0 #10 0x4018fa06 in gtk_main_do_event () from / usr/lib/libgtk-x11-
+> 2.0.so.0 #11 0x40385985 in gdk_x11_register_standard_event_type ()
+> from /usr/ lib/libgdk-x11-2.0. so.0 #12 0x4059bf72 in g_main_depth ()
+> from /usr/ lib/libglib-2.0.so.0 #13 0x4059d048 in
+> g_main_context_dispatch () from /usr/lib/libglib-2.0. so.0 #14
+> 0x4059d380 in g_main_context_dispatch () from /usr/lib/libglib- 2.0.
+> so.0 #15 0x4059d9c3 in g_main_loop_run () from /usr/lib/libglib-2.0.
+> so.0 #16 0x4018f2c3 in gtk_main () from /usr/lib/libgtk-x11-2.0.so.0
+> #17 0x08058c27 in main ()
+>  
+>  
+>  cheers
+>  
+>  Xavier
+
+
+From jean-baptiste.dulong at no-log.org  Fri May 27 11:00:57 2005
+From: jean-baptiste.dulong at no-log.org (jean-baptiste dulong)
+Date: Fri, 27 May 2005 11:00:57 +0200
+Subject: xfce4-mount-plugin problem
+In-Reply-To: <20050526212403.353fd61b@cvc131.uab.es>
+References: <0IH40022Y1MMYA00@venezia.uab.es> <20050526205355.432d148b@cvc131.uab.es> <20050526212403.353fd61b@cvc131.uab.es>
+Message-ID: <4296E1C9.2060100@no-log.org>
+
+Hi,
+I had no idea of this problem. When you click on the plugin, it 
+refreshes all his data : the list of devices from /etc/fstab and the 
+list of mounted devices from  /etc/mtab. So I don't know what happen 
+with samba mounts, maybe it takes some time for the system to know if 
+they are mounted or not. Right now, the plugin doesn't distinguish 
+different kinds of mounts, everything is a device. And the plugin acts 
+the same whether the concerned device is a floppy or a samba share or a 
+coffee machine....
+
+
+Xavier Otazu a ?crit :
+> 	Hi:
+> 
+> 
+> 	The problem was solved when I unmounted a remote windows
+> directory using samba. Are samba directories 'supported' by this
+> plugin? If not, it would be agood idea to include support.
+> 
+> 	Sorry again for the noise ...
+> 
+> cheers
+> 
+> Xavier
+> 
+> 
+> On Thu, 26 May 2005 20:53:55 +0200
+> Xavier Otazu <xotazu at cvc.uab.es> wrote:
+> 
+> 
+>> 	Hi:
+>> 
+>> 	I sent this message to the xfce-dev list, but this is the
+>> right list. I am sorry for the noise.
+>> 
+>> 
+>> 	There is a problem with mount plugin 0.1 (I do not use 0.2
+>> because I do not have gtk 2.6). I do not know if it is solved on 0.2.
+>> 
+>> 	Sometimes, when I click on the mount plugin panel freezes, it
+>> does not respond to mouse click, and I event cannot change to another
+>> workspace using the configured shorcut. After some time (around 1 or
+>>2 minutes) it "de-freezes", but it freezes again when I click (either
+>> left or right button) on the plugin.
+>> 
+>> 	I remove it from panel, but when adding it, it freezes again.
+>> 
+>> Here I attach a backtrace when process freezes
+>> 
+>> #0  0x4083eeb1 in statfs () from /lib/libc.so.6
+>> #1  0x40bb2305 in disks_refresh ()
+>>    from /opt/xfce/lib/xfce4/panel-plugins/libmount.so
+>> #2  0x40bb25c1 in disks_refresh ()
+>>    from /opt/xfce/lib/xfce4/panel-plugins/libmount.so
+>> #3  0x40192714 in gtk_marshal_VOID__UINT_STRING ()
+>>    from /usr/lib/libgtk-x11-2.0.so.0
+>> #4  0x405482c0 in g_closure_invoke () from /usr/lib/libgobject-2.0.
+>> so.0 #5  0x4055c2c5 in g_signal_emit_by_name () from /usr/lib/
+>> libgobject-2.0. so.0 #6  0x4055b07e in g_signal_emit_valist () from /
+>> usr/lib/libgobject- 2.0.so.0 #7  0x4055b5a4 in g_signal_emit ()
+>>from / usr/lib/libgobject- 2.0.so.0 #8  0x402915f7 in
+>>gtk_widget_send_expose () from /usr/lib/ libgtk-x11-2.0.so.0 #9
+>>0x40190cb2 in gtk_propagate_event () from /usr/ lib/libgtk-x11-2.0.
+>>so.0 #10 0x4018fa06 in gtk_main_do_event () from / usr/lib/libgtk-x11-
+>>2.0.so.0 #11 0x40385985 in gdk_x11_register_standard_event_type ()
+>>from /usr/ lib/libgdk-x11-2.0. so.0 #12 0x4059bf72 in g_main_depth ()
+>>from /usr/ lib/libglib-2.0.so.0 #13 0x4059d048 in
+>>g_main_context_dispatch () from /usr/lib/libglib-2.0. so.0 #14
+>>0x4059d380 in g_main_context_dispatch () from /usr/lib/libglib- 2.0.
+>>so.0 #15 0x4059d9c3 in g_main_loop_run () from /usr/lib/libglib-2.0.
+>>so.0 #16 0x4018f2c3 in gtk_main () from /usr/lib/libgtk-x11-2.0.so.0
+>>#17 0x08058c27 in main ()
+>> 
+>> 
+>> cheers
+>> 
+>> Xavier
+> 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+
+-- 
+---------------------------------------------------
+Jean-Baptiste Dulong
+---------------------------------------------------
+
+

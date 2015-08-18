@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bug 477] battery plugin does not account for second battery
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-March/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%20477%5D%20battery%20plugin%20does%20not%20account%20for%20second%20battery&In-Reply-To=%3C20050302202908.1F66F1F711B%40espresso.foo-projects.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000096.html">
+   <LINK REL="Next"  HREF="000098.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bug 477] battery plugin does not account for second battery</H1>
+    <B>bugzilla-daemon at xfce.org</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%20477%5D%20battery%20plugin%20does%20not%20account%20for%20second%20battery&In-Reply-To=%3C20050302202908.1F66F1F711B%40espresso.foo-projects.org%3E"
+       TITLE="[Bug 477] battery plugin does not account for second battery">bugzilla-daemon at xfce.org
+       </A><BR>
+    <I>Wed Mar  2 21:29:08 CET 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000096.html">[Bug 823] Panel does not autohide when klicking on a grouped task
+</A></li>
+        <LI>Next message: <A HREF="000098.html">[Bug 823] Panel does not autohide when klicking on a grouped task
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#97">[ date ]</a>
+              <a href="thread.html#97">[ thread ]</a>
+              <a href="subject.html#97">[ subject ]</a>
+              <a href="author.html#97">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+<A HREF="http://bugzilla.xfce.org/show_bug.cgi?id=477">http://bugzilla.xfce.org/show_bug.cgi?id=477</A>
+
+
+
+
+
+------- Additional Comments From <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">aaron at serendipity.cx</A>  2005-03-02 20:29 UTC -------
+I have looked at the source code to battery plugin 0.2.0, and it *should*
+account for the second battery in my Thinkpad, but it's only showing the
+external battery, which is in /proc/acpi/battery/BAT2. If the external battery
+isn't plugged in, then it shows BAT0.
+
+I wonder if there's simply a need for code that checks the other battery if the
+current battery runs out? I think a good way to handle this would be to start
+checking other batteries once the current battery goes below threshold. A highly
+useful message might be:
+
+&quot;The current battery (BAT2) has reached 10%. Don't worry, because another
+battery (BAT0) has power. Your system will switch over automatically.&quot;
+
+Followed a few hours later by:
+
+&quot;The current battery (BAT0) has reached 10%. Time to panic, because no other
+batteries have power, either. Go find an outlet!&quot;
+
+Naturally, we'll have to write some more &quot;friendly, yet firm&quot; language ;-)
+
+-- 
+Configure bugmail: <A HREF="http://bugzilla.xfce.org/userprefs.cgi?tab=email">http://bugzilla.xfce.org/userprefs.cgi?tab=email</A>
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000096.html">[Bug 823] Panel does not autohide when klicking on a grouped task
+</A></li>
+	<LI>Next message: <A HREF="000098.html">[Bug 823] Panel does not autohide when klicking on a grouped task
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#97">[ date ]</a>
+              <a href="thread.html#97">[ thread ]</a>
+              <a href="subject.html#97">[ subject ]</a>
+              <a href="author.html#97">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

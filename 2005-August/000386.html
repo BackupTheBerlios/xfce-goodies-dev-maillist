@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> xfce - quicklauncher
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-August/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20xfce%20-%20quicklauncher&In-Reply-To=%3C20050815170843.42d52b5d.masse_nicolas%40yahoo.fr%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000385.html">
+   <LINK REL="Next"  HREF="000387.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>xfce - quicklauncher</H1>
+    <B>Nicolas Masse</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20xfce%20-%20quicklauncher&In-Reply-To=%3C20050815170843.42d52b5d.masse_nicolas%40yahoo.fr%3E"
+       TITLE="xfce - quicklauncher">masse_nicolas at yahoo.fr
+       </A><BR>
+    <I>Mon Aug 15 17:08:43 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000385.html">What i changed to display the warning message.
+</A></li>
+        <LI>Next message: <A HREF="000387.html">Fw: Re: xfce - quicklauncher
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#386">[ date ]</a>
+              <a href="thread.html#386">[ thread ]</a>
+              <a href="subject.html#386">[ subject ]</a>
+              <a href="author.html#386">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>:<i>-(. The main problem for me is that I can't reproduce the bug. What's your glib/gtk version? What' s also your version of XFCE (and libxfcegui)? does this bug happens on other prog? (Can you try to change the icon of the xfce manu plugin in the panel to see if it works?). I would like to help you, but for now i'm just unable to see where this bug does comes from. (oh and also I forgot, did you restart the panel after reinstalling the plugin?) 
+</I>
+Ps:I have cc the xfce-goodies-dev lists since this discussion can interrest them (and perhaps can they provide some help). 
+ 
+&gt;<i>On Fri, 12 Aug 2005 15:53:25 +0200
+</I>&gt;<i>Gordon Grubert &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">grubert at physik.uni-greifswald.de</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Hello Nicolas,
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> &gt;&gt;But I have a little question.
+</I>&gt;&gt;<i> &gt;&gt;Can I individualize the iocons for the applications?
+</I>&gt;&gt;<i> &gt;&gt;If I selected &quot;...&quot; for another icon and change
+</I>&gt;&gt;<i> &gt;&gt;into a directory, I never can seleced any icon file
+</I>&gt;&gt;<i> &gt;&gt;because they are not shown. I am using version 0.81.
+</I>&gt;&gt;<i> &gt;&gt;    
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;Hmm... I don't really understand what you mean. you must have a filchooser dialog
+</I>&gt;&gt;<i> &gt;who show you all the icons present in your current directory (default is /usr/share/pixmap).
+</I>&gt;&gt;<i> &gt;  
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> I really get the dialog box. But in the right frame I never see any icon 
+</I>&gt;&gt;<i> files although there are
+</I>&gt;&gt;<i> files in the directory, e.g. /usr/share/pixmap.
+</I>&gt;&gt;<i> 
+</I>&gt;<i>So it's just the preview who doesn't work. I'll have a look when i'll have time. (so propably not before 2-3 days :-( )
+</I>&gt;&gt;<i> &gt;You must also be able to change the current directory.
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> Yes, but the same problem in other directories. All directories seem to 
+</I>&gt;&gt;<i> be empty.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> &gt;Just one question: do you have read access to
+</I>&gt;&gt;<i> &gt;the directory(ies) who causes problems? 
+</I>&gt;&gt;<i> &gt;  
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> Yes, of course. ;-)
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> My &quot;dirty&quot; solution:
+</I>&gt;&gt;<i> I have edited the file ~/.config/xfce4/panel/contents.xml.active in the 
+</I>&gt;&gt;<i> following way:
+</I>&gt;&gt;<i> &lt;launcher command=&quot;nedit&quot; 
+</I>&gt;&gt;<i> icon=&quot;/home/grubert/Documents/icons/nedit-icon.png&quot; iconID=&quot;19&quot;/&gt;
+</I>&gt;&gt;<i> It works with the IconID 19 only.
+</I>&gt;&gt;<i> 
+</I>&gt;<i>
+</I>&gt;<i>Yes. The 19 is normal. It just mean that the icon you 're using is specified by the icon entry (here &quot;/home/grubert/Documents/&gt;icons/nedit-icon.png&quot;). Other value can specify directly an icon (value &lt; 17) or the fact that the icon must change with your &gt;icon theme and is specific with your application (IconID = &quot;18&quot; =&gt; not done yet).
+</I>&gt;<i>
+</I>&gt;&gt;<i> Greetings,
+</I>&gt;&gt;<i> Gordon
+</I>&gt;&gt;<i> 
+</I>&gt;<i>
+</I>&gt;<i>thanks for reporting the problem,
+</I>&gt;<i>Masse Nicolas.
+</I>
+&gt;<i>On Mon, 15 Aug 2005 13:34:19 +0200
+</I>&gt;<i>Gordon Grubert &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">grubert at physik.uni-greifswald.de</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i> 
+</I>&gt;<i> &gt;Can you try the version currently in svn? thanks.
+</I>&gt;<i> &gt;  
+</I>&gt;<i> &gt;
+</I>&gt;<i> I am really sorry, but the problem already exists :-(
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000385.html">What i changed to display the warning message.
+</A></li>
+	<LI>Next message: <A HREF="000387.html">Fw: Re: xfce - quicklauncher
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#386">[ date ]</a>
+              <a href="thread.html#386">[ thread ]</a>
+              <a href="subject.html#386">[ subject ]</a>
+              <a href="author.html#386">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

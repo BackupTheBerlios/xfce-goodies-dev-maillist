@@ -1,0 +1,449 @@
+From robert.lange at s1999.tu-chemnitz.de  Tue Jan  9 20:34:38 2007
+From: robert.lange at s1999.tu-chemnitz.de (Robert Lange)
+Date: Tue, 09 Jan 2007 20:34:38 +0100
+Subject: Who is feeling responsible for the fsguard-plugin?
+Message-ID: <45A3EE4E.7060101@s1999.tu-chemnitz.de>
+
+Hi readers,
+
+I want to improve (i.e. already started with it) the fsguard plugin with
+two features:
+- Display remaining space as text in panel (as option)
+- Allow usage of free-space bar graph instead of "colored box"
+
+I found the current source code at svn.xfce.org and started local
+modification from there, but I did not found out who is maintaining the
+SVN and the plugin itself.
+
+I mailed to the developers named in AUTHORS and Andre Lerche told me he
+started the plugin, but currently discontinued work.
+
+Thus, anybody currently maintaining the plugin or can give me a hint who
+to ask in this case?
+
+
+Thanks & (still, very late dough) a Happy New Year,
+Robert
+
+
+
+From nickschermer at gmail.com  Tue Jan  9 21:15:12 2007
+From: nickschermer at gmail.com (Nick Schermer)
+Date: Tue, 9 Jan 2007 21:15:12 +0100
+Subject: Who is feeling responsible for the fsguard-plugin?
+In-Reply-To: <45A3EE4E.7060101@s1999.tu-chemnitz.de>
+References: <45A3EE4E.7060101@s1999.tu-chemnitz.de>
+Message-ID: <4abe35490701091215i3c8479fdifc2c14f3e4b4a57b@mail.gmail.com>
+
+First: please use the goodies-dev at xfce.org ml, Berlios is not used anymore.
+
+Second, great you want to maintain this plugin, because I think nobody
+if atm. If you want svn access please contact sofar at foo-projects.org.
+
+Greets,
+Nick
+
+
+From robert.lange at s1999.tu-chemnitz.de  Tue Jan  9 22:03:52 2007
+From: robert.lange at s1999.tu-chemnitz.de (Robert Lange)
+Date: Tue, 09 Jan 2007 22:03:52 +0100
+Subject: Who is feeling responsible for the fsguard-plugin?
+In-Reply-To: <4abe35490701091215i3c8479fdifc2c14f3e4b4a57b@mail.gmail.com>
+References: <45A3EE4E.7060101@s1999.tu-chemnitz.de>
+	<4abe35490701091215i3c8479fdifc2c14f3e4b4a57b@mail.gmail.com>
+Message-ID: <45A40338.9000602@s1999.tu-chemnitz.de>
+
+Nick Schermer wrote:
+> First: please use the goodies-dev at xfce.org ml, Berlios is not used anymore.
+Ah, thanks. I will change to there. Just, on www.xfce.org the berlios ML
+is still listed, see
+http://www.xfce.org/index.php?page=mailinglists&lang=en
+
+Who to ask to fix this?
+
+
+Cu,
+Robert
+
+
+From nickschermer at gmail.com  Tue Jan  9 22:17:12 2007
+From: nickschermer at gmail.com (Nick Schermer)
+Date: Tue, 9 Jan 2007 22:17:12 +0100
+Subject: Who is feeling responsible for the fsguard-plugin?
+In-Reply-To: <45A40338.9000602@s1999.tu-chemnitz.de>
+References: <45A3EE4E.7060101@s1999.tu-chemnitz.de>
+	<4abe35490701091215i3c8479fdifc2c14f3e4b4a57b@mail.gmail.com>
+	<45A40338.9000602@s1999.tu-chemnitz.de>
+Message-ID: <4abe35490701091317g1cab8161l799ac0c778ae3fa7@mail.gmail.com>
+
+Me actually, but we will switch to the new website soon (www-test.xfce.org).
+
+Nick
+
+
+From h.aling at home.nl  Tue Jan  9 21:39:05 2007
+From: h.aling at home.nl (Harold Aling)
+Date: Tue, 09 Jan 2007 21:39:05 +0100
+Subject: Who is feeling responsible for the fsguard-plugin?
+In-Reply-To: <45A3EE4E.7060101@s1999.tu-chemnitz.de>
+References: <45A3EE4E.7060101@s1999.tu-chemnitz.de>
+Message-ID: <45A3FD69.9060306@home.nl>
+
+Robert Lange wrote:
+> Hi readers,
+>
+> I want to improve (i.e. already started with it) the fsguard plugin with
+> two features:
+> - Display remaining space as text in panel (as option)
+> - Allow usage of free-space bar graph instead of "colored box"
+>   
+If I may be so bold to suggest some things:
+
+* Use only one instance of the fsguard plugin
+* Ability to add a virtually unlimited amount of mounts-to-check
+* Ability to select which mount should also be presented as 'bar graph'
+* Use (xfce4-)notification-daemon for warnings/errors (every <user 
+defined> minutes)
+
+I have about 7 to 9 mounts to monitor; enough to fill an entire panel of 
+fsguard plugins... And it would be cool to actually use the notification 
+daemon once-in-a-while ;)
+
+Cheers!
+
+Harold.
+
+> I found the current source code at svn.xfce.org and started local
+> modification from there, but I did not found out who is maintaining the
+> SVN and the plugin itself.
+>
+> I mailed to the developers named in AUTHORS and Andre Lerche told me he
+> started the plugin, but currently discontinued work.
+>
+> Thus, anybody currently maintaining the plugin or can give me a hint who
+> to ask in this case?
+>
+>
+> Thanks & (still, very late dough) a Happy New Year,
+> Robert
+>
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>   
+
+
+
+From stefan at desire.ch  Tue Jan  9 23:22:35 2007
+From: stefan at desire.ch (Stefan Ott)
+Date: Tue, 9 Jan 2007 23:22:35 +0100
+Subject: Who is feeling responsible for the fsguard-plugin?
+In-Reply-To: <45A3EE4E.7060101@s1999.tu-chemnitz.de>
+References: <45A3EE4E.7060101@s1999.tu-chemnitz.de>
+Message-ID: <20070109222235.GB22287@localhost>
+
+Hi
+
+Sorry, I'm one of the mentioned authors but was rather busy these last
+days. If you feel like maintaining the plugin, just go ahead. I mainly
+jumped in to prevent it from getting orphaned and am not particularly
+keen on supporting yet another project. If you're not interested, I
+would however be willing to keep doing it.
+
+Regards
+Stefan
+
+On Tue, Jan 09, 2007 at 08:34:38PM +0100, Robert Lange wrote:
+> Hi readers,
+> 
+> I want to improve (i.e. already started with it) the fsguard plugin with
+> two features:
+> - Display remaining space as text in panel (as option)
+> - Allow usage of free-space bar graph instead of "colored box"
+> 
+> I found the current source code at svn.xfce.org and started local
+> modification from there, but I did not found out who is maintaining the
+> SVN and the plugin itself.
+> 
+> I mailed to the developers named in AUTHORS and Andre Lerche told me he
+> started the plugin, but currently discontinued work.
+> 
+> Thus, anybody currently maintaining the plugin or can give me a hint who
+> to ask in this case?
+> 
+> 
+> Thanks & (still, very late dough) a Happy New Year,
+> Robert
+> 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+-- 
+Stefan Ott
+http://www.ottwerk.net/
+
+"La vie est courte mais on s'ennuie quand m?me" -- Georges Feydeau
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20070109/80694e12/attachment.pgp>
+
+From mike.massonnet at gmail.com  Wed Jan 10 02:30:56 2007
+From: mike.massonnet at gmail.com (Mike Massonnet)
+Date: Wed, 10 Jan 2007 02:30:56 +0100
+Subject: Who is feeling responsible for the fsguard-plugin?
+In-Reply-To: <45A3EE4E.7060101@s1999.tu-chemnitz.de>
+References: <45A3EE4E.7060101@s1999.tu-chemnitz.de>
+Message-ID: <20070110013056.GD6166@failure.del>
+
+On Tue, Jan 09, 2007 at 08:34:38PM +0100, Robert Lange wrote:
+> Hi readers,
+> 
+> I want to improve (i.e. already started with it) the fsguard plugin with
+> two features:
+> - Display remaining space as text in panel (as option)
+> - Allow usage of free-space bar graph instead of "colored box"
+
+I already started this, however I stopped at the "orientation" stuff, I
+will need to get a clean head on this.  With options for both.  Actually
+I even had like to get rid of the button.  Not really worth to open
+Thunar IMHO (oh, and changed the default file manager to exo-open IIRC).
+
+> I found the current source code at svn.xfce.org and started local
+> modification from there, but I did not found out who is maintaining the
+> SVN and the plugin itself.
+
+See:
+http://foo-projects.org/pipermail/goodies-dev/2006-December/000410.html
+http://foo-projects.org/pipermail/goodies-dev/2006-December/000413.html
+
+I also have get an answer from the former maintainer.
+
+However, as I am short at time, go ahead and post your patch on the
+goodies-dev ml.  BTW this ml (@berlios.de) is outdated.
+
+> I mailed to the developers named in AUTHORS and Andre Lerche told me he
+> started the plugin, but currently discontinued work.
+> 
+> Thus, anybody currently maintaining the plugin or can give me a hint who
+> to ask in this case?
+> 
+> 
+> Thanks & (still, very late dough) a Happy New Year,
+> Robert
+> 
+
+Cheers!
+Mike
+-- 
+ http://massonnet.org/ Mike (m8t) Massonnet     __oo 
+ GnuPG 0--" 0xF8C80F97                      ---(_)_"> 
+ C4DA 431D 52F9 F930 3E5B  3E3D 546C 89D9 F8C8 0F97 
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20070110/95750e0c/attachment.pgp>
+
+From andreas at korzinowski.de  Mon Jan 22 00:39:10 2007
+From: andreas at korzinowski.de (Andreas Korzinowski)
+Date: Mon, 22 Jan 2007 00:39:10 +0100 (CET)
+Subject: Problems to install final xfce-goodies 4.4.0
+Message-ID: <8677.40051.81.14.148.203.1169422750.squirrel@webmailer.hosteurope.de>
+
+Hi there,
+
+i am testing the fresh final version of the installation-pakets.
+
+When installing xfce-goodies 4.4.0 the following failure apears:
+
+verve.c:25:18: error: pcre.h: No such file or directory
+verve.c: In function ?verve_is_url?:
+verve.c:197: error: ?pcre? undeclared (first use in this function)
+verve.c:197: error: (Each undeclared identifier is reported only once
+verve.c:197: error: for each function it appears in.)
+verve.c:197: error: ?pattern? undeclared (first use in this function)
+verve.c: In function ?verve_is_email?:
+verve.c:244: error: ?pcre? undeclared (first use in this function)
+verve.c:244: error: ?pattern? undeclared (first use in this function)
+
+
+Best Regards
+
+Andreas
+
+
+
+From mike.massonnet at gmail.com  Mon Jan 22 01:13:46 2007
+From: mike.massonnet at gmail.com (Mike Massonnet)
+Date: Mon, 22 Jan 2007 01:13:46 +0100
+Subject: Problems to install final xfce-goodies 4.4.0
+In-Reply-To: <8677.40051.81.14.148.203.1169422750.squirrel@webmailer.hosteurope.de>
+References: <8677.40051.81.14.148.203.1169422750.squirrel@webmailer.hosteurope.de>
+Message-ID: <20070122001346.GN14841@failure.del>
+
+On Mon, Jan 22, 2007 at 12:39:10AM +0100, Andreas Korzinowski wrote:
+> Hi there,
+> 
+> i am testing the fresh final version of the installation-pakets.
+> 
+> When installing xfce-goodies 4.4.0 the following failure apears:
+> 
+> verve.c:25:18: error: pcre.h: No such file or directory
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+% dpkg -S /usr/include/pcre.h                      [07-01-22-1:13]
+libpcre3-dev: /usr/include/pcre.h
+
+Obviously you need to install the dev package (whatever way it is called
+on your system) for libpcre.
+
+> verve.c: In function ?verve_is_url?:
+> verve.c:197: error: ?pcre? undeclared (first use in this function)
+> verve.c:197: error: (Each undeclared identifier is reported only once
+> verve.c:197: error: for each function it appears in.)
+> verve.c:197: error: ?pattern? undeclared (first use in this function)
+> verve.c: In function ?verve_is_email?:
+> verve.c:244: error: ?pcre? undeclared (first use in this function)
+> verve.c:244: error: ?pattern? undeclared (first use in this function)
+> 
+> 
+> Best Regards
+> 
+> Andreas
+> 
+
+Cheers,
+Mike
+PS: note that this list is being replaced by goodies-dev at xfce.org
+-- 
+ Mike (m8t) Massonnet http://massonnet.org/     __oo 
+ GnuPG 0--" 0xF8C80F97                      ---(_)_"> 
+ C4DA 431D 52F9 F930 3E5B  3E3D 546C 89D9 F8C8 0F97 
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20070122/6c7755e3/attachment.pgp>
+
+From andreas at korzinowski.de  Mon Jan 22 14:03:38 2007
+From: andreas at korzinowski.de (Andreas Korzinowski)
+Date: Mon, 22 Jan 2007 14:03:38 +0100 (CET)
+Subject: Problems to install final xfce-goodies 4.4.0
+In-Reply-To: <20070122001346.GN14841@failure.del>
+References: <8677.40051.81.14.148.203.1169422750.squirrel@webmailer.hosteurope.de>
+	<20070122001346.GN14841@failure.del>
+Message-ID: <8677.44053.195.37.205.21.1169471018.squirrel@webmailer.hosteurope.de>
+
+Hi Mike,
+
+thats it, after installing the package libpcre3-dev all works fine.
+On the main-site i have seen a list, what packages are needed for
+installing xfce4 4.4.0.
+I think it seems helpful to publish a list of the dependencies from the
+goodies-installer to.
+
+Yeah, i think xfce4 is a great job, my gratulations :-))
+
+
+Best Regards
+
+Andreas
+
+
+
+
+Mike Massonnet wrote:
+> On Mon, Jan 22, 2007 at 12:39:10AM +0100, Andreas Korzinowski wrote:
+>> Hi there,
+>>
+>> i am testing the fresh final version of the installation-pakets.
+>>
+>> When installing xfce-goodies 4.4.0 the following failure apears:
+>>
+>> verve.c:25:18: error: pcre.h: No such file or directory
+>                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>
+> % dpkg -S /usr/include/pcre.h                      [07-01-22-1:13]
+> libpcre3-dev: /usr/include/pcre.h
+>
+> Obviously you need to install the dev package (whatever way it is called
+> on your system) for libpcre.
+>
+>> verve.c: In function ?verve_is_url?:
+>> verve.c:197: error: ?pcre? undeclared (first use in this function)
+>> verve.c:197: error: (Each undeclared identifier is reported only once
+>> verve.c:197: error: for each function it appears in.)
+>> verve.c:197: error: ?pattern? undeclared (first use in this function)
+>> verve.c: In function ?verve_is_email?:
+>> verve.c:244: error: ?pcre? undeclared (first use in this function)
+>> verve.c:244: error: ?pattern? undeclared (first use in this function)
+>>
+>>
+>> Best Regards
+>>
+>> Andreas
+>>
+>
+> Cheers,
+> Mike
+> PS: note that this list is being replaced by goodies-dev at xfce.org
+> --
+>  Mike (m8t) Massonnet http://massonnet.org/     __oo
+>  GnuPG 0--" 0xF8C80F97                      ---(_)_">
+>  C4DA 431D 52F9 F930 3E5B  3E3D 546C 89D9 F8C8 0F97
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+
+
+
+From h.aling at home.nl  Sun Jan 28 16:47:09 2007
+From: h.aling at home.nl (Harold Aling)
+Date: Sun, 28 Jan 2007 16:47:09 +0100
+Subject: Clipman 'select text in xterm' issue (Forwarded)
+Message-ID: <45BCC57D.3000702@home.nl>
+
+(Forwarded from xfce-dev list...)
+
+Dear list,
+
+To my understanding, the Xfce Clipboard manager has the option to merge 
+the 'X' clipboard with the 'selection' clipboard.
+
+When selecting text in X, the selected (or copied with ctrl-c) text is 
+immediately paste-able in an xterm using shift-insert.
+The other way around: Selecting text in an xterm isn't paste-able in X, 
+unless explicitly selected from the 'Clipman History'. The 'Clipman 
+History' also shows 2 active clipboard items... (see attachment)
+
+Update: A VTE-based terminal doesn't fix this...
+
+
+Is this the expected behavior or a bug?
+
+
+Cheers!
+
+Harold
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: clipman.jpg
+Type: image/jpeg
+Size: 2767 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20070128/36db814a/attachment.jpg>
+

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Patch for battery-plugin - warn as soon as the battery is fully charged
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-April/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Patch%20for%20battery-plugin%20-%20warn%20as%20soon%20as%20the%20battery%20is%20fully%20charged&In-Reply-To=%3C443B7E2A.1030708%40craesh.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000761.html">
+   <LINK REL="Next"  HREF="000721.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Patch for battery-plugin - warn as soon as the battery is fully charged</H1>
+    <B>Sacher Khoudari</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Patch%20for%20battery-plugin%20-%20warn%20as%20soon%20as%20the%20battery%20is%20fully%20charged&In-Reply-To=%3C443B7E2A.1030708%40craesh.net%3E"
+       TITLE="Patch for battery-plugin - warn as soon as the battery is fully charged">craesh at craesh.net
+       </A><BR>
+    <I>Tue Apr 11 12:00:10 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000761.html">[Bug 1652] option to show only iconified/normal windows
+</A></li>
+        <LI>Next message: <A HREF="000721.html">[Bug 1235] Date&amp;Time Plugin : &quot;Week day starts on Monday&quot; doesn't work
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#720">[ date ]</a>
+              <a href="thread.html#720">[ thread ]</a>
+              <a href="subject.html#720">[ subject ]</a>
+              <a href="author.html#720">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Hi!
+
+Because my Thinkpad 600e has this annoying battery problem I need
+something that warns me as soon as my battery is fully charged, to not
+overcharge it. I had once written a small python-script. But because the
+battery-plugin already warns you about almost-empty batteries, I had the
+idea to now patch it for this purpose. I actually just did a copy &amp;
+paste &amp; :s/low/full/g, so it's nothing special ;)
+
+I'm not sure how many Xfce users will need it. I think most laptops
+prevent the battery from being overcharged. But it won't harm anyone to
+give the users the option to be warned. So you are free to use this
+patch if you want to ;)
+
+Greetings!
+Sacher
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+Comment: Using GnuPG with Thunderbird - <A HREF="http://enigmail.mozdev.org">http://enigmail.mozdev.org</A>
+
+iD8DBQFEO34lqj8R1rngt5kRAn0ZAKCnvCt4s2UuL2wcWLcPV81l/SkhSQCgisHi
+JC86m6PN11uivvzTOm0YFwg=
+=Nw+j
+-----END PGP SIGNATURE-----
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: battmon.c.patch
+Type: text/x-patch
+Size: 9997 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060411/417ed732/attachment.bin">https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060411/417ed732/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000761.html">[Bug 1652] option to show only iconified/normal windows
+</A></li>
+	<LI>Next message: <A HREF="000721.html">[Bug 1235] Date&amp;Time Plugin : &quot;Week day starts on Monday&quot; doesn't work
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#720">[ date ]</a>
+              <a href="thread.html#720">[ thread ]</a>
+              <a href="subject.html#720">[ subject ]</a>
+              <a href="author.html#720">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

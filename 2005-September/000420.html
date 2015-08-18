@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Porting panel plugins for 4.4
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-September/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Porting%20panel%20plugins%20for%204.4&In-Reply-To=%3C433A370B.3080604%40xfce.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000419.html">
+   <LINK REL="Next"  HREF="000421.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Porting panel plugins for 4.4</H1>
+    <B>Jasper Huijsmans</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Porting%20panel%20plugins%20for%204.4&In-Reply-To=%3C433A370B.3080604%40xfce.org%3E"
+       TITLE="Porting panel plugins for 4.4">jasper at xfce.org
+       </A><BR>
+    <I>Wed Sep 28 08:24:11 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000419.html">New panel in trunk
+</A></li>
+        <LI>Next message: <A HREF="000421.html">Porting panel plugins for 4.4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#420">[ date ]</a>
+              <a href="thread.html#420">[ thread ]</a>
+              <a href="subject.html#420">[ subject ]</a>
+              <a href="author.html#420">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi all,
+
+The new panel framework for 4.4 is now in SVN trunk. All plugins will 
+have to be ported, but this should not be too difficult.
+
+To get started, read the README.Plugins from the panel toplevel source
+dir and have a look at the API docs on 
+<A HREF="http://xfce.loculus.nl/documentation/API/">http://xfce.loculus.nl/documentation/API/</A> .
+
+The mailwatch plugin has been ported (still in
+xfce4-mailwatch-plugin/branches/experimental) and the new panel contains
+a testplugin that could be used as an example.
+
+I'd like to start working on the ports as soon as possible. I can do the
+porting myself, or help you out.
+
+Things I plan to do during the porting:
+- Copy current code to a branch (xfce_4_2)
+- Port trunk to new API (obviously ;)
+- Use xfce4-dev-tools and remove generated files
+- Bump the version number.
+
+Here is a list of all plugins, as far as I know (tell me if I missed
+any). Please, if you're the maintainer of a plugin, reply to this mail
+and tell me if you want to do the porting yourself, or you'd like me to
+handle it.
+
+1  xfce4-battery-plugin -- actually, I have already done the porting
+			   for this one.
+2  xfce4-clipman-plugin
+3  xfce4-cpugraph-plugin
+4  xfce4-datetime-plugin
+5  xfce4-diskperf-plugin
+6  xfce4-fsguard-plugin
+7  xfce4-genmon-plugin
+8  xfce4-i8k-plugin
+9  xfce4-megahertz-plugin
+10 xfce4-minicmd-plugin
+11 xfce4-mixer
+12 xfce4-modemlights-plugin
+13 xfce4-netload-plugin
+14 xfce4-notes-plugin
+15 xfce4-quicklauncher-plugin
+16 xfce4-screenshooter-plugin
+17 xfce4-sensors-plugin
+18 xfce4-showdesktop-plugin
+19 xfce4-systemload-plugin
+20 xfce4-taskbar-plugin
+21 xfce4-trigger-launcher
+22 xfce4-wavelan-plugin
+23 xfce4-weather-plugin
+24 xfce4-websearch-plugin
+25 xfce4-windowlist-plugin
+26 xfce4-xkb-plugin
+27 xfce4-xmms-plugin
+
+Wow, 27, that's not bad at all ;-)
+
+cheers,
+	Jasper
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000419.html">New panel in trunk
+</A></li>
+	<LI>Next message: <A HREF="000421.html">Porting panel plugins for 4.4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#420">[ date ]</a>
+              <a href="thread.html#420">[ thread ]</a>
+              <a href="subject.html#420">[ subject ]</a>
+              <a href="author.html#420">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

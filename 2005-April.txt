@@ -1,0 +1,1326 @@
+From xotazu at cvc.uab.es  Mon Apr  4 16:34:22 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Mon, 04 Apr 2005 16:34:22 +0200
+Subject: xfce4-taskmanager-0.2.1 patch
+In-Reply-To: <20050331100007.20855.47114.Mailman@bat.berlios.de>
+References: <20050331100007.20855.47114.Mailman@bat.berlios.de>
+Message-ID: <20050404163422.6a6a7481@cvc131.uab.es>
+
+
+
+	Hi!
+
+	The 0.2.1 version of xfce4-taslmanager produced a segmentation
+fault on my computer (Slackware 10.0 kernel 2.4.29). It also had some
+memory leaks that increased memory size at a 100Kb/s rate.
+
+	I attach a patch that solves the segmentation error and memory
+leaks.
+
+cheers
+
+Xavier
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-taskmanager-0.2.1_memleak.diff
+Type: application/octet-stream
+Size: 1448 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050404/641a44b0/attachment.obj>
+
+From xotazu at cvc.uab.es  Tue Apr  5 12:17:23 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Tue, 05 Apr 2005 12:17:23 +0200
+Subject: xfce4-taskmanager-0.2.1 patch
+In-Reply-To: <20050405100006.20697.29387.Mailman@bat.berlios.de>
+References: <20050405100006.20697.29387.Mailman@bat.berlios.de>
+Message-ID: <20050405121723.3baff412@cvc131.uab.es>
+
+	Hi:
+
+	I am sorry. I send the patch as attatchment, but the patch is a
+really short file. I post the text patch.
+
+cheers
+
+Xavier
+
+
+--- xfce4-taskmanager-0.2.1/src/functions.c	2005-02-01 23:32:27.000000000 +0100
++++ xfce4-taskmanager-0.2.1_xop/src/functions.c	2005-04-03 23:51:54.000000000 +0200
+@@ -62,6 +62,8 @@
+ 			g_strlcat(task_file_name,"/status", 256);
+ 		
+ 			gchar buffer[256];
++			gchar label[256];
++			gchar **tmp, **tmp_uid;
+ 			gint line_count = 0;
+ 			struct task task;
+ 			struct passwd *passwdp;
+@@ -70,7 +72,7 @@
+ 			{
+ 				while(fgets(buffer, 256, task_file) != NULL)
+ 				{
+-					if(line_count == 0)
++/*					if(line_count == 0)
+ 						strcpy(task.name,g_strstrip(g_strsplit(buffer, ":", 2)[1]));
+ 					else if(line_count == 3)
+ 						strcpy(task.pid,g_strstrip(g_strsplit(buffer, ":", 2)[1]));
+@@ -81,7 +83,23 @@
+ 						passwdp = getpwuid(atoi(g_strsplit(g_strstrip(g_strsplit(buffer, ":", 2)[1]), "\t", 2)[0])); 
+ 						strcpy(task.uid, passwdp->pw_name);
+ 					}
+-					
++*/
++					tmp=g_strsplit(buffer, ":", 2);
++					strcpy(label,tmp[0]);
++					if(!strcmp(label,"Name"))
++						strcpy(task.name,g_strstrip(tmp[1]));
++					else if(!strcmp(label,"Pid"))
++						strcpy(task.pid,g_strstrip(tmp[1]));
++					else if(!strcmp(label,"PPid"))
++						strcpy(task.ppid,g_strstrip(tmp[1]));
++					else if(!strcmp(label,"Uid"))
++					{
++						tmp_uid=g_strsplit(g_strstrip(tmp[1]), "\t", 2);
++						passwdp = getpwuid(atoi(tmp_uid[0])); 
++						strcpy(task.uid, passwdp->pw_name);
++						g_strfreev(tmp_uid);
++					}
++					g_strfreev(tmp);
+ 					line_count++;
+ 				}
+ 			
+
+
+
+
+
+
+
+
+On Tue, 05 Apr 2005 12:00:06 +0200
+xfce-goodies-dev-request at berlios.de wrote:
+
+> Send xfce-goodies-dev mailing list submissions to
+> 	xfce-goodies-dev at lists.berlios.de
+> 
+> To subscribe or unsubscribe via the World Wide Web, visit
+> 	http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> or, via email, send a message with subject or body 'help' to
+> 	xfce-goodies-dev-request at lists.berlios.de
+> 
+> You can reach the person managing the list at
+> 	xfce-goodies-dev-admin at lists.berlios.de
+> 
+> When replying, please edit your Subject line so it is more specific
+> than "Re: Contents of xfce-goodies-dev digest..."
+> 
+> 
+> Today's Topics:
+> 
+>    1. xfce4-taskmanager-0.2.1 patch (Xavier Otazu)
+> 
+> --__--__--
+> 
+> Message: 1
+> Date: Mon, 04 Apr 2005 16:34:22 +0200
+> From: Xavier Otazu <xotazu at cvc.uab.es>
+> Subject: xfce4-taskmanager-0.2.1 patch
+> To: xfce-goodies-dev at berlios.de
+> Organization: CVC
+> Reply-To: xfce-goodies-dev at lists.berlios.de
+> 
+> 
+> --Boundary_(ID_eD2tCUAmWtB6rkrjhYB+LA)
+> Content-type: text/plain; charset=US-ASCII
+> Content-disposition: inline
+> 
+> 
+> 
+> 	Hi!
+> 
+> 	The 0.2.1 version of xfce4-taslmanager produced a segmentation
+> fault on my computer (Slackware 10.0 kernel 2.4.29). It also had some
+> memory leaks that increased memory size at a 100Kb/s rate.
+> 
+> 	I attach a patch that solves the segmentation error and memory
+> leaks.
+> 
+> cheers
+> 
+> Xavier
+> 
+> 
+> 
+> --Boundary_(ID_eD2tCUAmWtB6rkrjhYB+LA)
+> Content-type: application/octet-stream;
+>  name=xfce4-taskmanager-0.2.1_memleak.diff
+> Content-disposition: attachment; filename=xfce4-taskmanager-
+> 0.2.1_memleak.diff Content-transfer-encoding: BASE64
+> 
+> LS0tIHhmY2U0LXRhc2ttYW5hZ2VyLTAuMi4xL3NyYy9mdW5jdGlvbnMuYwkyMDA1
+> LTAyLTAxIDIzOjMyOjI3LjAwMDAwMDAwMCArMDEwMAorKysgeGZjZTQtdGFza21h
+> bmFnZXItMC4yLjFfeG9wL3NyYy9mdW5jdGlvbnMuYwkyMDA1LTA0LTAzIDIzOjUx
+> OjU0LjAwMDAwMDAwMCArMDIwMApAQCAtNjIsNiArNjIsOCBAQAogCQkJZ19zdHJs
+> Y2F0KHRhc2tfZmlsZV9uYW1lLCIvc3RhdHVzIiwgMjU2KTsKIAkJCiAJCQlnY2hh
+> ciBidWZmZXJbMjU2XTsKKwkJCWdjaGFyIGxhYmVsWzI1Nl07CisJCQlnY2hhciAq
+> KnRtcCwgKip0bXBfdWlkOwogCQkJZ2ludCBsaW5lX2NvdW50ID0gMDsKIAkJCXN0
+> cnVjdCB0YXNrIHRhc2s7CiAJCQlzdHJ1Y3QgcGFzc3dkICpwYXNzd2RwOwpAQCAt
+> NzAsNyArNzIsNyBAQAogCQkJewogCQkJCXdoaWxlKGZnZXRzKGJ1ZmZlciwgMjU2
+> LCB0YXNrX2ZpbGUpICE9IE5VTEwpCiAJCQkJewotCQkJCQlpZihsaW5lX2NvdW50
+> ID09IDApCisvKgkJCQkJaWYobGluZV9jb3VudCA9PSAwKQogCQkJCQkJc3RyY3B5
+> KHRhc2submFtZSxnX3N0cnN0cmlwKGdfc3Ryc3BsaXQoYnVmZmVyLCAiOiIsIDIp
+> WzFdKSk7CiAJCQkJCWVsc2UgaWYobGluZV9jb3VudCA9PSAzKQogCQkJCQkJc3Ry
+> Y3B5KHRhc2sucGlkLGdfc3Ryc3RyaXAoZ19zdHJzcGxpdChidWZmZXIsICI6Iiwg
+> MilbMV0pKTsKQEAgLTgxLDcgKzgzLDIzIEBACiAJCQkJCQlwYXNzd2RwID0gZ2V0
+> cHd1aWQoYXRvaShnX3N0cnNwbGl0KGdfc3Ryc3RyaXAoZ19zdHJzcGxpdChidWZm
+> ZXIsICI6IiwgMilbMV0pLCAiXHQiLCAyKVswXSkpOyAKIAkJCQkJCXN0cmNweSh0
+> YXNrLnVpZCwgcGFzc3dkcC0+cHdfbmFtZSk7CiAJCQkJCX0KLQkJCQkJCisqLwor
+> CQkJCQl0bXA9Z19zdHJzcGxpdChidWZmZXIsICI6IiwgMik7CisJCQkJCXN0cmNw
+> eShsYWJlbCx0bXBbMF0pOworCQkJCQlpZighc3RyY21wKGxhYmVsLCJOYW1lIikp
+> CisJCQkJCQlzdHJjcHkodGFzay5uYW1lLGdfc3Ryc3RyaXAodG1wWzFdKSk7CisJ
+> CQkJCWVsc2UgaWYoIXN0cmNtcChsYWJlbCwiUGlkIikpCisJCQkJCQlzdHJjcHko
+> dGFzay5waWQsZ19zdHJzdHJpcCh0bXBbMV0pKTsKKwkJCQkJZWxzZSBpZighc3Ry
+> Y21wKGxhYmVsLCJQUGlkIikpCisJCQkJCQlzdHJjcHkodGFzay5wcGlkLGdfc3Ry
+> c3RyaXAodG1wWzFdKSk7CisJCQkJCWVsc2UgaWYoIXN0cmNtcChsYWJlbCwiVWlk
+> IikpCisJCQkJCXsKKwkJCQkJCXRtcF91aWQ9Z19zdHJzcGxpdChnX3N0cnN0cmlw
+> KHRtcFsxXSksICJcdCIsIDIpOworCQkJCQkJcGFzc3dkcCA9IGdldHB3dWlkKGF0
+> b2kodG1wX3VpZFswXSkpOyAKKwkJCQkJCXN0cmNweSh0YXNrLnVpZCwgcGFzc3dk
+> cC0+cHdfbmFtZSk7CisJCQkJCQlnX3N0cmZyZWV2KHRtcF91aWQpOworCQkJCQl9
+> CisJCQkJCWdfc3RyZnJlZXYodG1wKTsKIAkJCQkJbGluZV9jb3VudCsrOwogCQkJ
+> CX0KIAkJCQo=
+> 
+> --Boundary_(ID_eD2tCUAmWtB6rkrjhYB+LA)--
+> 
+> 
+> --__--__--
+> 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+> 
+> End of xfce-goodies-dev Digest
+
+
+From masse_nicolas at yahoo.fr  Wed Apr  6 15:01:59 2005
+From: masse_nicolas at yahoo.fr (Nicolas Masse)
+Date: Wed, 6 Apr 2005 15:01:59 +0200
+Subject: quicklauncher plugin updated
+Message-ID: <20050406150159.7c63cae2.masse_nicolas@yahoo.fr>
+
+Hi all,
+
+I just wanna that yesterday I upload the 0.7 version of my plugin. 
+The difference is that now it use eventboxes instead of buttons to display icons,
+and it looks better. (there is also a zoom effect ;-) ). I already had the possibility to change the number of lines used to display the launchers in the previoius release.
+
+Comments are welcome.
+
+Masse Nicolas.
+
+
+From mario.streiber at gmx.de  Mon Apr 11 20:55:06 2005
+From: mario.streiber at gmx.de (Mario Streiber)
+Date: Mon, 11 Apr 2005 20:55:06 +0200
+Subject: new plugin : xfce4-mount-plugin
+Message-ID: <20050411205506.523faa18@max.local>
+
+Hi Jean-Baptiste,
+
+
+this is really a useful plugin. What I missed right from the start is
+that the list of devices is static, so e.g. a hotplugged USB stick
+will not show up in the menu. The only thing that gets updated is the
+disk statistics.
+
+I just changed mount-plugin.c so that each time you click on the
+panel button the complete menu is rebuilt from fstab, and I'd like to
+share that feature, so I attached the changed file.
+
+I hope someone else will find that useful as well.
+
+
+Regards
+Mario
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: mount-plugin.c
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050411/86562fe7/attachment.c>
+
+From michael at flex-it.be  Mon Apr 11 21:40:24 2005
+From: michael at flex-it.be (Michael De Nil)
+Date: Mon, 11 Apr 2005 21:40:24 +0200
+Subject: xfce4-battery-plugin bug
+Message-ID: <425AD2A8.8040002@flex-it.be>
+
+Hello,
+
+I am using Xfce4 on my notebook and like it a lot.
+However, there is a small bug in the battery plugin: when disconnecting 
+the power supply, the plugin keeps telling that the battery is charging, 
+which causes the plugin not to warn when the battery status is getting 
+critical (causing the notebook to drop out suddenly, when I forget to 
+plug in the power cord).
+
+I found a patch at 
+http://developer.berlios.de/patch/?func=detailpatch&patch_id=252&group_id=910, 
+which seems to be applied to CVS. However the last release of 
+xfce4-battery-plugin that I can find is from september 2003 
+(http://developer.berlios.de/project/showfiles.php?group_id=910).
+
+Since I am using the debian packages from 
+http://www.os-cillation.de/debian (which are afaik based on releases), I 
+have to recompile the battery plugin with the patch each time the 
+package is reinstalled.
+
+Is would be nice if someone could create a new release for the battery 
+plugin, so that in later releases of the debian packages this bug will 
+be solved.
+
+
+Thanks,
+
+Michael De Nil
+
+
+From h.aling at home.nl  Tue Apr 12 12:13:07 2005
+From: h.aling at home.nl (Harold Aling)
+Date: Tue, 12 Apr 2005 12:13:07 +0200 (CEST)
+Subject: xfce-goodies-dev digest, Vol 1 #205 - 2 msgs
+In-Reply-To: <20050412100008.5660.41163.Mailman@bat.berlios.de>
+References: <20050412100008.5660.41163.Mailman@bat.berlios.de>
+Message-ID: <60168.212.123.27.80.1113300787.squirrel@mail.sait.nl>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050412/08cd5cc5/attachment.html>
+
+From jb_dul at yahoo.com  Tue Apr 12 14:14:52 2005
+From: jb_dul at yahoo.com (Jean-baptiste Dulong)
+Date: Tue, 12 Apr 2005 14:14:52 +0200 (CEST)
+Subject: new plugin : xfce4-mount-plugin
+Message-ID: <20050412121452.19157.qmail@web31502.mail.mud.yahoo.com>
+
+Hi,
+thats a good point, I'll include this to the source
+right now.
+there is a couple of stuff I want to include also (in
+fact i haven't work on the plugin since the first
+release, shame on me), I'll put all this in a new tar
+ball by the end on the week....
+thanks
+
+Date: Mon, 11 Apr 2005 20:55:06 +0200
+From: Mario Streiber <mario.streiber at gmx.de>
+To: xfce-goodies-dev at lists.berlios.de
+Subject: new plugin : xfce4-mount-plugin
+Reply-To: xfce-goodies-dev at lists.berlios.de
+
+--Multipart_Mon__11_Apr_2005_20_55_06_+0200_FgCXxRIG=4JWcYk3
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Hi Jean-Baptiste,
+
+
+this is really a useful plugin. What I missed right
+from the start is
+that the list of devices is static, so e.g. a
+hotplugged USB stick
+will not show up in the menu. The only thing that gets
+updated is the
+disk statistics.
+
+I just changed mount-plugin.c so that each time you
+click on the
+panel button the complete menu is rebuilt from fstab,
+and I'd like to
+share that feature, so I attached the changed file.
+
+I hope someone else will find that useful as well.
+
+
+Regards
+Mario
+
+
+	
+
+	
+		
+__________________________________________________________________
+D?couvrez le nouveau Yahoo! Mail : 250 Mo d'espace de stockage pour vos mails ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com/
+
+
+From bugzilla-daemon at xfce.org  Thu Apr 14 03:00:48 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 14 Apr 2005 01:00:48 +0000 (UTC)
+Subject: [Bug 910]  New: Notes : When edit the title, the last letter not committed.
+Message-ID: <20050414010048.B2EF31F70B1@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=910
+
+           Summary: Notes : When edit the title, the last letter not
+                    committed.
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: notes
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: kseongcheol at yahoo.com
+
+
+Because I'm not good at english and programming,
+So I attatch the screenshot. And it'll say all.
+
+
+And this bug seems to have something to do with these, i guess.
+http://bugzilla.gnome.org/show_bug.cgi?id=62948
+http://bugzilla.gnome.org/show_bug.cgi?id=90082
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu Apr 14 03:00:48 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 14 Apr 2005 01:00:48 +0000 (UTC)
+Subject: [Bug 909]  New: Notes : When edit the tile, the last letter not committed.
+Message-ID: <20050414010048.792C21F70AE@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=909
+
+           Summary: Notes : When edit the tile, the last letter not
+                    committed.
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: notes
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: kseongcheol at yahoo.com
+
+
+Because I'm not good at english and programming,
+So I attatch the screenshot. And it'll say all.
+
+
+And this bug seems to have something to do with these, i guess.
+http://bugzilla.gnome.org/show_bug.cgi?id=62948
+http://bugzilla.gnome.org/show_bug.cgi?id=90082
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu Apr 14 03:04:52 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 14 Apr 2005 01:04:52 +0000 (UTC)
+Subject: [Bug 910] Notes : When edit the title, the last letter not committed.
+Message-ID: <20050414010452.055111F70AE@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=910
+
+
+
+
+
+------- Additional Comments From kseongcheol at yahoo.com  2005-04-14 01:04 UTC -------
+Created an attachment (id=212)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=212&action=view)
+An aminated gif captured from notes ver. 0.10.0
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu Apr 14 03:07:26 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 14 Apr 2005 01:07:26 +0000 (UTC)
+Subject: [Bug 909] Notes : When edit the tile, the last letter not committed.
+Message-ID: <20050414010726.D4DC91F70AE@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=909
+
+
+kseongcheol at yahoo.com changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |INVALID
+
+
+
+
+------- Additional Comments From kseongcheol at yahoo.com  2005-04-14 01:07 UTC -------
+Oops... I apologize my mistake.
+Ignore this report.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu Apr 14 14:45:52 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 14 Apr 2005 12:45:52 +0000 (UTC)
+Subject: [Bug 910] Notes : When edit the title, the last letter not committed.
+Message-ID: <20050414124552.3453D1F7177@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=910
+
+
+
+
+
+------- Additional Comments From choe.hwanjin at gmail.com  2005-04-14 12:45 UTC -------
+GtkEntry has "activate" signal which will be emitted when user press return key.
+I think this problem can be solved by connecting to "activate" signal instead of 
+"key-press-event".
+
+I made a patch, but I did not test it :)
+See below:
+
+--- notes.c.orig        2005-04-14 21:40:45.000000000 +0900
++++ notes.c     2005-04-14 21:42:52.000000000 +0900
+@@ -82,14 +82,10 @@
+     return;
+ }
+
+-gboolean
+-on_title_key_press(GtkWidget *widget, GdkEventKey *event, gpointer data)
++void
++on_title_activate(GtkWidget *widget, gpointer data)
+ {
+-    if (event->type == GDK_KEY_PRESS) {
+-       if ((event->keyval == GDK_Return) || (event->keyval == GDK_KP_Enter)) {
+-           on_title_change_done((Note *)data);
+-       }
+-    }
++    on_title_change_done((Note *)data);
+     return FALSE;
+ }
+
+@@ -272,8 +268,8 @@
+     /* when double-clicked the title becomes visible, send Note as data */
+     g_signal_connect(G_OBJECT(event_box), "button_press_event",
+                     G_CALLBACK(on_title_change), (gpointer)note);
+-    g_signal_connect(G_OBJECT(title), "key-press-event",
+-                    G_CALLBACK(on_title_key_press), (gpointer)note);
++    g_signal_connect(G_OBJECT(title), "activate",
++                    G_CALLBACK(on_title_activate), (gpointer)note);
+
+     g_signal_connect(G_OBJECT(text_view), "focus-in-event",
+                     G_CALLBACK(on_text_view_focus_in), (gpointer)note);
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri Apr 15 00:42:13 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 14 Apr 2005 22:42:13 +0000 (UTC)
+Subject: [Bug 910] Notes : When edit the title, the last letter not committed.
+Message-ID: <20050414224213.BA7711F7192@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=910
+
+
+
+
+
+------- Additional Comments From kseongcheol at yahoo.com  2005-04-14 22:42 UTC -------
+Hwanjin, it works.
+Thanks.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From jb_dul at yahoo.com  Fri Apr 15 16:01:56 2005
+From: jb_dul at yahoo.com (Jean-baptiste Dulong)
+Date: Fri, 15 Apr 2005 16:01:56 +0200 (CEST)
+Subject: xfce4-mount-plugin updated
+Message-ID: <20050415140157.70172.qmail@web31501.mail.mud.yahoo.com>
+
+Hi
+the xfce4-mount-plugin has been updated today.
+See Changelog for details.
+
+
+	
+
+	
+		
+__________________________________________________________________
+D?couvrez le nouveau Yahoo! Mail : 250 Mo d'espace de stockage pour vos mails ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com/
+
+
+From jb_dul at yahoo.com  Fri Apr 15 16:52:57 2005
+From: jb_dul at yahoo.com (Jean-baptiste Dulong)
+Date: Fri, 15 Apr 2005 16:52:57 +0200 (CEST)
+Subject: xfce4-mount-plugin updated
+Message-ID: <20050415145257.30391.qmail@web31507.mail.mud.yahoo.com>
+
+ Hi
+ the xfce4-mount-plugin has been updated today.
+ See Changelog for details.
+
+
+
+	
+
+	
+		
+__________________________________________________________________
+D?couvrez le nouveau Yahoo! Mail : 250 Mo d'espace de stockage pour vos mails ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com/
+
+
+From koorek at o2.pl  Sat Apr 16 00:02:42 2005
+From: koorek at o2.pl (Robert Kurowski)
+Date: Sat, 16 Apr 2005 00:02:42 +0200
+Subject: xfce4-mount-plugin updated
+In-Reply-To: <20050415140157.70172.qmail@web31501.mail.mud.yahoo.com>
+References: <20050415140157.70172.qmail@web31501.mail.mud.yahoo.com>
+Message-ID: <20050416000242.1cf2dab5@localhost>
+
+On Fri, 15 Apr 2005 16:01:56 +0200 (CEST)
+Jean-baptiste Dulong <jb_dul at yahoo.com> wrote:
+
+Hi, I've got problem. probably screenshot will explain everything (hint: free space)
+
+http://www.koorek.pl.eu.org/scrshoots/koorek-mount-plugin-15-04-2005.png
+
+PS. xfce4-fsguard shows free space correctly
+
+-- 
+Robert 'koorek' Kurowski	Jabber:	koorek at pld-linux.org
+
+
+From noreply at berlios.de  Sat Apr 16 15:27:33 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Sat, 16 Apr 2005 15:27:33 +0200 (CEST)
+Subject: [Bug #3801] xfce4-notes-plugin
+Message-ID: <200504161327.j3GDRXad012587@unicorn.berlios.de>
+
+Bug #3801, was updated on 2005-Apr-16 15:27
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: None
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: aenigma
+Assigned to : none
+Summary: xfce4-notes-plugin
+
+Details: If you paste some data the note will autosize but if the data is too long the note will resize out of the screen and you have no mode to resize it.
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=3801&group_id=910
+
+
+From theli at ukr.net  Mon Apr 18 10:39:48 2005
+From: theli at ukr.net (Anton Romanov)
+Date: Mon, 18 Apr 2005 11:39:48 +0300
+Subject: xfce4-mount-plugin updated
+In-Reply-To: <20050415140157.70172.qmail@web31501.mail.mud.yahoo.com>
+References: <20050415140157.70172.qmail@web31501.mail.mud.yahoo.com>
+Message-ID: <20050418113948.66221bfd@theli>
+
+On Fri, 15 Apr 2005 16:01:56 +0200 (CEST)
+Jean-baptiste Dulong <jb_dul at yahoo.com> wrote:
+
+> Hi
+> the xfce4-mount-plugin has been updated today.
+> See Changelog for details.
+i think that button style should be changed to flat... because now plugin button looks ..hm .... unnatural maybe?
+well, it doesn't fit to all other plugins' buttons...
+
+-- 
+
+
+From jb_dul at yahoo.com  Mon Apr 18 10:42:18 2005
+From: jb_dul at yahoo.com (Jean-baptiste Dulong)
+Date: Mon, 18 Apr 2005 10:42:18 +0200 (CEST)
+Subject: xfce4-mount-plugin updated
+Message-ID: <20050418084218.63273.qmail@web31513.mail.mud.yahoo.com>
+
+Hi,
+well, I think the way i calculate the free space is
+not very exact :-)..
+In fact I use the statfs system call, wich return a
+structure with several entries, one is the number of
+free blocks another is the number of available blocks
+to non-superuser. In ext2fs a percentage of blocks on
+a device is reserved for the superuser. I tok the
+first one...
+I'll change this soon...
+thanks.
+
+Message: 3
+Date: Sat, 16 Apr 2005 00:02:42 +0200
+From: Robert Kurowski <koorek at o2.pl>
+To: xfce-goodies-dev at berlios.de
+Subject: Re: xfce4-mount-plugin updated
+Reply-To: xfce-goodies-dev at lists.berlios.de
+
+On Fri, 15 Apr 2005 16:01:56 +0200 (CEST)
+Jean-baptiste Dulong <jb_dul at yahoo.com> wrote:
+
+Hi, I've got problem. probably screenshot will explain
+everything 
+(hint: free space)
+
+http://www.koorek.pl.eu.org/scrshoots/koorek-mount-plugin-15-04-2005.png
+
+PS. xfce4-fsguard shows free space correctly
+
+-- 
+Robert 'koorek' Kurowski	Jabber:	koorek at pld-linux.org
+
+
+
+
+
+	
+
+	
+		
+__________________________________________________________________
+D?couvrez le nouveau Yahoo! Mail : 250 Mo d'espace de stockage pour vos mails ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com/
+
+
+From jb_dul at yahoo.com  Mon Apr 18 10:54:26 2005
+From: jb_dul at yahoo.com (Jean-baptiste Dulong)
+Date: Mon, 18 Apr 2005 10:54:26 +0200 (CEST)
+Subject: xfce4-mount-plugin updated
+In-Reply-To: 6667
+Message-ID: <20050418085426.64805.qmail@web31513.mail.mud.yahoo.com>
+
+OK it will be done very soon
+thanks
+--- Anton Romanov <theli at ukr.net> wrote:
+> On Fri, 15 Apr 2005 16:01:56 +0200 (CEST)
+> Jean-baptiste Dulong <jb_dul at yahoo.com> wrote:
+> 
+> > Hi
+> > the xfce4-mount-plugin has been updated today.
+> > See Changelog for details.
+> i think that button style should be changed to
+> flat... because now plugin button looks ..hm ....
+> unnatural maybe?
+> well, it doesn't fit to all other plugins'
+> buttons...
+> 
+> -- 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+>
+http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+
+
+	
+
+	
+		
+__________________________________________________________________
+D?couvrez le nouveau Yahoo! Mail : 250 Mo d'espace de stockage pour vos mails ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com/
+
+
+From xotazu at cvc.uab.es  Mon Apr 18 18:07:14 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Mon, 18 Apr 2005 18:07:14 +0200
+Subject: xfce4-mount-plugin updated
+In-Reply-To: <20050416100007.11093.78949.Mailman@bat.berlios.de>
+References: <20050416100007.11093.78949.Mailman@bat.berlios.de>
+Message-ID: <20050418180714.700fc0b2@cvc131.uab.es>
+
+	Hi:
+
+	I compiled, and run, without problem on Slackware 10.0.
+
+	On Slackware 9.1 (with xfce 4.2.1.1) it crashed the
+panel. How can I send you a backtrace?
+
+
+Xavier
+
+
+On Sat, 16 Apr 2005 12:00:07 +0200
+xfce-goodies-dev-request at berlios.de wrote:
+
+> Message: 1
+> Date: Fri, 15 Apr 2005 16:01:56 +0200 (CEST)
+> From: Jean-baptiste Dulong <jb_dul at yahoo.com>
+> Subject: xfce4-mount-plugin updated
+> To: xfce-goodies-dev at berlios.de
+> Reply-To: xfce-goodies-dev at lists.berlios.de
+> 
+> 
+> Hi
+> the xfce4-mount-plugin has been updated today.
+> See Changelog for details.
+
+
+From noreply at berlios.de  Sun Apr 17 21:12:26 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Sun, 17 Apr 2005 21:12:26 +0200 (CEST)
+Subject: [Feature #836] Wavelan auto-hide
+Message-ID: <200504171912.j3HJCQqA022929@unicorn.berlios.de>
+
+Feature Request #836, was updated on 2005-Apr-17 21:12
+You can respond by visiting: 
+http://developer.berlios.de/feature/?func=detailfeature&feature_id=836&group_id=910
+
+Category: None
+Status: Open
+Priority: 5
+Summary: Wavelan auto-hide
+
+By: zero_dogg
+Date: 2005-Apr-17 21:12
+
+Message:
+Logged In: YES 
+user_id=15437
+Browser: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.6) Gecko/20050317 Firefox/1.0.2
+
+It would be nice if the wavelan plugin could auto-hide
+not only when wlan is not up, but also when the device
+does not exist.
+I use a PCMCIA wlan card so the device is not always
+present, and then the plugin takes up alot of space on
+the panel without actually doing anything.
+
+----------------------------------------------------------------------
+You can respond by visiting: 
+http://developer.berlios.de/feature/?func=detailfeature&feature_id=836&group_id=910
+
+
+From bugzilla-daemon at xfce.org  Fri Apr 22 09:12:12 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri, 22 Apr 2005 07:12:12 +0000 (UTC)
+Subject: [Bug 660] Taskbar plugin causes panel to 'shake' when available space changes using "Expand to fill screen"
+Message-ID: <20050422071212.788351F71C2@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=660
+
+
+
+
+
+------- Additional Comments From pickscrape at gmail.com  2005-04-22 07:12 UTC -------
+I can confirm this is happening for me too. 4.2.1 running on Gentoo Linux.
+
+For me it tends to happen indefinitely (infinite loop) unless manually rescued.
+To stop it happening I generally have to click things randomly and bring up
+menus. It eventually stops with a bit of work.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri Apr 22 09:27:06 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri, 22 Apr 2005 07:27:06 +0000 (UTC)
+Subject: [Bug 660] Taskbar plugin causes panel to 'shake' when available space changes using "Expand to fill screen"
+Message-ID: <20050422072706.B6D761F71C2@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=660
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+         AssignedTo|xfce-goodies-dev at berlios.de |jasper at xfce.org
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-04-22 07:27 UTC -------
+Ok guys, no need for more confirmations ;-) 
+
+I know what the problem is and it will be solved in Xfce 4.4. It probably
+requires too many changes to the panel to add a fix to the stable series.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From xotazu at cvc.uab.es  Fri Apr 22 12:06:07 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Fri, 22 Apr 2005 12:06:07 +0200
+Subject: [Bug 660] Taskbar plugin causes panel to 'shake' when available space
+ changes using "Expand to fill screen"
+In-Reply-To: <20050422100007.15212.78496.Mailman@bat.berlios.de>
+References: <20050422100007.15212.78496.Mailman@bat.berlios.de>
+Message-ID: <20050422120607.3dce9e07@cvc131.uab.es>
+
+	Hi:
+
+	I've also seen this behaviour on the last stable Debian
+distro.
+
+	But, I do not have this problem nor on Slackware 9.1 neither
+on Slackware 10.0
+
+cheers
+
+Xavier
+
+
+On Fri, 22 Apr 2005 12:00:07 +0200
+xfce-goodies-dev-request at berlios.de wrote:
+
+> I can confirm this is happening for me too. 4.2.1 running on Gentoo
+> Linux.
+> 
+> For me it tends to happen indefinitely (infinite loop) unless
+> manually rescued. To stop it happening I generally have to click
+> things randomly and bring up menus. It eventually stops with a bit of
+> work.
+
+
+From mario.streiber at gmx.de  Mon Apr 25 16:49:44 2005
+From: mario.streiber at gmx.de (Mario Streiber)
+Date: Mon, 25 Apr 2005 16:49:44 +0200
+Subject: xmms plugin updated
+Message-ID: <20050425164944.14daf4d5@max.local>
+
+Hi all,
+
+
+I picked Kernal's version of the xmms plugin and added some more changes/enhancements to it which I found useful:
+
+- klicking on the "play" button starts xmms now if not already running
+- removing or exiting the plugin (e.g. on logout) makes xmms quit
+- middle click on the progress bar shows/hides the xmms window(s)
+- the visibility state of the xmms windows is saved and reused on next login
+- smooth scrolling of the song title (pixel-, not character based)
+- properties menu to change song title font size and scrolling parameters
+- scrolled song title at the moment permanently visible (TBD: should probably
+  be another option in the properties dialog)
+
+I attached the modified source file xmms_plugin.c to this mail.
+
+According to http://xfce-goodies.berlios.de/, Patrick van Staveren is the owner of this plugin, maybe he can make these changes "official". Until then, you could just download the current version and replace the source file before running make && make install.
+
+It would be nice to get some feedback if this is interesting for others as well.
+
+
+Regards
+Mario
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: xmms_plugin.c
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050425/7a6c2467/attachment.c>
+
+From kieroglu at math.washington.edu  Mon Apr 25 22:16:27 2005
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Mon, 25 Apr 2005 13:16:27 -0700 (PDT)
+Subject: xmms plugin updated
+Message-ID: <Pine.LNX.4.61.0504251251191.3764@zeno3.math.washington.edu>
+
+   Hi,
+
+   Sorry for not being able to reply to the thread started by Mario, my 
+first subscription to the list didn't work for some reason and I didn't 
+get his message. I've just subscribed again.
+
+   Thanks, Mario, for the changes. I was going to do some of these changes 
+if no one did. At some point we would need a properties window. As you 
+point out in your message, it would be nice to have the scrolling title 
+hideable (because if you choose a small or even medium panel size the 
+space is too small).
+
+   And one more thing: I've contacted Patrick von Staveren before 
+submitting my change. He said he wasn't working on this project anymore 
+and let me take it over. I had a few extra changes that I had in mind, but 
+I of course welcome contributions like yours (and all this is GPL anyway 
+:) ). If you're interested we can discuss what to do next.
+
+
+   Kemal Ilgar Eroglu
+
+
+From xotazu at cvc.uab.es  Tue Apr 26 12:16:08 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Tue, 26 Apr 2005 12:16:08 +0200
+Subject: xmms plugin updated
+In-Reply-To: <20050426100007.29289.45429.Mailman@bat.berlios.de>
+References: <20050426100007.29289.45429.Mailman@bat.berlios.de>
+Message-ID: <20050426121608.7e7ea0ee@cvc131.uab.es>
+
+Hi:
+
+Compilation error
+
+xmms_plugin.h does not exists.
+
+
+Xavier
+
+
+On Tue, 26 Apr 2005 12:00:07 +0200
+xfce-goodies-dev-request at berlios.de wrote:
+
+> Hi all,
+> 
+> 
+> I picked Kernal's version of the xmms plugin and added some more
+> changes/enhancements to it which I found useful:
+> 
+> - klicking on the "play" button starts xmms now if not already running
+> - removing or exiting the plugin (e.g. on logout) makes xmms quit
+> - middle click on the progress bar shows/hides the xmms window(s)
+> - the visibility state of the xmms windows is saved and reused on
+> next login
+> - smooth scrolling of the song title (pixel-, not character based)
+> - properties menu to change song title font size and scrolling
+> parameters
+> - scrolled song title at the moment permanently visible (TBD: should
+> probably be another option in the properties dialog)
+> 
+> I attached the modified source file xmms_plugin.c to this mail.
+
+
+From mario.streiber at gmx.de  Tue Apr 26 13:58:29 2005
+From: mario.streiber at gmx.de (Mario Streiber)
+Date: Tue, 26 Apr 2005 13:58:29 +0200
+Subject: xmms plugin updated
+In-Reply-To: <20050426121608.7e7ea0ee@cvc131.uab.es>
+References: <20050426100007.29289.45429.Mailman@bat.berlios.de>
+	<20050426121608.7e7ea0ee@cvc131.uab.es>
+Message-ID: <20050426135829.0412aa17@max.local>
+
+> xmms_plugin.h does not exists.
+
+Yes sorry I forgot to send it in my first mail. Here it is once more.
+
+Mario
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: xmms_plugin.h
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050426/35d0b0c1/attachment.h>
+
+From mario.streiber at gmx.de  Tue Apr 26 14:03:06 2005
+From: mario.streiber at gmx.de (Mario Streiber)
+Date: Tue, 26 Apr 2005 14:03:06 +0200
+Subject: xmms plugin updated
+In-Reply-To: <20050426135829.0412aa17@max.local>
+References: <20050426100007.29289.45429.Mailman@bat.berlios.de>
+	<20050426121608.7e7ea0ee@cvc131.uab.es>
+	<20050426135829.0412aa17@max.local>
+Message-ID: <20050426140306.50ea7c06@max.local>
+
+On Tue, 26 Apr 2005 13:58:29 +0200 Mario Streiber <mario.streiber at gmx.de> wrote:
+
+> > xmms_plugin.h does not exists.
+> 
+> Yes sorry I forgot to send it in my first mail. Here it is once more.
+
+Oh and the .c file contains a bug which makes the panel crash as soon as you scroll to change the volume. Here is a fixed version.
+
+Mario
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: xmms_plugin.c
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050426/89a4a6fb/attachment.c>
+
+From mario.streiber at gmx.de  Tue Apr 26 14:12:54 2005
+From: mario.streiber at gmx.de (Mario Streiber)
+Date: Tue, 26 Apr 2005 14:12:54 +0200
+Subject: xmms plugin updated
+In-Reply-To: <20050426140306.50ea7c06@max.local>
+References: <20050426100007.29289.45429.Mailman@bat.berlios.de>
+	<20050426121608.7e7ea0ee@cvc131.uab.es>
+	<20050426135829.0412aa17@max.local>
+	<20050426140306.50ea7c06@max.local>
+Message-ID: <20050426141254.1f7cc6e7@max.local>
+
+On Tue, 26 Apr 2005 14:03:06 +0200 Mario Streiber <mario.streiber at gmx.de> wrote:
+
+> On Tue, 26 Apr 2005 13:58:29 +0200 Mario Streiber <mario.streiber at gmx.de> wrote:
+> 
+> > > xmms_plugin.h does not exists.
+> > 
+> > Yes sorry I forgot to send it in my first mail. Here it is once more.
+> 
+> Oh and the .c file contains a bug which makes the panel crash as soon as you scroll
+> to change the volume. Here is a fixed version.
+
+Sorry again, this was not a fixed version, it doesn't even compile (I sent the one I was currently working on). Here is a working one.
+
+Mario
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: xmms_plugin.c
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050426/1cc41a0f/attachment.c>
+
+From michael at flex-it.be  Tue Apr 26 14:24:36 2005
+From: michael at flex-it.be (Michael De Nil)
+Date: Tue, 26 Apr 2005 14:24:36 +0200
+Subject: xfce4-battery-plugin bug
+In-Reply-To: <425AD2A8.8040002@flex-it.be>
+References: <425AD2A8.8040002@flex-it.be>
+Message-ID: <426E3304.2070100@flex-it.be>
+
+Michael De Nil wrote:
+
+> Hello,
+>
+> I am using Xfce4 on my notebook and like it a lot.
+> However, there is a small bug in the battery plugin: when 
+> disconnecting the power supply, the plugin keeps telling that the 
+> battery is charging, which causes the plugin not to warn when the 
+> battery status is getting critical (causing the notebook to drop out 
+> suddenly, when I forget to plug in the power cord).
+>
+> I found a patch at 
+> http://developer.berlios.de/patch/?func=detailpatch&patch_id=252&group_id=910, 
+> which seems to be applied to CVS. However the last release of 
+> xfce4-battery-plugin that I can find is from september 2003 
+> (http://developer.berlios.de/project/showfiles.php?group_id=910).
+>
+> Since I am using the debian packages from 
+> http://www.os-cillation.de/debian (which are afaik based on releases), 
+> I have to recompile the battery plugin with the patch each time the 
+> package is reinstalled.
+>
+> Is would be nice if someone could create a new release for the battery 
+> plugin, so that in later releases of the debian packages this bug will 
+> be solved.
+>
+>
+ping...
+
+is anyone maintaining the xfce4-battery-plugin?
+
+
+michael
+
+
+From jasper at xfce.org  Tue Apr 26 14:47:09 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Tue, 26 Apr 2005 14:47:09 +0200
+Subject: xfce4-battery-plugin bug
+In-Reply-To: <426E3304.2070100@flex-it.be>
+References: <425AD2A8.8040002@flex-it.be> <426E3304.2070100@flex-it.be>
+Message-ID: <20050426124709.GA5244@baudolino.home.nl>
+
+On Tue, Apr 26, 2005 at 02:24:36PM +0200, Michael De Nil wrote:
+> Michael De Nil wrote:
+> 
+> >Hello,
+> >
+> >I am using Xfce4 on my notebook and like it a lot.
+> >However, there is a small bug in the battery plugin: when 
+> >disconnecting the power supply, the plugin keeps telling that the 
+> >battery is charging, which causes the plugin not to warn when the 
+> >battery status is getting critical (causing the notebook to drop out 
+> >suddenly, when I forget to plug in the power cord).
+> >
+> >I found a patch at 
+> >http://developer.berlios.de/patch/?func=detailpatch&patch_id=252&group_id=910, 
+> >which seems to be applied to CVS. However the last release of 
+> >xfce4-battery-plugin that I can find is from september 2003 
+> >(http://developer.berlios.de/project/showfiles.php?group_id=910).
+> >
+> >Since I am using the debian packages from 
+> >http://www.os-cillation.de/debian (which are afaik based on releases), 
+> >I have to recompile the battery plugin with the patch each time the 
+> >package is reinstalled.
+> >
+> >Is would be nice if someone could create a new release for the battery 
+> >plugin, so that in later releases of the debian packages this bug will 
+> >be solved.
+> >
+> >
+> ping...
+> 
+> is anyone maintaining the xfce4-battery-plugin?
+> 
+
+Hi, I don't know, but you could try to find the author's email, either
+on the main page, or in the source files and send him a personal mail.
+
+Hmm, maybe it wouldn't be a bad idea to have a list of contacts for each
+module. Like:
+
+Package   : xfce4-fancypants-plugin
+Contact(s): mrfancypants at gmail.com, mrsfancypants at gmail.com
+
+Some spam-prevention might be in order though, in that case...
+
+	Jasper
+
+
+From xotazu at cvc.uab.es  Tue Apr 26 14:59:20 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Tue, 26 Apr 2005 14:59:20 +0200
+Subject: xmms plugin updated
+In-Reply-To: <20050426121402.2983.46382.Mailman@bat.berlios.de>
+References: <20050426121402.2983.46382.Mailman@bat.berlios.de>
+Message-ID: <20050426145920.3b23085e@cvc131.uab.es>
+
+Hi:
+
+What pango version is needed?
+
+I receive the following error with pango 1.0
+
+xmms_plugin.c: In function `set_font_size':
+xmms_plugin.c:459: error: `PangoAttrSize' undeclared (first use in
+thisfunction)
+xmms_plugin.c:459: error: (Each undeclared identifier is reported only
+once
+xmms_plugin.c:459: error: for each function it appears in.)
+xmms_plugin.c:459: error: `attr' undeclared (first use in this
+function)
+xmms_plugin.c:459: error: parse error before ')' token
+
+
+Xavier
+
+On Tue, 26 Apr 2005 14:14:02 +0200
+xfce-goodies-dev-request at berlios.de wrote:
+
+> On Tue, 26 Apr 2005 14:03:06 +0200 Mario Streiber <mario.streiber at gmx.
+> de> wrote:
+> 
+> > On Tue, 26 Apr 2005 13:58:29 +0200 Mario Streiber <mario.
+> > streiber at gmx.de> wrote:
+> > 
+> > > > xmms_plugin.h does not exists.
+> > > 
+> > > Yes sorry I forgot to send it in my first mail. Here it is once
+> > > more.
+> > 
+> > Oh and the .c file contains a bug which makes the panel crash as
+> > soon as you scroll to change the volume. Here is a fixed version.
+> 
+> Sorry again, this was not a fixed version, it doesn't even compile (I
+> sent the one I was currently working on). Here is a working one.
+> 
+> Mario
+
+
+From mario.streiber at gmx.de  Tue Apr 26 16:11:06 2005
+From: mario.streiber at gmx.de (Mario Streiber)
+Date: Tue, 26 Apr 2005 16:11:06 +0200
+Subject: xmms plugin updated
+In-Reply-To: <20050426145920.3b23085e@cvc131.uab.es>
+References: <20050426121402.2983.46382.Mailman@bat.berlios.de>
+	<20050426145920.3b23085e@cvc131.uab.es>
+Message-ID: <20050426161106.6949d329@max.local>
+
+> What pango version is needed?
+> 
+> I receive the following error with pango 1.0
+> 
+> xmms_plugin.c: In function `set_font_size':
+> xmms_plugin.c:459: error: `PangoAttrSize' undeclared (first use in
+> thisfunction)
+> xmms_plugin.c:459: error: (Each undeclared identifier is reported only
+> once
+> xmms_plugin.c:459: error: for each function it appears in.)
+> xmms_plugin.c:459: error: `attr' undeclared (first use in this
+> function)
+> xmms_plugin.c:459: error: parse error before ')' token
+
+I'm don't know what the minimum version is to have PangoAttrSize, but I have the following here:
+
+pango 1.8.1
+atk   1.9.0
+glib  2.6.4
+GTK+  2.6.4
+
+Mario
+
+
+From noreply at berlios.de  Wed Apr 27 23:38:51 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Wed, 27 Apr 2005 23:38:51 +0200 (CEST)
+Subject: [Bug #3912] xfce4-battery-plugin leaks memory
+Message-ID: <200504272138.j3RLcp8g001064@unicorn.berlios.de>
+
+Bug #3912, was updated on 2005-Apr-27 23:38
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: xfce4-battery-plugin
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: jziegler
+Assigned to : none
+Summary: xfce4-battery-plugin leaks memory
+
+Details: The code seems unmaintained, judging from WebCVS, so it might have no sense to submit this, but I'll try anyway.
+
+I have evidence, anecdotal at the moment, that the plugin leakes memory. After having my laptop on for cca. 4 days, I noticed my whole swap partition was used, which is unusual. I checked in top and the xfce4-panel was using 400MB of memory (in the VIRT column). After restart, xfce4-panel was using only 18MB. Evidently, there was a leak. I started removing plugins one by one and watched the memory usage. When I removed the xfce4-battery-plugin, the memory usage of  xfce4-panel stopped growing. It is now 18MB for another 2 days.
+
+I can perform more specific investigation, if you let me know what you need and how to do it. 
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=3912&group_id=910
+
+

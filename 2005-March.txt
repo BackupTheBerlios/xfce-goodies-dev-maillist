@@ -1,0 +1,2596 @@
+From bugzilla-daemon at xfce.org  Wed Mar  2 17:38:58 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  2 Mar 2005 16:38:58 +0000 (UTC)
+Subject: [Bug 823]  New: Panel does not autohide when klicking on a grouped task
+Message-ID: <20050302163858.31C7E1F7764@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=823
+
+           Summary: Panel does not autohide when klicking on a grouped task
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: taskbar
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: mani at access.unizh.ch
+
+
+Autohiding of the panel does not work, when I click on a task that is grouped
+(let's say one instance of firefox or a gimp window). Tested with firefox, gimp,
+xterm and kmail. Automatic group is enabled in the taskbar plugin and the panel
+is set to autohide.
+
+Reproducible: Always
+Steps to Reproduce:
+1. Open several windows of the same application
+2. klick on a grouped icon
+3. choose one of the tasks
+
+Actual Results:  
+the panel does not hide anymore
+
+Expected Results:  
+the panel should hide like always
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Mar  2 18:51:41 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  2 Mar 2005 17:51:41 +0000 (UTC)
+Subject: [Bug 823] Panel does not autohide when klicking on a grouped task
+Message-ID: <20050302175141.911A81F74CB@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=823
+
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-03-02 17:51 UTC -------
+Does it not hide even if you move your mouse on and off the panel again?
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Mar  2 19:47:27 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  2 Mar 2005 18:47:27 +0000 (UTC)
+Subject: [Bug 823] Panel does not autohide when klicking on a grouped task
+Message-ID: <20050302184727.173501F709A@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=823
+
+
+
+
+
+------- Additional Comments From mani at access.unizh.ch  2005-03-02 18:47 UTC -------
+(In reply to comment #1)
+> Does it not hide even if you move your mouse on and off the panel again?
+
+I forgot to mention that. Yes, when moving the mouse on and off the panel, it hides.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Mar  2 20:05:44 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  2 Mar 2005 19:05:44 +0000 (UTC)
+Subject: [Bug 823] Panel does not autohide when klicking on a grouped task
+Message-ID: <20050302190544.BBDE81F709D@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=823
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |WONTFIX
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-03-02 19:05 UTC -------
+There's not really anything we can do about that. The menu that pops up from the
+grouped task button 'eats' the mouse clicks and movement, so the panel doesn't
+know the mouse has moved.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Mar  2 21:29:08 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  2 Mar 2005 20:29:08 +0000 (UTC)
+Subject: [Bug 477] battery plugin does not account for second battery
+Message-ID: <20050302202908.1F66F1F711B@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=477
+
+
+
+
+
+------- Additional Comments From aaron at serendipity.cx  2005-03-02 20:29 UTC -------
+I have looked at the source code to battery plugin 0.2.0, and it *should*
+account for the second battery in my Thinkpad, but it's only showing the
+external battery, which is in /proc/acpi/battery/BAT2. If the external battery
+isn't plugged in, then it shows BAT0.
+
+I wonder if there's simply a need for code that checks the other battery if the
+current battery runs out? I think a good way to handle this would be to start
+checking other batteries once the current battery goes below threshold. A highly
+useful message might be:
+
+"The current battery (BAT2) has reached 10%. Don't worry, because another
+battery (BAT0) has power. Your system will switch over automatically."
+
+Followed a few hours later by:
+
+"The current battery (BAT0) has reached 10%. Time to panic, because no other
+batteries have power, either. Go find an outlet!"
+
+Naturally, we'll have to write some more "friendly, yet firm" language ;-)
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu Mar  3 09:39:21 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu,  3 Mar 2005 08:39:21 +0000 (UTC)
+Subject: [Bug 823] Panel does not autohide when klicking on a grouped task
+Message-ID: <20050303083921.8D4721F77C7@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=823
+
+
+
+
+
+------- Additional Comments From mani at access.unizh.ch  2005-03-03 08:39 UTC -------
+(In reply to comment #3)
+> There's not really anything we can do about that. The menu that pops up from the
+> grouped task button 'eats' the mouse clicks and movement, so the panel doesn't
+> know the mouse has moved.
+
+Can the panel receive external commands? Then the popup menu would have to tell
+the panel somethink like "on click minimize".
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From jb_dul at yahoo.com  Thu Mar  3 10:35:22 2005
+From: jb_dul at yahoo.com (Jean-baptiste Dulong)
+Date: Thu, 3 Mar 2005 10:35:22 +0100 (CET)
+Subject: new plugin : xfce4-mount-plugin
+Message-ID: <20050303093523.46154.qmail@web12303.mail.yahoo.com>
+
+Hi,
+this is to announce the first release of
+xfce4-mount-plugin.
+The plugin is in a "usable" state and you can get it
+now from berlios.de
+When clicking on it, it displays a list of available
+devices with some usage statistics. These statistics
+are refreshed each time you click on the plugin.
+Clicking on an unmounted (resp mounted) device will
+mount (resp umount) it.
+Device names and mount points are gathered from
+/etc/fstab through the getfsent() system call. data on
+mounted devices comes from gemntent() system call.
+The plugin has no configuration options for the
+moment. There is no particular action except
+mounting/unmounting the device.
+This is my very first use of gtk lib and the GNU
+autotools, there might be obvious newbie mistakes in
+the package, let me know :-)
+bye.
+
+
+	
+
+	
+		
+D?couvrez le nouveau Yahoo! Mail : 250 Mo d'espace de stockage pour vos mails ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com/
+
+
+From obit at ctech.cn.ua  Thu Mar  3 16:48:45 2005
+From: obit at ctech.cn.ua (obit)
+Date: Thu, 03 Mar 2005 17:48:45 +0200
+Subject: new plugin : xfce4-mount-plugin
+In-Reply-To: <20050303093523.46154.qmail@web12303.mail.yahoo.com>
+References: <20050303093523.46154.qmail@web12303.mail.yahoo.com>
+Message-ID: <422731DD.2020604@ctech.cn.ua>
+
+Hi.
+
+Jean-baptiste Dulong wrote:
+
+>Hi,
+>this is to announce the first release of
+>xfce4-mount-plugin.
+>The plugin is in a "usable" state and you can get it
+>now from berlios.de
+>When clicking on it, it displays a list of available
+>devices with some usage statistics. These statistics
+>are refreshed each time you click on the plugin.
+>Clicking on an unmounted (resp mounted) device will
+>mount (resp umount) it.
+>Device names and mount points are gathered from
+>/etc/fstab through the getfsent() system call. data on
+>mounted devices comes from gemntent() system call.
+>The plugin has no configuration options for the
+>moment. There is no particular action except
+>mounting/unmounting the device.
+>This is my very first use of gtk lib and the GNU
+>autotools, there might be obvious newbie mistakes in
+>the package, let me know :-)
+>bye.
+>
+>/listinfo/xfce-goodies-dev
+>  
+>
+
+I use plugin a little and want to fix such things:
+
+1. Format info in columns (table with 3 columns - device / info /  state)
+2. Ability to exclude some  entryies from /dev/fstab -
+( like a /, /usr, /var - partitions that always mounted)  or
+separate this partitions from others.
+
+But in all very nice plugin
+
+
+
+
+From bugzilla-daemon at xfce.org  Thu Mar  3 17:37:24 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu,  3 Mar 2005 16:37:24 +0000 (UTC)
+Subject: [Bug 823] Panel does not autohide when klicking on a grouped task
+Message-ID: <20050303163724.AEEE81F70A1@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=823
+
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-03-03 16:37 UTC -------
+The taskbar is a separate widget, so even the plugin doesn't know about the
+menu.  Duplicating the effort of rewriting the tasklist widget does not sound
+like a solution to me. If a plugin knows about a menu, it can already register
+it and the panel will act appropriately when the menu closes.
+
+I really believe this cannot be fixed in a reasonable manner. If the plugin
+maintainer or someone else has a different opinion, please reopen the bug.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From masse_nicolas at yahoo.fr  Thu Mar  3 19:07:29 2005
+From: masse_nicolas at yahoo.fr (masse nicolas)
+Date: Thu, 3 Mar 2005 19:07:29 +0100 (CET)
+Subject: new plugin: quicklauncher
+In-Reply-To: <42234FF7.7040805@unix-ag.uni-siegen.de>
+Message-ID: <20050303180729.24996.qmail@web26005.mail.ukl.yahoo.com>
+
+I don't want to be a boring guy, but just one last
+thing: Can someone create a entry for me in the files
+lists called "xfce4-quicklauncher-plugin"? 
+This way I can upload my files there. (I have already
+uploaded them in the cvs.)
+It seems that I don't have rights to create an entry
+myself :'( .
+
+Once it will be done, I think I would edit the main
+page of the site in order to add my plugin and this
+from Jean-Baptiste in. (if someone else want to edit
+the main page, please tell me)
+
+Masse Nicolas
+
+ --- Benedikt Meurer
+<benedikt.meurer at unix-ag.uni-siegen.de> a ?crit : 
+> masse nicolas wrote:
+> > Hi,
+> > I just wanna remeber you the fact that I'm always
+> waiting for being 
+> > added to the xfce-goodies project, so I can
+> publish my plugin and 
+> > maintain him.
+> > My username: "bountykiller".
+> 
+> Done, sorry for the delay.
+> 
+> > Thx  ;-)
+> 
+> greets,
+> Benedikt
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+>
+http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>  
+
+
+
+	
+
+	
+		
+D?couvrez le nouveau Yahoo! Mail : 250 Mo d'espace de stockage pour vos mails ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com/
+
+
+From jasper at xfce.org  Thu Mar  3 19:16:05 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Thu, 03 Mar 2005 19:16:05 +0100
+Subject: new plugin: quicklauncher
+In-Reply-To: <20050303180729.24996.qmail@web26005.mail.ukl.yahoo.com>
+References: <20050303180729.24996.qmail@web26005.mail.ukl.yahoo.com>
+Message-ID: <42275465.2020105@xfce.org>
+
+masse nicolas wrote:
+> I don't want to be a boring guy, but just one last
+> thing: Can someone create a entry for me in the files
+> lists called "xfce4-quicklauncher-plugin"? 
+> This way I can upload my files there. (I have already
+> uploaded them in the cvs.)
+> It seems that I don't have rights to create an entry
+> myself :'( .
+> 
+
+Done.
+
+> Once it will be done, I think I would edit the main
+> page of the site in order to add my plugin and this
+> from Jean-Baptiste in. (if someone else want to edit
+> the main page, please tell me)
+> 
+
+Sure go ahead. I don't even know where the website is located ;)
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Thu Mar  3 19:19:18 2005
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Thu, 03 Mar 2005 19:19:18 +0100
+Subject: new plugin: quicklauncher
+In-Reply-To: <42275465.2020105@xfce.org>
+References: <20050303180729.24996.qmail@web26005.mail.ukl.yahoo.com> <42275465.2020105@xfce.org>
+Message-ID: <42275526.4040305@unix-ag.uni-siegen.de>
+
+Jasper Huijsmans wrote:
+>> Once it will be done, I think I would edit the main
+>> page of the site in order to add my plugin and this
+>> from Jean-Baptiste in. (if someone else want to edit
+>> the main page, please tell me)
+>>
+> 
+> Sure go ahead. I don't even know where the website is located ;)
+
+I'd guess its located on Francois' computer.
+
+Benedikt
+
+
+From bugzilla-daemon at xfce.org  Sun Mar  6 03:37:33 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  6 Mar 2005 02:37:33 +0000 (UTC)
+Subject: [Bug 826]  New: The Free Memory displayed isn't correct, it doesn't take Buffered RAM into account.
+Message-ID: <20050306023733.7D8161F7050@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=826
+
+           Summary: The Free Memory displayed isn't correct, it doesn't take
+                    Buffered RAM into account.
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: enhancement
+          Priority: Medium
+         Component: systemload
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: bugs at soul.f2o.org
+
+
+The Memory display in the SytemLoad Plugin doesn't display the amount of free
+ram correctly, it only adds Free+Cached when it should include
+Free+Cached+Buffered.  I've generated a patch that should work (first one!) that
+can be found at http://soul.f2o.org/memswap.patch.  Ment to patch panel
+panel-plugin/memswap.c
+
+Reproducible: Always
+Steps to Reproduce:
+1. enable the plugin :p
+
+Actual Results:  
+You get the wrong amount of Free RAM displayed
+
+Expected Results:  
+should display the amount of Free RAM correct!
+
+Patch can be found at http://soul.f2o.org/memswap.patch.  Ment to patch "panel
+panel-plugin/memswap.c"
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Mar  6 03:40:58 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  6 Mar 2005 02:40:58 +0000 (UTC)
+Subject: [Bug 826] The Free Memory displayed isn't correct, it doesn't take Buffered RAM into account.
+Message-ID: <20050306024058.CAC0A1F706A@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=826
+
+
+bugs at soul.f2o.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+           Priority|Medium                      |Low
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Mar  6 03:42:29 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  6 Mar 2005 02:42:29 +0000 (UTC)
+Subject: [Bug 826] The Free Memory displayed isn't correct, it doesn't take Buffered RAM into account.
+Message-ID: <20050306024229.4CD6E1F7050@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=826
+
+
+
+
+
+------- Additional Comments From bugs at soul.f2o.org  2005-03-06 02:42 UTC -------
+Created an attachment (id=185)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=185&action=view)
+Adds in Buffered RAM to Free Amount displayed
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Mar  7 11:24:18 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  7 Mar 2005 10:24:18 +0000 (UTC)
+Subject: [Bug 827]  New: datetime-plugin allows no empty fields
+Message-ID: <20050307102418.279AF1F71EB@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=827
+
+           Summary: datetime-plugin allows no empty fields
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: trivial
+          Priority: Medium
+         Component: datetime
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: plessing at ems-wuensche.com
+
+
+I use the datetime-plugin more than one time, to split different 
+information by a separator ( e.g. Week of Year, date )
+
+After the last update (now I'm using Xfce Version 4.0.6) e.g. the datetime 
+plugin was only used to show the Week of Year (Date was "KW %U") and Time 
+was left blank, but after xfce was restartet the time-field was set back to its
+standard values (%H:%M).
+
+
+
+Reproducible: Always
+Steps to Reproduce:
+1. set a inputfield of datetime-plugin to blank
+2. restart xfce
+3. the inputfields, which was left blank are set back to standard values
+
+Actual Results:  
+The fields which has been left blank to be unvisible, are shown again.
+
+Expected Results:  
+Save the empty values and hide the blank fields as it has done before.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue Mar  8 08:08:56 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue,  8 Mar 2005 07:08:56 +0000 (UTC)
+Subject: [Bug 827] datetime-plugin allows no empty fields
+Message-ID: <20050308070856.CBAB61F709E@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=827
+
+
+
+
+
+------- Additional Comments From plessing at ems-wuensche.com  2005-03-08 07:08 UTC -------
+If the field which is wanted to be empty is filled with a space, the 
+standard values are not filled back in.
+This makes this bug more trivial, and is only a matter of nice formatting ...
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Mar  9 06:58:49 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  9 Mar 2005 05:58:49 +0000 (UTC)
+Subject: [Bug 827] datetime-plugin allows no empty fields
+Message-ID: <20050309055849.6CB871F7260@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=827
+
+
+
+
+
+------- Additional Comments From choe.hwanjin at gmail.com  2005-03-09 05:58 UTC -------
+I suggest that you use spaces for empty format.
+Anyway, I thought that if the user delete whole format string, program should
+reset the format string to the default value. But now I don't.
+How about make a button in preference window which explicitly reset the format
+to the default values?
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Mar  9 08:20:38 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  9 Mar 2005 07:20:38 +0000 (UTC)
+Subject: [Bug 827] datetime-plugin allows no empty fields
+Message-ID: <20050309072038.A36CA1F7260@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=827
+
+
+
+
+
+------- Additional Comments From plessing at ems-wuensche.com  2005-03-09 07:20 UTC -------
+Adding a "reset"-button to the preferences window is a appropriate
+solution I think. +1
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Mar  9 10:32:05 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  9 Mar 2005 09:32:05 +0000 (UTC)
+Subject: [Bug 826] The Free Memory displayed isn't correct, it doesn't take Buffered RAM into account.
+Message-ID: <20050309093205.1CA4D1F727F@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=826
+
+
+
+
+
+------- Additional Comments From ricpersi at katamail.com  2005-03-09 09:32 UTC -------
+The patch seems to be good, i'll commit it to cvs and include in the next 
+release. Thanks a lot s0ulslack
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From noreply at berlios.de  Thu Mar 10 01:11:14 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Thu, 10 Mar 2005 01:11:14 +0100 (CET)
+Subject: [Feature #695] directory for xfce4-quicklauncher-plugin
+Message-ID: <200503100011.j2A0BEVV000917@unicorn.berlios.de>
+
+Feature Request #695, was updated on 2005-Mar-10 01:11
+You can respond by visiting: 
+http://developer.berlios.de/feature/?func=detailfeature&feature_id=695&group_id=910
+
+Category: None
+Status: Open
+Priority: 5
+Summary: directory for xfce4-quicklauncher-plugin
+
+By: pierre
+Date: 2005-Mar-10 01:11
+
+Message:
+Logged In: YES 
+user_id=4049
+Browser: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.5) Gecko/20041217
+
+When you untar xfce4-quicklauncher-plugin-0.5.tar.gz it
+creates a directory named "xfce4-quicklauncher-plugin".
+It would be better if this directory would be named
+"xfce4-quicklauncher-plugin-0.5" (with the version number).
+
+
+----------------------------------------------------------------------
+You can respond by visiting: 
+http://developer.berlios.de/feature/?func=detailfeature&feature_id=695&group_id=910
+
+
+From noreply at berlios.de  Thu Mar 10 20:34:18 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Thu, 10 Mar 2005 20:34:18 +0100 (CET)
+Subject: [Bug #3560] Problem configuring xfce4-taskmanager 0.2.1
+Message-ID: <200503101934.j2AJYIHT005531@unicorn.berlios.de>
+
+Bug #3560, was updated on 2005-Mar-10 20:34
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: None
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: pierre
+Assigned to : none
+Summary: Problem configuring xfce4-taskmanager 0.2.1
+
+Details: # ./configure
+bash: ./configure: No such file or directory
+
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=3560&group_id=910
+
+
+From bugzilla-daemon at xfce.org  Mon Mar 14 21:12:46 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 14 Mar 2005 20:12:46 +0000 (UTC)
+Subject: [Bug 346] Notes plugin still using ~/.xfce4/ for configuration
+Message-ID: <20050314201246.9A60B1F7248@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=346
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-03-14 20:12 UTC -------
+Has been fixed in latest version.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Mar 14 21:27:02 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 14 Mar 2005 20:27:02 +0000 (UTC)
+Subject: [Bug 557] panel crashes (dumps core) when weather applet loads.
+Message-ID: <20050314202702.EFD1C1F7248@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=557
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-03-14 20:27 UTC -------
+Should be fixed in latest version.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Mar 14 21:42:26 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 14 Mar 2005 20:42:26 +0000 (UTC)
+Subject: [Bug 657] Panel takes long time to load when weather plugin cannot contact information site
+Message-ID: <20050314204226.DACB81F7248@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=657
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-03-14 20:42 UTC -------
+This actually seems to be fixed in the current release.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Mar 14 21:49:43 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 14 Mar 2005 20:49:43 +0000 (UTC)
+Subject: [Bug 670] Panel crashes when closing one of the folded apps with right click and context menu
+Message-ID: <20050314204943.909691F7248@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=670
+
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-03-14 20:49 UTC -------
+I can't reproduce this. Does it still happen with Xfce 4.2?
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Mar 14 22:25:56 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 14 Mar 2005 21:25:56 +0000 (UTC)
+Subject: [Bug 791] Hebrew translation is not functional
+Message-ID: <20050314212556.996031F7248@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=791
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |INVALID
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-03-14 21:25 UTC -------
+Apparently not a bug.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From fleclainche at wanadoo.fr  Tue Mar 15 00:20:40 2005
+From: fleclainche at wanadoo.fr (Francois Le Clainche)
+Date: Tue, 15 Mar 2005 00:20:40 +0100
+Subject: new plugin: quicklauncher
+In-Reply-To: <42275526.4040305@unix-ag.uni-siegen.de>
+References: <20050303180729.24996.qmail@web26005.mail.ukl.yahoo.com> <42275465.2020105@xfce.org> <42275526.4040305@unix-ag.uni-siegen.de>
+Message-ID: <20050314232040.GA7575@wanadoo.fr>
+
+Le Thursday 03 March 2005 ? 19:19, Benedikt Meurer a ?crit:
+
+> >>Once it will be done, I think I would edit the main
+> >>page of the site in order to add my plugin and this
+> >>from Jean-Baptiste in. (if someone else want to edit
+> >>the main page, please tell me)
+> >>
+> >
+> >Sure go ahead. I don't even know where the website is located ;)
+> 
+> I'd guess its located on Francois' computer.
+
+Damned, I simply missed this thread.
+Anyway, Nicolas found the page. Good.
+
+Fran?ois
+-- 
+Francois Le Clainche - http://perso.wanadoo.fr/flc.web/files/PGP_key.txt
+
+
+
+From bugzilla-daemon at xfce.org  Tue Mar 15 06:50:13 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 15 Mar 2005 05:50:13 +0000 (UTC)
+Subject: [Bug 750] Notes plugin does not use user-specified icon
+Message-ID: <20050315055013.75A2F1F7248@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=750
+
+
+
+
+
+------- Additional Comments From mauricio.notti at gmail.com  2005-03-15 05:50 UTC -------
+Created an attachment (id=187)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=187&action=view)
+Patch for the notes_applet.c file
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue Mar 15 06:56:33 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 15 Mar 2005 05:56:33 +0000 (UTC)
+Subject: [Bug 750] Notes plugin does not use user-specified icon
+Message-ID: <20050315055633.9133A1F7248@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=750
+
+
+
+
+
+------- Additional Comments From mauricio.notti at gmail.com  2005-03-15 05:56 UTC -------
+Ups... this is the comment for the above attachment:
+
+I think that somebody forget the line 
+    gtk_widget_destroy(widget);
+in the implementation of the 
+    void notes_destroy_cb(GtkWidget *widget, NoteApplet *notes)
+function. I make a patch (diff -u) for the notes_applet.c file.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From jasper at xfce.org  Wed Mar 16 13:19:38 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Wed, 16 Mar 2005 13:19:38 +0100
+Subject: Panel changes for 4.4
+Message-ID: <4238245A.8000603@xfce.org>
+
+Hi all,
+
+Sorry for the cross-post, I wasn't sure everyone would be on xfce4-dev.
+
+As most of you may know, I'm planning to make some drastic changes to 
+the panel for Xfce 4.4. In fact the changes are so big that you could 
+speak of a redesign. To make sure that this design will work well also 
+for plugin writers (especially for them even), I'm hoping to get some 
+feedback on my initial thoughts about the subject.
+
+I decided to use the excellent Xfce wiki facility for that -- I don't 
+even know who provides this for us, but thanks for that -- so anyone can 
+add comments.
+
+Please, if you can spare some time, have a look at 
+http://www.myoo.de/xfce/index.php/Panel_Design and let me know what you 
+think, either here, or personal mail or on the wiki.
+
+Since none of this has actually been coded yet feel free to shoot it 
+down completely and suggest alternative designs ;-)
+
+I'm most interested in suggestions for the plugin API; the 
+implementation is of secondary concern.
+
+Thanks,
+	Jasper
+
+
+From sasoiliev_trash at mail.bg  Wed Mar 16 22:36:38 2005
+From: sasoiliev_trash at mail.bg (Alexander Iliev)
+Date: Wed, 16 Mar 2005 23:36:38 +0200
+Subject: Panel changes for 4.4
+In-Reply-To: <4238245A.8000603@xfce.org>
+References: <4238245A.8000603@xfce.org>
+Message-ID: <1111008998.8390f6918ca16@mail.bg>
+
+Jasper Huijsmans <jasper at xfce.org> wrote:
+
+> Hi all,
+>
+> Sorry for the cross-post, I wasn't sure everyone would be
+> on xfce4-dev.
+>
+You guessed right - I'm currently not on xfce4-dev. :)
+
+> As most of you may know, I'm planning to make some
+> drastic changes to
+> the panel for Xfce 4.4. In fact the changes are so big
+> that you could
+> speak of a redesign. To make sure that this design will
+> work well also
+> for plugin writers (especially for them even), I'm hoping
+> to get some
+> feedback on my initial thoughts about the subject.
+>
+> I decided to use the excellent Xfce wiki facility for
+> that -- I don't
+> even know who provides this for us, but thanks for that
+> -- so anyone can
+> add comments.
+>
+> Please, if you can spare some time, have a look at
+> http://www.myoo.de/xfce/index.php/Panel_Design and let me
+> know what you
+> think, either here, or personal mail or on the wiki.
+>
+> Since none of this has actually been coded yet feel free
+> to shoot it
+> down completely and suggest alternative designs ;-)
+>
+> I'm most interested in suggestions for the plugin API;
+> the
+> implementation is of secondary concern.
+>
+> Thanks,
+> 	Jasper
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+
+I thought of an idea which I think would be good addition.
+Let me put an example - the Xkb or the System buttons
+plugins should
+be able to be added to the panel just once. It doesn't make
+sense to
+add two instances of the system buttons (at least IMO).
+Other plugins
+(as the launcher or netload) should be able to have whatever
+number
+of instances the user wants to have.
+
+The volume control plugin is IMO a more special case - the
+maximum number
+of instances of this plugin should be the number of sound
+cards in the
+machine (e.g. if I have 3 sound cards I should be able to
+put 3 volume
+controls in the plugin).
+
+These are just some thoughts, but no idea of an actual API.
+An API such as:
+
+const gboolean *xfce_panel_plugin_can_add(XfcePanelPlugin
+*plugin);
+
+would make some sense, but in this case the plugin should be
+able to
+determine somehow of there is already an instance added
+(e.g. the
+xkb plugin).
+
+Another idea I just came with would be to add a flag
+in the .desktop file whether multiple instances are
+permitted for
+the plugin. This way the plugin will know when a plugin
+could be added
+just once and thus disable ability to add it more than once.
+If
+the plugin actually can be added more than once and the
+plugin
+has already been added, then the panel should call
+xfce_panel_plugin_can_add() to query the plugin if it could
+be added
+anymore - e.g. the volume control would return a value of
+false if
+there already were added instances for all the available
+soundcards.
+
+I don't know what could be the implementation for such a
+volume
+control plugin, I mean I have no idea how could such a
+plugin
+determine what sound cards already have a corresponding
+instance
+of the plugin or not. You know, I'm really not that good in
+C (this
+should be read as - "I must read some good
+book/tutorial/whatever" :-)).
+
+I must apologize for the pretty long and very very messy
+email.
+I'm not king of the explanations also...
+
+So that's about all I came with.
+
+Hey, thanks for the GREAT WORK all xfce team. :)
+
+Alexander
+
+
+
+--------------------------------------
+???? ????? ? ????????? ??  www.mail.bg
+
+??????????? ???? ? mail.bg ????????:
+- ????? ?????? ????? ????/???????? ?????
+- 30MB ????????? (SMS ?? 2??=3GB!)
+- 30MB ????. ?????? ?? ???????? ????
+- SMS ?? ???? ????? (?????? ?????????)
+- WAP ?????? ?? GSM ? ??? ????????
+- ????????? POP3 ??????
+- 24 ????? ??????? ?? ?????/?????????
+______________________________________
+??? ??????? ??????? ????????????? ????
+????????? ????? ??  http://www.mail.bg
+
+
+
+
+
+From sasoiliev_trash at mail.bg  Wed Mar 16 22:40:48 2005
+From: sasoiliev_trash at mail.bg (Alexander Iliev)
+Date: Wed, 16 Mar 2005 23:40:48 +0200
+Subject: Panel changes for 4.4
+In-Reply-To: <1111008998.8390f6918ca16@mail.bg>
+References: <4238245A.8000603@xfce.org> <1111008998.8390f6918ca16@mail.bg>
+Message-ID: <1111009248.7f976837f83f8@mail.bg>
+
+Sorry for tha spam. Just saw a silly mistake in my previous
+post.
+
+"This way the plugin will know when a plugin could be added
+just once"
+
+should be read as
+
+"This way the panel will know when a plugin could be added
+just once"
+
+Cheers,
+Alexander
+
+
+
+
+--------------------------------------
+???? ????? ? ????????? ??  www.mail.bg
+
+??????????? ???? ? mail.bg ????????:
+- ????? ?????? ????? ????/???????? ?????
+- 30MB ????????? (SMS ?? 2??=3GB!)
+- 30MB ????. ?????? ?? ???????? ????
+- SMS ?? ???? ????? (?????? ?????????)
+- WAP ?????? ?? GSM ? ??? ????????
+- ????????? POP3 ??????
+- 24 ????? ??????? ?? ?????/?????????
+______________________________________
+??? ??????? ??????? ????????????? ????
+????????? ????? ??  http://www.mail.bg
+
+
+
+
+
+From webmaster at nebulon.de  Thu Mar 17 08:39:00 2005
+From: webmaster at nebulon.de (Johannes Zellner)
+Date: Thu, 17 Mar 2005 08:39:00 +0100
+Subject: Panel changes for 4.4
+In-Reply-To: <1111008998.8390f6918ca16@mail.bg>
+References: <4238245A.8000603@xfce.org> <1111008998.8390f6918ca16@mail.bg>
+Message-ID: <42393414.5030002@nebulon.de>
+
+Alexander Iliev wrote
+
+>>As most of you may know, I'm planning to make some
+>>drastic changes to
+>>the panel for Xfce 4.4. In fact the changes are so big
+>>that you could
+>>speak of a redesign. To make sure that this design will
+>>work well also
+>>for plugin writers (especially for them even), I'm hoping
+>>to get some
+>>feedback on my initial thoughts about the subject.
+>>
+>>I decided to use the excellent Xfce wiki facility for
+>>that -- I don't
+>>even know who provides this for us, but thanks for that
+>>-- so anyone can
+>>add comments.
+>>
+>>Please, if you can spare some time, have a look at
+>>http://www.myoo.de/xfce/index.php/Panel_Design and let me
+>>know what you
+>>think, either here, or personal mail or on the wiki.
+>>
+>>Since none of this has actually been coded yet feel free
+>>to shoot it
+>>down completely and suggest alternative designs ;-)
+>>
+>>I'm most interested in suggestions for the plugin API;
+>>the
+>>implementation is of secondary concern.
+>>
+>>Thanks,
+>>	Jasper
+>>_______________________________________________
+>>xfce-goodies-dev mailing list
+>>xfce-goodies-dev at lists.berlios.de
+>>http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>>
+>>    
+>>
+>
+>I thought of an idea which I think would be good addition.
+>Let me put an example - the Xkb or the System buttons
+>plugins should
+>be able to be added to the panel just once. It doesn't make
+>sense to
+>add two instances of the system buttons (at least IMO).
+>Other plugins
+>(as the launcher or netload) should be able to have whatever
+>number
+>of instances the user wants to have.
+>  
+>
+[...]
+
+>
+>Hey, thanks for the GREAT WORK all xfce team. :)
+>
+>Alexander
+>  
+>
+Hello
+
+1. I don't agree with Alexander's idea for an api that checks if an 
+plugin (eg. volume-control) could be added only for a special number. 
+Everybody should feel free to add as much systembuttens (eg) as he wants 
+to. I mean why to make things difficultier than they are and loos by the 
+way some liberties ?
+2. I would like to have a better 'position'-concept. the way you can add 
+plugins should be done like in the Toolbar of Terminal.
+I really love this method ;)
+
+Bye
+    Johannes, the_hippie
+
+
+
+From jasper at xfce.org  Thu Mar 17 08:09:22 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Thu, 17 Mar 2005 08:09:22 +0100
+Subject: Panel changes for 4.4
+In-Reply-To: <42393414.5030002@nebulon.de>
+References: <4238245A.8000603@xfce.org> <1111008998.8390f6918ca16@mail.bg> <42393414.5030002@nebulon.de>
+Message-ID: <42392D22.4040300@xfce.org>
+
+Hey Alexander, Johannes,
+
+Johannes Zellner wrote:
+> Alexander Iliev wrote
+> 
+>>> As most of you may know, I'm planning to make some
+>>> drastic changes to
+>>> the panel for Xfce 4.4. In fact the changes are so big
+>>> that you could
+>>> speak of a redesign. To make sure that this design will
+>>> work well also
+>>> for plugin writers (especially for them even), I'm hoping
+>>> to get some
+>>> feedback on my initial thoughts about the subject.
+>>>
+>>> I decided to use the excellent Xfce wiki facility for
+>>> that -- I don't
+>>> even know who provides this for us, but thanks for that
+>>> -- so anyone can
+>>> add comments.
+>>>
+>>> Please, if you can spare some time, have a look at
+>>> http://www.myoo.de/xfce/index.php/Panel_Design and let me
+>>> know what you
+>>> think, either here, or personal mail or on the wiki.
+>>>
+>>> Since none of this has actually been coded yet feel free
+>>> to shoot it
+>>> down completely and suggest alternative designs ;-)
+>>>
+>>> I'm most interested in suggestions for the plugin API;
+>>> the
+>>> implementation is of secondary concern.
+>>>
+>>> Thanks,
+>>>     Jasper
+>>> _______________________________________________
+>>> xfce-goodies-dev mailing list
+>>> xfce-goodies-dev at lists.berlios.de
+>>> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>>>
+>>>   
+>>
+>>
+>> I thought of an idea which I think would be good addition.
+>> Let me put an example - the Xkb or the System buttons
+>> plugins should
+>> be able to be added to the panel just once. It doesn't make
+>> sense to
+>> add two instances of the system buttons (at least IMO).
+>> Other plugins
+>> (as the launcher or netload) should be able to have whatever
+>> number
+>> of instances the user wants to have.
+>>  
+>>
+> [...]
+> 
+>>
+>> Hey, thanks for the GREAT WORK all xfce team. :)
+>>
+>> Alexander
+>>  
+>>
+> Hello
+> 
+> 1. I don't agree with Alexander's idea for an api that checks if an 
+> plugin (eg. volume-control) could be added only for a special number. 
+> Everybody should feel free to add as much systembuttens (eg) as he wants 
+> to. I mean why to make things difficultier than they are and loos by the 
+> way some liberties ?
+> 2. I would like to have a better 'position'-concept. the way you can add 
+> plugins should be done like in the Toolbar of Terminal.
+> I really love this method ;)
+> 
+
+Some plugins really have to be 'unique', like the systemtray. For those 
+(very few) that need this I prefer to put it in the desktop file.
+
+Thanks,
+	Jasper
+
+
+From sasoiliev_trash at mail.bg  Thu Mar 17 16:44:40 2005
+From: sasoiliev_trash at mail.bg (Alexander Iliev)
+Date: Thu, 17 Mar 2005 17:44:40 +0200
+Subject: Panel changes for 4.4
+In-Reply-To: <42392D22.4040300@xfce.org>
+References: <4238245A.8000603@xfce.org> <1111008998.8390f6918ca16@mail.bg>
+	<42393414.5030002@nebulon.de> <42392D22.4040300@xfce.org>
+Message-ID: <1111074280.eabdfb4d3ad24@mail.bg>
+
+Jasper Huijsmans <jasper at xfce.org> wrote:
+
+> Hey Alexander, Johannes,
+>
+> Johannes Zellner wrote:
+> > Alexander Iliev wrote
+> >
+> >>> As most of you may know, I'm planning to make some
+> >>> drastic changes to
+> >>> the panel for Xfce 4.4. In fact the changes are so
+> big
+> >>> that you could
+> >>> speak of a redesign. To make sure that this design
+> will
+> >>> work well also
+> >>> for plugin writers (especially for them even), I'm
+> hoping
+> >>> to get some
+> >>> feedback on my initial thoughts about the subject.
+> >>>
+> >>> I decided to use the excellent Xfce wiki facility for
+> >>> that -- I don't
+> >>> even know who provides this for us, but thanks for
+> that
+> >>> -- so anyone can
+> >>> add comments.
+> >>>
+> >>> Please, if you can spare some time, have a look at
+> >>> http://www.myoo.de/xfce/index.php/Panel_Design and
+> let me
+> >>> know what you
+> >>> think, either here, or personal mail or on the wiki.
+> >>>
+> >>> Since none of this has actually been coded yet feel
+> free
+> >>> to shoot it
+> >>> down completely and suggest alternative designs ;-)
+> >>>
+> >>> I'm most interested in suggestions for the plugin
+> API;
+> >>> the
+> >>> implementation is of secondary concern.
+> >>>
+> >>> Thanks,
+> >>>     Jasper
+> >>> _______________________________________________
+> >>> xfce-goodies-dev mailing list
+> >>> xfce-goodies-dev at lists.berlios.de
+> >>>
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> >>>
+> >>>
+> >>
+> >>
+> >> I thought of an idea which I think would be good
+> addition.
+> >> Let me put an example - the Xkb or the System buttons
+> >> plugins should
+> >> be able to be added to the panel just once. It doesn't
+> make
+> >> sense to
+> >> add two instances of the system buttons (at least
+> IMO).
+> >> Other plugins
+> >> (as the launcher or netload) should be able to have
+> whatever
+> >> number
+> >> of instances the user wants to have.
+> >>
+> >>
+> > [...]
+> >
+> >>
+> >> Hey, thanks for the GREAT WORK all xfce team. :)
+> >>
+> >> Alexander
+> >>
+> >>
+> > Hello
+> >
+> > 1. I don't agree with Alexander's idea for an api that
+checks if an
+> > plugin (eg. volume-control) could be added only for a
+special number.
+> > Everybody should feel free to add as much systembuttens
+(eg) as he wants
+> > to. I mean why to make things difficultier than they are
+and loos by the
+> > way some liberties ?
+After some thinking (yes, I really do think sometimes :) ),
+I would agree
+that this will add some uneeded complexity in the plugins
+code. I do not
+agree with the liberties loss argument - I think from
+usability POV it is
+much clearer to have limited number of volume control plugin
+instances, but
+1. I'm not an usability expert, and
+2. the complexity argument is strong enough to drop this
+idea.
+
+> > 2. I would like to have a better 'position'-concept. the
+way you can add
+> > plugins should be done like in the Toolbar of Terminal.
+> > I really love this method ;)
+> >
+I agree with this point.
+
+>
+> Some plugins really have to be 'unique', like the
+> systemtray. For those
+> (very few) that need this I prefer to put it in the
+> desktop file.
+Also agree here.
+
+>
+> Thanks,
+> 	Jasper
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+
+
+Regards,
+Alexander
+
+-----------------------------
+
+?????????? ?????? ? ???????? ???? ??????? ? ??????????? ?? ?????????.
+? ?????? ?? 11 ????.
+http://www.newfilms-bg.com/
+
+
+
+From jasper at xfce.org  Thu Mar 17 17:03:53 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Thu, 17 Mar 2005 17:03:53 +0100
+Subject: Panel changes for 4.4
+In-Reply-To: <1111074280.eabdfb4d3ad24@mail.bg>
+References: <4238245A.8000603@xfce.org> <1111008998.8390f6918ca16@mail.bg> <42393414.5030002@nebulon.de> <42392D22.4040300@xfce.org> <1111074280.eabdfb4d3ad24@mail.bg>
+Message-ID: <20050317160353.GJ7401@baudolino.home.nl>
+
+On Thu, Mar 17, 2005 at 05:44:40PM +0200, Alexander Iliev wrote:
+...
+> > >
+> > > 1. I don't agree with Alexander's idea for an api that
+> checks if an
+> > > plugin (eg. volume-control) could be added only for a
+> special number.
+> > > Everybody should feel free to add as much systembuttens
+> (eg) as he wants
+> > > to. I mean why to make things difficultier than they are
+> and loos by the
+> > > way some liberties ?
+>
+> After some thinking (yes, I really do think sometimes :) ),
+> I would agree
+> that this will add some uneeded complexity in the plugins
+> code. I do not
+> agree with the liberties loss argument - I think from
+> usability POV it is
+> much clearer to have limited number of volume control plugin
+> instances, but
+> 1. I'm not an usability expert, and
+> 2. the complexity argument is strong enough to drop this
+> idea.
+
+Oh, but you are right about the usability. It is usually better to reduce
+confusion as much as possible. Perhaps the volume control /should/ be unique 
+and have support for multiple sound cards. 
+
+The trick is to find the right balance between flexibility and ease of use (I
+know those are not necessarilly oposites, but you'll get the point...).
+
+	Jasper
+
+
+From sasoiliev_trash at mail.bg  Thu Mar 17 18:00:34 2005
+From: sasoiliev_trash at mail.bg (Alexander Iliev)
+Date: Thu, 17 Mar 2005 19:00:34 +0200
+Subject: Panel changes for 4.4
+In-Reply-To: <20050317160353.GJ7401@baudolino.home.nl>
+References: <4238245A.8000603@xfce.org> <1111008998.8390f6918ca16@mail.bg>
+	<42393414.5030002@nebulon.de> <42392D22.4040300@xfce.org>
+	<1111074280.eabdfb4d3ad24@mail.bg>
+	<20050317160353.GJ7401@baudolino.home.nl>
+Message-ID: <1111078834.f61d0e20a823d@mail.bg>
+
+Jasper Huijsmans <jasper at xfce.org> wrote:
+
+> On Thu, Mar 17, 2005 at 05:44:40PM +0200, Alexander Iliev
+> wrote:
+> ...
+> > > >
+> > > > 1. I don't agree with Alexander's idea for an api
+> that
+> > checks if an
+> > > > plugin (eg. volume-control) could be added only for
+> a
+> > special number.
+> > > > Everybody should feel free to add as much
+> systembuttens
+> > (eg) as he wants
+> > > > to. I mean why to make things difficultier than
+> they are
+> > and loos by the
+> > > > way some liberties ?
+> >
+> > After some thinking (yes, I really do think sometimes
+> :) ),
+> > I would agree
+> > that this will add some uneeded complexity in the
+> plugins
+> > code. I do not
+> > agree with the liberties loss argument - I think from
+> > usability POV it is
+> > much clearer to have limited number of volume control
+> plugin
+> > instances, but
+> > 1. I'm not an usability expert, and
+> > 2. the complexity argument is strong enough to drop
+> this
+> > idea.
+>
+> Oh, but you are right about the usability. It is usually
+> better to reduce
+> confusion as much as possible. Perhaps the volume control
+> /should/ be unique
+> and have support for multiple sound cards.
+>
+
+I'm not very excited about this idea. The thing I love so
+much
+in the volume control is the ability to adjust the volume
+without
+a single click (mouse over, then wheel up/down). If I had
+two sound cards I definitely would not want to sacrifice
+this
+ability.
+
+Or maybe I don't imagine this right. What I mean is that all
+the available sound cards should be visible and
+volume-adjustable
+all the time. If you have an idea how that can be
+accomplished
+with a single plugin - great. :)
+
+> The trick is to find the right balance between
+> flexibility and ease of use (I
+> know those are not necessarilly oposites, but you'll get
+> the point...).
+>
+Yes, indeed. The balance is the most important thing. :)
+
+> 	Jasper
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+
+Alexander
+
+-----------------------------
+
+?????????? ?????? ? ???????? ???? ??????? ? ??????????? ?? ?????????.
+? ?????? ?? 11 ????.
+http://www.newfilms-bg.com/
+
+
+
+From jasper at xfce.org  Thu Mar 17 18:36:07 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Thu, 17 Mar 2005 18:36:07 +0100
+Subject: Panel changes for 4.4
+In-Reply-To: <1111078834.f61d0e20a823d@mail.bg>
+References: <4238245A.8000603@xfce.org> <1111008998.8390f6918ca16@mail.bg>	<42393414.5030002@nebulon.de> <42392D22.4040300@xfce.org>	<1111074280.eabdfb4d3ad24@mail.bg>	<20050317160353.GJ7401@baudolino.home.nl> <1111078834.f61d0e20a823d@mail.bg>
+Message-ID: <4239C007.6050708@xfce.org>
+
+Alexander Iliev wrote:
+...
+> 
+> Or maybe I don't imagine this right. What I mean is that all
+> the available sound cards should be visible and
+> volume-adjustable
+> all the time. If you have an idea how that can be
+> accomplished
+> with a single plugin - great. :)
+> 
+
+Hehe, that's exactly what I meant, sorry for the confusion. There's no 
+reason a single plugin can't have multiple controls.
+
+
+From benny at xfce.org  Fri Mar 18 18:53:08 2005
+From: benny at xfce.org (Benedikt Meurer)
+Date: Fri, 18 Mar 2005 18:53:08 +0100
+Subject: [Fwd: Weather Update]
+Message-ID: <423B1584.4020503@xfce.org>
+
+Hey Bob, can you please have a look at this?
+
+greets,
+Benedikt
+
+-------- Original Message --------
+Subject: Weather Update
+Date: Sat, 19 Mar 2005 04:08:31 +1100
+From: david <David at mackay.name>
+Organization: ...
+To: benny at xfce.org
+
+Hi,
+	Just what I wanted - untill
+	Something strange in the location code lookup.
+	I live in Devonport East, Tasmania Australia
+	WMO code 94960 or 95960 region 5
+	ICAO code YMDV
+BUT
+	When I put in 94960 I get Napa CA USA ICAO code KAPC region 4
+	Seems to be a table entry error
+	Could you please pass this onto the appropiate developer - and make me
+happy after an update soon.
+thanks david..
+
+
+From noreply at berlios.de  Sun Mar 20 14:18:56 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Sun, 20 Mar 2005 05:18:56 -0800 (PST)
+Subject: [Patch #393] Minor: Appropriate pluralization in xfce4-notes tooltips
+Message-ID: <200503201318.j2KDIuLe018378@unicorn.berlios.de>
+
+Patch #393 has been updated. 
+
+Project: xfce-goodies
+Category: None
+Status: Open
+Submitted by: zubin
+Assigned to : none
+Summary: Minor: Appropriate pluralization in xfce4-notes tooltips
+
+-------------------------------------------------------
+For more info, visit:
+
+http://developer.berlios.de/patch/?func=detailpatch&patch_id=393&group_id=910
+
+
+From kieroglu at math.washington.edu  Wed Mar 23 08:36:55 2005
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Tue, 22 Mar 2005 23:36:55 -0800 (PST)
+Subject: xmms plugin updated
+Message-ID: <Pine.LNX.4.61.0503222315450.1463@zeno2.math.washington.edu>
+
+
+   Hi,
+
+   First of all, congratulations to the XFCE team for their excellent work! 
+Here's my tiny contribution:
+
+   I've made several changes to Patrick van Staveren's xmms plugin:
+
+   * Scrolling up/down changes the volume now,
+   * There's a progressbar on which you can click to set the track
+   position,
+   * Song title now scrolls at the top (you can hide/unhide it).
+
+   I'm not a programmer, so don't expect a first-class work :), but it 
+seems to run fine. Please check it carefully; I'll happily squash the bugs 
+that you find.
+
+   I have several other ideas like optionally having another progressbar 
+for volume, maybe additional buttons for xmms file add dialog etc. These 
+days I'm quite busy, but hopefully I'll be able to continue the work in 
+the (not so far) future.
+
+   Enjoy!
+
+   Ilgar
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-xmms-plugin-0.2.1.tar.bz2
+Type: application/x-bzip2
+Size: 147814 bytes
+Desc: 
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050322/2b7ad028/attachment.bin>
+
+From bugzilla-daemon at xfce.org  Fri Mar 25 12:44:05 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri, 25 Mar 2005 11:44:05 +0000 (UTC)
+Subject: [Bug 864]  New: Panel twitches when resized with taskbar plugin in expanded mode.
+Message-ID: <20050325114405.2552E1F7255@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=864
+
+           Summary: Panel twitches when resized with taskbar plugin in
+                    expanded mode.
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: taskbar
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: mart.tonso at ttu.ee
+
+
+I'm using Xfce 4.2.1 on gentoo.
+
+Add taskbar plugin to panel, set the "expand to fill screen" option. 
+Now change panel size, a strange shuffling-twitching motion is shown.
+
+Try it, it looks rather neat ;)
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri Mar 25 13:23:17 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri, 25 Mar 2005 12:23:17 +0000 (UTC)
+Subject: [Bug 864] Panel twitches when resized with taskbar plugin in expanded mode.
+Message-ID: <20050325122317.4BB3E1F707E@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=864
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |WONTFIX
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-03-25 12:23 UTC -------
+Yeah, this is a limitation of the current panel API. For Xfce 4.4 it will be
+possible to properly set a plugin to expand. Setting this to WONTFIX for 4.2.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From sasoiliev_trash at mail.bg  Sun Mar 27 23:28:45 2005
+From: sasoiliev_trash at mail.bg (Alexander Iliev)
+Date: Mon, 28 Mar 2005 00:28:45 +0300
+Subject: Xkb plugin rewrite
+Message-ID: <1111958925.aaeec4f4bcd62@mail.bg>
+
+Hi there.
+
+I'm considering an almost complete rewrite of the xfce4 xkb
+plugin. This will probably take some time and since I'm
+quite busy at work and at school both these days it's not
+clear when exactly it'll be ready. :)
+
+I think I'll implement some new features, of which the main
+will be the ability to configure Xkb extension from the
+plugin. I think this feature will be of pretty much value
+itself, but there are other nice consequences. One of these
+would be the ability to show different text/flag image
+depending on the layout variant. For example there are two
+main Bulgarian layouts available (bds and phonetic) and
+currently there is no way to distinguish which of them is
+currently selected.
+
+I wonder what will be the most appropriate method of
+displaying the alternative layout variants... When the
+plugin is configured to display the layout as a flag it
+will be nice to have different flag images for each
+variant. The default variant I think will use the country
+flag itself, but the alternative variants could use the
+flag with a small indicator that this is an alternative
+layout variant. This is how it's done is Mac OS X. If I
+find some time I'll post a screenshot tomorrow. I don't
+know if I would break some stupid software patent owned by
+Apple (or whoever else) with this.
+
+I still cannot think of some appropriate display of the
+variant when selected text indication, as most of the
+layout variants are pretty long strings (e.g. the bg
+variant "phonetic" mentioned earlier).
+
+I'm open to any kind of comments, suggestions, opinions,
+etc. :)
+
+Regards,
+Alexander Iliev
+
+
+
+-----------------------------
+
+???????? DIGITAL
+???? ?? 35 ?? - ??????? ?????????
+? ??????? 128 MB USB Memory Stick
+http://www.digital.bg/
+
+
+
+From noreply at berlios.de  Mon Mar 28 22:26:50 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Mon, 28 Mar 2005 21:26:50 +0100 (BST)
+Subject: [Bug #3650] xfce4-weather fails to save weather info in xfce 4.2
+Message-ID: <200503282026.j2SKQoEI008623@unicorn.berlios.de>
+
+Bug #3650, was updated on 2005-Mar-28 21:26
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: None
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: hobbes2
+Assigned to : none
+Summary: xfce4-weather fails to save weather info in xfce 4.2
+
+Details: Ever since I updated to xfce 4.2 xfce4-weather doesn't load any weather data -- I tried re-selecting the city from the menu, erasing the contents of ~/.xfce4 and ~/.config/xfce4, and restarting xfce4-panel but the tooltip still says "cannot update weather data".
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=3650&group_id=910
+
+
+From sasoiliev_trash at mail.bg  Tue Mar 29 23:54:38 2005
+From: sasoiliev_trash at mail.bg (Alexander Iliev)
+Date: Wed, 30 Mar 2005 00:54:38 +0300
+Subject: Panel changes for 4.4
+In-Reply-To: <4238245A.8000603@xfce.org>
+References: <4238245A.8000603@xfce.org>
+Message-ID: <1112133278.760d4d7cb8ff4@mail.bg>
+
+Hei, I thought of another addition to the new API:
+
+gboolean xfce_panel_plugin_test_availability(gchar
+**return_msg);
+
+The panel could call this function when a user
+selects "Add new item" for each plugin and when
+a particular plugin returns FALSE it could be
+grayed out (disabled). The plugin would store an
+explanation of the reason why it could not be
+added this time and it might be displayed somehow
+to the user.
+
+Excuse me with all my stupid ideas, but I'm just
+trying to think in terms of usability (that's a
+VERY VERY modern word these days :-) ) and I think
+it's quite more appropriate not to be able to add
+some plugin under certain curcumstances than to be
+able to add the plugin and it not to function
+properly. ;-)
+
+Again, sorry for the crap and for my not very good
+english. Just needed to share these thoughts.
+
+Thanks,
+Alexander
+
+
+-----------------------------
+
+Work & Travel in USA - ?????????? ??????? ? ???.
+????? ?? ?? ???????? $$$? ????? ????? ???? ?????? ??!
+??????????? ?? ?????: http://www.vega-exchanges.org 
+
+
+
+From bugzilla-daemon at xfce.org  Wed Mar 30 02:52:55 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 30 Mar 2005 00:52:55 +0000 (UTC)
+Subject: [Bug 876]  New: Plugin should also have a left click launcher option
+Message-ID: <20050330005255.8A7801F71D1@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=876
+
+           Summary: Plugin should also have a left click launcher option
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: cpugraph
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: eburner at softhome.net
+
+
+When you show the properties, you should be able to "set left click action:" to
+allow you to run something like "xfterm4 -e htop" or whatever the person wants.
+
+Reproducible: Always
+Steps to Reproduce:
+1. 
+2. 
+3.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Mar 30 07:47:12 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 30 Mar 2005 05:47:12 +0000 (UTC)
+Subject: [Bug 876] Plugin should also have a left click launcher option
+Message-ID: <20050330054712.2EC9E1F71BD@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=876
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+           Severity|normal                      |enhancement
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From jasper at xfce.org  Wed Mar 30 07:59:46 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Wed, 30 Mar 2005 07:59:46 +0200
+Subject: Panel changes for 4.4
+In-Reply-To: <1112133278.760d4d7cb8ff4@mail.bg>
+References: <4238245A.8000603@xfce.org> <1112133278.760d4d7cb8ff4@mail.bg>
+Message-ID: <424A4052.1080907@xfce.org>
+
+Alexander Iliev wrote:
+> Hei, I thought of another addition to the new API:
+> 
+> gboolean xfce_panel_plugin_test_availability(gchar
+> **return_msg);
+> 
+
+Good idea, but I think it should be sufficient to have a 'Unique = True' 
+field in the .desktop file for the plugin. I can't really think of a 
+situation where this wouldn't work.
+
+	Jasper
+
+
+From sasoiliev_trash at mail.bg  Wed Mar 30 09:09:40 2005
+From: sasoiliev_trash at mail.bg (Alexander Iliev)
+Date: Wed, 30 Mar 2005 10:09:40 +0300
+Subject: Panel changes for 4.4
+In-Reply-To: <424A4052.1080907@xfce.org>
+References: <4238245A.8000603@xfce.org> <1112133278.760d4d7cb8ff4@mail.bg>
+	<424A4052.1080907@xfce.org>
+Message-ID: <1112166580.0c443c5d8cfc0@mail.bg>
+
+Jasper Huijsmans <jasper at xfce.org> wrote:
+
+> Alexander Iliev wrote:
+> > Hei, I thought of another addition to the new API:
+> >
+> > gboolean xfce_panel_plugin_test_availability(gchar
+> > **return_msg);
+> >
+>
+> Good idea, but I think it should be sufficient to have a
+> 'Unique = True'
+> field in the .desktop file for the plugin. I can't really
+> think of a
+> situation where this wouldn't work.
+>
+> 	Jasper
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+
+
+Ok, since this is pretty similar to my previous suggestion
+some more explanation would be needed. First - the idea
+is pretty different here. It's not about plugin being
+unique or not, it's about cheching for certain conditions
+which should be fulfilled.
+
+Take for example the xkb plugin. If I run a Xvnc server
+and connect to the server there is no XKB extension
+available
+(Xvnc does not implement XKB). So the xkb plugin could not
+function at all. As a result the panel currently crashes.
+This is firstly plugin's fault and I'm working on a rewrite
+of this plugin which sould handle such situations more
+gracefully. I also know that with the new out-of-process
+plugins a crash in one plugin should not crash the whole
+panel. But nevertheless I think such API would be of help
+in making XFCE more user-oriented desktop.
+
+I think having such a function is a good thing, since the
+plugin writers can use it to check for certain conditions
+needed to run their plugins. If the plugin doesn't depend
+on any such conditions or the plugin writer doesn't want to
+implement it the simpliest thing is to "return TRUE;". I
+think it wouldn't be hard to implement this from the panel
+side. It might slow the add new item dialog (or whatever
+it will become in the future), but this is pretty rarely
+performed task.
+
+Hey, that's just my opinion. :-)
+It's up to you, I just think such an API would help in
+creating a more "usable" desktop environment.
+
+Best regards,
+Alexander
+
+
+
+
+--------------------------------------
+???? ????? ? ????????? ??  www.mail.bg
+
+??????????? ???? ? mail.bg ????????:
+- ????? ?????? ????? ????/???????? ?????
+- 30MB ????????? (SMS ?? 2??=3GB!)
+- 30MB ????. ?????? ?? ???????? ????
+- SMS ?? ???? ????? (?????? ?????????)
+- WAP ?????? ?? GSM ? ??? ????????
+- ????????? POP3 ??????
+- 24 ????? ??????? ?? ?????/?????????
+______________________________________
+??? ??????? ??????? ????????????? ????
+????????? ????? ??  http://www.mail.bg
+
+
+
+
+
+From jasper at xfce.org  Wed Mar 30 19:01:21 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Wed, 30 Mar 2005 19:01:21 +0200
+Subject: Panel changes for 4.4
+In-Reply-To: <1112166580.0c443c5d8cfc0@mail.bg>
+References: <4238245A.8000603@xfce.org> <1112133278.760d4d7cb8ff4@mail.bg>	<424A4052.1080907@xfce.org> <1112166580.0c443c5d8cfc0@mail.bg>
+Message-ID: <424ADB61.8070707@xfce.org>
+
+Alexander Iliev wrote:
+> Jasper Huijsmans <jasper at xfce.org> wrote:
+> 
+> 
+>>Alexander Iliev wrote:
+>>
+>>>Hei, I thought of another addition to the new API:
+>>>
+>>>gboolean xfce_panel_plugin_test_availability(gchar
+>>>**return_msg);
+>>>
+>>
+>>Good idea, but I think it should be sufficient to have a
+>>'Unique = True'
+>>field in the .desktop file for the plugin. I can't really
+>>think of a
+>>situation where this wouldn't work.
+>>
+
+> 
+> Ok, since this is pretty similar to my previous suggestion
+> some more explanation would be needed. First - the idea
+> is pretty different here. It's not about plugin being
+> unique or not, it's about cheching for certain conditions
+> which should be fulfilled.
+> 
+> Take for example the xkb plugin. If I run a Xvnc server
+> and connect to the server there is no XKB extension
+> available
+> (Xvnc does not implement XKB). So the xkb plugin could not
+> function at all. As a result the panel currently crashes.
+> This is firstly plugin's fault and I'm working on a rewrite
+> of this plugin which sould handle such situations more
+> gracefully. I also know that with the new out-of-process
+> plugins a crash in one plugin should not crash the whole
+> panel. But nevertheless I think such API would be of help
+> in making XFCE more user-oriented desktop.
+> 
+> I think having such a function is a good thing, since the
+> plugin writers can use it to check for certain conditions
+> needed to run their plugins. If the plugin doesn't depend
+> on any such conditions or the plugin writer doesn't want to
+> implement it the simpliest thing is to "return TRUE;". I
+> think it wouldn't be hard to implement this from the panel
+> side. It might slow the add new item dialog (or whatever
+> it will become in the future), but this is pretty rarely
+> performed task.
+> 
+> Hey, that's just my opinion. :-)
+> It's up to you, I just think such an API would help in
+> creating a more "usable" desktop environment.
+> 
+
+Thanks, that's a very interesting use case. My previous reply may have 
+sounded like I didn't agree with the feature, but what I meant was to 
+ask you when it would be useful ;-)
+
+I'm trying to keep the interface as small as possible, especially since 
+it must be based on sending messages because you can't directly call a 
+function in an external plugin. That's why I'll be asking for use cases 
+for every API addition and will try to find alternatives that don't 
+involve communication.
+
+Anyway, back to your suggestion, there are two situations here that are 
+important:
+
+- Add a new plugin.
+
+- Start the panel with an existing configuration in a different environment.
+
+The second on will be much harder to handle, because you do want it to 
+show up again the next time you log in to an environment where the 
+plugin does work again.
+
+Don't you think it would be better if the plugin would show an error 
+icon and/or a dialog explaining the situation, and perhaps offering the 
+user to hide and try again in the next session? This would not need 
+communication with the panel.
+
+	Jasper
+
+
+From masse_nicolas at yahoo.fr  Wed Mar 30 19:49:36 2005
+From: masse_nicolas at yahoo.fr (masse nicolas)
+Date: Wed, 30 Mar 2005 19:49:36 +0200 (CEST)
+Subject: Panel changes for 4.4
+In-Reply-To: 6667
+Message-ID: <20050330174936.13614.qmail@web26007.mail.ukl.yahoo.com>
+
+--- Jasper Huijsmans <jasper at xfce.org> wrote:
+> Alexander Iliev wrote:
+> > Jasper Huijsmans <jasper at xfce.org> wrote:
+> > 
+> > 
+> >>Alexander Iliev wrote:
+> >>
+> >>>Hei, I thought of another addition to the new
+> API:
+> >>>
+> >>>gboolean
+> xfce_panel_plugin_test_availability(gchar
+> >>>**return_msg);
+> >>>
+> >>
+> >>Good idea, but I think it should be sufficient to
+> have a
+> >>'Unique = True'
+> >>field in the .desktop file for the plugin. I can't
+> really
+> >>think of a
+> >>situation where this wouldn't work.
+> >>
+> 
+> > 
+> > Ok, since this is pretty similar to my previous
+> suggestion
+> > some more explanation would be needed. First - the
+> idea
+> > is pretty different here. It's not about plugin
+> being
+> > unique or not, it's about cheching for certain
+> conditions
+> > which should be fulfilled.
+> > 
+> > Take for example the xkb plugin. If I run a Xvnc
+> server
+> > and connect to the server there is no XKB
+> extension
+> > available
+> > (Xvnc does not implement XKB). So the xkb plugin
+> could not
+> > function at all. As a result the panel currently
+> crashes.
+> > This is firstly plugin's fault and I'm working on
+> a rewrite
+> > of this plugin which sould handle such situations
+> more
+> > gracefully. I also know that with the new
+> out-of-process
+> > plugins a crash in one plugin should not crash the
+> whole
+> > panel. But nevertheless I think such API would be
+> of help
+> > in making XFCE more user-oriented desktop.
+> > 
+> > I think having such a function is a good thing,
+> since the
+> > plugin writers can use it to check for certain
+> conditions
+> > needed to run their plugins. If the plugin doesn't
+> depend
+> > on any such conditions or the plugin writer
+> doesn't want to
+> > implement it the simpliest thing is to "return
+> TRUE;". I
+> > think it wouldn't be hard to implement this from
+> the panel
+> > side. It might slow the add new item dialog (or
+> whatever
+> > it will become in the future), but this is pretty
+> rarely
+> > performed task.
+> > 
+> > Hey, that's just my opinion. :-)
+> > It's up to you, I just think such an API would
+> help in
+> > creating a more "usable" desktop environment.
+> > 
+> 
+> Thanks, that's a very interesting use case. My
+> previous reply may have 
+> sounded like I didn't agree with the feature, but
+> what I meant was to 
+> ask you when it would be useful ;-)
+> 
+> I'm trying to keep the interface as small as
+> possible, especially since 
+> it must be based on sending messages because you
+> can't directly call a 
+> function in an external plugin. That's why I'll be
+> asking for use cases 
+> for every API addition and will try to find
+> alternatives that don't 
+> involve communication.
+> 
+> Anyway, back to your suggestion, there are two
+> situations here that are 
+> important:
+> 
+> - Add a new plugin.
+> 
+> - Start the panel with an existing configuration in
+> a different environment.
+> 
+> The second on will be much harder to handle, because
+> you do want it to 
+> show up again the next time you log in to an
+> environment where the 
+> plugin does work again.
+> 
+> Don't you think it would be better if the plugin
+> would show an error 
+> icon and/or a dialog explaining the situation, and
+> perhaps offering the 
+> user to hide and try again in the next session? This
+> would not need 
+> communication with the panel.
+> 
+
+Alternatively what can be done is to do so that the
+function responsible of loading the plugin can return
+TRUE or FALSE, depending if the plugin was
+successfully loaded. If ot is not the case, the plugin
+can then dispay why and what was wrong. It seems that
+the current panel already work that way... 
+The only benefit of Alexander's method (I think) is
+that the plugin writer will have to implement the
+ask_availability method, when for now nothing is done
+to say him that he needs to verify the availability of
+some plugin-required components. (Perhaps writing
+something like guidelines can help on this point) 
+
+PS: In the case where a plugin fail to load, the panel
+can always ask if he must try to load this plugin next
+time.
+
+
+> 	Jasper
+
+Masse Nicolas. 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+>
+http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+
+
+	
+
+	
+		
+__________________________________________________________________
+D?couvrez le nouveau Yahoo! Mail : 250 Mo d'espace de stockage pour vos mails ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com/
+
+
+From jasper at xfce.org  Wed Mar 30 20:12:58 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Wed, 30 Mar 2005 20:12:58 +0200
+Subject: Panel changes for 4.4
+In-Reply-To: <20050330174936.13614.qmail@web26007.mail.ukl.yahoo.com>
+References: <20050330174936.13614.qmail@web26007.mail.ukl.yahoo.com>
+Message-ID: <424AEC2A.1080704@xfce.org>
+
+masse nicolas wrote:
+...
+> 
+> PS: In the case where a plugin fail to load, the panel
+> can always ask if he must try to load this plugin next
+> time.
+> 
+
+Hehe, just noticed that the panel writer tries to make the plugins do 
+the work and the plugin writers try to push the functionality towards 
+the panel ;-)
+
+I'll keep it in mind, thanks,
+
+	Jasper
+
+
+From sasoiliev_trash at mail.bg  Wed Mar 30 20:41:51 2005
+From: sasoiliev_trash at mail.bg (Alexander Iliev)
+Date: Wed, 30 Mar 2005 21:41:51 +0300
+Subject: Panel changes for 4.4
+In-Reply-To: <424ADB61.8070707@xfce.org>
+References: <4238245A.8000603@xfce.org> <1112133278.760d4d7cb8ff4@mail.bg>
+	<424A4052.1080907@xfce.org> <1112166580.0c443c5d8cfc0@mail.bg>
+	<424ADB61.8070707@xfce.org>
+Message-ID: <1112208111.8acaf70fb7cf1@mail.bg>
+
+Jasper Huijsmans <jasper at xfce.org> wrote:
+
+> Alexander Iliev wrote:
+> > Jasper Huijsmans <jasper at xfce.org> wrote:
+> >
+> >
+> >>Alexander Iliev wrote:
+> >>
+> >>>Hei, I thought of another addition to the new API:
+> >>>
+> >>>gboolean xfce_panel_plugin_test_availability(gchar
+> >>>**return_msg);
+> >>>
+> >>
+> >>Good idea, but I think it should be sufficient to have
+> a
+> >>'Unique = True'
+> >>field in the .desktop file for the plugin. I can't
+> really
+> >>think of a
+> >>situation where this wouldn't work.
+> >>
+>
+> >
+> > Ok, since this is pretty similar to my previous
+> suggestion
+> > some more explanation would be needed. First - the idea
+> > is pretty different here. It's not about plugin being
+> > unique or not, it's about cheching for certain
+> conditions
+> > which should be fulfilled.
+> >
+> > Take for example the xkb plugin. If I run a Xvnc server
+> > and connect to the server there is no XKB extension
+> > available
+> > (Xvnc does not implement XKB). So the xkb plugin could
+> not
+> > function at all. As a result the panel currently
+> crashes.
+> > This is firstly plugin's fault and I'm working on a
+> rewrite
+> > of this plugin which sould handle such situations more
+> > gracefully. I also know that with the new
+> out-of-process
+> > plugins a crash in one plugin should not crash the
+> whole
+> > panel. But nevertheless I think such API would be of
+> help
+> > in making XFCE more user-oriented desktop.
+> >
+> > I think having such a function is a good thing, since
+> the
+> > plugin writers can use it to check for certain
+> conditions
+> > needed to run their plugins. If the plugin doesn't
+> depend
+> > on any such conditions or the plugin writer doesn't
+> want to
+> > implement it the simpliest thing is to "return TRUE;".
+> I
+> > think it wouldn't be hard to implement this from the
+> panel
+> > side. It might slow the add new item dialog (or
+> whatever
+> > it will become in the future), but this is pretty
+> rarely
+> > performed task.
+> >
+> > Hey, that's just my opinion. :-)
+> > It's up to you, I just think such an API would help in
+> > creating a more "usable" desktop environment.
+> >
+>
+> Thanks, that's a very interesting use case. My previous
+> reply may have
+> sounded like I didn't agree with the feature, but what I
+> meant was to
+> ask you when it would be useful ;-)
+>
+> I'm trying to keep the interface as small as possible,
+> especially since
+> it must be based on sending messages because you can't
+> directly call a
+> function in an external plugin. That's why I'll be asking
+> for use cases
+> for every API addition and will try to find alternatives
+> that don't
+> involve communication.
+>
+> Anyway, back to your suggestion, there are two situations
+> here that are
+> important:
+>
+> - Add a new plugin.
+>
+> - Start the panel with an existing configuration in a
+> different environment.
+>
+> The second on will be much harder to handle, because you
+> do want it to
+> show up again the next time you log in to an environment
+> where the
+> plugin does work again.
+>
+> Don't you think it would be better if the plugin would
+> show an error
+> icon and/or a dialog explaining the situation, and
+> perhaps offering the
+> user to hide and try again in the next session? This
+> would not need
+> communication with the panel.
+>
+> 	Jasper
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+
+You're absolutely right about the two important
+situations - adding a plugin and starting with existing
+configuration. And you are also absolutely right about
+what should happen in the latter case - the plugin
+should show an error icon/message/dialog/whatever to
+inform the user that for some reason it could not
+function properly. This is plugin's responsibility.
+
+The advantage of the proposed addition is in the case
+when the user tries to add a new plugin. In this case
+I think it would be more appropriate to disable the
+ability to add certain plugins if they could not function
+as expected than to add plugins regardless and then
+recieve an error message. But I've already said that :).
+
+What I didn't say is - I wasn't aware of the technology
+that is about to be used for the new API with external
+plugins. If you think it would add unnecessary overhead
+to the panel then I'd absolutely agree that this addition
+should be disregarded. It's vital to keep XFCE as
+lightweight and fast as possible since it's one of the
+main reasons for me to use it and love it.
+
+But, (one more time) :-) since this specific call will
+be made only when the user clicks on "add new item" or
+"configure panel" or "whatever it'll be called" menu item,
+I think it won't cause too much trouble.
+
+And one more thing - I'm not trying to make you do my
+work. :-) I definitely will implement the error
+handling in the xkb plugin (so that the plugin shows
+error messages to the user in the most user-friendly
+way possible). This is my work and I'll do it. My
+intention is to make XFCE panel even more user-friendly.
+
+Once again, if you really think the overhead added by
+this will be too much, then it's not worth it.
+
+Best regards,
+Alexander
+
+
+
+
+--------------------------------------
+???? ????? ? ????????? ??  www.mail.bg
+
+??????????? ???? ? mail.bg ????????:
+- ????? ?????? ????? ????/???????? ?????
+- 30MB ????????? (SMS ?? 2??=3GB!)
+- 30MB ????. ?????? ?? ???????? ????
+- SMS ?? ???? ????? (?????? ?????????)
+- WAP ?????? ?? GSM ? ??? ????????
+- ????????? POP3 ??????
+- 24 ????? ??????? ?? ?????/?????????
+______________________________________
+??? ??????? ??????? ????????????? ????
+????????? ????? ??  http://www.mail.bg
+
+
+
+
+

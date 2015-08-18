@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> A question about translations
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-March/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20A%20question%20about%20translations&In-Reply-To=%3C441B58ED.8070502%40mamul.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000662.html">
+   <LINK REL="Next"  HREF="000681.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>A question about translations</H1>
+    <B>Alexander Iliev</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20A%20question%20about%20translations&In-Reply-To=%3C441B58ED.8070502%40mamul.org%3E"
+       TITLE="A question about translations">sasoiliev at mamul.org
+       </A><BR>
+    <I>Sat Mar 18 01:48:45 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000662.html">[Bug 1064] Weather Plugin Hangs Panel If Not Network Access.
+</A></li>
+        <LI>Next message: <A HREF="000681.html">A question about translations
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#674">[ date ]</a>
+              <a href="thread.html#674">[ thread ]</a>
+              <a href="subject.html#674">[ subject ]</a>
+              <a href="author.html#674">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi.
+
+I finally decided to add translation support to
+xfce4-xkb-plugin, but I ran into some problems.
+
+Here's what I did:
+
+  * marked all translatable string with _(s);
+  * added AC_PROG_INTLTOOL to configure.ac;
+  * added po to SUBDIRS in Makefile.am;
+  * created a po/ dir with POTFILES.in and ChangeLog;
+  * added -DPACKAGE_LOCALE_DIR=\&quot;$(localedir)\&quot; to
+    xfce4_xkb_plugin_CFLAGS in panel-plugin/Makefile.am;
+  * added @INTLTOOL_DESKTOP_RULE@ in panel-plugin/Makefile.am;
+  * ran ./autogen.sh;
+  * ran make xfce4-xkb-plugin.pot from po/;
+  * copied xfce4-xkb-plugin.pot to bg.po and translated
+    the messages;
+  * ran make &amp;&amp; su -c &quot;make install&quot;;
+  * export LC_MESSAGES=bg and restarted the panel to
+    test the translation.
+
+The bg.mo file installed properly in
+$PREFIX/share/locale/bg/LC_MESSAGES/xfce4-xkb-plugin.mo.
+
+Unfortunately the messages remained in english, so
+my question is - how can I check what went wrong and
+why the translation does not load?
+
+btw, the .desktop file translation works fine - the name
+and comment for the plugin appear in bulgarian in the
+plugin add dialog.
+
+Regards,
+-- 
+Alexander Iliev
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000662.html">[Bug 1064] Weather Plugin Hangs Panel If Not Network Access.
+</A></li>
+	<LI>Next message: <A HREF="000681.html">A question about translations
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#674">[ date ]</a>
+              <a href="thread.html#674">[ thread ]</a>
+              <a href="subject.html#674">[ subject ]</a>
+              <a href="author.html#674">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

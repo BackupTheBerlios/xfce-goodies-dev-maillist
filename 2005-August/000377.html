@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> hwsensors-plugin on debian testing
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-August/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20hwsensors-plugin%20on%20debian%20testing&In-Reply-To=%3C20050802055908.GA2248%40baudolino.home.nl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000376.html">
+   <LINK REL="Next"  HREF="000378.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>hwsensors-plugin on debian testing</H1>
+    <B>Jasper Huijsmans</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20hwsensors-plugin%20on%20debian%20testing&In-Reply-To=%3C20050802055908.GA2248%40baudolino.home.nl%3E"
+       TITLE="hwsensors-plugin on debian testing">jasper at xfce.org
+       </A><BR>
+    <I>Tue Aug  2 07:59:08 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000376.html">hwsensors-plugin on debian testing
+</A></li>
+        <LI>Next message: <A HREF="000378.html">hwsensors-plugin on debian testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#377">[ date ]</a>
+              <a href="thread.html#377">[ thread ]</a>
+              <a href="subject.html#377">[ subject ]</a>
+              <a href="author.html#377">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Tue, Aug 02, 2005 at 01:15:36AM +0100, Jos? Eduardo Martins wrote:
+
+Hey guys,
+
+Sorry for not responding earlier.
+
+&gt;<i> Fabian Nowak wrote:
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;BTW, how about adding a line in configure.ac to check current xfce4
+</I>&gt;<i> &gt;&gt;version. If there is such limitation, the users should be warned.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; so let's assign this &quot;configure.ac task&quot; to a person being more capable
+</I>&gt;<i> &gt; to handle that auto* stuff than me - what about you?
+</I>&gt;<i> 
+</I>&gt;<i> Ok. This was quicker than I expected. But I need you to test it on a
+</I>&gt;<i> &quot;ok&quot; enviroment. On mine, it fails as it is suposed to do.
+</I>&gt;<i> Apply the folowing patch:
+</I>&gt;<i> 
+</I>&gt;<i> ***begin patch***
+</I>&gt;<i> 
+</I>&gt;<i> - --- configure.ac.old    2005-08-02 01:05:10.000000000 +0100
+</I>&gt;<i> +++ configure.ac        2005-08-02 01:04:39.000000000 +0100
+</I>&gt;<i> @@ -32,6 +32,12 @@
+</I>&gt;<i>         exit -1
+</I>&gt;<i>  ])
+</I>&gt;<i> 
+</I>&gt;<i> +dnl Check for control_class_set_unique
+</I>&gt;<i> +AC_CHECK_FUNC([control_class_set_unique], [], [
+</I>&gt;<i> +       echo &quot;Error! You need to upgrade xfce4 to 4.2.&quot;
+</I>&gt;<i> +       exit -1
+</I>&gt;<i> +])
+</I>&gt;<i> +
+</I>&gt;<i>  dnl configure the panel plugin
+</I>&gt;<i>  XFCE_PANEL_PLUGIN([XFCE4_PANEL], [4.0.0])
+</I>&gt;<i> 
+</I>
+Ehm, how about using 'XFCE_PANEL_PLUGIN([XFCE4_PANEL], [4.2.0])' instead? 
+
+	Jasper
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000376.html">hwsensors-plugin on debian testing
+</A></li>
+	<LI>Next message: <A HREF="000378.html">hwsensors-plugin on debian testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#377">[ date ]</a>
+              <a href="thread.html#377">[ thread ]</a>
+              <a href="subject.html#377">[ subject ]</a>
+              <a href="author.html#377">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

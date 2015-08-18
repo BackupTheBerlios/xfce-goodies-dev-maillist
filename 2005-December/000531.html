@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Adding support for ASUS Z71v laptop batteries to xfce4-battery
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-December/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Adding%20support%20for%20ASUS%20Z71v%20laptop%20batteries%20to%20xfce4-battery&In-Reply-To=%3C20051220060336.GA90472%40lizella.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000533.html">
+   <LINK REL="Next"  HREF="000534.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Adding support for ASUS Z71v laptop batteries to xfce4-battery</H1>
+    <B>Alan Hicks</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Adding%20support%20for%20ASUS%20Z71v%20laptop%20batteries%20to%20xfce4-battery&In-Reply-To=%3C20051220060336.GA90472%40lizella.net%3E"
+       TITLE="Adding support for ASUS Z71v laptop batteries to xfce4-battery">alan at lizella.net
+       </A><BR>
+    <I>Tue Dec 20 07:03:36 CET 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000533.html">New Plugin: lua-graph
+</A></li>
+        <LI>Next message: <A HREF="000534.html">[Bug 670] Panel crashes when closing one of the folded apps with right click and context menu
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#531">[ date ]</a>
+              <a href="thread.html#531">[ thread ]</a>
+              <a href="subject.html#531">[ subject ]</a>
+              <a href="author.html#531">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+
+I just joined his mailing list in hopes that you can help me solve a
+problem I'm having with the xfce-battery-plugin. I have an ASUS Z71v
+which has two batteries in it. Status for neither battery is reported
+by the applet and seems to default to saying the battery is dead, but
+on AC charge.
+
+I have attempted to compile the software with --enable-debug=3D&quot;yes|full&quot;
+and in either case it fails to compile, stating that some variables are
+defined but not used.  I am unsure if that error message is important
+or not, but as the software compiles successfully without that message,
+I have elected not to include it.
+
+The information regarding battery state can be found in the files:
+
+  /proc/acpi/battery/BAT0/state
+  /proc/acpi/battery/BAT1/state
+
+IIUC, the norm is for this information to be stored in the files:
+
+  /proc/acpi/battery/[0-9]/state
+  /proc/acpi/battery/[0-9]/status
+
+I can only assume that the &quot;BAT&quot; prefix is causing the plugin to fail
+to find the state file from what I've gathered from the code I've
+looked over.
+
+I have absolutely no real programming skill (some bash scripting,
+trying to teach myself some C) and would like to add support for my
+batteries to this applet. From what I've gathered with my meager
+code-reading skills, the following lines in libacpi.c try to get an
+integer count of the batteries under /proc/acpi/battery and then use
+that integer value to locate the state file.
+
+&lt;snip&gt;
+
+1    /* now enumerate batteries */
+2    batt_count =3D 0;
+3    battdir =3D opendir (&quot;/proc/acpi/battery&quot;);
+4    if (battdir =3D=3D 0)
+5    {
+6  #ifdef DEBUG
+7  	  printf(&quot;DBG:No battery. /proc/acpi/battery not found!\n&quot;);
+8  #endif
+9      return 2;
+10   }
+11   while ((batt =3D readdir (battdir)))
+12   {
+13     name =3D batt-&gt;d_name;
+14=20
+15     /* skip . and .. */
+16     if (!strncmp (&quot;.&quot;, name, 1) || !strncmp (&quot;..&quot;, name, 2)) continue;
+17    =20
+18     sprintf (batteries[batt_count], &quot;/proc/acpi/battery/%s/state&quot;, name);
+19     if (!(acpi =3D fopen (batteries[batt_count], &quot;r&quot;))) {
+20        sprintf (batteries[batt_count], &quot;/proc/acpi/battery/%s/status&quot;, n=
+ame);
+21     }
+22     else fclose (acpi);
+23    =20
+24 #if 0   =20
+25     if (!(acpi =3D fopen (&quot;/proc/acpi/battery/1/status&quot;, &quot;r&quot;)))
+26 	    sprintf (batteries[batt_count], &quot;/proc/acpi/battery/%s/state&quot;, name=
+);
+27     else
+28 	    sprintf (batteries[batt_count], &quot;/proc/acpi/battery/%s/status&quot;, nam=
+e);
+29 #endif   =20
+
+&lt;/snip&gt;
+
+
+Thanks for your time and attention.  I'd really like to help to get
+this working, both to have proper battery monitoring in everyone's
+favorite cholestorel free DE, and to maybe learn a thing or two about
+C. I regret that I am not able to write a patch myself for submission.
+
+-- 
+It is better to hear the rebuke of the wise,
+Than for a man to hear the song of fools.
+Ecclesiastes 7:5
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 187 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051220/b25e0fcc/attachment.pgp">https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051220/b25e0fcc/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000533.html">New Plugin: lua-graph
+</A></li>
+	<LI>Next message: <A HREF="000534.html">[Bug 670] Panel crashes when closing one of the folded apps with right click and context menu
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#531">[ date ]</a>
+              <a href="thread.html#531">[ thread ]</a>
+              <a href="subject.html#531">[ subject ]</a>
+              <a href="author.html#531">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

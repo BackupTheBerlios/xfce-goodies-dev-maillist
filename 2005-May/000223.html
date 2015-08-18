@@ -1,0 +1,522 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> need help in plugin development....xfce4-mount-plugin
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-May/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20need%20help%20in%20plugin%20development....xfce4-mount-plugin&In-Reply-To=%3C4295EFBD.7050307%40no-log.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000222.html">
+   <LINK REL="Next"  HREF="000224.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>need help in plugin development....xfce4-mount-plugin</H1>
+    <B>jean-baptiste dulong</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20need%20help%20in%20plugin%20development....xfce4-mount-plugin&In-Reply-To=%3C4295EFBD.7050307%40no-log.org%3E"
+       TITLE="need help in plugin development....xfce4-mount-plugin">jean-baptiste.dulong at no-log.org
+       </A><BR>
+    <I>Thu May 26 17:48:13 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000222.html">need help in plugin development....xfce4-mount-plugin
+</A></li>
+        <LI>Next message: <A HREF="000224.html">xfce4-mount-plugin problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#223">[ date ]</a>
+              <a href="thread.html#223">[ thread ]</a>
+              <a href="subject.html#223">[ subject ]</a>
+              <a href="author.html#223">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>great !
+that should work.
+thanks a lot
+merci.
+
+Olivier Fourdan a &#233;crit :
+&gt;<i> Hi
+</I>&gt;<i> ... or maybe simply using g_object_set_data()/g_object_get_data() could
+</I>&gt;<i> help too.
+</I>&gt;<i> 
+</I>&gt;<i> Cheers,
+</I>&gt;<i> Olivier.
+</I>&gt;<i> 
+</I>&gt;<i> On Wed, 2005-05-25 at 21:18 +0200, jean-baptiste dulong wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i>Hi,
+</I>&gt;&gt;<i>I'm working on the xfce4-mount-plugin and would like to add a new 
+</I>&gt;&gt;<i>functionality. I'd like the plugin to launch a command upon a 
+</I>&gt;&gt;<i>successfull mount (eg: a terminal). The command won't depend on a 
+</I>&gt;&gt;<i>specific device but will be a general options for the plugin.
+</I>&gt;&gt;<i>Therefore I added an element in the structure that hold the plugin 
+</I>&gt;&gt;<i>(Control-&gt;data) to store that command :
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>typedef struct
+</I>&gt;&gt;<i>{
+</I>&gt;&gt;<i>	/* added string to hold command value */
+</I>&gt;&gt;<i>	char * on_mount_cmd ;
+</I>&gt;&gt;<i>	GtkWidget * button ;
+</I>&gt;&gt;<i>	GtkWidget * menu ;
+</I>&gt;&gt;<i>	GPtrArray * pdisks ;
+</I>&gt;&gt;<i>	GPtrArray * pdisk_display ;
+</I>&gt;&gt;<i>} t_mounter ;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>I also added a mounter_read_config and a mounter_write_config function 
+</I>&gt;&gt;<i>to store and restore the option value.
+</I>&gt;&gt;<i>My next step (before implementing a graphical interface for the user to 
+</I>&gt;&gt;<i>change the options) is to actually use the value in on_mount_cmd when 
+</I>&gt;&gt;<i>mounting a device.
+</I>&gt;&gt;<i>For mounting a device, I catch an event from a menu item with this 
+</I>&gt;&gt;<i>simple function :
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>static void on_activate_disk_display(GtkWidget * widget,t_disk * disk)
+</I>&gt;&gt;<i>{
+</I>&gt;&gt;<i>	if (disk != NULL)
+</I>&gt;&gt;<i>	{
+</I>&gt;&gt;<i>		if (disk-&gt;mount_info != NULL)
+</I>&gt;&gt;<i>		{
+</I>&gt;&gt;<i>			disk_umount(disk);
+</I>&gt;&gt;<i>		}
+</I>&gt;&gt;<i>		else
+</I>&gt;&gt;<i>		{
+</I>&gt;&gt;<i>			disk_mount(disk);					 
+</I>&gt;&gt;<i>/*exec_cmd_silent(g_strconcat(mt-&gt;on_mount_cmd,disk-&gt;mount_point,NULL),FALSE,TRUE);*/
+</I>&gt;&gt;<i>		}
+</I>&gt;&gt;<i>	}
+</I>&gt;&gt;<i>}
+</I>&gt;&gt;<i>And this function would love to use mt-&gt;on_mount_cmd to launch 
+</I>&gt;&gt;<i>something, but we don't have access to it and the gpointer element in 
+</I>&gt;&gt;<i>the callback function is already used, we need a pointer on the t_disk * 
+</I>&gt;&gt;<i>disk element.
+</I>&gt;&gt;<i>So is there a way to access the Control-&gt;data from some function like 
+</I>&gt;&gt;<i>this one ?? Is it possible to add argument to the function with a 
+</I>&gt;&gt;<i>pointer to Control-&gt;data ?? Is there a magic spell ??
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>If all this doesn't sound clear at all, leave it, I'll spend my 
+</I>&gt;&gt;<i>desperate nights on it... :-))
+</I>&gt;&gt;<i>If the answer is trivial, it will help anyway...
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>plain text document attachment (mount-plugin.c)
+</I>&gt;&gt;<i>/* mount-plugin.c */
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>/*
+</I>&gt;&gt;<i>Copyright (C) 2005 Jean-Baptiste <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jb_dul at yahoo.com</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>This program is free software; you can redistribute it and/or 
+</I>&gt;&gt;<i>modify it under the terms of the GNU General Public License 
+</I>&gt;&gt;<i>as published by the Free Software Foundation; either 
+</I>&gt;&gt;<i>version 2 of the License, or (at your option) any later 
+</I>&gt;&gt;<i>version.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>This program is distributed in the hope that it will be useful,
+</I>&gt;&gt;<i>but WITHOUT ANY WARRANTY; without even the implied warranty of
+</I>&gt;&gt;<i>MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+</I>&gt;&gt;<i>GNU General Public License for more details.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>You should have received a copy of the GNU General Public License
+</I>&gt;&gt;<i>along with this program; if not, write to the Free Software
+</I>&gt;&gt;<i>Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+</I>&gt;&gt;<i>*/
+</I>&gt;&gt;<i>#include &quot;devices.h&quot;
+</I>&gt;&gt;<i>#include &lt;gtk/gtk.h&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>/* for debugging */
+</I>&gt;&gt;<i>#include &lt;libxfce4util/debug.h&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>#include &lt;panel/xfce.h&gt;
+</I>&gt;&gt;<i>#include &lt;panel/plugins.h&gt;
+</I>&gt;&gt;<i>#include &lt;libxfcegui4/libxfcegui4.h&gt;
+</I>&gt;&gt;<i>#include &quot;icons.h&quot;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>/*--------- graphical interface ----------*/
+</I>&gt;&gt;<i>typedef struct 
+</I>&gt;&gt;<i>{
+</I>&gt;&gt;<i>	char * on_mount_cmd ;
+</I>&gt;&gt;<i>	GtkWidget * button ;
+</I>&gt;&gt;<i>	GtkWidget * menu ;
+</I>&gt;&gt;<i>	GPtrArray * pdisks ; /* contains pointers to struct t_disk */
+</I>&gt;&gt;<i>	GPtrArray * pdisk_display ; /*contains pointers to t_disk_display */
+</I>&gt;&gt;<i>} t_mounter ;
+</I>&gt;&gt;<i>/*---------------------------------*/
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>typedef struct
+</I>&gt;&gt;<i>{
+</I>&gt;&gt;<i>	GtkWidget * menu_item ;
+</I>&gt;&gt;<i>	GtkWidget * hbox ;
+</I>&gt;&gt;<i>	GtkWidget * label_disk ;
+</I>&gt;&gt;<i>	GtkWidget * label_mount_info ;
+</I>&gt;&gt;<i>	GtkWidget * progress_bar ;
+</I>&gt;&gt;<i>} t_disk_display ;
+</I>&gt;&gt;<i>/*------------------------------------------------*/
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>/*---------------- on_activate_disk_display ---------------*/
+</I>&gt;&gt;<i>static void on_activate_disk_display(GtkWidget * widget,t_disk * disk)
+</I>&gt;&gt;<i>{
+</I>&gt;&gt;<i>	if (disk != NULL)
+</I>&gt;&gt;<i>	{
+</I>&gt;&gt;<i>		if (disk-&gt;mount_info != NULL)
+</I>&gt;&gt;<i>		{/*disk is mounted*/
+</I>&gt;&gt;<i>			disk_umount(disk);
+</I>&gt;&gt;<i>			/* disk-&gt;mount_info is freed by disk_mount */
+</I>&gt;&gt;<i>		}
+</I>&gt;&gt;<i>		else
+</I>&gt;&gt;<i>		{/*disk is not mounted*/
+</I>&gt;&gt;<i>			disk_mount(disk);
+</I>&gt;&gt;<i>			/* needs a refresh, a global refresh is done whe the window becomes visible*/
+</I>&gt;&gt;<i>			//exec_cmd_silent(g_strconcat(mt-&gt;on_mount_cmd,disk-&gt;mount_point,NULL),FALSE,TRUE);
+</I>&gt;&gt;<i>		}
+</I>&gt;&gt;<i>	}
+</I>&gt;&gt;<i>}
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>/*---------------------------------------------------------*/
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>/*-------------------- disk_display_new -----------------*/
+</I>&gt;&gt;<i>/*create a new t_disk_display from t_disk infos */
+</I>&gt;&gt;<i>static t_disk_display * disk_display_new(t_disk * disk)
+</I>&gt;&gt;<i>{
+</I>&gt;&gt;<i>	if (disk != NULL) 
+</I>&gt;&gt;<i>	{
+</I>&gt;&gt;<i>		t_disk_display * dd ;
+</I>&gt;&gt;<i>		dd = g_new0(t_disk_display,1) ;
+</I>&gt;&gt;<i>		dd-&gt;menu_item = gtk_menu_item_new();
+</I>&gt;&gt;<i>		g_signal_connect(G_OBJECT(dd-&gt;menu_item),&quot;activate&quot;,G_CALLBACK(on_activate_disk_display),disk);
+</I>&gt;&gt;<i>		
+</I>&gt;&gt;<i>		dd-&gt;hbox = gtk_hbox_new(FALSE,10);
+</I>&gt;&gt;<i>		gtk_container_add(GTK_CONTAINER(dd-&gt;menu_item), dd-&gt;hbox);
+</I>&gt;&gt;<i>		
+</I>&gt;&gt;<i>		dd-&gt;label_disk = gtk_label_new(g_strconcat(disk-&gt;device,&quot; -&gt; &quot;,disk-&gt;mount_point,NULL));
+</I>&gt;&gt;<i>		/*change to uniform label size*/
+</I>&gt;&gt;<i>		gtk_label_set_width_chars(GTK_LABEL(dd-&gt;label_disk),28);
+</I>&gt;&gt;<i>		gtk_label_set_justify(GTK_LABEL(dd-&gt;label_disk),GTK_JUSTIFY_LEFT);
+</I>&gt;&gt;<i>		gtk_box_pack_start(GTK_BOX(dd-&gt;hbox),dd-&gt;label_disk,FALSE,TRUE,0);
+</I>&gt;&gt;<i>		
+</I>&gt;&gt;<i>		dd-&gt;label_mount_info = gtk_label_new(&quot;&quot;);
+</I>&gt;&gt;<i>		/*change to uniform label size*/
+</I>&gt;&gt;<i>		gtk_label_set_width_chars(GTK_LABEL(dd-&gt;label_mount_info),25);
+</I>&gt;&gt;<i>		gtk_label_set_use_markup(GTK_LABEL(dd-&gt;label_mount_info),TRUE);
+</I>&gt;&gt;<i>		gtk_label_set_justify(GTK_LABEL(dd-&gt;label_mount_info),GTK_JUSTIFY_RIGHT);
+</I>&gt;&gt;<i>		gtk_box_pack_start(GTK_BOX(dd-&gt;hbox),dd-&gt;label_mount_info,TRUE,TRUE,0);
+</I>&gt;&gt;<i>		
+</I>&gt;&gt;<i>		dd-&gt;progress_bar = gtk_progress_bar_new();
+</I>&gt;&gt;<i>		gtk_box_pack_start(GTK_BOX(dd-&gt;hbox),dd-&gt;progress_bar,TRUE,TRUE,0);
+</I>&gt;&gt;<i>		return dd ;
+</I>&gt;&gt;<i>	}
+</I>&gt;&gt;<i>	return NULL ;
+</I>&gt;&gt;<i>}
+</I>&gt;&gt;<i>/*-----------------------------------------------------------*/
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>/*-------------------- disk_display_refresh -----------------*/
+</I>&gt;&gt;<i>static void disk_display_refresh(t_disk_display * disk_display, t_mount_info * mount_info)
+</I>&gt;&gt;<i>{
+</I>&gt;&gt;<i>	TRACE(&quot;enters disk_display_refresh&quot;);
+</I>&gt;&gt;<i>	if (disk_display != NULL)
+</I>&gt;&gt;<i>	{
+</I>&gt;&gt;<i>		if (mount_info != NULL)
+</I>&gt;&gt;<i>		{	/* device is mounted */
+</I>&gt;&gt;<i>			char * text ;
+</I>&gt;&gt;<i>			char * used = get_size_human_readable(mount_info-&gt;used);
+</I>&gt;&gt;<i>			//DBG(&quot;used is now : %s&quot;,used);
+</I>&gt;&gt;<i>			char * size = get_size_human_readable(mount_info-&gt;size);
+</I>&gt;&gt;<i>			//DBG(&quot;size is now : %s&quot;,size);
+</I>&gt;&gt;<i>			char * avail = get_size_human_readable(mount_info-&gt;avail);
+</I>&gt;&gt;<i>			//DBG(&quot;avail is now : %s&quot;,size);
+</I>&gt;&gt;<i>			text = g_strdup_printf(&quot;[%s/%s] %s free&quot;, used ,size,avail );
+</I>&gt;&gt;<i>			//DBG(&quot;text is now : %s&quot;,text);
+</I>&gt;&gt;<i>			
+</I>&gt;&gt;<i>			g_free(used);
+</I>&gt;&gt;<i>			g_free(size);
+</I>&gt;&gt;<i>			g_free(avail);
+</I>&gt;&gt;<i>			//text = g_strdup_printf(&quot;mounted on : %s\t[%g Mb/%g Mb] %g Mb free&quot;,mount_info-&gt;mounted_on, mount_info-&gt;used, mount_info-&gt;size, mount_info-&gt;avail);
+</I>&gt;&gt;<i>			gtk_label_set_text(GTK_LABEL(disk_display-&gt;label_mount_info),text);
+</I>&gt;&gt;<i>			
+</I>&gt;&gt;<i>			gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(disk_display-&gt;progress_bar),((gdouble)mount_info-&gt;percent / 100) );
+</I>&gt;&gt;<i>			gtk_widget_show(GTK_WIDGET(disk_display-&gt;progress_bar));
+</I>&gt;&gt;<i>		}
+</I>&gt;&gt;<i>		else /* mount_info == NULL */
+</I>&gt;&gt;<i>		{
+</I>&gt;&gt;<i>			/*remove mount info */
+</I>&gt;&gt;<i>			gtk_label_set_markup(GTK_LABEL(disk_display-&gt;label_mount_info),&quot;&lt;span foreground=\&quot;#FF0000\&quot;&gt;not mounted&lt;/span&gt;&quot;);
+</I>&gt;&gt;<i>			gtk_widget_hide(GTK_WIDGET(disk_display-&gt;progress_bar));
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>		}
+</I>&gt;&gt;<i>	}
+</I>&gt;&gt;<i>	TRACE(&quot;leaves disk_display_refresh&quot;);
+</I>&gt;&gt;<i>}
+</I>&gt;&gt;<i>/*----------------------------------------------*/
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>/*--------------- mounter_data_free -----------------*/
+</I>&gt;&gt;<i>static void mounter_data_free(t_mounter * mt)
+</I>&gt;&gt;<i>{
+</I>&gt;&gt;<i>	TRACE (&quot;enters mounter_data_free&quot;);
+</I>&gt;&gt;<i>	disks_free(&amp;(mt-&gt;pdisks));
+</I>&gt;&gt;<i>	g_ptr_array_free(mt-&gt;pdisk_display,TRUE);
+</I>&gt;&gt;<i>	mt-&gt;pdisk_display = NULL;
+</I>&gt;&gt;<i>	gtk_widget_destroy(GTK_WIDGET(mt-&gt;menu));
+</I>&gt;&gt;<i>	mt-&gt;menu = NULL ;
+</I>&gt;&gt;<i>	TRACE (&quot;leaves mounter_data_free&quot;);
+</I>&gt;&gt;<i>}
+</I>&gt;&gt;<i>/*----------------------------------------------*/
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>/*--------------- mounter_free -----------------*/
+</I>&gt;&gt;<i>static void mounter_free(Control * control)
+</I>&gt;&gt;<i>{
+</I>&gt;&gt;<i>	TRACE (&quot;enters mounter_free&quot;);
+</I>&gt;&gt;<i>	t_mounter * mt = (t_mounter*) control-&gt;data ;
+</I>&gt;&gt;<i>	mounter_data_free(mt);
+</I>&gt;&gt;<i>	g_free(mt-&gt;on_mount_cmd);
+</I>&gt;&gt;<i>	g_free(mt);
+</I>&gt;&gt;<i>	TRACE (&quot;leaves mounter_free&quot;);
+</I>&gt;&gt;<i>}
+</I>&gt;&gt;<i>/*----------------------------------------------*/
+</I>&gt;&gt;<i>/*---------------- mounter_data_new --------------------------*/
+</I>&gt;&gt;<i>static void mounter_data_new(t_mounter * mt)
+</I>&gt;&gt;<i>{
+</I>&gt;&gt;<i>	int i ;
+</I>&gt;&gt;<i>	t_disk * disk ;
+</I>&gt;&gt;<i>	t_disk_display * disk_display ;
+</I>&gt;&gt;<i>	
+</I>&gt;&gt;<i>	/*get static infos from /etc/fstab */
+</I>&gt;&gt;<i>	mt-&gt;pdisks = disks_new();
+</I>&gt;&gt;<i>	
+</I>&gt;&gt;<i>	/* get dynamic infos on mounts */
+</I>&gt;&gt;<i>	disks_refresh(mt-&gt;pdisks);
+</I>&gt;&gt;<i>	
+</I>&gt;&gt;<i>	/* menu with menu_item */
+</I>&gt;&gt;<i>	mt-&gt;menu = gtk_menu_new();
+</I>&gt;&gt;<i>	/* gtk_menu_shell_append(GTK_MENU_SHELL(mt-&gt;menu),gtk_menu_item_new_with_label(&quot;devices&quot;)); */
+</I>&gt;&gt;<i>	/* gtk_menu_shell_append(GTK_MENU_SHELL(mt-&gt;menu),gtk_separator_menu_item_new());*/
+</I>&gt;&gt;<i>	
+</I>&gt;&gt;<i>	mt-&gt;pdisk_display = g_ptr_array_sized_new(mt-&gt;pdisks-&gt;len) ;
+</I>&gt;&gt;<i>	for(i=0;i &lt; mt-&gt;pdisks-&gt;len;i++)
+</I>&gt;&gt;<i>	{
+</I>&gt;&gt;<i>		disk = g_ptr_array_index(mt-&gt;pdisks,i); //get the disk 
+</I>&gt;&gt;<i>		disk_display = disk_display_new(disk) ;// creates a disk_display
+</I>&gt;&gt;<i>		disk_display_refresh(disk_display,disk-&gt;mount_info) ;//fill in mount infos
+</I>&gt;&gt;<i>		gtk_menu_shell_append(GTK_MENU_SHELL(mt-&gt;menu),disk_display-&gt;menu_item);//add the mnu_item to the menu
+</I>&gt;&gt;<i>		g_ptr_array_add(mt-&gt;pdisk_display,disk_display); //add to the array
+</I>&gt;&gt;<i>	}
+</I>&gt;&gt;<i>	gtk_widget_show_all(mt-&gt;menu);
+</I>&gt;&gt;<i>	
+</I>&gt;&gt;<i>	return ;
+</I>&gt;&gt;<i>}
+</I>&gt;&gt;<i>/*------------------------------------------------------*/
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>/*---------------------- mounter_refresh ---------------*/
+</I>&gt;&gt;<i>static void mounter_refresh(t_mounter * mt)
+</I>&gt;&gt;<i>{
+</I>&gt;&gt;<i>	TRACE (&quot;enters mounter_refresh&quot;);
+</I>&gt;&gt;<i>	
+</I>&gt;&gt;<i>	mounter_data_free(mt);
+</I>&gt;&gt;<i>	mounter_data_new(mt);
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>	TRACE (&quot;leaves mounter_refresh&quot;);
+</I>&gt;&gt;<i>	
+</I>&gt;&gt;<i>}
+</I>&gt;&gt;<i>/*---------------------------------------------------------*/
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>/* --------------plugin event --------------------------------*/
+</I>&gt;&gt;<i>static gboolean on_button_press(GtkWidget * widget , GdkEventButton * event,t_mounter * mounter)
+</I>&gt;&gt;<i>{
+</I>&gt;&gt;<i>	TRACE(&quot;enters on_button_pressed&quot;);
+</I>&gt;&gt;<i>	if (mounter != NULL &amp;&amp; event-&gt;button == 1)
+</I>&gt;&gt;<i>	{
+</I>&gt;&gt;<i>		
+</I>&gt;&gt;<i>		mounter_refresh(mounter); // refreshs infos regarding mounts data
+</I>&gt;&gt;<i>		gtk_menu_popup(GTK_MENU(mounter-&gt;menu),NULL,NULL,NULL,NULL,0,event-&gt;time);
+</I>&gt;&gt;<i>		return TRUE;
+</I>&gt;&gt;<i>	}
+</I>&gt;&gt;<i>	TRACE(&quot;leaves on_button_pressed&quot;);
+</I>&gt;&gt;<i>	return FALSE ;
+</I>&gt;&gt;<i>}
+</I>&gt;&gt;<i>/*------------------------------------------------------*/
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>/*---------------------- mounter_read_config --------------------*/
+</I>&gt;&gt;<i>static void
+</I>&gt;&gt;<i>mounter_read_config (Control * control, xmlNodePtr node)
+</I>&gt;&gt;<i>{
+</I>&gt;&gt;<i>    xmlChar *value;
+</I>&gt;&gt;<i>    t_mounter *mt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    if (!node || !node-&gt;children)
+</I>&gt;&gt;<i>	return;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    mt = (t_mounter *) control-&gt;data;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    /* on_mount_cmd */
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    value = xmlGetProp (node, (const xmlChar *) &quot;on_mount_cmd&quot;);
+</I>&gt;&gt;<i>    if (value)
+</I>&gt;&gt;<i>    {
+</I>&gt;&gt;<i>	g_free (mt-&gt;on_mount_cmd);
+</I>&gt;&gt;<i>	mt-&gt;on_mount_cmd = (char *) value;
+</I>&gt;&gt;<i>    }
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>}
+</I>&gt;&gt;<i>/*-------------------------------------------------------*/
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>/*------------------- mounter_write_config -----------------------*/
+</I>&gt;&gt;<i>static void
+</I>&gt;&gt;<i>mounter_write_config (Control * control, xmlNodePtr parent)
+</I>&gt;&gt;<i>{
+</I>&gt;&gt;<i>    char value[5];
+</I>&gt;&gt;<i>    t_mounter * mt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    mt = (t_mounter *) control-&gt;data;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    xmlSetProp (parent, &quot;on_mount_cmd&quot;, mt-&gt;on_mount_cmd);
+</I>&gt;&gt;<i>}
+</I>&gt;&gt;<i>/*----------------------------------------------------------*/
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>/*--------------- mounter_attach_callback -----*/
+</I>&gt;&gt;<i>void mounter_attach_callback(Control * control, const char *signal, GCallback callback, gpointer data)
+</I>&gt;&gt;<i>{
+</I>&gt;&gt;<i>	TRACE (&quot;enters mounter_attach_callback&quot;);
+</I>&gt;&gt;<i>	t_mounter * mounter = (t_mounter*)control-&gt;data ;
+</I>&gt;&gt;<i>	
+</I>&gt;&gt;<i>	g_signal_connect(G_OBJECT(mounter-&gt;button),signal,callback,data);
+</I>&gt;&gt;<i>	TRACE (&quot;leaves mounter_attach_callback&quot;);
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>}
+</I>&gt;&gt;<i>/*--------------------------------------------*/
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>/*------------------- create_mounter -------------------*/
+</I>&gt;&gt;<i>static gboolean create_mounter_control (Control * control)
+</I>&gt;&gt;<i>{
+</I>&gt;&gt;<i>	TRACE (&quot;enters create_mounter_control&quot;);
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>	t_mounter * mounter ;
+</I>&gt;&gt;<i>	
+</I>&gt;&gt;<i>	mounter = g_new0(t_mounter,1);
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>	/* default mount command */
+</I>&gt;&gt;<i>	mounter-&gt;on_mount_cmd = &quot;&quot;;	
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>	/*plugin button */
+</I>&gt;&gt;<i>	
+</I>&gt;&gt;<i>	GdkPixbuf * pb ;
+</I>&gt;&gt;<i>	pb = gdk_pixbuf_new_from_inline (sizeof(icon_plugin), icon_plugin, FALSE, NULL);
+</I>&gt;&gt;<i>	mounter-&gt;button = xfce_iconbutton_new_from_pixbuf (pb);
+</I>&gt;&gt;<i>	gtk_button_set_relief(GTK_BUTTON(mounter-&gt;button),GTK_RELIEF_NONE);
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>	add_tooltip(GTK_WIDGET(mounter-&gt;button),&quot;devices&quot;);
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>	/*-------------------------------------------------------------*/
+</I>&gt;&gt;<i>	g_signal_connect(G_OBJECT(mounter-&gt;button),&quot;button_press_event&quot;,G_CALLBACK(on_button_press),mounter);
+</I>&gt;&gt;<i>	gtk_widget_show(mounter-&gt;button);
+</I>&gt;&gt;<i>	
+</I>&gt;&gt;<i>	/*get the data*/	
+</I>&gt;&gt;<i>	mounter_data_new(mounter);
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>	gtk_container_add(GTK_CONTAINER(control-&gt;base), mounter-&gt;button);
+</I>&gt;&gt;<i>	control-&gt;data = mounter ;
+</I>&gt;&gt;<i>	TRACE (&quot;leaves create_mounter_control&quot;);
+</I>&gt;&gt;<i>	return TRUE;
+</I>&gt;&gt;<i>	
+</I>&gt;&gt;<i>}
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>/*--------------------------------------------------------*/
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>G_MODULE_EXPORT void
+</I>&gt;&gt;<i>xfce_control_class_init (ControlClass * cc)
+</I>&gt;&gt;<i>{
+</I>&gt;&gt;<i>    TRACE (&quot;enters xfce_control_class_init&quot;);
+</I>&gt;&gt;<i>    xfce_textdomain (GETTEXT_PACKAGE, LOCALEDIR, &quot;UTF-8&quot;);
+</I>&gt;&gt;<i>    cc-&gt;name = &quot;mount-plugin&quot;;
+</I>&gt;&gt;<i>    cc-&gt;caption = &quot;mount/display devices&quot;;
+</I>&gt;&gt;<i>    cc-&gt;create_control = (CreateControlFunc) create_mounter_control;
+</I>&gt;&gt;<i>    cc-&gt;attach_callback = mounter_attach_callback;
+</I>&gt;&gt;<i>    cc-&gt;free = mounter_free;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    cc-&gt;read_config = mounter_read_config;
+</I>&gt;&gt;<i>    cc-&gt;write_config = mounter_write_config;
+</I>&gt;&gt;<i>    cc-&gt;create_options = NULL;
+</I>&gt;&gt;<i>    cc-&gt;set_theme = NULL;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    /* cc-&gt;set_size = NULL;
+</I>&gt;&gt;<i>     * cc-&gt;set_orientation = NULL;
+</I>&gt;&gt;<i>     * cc-&gt;about = NULL;
+</I>&gt;&gt;<i>     */
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    /* Additional API calls */
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    /* use if there should be only one instance per screen */
+</I>&gt;&gt;<i>    control_class_set_unique (cc, TRUE);
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    /* use if the gmodule should not be unloaded *
+</I>&gt;&gt;<i>     * (usually because of library issues)       */
+</I>&gt;&gt;<i>    /*control_class_set_unloadable (cc, FALSE);*/
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    /* use to set an icon to represent the module        *
+</I>&gt;&gt;<i>     * (you could even update it when the theme changes) */
+</I>&gt;&gt;<i>     /*
+</I>&gt;&gt;<i>    if (1)
+</I>&gt;&gt;<i>    {
+</I>&gt;&gt;<i>	GdkPixbuf *pixbuf;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>	pixbuf = xfce_icon_theme_load (xfce_icon_theme_get_for_screen (NULL),
+</I>&gt;&gt;<i>                                       &quot;sampleicon.png&quot;, 48);
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>        if (pixbuf)
+</I>&gt;&gt;<i>        {
+</I>&gt;&gt;<i>            control_class_set_icon (cc, pixbuf);
+</I>&gt;&gt;<i>            g_object_unref (pixbuf);
+</I>&gt;&gt;<i>        }
+</I>&gt;&gt;<i>    }
+</I>&gt;&gt;<i>    */
+</I>&gt;&gt;<i>    TRACE (&quot;leaves xfce_control_class_init&quot;);
+</I>&gt;&gt;<i>    
+</I>&gt;&gt;<i>}
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>/* Macro that checks panel API version */
+</I>&gt;&gt;<i>XFCE_PLUGIN_CHECK_INIT
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> xfce-goodies-dev mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">xfce-goodies-dev at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev</A>
+</I>&gt;<i> 
+</I>
+-- 
+---------------------------------------------------
+Jean-Baptiste Dulong
+---------------------------------------------------
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000222.html">need help in plugin development....xfce4-mount-plugin
+</A></li>
+	<LI>Next message: <A HREF="000224.html">xfce4-mount-plugin problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#223">[ date ]</a>
+              <a href="thread.html#223">[ thread ]</a>
+              <a href="subject.html#223">[ subject ]</a>
+              <a href="author.html#223">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> How to get to Xfce 4.4
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-January/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20How%20to%20get%20to%20Xfce%204.4&In-Reply-To=%3C43C0F643.6000003%40xfce.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000543.html">
+   <LINK REL="Next"  HREF="000545.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>How to get to Xfce 4.4</H1>
+    <B>Jasper Huijsmans</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20How%20to%20get%20to%20Xfce%204.4&In-Reply-To=%3C43C0F643.6000003%40xfce.org%3E"
+       TITLE="How to get to Xfce 4.4">jasper at xfce.org
+       </A><BR>
+    <I>Sun Jan  8 12:23:47 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000543.html">Updates i18n stuffs
+</A></li>
+        <LI>Next message: <A HREF="000545.html">How to get to Xfce 4.4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#544">[ date ]</a>
+              <a href="thread.html#544">[ thread ]</a>
+              <a href="subject.html#544">[ subject ]</a>
+              <a href="author.html#544">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi all,
+
+So, here we are, it's 2006 and we need to start getting serious about 
+releasing Xfce 4.4 if we want to do the release in February.
+
+Warning: this is a very long email!
+
+Let me try to list a few things that need to be done or that I would 
+like to see. A few different areas can be distinguished: code, 
+translations, documentation, website and xfce subprojects.
+
+
+Code
+====
+
+Libraries
+
+* They work, but it would not be a bad idea if someone were to go over 
+them and see if we can clean things up a bit, now that we can depend on 
+gtk 2.6.
+
+* One thing that might be a good candidate to put in the libraries is 
+the menu spec handling. Currently xfdesktop uses different code from 
+xfce4-appfinder. Probably after 4.4, unless someone volunteers to do the 
+work.
+
+* Similarly, the icon theme handling should be changed to use 
+GtkIconTheme instead of our own implementation. This is not trivial and 
+is probably something for after 4.4.
+
+Desktop
+
+For me this includes xfce4-session, xfce-mcs-manager/plugin, xfce-utils, 
+xfwm4, xfdesktop, xfce4-panel, xfprint, xfce4-mixer, xfce4-appfinder and 
+I think xfce4-mailwatch-plugin (Brian, what is your opinion?).
+
+* It would be great if the session manager could have a special dialog 
+for starting/stopping Xfce components, at least xfwm4, xfdesktop and 
+xfce4-panel. Again, this require someone to do the work. I'm not sure 
+how hard it would be.
+
+* The display mcs plugin needs a 'Default' option that does nothing to 
+solve problems with remote displays and FreeNX. This should be fairly 
+easy and I might do this myself.
+
+* Some people have complained about the speed of xfrun and suggested the 
+use of gmrun (I think). We should check if we can't simply use gmrun 
+code. Needs someone to do the work; should be fairly easy.
+
+* Xfwm4 is just awesome, no need for changes ;-) Anyway, Olivier is a 
+better judge of what needs to be done still.
+
+* Brian said xfdesktop was slow to startup because of the menu 
+generation. Maybe that can still be improved before 4.4? Other than 
+that, it seems to work fine.
+
+* The panel is now feature-complete, I believe. What it needs now is 
+testing in as many situations as possible, especially multi-screen 
+setups. There are a number of problems in that area i am aware of and 
+will try to fix as soon as possible.
+
+* Another thing to look at is which plugins should be included with the 
+panel. Someone suggested to add the show-desktop plugin and I think 
+maybe the windowlist plugin. Then we will have all window management 
+plugins as part of the panel.
+
+* The panel will need a new default configuration before 4.4, which 
+could require some translations as well. This is one of the last things 
+to decide though.
+
+* The trigger launcher and xfce4-eyes-plugin should be moved to the 
+goodies project, IMO.
+
+* I don't now if xfprint and xfce4-appfinder need any work. Danny is 
+busy porting xfce4-mixer to the new panel framework. The mailwatch 
+plugin seems to work very well.
+
+Applications
+
+* There are a number of application that should release along with the 
+desktop. Definitely that includes Orage, xffm and hopefully thunar.
+
+* Other possibilities are xfmedia, mousepad and xfburn, but they don't 
+necessarily have to be released at the same time as the desktop.
+
+All
+
+* I think what we need most is people checking out SVN and report 
+problems. It needs to work in as many situations as possible.
+
+
+Translations
+============
+
+It is always difficult to say when is the best time to start translating 
+new code. We are at the start of a testing period (I hope ;-) and this 
+may show problem in the interface that require string changes.
+
+On the other hand, the modules should be more or less feature complete 
+now and there are a lot of strings to translate, so it might be a good 
+idea to start translating now.
+
+At least developers should probably start notifying xfce-i18n of string 
+changes.
+
+
+Documentation
+=============
+
+Oh dear. Traditionally I have been very involved with the documentation, 
+together with Francois. However, Francois is extremely busy with real 
+life and I just started a new job, so I don't know how much time I will 
+have.
+
+The panel needs completely new documentation and also the window manager 
+has changed quite a bit because shortcut handling is now in a separate 
+mcs plugin.
+
+If no-one volunteers to help, I will do the panel documentation myself, 
+but I don't think I will have the time and energy to do other 
+documentation.
+
+Ideas about how to make it easier for people to help out with 
+documentation (using a wiki, maybe?) are very welcome.
+
+
+Website
+=======
+
+Xfce has grown from being a desktop project with a single website to 
+being a platform with many sister projects: goodies, i18n, installers, 
+thunar, xfmedia, mousepad, xffm, ... It would be very nice to have some 
+consistency between all the related web sites.
+
+The Xfce website could perhaps do with a little freshening up to better 
+help our users find what they need.
+
+I have been playing a little with php and css to see if it would be 
+possible to recreate the Xfce site layout with only css and in a 
+slightly more maintainable way. Check the result at 
+<A HREF="http://www.loculus.nl/xfce/new.xfce.org/">http://www.loculus.nl/xfce/new.xfce.org/</A> . It is missing most of the 
+content, only 'Home' and 'About' have some ;-) I have tried to reduce to 
+number of toplevel links to make things a little easier to find.
+
+As an example of what I believe is a well layed-out website take a look 
+a www.freebsd.org, especially other pages than the front page: a small 
+number of toplevel sections with a side bar  menu for subsections.
+
+It would be nice to have a small team to take care of the maintainance 
+of the site, hopefully together with Francois. Someone probably needs to 
+have a look at what kind of information we have to show and how this can 
+best be presented.
+
+
+Other Xfce Projects
+===================
+
+I'd like to see Xfce develop further towards a small desktop project 
+with a number of independent subprojects that provide additional 
+functionality. It should be easy to find links to these projects on 
+xfce.org.
+
+www.xfce.org
+- i18n.xfce.org
+- goodies.xfce.org
+- xffm.xfce.org
+- thunar.xfce.org
+- orage.xfce.org    | maybe some smaller applications could better
+- mousepad.xfce.org | be part of goodies.xfce.org or even
+- xfburn.xfce.org   | applications.xfce.org
+- xfmedia.xfce.org
+- forum.xfce.org
+- wiki.xfce.org
+- xfce-look.org
+- bugzilla.xfce.org
+
+
+Ok, now, all of this won't happen without people actually taking time to 
+work on it. And this has always been our problem :(
+
+
+Me
+==
+
+Now for me personally things have changed a bit because of the new job. 
+I will not have as much time for Xfce and I will need to limit myself to 
+the panel and maybe some related library work.
+
+I need someone to manage and coordinate the plugins on the xfce goodies 
+project as well as handle the possible move to the xfce server and 
+update of the website. I'd like to propose Nicolas Masse for this job, 
+if he agrees, and maybe some other active goodies developers to help 
+out, like Fabian Nowak and Nick Schermer (or anyone who volunteers).
+
+
+Maybe it would be nice if all developers would reply to this mail with a 
+indication of what they plan to do before 4.4.
+
+
+Phew! I need a coffee now. Or two.
+
+cheers,
+	Jasper
+
+PS
+When you reply it might be a good idea to only quote the parts that are 
+relevant ;-)
+
+PPS
+Sorry for the spam, I hope it will be good for something.
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000543.html">Updates i18n stuffs
+</A></li>
+	<LI>Next message: <A HREF="000545.html">How to get to Xfce 4.4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#544">[ date ]</a>
+              <a href="thread.html#544">[ thread ]</a>
+              <a href="subject.html#544">[ subject ]</a>
+              <a href="author.html#544">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

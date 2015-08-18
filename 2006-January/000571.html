@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bug 1339]  New: 4.3 port
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-January/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%201339%5D%20%20New%3A%204.3%20port&In-Reply-To=%3C20060121225902.E3901F2929%40mocha.foo-projects.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000569.html">
+   <LINK REL="Next"  HREF="000570.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bug 1339]  New: 4.3 port</H1>
+    <B>bugzilla-daemon at xfce.org</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%201339%5D%20%20New%3A%204.3%20port&In-Reply-To=%3C20060121225902.E3901F2929%40mocha.foo-projects.org%3E"
+       TITLE="[Bug 1339]  New: 4.3 port">bugzilla-daemon at xfce.org
+       </A><BR>
+    <I>Sat Jan 21 23:59:02 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000569.html">[Bug 1337] port to 4.3
+</A></li>
+        <LI>Next message: <A HREF="000570.html">[Bug 1339] 4.3 port
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#571">[ date ]</a>
+              <a href="thread.html#571">[ thread ]</a>
+              <a href="subject.html#571">[ subject ]</a>
+              <a href="author.html#571">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+<A HREF="http://bugzilla.xfce.org/show_bug.cgi?id=1339">http://bugzilla.xfce.org/show_bug.cgi?id=1339</A>
+
+           Summary: 4.3 port
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: windowlist
+        AssignedTo: <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">xfce-goodies-dev at berlios.de</A>
+        ReportedBy: <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jani at ubuntu.com</A>
+
+
+differences from 4.2 plugin on which it is based
+
+-uses rcfile instead of xml for config
+-uses libxfcegui for adding/removing workspaces instead of X events
+-uses an invisible dummy widget instead of an event box for the
+gtk_widget_render_icon call()
+
+I am not sure if the signal handler needs to be freed on data-free. That field
+is marked with FIXME. It seems to work with or without but maybe I just don't
+know how to trigger a doesn't work scenario :)
+
+
+Reproducible: Always
+Steps to Reproduce:
+1. 
+2. 
+3.
+
+-- 
+Configure bugmail: <A HREF="http://bugzilla.xfce.org/userprefs.cgi?tab=email">http://bugzilla.xfce.org/userprefs.cgi?tab=email</A>
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000569.html">[Bug 1337] port to 4.3
+</A></li>
+	<LI>Next message: <A HREF="000570.html">[Bug 1339] 4.3 port
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#571">[ date ]</a>
+              <a href="thread.html#571">[ thread ]</a>
+              <a href="subject.html#571">[ subject ]</a>
+              <a href="author.html#571">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

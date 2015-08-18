@@ -1,0 +1,52 @@
+From fn42551 at fmi.uni-sofia.bg  Mon Mar 22 14:32:04 2010
+From: fn42551 at fmi.uni-sofia.bg (Angel Tsankov)
+Date: Mon, 22 Mar 2010 15:32:04 +0200
+Subject: ristretto does not display images
+Message-ID: <ho7rg1$1c6$1@dough.gmane.org>
+
+How can I find out why ristretto does not display any image file?
+
+Regards,
+Angel Tsankov
+
+
+
+From mmassonnet at gmail.com  Mon Mar 22 17:26:14 2010
+From: mmassonnet at gmail.com (Mike Massonnet)
+Date: Mon, 22 Mar 2010 17:26:14 +0100
+Subject: ristretto does not display images
+In-Reply-To: <ho7rg1$1c6$1@dough.gmane.org>
+References: <ho7rg1$1c6$1@dough.gmane.org>
+Message-ID: <e3a630631003220926y522844fbx36d3655b2ecfa600@mail.gmail.com>
+
+Hi Angel,
+
+Please use the ?new? mailing list as berlios.de is no more used since quite
+a long time.
+
+http://foo-projects.org/mailman/listinfo/xfce
+
+For a quick answer, Ristretto is able to load and display the images that
+GTK+ can handle. Make sure you compiled GTK+ library with the necessary
+libraries (libpng, libjpeg, etc), you can see the installed GdkPixbuf
+loaders under <PREFIX>/lib/gtk-2.0/<GTK-VERSION>/loaders/.
+
+Regards
+Mike
+
+2010/3/22 Angel Tsankov <fn42551 at fmi.uni-sofia.bg>
+
+> How can I find out why ristretto does not display any image file?
+>
+> Regards,
+> Angel Tsankov
+>
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20100322/072e0bfb/attachment.html>
+

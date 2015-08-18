@@ -1,0 +1,2616 @@
+From bugzilla-daemon at xfce.org  Thu May  4 00:21:46 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  3 May 2006 22:21:46 +0000 (UTC)
+Subject: [Bug 1757] New: gcc 2.95 (FreeBSD 4) fixed for cpugraph plugin
+Message-ID: <bug-1757-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1757
+
+           Summary: gcc 2.95 (FreeBSD 4) fixed for cpugraph plugin
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC (x86_64)
+        OS/Version: FreeBSD
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: cpugraph
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: lehmann at ans-netz.de
+
+
+Please take a look at
+
+http://people.freebsd.org/~oliver/xfce/gcc295-xfce4-cpugraph-plugin.patch
+
+which contains patches to get the plugin to compile with gcc 2.95. Would be
+nice
+to get them included in SVN.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May  4 00:22:46 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  3 May 2006 22:22:46 +0000 (UTC)
+Subject: [Bug 1758] New: gcc 2.95 (FreeBSD 4) fixed for fsguard plugin
+Message-ID: <bug-1758-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1758
+
+           Summary: gcc 2.95 (FreeBSD 4) fixed for fsguard plugin
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC (x86_64)
+        OS/Version: FreeBSD
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: fsguard
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: lehmann at ans-netz.de
+
+
+Please take a look at
+
+http://people.freebsd.org/~oliver/xfce/gcc295-xfce4-fsguard-plugin.patch
+
+which contains patches to get the plugin to compile with gcc 2.95. Would be
+nice
+to get them included in SVN.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May  4 00:23:34 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  3 May 2006 22:23:34 +0000 (UTC)
+Subject: [Bug 1759] New: gcc 2.95 (FreeBSD 4) fixed for weather plugin
+Message-ID: <bug-1759-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1759
+
+           Summary: gcc 2.95 (FreeBSD 4) fixed for weather plugin
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC (x86_64)
+        OS/Version: FreeBSD
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: weather
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: lehmann at ans-netz.de
+
+
+Please take a look at
+
+http://people.freebsd.org/~oliver/xfce/gcc295-xfce4-weather-plugin.patch
+
+which contains patches to get the plugin to compile with gcc 2.95. Would be
+nice
+to get them included in SVN.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May  4 00:24:09 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  3 May 2006 22:24:09 +0000 (UTC)
+Subject: [Bug 1760] New: gcc 2.95 (FreeBSD 4) fixed for xkb plugin
+Message-ID: <bug-1760-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1760
+
+           Summary: gcc 2.95 (FreeBSD 4) fixed for xkb plugin
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC (x86_64)
+        OS/Version: FreeBSD
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: xkb
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: lehmann at ans-netz.de
+
+
+Please take a look at
+
+http://people.freebsd.org/~oliver/xfce/gcc295-xfce4-xkb-plugin.patch
+
+which contains patches to get the plugin to compile with gcc 2.95. Would be
+nice
+to get them included in SVN.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May  4 00:28:51 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  3 May 2006 22:28:51 +0000 (UTC)
+Subject: [Bug 1757] gcc 2.95 (FreeBSD 4) fixed for cpugraph plugin
+In-Reply-To: <bug-1757-590@http.bugzilla.xfce.org/>
+Message-ID: <20060503222851.27CA5F29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1757
+
+
+benny at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |ASSIGNED
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May  4 00:30:27 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  3 May 2006 22:30:27 +0000 (UTC)
+Subject: [Bug 1757] gcc 2.95 (FreeBSD 4) fixed for cpugraph plugin
+In-Reply-To: <bug-1757-590@http.bugzilla.xfce.org/>
+Message-ID: <20060503223027.6E49AF29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1757
+
+
+benny at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|ASSIGNED                    |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #1 from benny at xfce.org  2006-05-03 22:30 UTC -------
+Committed revision 1374, thanks.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May  4 00:31:03 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  3 May 2006 22:31:03 +0000 (UTC)
+Subject: [Bug 1758] gcc 2.95 (FreeBSD 4) fixed for fsguard plugin
+In-Reply-To: <bug-1758-590@http.bugzilla.xfce.org/>
+Message-ID: <20060503223103.D4CFAF29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1758
+
+
+benny at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |ASSIGNED
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May  4 00:32:00 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  3 May 2006 22:32:00 +0000 (UTC)
+Subject: [Bug 1758] gcc 2.95 (FreeBSD 4) fixed for fsguard plugin
+In-Reply-To: <bug-1758-590@http.bugzilla.xfce.org/>
+Message-ID: <20060503223200.29891F29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1758
+
+
+benny at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|ASSIGNED                    |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #1 from benny at xfce.org  2006-05-03 22:31 UTC -------
+Committed with revision 1375, thanks.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May  4 00:32:39 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  3 May 2006 22:32:39 +0000 (UTC)
+Subject: [Bug 1759] gcc 2.95 (FreeBSD 4) fixed for weather plugin
+In-Reply-To: <bug-1759-590@http.bugzilla.xfce.org/>
+Message-ID: <20060503223239.5297DF29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1759
+
+
+benny at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |ASSIGNED
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Thu May  4 00:36:06 2006
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Thu, 04 May 2006 00:36:06 +0200
+Subject: Autogenerated files in SVN
+Message-ID: <44593056.9050108@unix-ag.uni-siegen.de>
+
+I'm not sure who's responsible for the goodies SVN repo currently, but I
+noticed that the repo contains quite a lot of autogenerated files, i.e.
+
+ - Makefile.in (in various folders)
+ - configure
+ - config.h.in
+ - aclocal.m4
+ - compile
+ - depcomp
+ - install-sh
+ - intltool-*.in
+ - missing
+ - mkinstalldirs
+
+and some other files. What is the reason to keep them in the repo?
+
+Benedikt
+
+
+From bugzilla-daemon at xfce.org  Thu May  4 00:36:56 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  3 May 2006 22:36:56 +0000 (UTC)
+Subject: [Bug 1759] gcc 2.95 (FreeBSD 4) fixed for weather plugin
+In-Reply-To: <bug-1759-590@http.bugzilla.xfce.org/>
+Message-ID: <20060503223656.4596AF29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1759
+
+
+benny at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|ASSIGNED                    |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #1 from benny at xfce.org  2006-05-03 22:36 UTC -------
+Committed with revision 1376, thanks.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May  4 00:37:18 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  3 May 2006 22:37:18 +0000 (UTC)
+Subject: [Bug 1760] gcc 2.95 (FreeBSD 4) fixed for xkb plugin
+In-Reply-To: <bug-1760-590@http.bugzilla.xfce.org/>
+Message-ID: <20060503223718.60903F29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1760
+
+
+benny at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |ASSIGNED
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May  4 00:39:11 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  3 May 2006 22:39:11 +0000 (UTC)
+Subject: [Bug 1760] gcc 2.95 (FreeBSD 4) fixed for xkb plugin
+In-Reply-To: <bug-1760-590@http.bugzilla.xfce.org/>
+Message-ID: <20060503223911.D1E48F29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1760
+
+
+benny at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|ASSIGNED                    |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #1 from benny at xfce.org  2006-05-03 22:39 UTC -------
+Committed with revision 1377, thanks.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May  4 00:47:27 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  3 May 2006 22:47:27 +0000 (UTC)
+Subject: [Bug 1761] New: gcc 2.95 (FreeBSD 4) fixes for clipman plugin
+Message-ID: <bug-1761-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1761
+
+           Summary: gcc 2.95 (FreeBSD 4) fixes for clipman plugin
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC (x86_64)
+        OS/Version: FreeBSD
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: clipman
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: lehmann at ans-netz.de
+
+
+Please take a look at
+
+http://people.freebsd.org/~oliver/xfce/gcc295-xfce4-clipman-plugin.patch
+
+which contains patches to get the plugin to compile with gcc 2.95. Would be
+nice
+to get them included in SVN.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From corsac at corsac.net  Thu May  4 11:20:14 2006
+From: corsac at corsac.net (Yves-Alexis Perez)
+Date: Thu, 04 May 2006 11:20:14 +0200
+Subject: Autogenerated files in SVN
+In-Reply-To: <44593056.9050108@unix-ag.uni-siegen.de>
+References: <44593056.9050108@unix-ag.uni-siegen.de>
+Message-ID: <1146734415.3070.1.camel@hidalgo>
+
+On Thu, 2006-05-04 at 00:36 +0200, Benedikt Meurer wrote:
+> I'm not sure who's responsible for the goodies SVN repo currently, but I
+> noticed that the repo contains quite a lot of autogenerated files, i.e.
+[snip]
+> and some other files. What is the reason to keep them in the repo?
+> 
+
+Yeah, and config.status presence in the folder doesnt like at all at
+dpkg-buildpackage. And lintian complains next :)
+
+There's a list at:
+http://heracles.corsac.net/~corsac/xfce/packages-config.txt
+
+-- 
+Yves-Alexis Perez
+
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Thu May  4 18:28:23 2006
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Thu, 04 May 2006 18:28:23 +0200
+Subject: Wavelan plugin for 4.4
+In-Reply-To: <20060504161247.GF22759@jameswestby.net>
+References: <20060504153207.GA22759@jameswestby.net>	<445A21AF.3080309@unix-ag.uni-siegen.de>	<20060504155655.GB22759@jameswestby.net>	<445A2555.9080703@unix-ag.uni-siegen.de> <20060504161247.GF22759@jameswestby.net>
+Message-ID: <445A2BA7.4060009@unix-ag.uni-siegen.de>
+
+James Westby wrote:
+>>I don't have a linux machine with a wlan card around right now, but the
+>>code looks good. Did you try with the /proc/net/wireless way?
+> 
+> $ cat /proc/net/wireless
+> Inter-| sta-|   Quality        |   Discarded packets               | Missed | WE
+>  face | tus | link level noise |  nwid  crypt   frag  retry   misc | beacon | 19
+> 
+> I guess there isn't much point. 
+> 
+> Is the lack of infomation here related to the ioctl problem, or just
+> because this is now deprecated and I'm using wireless.h version 18?
+
+Maybe a driver problem. I'm not very familar with the linux wireless
+API, tho.
+
+> James
+
+Benedikt
+
+
+From jw+xfce at jameswestby.net  Thu May  4 18:34:44 2006
+From: jw+xfce at jameswestby.net (James Westby)
+Date: Thu, 4 May 2006 17:34:44 +0100
+Subject: Wavelan plugin for 4.4
+In-Reply-To: <445A2BA7.4060009@unix-ag.uni-siegen.de>
+References: <20060504153207.GA22759@jameswestby.net> <445A21AF.3080309@unix-ag.uni-siegen.de> <20060504155655.GB22759@jameswestby.net> <445A2555.9080703@unix-ag.uni-siegen.de> <20060504161247.GF22759@jameswestby.net> <445A2BA7.4060009@unix-ag.uni-siegen.de>
+Message-ID: <20060504163442.GJ22759@jameswestby.net>
+
+On (04/05/06 18:28), Benedikt Meurer wrote:
+> James Westby wrote:
+> >>I don't have a linux machine with a wlan card around right now, but the
+> >>code looks good. Did you try with the /proc/net/wireless way?
+> > 
+> > $ cat /proc/net/wireless
+> > Inter-| sta-|   Quality        |   Discarded packets               | Missed | WE
+> >  face | tus | link level noise |  nwid  crypt   frag  retry   misc | beacon | 19
+> > 
+> > I guess there isn't much point. 
+> > 
+> > Is the lack of infomation here related to the ioctl problem, or just
+> > because this is now deprecated and I'm using wireless.h version 18?
+> 
+> Maybe a driver problem. I'm not very familar with the linux wireless
+> API, tho.
+>
+
+Maybe yes, though the old version worked. That is why I was looking for
+a second opinion. 
+
+Thanks for all your advice anyway,
+
+James
+
+
+(For anyone on the goodies-dev list that missed the start of the thread
+I am looking for someone to test the wavelan plugin for the 4.4beta1
+panel as it doesn't work with my wireless card)
+
+
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Thu May  4 18:38:07 2006
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Thu, 04 May 2006 18:38:07 +0200
+Subject: Wavelan plugin for 4.4
+In-Reply-To: <20060504163442.GJ22759@jameswestby.net>
+References: <20060504153207.GA22759@jameswestby.net> <445A21AF.3080309@unix-ag.uni-siegen.de> <20060504155655.GB22759@jameswestby.net> <445A2555.9080703@unix-ag.uni-siegen.de> <20060504161247.GF22759@jameswestby.net> <445A2BA7.4060009@unix-ag.uni-siegen.de> <20060504163442.GJ22759@jameswestby.net>
+Message-ID: <445A2DEF.6030904@unix-ag.uni-siegen.de>
+
+James Westby wrote:
+>>>>I don't have a linux machine with a wlan card around right now, but the
+>>>>code looks good. Did you try with the /proc/net/wireless way?
+>>>
+>>>$ cat /proc/net/wireless
+>>>Inter-| sta-|   Quality        |   Discarded packets               | Missed | WE
+>>> face | tus | link level noise |  nwid  crypt   frag  retry   misc | beacon | 19
+>>>
+>>>I guess there isn't much point. 
+>>>
+>>>Is the lack of infomation here related to the ioctl problem, or just
+>>>because this is now deprecated and I'm using wireless.h version 18?
+>>
+>>Maybe a driver problem. I'm not very familar with the linux wireless
+>>API, tho.
+> 
+> Maybe yes, though the old version worked. That is why I was looking for
+> a second opinion. 
+> 
+> Thanks for all your advice anyway,
+
+If it worked with the old panel, then it should work as well now. Maybe
+someone else with a Linux laptop and xfce 4.4 can have a look at this.
+Otherwise I'll see to this during the next weeks when I get some spare
+time to setup 4.4 on a linux laptop.
+
+> James
+
+Benedikt
+
+
+From corsac at corsac.net  Fri May  5 00:48:02 2006
+From: corsac at corsac.net (Yves-Alexis Perez)
+Date: Fri, 05 May 2006 00:48:02 +0200
+Subject: Wavelan plugin for 4.4
+In-Reply-To: <445A2DEF.6030904@unix-ag.uni-siegen.de>
+References: <20060504153207.GA22759@jameswestby.net>
+	 <445A21AF.3080309@unix-ag.uni-siegen.de>
+	 <20060504155655.GB22759@jameswestby.net>
+	 <445A2555.9080703@unix-ag.uni-siegen.de>
+	 <20060504161247.GF22759@jameswestby.net>
+	 <445A2BA7.4060009@unix-ag.uni-siegen.de>
+	 <20060504163442.GJ22759@jameswestby.net>
+	 <445A2DEF.6030904@unix-ag.uni-siegen.de>
+Message-ID: <1146782882.9720.0.camel@hidalgo>
+
+On Thu, 2006-05-04 at 18:38 +0200, Benedikt Meurer wrote:
+> Maybe
+> someone else with a Linux laptop and xfce 4.4 can have a look at this.
+> Otherwise I'll see to this during the next weeks when I get some spare
+> time to setup 4.4 on a linux laptop.
+
+I can try, but not before next tuesday. Try what, btw ?
+> 
+-- 
+Yves-Alexis Perez
+
+
+
+From jw+xfce at jameswestby.net  Fri May  5 00:54:24 2006
+From: jw+xfce at jameswestby.net (James Westby)
+Date: Thu, 4 May 2006 23:54:24 +0100
+Subject: Wavelan plugin for 4.4
+In-Reply-To: <1146782882.9720.0.camel@hidalgo>
+References: <20060504153207.GA22759@jameswestby.net> <445A21AF.3080309@unix-ag.uni-siegen.de> <20060504155655.GB22759@jameswestby.net> <445A2555.9080703@unix-ag.uni-siegen.de> <20060504161247.GF22759@jameswestby.net> <445A2BA7.4060009@unix-ag.uni-siegen.de> <20060504163442.GJ22759@jameswestby.net> <445A2DEF.6030904@unix-ag.uni-siegen.de> <1146782882.9720.0.camel@hidalgo>
+Message-ID: <20060504225422.GB9719@jameswestby.net>
+
+On (05/05/06 00:48), Yves-Alexis Perez wrote:
+> On Thu, 2006-05-04 at 18:38 +0200, Benedikt Meurer wrote:
+> > Maybe
+> > someone else with a Linux laptop and xfce 4.4 can have a look at this.
+> > Otherwise I'll see to this during the next weeks when I get some spare
+> > time to setup 4.4 on a linux laptop.
+> 
+> I can try, but not before next tuesday. Try what, btw ?
+
+http://foo-projects.org/pipermail/xfce/2006-May/017351.html
+
+James
+
+
+
+
+From jannis at xfce.org  Fri May  5 12:47:50 2006
+From: jannis at xfce.org (Jannis Pohlmann)
+Date: Fri, 5 May 2006 12:47:50 +0200
+Subject: Wavelan plugin for 4.4
+In-Reply-To: <445A2DEF.6030904@unix-ag.uni-siegen.de>
+References: <20060504153207.GA22759@jameswestby.net>
+	<445A21AF.3080309@unix-ag.uni-siegen.de>
+	<20060504155655.GB22759@jameswestby.net>
+	<445A2555.9080703@unix-ag.uni-siegen.de>
+	<20060504161247.GF22759@jameswestby.net>
+	<445A2BA7.4060009@unix-ag.uni-siegen.de>
+	<20060504163442.GJ22759@jameswestby.net>
+	<445A2DEF.6030904@unix-ag.uni-siegen.de>
+Message-ID: <20060505124750.654bcb1d.jannis@xfce.org>
+
+On Thu, 04 May 2006 18:38:07 +0200, Benedikt Meurer wrote:
+
+> James Westby wrote:
+> >>>>I don't have a linux machine with a wlan card around right now,
+> >>>>but the code looks good. Did you try with the /proc/net/wireless
+> >>>>way?
+> >>>
+> >>>$ cat /proc/net/wireless
+> >>>Inter-| sta-|   Quality        |   Discarded packets
+> >>>| Missed | WE
+> >>> face | tus | link level noise |  nwid  crypt   frag  retry   misc
+> >>> | beacon | 19
+> >>>
+> >>>I guess there isn't much point. 
+> >>>
+> >>>Is the lack of infomation here related to the ioctl problem, or
+> >>>just because this is now deprecated and I'm using wireless.h
+> >>>version 18?
+> >>
+> >>Maybe a driver problem. I'm not very familar with the linux wireless
+> >>API, tho.
+> > 
+> > Maybe yes, though the old version worked. That is why I was looking
+> > for a second opinion. 
+> > 
+> > Thanks for all your advice anyway,
+> 
+> If it worked with the old panel, then it should work as well now.
+> Maybe someone else with a Linux laptop and xfce 4.4 can have a look
+> at this. Otherwise I'll see to this during the next weeks when I get
+> some spare time to setup 4.4 on a linux laptop.
+
+I can test it on the campus next monday. I have a Thinkpad (with
+Centrino, ipw2200) and just compiled the wavelan plugin successfully.
+
+Regards,
+Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060505/329f1ca4/attachment.pgp>
+
+From jw+xfce at jameswestby.net  Fri May  5 14:04:47 2006
+From: jw+xfce at jameswestby.net (James Westby)
+Date: Fri, 5 May 2006 13:04:47 +0100
+Subject: Wavelan plugin for 4.4
+In-Reply-To: <20060505124750.654bcb1d.jannis@xfce.org>
+References: <20060504153207.GA22759@jameswestby.net> <445A21AF.3080309@unix-ag.uni-siegen.de> <20060504155655.GB22759@jameswestby.net> <445A2555.9080703@unix-ag.uni-siegen.de> <20060504161247.GF22759@jameswestby.net> <445A2BA7.4060009@unix-ag.uni-siegen.de> <20060504163442.GJ22759@jameswestby.net> <445A2DEF.6030904@unix-ag.uni-siegen.de> <20060505124750.654bcb1d.jannis@xfce.org>
+Message-ID: <20060505120447.GC5271@jameswestby.net>
+
+On (05/05/06 12:47), Jannis Pohlmann wrote:
+> On Thu, 04 May 2006 18:38:07 +0200, Benedikt Meurer wrote:
+> I can test it on the campus next monday. I have a Thinkpad (with
+> Centrino, ipw2200) and just compiled the wavelan plugin successfully.
+> 
+> Regards,
+> Jannis
+
+I look forward to your report.
+
+Thanks,
+
+James
+
+
+
+
+From stefan at desire.ch  Sat May  6 04:30:50 2006
+From: stefan at desire.ch (Stefan Ott)
+Date: Sat, 6 May 2006 04:30:50 +0200
+Subject: Disk space
+Message-ID: <20060506023050.GA9907@cheddar.desire.ch>
+
+Hi
+
+I just wanted to commit some changes via svn and got the following
+message:
+
+Transmitting file data ........svn: Commit failed (details follow):
+svn: Can't close file
+'/svnroot/repos/xfce-goodies/db/transactions/1379-1.txn/node.0.0': No
+space left on device
+
+Someone should fix this ;)
+
+Regards
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+PLAN everything! http://www.planster.net/
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060506/15cfcc6c/attachment.pgp>
+
+From pollux at xfce.org  Sat May  6 11:02:35 2006
+From: pollux at xfce.org (=?ISO-8859-1?Q?Jean-Fran=E7ois?= Wauthy)
+Date: Sat, 06 May 2006 11:02:35 +0200
+Subject: Disk space
+In-Reply-To: <20060506023050.GA9907@cheddar.desire.ch>
+References: <20060506023050.GA9907@cheddar.desire.ch>
+Message-ID: <1146906155.10107.4.camel@localhost>
+
+On Sat, 2006-05-06 at 04:30 +0200, Stefan Ott wrote:
+> Hi
+> 
+> I just wanted to commit some changes via svn and got the following
+> message:
+> 
+> Transmitting file data ........svn: Commit failed (details follow):
+> svn: Can't close file
+> '/svnroot/repos/xfce-goodies/db/transactions/1379-1.txn/node.0.0': No
+> space left on device
+> 
+> Someone should fix this ;)
+
+I think we should move the xfce-goodies repository and website on
+mocha...
+
+/me points at Auke
+
+cheers
+-- 
+Jean-Fran?ois Wauthy <pollux at xfce.org>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060506/5c46430c/attachment.pgp>
+
+From jannis at xfce.org  Sat May  6 12:12:50 2006
+From: jannis at xfce.org (Jannis Pohlmann)
+Date: Sat, 6 May 2006 12:12:50 +0200
+Subject: Disk space
+In-Reply-To: <1146906155.10107.4.camel@localhost>
+References: <20060506023050.GA9907@cheddar.desire.ch>
+	<1146906155.10107.4.camel@localhost>
+Message-ID: <20060506121250.51104f1e.jannis@xfce.org>
+
+On Sat, 06 May 2006 11:02:35 +0200, Jean-Fran?ois Wauthy wrote:
+
+> On Sat, 2006-05-06 at 04:30 +0200, Stefan Ott wrote:
+> > Hi
+> > 
+> > I just wanted to commit some changes via svn and got the following
+> > message:
+> > 
+> > Transmitting file data ........svn: Commit failed (details follow):
+> > svn: Can't close file
+> > '/svnroot/repos/xfce-goodies/db/transactions/1379-1.txn/node.0.0':
+> > No space left on device
+> > 
+> > Someone should fix this ;)
+> 
+> I think we should move the xfce-goodies repository and website on
+> mocha...
+
+I think we should wait with this until Xfce 4.4 is released. We need
+people to work on this and we might have more time after the release
+than we have now. My ideas are:
+
+  1. Create goodies.xfce.org, install a customized DokuWiki (similar
+     to the one Benny's using for Thunar) and create pages for each
+     goodie (DokuWiki allows for easy management of user accounts, I
+     think).
+
+  2. Create a SVN root-level repository, so we have
+
+        /xfce4
+        /goodies
+        /www
+
+  3. Create bugzilla sections for the goodies and set up permissions
+     and assign rules for goodie developers here as well.
+
+Regards,
+Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060506/8c29c7a5/attachment.pgp>
+
+From ananasik at gmail.com  Mon May  8 08:55:11 2006
+From: ananasik at gmail.com (Victor Ananjevsky)
+Date: Mon, 8 May 2006 09:55:11 +0300
+Subject: xkb-plugin and uppercase characters
+Message-ID: <20060508095511.3fd34946.ananasik@gmail.com>
+
+
+Hello, list
+
+When path to flag images for xfce4-xkb-plugin contain upper-case characters, images don't show.
+
+There is a little patch correction this issue. 
+
+-- 
+wbr
+
+Victor "Ananas" Ananjevsky
+Registered Linus user #202480
+Jabber ID: ananas at jabber.kiev.ua
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: flag-path.patch
+Type: application/octet-stream
+Size: 1672 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060508/e91e09eb/attachment.obj>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060508/e91e09eb/attachment.pgp>
+
+From bugzilla-daemon at xfce.org  Mon May  8 10:06:41 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  8 May 2006 08:06:41 +0000 (UTC)
+Subject: [Bug 1761] gcc 2.95 (FreeBSD 4) fixes for clipman plugin
+In-Reply-To: <bug-1761-590@http.bugzilla.xfce.org/>
+Message-ID: <20060508080641.D834FF29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1761
+
+
+benny at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |ASSIGNED
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon May  8 10:09:33 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  8 May 2006 08:09:33 +0000 (UTC)
+Subject: [Bug 1761] gcc 2.95 (FreeBSD 4) fixes for clipman plugin
+In-Reply-To: <bug-1761-590@http.bugzilla.xfce.org/>
+Message-ID: <20060508080933.D833FF29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1761
+
+
+benny at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|ASSIGNED                    |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #1 from benny at xfce.org  2006-05-08 08:09 UTC -------
+Committed with revision 1384, thanks.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From sasoiliev at mamul.org  Mon May  8 11:13:55 2006
+From: sasoiliev at mamul.org (Alexander Iliev)
+Date: Mon, 08 May 2006 12:13:55 +0300
+Subject: xkb-plugin and uppercase characters
+In-Reply-To: <20060508095511.3fd34946.ananasik@gmail.com>
+References: <20060508095511.3fd34946.ananasik@gmail.com>
+Message-ID: <445F0BD3.8080201@mamul.org>
+
+Victor Ananjevsky wrote:
+> Hello, list
+> 
+> When path to flag images for xfce4-xkb-plugin contain upper-case characters, images don't show.
+> 
+> There is a little patch correction this issue. 
+> 
+
+Hi there.
+
+Thanks for the patch. I haven't tried it yet, but does it really
+fix the issue? It looks like it still converts the layout name to
+lower case.
+
+-- 
+Alexander Iliev
+
+
+From ananasik at gmail.com  Mon May  8 13:02:54 2006
+From: ananasik at gmail.com (Victor Ananjevsky)
+Date: Mon, 8 May 2006 14:02:54 +0300
+Subject: xkb-plugin and uppercase characters
+In-Reply-To: <445F0BD3.8080201@mamul.org>
+References: <20060508095511.3fd34946.ananasik@gmail.com>
+	<445F0BD3.8080201@mamul.org>
+Message-ID: <20060508140254.35f46516.ananasik@gmail.com>
+
+On Mon, 08 May 2006 12:13:55 +0300
+Alexander Iliev <sasoiliev at mamul.org> wrote:
+
+> Victor Ananjevsky wrote:
+> > Hello, list
+> > 
+> > When path to flag images for xfce4-xkb-plugin contain upper-case characters, images don't show.
+> > 
+> > There is a little patch correction this issue. 
+> > 
+> 
+> Hi there.
+> 
+> Thanks for the patch. I haven't tried it yet, but does it really
+> fix the issue? It looks like it still converts the layout name to
+> lower case.
+> 
+> -- 
+> Alexander Iliev
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+i install xfce (and other desktop stuff) with prefix "/usr/GTK".
+with original xkb plugin complete path transform to "/usr/gtk/share/xfce4/xkb/flags" instead of "/usr/GTK/share/xfce4/xkb/flags"
+
+to_lower() must be applied only for xkb group, not for all path. 
+
+-- 
+wbr
+
+Victor "Ananas" Ananjevsky
+Registered Linus user #202480
+Jabber ID: ananas at jabber.kiev.ua
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060508/1bb0d5c9/attachment.pgp>
+
+From sasoiliev at mamul.org  Mon May  8 14:17:32 2006
+From: sasoiliev at mamul.org (Alexander Iliev)
+Date: Mon, 08 May 2006 15:17:32 +0300
+Subject: xkb-plugin and uppercase characters
+In-Reply-To: <445F0BD3.8080201@mamul.org>
+References: <20060508095511.3fd34946.ananasik@gmail.com> <445F0BD3.8080201@mamul.org>
+Message-ID: <445F36DC.1060508@mamul.org>
+
+Alexander Iliev wrote:
+> Victor Ananjevsky wrote:
+> 
+>> Hello, list
+>>
+>> When path to flag images for xfce4-xkb-plugin contain upper-case 
+>> characters, images don't show.
+>>
+>> There is a little patch correction this issue.
+> 
+> 
+> Hi there.
+> 
+> Thanks for the patch. I haven't tried it yet, but does it really
+> fix the issue? It looks like it still converts the layout name to
+> lower case.
+> 
+
+Stupid me. I got it. Thanks again, will commit it tonight. :)
+
+-- 
+Alexander Iliev
+
+
+From sasoiliev at mamul.org  Mon May  8 23:08:27 2006
+From: sasoiliev at mamul.org (Alexander Iliev)
+Date: Tue, 09 May 2006 00:08:27 +0300
+Subject: xkb-plugin and uppercase characters
+In-Reply-To: <445F36DC.1060508@mamul.org>
+References: <20060508095511.3fd34946.ananasik@gmail.com> <445F0BD3.8080201@mamul.org> <445F36DC.1060508@mamul.org>
+Message-ID: <445FB34B.2030000@mamul.org>
+
+Alexander Iliev wrote:
+> Stupid me. I got it. Thanks again, will commit it tonight. :)
+
+Done in rev 1385.
+
+-- 
+Alexander Iliev
+
+
+From stefan at desire.ch  Tue May  9 13:36:15 2006
+From: stefan at desire.ch (Stefan Ott)
+Date: Tue, 9 May 2006 13:36:15 +0200
+Subject: Plugin ported
+Message-ID: <20060509113615.GK6340@cheddar.desire.ch>
+
+Hi
+
+FYI: I just ported my radio-plugin to 4.4 - enjoy :)
+
+Regards
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+PLAN everything! http://www.planster.net/
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060509/a730679f/attachment.pgp>
+
+From masse_nicolas at yahoo.fr  Tue May  9 22:15:53 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Tue, 9 May 2006 22:15:53 +0200
+Subject: xfce 4.4 plugin port
+In-Reply-To: <44609304.8060404@fastwebnet.it>
+References: <44609304.8060404@fastwebnet.it>
+Message-ID: <20060509221553.0967b806.masse_nicolas@yahoo.fr>
+
+Interesting, I didn't know this plugin...
+I can probably do the port of this plugin myself(even if I don't have much time these days), 
+but I think that the first thing to do is to take contact with the guy who wrote this 
+(seems to be Emanuele Rocca <ema at debian.org>) in order to know his feeling about this. If he agreed, I will
+do it ;).
+
+Bountykiller.
+
+On Tue, 09 May 2006 15:03:00 +0200
+Roberto Pariset <victorheremita at fastwebnet.it> wrote:
+
+> Hi,
+> I read on [1] that you could actually port a 4.2 plugin to 4.4. I wonder if 
+>   you are still avaiable for that. Actually, I am still waiting for the 
+> upstream author to officially "give up" on the porting, so basically I am 
+> just checking for your avaiability now. The pluging can be found at [2], 
+> and I find it pretty useful to check bug reports and so on. I found no 
+> guide except [3], but I didn't understand much of it (I am not into Xfce 
+> coding). Please, just let me know how you feel about it.
+> All the best,
+> Roberto
+> 
+> [1] http://forum.xfce.org/index.php?topic=2464.0;prev_next=next
+> [2] http://people.debian.org/~ema/xfce4-smartbookmark-plugin-0.2.tar.gz
+> [3] http://jameswestby.net/blog/?p=20
+
+
+From bugzilla-daemon at xfce.org  Wed May 10 09:17:30 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 10 May 2006 07:17:30 +0000 (UTC)
+Subject: [Bug 1791] New: Battery plugin doesn't resize correctly
+Message-ID: <bug-1791-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+           Summary: Battery plugin doesn't resize correctly
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Other
+               URL: https://bugs.gentoo.org/show_bug.cgi?id=130440#c23
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: battery
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: bford at eecs.wsu.edu
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.3)
+Gecko/20060502 Firefox/1.5.0.3
+Build Identifier: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.3)
+Gecko/20060502 Firefox/1.5.0.3
+
+The battery icon doesn't resize.  This means that the panel cannot be smaller
+than about 32 pixels and when it's larger, the battery plugin just looks funny.
+
+Reproducible: Always
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed May 10 09:20:15 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 10 May 2006 07:20:15 +0000 (UTC)
+Subject: [Bug 1792] New: Weather plugin doesn't persist across logins
+Message-ID: <bug-1792-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1792
+
+           Summary: Weather plugin doesn't persist across logins
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Other
+               URL: https://bugs.gentoo.org/show_bug.cgi?id=130440#c23
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: weather
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: bford at eecs.wsu.edu
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.3)
+Gecko/20060502 Firefox/1.5.0.3
+Build Identifier: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.3)
+Gecko/20060502 Firefox/1.5.0.3
+
+The weather applet doesn't persist across sessions and has other odd behaviour.
+ If you open the preferences window and then press the close button, the applet
+itself closes.
+
+Reproducible: Always
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed May 10 09:22:47 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 10 May 2006 07:22:47 +0000 (UTC)
+Subject: [Bug 1793] New: cpugraph consumes cpu time
+Message-ID: <bug-1793-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1793
+
+           Summary: cpugraph consumes cpu time
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Other
+               URL: https://bugs.gentoo.org/show_bug.cgi?id=130440#c23
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: cpugraph
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: bford at eecs.wsu.edu
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.3)
+Gecko/20060502 Firefox/1.5.0.3
+Build Identifier: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.3)
+Gecko/20060502 Firefox/1.5.0.3
+
+A Gentoo user reports that "cpugraph seems to actually generate cpu traffic of
+100% on my machine randomly and I have to kill the process off by hand."
+
+Reproducible: Always
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed May 10 09:24:27 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 10 May 2006 07:24:27 +0000 (UTC)
+Subject: [Bug 1794] New: diskperf doesn't persist across logins
+Message-ID: <bug-1794-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1794
+
+           Summary: diskperf doesn't persist across logins
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Other
+               URL: https://bugs.gentoo.org/show_bug.cgi?id=130440#c23
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: diskperf
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: bford at eecs.wsu.edu
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.3)
+Gecko/20060502 Firefox/1.5.0.3
+Build Identifier: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.3)
+Gecko/20060502 Firefox/1.5.0.3
+
+A Gentoo user reports "diskperf doesn't seem to persist in the panel across
+logins.  Where does it go?  The shadow knows..."
+
+Reproducible: Always
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From Santhosh.Bachu at Lntemsys.com  Wed May 10 10:48:53 2006
+From: Santhosh.Bachu at Lntemsys.com (Santhosh Bachu)
+Date: Wed, 10 May 2006 14:18:53 +0530
+Subject: [Bug 1793] New: cpugraph consumes cpu time
+In-Reply-To: <bug-1793-590@http.bugzilla.xfce.org/>
+Message-ID: <OF23A69DD3.1CA58B13-ON6525716A.003066F5-6525716A.00302D4D@lntemsys.com>
+
+please unsubscribe...me
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060510/fa2b7dbc/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 3616 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060510/fa2b7dbc/attachment.gif>
+
+From william at wbonnet.net  Wed May 10 11:00:14 2006
+From: william at wbonnet.net (William Bonnet)
+Date: Wed, 10 May 2006 11:00:14 +0200
+Subject: System load plugin port to Solaris
+Message-ID: <1147251614.4461ab9eee04c@ssl0.ovh.net>
+
+Dear all,
+
+I have completed the port of the system load plugin (0.3.6) to Solaris. This
+plugin has also been packaged and will be available from blastwave.org in th
+enext days (currently in testing area).
+
+I would like to submit my patches to add Solaris support. Since it's the first
+time i submit some code to XFce, i would like to know the right way to do it :)
+
+Please tell me, or should i send .patch to the list ?
+
+I will port the latest version of the plugin soon. I am currently working on the
+Solaris packaging of 4.4 beta 1.
+
+Kind regards,
+William
+
+
+From bugzilla-daemon at xfce.org  Wed May 10 11:45:59 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 10 May 2006 09:45:59 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060510094559.7FF34F29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+pollux at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |pollux at xfce.org
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed May 10 19:07:24 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 10 May 2006 17:07:24 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060510170724.31114F29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+
+
+
+------- Comment #1 from nick at xfce.org  2006-05-10 17:07 UTC -------
+I'm working on a new battery plugin (using HAL). You can find it here:
+
+http://www.foo-projects.org/~nick/plugins/xfce4-battery-plugin-0.0.1.tar.bz2
+http://www.foo-projects.org/~nick/plugins/xfce4-battery-plugin.png
+
+Maybe it's good to replace the current battery plugin with this one since it'll
+fix a lot of acpi/apm problem and the panel resize problem.
+
+Gr. Nick
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed May 10 19:48:58 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 10 May 2006 17:48:58 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060510174858.E45C0F29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+corsac at corsac.net changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |corsac at corsac.net
+
+
+
+
+------- Comment #2 from corsac at corsac.net  2006-05-10 17:48 UTC -------
+Is it a good idea to keep the same name if it's different software ? Or to
+restart version numbering ? Shouldn't you change the name or bump the current
+plugin version ?
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed May 10 19:56:29 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 10 May 2006 17:56:29 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060510175629.EDA4CF29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+
+
+
+------- Comment #3 from nick at xfce.org  2006-05-10 17:56 UTC -------
+Well the idea of the plugin is the same of cource, so it would be a bit
+misleading to change the software name and the version numbers is only 0.0.1 to
+make clear it's not finished yet, but this will (if it's going to replace the
+current plugin) change to 4.0.0 or maybe 5.0.0.
+
+The biggest problem atm is the lack of tester to give me some feedback.
+
+Nick
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed May 10 23:38:07 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 10 May 2006 21:38:07 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060510213807.23760F29FA@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+
+
+
+------- Comment #4 from corsac at corsac.net  2006-05-10 21:38 UTC -------
+I've installed it, I'll test it for some days and report any bug I find. But,
+first, the plugin doesnt resize the panel, it keeps the right size, but the
+progressbar doesn't have the same size as other one.
+
+See screenshot attached for details.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed May 10 23:38:59 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 10 May 2006 21:38:59 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060510213859.84A10F29FA@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+
+
+
+------- Comment #5 from corsac at corsac.net  2006-05-10 21:38 UTC -------
+Created an attachment (id=544)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=544&action=view)
+Battery plugin
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed May 10 23:52:24 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 10 May 2006 21:52:24 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060510215224.B3212F29FB@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+foxy at on-the-hill.me.uk changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |foxy at on-the-hill.me.uk
+
+
+
+
+------- Comment #6 from foxy at on-the-hill.me.uk  2006-05-10 21:52 UTC -------
+I tried to install it but have
+
+checking for gtk+-2.0 >= 2.6.0... not found
+*** The required package gtk+-2.0 was not found on your system.
+*** Please install gtk+-2.0 (atleast version 2.6.0) or adjust
+*** the PKG_CONFIG_PATH environment variable if you
+*** installed the package in a nonstandard prefix so that
+*** pkg-config is able to find it.
+
+though I have libgtk2.0-dev installed on Ubuntu Dapper
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May 11 03:47:05 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 11 May 2006 01:47:05 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060511014705.08CDCF29FA@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+
+
+
+------- Comment #7 from corsac at corsac.net  2006-05-11 01:47 UTC -------
+Hmh, ok, the plugin doesnt work at all, it reports 100% / on AC, even when
+using battery, and battery is discharged.
+
+I'm using pmu and apm emulation, don't know if it's a problem.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May 11 07:04:45 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 11 May 2006 05:04:45 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060511050445.54E32F29FA@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+
+
+
+------- Comment #8 from nick at xfce.org  2006-05-11 05:04 UTC -------
+I've just uploaded the 0.0.2 version, this should fix some problem with other
+laptops. You can compare the output of the plugin with lshal | grep battery. If
+it different please attach or send me the lshal output and some lshal -m output
+(wait a couple of minutes).
+
+Nick
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May 11 10:31:40 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 11 May 2006 08:31:40 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060511083140.D9DDFF29FA@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+
+
+
+------- Comment #9 from corsac at corsac.net  2006-05-11 08:31 UTC -------
+This version needs libxfce4util 4.3.90.2 (beta 2 ??) which I don't have and
+don't want to install svn versions, so I'll test it another time.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Thu May 11 10:31:57 2006
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Thu, 11 May 2006 10:31:57 +0200
+Subject: System load plugin port to Solaris
+In-Reply-To: <1147251614.4461ab9eee04c@ssl0.ovh.net>
+References: <1147251614.4461ab9eee04c@ssl0.ovh.net>
+Message-ID: <4462F67D.3000308@unix-ag.uni-siegen.de>
+
+William Bonnet wrote:
+> Dear all,
+
+Hey William,
+
+> I have completed the port of the system load plugin (0.3.6) to Solaris. This
+> plugin has also been packaged and will be available from blastwave.org in th
+> enext days (currently in testing area).
+> 
+> I would like to submit my patches to add Solaris support. Since it's the first
+> time i submit some code to XFce, i would like to know the right way to do it :)
+> 
+> Please tell me, or should i send .patch to the list ?
+> 
+> I will port the latest version of the plugin soon. I am currently working on the
+> Solaris packaging of 4.4 beta 1.
+
+Just send the patch to this list, or use bugzilla.xfce.org to submit it.
+
+> Kind regards,
+> William
+
+greets,
+Benedikt
+
+
+From bugzilla-daemon at xfce.org  Thu May 11 10:34:47 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 11 May 2006 08:34:47 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060511083447.5AB48F29FA@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+
+
+
+------- Comment #10 from benny at xfce.org  2006-05-11 08:34 UTC -------
+Uhm, before replacing the old plugin, the new plugin should atleast support all
+the platforms that were supported by the previous one.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May 11 19:09:05 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 11 May 2006 17:09:05 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060511170905.D3EA0F29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+nick at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |nick at xfce.org
+
+
+
+
+------- Comment #11 from nick at xfce.org  2006-05-11 17:09 UTC -------
+> This version needs libxfce4util 4.3.90.2 (beta 2 ??) which I don't have and
+> don't want to install svn versions, so I'll test it another time.
+
+I've uploaded 0.0.3 without this dependancy. There is a BUGS file to explaing
+how to report bugs (and compare / test the plugin with lshal).
+
+> Uhm, before replacing the old plugin, the new plugin should atleast support all
+> the platforms that were supported by the previous one.
+
+Of cource, but most of the platform support is for HAL now isn't it?
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May 11 23:38:14 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 11 May 2006 21:38:14 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060511213814.C8ED5F29FA@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+
+
+
+------- Comment #12 from corsac at corsac.net  2006-05-11 21:38 UTC -------
+Tried 0.0.3.
+
+Infos stay at what they were when plugin was loaded (here, 95% charged). And
+progressbar still doesnt have the same size as other ones.
+
+corsac at hidalgo: lshal | grep battery                                        [~]
+udi = '/org/freedesktop/Hal/devices/pmu_battery_0_0'
+  battery.remaining_time = 786  (0x312)  (int)
+  info.udi = '/org/freedesktop/Hal/devices/pmu_battery_0_0'  (string)
+  battery.charge_level.percentage = 96  (0x60)  (int)
+  battery.charge_level.rate = 581  (0x245)  (int)
+  battery.charge_level.design = 3199  (0xc7f)  (int)
+  battery.charge_level.last_full = 3199  (0xc7f)  (int)
+  battery.charge_level.current = 3072  (0xc00)  (int)
+  battery.rechargeable.is_discharging = false  (bool)
+  battery.rechargeable.is_charging = true  (bool)
+  battery.is_rechargeable = true  (bool)
+  battery.present = true  (bool)
+  info.capabilities = {'battery'} (string list)
+  info.category = 'battery'  (string)
+  battery.type = 'primary'  (string)
+  info.product = 'Battery Bay'  (string)
+  linux.pmu_path = '/proc/pmu/battery_0'  (string)
+
+
+corsac at hidalgo: lshal -m                                                    [~]
+
+Start monitoring devicelist:
+-------------------------------------------------
+pmu_battery_0_0 property battery.remaining_time = 8099 (0x1fa3)
+pmu_battery_0_0 property battery.charge_level.rate = 1381 (0x565)
+pmu_battery_0_0 property battery.charge_level.percentage = 96 (0x60)
+pmu_battery_0_0 property battery.remaining_time = 8083 (0x1f93)
+pmu_battery_0_0 property battery.charge_level.current = 3101 (0xc1d)
+pmu_battery_0_0 property battery.remaining_time removed
+pmu_battery_0_0 property battery.rechargeable.is_discharging = false
+pmu_info_1 property ac_adapter.present = true
+pmu_battery_0_0 property battery.remaining_time = 440 (0x1b8) (new)
+pmu_battery_0_0 property battery.charge_level.rate = 801 (0x321)
+pmu_battery_0_0 property battery.rechargeable.is_charging = true
+pmu_battery_0_0 property battery.remaining_time = 449 (0x1c1)
+pmu_battery_0_0 property battery.charge_level.current = 3099 (0xc1b)
+pmu_battery_0_0 property battery.remaining_time = 530 (0x212)
+pmu_battery_0_0 property battery.charge_level.rate = 678 (0x2a6)
+pmu_battery_0_0 property battery.remaining_time = 515 (0x203)
+pmu_battery_0_0 property battery.charge_level.current = 3102 (0xc1e)
+pmu_battery_0_0 property battery.remaining_time = 565 (0x235)
+pmu_battery_0_0 property battery.charge_level.rate = 617 (0x269)
+pmu_battery_0_0 property battery.charge_level.percentage = 97 (0x61)
+pmu_battery_0_0 property battery.remaining_time = 554 (0x22a)
+pmu_battery_0_0 property battery.charge_level.current = 3104 (0xc20)
+pmu_battery_0_0 property battery.remaining_time = 590 (0x24e)
+pmu_battery_0_0 property battery.charge_level.rate = 579 (0x243)
+pmu_battery_0_0 property battery.remaining_time = 572 (0x23c)
+pmu_battery_0_0 property battery.charge_level.current = 3107 (0xc23)
+pmu_battery_0_0 property battery.remaining_time = 598 (0x256)
+pmu_battery_0_0 property battery.charge_level.rate = 553 (0x229)
+pmu_battery_0_0 property battery.remaining_time = 585 (0x249)
+pmu_battery_0_0 property battery.charge_level.current = 3109 (0xc25)
+pmu_battery_0_0 property battery.remaining_time = 607 (0x25f)
+pmu_battery_0_0 property battery.charge_level.rate = 533 (0x215)
+pmu_battery_0_0 property battery.remaining_time = 594 (0x252)
+pmu_battery_0_0 property battery.charge_level.current = 3111 (0xc27)
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri May 12 08:21:14 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri, 12 May 2006 06:21:14 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060512062114.846E8F29FB@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+
+
+
+------- Comment #13 from nick at xfce.org  2006-05-12 06:21 UTC -------
+Uploaded 0.0.4:
+
+* Plugin border to 4px
+* Change hal property change behaviour, this will probably
+  work for most people now.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri May 12 11:39:49 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri, 12 May 2006 09:39:49 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060512093949.95B52F29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+
+
+
+------- Comment #14 from corsac at corsac.net  2006-05-12 09:39 UTC -------
+Still doesnt work on my (pmu based) box. Value is the one when plugin is loaded
+(or panel started), but doesnt change after.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From jannis at xfce.org  Sat May 13 09:57:28 2006
+From: jannis at xfce.org (Jannis Pohlmann)
+Date: Sat, 13 May 2006 09:57:28 +0200
+Subject: Wavelan plugin for 4.4
+In-Reply-To: <20060505120447.GC5271@jameswestby.net>
+References: <20060504153207.GA22759@jameswestby.net>
+	<445A21AF.3080309@unix-ag.uni-siegen.de>
+	<20060504155655.GB22759@jameswestby.net>
+	<445A2555.9080703@unix-ag.uni-siegen.de>
+	<20060504161247.GF22759@jameswestby.net>
+	<445A2BA7.4060009@unix-ag.uni-siegen.de>
+	<20060504163442.GJ22759@jameswestby.net>
+	<445A2DEF.6030904@unix-ag.uni-siegen.de>
+	<20060505124750.654bcb1d.jannis@xfce.org>
+	<20060505120447.GC5271@jameswestby.net>
+Message-ID: <20060513095728.118e8536.jannis@xfce.org>
+
+On Fri, 5 May 2006 13:04:47 +0100, James Westby wrote:
+
+> On (05/05/06 12:47), Jannis Pohlmann wrote:
+> > On Thu, 04 May 2006 18:38:07 +0200, Benedikt Meurer wrote:
+> > I can test it on the campus next monday. I have a Thinkpad (with
+> > Centrino, ipw2200) and just compiled the wavelan plugin
+> > successfully.
+> > 
+> > Regards,
+> > Jannis
+> 
+> I look forward to your report.
+
+Works fine here. I always had "98%" in the plugin tooltip - I don't
+know what that means, but apart from that, everything worked fine and
+the green/white/red bars were displayed correctly.
+
+- Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060513/242f3e26/attachment.pgp>
+
+From jannis at xfce.org  Sat May 13 09:57:28 2006
+From: jannis at xfce.org (Jannis Pohlmann)
+Date: Sat, 13 May 2006 09:57:28 +0200
+Subject: Wavelan plugin for 4.4
+In-Reply-To: <20060505120447.GC5271@jameswestby.net>
+References: <20060504153207.GA22759@jameswestby.net>
+	<445A21AF.3080309@unix-ag.uni-siegen.de>
+	<20060504155655.GB22759@jameswestby.net>
+	<445A2555.9080703@unix-ag.uni-siegen.de>
+	<20060504161247.GF22759@jameswestby.net>
+	<445A2BA7.4060009@unix-ag.uni-siegen.de>
+	<20060504163442.GJ22759@jameswestby.net>
+	<445A2DEF.6030904@unix-ag.uni-siegen.de>
+	<20060505124750.654bcb1d.jannis@xfce.org>
+	<20060505120447.GC5271@jameswestby.net>
+Message-ID: <20060513095728.118e8536.jannis@xfce.org>
+
+On Fri, 5 May 2006 13:04:47 +0100, James Westby wrote:
+
+> On (05/05/06 12:47), Jannis Pohlmann wrote:
+> > On Thu, 04 May 2006 18:38:07 +0200, Benedikt Meurer wrote:
+> > I can test it on the campus next monday. I have a Thinkpad (with
+> > Centrino, ipw2200) and just compiled the wavelan plugin
+> > successfully.
+> > 
+> > Regards,
+> > Jannis
+> 
+> I look forward to your report.
+
+Works fine here. I always had "98%" in the plugin tooltip - I don't
+know what that means, but apart from that, everything worked fine and
+the green/white/red bars were displayed correctly.
+
+- Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060513/242f3e26/attachment-0001.pgp>
+
+From corsac at corsac.net  Sat May 13 10:49:32 2006
+From: corsac at corsac.net (Yves-Alexis Perez)
+Date: Sat, 13 May 2006 10:49:32 +0200
+Subject: Wavelan plugin for 4.4
+In-Reply-To: <1146782882.9720.0.camel@hidalgo>
+References: <20060504153207.GA22759@jameswestby.net>
+	 <445A21AF.3080309@unix-ag.uni-siegen.de>
+	 <20060504155655.GB22759@jameswestby.net>
+	 <445A2555.9080703@unix-ag.uni-siegen.de>
+	 <20060504161247.GF22759@jameswestby.net>
+	 <445A2BA7.4060009@unix-ag.uni-siegen.de>
+	 <20060504163442.GJ22759@jameswestby.net>
+	 <445A2DEF.6030904@unix-ag.uni-siegen.de>  <1146782882.9720.0.camel@hidalgo>
+Message-ID: <1147510172.19268.4.camel@hidalgo>
+
+On Fri, 2006-05-05 at 00:48 +0200, Yves-Alexis Perez wrote:
+> I can try, but not before next tuesday. Try what, btw ?
+
+The plugin builds and load fine. Though, when selecting eth1, which is
+my airport card, it reports "No such wavelan device".
+
+Here are some informations about my system:
+
+corsac at hidalgo: sudo iwconfig                                        [~]
+eth0      no wireless extensions.
+
+lo        no wireless extensions.
+
+sit0      no wireless extensions.
+
+eth1      IEEE 802.11b/g  ESSID:"droledequartier"  Nickname:"Broadcom
+4306"
+          Mode:Managed  Frequency=2.422 GHz  Access Point:
+00:14:BF:3C:98:DF
+          Bit Rate:11 Mb/s   Tx-Power=15 dBm
+          RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Link Quality=100/100  Signal level=2/3  Noise level=187/100
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+corsac at hidalgo: cat /proc/net/wireless                              [~]
+Inter-| sta-|   Quality        |   Discarded packets               |
+Missed | WE face | tus | link level noise |  nwid  crypt   frag  retry
+misc | beacon | 20  eth1: 0000  100.    2.  186.       0      0      0
+0      0        0
+
+-- 
+Yves-Alexis Perez
+
+
+
+From bugzilla-daemon at xfce.org  Mon May 15 09:50:47 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 15 May 2006 07:50:47 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060515075047.66E43F29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+
+
+
+------- Comment #15 from nick at xfce.org  2006-05-15 07:50 UTC -------
+Released test version 0.0.5, some HAL fixes and it
+seems to work for Corsac now.
+
+http://foo-projects.org/~nick/plugins/xfce4-battery-plugin-0.0.5.tar.bz2
+
+I'm going to finish the plugin now so it will support (most) of the
+current battery plugin stuff. If people still have problems with
+HAL please fill a bug report or send me an email.
+The following version will have a version number like 0.5.x.
+
+Nick
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon May 15 11:00:53 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 15 May 2006 09:00:53 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060515090054.05666F29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+
+
+
+------- Comment #16 from corsac at corsac.net  2006-05-15 09:00 UTC -------
+Now the plugin works here. The only thing (yet seen with nick) is the time
+format displayed next to the progress bar.
+
+Currently it's minutes:seconds, while in tooltip it's ##hr ##min.
+
+A format like "hours:minutes" would be better, I guess.
+
+Regards,
+
+Yves-Alexis Perez
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May 18 07:22:05 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 18 May 2006 05:22:05 +0000 (UTC)
+Subject: [Bug 1634] bad free() on plugin remove
+In-Reply-To: <bug-1634-590@http.bugzilla.xfce.org/>
+Message-ID: <20060518052205.D41D2F29FA@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1634
+
+
+nick at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #1 from nick at xfce.org  2006-05-18 05:22 UTC -------
+This should be fixed in trunk.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May 18 07:29:25 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 18 May 2006 05:29:25 +0000 (UTC)
+Subject: [Bug 1590] xfce panel crashes with glib2 2.10
+In-Reply-To: <bug-1590-590@http.bugzilla.xfce.org/>
+Message-ID: <20060518052925.1C469F29FB@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1590
+
+
+nick at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #5 from nick at xfce.org  2006-05-18 05:29 UTC -------
+Fixed in trunk, there were was a wrong g_free 3 times :). Please reopen if
+crash is still there.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May 18 07:31:07 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 18 May 2006 05:31:07 +0000 (UTC)
+Subject: [Bug 1792] Weather plugin doesn't persist across logins
+In-Reply-To: <bug-1792-590@http.bugzilla.xfce.org/>
+Message-ID: <20060518053107.9009BF29FB@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1792
+
+
+
+
+
+------- Comment #1 from nick at xfce.org  2006-05-18 05:31 UTC -------
+The proberties dialog crash is fixed in trunk.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May 18 07:31:33 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 18 May 2006 05:31:33 +0000 (UTC)
+Subject: [Bug 1244] image of clipman button does not resize to fit the size of the button (wich depends on the size of the panel), looking awful
+In-Reply-To: <bug-1244-590@http.bugzilla.xfce.org/>
+Message-ID: <20060518053133.D486DF29FC@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1244
+
+
+nick at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #3 from nick at xfce.org  2006-05-18 05:31 UTC -------
+Nothing heard about it, so resolution to fixed.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May 18 07:34:28 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 18 May 2006 05:34:28 +0000 (UTC)
+Subject: [Bug 1590] xfce panel crashes with glib2 2.10
+In-Reply-To: <bug-1590-590@http.bugzilla.xfce.org/>
+Message-ID: <20060518053428.ACBDFF29FD@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1590
+
+
+
+
+
+------- Comment #6 from corsac at corsac.net  2006-05-18 05:34 UTC -------
+Could you please provide a backport patch (if possible, both for 4.2 and 4.4
+plugins ;) ) so we won't have to wait for the next beta to fix this annoying
+bug.
+
+I don't reopen it because there is no reason :)
+
+Thanks.
+
+Regards,
+
+--
+Yves-Alexis Perez
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu May 18 07:39:23 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 18 May 2006 05:39:23 +0000 (UTC)
+Subject: [Bug 1791] Battery plugin doesn't resize correctly
+In-Reply-To: <bug-1791-590@http.bugzilla.xfce.org/>
+Message-ID: <20060518053923.58870F29FD@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1791
+
+
+
+
+
+------- Comment #17 from nick at xfce.org  2006-05-18 05:39 UTC -------
+I've started a testing branch for the new battery plugin, you can find in the
+goodies svn: xfce4-battery-plugin/branches/XERVERIUS.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From nickschermer at gmail.com  Thu May 18 08:57:38 2006
+From: nickschermer at gmail.com (Nick Schermer)
+Date: Thu, 18 May 2006 08:57:38 +0200
+Subject: Build files in trunk
+Message-ID: <4abe35490605172357x267d60d1y8003abb17537fa86@mail.gmail.com>
+
+Why are all the build files imported in the trunk? Can we
+just remove the configure, inltool, Makefile.in etc etc?
+
+Nick
+
+
+From masse_nicolas at yahoo.fr  Thu May 18 22:24:42 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Thu, 18 May 2006 22:24:42 +0200
+Subject: Build files in trunk
+In-Reply-To: <4abe35490605172357x267d60d1y8003abb17537fa86@mail.gmail.com>
+References: <4abe35490605172357x267d60d1y8003abb17537fa86@mail.gmail.com>
+Message-ID: <20060518222442.66d83cfa.masse_nicolas@yahoo.fr>
+
+On Thu, 18 May 2006 08:57:38 +0200
+"Nick Schermer" <nickschermer at gmail.com> wrote:
+
+> Why are all the build files imported in the trunk? Can we
+> just remove the configure, inltool, Makefile.in etc etc?
+> 
+Perhaps because most of the plugin writers doesn't take care of removing them?
+At least, it was the case for me. But we can probably drop them from trunk.
+
+> Nick
+
+Bountykiller.
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+From xotazu at cvc.uab.es  Fri May 19 12:31:39 2006
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Fri, 19 May 2006 12:31:39 +0200
+Subject: xfce-notes
+In-Reply-To: <20060519100008.4161.71495.Mailman@bat.berlios.de>
+References: <20060519100008.4161.71495.Mailman@bat.berlios.de>
+Message-ID: <20060519123139.2a2b1c59@cvc131.uab.es>
+
+
+	Hi!
+
+	What about the porting of xfce-notes to the 4.4 version?
+
+	It is one of the most useful goodies !!! ... ;-P
+
+cheers
+
+Xavier
+
+
+From william at wbonnet.net  Sun May 21 20:25:20 2006
+From: william at wbonnet.net (William Bonnet)
+Date: Sun, 21 May 2006 20:25:20 +0200
+Subject: System load plugin port to Solaris
+In-Reply-To: <4462F67D.3000308@unix-ag.uni-siegen.de>
+References: <1147251614.4461ab9eee04c@ssl0.ovh.net> <4462F67D.3000308@unix-ag.uni-siegen.de>
+Message-ID: <4470B090.7050000@wbonnet.net>
+
+Hi all,
+
+>Just send the patch to this list, or use bugzilla.xfce.org to submit it.
+>  
+>
+The patches need to add Solaris support are availables from my website. 
+You will find the patches at the following URL :
+
+http://wbonnet.net/xfce/patches-systemload-0.3.6
+
+There are four modified .c files :
+
+http://wbonnet.net/xfce/patches-systemload-0.3.6/cpu.c.patch
+http://wbonnet.net/xfce/patches-systemload-0.3.6/memswap.c.patch
+http://wbonnet.net/xfce/patches-systemload-0.3.6/systemload.c.patch
+http://wbonnet.net/xfce/patches-systemload-0.3.6/uptime.c.patch
+
+I added French support by using the .po file from the XFce 4.4b1 version 
+of the plugin.
+
+Modified file is configure.ac :
+
+http://wbonnet.net/xfce/patches-systemload-0.3.6/configure.ac.patch
+
+Translation file is :
+
+http://wbonnet.net/xfce/patches-systemload-0.3.6/fr.po
+
+Kind regards,
+
+-- 
+William
+
+http://www.sunwizard.net Le site fran?ais des amateurs de stations Unix
+http://www.blastwave.org An OpenSolaris Community Site
+http://www.guses.org     French speaking Solaris User Group
+
+
+
+
+From bugzilla-daemon at xfce.org  Tue May 23 17:20:52 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 23 May 2006 15:20:52 +0000 (UTC)
+Subject: [Bug 1842] New: diskperf plugin doesn't detect disk activity in ubuntu dapper
+Message-ID: <bug-1842-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1842
+
+           Summary: diskperf plugin doesn't detect disk activity in ubuntu
+                    dapper
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC (x86)
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: diskperf
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: dooglus at gmail.com
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.3)
+Gecko/20060513 Ubuntu/dapper Firefox/1.5.0.3
+Build Identifier: 2.0-0ubuntu4
+
+I can install the diskperf and add it to my panel, but it never detects any
+disk activity.
+
+See https://launchpad.net/bugs/45921 for the more detailed report I raised in
+the ubuntu bug tracker.
+
+Reproducible: Always
+
+Steps to Reproduce:
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue May 23 17:24:42 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 23 May 2006 15:24:42 +0000 (UTC)
+Subject: [Bug 1842] diskperf plugin doesn't detect disk activity in ubuntu dapper
+In-Reply-To: <bug-1842-590@http.bugzilla.xfce.org/>
+Message-ID: <20060523152442.B3E32F29F8@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1842
+
+
+dooglus at gmail.com changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |dooglus at gmail.com
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From tommoyer at gmail.com  Thu May 25 17:27:01 2006
+From: tommoyer at gmail.com (Tom Moyer)
+Date: Thu, 25 May 2006 11:27:01 -0400
+Subject: xfce-mount panel plugin question
+Message-ID: <148673630605250827v6631d327l345a97094ab36f8c@mail.gmail.com>
+
+I was wondering if anyone has considered the implementing something in the
+xfce-mount panel plugin that would allow the user to specify a command to
+use for mounting and also for unmounting?  The reason I ask is that I use
+ivman to automount removeable media, but in order to unmount it the pumount
+command is needed from pmount, umount doesn't work.  So I figured it would
+make things easier if this was an option for the plugin so people don't need
+the command line to unmount removable media.
+
+-Tom Moyer
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060525/6b5bbcd6/attachment.html>
+
+From bugzilla-daemon at xfce.org  Thu May 25 21:36:14 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 25 May 2006 19:36:14 +0000 (UTC)
+Subject: [Bug 1586] Weather plugin should have be updatable on demand
+In-Reply-To: <bug-1586-590@http.bugzilla.xfce.org/>
+Message-ID: <20060525193614.21476F29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1586
+
+
+nick at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #2 from nick at xfce.org  2006-05-25 19:36 UTC -------
+There is also a refresh menu item in the right click menu. (trunk for 4.4)
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From landronimirc at gmail.com  Sat May 27 15:49:56 2006
+From: landronimirc at gmail.com (Liviu)
+Date: Sat, 27 May 2006 15:49:56 +0200
+Subject: xfce-mount panel plugin question
+In-Reply-To: <148673630605250827v6631d327l345a97094ab36f8c@mail.gmail.com>
+References: <148673630605250827v6631d327l345a97094ab36f8c@mail.gmail.com>
+Message-ID: <68b1e2610605270649x8f14070ib80aed828f117174@mail.gmail.com>
+
+The Xfce 4.4 Beta1 xfce4-mount-plugin-0.4.5 has an option to
+"specify own commands for mounting/unmounting". So, I guess you should try
+the latest version from
+Berlios<http://developer.berlios.de/project/showfiles.php?group_id=910>on
+Beta1 <http://www.xfce.org/archive/xfce-4.3.90.1/>.
+
+On 5/25/06, Tom Moyer <tommoyer at gmail.com> wrote:
+>
+> I was wondering if anyone has considered the implementing something in the
+> xfce-mount panel plugin that would allow the user to specify a command to
+> use for mounting and also for unmounting?  The reason I ask is that I use
+> ivman to automount removeable media, but in order to unmount it the pumount
+> command is needed from pmount, umount doesn't work.  So I figured it would
+> make things easier if this was an option for the plugin so people don't need
+> the command line to unmount removable media.
+>
+> -Tom Moyer
+>
+
+
+
+-- 
+Liviu
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060527/5c3ae338/attachment.html>
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Mon May 29 11:36:19 2006
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Mon, 29 May 2006 11:36:19 +0200
+Subject: gcc 2.95 fixes
+In-Reply-To: <20060525145023.85f9dd5a.oliver@FreeBSD.org>
+References: <20060525145023.85f9dd5a.oliver@FreeBSD.org>
+Message-ID: <447AC093.5040405@unix-ag.uni-siegen.de>
+
+Oliver Lehmann wrote:
+> Hi,
+
+Hey Oliver,
+
+> has someone an idea if/when my last 2 remaining gcc 2.95 patches are
+> getting to be committed?
+> 
+> http://bugzilla.xfce.org/show_bug.cgi?id=1762
+
+Failed to apply, see bugzilla. Btw, who maintains the quicklauncher
+plugin? The AUTHORS file says Nicolas, but the bug was automatically
+assigned to Jasper.
+
+> http://bugzilla.xfce.org/show_bug.cgi?id=1764
+
+Committed, thanks.
+
+Benedikt
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Tue May 30 12:46:40 2006
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Tue, 30 May 2006 12:46:40 +0200
+Subject: System load plugin port to Solaris
+In-Reply-To: <4470B090.7050000@wbonnet.net>
+References: <1147251614.4461ab9eee04c@ssl0.ovh.net> <4462F67D.3000308@unix-ag.uni-siegen.de> <4470B090.7050000@wbonnet.net>
+Message-ID: <447C2290.8070005@unix-ag.uni-siegen.de>
+
+William Bonnet wrote:
+> Hi all,
+
+Hey William,
+
+>> Just send the patch to this list, or use bugzilla.xfce.org to submit it.
+>>  
+>>
+> The patches need to add Solaris support are availables from my website.
+> You will find the patches at the following URL :
+> 
+> http://wbonnet.net/xfce/patches-systemload-0.3.6
+> 
+> There are four modified .c files :
+> 
+> http://wbonnet.net/xfce/patches-systemload-0.3.6/cpu.c.patch
+> http://wbonnet.net/xfce/patches-systemload-0.3.6/memswap.c.patch
+> http://wbonnet.net/xfce/patches-systemload-0.3.6/systemload.c.patch
+> http://wbonnet.net/xfce/patches-systemload-0.3.6/uptime.c.patch
+> 
+> I added French support by using the .po file from the XFce 4.4b1 version
+> of the plugin.
+> 
+> Modified file is configure.ac :
+> 
+> http://wbonnet.net/xfce/patches-systemload-0.3.6/configure.ac.patch
+> 
+> Translation file is :
+> 
+> http://wbonnet.net/xfce/patches-systemload-0.3.6/fr.po
+
+Looks like the systemload maintainer is currently unavailable. Right
+now, we're in the process of moving the goodies to xfce.org. I'll apply
+your patches once the move is done.
+
+> Kind regards,
+
+greets,
+Benedikt
+
+

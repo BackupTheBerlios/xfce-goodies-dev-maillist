@@ -1,0 +1,4698 @@
+From kieroglu at math.washington.edu  Wed Jun  1 08:56:21 2005
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Tue, 31 May 2005 23:56:21 -0700 (PDT)
+Subject: xfce4-xmms-plugin version 0.3.0
+Message-ID: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+
+
+   Hi all,
+
+   Here's the new version of the xmms panel plugin for XFCE 4. Patrick van 
+Staveren was the author of the original plugin. Later I took over and 
+Mario Streiber has joined (and almost entirely rewritten the code from 
+scratch).
+
+   Last time when I submitted version 0.2.1, I didn't get any response from 
+the xfce-goodies-dev team, and the the webpage wasn't updated. Do I need 
+to send it to another address as well? I hope this time it gets updated, 
+as the change is big. Some new features (compared to the original one by 
+Staveren):
+
+  * A (hideable) scrolling song title. You can make font size and speed 
+adjustments.
+  * A clickable progressbar to see and set track position.
+  * Mousewheel up/down changes volume.
+  * A (hideable) volume bar.
+
+  Enjoy!
+
+
+  Kemal Ilgar Eroglu
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-xmms-plugin-0.3.0.tar.bz2
+Type: application/x-bzip2
+Size: 151582 bytes
+Desc: 
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050531/3fd69091/attachment.bin>
+
+From jasper at xfce.org  Wed Jun  1 09:15:17 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Wed, 1 Jun 2005 09:15:17 +0200
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+Message-ID: <20050601071517.GA5541@baudolino.home.nl>
+
+On Tue, May 31, 2005 at 11:56:21PM -0700, Kemal Eroglu wrote:
+> 
+>   Hi all,
+> 
+>   Here's the new version of the xmms panel plugin for XFCE 4. Patrick van 
+> Staveren was the author of the original plugin. Later I took over and 
+> Mario Streiber has joined (and almost entirely rewritten the code from 
+> scratch).
+> 
+
+Very good to hear you picked up the development of this plugin. Sorry for not
+responding before. My time is extremely limited these days :(
+
+>   Last time when I submitted version 0.2.1, I didn't get any response from 
+> the xfce-goodies-dev team, and the the webpage wasn't updated. Do I need 
+> to send it to another address as well? I hope this time it gets updated, 
+> as the change is big. Some new features (compared to the original one by 
+> Staveren):
+> 
+>  * A (hideable) scrolling song title. You can make font size and speed 
+> adjustments.
+>  * A clickable progressbar to see and set track position.
+>  * Mousewheel up/down changes volume.
+>  * A (hideable) volume bar.
+> 
+>  Enjoy!
+> 
+> 
+>  Kemal Ilgar Eroglu
+
+Right, are you a member of the xfce-goodies project? If so you can make a file
+release yourself. If not, you need to get an acount on
+http://developer.berlios.de and send me your login name, so that I can add you
+to the project. You'll get access to the CVS and you'll be able to do file
+releases.
+
+	Jasper
+
+
+From xotazu at cvc.uab.es  Wed Jun  1 12:02:37 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Wed, 01 Jun 2005 12:02:37 +0200
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <20050601065701.29480.19656.Mailman@bat.berlios.de>
+References: <20050601065701.29480.19656.Mailman@bat.berlios.de>
+Message-ID: <20050601120237.5bdfeab6@cvc131.uab.es>
+
+	Hi:
+
+	Was is the minimum version of pango and other packages? 'configure' does not complains on my computer. I have
+Slackware 10.0, and receive these error messages when compiling.
+
+xmms_plugin.c: In function `xmms_plugin_read_config':
+xmms_plugin.c:494: error: `PangoAttrSize' undeclared (first use in this function)
+xmms_plugin.c:494: error: (Each undeclared identifier is reported only once
+xmms_plugin.c:494: error: for each function it appears in.)
+xmms_plugin.c:494: error: `attr' undeclared (first use in this function)
+xmms_plugin.c:494: error: parse error before ')' token
+xmms_plugin.c: In function `set_font_size':
+xmms_plugin.c:677: error: `PangoAttrSize' undeclared (first use in this function)
+[...] etc
+
+
+cheers
+
+Xavier
+
+
+
+On Wed, 01 Jun 2005 08:57:01 +0200
+xfce-goodies-dev-request at berlios.de wrote:
+
+>    Hi all,
+> 
+>    Here's the new version of the xmms panel plugin for XFCE 4.
+> Patrick van Staveren was the author of the original plugin. Later I
+> took over and Mario Streiber has joined (and almost entirely
+> rewritten the code from scratch).
+> 
+>    Last time when I submitted version 0.2.1, I didn't get any
+> response from the xfce-goodies-dev team, and the the webpage wasn't
+> updated. Do I need to send it to another address as well? I hope this
+> time it gets updated, as the change is big. Some new features
+> (compared to the original one by Staveren):
+> 
+>   * A (hideable) scrolling song title. You can make font size and
+> speed adjustments.
+>   * A clickable progressbar to see and set track position.
+>   * Mousewheel up/down changes volume.
+>   * A (hideable) volume bar.
+> 
+>   Enjoy!
+> 
+
+
+From kieroglu at math.washington.edu  Wed Jun  1 12:35:40 2005
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Wed, 1 Jun 2005 03:35:40 -0700 (PDT)
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <20050601071517.GA5541@baudolino.home.nl>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+ <20050601071517.GA5541@baudolino.home.nl>
+Message-ID: <Pine.LNX.4.61.0506010333340.11796@zeno2.math.washington.edu>
+
+> Right, are you a member of the xfce-goodies project? If so you can make a file
+> release yourself. If not, you need to get an acount on
+> http://developer.berlios.de and send me your login name, so that I can add you
+> to the project. You'll get access to the CVS and you'll be able to do file
+> releases.
+>
+> 	Jasper
+
+  I wasn't, but I just registered for an account. The username is Ilgar. 
+Thanks for the info.
+
+  Ilgar
+
+
+From jasper at xfce.org  Wed Jun  1 13:11:54 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Wed, 1 Jun 2005 13:11:54 +0200
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <Pine.LNX.4.61.0506010333340.11796@zeno2.math.washington.edu>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu> <20050601071517.GA5541@baudolino.home.nl> <Pine.LNX.4.61.0506010333340.11796@zeno2.math.washington.edu>
+Message-ID: <20050601111154.GD5541@baudolino.home.nl>
+
+On Wed, Jun 01, 2005 at 03:35:40AM -0700, Kemal Eroglu wrote:
+> >Right, are you a member of the xfce-goodies project? If so you can make a 
+> >file
+> >release yourself. If not, you need to get an acount on
+> >http://developer.berlios.de and send me your login name, so that I can add 
+> >you
+> >to the project. You'll get access to the CVS and you'll be able to do file
+> >releases.
+> >
+> >	Jasper
+> 
+>  I wasn't, but I just registered for an account. The username is Ilgar. 
+> Thanks for the info.
+> 
+
+Alright, I have added you to the project. I think it will take some time for
+berlios to update your permissions. You should be able to commit your changes
+to CVS soon and create file releases. Let me know off-list if you want me to
+help you out with this.
+
+And, of course, welcome ;-)
+
+	Jasper
+
+
+
+From koorek at o2.pl  Wed Jun  1 13:33:19 2005
+From: koorek at o2.pl (Robert Kurowski)
+Date: Wed, 1 Jun 2005 13:33:19 +0200
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <20050601111154.GD5541@baudolino.home.nl>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+	<20050601071517.GA5541@baudolino.home.nl>
+	<Pine.LNX.4.61.0506010333340.11796@zeno2.math.washington.edu>
+	<20050601111154.GD5541@baudolino.home.nl>
+Message-ID: <20050601133319.71a405f8@localhost>
+
+On Wed, 1 Jun 2005 13:11:54 +0200
+Jasper Huijsmans <jasper at xfce.org> wrote:
+
+> Alright, I have added you to the project. I think it will take some time for
+> berlios to update your permissions. You should be able to commit your changes
+> to CVS soon and create file releases. Let me know off-list if you want me to
+> help you out with this.
+
+Short info after commit to CVS would be nice here. Thx.
+
+-- 
+Robert 'koorek' Kurowski	Jabber:	koorek at pld-linux.org
+
+
+From masse_nicolas at yahoo.fr  Wed Jun  1 14:28:19 2005
+From: masse_nicolas at yahoo.fr (Nicolas Masse)
+Date: Wed, 1 Jun 2005 14:28:19 +0200
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+Message-ID: <20050601142819.778017f3.masse_nicolas@yahoo.fr>
+
+On Tue, 31 May 2005 23:56:21 -0700 (PDT)
+Kemal Eroglu <kieroglu at math.washington.edu> wrote:
+
+> 
+>    Hi all,
+> 
+>    Here's the new version of the xmms panel plugin for XFCE 4. Patrick van 
+> Staveren was the author of the original plugin. Later I took over and 
+> Mario Streiber has joined (and almost entirely rewritten the code from 
+> scratch).
+> 
+>    Last time when I submitted version 0.2.1, I didn't get any response from 
+> the xfce-goodies-dev team, and the the webpage wasn't updated. Do I need 
+> to send it to another address as well? I hope this time it gets updated, 
+> as the change is big. Some new features (compared to the original one by 
+> Staveren):
+> 
+>   * A (hideable) scrolling song title. You can make font size and speed 
+> adjustments.
+>   * A clickable progressbar to see and set track position.
+>   * Mousewheel up/down changes volume.
+>   * A (hideable) volume bar.
+> 
+>   Enjoy!
+> 
+> 
+>   Kemal Ilgar Eroglu
+
+Nice work guys! Work fine here. Perhaps just 2 little things: 
+- Is it possible to do so that the rule can be hided to?
+- Also something else who would be great would be to not only make this plugin work 
+with xmms but also with other players like bmp or mpd.
+
+If you want, I think I can help you, but not these days since I'm in exams next week.... :-(
+
+Bountykiller
+
+
+
+
+
+
+From masse_nicolas at yahoo.fr  Wed Jun  1 14:28:19 2005
+From: masse_nicolas at yahoo.fr (Nicolas Masse)
+Date: Wed, 1 Jun 2005 14:28:19 +0200
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+Message-ID: <20050601142819.778017f3.masse_nicolas@yahoo.fr>
+
+On Tue, 31 May 2005 23:56:21 -0700 (PDT)
+Kemal Eroglu <kieroglu at math.washington.edu> wrote:
+
+> 
+>    Hi all,
+> 
+>    Here's the new version of the xmms panel plugin for XFCE 4. Patrick van 
+> Staveren was the author of the original plugin. Later I took over and 
+> Mario Streiber has joined (and almost entirely rewritten the code from 
+> scratch).
+> 
+>    Last time when I submitted version 0.2.1, I didn't get any response from 
+> the xfce-goodies-dev team, and the the webpage wasn't updated. Do I need 
+> to send it to another address as well? I hope this time it gets updated, 
+> as the change is big. Some new features (compared to the original one by 
+> Staveren):
+> 
+>   * A (hideable) scrolling song title. You can make font size and speed 
+> adjustments.
+>   * A clickable progressbar to see and set track position.
+>   * Mousewheel up/down changes volume.
+>   * A (hideable) volume bar.
+> 
+>   Enjoy!
+> 
+> 
+>   Kemal Ilgar Eroglu
+
+Nice work guys! Work fine here. Perhaps just 2 little things: 
+- Is it possible to do so that the rule can be hided to?
+- Also something else who would be great would be to not only make this plugin work 
+with xmms but also with other players like bmp or mpd.
+
+If you want, I think I can help you, but not these days since I'm in exams next week.... :-(
+
+Bountykiller
+
+
+
+
+
+
+From kieroglu at math.washington.edu  Thu Jun  2 10:07:55 2005
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Thu, 2 Jun 2005 01:07:55 -0700 (PDT)
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <20050601142819.778017f3.masse_nicolas@yahoo.fr>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+ <20050601142819.778017f3.masse_nicolas@yahoo.fr>
+Message-ID: <Pine.LNX.4.61.0506020052120.18738@zeno2.math.washington.edu>
+
+On Wed, 1 Jun 2005, Nicolas Masse wrote:
+
+> Nice work guys! Work fine here. Perhaps just 2 little things:
+> - Is it possible to do so that the rule can be hided to?
+> - Also something else who would be great would be to not only make this plugin work
+> with xmms but also with other players like bmp or mpd.
+>
+> If you want, I think I can help you, but not these days since I'm in exams next week.... :-(
+>
+> Bountykiller
+
+Hiding the progressbar is easy. This weekend I'll upload a version where 
+you have an option to hide it.
+
+As for the latter request; that shouldn't be hard; at least codewise. 
+Instead of just xmmsctrl.h we're going to use a couple of other header 
+files and play control commands. What I would need help about is writing 
+suitable configure scripts. We need to check whether these players exist 
+and then compile the corresponding files. And Xavier had an issue with 
+pango; since we haven't added a Pango check to configure. The current 
+script is the same as Staveren's except the version number. Today I looked 
+at the documentation of autoconf and automake; and I don't think I'll be 
+able to understand it soon :).
+
+B.t.w, Xavier: You need Pango >= 1.8.0 I think, this issue had come up in 
+the 0.2.1 version as well. I haven't yet gotten the digest so I can't 
+reply to your message now.
+
+Ilgar
+
+
+From whyz at home.se  Thu Jun  2 11:48:55 2005
+From: whyz at home.se (Erik Ahlner)
+Date: Thu, 02 Jun 2005 11:48:55 +0200
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <Pine.LNX.4.61.0506020052120.18738@zeno2.math.washington.edu>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu> <20050601142819.778017f3.masse_nicolas@yahoo.fr> <Pine.LNX.4.61.0506020052120.18738@zeno2.math.washington.edu>
+Message-ID: <429ED607.5020801@home.se>
+
+Hello!
+
+Another suggestion is to be able to NOT show the title of the song. I'm 
+using a rather thing   panel, which means i have to choose a very small 
+font for the song title, making it impossible to read.. so i could just 
+skip it completely :)
+Perhaps make all of the components optional? even the play/pause/stop 
+and so on.
+
+Erik
+
+Kemal Eroglu wrote:
+
+>
+> Hiding the progressbar is easy. This weekend I'll upload a version 
+> where you have an option to hide it.
+>
+> As for the latter request; that shouldn't be hard; at least codewise. 
+> Instead of just xmmsctrl.h we're going to use a couple of other header 
+> files and play control commands. What I would need help about is 
+> writing suitable configure scripts. We need to check whether these 
+> players exist and then compile the corresponding files. And Xavier had 
+> an issue with pango; since we haven't added a Pango check to 
+> configure. The current script is the same as Staveren's except the 
+> version number. Today I looked at the documentation of autoconf and 
+> automake; and I don't think I'll be able to understand it soon :).
+>
+> B.t.w, Xavier: You need Pango >= 1.8.0 I think, this issue had come up 
+> in the 0.2.1 version as well. I haven't yet gotten the digest so I 
+> can't reply to your message now.
+>
+> Ilgar
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+>
+
+
+
+From mario.streiber at gmx.de  Thu Jun  2 12:59:36 2005
+From: mario.streiber at gmx.de (Mario Streiber)
+Date: Thu, 2 Jun 2005 12:59:36 +0200
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <429ED607.5020801@home.se>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+	<20050601142819.778017f3.masse_nicolas@yahoo.fr>
+	<Pine.LNX.4.61.0506020052120.18738@zeno2.math.washington.edu>
+	<429ED607.5020801@home.se>
+Message-ID: <20050602125936.3359b0ae@localhost.localdomain>
+
+On Thu, 02 Jun 2005 11:48:55 +0200 Erik Ahlner <whyz at home.se> wrote:
+
+> Hello!
+> 
+> Another suggestion is to be able to NOT show the title of the song. I'm 
+> using a rather thing   panel, which means i have to choose a very small 
+> font for the song title, making it impossible to read.. so i could just 
+> skip it completely :)
+> Perhaps make all of the components optional? even the play/pause/stop 
+> and so on.
+
+The scrolled song title can be hidden in the options menu.
+
+Mario
+
+
+From whyz at home.se  Thu Jun  2 13:13:59 2005
+From: whyz at home.se (Erik Ahlner)
+Date: Thu, 02 Jun 2005 13:13:59 +0200
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <20050602125936.3359b0ae@localhost.localdomain>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>	<20050601142819.778017f3.masse_nicolas@yahoo.fr>	<Pine.LNX.4.61.0506020052120.18738@zeno2.math.washington.edu>	<429ED607.5020801@home.se> <20050602125936.3359b0ae@localhost.localdomain>
+Message-ID: <429EE9F7.4090503@home.se>
+
+Well, if that's the intention for that option, it does not work.
+That switch just tells the plugin not to SCROLL the text, and not to 
+remove it.
+
+
+
+Mario Streiber wrote:
+
+>On Thu, 02 Jun 2005 11:48:55 +0200 Erik Ahlner <whyz at home.se> wrote:
+>
+>  
+>
+>>Hello!
+>>
+>>Another suggestion is to be able to NOT show the title of the song. I'm 
+>>using a rather thing   panel, which means i have to choose a very small 
+>>font for the song title, making it impossible to read.. so i could just 
+>>skip it completely :)
+>>Perhaps make all of the components optional? even the play/pause/stop 
+>>and so on.
+>>    
+>>
+>
+>The scrolled song title can be hidden in the options menu.
+>
+>Mario
+>_______________________________________________
+>xfce-goodies-dev mailing list
+>xfce-goodies-dev at lists.berlios.de
+>http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+>
+>  
+>
+
+
+
+From masse_nicolas at yahoo.fr  Thu Jun  2 14:17:56 2005
+From: masse_nicolas at yahoo.fr (Nicolas Masse)
+Date: Thu, 2 Jun 2005 14:17:56 +0200
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <429EE9F7.4090503@home.se>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+	<20050601142819.778017f3.masse_nicolas@yahoo.fr>
+	<Pine.LNX.4.61.0506020052120.18738@zeno2.math.washington.edu>
+	<429ED607.5020801@home.se>
+	<20050602125936.3359b0ae@localhost.localdomain>
+	<429EE9F7.4090503@home.se>
+Message-ID: <20050602141756.6b229c9b.masse_nicolas@yahoo.fr>
+
+On Thu, 02 Jun 2005 13:13:59 +0200
+Erik Ahlner <whyz at home.se> wrote:
+
+Strange. it works here.
+
+> Well, if that's the intention for that option, it does not work.
+> That switch just tells the plugin not to SCROLL the text, and not to 
+> remove it.
+> 
+> 
+> 
+> Mario Streiber wrote:
+> 
+> >On Thu, 02 Jun 2005 11:48:55 +0200 Erik Ahlner <whyz at home.se> wrote:
+> >
+> >  
+> >
+> >>Hello!
+> >>
+> >>Another suggestion is to be able to NOT show the title of the song. I'm 
+> >>using a rather thing   panel, which means i have to choose a very small 
+> >>font for the song title, making it impossible to read.. so i could just 
+> >>skip it completely :)
+> >>Perhaps make all of the components optional? even the play/pause/stop 
+> >>and so on.
+> >>    
+> >>
+> >
+> >The scrolled song title can be hidden in the options menu.
+> >
+> >Mario
+> >_______________________________________________
+> >xfce-goodies-dev mailing list
+> >xfce-goodies-dev at lists.berlios.de
+> >http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> >
+> >
+> >  
+> >
+> 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+From mario.streiber at gmx.de  Thu Jun  2 13:30:16 2005
+From: mario.streiber at gmx.de (Mario Streiber)
+Date: Thu, 2 Jun 2005 13:30:16 +0200
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <429EE9F7.4090503@home.se>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+	<20050601142819.778017f3.masse_nicolas@yahoo.fr>
+	<Pine.LNX.4.61.0506020052120.18738@zeno2.math.washington.edu>
+	<429ED607.5020801@home.se>
+	<20050602125936.3359b0ae@localhost.localdomain>
+	<429EE9F7.4090503@home.se>
+Message-ID: <20050602133016.278fecfd@localhost.localdomain>
+
+On Thu, 02 Jun 2005 13:13:59 +0200 Erik Ahlner <whyz at home.se> wrote:
+
+> Well, if that's the intention for that option, it does not work.
+> That switch just tells the plugin not to SCROLL the text, and not to 
+> remove it.
+
+I mean that checkbox in the options dialog that's labelled "Show scrolled song title". If I clear the checkbox, the song title disappears.
+
+There seems to be a problem with the initialization which we should fix. The song title is shown at first although the check box is cleared. But if you activate it and then deactivate it again, the song title disappears. At least on my box.
+
+Mario
+
+
+From masse_nicolas at yahoo.fr  Thu Jun  2 14:38:50 2005
+From: masse_nicolas at yahoo.fr (Nicolas Masse)
+Date: Thu, 2 Jun 2005 14:38:50 +0200
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <20050602133016.278fecfd@localhost.localdomain>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+	<20050601142819.778017f3.masse_nicolas@yahoo.fr>
+	<Pine.LNX.4.61.0506020052120.18738@zeno2.math.washington.edu>
+	<429ED607.5020801@home.se>
+	<20050602125936.3359b0ae@localhost.localdomain>
+	<429EE9F7.4090503@home.se>
+	<20050602133016.278fecfd@localhost.localdomain>
+Message-ID: <20050602143850.0f974c6c.masse_nicolas@yahoo.fr>
+
+On Thu, 2 Jun 2005 13:30:16 +0200
+Mario Streiber <mario.streiber at gmx.de> wrote:
+
+> ...
+> There seems to be a problem with the initialization which we should fix. The song title is shown at first although the check box is cleared. 
+> But if you activate it and then deactivate it again, the song title disappears. At least on my box.
+
+I confirm that. I found also another little problem: when title is not show, this is impossible to have an acces to the config dialog. Seems this is because the signal is only connected to the title and not to the rule and the commands. 
+> 
+> Mario
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+From koorek at o2.pl  Thu Jun  2 13:51:01 2005
+From: koorek at o2.pl (Robert Kurowski)
+Date: Thu, 2 Jun 2005 13:51:01 +0200
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <20050602141756.6b229c9b.masse_nicolas@yahoo.fr>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+	<20050601142819.778017f3.masse_nicolas@yahoo.fr>
+	<Pine.LNX.4.61.0506020052120.18738@zeno2.math.washington.edu>
+	<429ED607.5020801@home.se>
+	<20050602125936.3359b0ae@localhost.localdomain>
+	<429EE9F7.4090503@home.se>
+	<20050602141756.6b229c9b.masse_nicolas@yahoo.fr>
+Message-ID: <20050602135101.787c8554@localhost>
+
+On Thu, 2 Jun 2005 14:17:56 +0200
+Nicolas Masse <masse_nicolas at yahoo.fr> wrote:
+
+> Strange. it works here.
+
+works here too.
+-- 
+Robert 'koorek' Kurowski	Jabber:	koorek at pld-linux.org
+
+
+From mario.streiber at gmx.de  Thu Jun  2 14:13:34 2005
+From: mario.streiber at gmx.de (Mario Streiber)
+Date: Thu, 2 Jun 2005 14:13:34 +0200
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <20050602143850.0f974c6c.masse_nicolas@yahoo.fr>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+	<20050601142819.778017f3.masse_nicolas@yahoo.fr>
+	<Pine.LNX.4.61.0506020052120.18738@zeno2.math.washington.edu>
+	<429ED607.5020801@home.se>
+	<20050602125936.3359b0ae@localhost.localdomain>
+	<429EE9F7.4090503@home.se>
+	<20050602133016.278fecfd@localhost.localdomain>
+	<20050602143850.0f974c6c.masse_nicolas@yahoo.fr>
+Message-ID: <20050602141334.1713c7c2@localhost.localdomain>
+
+> > There seems to be a problem with the initialization which we should fix. The song title is shown at first although the check box is cleared. 
+> > But if you activate it and then deactivate it again, the song title disappears. At least on my box.
+> 
+> I confirm that. I found also another little problem: when title is not show, this is impossible to have an acces to the config dialog. Seems this is because the signal is only connected to the title and not to the rule and the commands. 
+
+You're right. There's still room for improvement :-) We'll check this soon.
+
+Mario
+
+
+From kieroglu at math.washington.edu  Thu Jun  2 18:45:46 2005
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Thu, 2 Jun 2005 09:45:46 -0700 (PDT)
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <429ED607.5020801@home.se>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+ <20050601142819.778017f3.masse_nicolas@yahoo.fr>
+ <Pine.LNX.4.61.0506020052120.18738@zeno2.math.washington.edu>
+ <429ED607.5020801@home.se>
+Message-ID: <Pine.LNX.4.61.0506020941270.21607@zeno1.math.washington.edu>
+
+On Thu, 2 Jun 2005, Erik Ahlner wrote:
+
+> Hello!
+>
+> Another suggestion is to be able to NOT show the title of the song. I'm using 
+> a rather thing   panel, which means i have to choose a very small font for 
+> the song title, making it impossible to read.. so i could just skip it 
+> completely :)
+
+That option in preferences is working correctly here, too. I'm using the 
+latest gtk btw.
+
+As for the "options" dialog: You can also click on the tiny space between 
+two buttons, so even without the title you should be able to open the 
+dialog. The signal handler is connected to ctrl->base, not just the title. 
+I've experimented with that, and tries severeal other things like putting 
+an eventbox around the main box widget etc. None worked like I want, but 
+we can keep tinkering of course...
+
+Ilgar
+
+
+From whyz at home.se  Thu Jun  2 20:45:01 2005
+From: whyz at home.se (Erik Ahlner)
+Date: Thu, 02 Jun 2005 20:45:01 +0200
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <Pine.LNX.4.61.0506020941270.21607@zeno1.math.washington.edu>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu> <20050601142819.778017f3.masse_nicolas@yahoo.fr> <Pine.LNX.4.61.0506020052120.18738@zeno2.math.washington.edu> <429ED607.5020801@home.se> <Pine.LNX.4.61.0506020941270.21607@zeno1.math.washington.edu>
+Message-ID: <429F53AD.7020307@home.se>
+
+Hi!
+
+Hm, have you tried restarting xfce to see if it still is not showing?
+I managed to remove the title at first, but when i rebooted it was still 
+there, even though i've unchecked "Show scrolled song title".
+
+Erik
+
+Kemal Eroglu wrote:
+
+> On Thu, 2 Jun 2005, Erik Ahlner wrote:
+>
+>> Hello!
+>>
+>> Another suggestion is to be able to NOT show the title of the song. 
+>> I'm using a rather thing   panel, which means i have to choose a very 
+>> small font for the song title, making it impossible to read.. so i 
+>> could just skip it completely :)
+>
+>
+> That option in preferences is working correctly here, too. I'm using 
+> the latest gtk btw.
+>
+
+
+
+From kieroglu at math.washington.edu  Fri Jun  3 11:29:32 2005
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Fri, 3 Jun 2005 02:29:32 -0700 (PDT)
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <Pine.LNX.4.61.0506020052120.18738@zeno2.math.washington.edu>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+ <20050601142819.778017f3.masse_nicolas@yahoo.fr>
+ <Pine.LNX.4.61.0506020052120.18738@zeno2.math.washington.edu>
+Message-ID: <Pine.LNX.4.61.0506030223260.3999@zeno2.math.washington.edu>
+
+
+  It will take forever to wait for the list digest, so I'm replying to my 
+own message.
+
+  I'm attaching the new file which includes a correction for the bug that 
+Erik mentioned (show title option is now correctly read from config).
+
+  I'll upload the new package to CVS this weekend (possibly Sunday) and it 
+will also include an option to hide the progressbar. Do you think making 
+the buttons hideable is necessary? The plugin would not be very useful 
+without those. Or something like show on mouse over? Could be useful for 
+small/medium panels.
+
+  Ilgar
+-------------- next part --------------
+/*
+
+ * Copyright (c) 2003 Patrick van Staveren <pvanstav at cs.wmich.edu>
+
+ * Copyright (c) 2005 Kemal Ilgar Eroglu <kieroglu at math.washington.edu>
+
+ * Copyright (c) 2005 Mario Streiber <mario.streiber at gmx.de>
+
+ *
+
+ * Redistribution and use in source and binary forms, with or without
+
+ * modification, are permitted provided that the following conditions
+
+ * are met:
+
+ *
+
+ * 1. Redistributions of source code must retain the above copyright
+
+ *    notice, this list of conditions and the following disclaimer.
+
+ * 2. Redistributions in binary form must reproduce the above copyright
+
+ *    notice, this list of conditions and the following disclaimer in the
+
+ *    documentation and/or other materials provided with the distribution.
+
+ *
+
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+
+ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+
+ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+
+ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+
+ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+
+ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+ */
+
+
+
+#ifdef HAVE_CONFIG_H
+
+#include <config.h>
+
+#endif
+
+
+
+#include <stdio.h>
+
+#include <unistd.h>
+
+#include <string.h>
+
+#include <sys/wait.h>
+
+
+
+#include <gtk/gtk.h>
+
+
+
+#include <libxfce4util/i18n.h>
+
+#include <libxfcegui4/dialogs.h>
+
+#include <panel/plugins.h>
+
+#include <panel/xfce.h>
+
+
+
+#include <xmmsctrl.h>
+
+
+
+#include "xmms_plugin.h"
+
+
+
+/******************/
+
+/* xmms_control.c */
+
+/******************/
+
+
+
+/**************************************/
+
+/* displays or hides the xmms windows */
+
+/**************************************/
+
+static void display_xmms(plugin_data *pd, gboolean show) {
+
+  /* do nothing if xmms is not running */
+
+  if (!xmms_remote_is_running(pd->xmms_session)) return;
+
+
+
+  if (show) {
+
+    /* display xmms windows based on their prior status */
+
+    if (pd->show_mw) xmms_remote_main_win_toggle(pd->xmms_session, TRUE);
+
+    if (pd->show_pl) xmms_remote_pl_win_toggle  (pd->xmms_session, TRUE);
+
+    if (pd->show_eq) xmms_remote_eq_win_toggle  (pd->xmms_session, TRUE);
+
+    pd->xmmsvisible = TRUE;
+
+  }
+
+  else {
+
+    /* save status of each xmms window */
+
+    pd->show_mw = xmms_remote_is_main_win(pd->xmms_session);
+
+    pd->show_pl = xmms_remote_is_pl_win  (pd->xmms_session);
+
+    pd->show_eq = xmms_remote_is_eq_win  (pd->xmms_session);
+
+
+
+    /* make sure at least the main window is shown on redisplay */
+
+    if (!(pd->show_pl || pd->show_eq)) pd->show_mw = TRUE;
+
+
+
+    /* hide all */
+
+    xmms_remote_main_win_toggle(pd->xmms_session, FALSE);
+
+    xmms_remote_pl_win_toggle  (pd->xmms_session, FALSE);
+
+    xmms_remote_eq_win_toggle  (pd->xmms_session, FALSE);
+
+    pd->xmmsvisible = FALSE;
+
+  }
+
+}
+
+
+
+
+
+/**************************************/
+
+/* function to do the size adjustment */
+
+/**************************************/
+
+static void adjust_size(plugin_data *pd) {
+
+
+
+  if (pd->size_adjust) {
+
+     gtk_widget_set_size_request (pd->pbar, 0, 4);
+
+     gtk_widget_set_size_request (pd->viewport, 0, 6);
+
+  }
+
+  else {
+
+     gtk_widget_set_size_request (pd->pbar, 0, -1);
+
+     gtk_widget_set_size_request (pd->viewport, 0, -1);
+
+  }
+
+
+
+  gtk_widget_show_all(pd->boxMain);
+  if( !pd->show_scrolledtitle )
+     gtk_widget_hide_all(pd->viewport);
+
+}
+
+
+
+
+
+/*********************************************************/
+
+/* callback to jump to the previous song in the playlist */
+
+/*********************************************************/
+
+static void prev(GtkWidget *widget, GdkEventButton* event, gpointer data) {
+
+  if (event->button != 1) return;
+
+  xmms_remote_playlist_prev(((plugin_data*) data)->xmms_session);
+
+}
+
+
+
+
+
+/************************************************************************/
+
+/* callback to start playing; if xmms is not running it will be started */
+
+/************************************************************************/
+
+static void play(GtkWidget *widget, GdkEventButton* event, gpointer data) {
+
+  plugin_data *pd = (plugin_data*) data;
+
+  int i=0;
+
+  pid_t pid;
+
+  int status;
+
+
+
+  if (event->button != 1) return;
+
+
+
+  /* start xmms and hide its windows if not already running */
+
+  if (!xmms_remote_is_running(pd->xmms_session)) {
+
+    if (exec_command("xmms -p")) {
+
+      while (!xmms_remote_is_running(pd->xmms_session) && (i <= 5)) {
+
+        sleep(1);
+
+        i++;
+
+      }
+
+    }
+
+    if ((i < 5) && (!pd->xmmsvisible))
+
+      display_xmms(pd, FALSE);
+
+  }
+
+  else xmms_remote_play(pd->xmms_session);
+
+}
+
+
+
+
+
+/*****************************/
+
+/* callback for pausing xmms */
+
+/*****************************/
+
+static void paus(GtkWidget *widget, GdkEventButton* event, gpointer data) {
+
+  if (event->button != 1) return;
+
+  xmms_remote_pause(((plugin_data*) data)->xmms_session);
+
+}
+
+
+
+
+
+/******************************/
+
+/* callback for stopping xmms */
+
+/******************************/
+
+static void stop(GtkWidget *widget, GdkEventButton* event, gpointer data) {
+
+  if (event->button != 1) return;
+
+  xmms_remote_stop(((plugin_data*) data)->xmms_session);
+
+}
+
+
+
+/*****************************************************/
+
+/* callback to jump to the next song in the playlist */
+
+/*****************************************************/
+
+static void next(GtkWidget *widget, GdkEventButton* event, gpointer data) {
+
+  if (event->button != 1) return;
+
+  xmms_remote_playlist_next(((plugin_data*) data)->xmms_session);
+
+}
+
+
+
+
+
+/****************************************************************/
+
+/* callback for changing the volume when using the scroll wheel */
+
+/****************************************************************/
+
+static void box_scroll(GtkWidget* widget, GdkEventScroll* event, gpointer data) {
+
+  gint vl, vr;
+
+  plugin_data *pd = (plugin_data*) data;
+
+
+
+  xmms_remote_get_volume(pd->xmms_session, &vl, &vr);
+
+  if(event->direction == GDK_SCROLL_UP) xmms_remote_set_volume(pd->xmms_session, vl+8, vr+8);
+
+  else                                  xmms_remote_set_volume(pd->xmms_session, vl-8, vr-8);
+  
+  xmms_remote_get_volume(pd->xmms_session, &vl, &vr);
+  gtk_progress_bar_set_fraction     (GTK_PROGRESS_BAR(pd->vol_pbar), ((double)(MAX(vl,vr)))/100);
+
+}
+
+
+
+/**********************************************/
+
+/* callback for clicking on the progress bar  */
+
+/* button 1: jump to time in the current song */
+
+/* button 2: toggle xmms window visibility    */
+
+/**********************************************/
+
+static void pbar_click(GtkWidget* widget, GdkEventButton* event, gpointer data) {
+
+  gint width, time, total;
+
+  plugin_data *pd = (plugin_data *) data;
+
+  
+
+  switch (event->button) {
+
+  case 1:
+
+    // jump to time within this song
+
+    width = pd->pbar->allocation.width;
+
+    total = xmms_remote_get_playlist_time(pd->xmms_session,
+
+                                          xmms_remote_get_playlist_pos(pd->xmms_session));
+
+    time  = (int) (event->x * total / width);
+
+    xmms_remote_jump_to_time(pd->xmms_session, time);
+
+    break;
+
+
+
+  case 2:
+
+    // toggle xmms window visibility
+
+    display_xmms(pd, !pd->xmmsvisible);
+
+  }
+
+}
+
+
+
+
+
+/*******************/
+
+/* panel_display.c */
+
+/*******************/
+
+
+
+
+
+/************************************************/
+
+/* Set song title in tooltip and scrolled label */
+
+/************************************************/
+
+void set_song_title(plugin_data *pd) {
+
+  gchar    *title, *tooltip, *label;
+
+  gint     pos, time;
+
+  gboolean running = xmms_remote_is_running(pd->xmms_session);
+
+
+
+  if (running) {
+
+    pos        = xmms_remote_get_playlist_pos(pd->xmms_session);
+
+    time       = xmms_remote_get_playlist_time(pd->xmms_session, pos) / 1000;
+
+    title      = xmms_remote_get_playlist_title(pd->xmms_session, pos);
+
+    if (pd->simple_title)
+
+       tooltip = g_strdup_printf("%s", title);
+
+    else
+
+       tooltip = g_strdup_printf("%d: %s (%d:%02d)", pos, title, time/60, time%60);
+
+  }
+
+  else
+
+       tooltip = g_strdup_printf(TITLE_STRING);
+
+  gtk_tooltips_set_tip            (pd->tooltip, GTK_WIDGET(pd->base), tooltip, NULL);
+
+
+
+  if (pd->simple_title) label   = g_strdup_printf("%s %s ", tooltip, tooltip);
+
+  else                  label   = g_strdup_printf("%s +++ %s +++", tooltip, tooltip);
+
+  pd->labelattr->start_index    = 0;
+
+  pd->labelattr->end_index      = strlen(label);
+
+  gtk_label_set_attributes(GTK_LABEL(pd->label), pd->labelattrlist);
+
+  gtk_label_set_text(GTK_LABEL(pd->label), label);
+
+  //g_free(title);
+
+  g_free(tooltip);
+
+  g_free(label);
+
+}
+
+
+
+
+
+/*************************************************/
+
+/* timeout function to update the plugin widgets */
+
+/*************************************************/
+
+gboolean pbar_label_update(gpointer data) {
+
+  plugin_data    *pd = (plugin_data*) data;
+
+  GtkAdjustment  *adj;
+
+  gint           sp, len, time = 1, pl_pos = -1, play_time = 0, vl, vr;
+
+  gchar          *timestr;
+
+  PangoAttribute *attr;
+
+  gboolean       running, playing;
+
+
+
+  /* check xmms status */
+
+  running  = xmms_remote_is_running(pd->xmms_session);
+
+  playing  = (running && xmms_remote_is_playing(pd->xmms_session));
+
+  if (running) { /* get playlist position and song length */
+
+    pl_pos = xmms_remote_get_playlist_pos(pd->xmms_session);
+
+    time   = xmms_remote_get_playlist_time(pd->xmms_session, pl_pos) / 1000;
+
+  }
+
+
+
+  /* update tooltip and song title */
+
+  if (pd->playlist_position != pl_pos) {
+
+    pd->playlist_position     = pl_pos;
+
+    pd->title_scroll_position = 0;
+
+    set_song_title(pd);
+
+  }
+
+
+
+  /* update progress bar */
+
+  if (playing) play_time = xmms_remote_get_output_time(pd->xmms_session) / 1000;
+
+  if (pd->play_time != play_time) {
+
+    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(pd->pbar), (gdouble) play_time / time);
+
+    // timestr = g_strdup_printf("%d:%02d", play_time/60, play_time%60);
+
+    // gtk_progress_bar_set_text(GTK_PROGRESS_BAR(pd->pbar), timestr);
+
+    // g_free(timestr);
+
+    pd->play_time = play_time;
+
+  }
+
+
+
+  /* scroll song title */
+
+  if ((pd->show_scrolledtitle) && (pd->scroll_step > 0)) {
+
+    adj = gtk_viewport_get_hadjustment(GTK_VIEWPORT(pd->viewport));
+
+    len = pd->label->allocation.width / 2;
+
+    sp  = pd->title_scroll_position - pd->step_delay;
+
+    sp  = (sp < 0) ? 0 : sp;
+
+    sp  = (len > 0) ? sp % len : 0;
+
+    gtk_adjustment_set_value(adj, sp);
+
+    pd->title_scroll_position += pd->scroll_step;
+
+  }
+  
+  if((running) && (pd->vol_pbar_visible)){
+    xmms_remote_get_volume(pd->xmms_session, &vl, &vr);
+    gtk_progress_bar_set_fraction     (GTK_PROGRESS_BAR(pd->vol_pbar), ((double)(MAX(vl,vr)))/100);    
+
+  }
+  
+
+  /* set up new timer and destroy old if new scroll speed has been set */
+
+  if (pd->timer_reset) {
+
+    g_source_remove(pd->timeout);
+
+    pd->timeout = g_timeout_add(1000 / pd->scroll_speed, pbar_label_update, pd);
+
+    pd->timer_reset = FALSE;
+
+    return FALSE;
+
+  }
+
+  return TRUE;
+
+}
+
+
+
+
+
+/***************************************************************/
+
+/* adds a new button with image and callback to the parent box */
+
+/***************************************************************/
+
+static void new_button_with_img(GtkWidget *box, gchar *filename, gpointer cb, gpointer data) {
+
+  GtkWidget *image, *eventbox;
+
+
+
+  eventbox            = gtk_event_box_new();
+
+  image               = gtk_image_new_from_file(filename);
+
+  gtk_widget_show       (image);
+
+  gtk_container_add     (GTK_CONTAINER(eventbox), image);
+
+  gtk_widget_set_events (eventbox, GDK_BUTTON_PRESS_MASK);
+
+  g_signal_connect      (G_OBJECT(eventbox), "button_press_event", G_CALLBACK(cb), data);
+
+  gtk_box_pack_start    (GTK_BOX(box), eventbox, DOEXPAND, DOFILL, PADDING);
+
+}
+
+
+
+
+
+/******************************/
+
+/* creates the plugin widgets */
+
+/******************************/
+
+gboolean xmms_plugin_control_new(Control *ctrl) {
+
+  GtkWidget *button, *box, *boxV, *boxMain, *pbar, *vol_pbar, *viewport, *eventbox, *label;
+
+  plugin_data *pd;
+
+  gchar *title = TITLE_STRING" +++ "TITLE_STRING" +++ ";
+  gint vl, vr;
+
+  GtkRcStyle *rc;
+  GdkColor color;
+
+
+  pd = g_new(plugin_data, 1);
+
+  
+
+  /* These defaults will be overwritten by read config */
+
+  pd->titletextsize          = TITLE_SIZE;
+
+  pd->title_scroll_position  = 0;
+
+  pd->scroll_speed           = SCROLL_SPEED;
+
+  pd->scroll_step            = SCROLL_STEP;
+
+  pd->step_delay             = STEP_DELAY;
+
+  pd->scroll_delay           = SCROLL_DELAY;
+
+  pd->playlist_position      = -1;
+
+  pd->play_time              = -1;
+
+  pd->xmmsvisible            = TRUE;
+
+  pd->xmms_session           = 0;
+
+  pd->timeout                = 0;
+
+  pd->timer_reset            = FALSE;
+
+  pd->show_scrolledtitle     = TRUE;
+
+  pd->tooltip                = gtk_tooltips_new();
+
+  pd->labelattrlist          = pango_attr_list_new();
+
+  pd->labelattr              = pango_attr_size_new(pd->titletextsize * PANGO_SCALE);
+
+  pd->labelattr->start_index = 0;
+
+  pd->labelattr->end_index   = strlen(title);
+
+  pd->quit_xmms              = FALSE;
+
+  pd->simple_title           = FALSE;
+
+  pd->size_adjust            = FALSE;
+  pd->vol_pbar_visible       = TRUE;
+
+  pango_attr_list_insert       (pd->labelattrlist, pd->labelattr);
+
+
+  
+
+
+  /* add scrolling callback for the plugin base widget */
+
+  pd->base                     = ctrl->base;
+
+  gtk_widget_add_events(GTK_WIDGET(ctrl->base), GDK_SCROLL_MASK);
+
+  g_signal_connect(G_OBJECT(ctrl->base),"scroll_event",G_CALLBACK(box_scroll), pd);
+
+  gtk_tooltips_set_tip           (pd->tooltip, GTK_WIDGET(ctrl->base), TITLE_STRING, NULL);
+
+
+
+  /* main container for the plugin widgets */
+
+  boxMain                      = gtk_hbox_new(FALSE, 0);
+  boxV                         = gtk_vbox_new(FALSE, 0);
+
+
+
+  /* label for the song title */
+
+  eventbox                     = gtk_event_box_new();
+
+  label                        = gtk_label_new(title);
+
+  gtk_label_set_line_wrap        (GTK_LABEL(label), FALSE);
+
+  gtk_container_add              (GTK_CONTAINER(eventbox), label);
+
+  gtk_widget_set_events          (eventbox, GDK_BUTTON_PRESS_MASK);
+
+  gtk_label_set_attributes       (GTK_LABEL(label), pd->labelattrlist);
+
+
+
+  /* viewport widget that manages the scrolling */
+
+  viewport                     = gtk_viewport_new(NULL, NULL);
+
+  gtk_viewport_set_shadow_type   (GTK_VIEWPORT(viewport), GTK_SHADOW_NONE);
+
+  gtk_container_add              (GTK_CONTAINER(viewport), eventbox);
+
+  gtk_widget_set_size_request    (viewport, 0, -1);
+
+  gtk_box_pack_start             (GTK_BOX(boxV), viewport, DOEXPAND, DOFILL, PADDING);
+
+
+
+  /* the progress bar */
+
+  pbar                         = gtk_progress_bar_new();
+
+  gtk_progress_bar_set_bar_style (GTK_PROGRESS_BAR(pbar), GTK_PROGRESS_CONTINUOUS);
+
+  gtk_widget_set_size_request    (pbar, 0, -1);
+
+  gtk_widget_set_events          (pbar, GDK_BUTTON_PRESS_MASK);
+
+  g_signal_connect               (G_OBJECT(pbar), "button_press_event",
+
+                                  G_CALLBACK(pbar_click), pd);
+
+  gtk_box_pack_start             (GTK_BOX(boxV), pbar, DOEXPAND, DOFILL, PADDING);
+
+       
+
+  pd->boxMain  = boxMain;
+
+  pd->viewport = viewport;
+
+  pd->label    = label;
+
+  pd->pbar     = pbar;
+
+
+
+  /* box that contains the xmms control buttons */
+
+  box                          = gtk_hbox_new(FALSE, 0);
+
+  new_button_with_img(box, PREV, G_CALLBACK(prev), pd);
+
+  new_button_with_img(box, PLAY, G_CALLBACK(play), pd);
+
+  new_button_with_img(box, PAUS, G_CALLBACK(paus), pd);
+
+  new_button_with_img(box, STOP, G_CALLBACK(stop), pd);
+
+  new_button_with_img(box, NEXT, G_CALLBACK(next), pd);
+
+
+
+  gtk_box_pack_start             (GTK_BOX(boxV), box, DOEXPAND, DOFILL, PADDING);    
+
+  gtk_container_set_border_width (GTK_CONTAINER(boxMain), 2);  
+  
+  /* the volume progress bar */
+
+  vol_pbar                          = gtk_progress_bar_new();
+  gtk_progress_bar_set_orientation  (GTK_PROGRESS_BAR(vol_pbar),GTK_PROGRESS_BOTTOM_TO_TOP);
+
+  gtk_progress_bar_set_bar_style    (GTK_PROGRESS_BAR(vol_pbar), GTK_PROGRESS_CONTINUOUS);
+
+  gtk_widget_set_size_request       (vol_pbar, 6, 0);
+  xmms_remote_get_volume            (pd->xmms_session, &vl, &vr);
+
+  gtk_progress_bar_set_fraction     (GTK_PROGRESS_BAR(vol_pbar), ((double)(MAX(vl, vr)))/100);
+  rc =                              gtk_widget_get_modifier_style (GTK_WIDGET (vol_pbar));
+
+  if (!rc)
+	rc = gtk_rc_style_new ();
+
+  gdk_color_parse ("#00c000", &color);
+
+  if (rc) {
+	rc->color_flags[GTK_STATE_PRELIGHT] |= GTK_RC_BG;
+	rc->bg[GTK_STATE_PRELIGHT] = color;
+  }
+
+  gtk_widget_modify_style (GTK_WIDGET (vol_pbar), rc);
+  pd->vol_pbar                      = vol_pbar;
+  
+  gtk_box_pack_start             (GTK_BOX(boxMain), boxV, FALSE, FALSE, 1);
+  gtk_box_pack_start             (GTK_BOX(boxMain), vol_pbar, FALSE, FALSE, 1);
+  
+  
+
+  gtk_container_add              (GTK_CONTAINER(ctrl->base), boxMain);
+
+
+
+  gtk_widget_show_all(boxMain);
+
+
+
+  pd->timeout                  = g_timeout_add(1000 / pd->scroll_speed, pbar_label_update, pd);
+
+                                              
+
+  ctrl->data = (gpointer) pd;
+
+  ctrl->with_popup = FALSE;
+
+ 
+
+  return(TRUE);
+
+}
+
+
+
+
+
+/******************************************************/
+
+/* frees all resources used by the plugin (I hope :-) */
+
+/******************************************************/
+
+static void xmms_plugin_free(Control *ctrl) {
+
+  plugin_data *pd;
+
+
+
+  g_return_if_fail(ctrl != NULL);
+
+  g_return_if_fail(ctrl-> data != NULL);
+
+
+
+  pd = (plugin_data*) ctrl->data;
+
+
+
+  /* remove timeout */
+
+  if (pd->timeout) g_source_remove(pd->timeout);
+
+
+
+  /* destroy all widgets */
+
+  gtk_widget_destroy(pd->boxMain);
+
+
+
+  /* destroy text attribute for the label widget */
+
+  pango_attribute_destroy(pd->labelattr);
+
+
+  /* destroy the tooltips */
+  gtk_object_destroy(GTK_OBJECT(pd->tooltip));
+
+
+  /* let xmms exit if quit_xmms option is active */
+
+  if (pd->quit_xmms) xmms_remote_quit(pd->xmms_session);
+
+
+
+  /* free the plugin data structure */
+
+  g_free(pd);
+
+}
+
+     
+
+
+
+/*****************/
+
+/* preferences.c */
+
+/*****************/
+
+
+
+
+
+/**************************/
+
+/* read plugin parameters */
+
+/**************************/
+
+void xmms_plugin_read_config(Control *control, xmlNodePtr node) {
+
+  xmlChar *value;
+
+  gint n;
+
+  gboolean b;
+
+  plugin_data     *pd = (plugin_data *) control->data;
+
+  PangoAttrSize *attr = (PangoAttrSize*) pd->labelattr;
+
+
+
+  g_return_if_fail(node!=NULL && node->children!=NULL);
+
+
+
+  /* Read xml properties. All values out of range will be ignored. */
+
+  /* The default will be used then.                                */
+
+  node=node->children;
+
+
+
+  /* get song text size */
+
+  value = xmlGetProp (node, (const xmlChar *) "textsize");
+
+  if (value) {
+
+    n = atoi((char*) value);
+
+    if ((n >= MIN_TITLE_SIZE) && (n <= MAX_TITLE_SIZE)) {
+
+      pd->titletextsize = n;
+
+      attr->size = pd->titletextsize * PANGO_SCALE;
+
+      gtk_label_set_attributes(GTK_LABEL(pd->label), pd->labelattrlist);
+
+    }
+
+  }
+
+  xmlFree(value);
+
+
+
+  /* get scroll speed */
+
+  value = xmlGetProp (node, (const xmlChar *) "scroll_speed");
+
+  if (value) {
+
+    n = atoi((char*) value);
+
+    if ((n >= MIN_SCROLL_SPEED) && (n <= MAX_SCROLL_SPEED)) {
+
+      pd->scroll_speed = n;
+
+      pd->timer_reset = TRUE;
+
+    }
+
+  }
+
+  xmlFree(value);
+
+
+
+  /* get scroll step width */
+
+  value = xmlGetProp (node, (const xmlChar *) "scroll_step");
+
+  if (value) {
+
+    n = atoi((char*) value);
+
+    if ((n >= MIN_SCROLL_STEP) && (n <= MAX_SCROLL_STEP)) pd->scroll_step = n;
+
+  }
+
+  xmlFree(value);
+
+
+
+  /* get scroll delay */
+
+  value = xmlGetProp (node, (const xmlChar *) "scroll_delay");
+
+  if (value) {
+
+    n = atoi((char*) value);
+
+    if ((n >= MIN_SCROLL_DELAY) && (n <= MAX_SCROLL_DELAY)) pd->scroll_delay = n;
+
+  }
+
+  xmlFree(value);
+
+  pd->step_delay = pd->scroll_delay * pd->scroll_speed * pd->scroll_step;
+
+
+
+  /* get xmms window visibility */
+
+  value = xmlGetProp (node, (const xmlChar *) "xmms_visible");
+
+  if (value) {
+
+    if (!strcmp(value, "TRUE")) pd->xmmsvisible = TRUE;
+
+    else                        pd->xmmsvisible = FALSE;
+
+    xmlFree(value);
+
+  }
+
+
+
+  /* get visibility  of scrolled song title */
+
+  value = xmlGetProp (node, (const xmlChar *) "title_visible");
+
+  if (value) {
+
+    if (!strcmp(value, "TRUE"))
+       pd->show_scrolledtitle = TRUE;
+
+    else {
+       pd->show_scrolledtitle = FALSE;
+       gtk_widget_hide_all (pd->viewport);
+    }
+
+    xmlFree(value);
+
+  }
+
+  /* show/hide the event box parent of the scrolled title */
+
+  if (pd->show_scrolledtitle)   gtk_widget_show_all(gtk_widget_get_parent(pd->label));
+
+  else                          gtk_widget_hide_all(gtk_widget_get_parent(pd->label));
+
+
+
+  /* load quit xmms option */
+
+  value = xmlGetProp (node, (const xmlChar *) "quit_xmms");
+
+  if (value) {
+
+     if (!strcmp(value, "TRUE")) pd->quit_xmms = TRUE;
+
+     else                        pd->quit_xmms = FALSE;
+
+     xmlFree(value);
+
+  }
+
+
+
+  /* load simple title option */
+
+  value = xmlGetProp (node, (const xmlChar *) "simple_title");
+
+  if (value) {
+
+     if (!strcmp(value, "TRUE")) pd->simple_title = TRUE;
+
+     else                        pd->simple_title = FALSE;
+
+     xmlFree(value);
+
+  }
+
+  set_song_title(pd);
+
+
+
+  /* load size adjust option */
+
+  value = xmlGetProp (node, (const xmlChar *) "size_adjust");
+
+  if (value) {
+
+     if (!strcmp(value, "TRUE")) pd->size_adjust = TRUE;
+
+     else                        pd->size_adjust = FALSE;
+
+     xmlFree(value);
+
+  }
+
+  adjust_size(pd);
+  
+
+
+  /* load volume progressbar visible option */
+
+  value = xmlGetProp (node, (const xmlChar *) "vol_pbar_visible");
+
+  if (value) {
+
+     if (!strcmp(value, "TRUE")) {
+            pd->vol_pbar_visible = TRUE;
+            gtk_widget_show_all  (pd->vol_pbar);
+     }
+
+     else {                 
+           pd->vol_pbar_visible = FALSE;
+           gtk_widget_hide_all  (pd->vol_pbar);
+     }
+           
+
+     xmlFree(value);
+
+  }
+
+
+
+}
+
+
+
+
+
+/**************************/
+
+/* save plugin parameters */
+
+/**************************/
+
+void xmms_plugin_write_config(Control *ctrl, xmlNodePtr parent) {
+
+  xmlChar value[10];
+
+  plugin_data *pd=(plugin_data *)ctrl->data;
+
+  xmlNodePtr node;
+
+
+
+  g_return_if_fail(parent!=NULL);
+
+         
+
+  node = xmlNewTextChild (parent, NULL, (const xmlChar *)"XmmsControl", NULL);
+
+  g_return_if_fail(node!=NULL);
+
+       
+
+  /* save title font size */
+
+  g_snprintf (value, 5, "%d", pd->titletextsize);
+
+  xmlSetProp (node, "textsize", (const xmlChar *)value);
+
+
+
+  /* save scroll speed */
+
+  g_snprintf (value, 5, "%d", pd->scroll_speed);
+
+  xmlSetProp (node, "scroll_speed", (const xmlChar *)value);
+
+
+
+  /* save scroll step width */
+
+  g_snprintf (value, 5, "%d", pd->scroll_step);
+
+  xmlSetProp (node, "scroll_step", (const xmlChar *)value);
+
+
+
+  /* save scroll delay */
+
+  g_snprintf (value, 5, "%d", pd->scroll_delay);
+
+  xmlSetProp (node, "scroll_delay", (const xmlChar *)value);
+
+
+
+  /* save xmms window visibility */
+
+  xmlSetProp (node, "xmms_visible", (pd->xmmsvisible) ? "TRUE" : "FALSE");
+
+
+
+  /* save visibility of scrolled sing title */
+
+  xmlSetProp (node, "title_visible", (pd->show_scrolledtitle) ? "TRUE" : "FALSE");
+
+
+
+  /* save quit xmms option */
+
+  xmlSetProp (node, "quit_xmms", (pd->quit_xmms) ? "TRUE" : "FALSE");
+
+
+
+  /* save simple title option */
+
+  xmlSetProp (node, "simple_title", (pd->simple_title) ? "TRUE" : "FALSE");
+
+
+
+  /* save size adjust option */
+
+  xmlSetProp (node, "size_adjust", (pd->size_adjust) ? "TRUE" : "FALSE");
+  
+  /* save volume progressbar option */
+
+  xmlSetProp (node, "vol_pbar_visible", (pd->vol_pbar_visible) ? "TRUE" : "FALSE");  
+
+}
+
+
+
+
+
+/**************************************************************/
+
+/* generic function to add panel callbacks to the base widget */
+
+/**************************************************************/
+
+static void xmms_plugin_attach_callback(Control *ctrl, const gchar *signal, GCallback cb, gpointer data) {
+
+  g_signal_connect(ctrl->base, signal, cb, data); 
+
+}
+
+
+
+
+
+/**************************************/
+
+/* callback to change the plugin size */
+
+/**************************************/
+
+static void xmms_plugin_set_size(Control *ctrl, int size){
+
+  /* do the resize */
+
+  /* yeah...do it....or something */
+
+}
+
+
+
+
+
+/************************************/
+
+/* callback to change the font size */
+
+/************************************/
+
+static void set_font_size(GtkSpinButton *spin, gpointer data) {
+
+  plugin_data *pd     = (plugin_data*) data;
+
+  PangoAttrSize *attr = (PangoAttrSize*) pd->labelattr;
+
+  pd->titletextsize   = gtk_spin_button_get_value_as_int(spin);
+
+
+
+  if (pd->titletextsize < MIN_TITLE_SIZE) pd->titletextsize = 1;
+
+  if (pd->titletextsize > MAX_TITLE_SIZE) pd->titletextsize = MAX_TITLE_SIZE;
+
+  attr->size = pd->titletextsize * PANGO_SCALE;
+
+  gtk_label_set_attributes(GTK_LABEL(pd->label), pd->labelattrlist);
+
+}
+
+
+
+
+
+/***************************************/
+
+/* callback to change the scroll speed */
+
+/***************************************/
+
+static void set_scroll_speed(GtkSpinButton *spin, gpointer data) {
+
+  plugin_data *pd  = (plugin_data*) data;
+
+  pd->scroll_speed = gtk_spin_button_get_value_as_int(spin);
+
+
+
+  if (pd->scroll_speed < MIN_SCROLL_SPEED) pd->scroll_speed = MIN_SCROLL_SPEED;
+
+  if (pd->scroll_speed > MAX_SCROLL_SPEED) pd->scroll_speed = MAX_SCROLL_SPEED;
+
+  pd->timer_reset = TRUE;
+
+}
+
+
+
+
+
+/********************************************/
+
+/* callback to change the scroll step width */
+
+/********************************************/
+
+static void set_scroll_step(GtkSpinButton *spin, gpointer data) {
+
+  plugin_data *pd             = (plugin_data*) data;
+
+  gint s                      = gtk_spin_button_get_value_as_int(spin);
+
+
+
+  if (s < MIN_SCROLL_STEP) s  = MIN_SCROLL_STEP;
+
+  if (s > MAX_SCROLL_STEP) s  = MAX_SCROLL_STEP;
+
+  pd->scroll_step = s;
+
+  if (s == 0) pd->title_scroll_position = 0;
+
+}
+
+
+
+
+
+/***************************************/
+
+/* callback to change the scroll delay */
+
+/***************************************/
+
+static void set_scroll_delay(GtkSpinButton *spin, gpointer data) {
+
+  plugin_data *pd             = (plugin_data*) data;
+
+  gint d                      = gtk_spin_button_get_value_as_int(spin);
+
+  
+
+  if (d < MIN_SCROLL_DELAY) d = MIN_SCROLL_DELAY;
+
+  if (d > MAX_SCROLL_DELAY) d = MAX_SCROLL_DELAY;
+
+  pd->scroll_delay            = d;
+
+  pd->step_delay              = d * pd->scroll_speed * pd->scroll_step;
+
+  pd->title_scroll_position   = 0;
+
+}
+
+
+
+
+
+/***************************************************************/
+
+/* callback to toggle the visibility of the scrolled songtitle */
+
+/***************************************************************/
+
+static void show_title(GtkToggleButton *check, gpointer data) {
+
+  plugin_data *pd             = (plugin_data*) data;
+
+  pd->show_scrolledtitle      = gtk_toggle_button_get_active(check);
+
+
+
+  /* show/hide the event box parent of the scrolled title */
+
+  if (pd->show_scrolledtitle)   gtk_widget_show_all(pd->viewport);
+
+  else                          gtk_widget_hide_all(pd->viewport);
+
+}
+
+
+
+
+
+/***************************************/
+
+/* callback to change quit xmms option */
+
+/***************************************/
+
+static void quit_xmms_toggled(GtkToggleButton *button, gpointer data) {
+
+  plugin_data *pd = (plugin_data*) data;
+
+  pd->quit_xmms   = gtk_toggle_button_get_active(button);
+
+}
+
+
+
+
+
+/******************************************/
+
+/* callback to change simple title option */
+
+/******************************************/
+
+static void simple_title_toggled(GtkToggleButton *button, gpointer data) {
+
+  plugin_data *pd    = (plugin_data*) data;
+
+  pd->simple_title   = gtk_toggle_button_get_active(button);
+
+  set_song_title(pd);
+
+}
+
+
+
+
+
+/**********************************/
+
+/* callback to size adjust option */
+
+/**********************************/
+
+static void size_adjust_toggled(GtkToggleButton *button, gpointer data) {
+
+  plugin_data *pd    = (plugin_data*) data;
+
+  pd->size_adjust   = gtk_toggle_button_get_active(button);
+
+  adjust_size(pd);
+
+}
+
+
+
+
+/******************************************************/
+
+/* callback for show volume (vol_pbar_visible) option */
+
+/******************************************************/
+
+static void vol_pbar_visible_toggled(GtkToggleButton *button, gpointer data) {
+
+  plugin_data *pd        = (plugin_data*) data;
+
+  pd->vol_pbar_visible   = gtk_toggle_button_get_active(button);
+
+  
+  if(pd->vol_pbar_visible)
+     gtk_widget_show_all (pd->vol_pbar);
+  else
+     gtk_widget_hide_all (pd->vol_pbar);
+
+}
+
+
+
+/*****************************************************/
+
+/* add label to the left column of the options table */
+
+/*****************************************************/
+
+static void add_label(GtkWidget *table, gchar *text, gint pos) {
+
+  gint att_opts               = GTK_SHRINK | GTK_EXPAND | GTK_FILL;
+
+  GtkWidget *label            = gtk_label_new(text);
+
+
+
+  gtk_misc_set_alignment        (GTK_MISC(label), 0.0, 0.5);
+
+  gtk_table_attach              (GTK_TABLE(table), label, 0, 1, pos, pos+1, att_opts, att_opts, 0, 0);
+
+}
+
+
+
+
+
+/*************************************************************/
+
+/* add spin button to the right columns of the options table */
+
+/*************************************************************/
+
+static void add_spin(GtkWidget *table, gint min, gint max, gint value, GCallback cb, gpointer data, gint pos) {
+
+  gint att_opts               = GTK_SHRINK/* | GTK_EXPAND | GTK_FILL*/;
+
+  GtkWidget *spin             = gtk_spin_button_new_with_range(min, max, 1.0);
+
+
+
+  gtk_spin_button_set_value     (GTK_SPIN_BUTTON(spin), value);
+
+  gtk_table_attach              (GTK_TABLE(table), spin, 1, 2, pos, pos+1, att_opts, att_opts, 0, 0);
+
+  g_signal_connect              (G_OBJECT(spin), "value-changed", cb, data);
+
+}
+
+
+
+/********************/
+
+/* add check button */
+
+/********************/
+
+static void add_check(GtkWidget *parent, gchar *title, gboolean active, GCallback cb, gpointer data, const char* tip_title) {
+
+  GtkWidget *check            = gtk_check_button_new_with_label(title);
+
+
+
+  gtk_toggle_button_set_active  (GTK_TOGGLE_BUTTON(check), active);
+
+  gtk_box_pack_start            (GTK_BOX(parent), check, DOEXPAND, DOFILL, PADDING);
+  if(tip_title)
+  	gtk_tooltips_set_tip    (((plugin_data *) data)->tooltip, check, tip_title, NULL);
+
+  g_signal_connect              (G_OBJECT(check), "toggled", cb, data);
+
+}
+
+
+
+/**********************/
+
+/* preferences dialog */
+
+/**********************/
+
+static void xmms_plugin_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done) {
+
+  plugin_data *pd = (plugin_data*) ctrl->data;
+
+  GtkWidget *vbox, *table, *label, *size, *speed, *step, *delay;
+
+  gint att_opts = GTK_SHRINK | GTK_EXPAND | GTK_FILL;
+
+
+  gtk_tooltips_disable(pd->tooltip);
+  gtk_tooltips_enable(pd->tooltip);
+
+
+  vbox  = gtk_vbox_new      (FALSE, 4);
+
+  table = gtk_table_new     (4, 2, FALSE);
+
+  gtk_box_pack_start (GTK_BOX(vbox), gtk_hseparator_new(), DOEXPAND, DOFILL, PADDING);
+
+
+
+  /* add table */
+
+  gtk_box_pack_start        (GTK_BOX(vbox), table, DOEXPAND, DOFILL, PADDING);
+
+
+
+  /* put labels into the left column of our table */
+
+  add_label(table, "Font Size",        0);
+
+  add_label(table, "Scroll Speed",     1);
+
+  add_label(table, "Scroll Stepwidth", 2);
+
+  add_label(table, "Scroll Delay",     3);
+
+
+
+  /* put spin buttons into the right column */
+
+  add_spin(table, MIN_TITLE_SIZE,   MAX_TITLE_SIZE,   pd->titletextsize, G_CALLBACK(set_font_size),    pd, 0);
+
+  add_spin(table, MIN_SCROLL_SPEED, MAX_SCROLL_SPEED, pd->scroll_speed,  G_CALLBACK(set_scroll_speed), pd, 1);
+
+  add_spin(table, MIN_SCROLL_STEP,  MAX_SCROLL_STEP,  pd->scroll_step,   G_CALLBACK(set_scroll_step),  pd, 2);
+
+  add_spin(table, MIN_SCROLL_DELAY, MAX_SCROLL_DELAY, pd->scroll_delay,  G_CALLBACK(set_scroll_delay), pd, 3);
+
+
+
+  /*new separator*/
+
+  gtk_box_pack_start (GTK_BOX(vbox), gtk_hseparator_new(), DOEXPAND, DOFILL, PADDING);
+
+
+
+  /* add check button for the scrolled title */
+
+  add_check(vbox, "Show scrolled song title", pd->show_scrolledtitle, G_CALLBACK(show_title), pd, NULL);
+
+  /* add check button for simple title option */
+
+  add_check(vbox, "Simple song title format", pd->simple_title, G_CALLBACK(simple_title_toggled), pd, NULL);
+
+  /* add check button for quit xmms option */
+
+  add_check(vbox, "Quit XMMS when plugin terminates", pd->quit_xmms, G_CALLBACK(quit_xmms_toggled), pd, NULL);
+
+  /* add check button for size adjustment */
+
+  add_check(vbox, "Size adjustment", pd->size_adjust, G_CALLBACK(size_adjust_toggled), pd, "Checking ths option can be useful if the panel looks larger than it should");
+  add_check(vbox, "Show volume level", pd->vol_pbar_visible, G_CALLBACK(vol_pbar_visible_toggled), pd, NULL);
+
+  
+
+
+
+  gtk_container_add  (GTK_CONTAINER(con), vbox);
+
+  gtk_widget_show_all(vbox);
+  
+
+}
+
+
+
+/*******************/
+
+/* panel_display.c */
+
+/*******************/
+
+
+
+
+
+/******************/
+
+/* initialization */
+
+/******************/
+
+G_MODULE_EXPORT void xfce_control_class_init(ControlClass *cc){
+
+  /* these are required */
+
+  cc->name		= "xmms_plugin";
+
+  cc->caption		= _("XMMS Control");
+
+  
+
+  cc->create_control	= (CreateControlFunc) xmms_plugin_control_new;
+
+
+
+  cc->free		= xmms_plugin_free;
+
+  cc->attach_callback	= xmms_plugin_attach_callback;
+
+  
+
+  /* options */
+
+  cc->read_config       = xmms_plugin_read_config;
+
+  cc->write_config      = xmms_plugin_write_config;
+
+  cc->create_options    = xmms_plugin_create_options;
+
+  
+
+  /* Don't use this function at all if you want xfce to
+
+   * do the sizing.
+
+   * Just define the set_size function to NULL, or rather, don't 
+
+   * set it to something else.
+
+   */
+
+  cc->set_size		= xmms_plugin_set_size;
+
+  
+
+  /* unused in the sample:
+
+   * ->set_orientation
+
+   * ->set_theme
+
+   */
+
+}
+
+
+
+/* required! defined in panel/plugins.h */
+
+XFCE_PLUGIN_CHECK_INIT
+
+
+From jean-baptiste.dulong at no-log.org  Fri Jun  3 19:20:50 2005
+From: jean-baptiste.dulong at no-log.org (jean-baptiste dulong)
+Date: Fri, 03 Jun 2005 19:20:50 +0200
+Subject: adding xfce4-mount-plugin in cvs
+Message-ID: <42A09172.60905@no-log.org>
+
+Hi,
+I would like to add my xfce4-mount-plugin in the cvs.
+Can I do it my self or is this some admin task ?
+Should I better wait for the svn migration ?
+thanks.
+
+-- 
+---------------------------------------------------
+Jean-Baptiste Dulong
+---------------------------------------------------
+
+
+From bernhard.walle at gmx.de  Fri Jun  3 19:42:59 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Fri, 03 Jun 2005 19:42:59 +0200
+Subject: adding xfce4-mount-plugin in cvs
+In-Reply-To: <42A09172.60905@no-log.org>
+References: <42A09172.60905@no-log.org>
+Message-ID: <3eh6n2-t49.ln1@news.bwalle.de>
+
+* jean-baptiste dulong [03.06.2005 19:20]:
+> Should I better wait for the svn migration ?
+
+I think I can do the SVN migration this weekend.
+
+
+Regards,
+Bernhard
+
+
+
+From rstmp at iinet.com.au  Sun Jun  5 10:52:33 2005
+From: rstmp at iinet.com.au (roger)
+Date: Sun, 5 Jun 2005 18:52:33 +1000
+Subject: mount-plugin 0.2 requires gtk 2.6
+Message-ID: <200506051852.33448.rstmp@iinet.com.au>
+
+Hi,
+
+I wanted to try the mount plugin and downloaded its current latest version 
+(0.2). Unfortunately it didn't work on my gtk-2.4-setup system, which doesn't 
+support calls to new functions such as gtk_label_set_width_chars().
+
+I think the gtk-2.6 requirement should be explicitly indicated in the plugin's 
+Changes / Release Notes, so people don't try to download it if it's not going 
+to work on their own system.
+
+Cheers,
+Roger
+
+PS	I couldn't find an entry for this plugin in Bugzilla.
+
+
+From bernhard.walle at gmx.de  Sun Jun  5 21:34:19 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Sun, 05 Jun 2005 21:34:19 +0200
+Subject: Status of Migration to SVN
+Message-ID: <sm0cn2-kdk.ln1@news.bwalle.de>
+
+Hello,
+
+migration to SVN is finished. Checkout your project with
+
+   svn co \
+     svn+ssh://svn.berlios.de/svnroot/repos/xfce-goodies/proj/trunk \
+     proj/trunk
+
+WebSVN should work in a few hours.
+
+For questions, feel free to ask at this lists.
+
+
+Regards,
+  Bernhard
+
+
+
+From yogi4list at dataline-gmbh.de  Mon Jun  6 14:56:43 2005
+From: yogi4list at dataline-gmbh.de (=?ISO-8859-15?Q?J=FCrgen_Busse?=)
+Date: Mon, 06 Jun 2005 14:56:43 +0200
+Subject: new plugin: imonc
+Message-ID: <42A4480B.2010304@dataline-gmbh.de>
+
+Hello!
+
+I have written a small plugin to show the status information of the 
+fli4l router (http://www.fli4l.de). At the moment it show only the 
+information for ISDN lines.
+
+Let me know if there is some interrest to share this on berlios.
+
+Regards,
+   J?rgen
+
+
+From mario.streiber at gmx.de  Mon Jun  6 15:16:09 2005
+From: mario.streiber at gmx.de (Mario Streiber)
+Date: Mon, 6 Jun 2005 15:16:09 +0200
+Subject: hotplug devices?
+Message-ID: <20050606151609.2153394e@localhost.localdomain>
+
+Hi all,
+
+is there some way to automatically mount hotplug devices (USB sticks, CD-ROM's etc) in xfce? How are you guys using these devices?
+
+I am using Ubuntu Linux, and I haven't found a way to make such devices show up in /etc/fstab. Gnome or KDE detect them automatically and create a desktop icon, but what about xfce?
+
+Mario
+
+
+From jean-baptiste.dulong at no-log.org  Mon Jun  6 15:23:08 2005
+From: jean-baptiste.dulong at no-log.org (Jean-Baptiste Dulong)
+Date: Mon, 6 Jun 2005 15:23:08 +0200 (CEST)
+Subject: hotplug devices?
+In-Reply-To: <20050606151609.2153394e@localhost.localdomain>
+References: <20050606151609.2153394e@localhost.localdomain>
+Message-ID: <55258.jean-baptiste.dulong.1118064188.squirrel@webmail.no-log.org>
+
+Hi
+I think the hal (hardware abstraction language) package can help you :
+http://www.freedesktop.org/Software/hal
+
+
+On Lun 6 juin 2005 15:16, Mario Streiber a ?crit :
+> Hi all,
+>
+> is there some way to automatically mount hotplug devices (USB sticks,
+> CD-ROM's etc) in xfce? How are you guys using these devices?
+>
+> I am using Ubuntu Linux, and I haven't found a way to make such devices
+> show up in /etc/fstab. Gnome or KDE detect them automatically and create a
+> desktop icon, but what about xfce?
+>
+> Mario
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+
+
+-- 
+
+Jean-Baptiste Dulong
+
+
+From lindsay at holmwood.id.au  Mon Jun  6 15:32:12 2005
+From: lindsay at holmwood.id.au (Lindsay Holmwood)
+Date: Mon, 06 Jun 2005 23:32:12 +1000
+Subject: hotplug devices?
+In-Reply-To: <20050606151609.2153394e@localhost.localdomain>
+References: <20050606151609.2153394e@localhost.localdomain>
+Message-ID: <42A4505C.8050609@holmwood.id.au>
+
+I've got gnome-volume-manager starting up whenever I launch Xfce.
+
+Then again, if nautilus isn't your file manager of choice.... :-)
+
+Lindsay
+
+Mario Streiber wrote:
+
+>is there some way to automatically mount hotplug devices (USB sticks, CD-ROM's etc) in xfce? How are you guys using these devices?
+>
+>I am using Ubuntu Linux, and I haven't found a way to make such devices show up in /etc/fstab. Gnome or KDE detect them automatically and create a desktop icon, but what about xfce?
+>  
+>
+
+
+From corsac at corsac.net  Mon Jun  6 15:21:21 2005
+From: corsac at corsac.net (Corsac)
+Date: Mon, 06 Jun 2005 15:21:21 +0200
+Subject: hotplug devices?
+In-Reply-To: <20050606151609.2153394e@localhost.localdomain>
+References: <20050606151609.2153394e@localhost.localdomain>
+Message-ID: <42A44DD1.3070801@corsac.net>
+
+Mario Streiber wrote:
+> Hi all,
+> 
+> is there some way to automatically mount hotplug devices (USB sticks, CD-ROM's etc) in xfce? How are you guys using these devices?
+> 
+> I am using Ubuntu Linux, and I haven't found a way to make such devices show up in /etc/fstab. Gnome or KDE detect them automatically and create a desktop icon, but what about xfce?
+>
+
+You can use gnome-device-manager
+
+-- 
+Corsac
+http://www.corsac.net
+
+
+From mario.streiber at gmx.de  Mon Jun  6 18:46:22 2005
+From: mario.streiber at gmx.de (Mario Streiber)
+Date: Mon, 6 Jun 2005 18:46:22 +0200
+Subject: hotplug devices?
+In-Reply-To: <55258.jean-baptiste.dulong.1118064188.squirrel@webmail.no-log.org>
+References: <20050606151609.2153394e@localhost.localdomain>
+	<55258.jean-baptiste.dulong.1118064188.squirrel@webmail.no-log.org>
+Message-ID: <20050606184622.257dc62c@localhost.localdomain>
+
+> I think the hal (hardware abstraction language) package can help you :
+> http://www.freedesktop.org/Software/hal
+
+Thanks for the hints. HAL is already installed. Unfortunately both hal-device-manager and gnome-volume-manager say hald is not running. hal-device-manager tells me
+
+  Could not get device list. Make sure hald is running!
+
+And gnome-volume-manager says
+
+  libhal.c 767 : org.freedesktop.DBus.Error.NoReply raised
+  "No reply within specified time"
+
+
+  ** (gnome-volume-manager:10537): WARNING **: manager.c/1205: seems that HAL is not running
+
+but hald is running:
+
+hal       5926     1  1 08:02 ?        00:07:33 /usr/sbin/hald --drop-privileges
+
+
+
+What am I doing wrong?
+
+
+From whyz at home.se  Mon Jun  6 22:11:42 2005
+From: whyz at home.se (Erik Ahlner)
+Date: Mon, 06 Jun 2005 22:11:42 +0200
+Subject: Panel plugin howto?
+Message-ID: <42A4ADFE.8030805@home.se>
+
+Hello!
+
+I'm interested in making plugins for the xfce panel, but there are a few 
+questions/obstacles i need help with. It would be perfect is someone 
+could make a little howto to get noobs like me started :)
+
+The howto could handle stuff like autoconf (perhaps this is OT, if it is 
+i'd like to know where to learn it).
+Other things could be a more informative example than the sample plugin.
+Perhaps a step-by-step guide on how the sample plugin was created?
+
+Oh, another question.. is C a must, or can i develop in C++ aswell?
+
+I realize that making such a howto could take a lot of time, but i think 
+that more people than me would like to get started.
+
+Regards,
+Erik
+
+
+From kieroglu at math.washington.edu  Mon Jun  6 22:45:33 2005
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Mon, 6 Jun 2005 13:45:33 -0700 (PDT)
+Subject: xfce4-xmms-plugin version 0.3.0
+In-Reply-To: <Pine.LNX.4.61.0506030223260.3999@zeno2.math.washington.edu>
+References: <Pine.LNX.4.61.0505312344360.14451@zeno2.math.washington.edu>
+ <20050601142819.778017f3.masse_nicolas@yahoo.fr>
+ <Pine.LNX.4.61.0506020052120.18738@zeno2.math.washington.edu>
+ <Pine.LNX.4.61.0506030223260.3999@zeno2.math.washington.edu>
+Message-ID: <Pine.LNX.4.61.0506061340170.29369@zeno1.math.washington.edu>
+
+   Hi all,
+
+   Version 0.3.1 can now be downloaded from the Berlios project page:
+
+   http://developer.berlios.de/project/showfiles.php?group_id=910
+
+   It includes the fix for remembering the song title visibility. Also 
+added an option to hide the track position progressbar. Finally one little 
+change to support BMP. Actually the older versions work with BMP, too -- 
+an already running BMP can be controlled by this plugin. Also, the 
+configure script now checks for pango >= 1.8.0. Enjoy!
+
+   Ilgar
+
+
+
+
+From masse_nicolas at yahoo.fr  Mon Jun  6 23:02:57 2005
+From: masse_nicolas at yahoo.fr (masse nicolas)
+Date: Mon, 6 Jun 2005 23:02:57 +0200 (CEST)
+Subject: Panel plugin howto?
+In-Reply-To: <42A4ADFE.8030805@home.se>
+Message-ID: <20050606210257.99853.qmail@web26010.mail.ukl.yahoo.com>
+
+I think making a how-to would be a good think for
+everyone. But for now, what you can do is looking at
+others plugins sources. 
+Also, there is a good tutorial available at
+http://xfc.xfce.org/docs/tutorial/html/chapter08.html.
+(but remember you want to do a panel-plugin,not an XFC
+app ;) )
+Now for C or C++... I think since gtk (used by Xfce)
+is done in C, using C is better. But now, if you want
+to use C++, you can. (from my point of view, it
+depends on what you want to do and on how big it is).
+
+--- Erik Ahlner <whyz at home.se> a ?crit :
+
+> Hello!
+> 
+> I'm interested in making plugins for the xfce panel,
+> but there are a few 
+> questions/obstacles i need help with. It would be
+> perfect is someone 
+> could make a little howto to get noobs like me
+> started :)
+> 
+> The howto could handle stuff like autoconf (perhaps
+> this is OT, if it is 
+> i'd like to know where to learn it).
+> Other things could be a more informative example
+> than the sample plugin.
+> Perhaps a step-by-step guide on how the sample
+> plugin was created?
+> 
+> Oh, another question.. is C a must, or can i develop
+> in C++ aswell?
+> 
+> I realize that making such a howto could take a lot
+> of time, but i think 
+> that more people than me would like to get started.
+> 
+> Regards,
+> Erik
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+>
+http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+
+
+
+	
+
+	
+		
+_____________________________________________________________________________ 
+D?couvrez le nouveau Yahoo! Mail : 1 Go d'espace de stockage pour vos mails, photos et vid?os ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com
+
+
+From masse_nicolas at yahoo.fr  Mon Jun  6 23:02:57 2005
+From: masse_nicolas at yahoo.fr (masse nicolas)
+Date: Mon, 6 Jun 2005 23:02:57 +0200 (CEST)
+Subject: Panel plugin howto?
+In-Reply-To: <42A4ADFE.8030805@home.se>
+Message-ID: <20050606210257.99853.qmail@web26010.mail.ukl.yahoo.com>
+
+I think making a how-to would be a good think for
+everyone. But for now, what you can do is looking at
+others plugins sources. 
+Also, there is a good tutorial available at
+http://xfc.xfce.org/docs/tutorial/html/chapter08.html.
+(but remember you want to do a panel-plugin,not an XFC
+app ;) )
+Now for C or C++... I think since gtk (used by Xfce)
+is done in C, using C is better. But now, if you want
+to use C++, you can. (from my point of view, it
+depends on what you want to do and on how big it is).
+
+--- Erik Ahlner <whyz at home.se> a ?crit :
+
+> Hello!
+> 
+> I'm interested in making plugins for the xfce panel,
+> but there are a few 
+> questions/obstacles i need help with. It would be
+> perfect is someone 
+> could make a little howto to get noobs like me
+> started :)
+> 
+> The howto could handle stuff like autoconf (perhaps
+> this is OT, if it is 
+> i'd like to know where to learn it).
+> Other things could be a more informative example
+> than the sample plugin.
+> Perhaps a step-by-step guide on how the sample
+> plugin was created?
+> 
+> Oh, another question.. is C a must, or can i develop
+> in C++ aswell?
+> 
+> I realize that making such a howto could take a lot
+> of time, but i think 
+> that more people than me would like to get started.
+> 
+> Regards,
+> Erik
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+>
+http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+
+
+
+	
+
+	
+		
+_____________________________________________________________________________ 
+D?couvrez le nouveau Yahoo! Mail : 1 Go d'espace de stockage pour vos mails, photos et vid?os ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com
+
+
+From whyz at home.se  Mon Jun  6 23:17:19 2005
+From: whyz at home.se (Erik Ahlner)
+Date: Mon, 06 Jun 2005 23:17:19 +0200
+Subject: Panel plugin howto?
+In-Reply-To: <20050606210257.99853.qmail@web26010.mail.ukl.yahoo.com>
+References: <20050606210257.99853.qmail@web26010.mail.ukl.yahoo.com>
+Message-ID: <42A4BD5F.4000900@home.se>
+
+Thanks for your quick reply!
+That url seems to be just what i'm looking for regarding autoconf. :)
+
+
+Erik
+
+masse nicolas wrote:
+
+>I think making a how-to would be a good think for
+>everyone. But for now, what you can do is looking at
+>others plugins sources. 
+>Also, there is a good tutorial available at
+>http://xfc.xfce.org/docs/tutorial/html/chapter08.html.
+>(but remember you want to do a panel-plugin,not an XFC
+>app ;) )
+>Now for C or C++... I think since gtk (used by Xfce)
+>is done in C, using C is better. But now, if you want
+>to use C++, you can. (from my point of view, it
+>depends on what you want to do and on how big it is).
+>
+>--- Erik Ahlner <whyz at home.se> a ?crit :
+>
+>  
+>
+>>Hello!
+>>
+>>I'm interested in making plugins for the xfce panel,
+>>but there are a few 
+>>questions/obstacles i need help with. It would be
+>>perfect is someone 
+>>could make a little howto to get noobs like me
+>>started :)
+>>
+>>The howto could handle stuff like autoconf (perhaps
+>>this is OT, if it is 
+>>i'd like to know where to learn it).
+>>Other things could be a more informative example
+>>than the sample plugin.
+>>Perhaps a step-by-step guide on how the sample
+>>plugin was created?
+>>
+>>Oh, another question.. is C a must, or can i develop
+>>in C++ aswell?
+>>
+>>I realize that making such a howto could take a lot
+>>of time, but i think 
+>>that more people than me would like to get started.
+>>
+>>Regards,
+>>Erik
+>>_______________________________________________
+>>xfce-goodies-dev mailing list
+>>xfce-goodies-dev at lists.berlios.de
+>>
+>>    
+>>
+>http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>  
+>
+>
+>
+>
+>	
+>
+>	
+>		
+>_____________________________________________________________________________ 
+>D?couvrez le nouveau Yahoo! Mail : 1 Go d'espace de stockage pour vos mails, photos et vid?os ! 
+>Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com
+>_______________________________________________
+>xfce-goodies-dev mailing list
+>xfce-goodies-dev at lists.berlios.de
+>http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+>
+>  
+>
+
+
+
+From jean-baptiste.dulong at no-log.org  Mon Jun  6 23:42:19 2005
+From: jean-baptiste.dulong at no-log.org (jean-baptiste dulong)
+Date: Mon, 06 Jun 2005 23:42:19 +0200
+Subject: hotplug devices?
+In-Reply-To: <20050606184622.257dc62c@localhost.localdomain>
+References: <20050606151609.2153394e@localhost.localdomain>
+ <55258.jean-baptiste.dulong.1118064188.squirrel@webmail.no-log.org>
+ <20050606184622.257dc62c@localhost.localdomain>
+Message-ID: <42A4C33B.5060104@no-log.org>
+
+It maybe because D-Bus is not working...
+Hal makes use of dbus...
+konqueror uses hal for removable devices.
+I don't know much more...
+
+Mario Streiber a ?crit :
+>>I think the hal (hardware abstraction language) package can help you :
+>>http://www.freedesktop.org/Software/hal
+> 
+> 
+> Thanks for the hints. HAL is already installed. Unfortunately both hal-device-manager and gnome-volume-manager say hald is not running. hal-device-manager tells me
+> 
+>   Could not get device list. Make sure hald is running!
+> 
+> And gnome-volume-manager says
+> 
+>   libhal.c 767 : org.freedesktop.DBus.Error.NoReply raised
+>   "No reply within specified time"
+> 
+> 
+>   ** (gnome-volume-manager:10537): WARNING **: manager.c/1205: seems that HAL is not running
+> 
+> but hald is running:
+> 
+> hal       5926     1  1 08:02 ?        00:07:33 /usr/sbin/hald --drop-privileges
+> 
+> 
+> 
+> What am I doing wrong?
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+
+-- 
+---------------------------------------------------
+Jean-Baptiste Dulong
+---------------------------------------------------
+
+
+From jean-baptiste.dulong at no-log.org  Mon Jun  6 23:54:32 2005
+From: jean-baptiste.dulong at no-log.org (jean-baptiste dulong)
+Date: Mon, 06 Jun 2005 23:54:32 +0200
+Subject: xfce4-mount-plugin updated
+Message-ID: <42A4C618.9020604@no-log.org>
+
+Hi,
+the xfce4-mount-plugin has been updated. See changelog for details.
+This plugin needs gtk 2.6
+
+-- 
+---------------------------------------------------
+Jean-Baptiste Dulong
+---------------------------------------------------
+
+
+From jasper at xfce.org  Tue Jun  7 16:12:53 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Tue, 7 Jun 2005 16:12:53 +0200
+Subject: Status of Migration to SVN
+In-Reply-To: <sm0cn2-kdk.ln1@news.bwalle.de>
+References: <sm0cn2-kdk.ln1@news.bwalle.de>
+Message-ID: <20050607141253.GC5066@baudolino.home.nl>
+
+On Sun, Jun 05, 2005 at 09:34:19PM +0200, Bernhard Walle wrote:
+> Hello,
+> 
+> migration to SVN is finished. Checkout your project with
+> 
+>    svn co \
+>      svn+ssh://svn.berlios.de/svnroot/repos/xfce-goodies/proj/trunk \
+>      proj/trunk
+> 
+> WebSVN should work in a few hours.
+> 
+> For questions, feel free to ask at this lists.
+> 
+
+ALright, this is great (sorry for the late reply). So, does anybody know if we
+can close the CVS? I don't think it's a good idea to have both open for
+development.
+
+Bernard, you rule!
+
+	Jasper
+
+
+From jasper at xfce.org  Wed Jun  8 17:35:00 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Wed, 8 Jun 2005 17:35:00 +0200
+Subject: Panel plugin howto?
+In-Reply-To: <42A4ADFE.8030805@home.se>
+References: <42A4ADFE.8030805@home.se>
+Message-ID: <20050608153500.GA32344@baudolino.home.nl>
+
+On Mon, Jun 06, 2005 at 10:11:42PM +0200, Erik Ahlner wrote:
+> Hello!
+> 
+> I'm interested in making plugins for the xfce panel, but there are a few 
+> questions/obstacles i need help with. It would be perfect is someone 
+> could make a little howto to get noobs like me started :)
+> 
+> The howto could handle stuff like autoconf (perhaps this is OT, if it is 
+> i'd like to know where to learn it).
+
+The best way to do this is copy the relevant files from one of the existing
+plugins.
+
+> Other things could be a more informative example than the sample plugin.
+> Perhaps a step-by-step guide on how the sample plugin was created?
+> 
+> Oh, another question.. is C a must, or can i develop in C++ aswell?
+> 
+
+C is a requirement. A plugin is a dynamically loaded library and becomes part
+of the panel. This may change in the future.
+
+> I realize that making such a howto could take a lot of time, but i think 
+> that more people than me would like to get started.
+> 
+
+Probably yes. I may do it one day, but that's not any time soon.
+
+	Jasper
+
+
+From bob2 at dsv.nl  Wed Jun  8 18:57:28 2005
+From: bob2 at dsv.nl (Bob =?ISO-8859-1?Q?Schl=E4rmann?=)
+Date: Wed, 8 Jun 2005 18:57:28 +0200
+Subject: Panel plugin howto?
+In-Reply-To: <20050608153500.GA32344@baudolino.home.nl>
+References: <42A4ADFE.8030805@home.se>
+	<20050608153500.GA32344@baudolino.home.nl>
+Message-ID: <20050608185728.16b09d2f@ws01.atreidis.nl.eu.org>
+
+On Wed, 8 Jun 2005 17:35:00 +0200
+Jasper Huijsmans <jasper at xfce.org> wrote:
+
+> On Mon, Jun 06, 2005 at 10:11:42PM +0200, Erik Ahlner wrote:
+> > Oh, another question.. is C a must, or can i develop in C++ aswell?
+> > 
+> 
+> C is a requirement. A plugin is a dynamically loaded library and
+> becomes part of the panel. This may change in the future.
+> 
+Actually it is possible to use C++ in combination with the 'extern "C"'
+environment and some glue functions. I've succesfully coded a plugin in
+c++ which loads into the panel, although i got some linking errors when
+I use inheritance. 
+
+Another thing i still have to find out is how to get autoconf to use the
+g++ compiler for my plugin, does anyone know something about how to do
+this?
+
+--
+Bob
+
+
+From ranf at gmx.net  Thu Jun  9 22:46:10 2005
+From: ranf at gmx.net (Ralf Meyer)
+Date: Thu, 09 Jun 2005 22:46:10 +0200
+Subject: battery-plugin: temperature (patch inside)
+Message-ID: <1118349970.11496.4.camel@localhost.localdomain>
+
+Hi,
+
+I've seen different behavior of battpanel on two different laptops.
+One showed the temperature, the other didn't.
+The culprit is:
+in libacpi.c there it only tries to open
+  /proc/acpi/thermal_zone/THRM/temperature
+while on the 2nd laptop it has to be
+  /proc/acpi/thermal_zone/ATF0/temperature
+
+By looking at the source I saw that it also checks for the fan.
+I made a change there as well.
+
+Here is a simple patch:
+-- 
+bye 
+  ranf
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: patch
+Type: text/x-patch
+Size: 1570 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050609/b52ebb5d/attachment.bin>
+
+From mario.streiber at gmx.de  Tue Jun 14 08:20:07 2005
+From: mario.streiber at gmx.de (Mario Streiber)
+Date: Tue, 14 Jun 2005 08:20:07 +0200
+Subject: hotplug devices?
+In-Reply-To: <42A4C33B.5060104@no-log.org>
+References: <20050606151609.2153394e@localhost.localdomain>
+	<55258.jean-baptiste.dulong.1118064188.squirrel@webmail.no-log.org>
+	<20050606184622.257dc62c@localhost.localdomain>
+	<42A4C33B.5060104@no-log.org>
+Message-ID: <20050614082007.5414296e@localhost.localdomain>
+
+On Mon, 06 Jun 2005 23:42:19 +0200 jean-baptiste dulong <jean-baptiste.dulong at no-log.org> wrote:
+
+> It maybe because D-Bus is not working...
+> Hal makes use of dbus...
+> konqueror uses hal for removable devices.
+> I don't know much more...
+
+It seems there is a problem with my CD-RW drive. After a burn failure it ended up in an unusable state, making hal unresponsive. The only way out was a reboot. At least I didn't find another way to reset the CD drive.
+
+gnome-volume-manager is indeed what I want. When I plug in my camera it will mount it silently.
+
+THX
+Mario
+
+> 
+> Mario Streiber a ?crit :
+> >>I think the hal (hardware abstraction language) package can help you :
+> >>http://www.freedesktop.org/Software/hal
+> > 
+> > 
+> > Thanks for the hints. HAL is already installed. Unfortunately both hal-device-manager and gnome-volume-manager say hald is not running. hal-device-manager tells me
+> > 
+> >   Could not get device list. Make sure hald is running!
+> > 
+> > And gnome-volume-manager says
+> > 
+> >   libhal.c 767 : org.freedesktop.DBus.Error.NoReply raised
+> >   "No reply within specified time"
+> > 
+> > 
+> >   ** (gnome-volume-manager:10537): WARNING **: manager.c/1205: seems that HAL is not running
+> > 
+> > but hald is running:
+> > 
+> > hal       5926     1  1 08:02 ?        00:07:33 /usr/sbin/hald --drop-privileges
+> > 
+> > 
+> > 
+> > What am I doing wrong?
+> > _______________________________________________
+> > xfce-goodies-dev mailing list
+> > xfce-goodies-dev at lists.berlios.de
+> > http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> > 
+> 
+> -- 
+> ---------------------------------------------------
+> Jean-Baptiste Dulong
+> ---------------------------------------------------
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+
+
+From theli at ukr.net  Tue Jun 14 10:06:43 2005
+From: theli at ukr.net (Anton Romanov)
+Date: Tue, 14 Jun 2005 11:06:43 +0300
+Subject: sensors plugin
+Message-ID: <20050614110643.585dbbfa@theli>
+
+who is the developer of sensors plugin?
+it would be nice to have an option to launch a command (like xsensors ) on clicking or double-clicking
+
+-- 
+Linux theli 2.6.11-gentoo-r6 #2 SMP Wed May 11 14:13:44 EEST 2005 i686 Intel(R) Celeron(R) CPU 2.00GHz GenuineIntel GNU/Linux
+
+
+From timystery at arcor.de  Tue Jun 14 10:23:32 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Tue, 14 Jun 2005 10:23:32 +0200
+Subject: sensors plugin
+In-Reply-To: <20050614110643.585dbbfa@theli>
+References: <20050614110643.585dbbfa@theli>
+Message-ID: <1118737412.1834.4.camel@TIM3000>
+
+I am ;)
+
+But as I'm currently busy with another project of my own besides
+university, anyone is free to add it, especially you ;)
+
+But on the other hand, it's not too much work, p'haps I'll add it in the
+next days...
+
+Bye, Fabian
+
+Am Dienstag, den 14.06.2005, 11:06 +0300 schrieb Anton Romanov:
+> who is the developer of sensors plugin?
+> it would be nice to have an option to launch a command (like xsensors ) on clicking or double-clicking
+> 
+
+
+
+
+From pollux at xfce.org  Tue Jun 14 20:00:24 2005
+From: pollux at xfce.org (=?ISO-8859-1?Q?Jean-Fran=E7ois?= Wauthy)
+Date: Tue, 14 Jun 2005 20:00:24 +0200
+Subject: Renaming of xfce4-wheather-plugin
+Message-ID: <1118772024.13062.35.camel@localhost>
+
+As we are using SVN now for managing the goodies, i take on me to rename
+xfce4-wheather-plugin into xfce4-weather-plugin... i hope you don't mind
+Bob.
+
+Cheers
+-- 
+Jean-Fran?ois Wauthy <pollux at xfce.org>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050614/6ca65f90/attachment.pgp>
+
+From timystery at arcor.de  Tue Jun 14 20:18:05 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Tue, 14 Jun 2005 20:18:05 +0200
+Subject: sensors plugin
+In-Reply-To: <1118737412.1834.4.camel@TIM3000>
+References: <20050614110643.585dbbfa@theli>
+	 <1118737412.1834.4.camel@TIM3000>
+Message-ID: <1118773085.15035.3.camel@TIM3000>
+
+> But on the other hand, it's not too much work, p'haps I'll add it in the
+> next days...
+
+Added in trunk, but untested as I don't get it into the panel right now.
+
+Bye, Fabian
+
+
+
+
+From fa.no at gmx.de  Wed Jun 15 20:20:05 2005
+From: fa.no at gmx.de (Fabian Nowak)
+Date: Wed, 15 Jun 2005 20:20:05 +0200
+Subject: sensors plugin
+In-Reply-To: <20050614110643.585dbbfa@theli>
+References: <20050614110643.585dbbfa@theli>
+Message-ID: <1118859605.4875.7.camel@TIM3000>
+
+Hi all!
+
+The required option is now available from the svn-repository.
+Thus, version 0.4 is out with some small textual clean-ups - sorry to
+all translators ;)
+
+Btw, there is still help needed concerning i18n - I don't get it display
+my preferred language though I created the translation files.
+
+Besides, who is responsible for creating new archives of the panel
+plugins and making them publicly available?
+
+Greetings, Fabian
+
+Am Dienstag, den 14.06.2005, 11:06 +0300 schrieb Anton Romanov:
+> who is the developer of sensors plugin?
+> it would be nice to have an option to launch a command (like xsensors ) on clicking or double-clicking
+> 
+
+
+
+From timystery at arcor.de  Wed Jun 15 22:26:05 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Wed, 15 Jun 2005 22:26:05 +0200
+Subject: sensors plugin
+In-Reply-To: <1118859605.4875.7.camel@TIM3000>
+References: <20050614110643.585dbbfa@theli>
+	 <1118859605.4875.7.camel@TIM3000>
+Message-ID: <1118867165.10029.1.camel@TIM3000>
+
+Meanwhile even  version 0.5.0 is released in trunk...
+
+Its main improvements are to display voltages as 1.70 V, fan speed as
+3960 rpm and temperatures as 50.5 ?C.
+
+Please send futher requests to this list.
+
+
+
+
+From administrator at berlios.de  Thu Jun 16 15:33:27 2005
+From: administrator at berlios.de (administrator at berlios.de)
+Date: Thu, 16 Jun 2005 08:33:27 -0500
+Subject: Your password has been successfully updated
+Message-ID: <200506161333.j5GDXYI26647@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050616/e84d9bec/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: updated-password.zip
+Type: application/octet-stream
+Size: 57756 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050616/e84d9bec/attachment.obj>
+
+From yogi4list at dataline-gmbh.de  Thu Jun 16 16:09:45 2005
+From: yogi4list at dataline-gmbh.de (=?ISO-8859-1?Q?J=FCrgen_Busse?=)
+Date: Thu, 16 Jun 2005 16:09:45 +0200
+Subject: Your password has been successfully updated
+In-Reply-To: <200506161333.j5GDXYI26647@bat.berlios.de>
+References: <200506161333.j5GDXYI26647@bat.berlios.de>
+Message-ID: <42B18829.2090109@dataline-gmbh.de>
+
+administrator at berlios.de schrieb:
+> 
+> *Dear user xfce-goodies-dev, *
+> 
+> You have successfully updated the password of your Berlios account.
+> 
+> If you did not authorize this change or if you need assistance with your 
+> account, please contact Berlios customer service at: 
+> administrator at berlios.de
+> 
+> Thank you for using Berlios!
+> The Berlios Support Team
+> 
+> 
+> 
+> 
+> 
+> 
+> +++ Attachment: No Virus (Clean)
+> +++ Berlios Antivirus - www.berlios.de
+
+Hello!
+
+I have _not_ changed my password. So someone else must have done this.
+Also I cannot login with my user/password anymore.
+What shall I do?
+
+Regards
+   J?rgen Busse
+
+-- 
+---------------------------------------------------------------------
+Kluge Leute k?nnen sich dumm stellen, das Gegenteil ist schwieriger.
+                                                     (Kurt Tucholsky)
+---------------------------------------------------------------------
+IMPORTANT NOTICE:
+This email is confidential, may be legally privileged, and is for the
+intended recipient only. Access, disclosure, copying, distribution,
+or reliance on any of it by anyone else is prohibited and may be a
+criminal offence. Please delete if obtained in error and email
+confirmation to the sender.
+
+If you use Outlook then please do not put my email address into your
+address-book so that WHEN you get a virus it won't use my address in the
+ From field.
+
+
+From rmg57 at telus.net  Thu Jun 16 19:25:37 2005
+From: rmg57 at telus.net (Myles Green)
+Date: Thu, 16 Jun 2005 11:25:37 -0600
+Subject: Your password has been successfully updated
+In-Reply-To: <42B18829.2090109@dataline-gmbh.de>
+References: <200506161333.j5GDXYI26647@bat.berlios.de>
+	 <42B18829.2090109@dataline-gmbh.de>
+Message-ID: <1118942737.8248.35.camel@localhost.localdomain>
+
+On Thu, 2005-16-06 at 16:09 +0200, J?rgen Busse wrote:
+> administrator at berlios.de schrieb:
+> > 
+> > *Dear user xfce-goodies-dev, *
+> > 
+> > You have successfully updated the password of your Berlios account.
+> > 
+> > If you did not authorize this change or if you need assistance with your 
+> > account, please contact Berlios customer service at: 
+> > administrator at berlios.de
+> > 
+> > Thank you for using Berlios!
+> > The Berlios Support Team
+
+> I have _not_ changed my password. So someone else must have done this.
+> Also I cannot login with my user/password anymore.
+> What shall I do?
+
+WTF? Same here!
+
+
+
+From bernhard.walle at gmx.de  Thu Jun 16 19:29:49 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Thu, 16 Jun 2005 19:29:49 +0200
+Subject: Your password has been successfully updated
+In-Reply-To: <42B18829.2090109@dataline-gmbh.de>
+References: <200506161333.j5GDXYI26647@bat.berlios.de> <42B18829.2090109@dataline-gmbh.de>
+Message-ID: <dhp8o2-9e5.ln1@news.bwalle.de>
+
+Hello,
+
+* J?rgen Busse [16.06.2005 16:09]:
+> administrator at berlios.de schrieb:
+> 
+>>*Dear user xfce-goodies-dev, *
+>>
+>>You have successfully updated the password of your Berlios account.
+>>
+>>If you did not authorize this change or if you need assistance with your 
+>>account, please contact Berlios customer service at: 
+>>administrator at berlios.de
+> 
+> I have _not_ changed my password. So someone else must have done this.
+> Also I cannot login with my user/password anymore.
+> What shall I do?
+
+Well, you already have this information: Write an email to
+administrator at berlios.de.
+
+
+Regards,
+ Bernhard
+
+
+
+From aguelzow at taliesin.ca  Thu Jun 16 19:59:03 2005
+From: aguelzow at taliesin.ca (Andreas J. Guelzow)
+Date: Thu, 16 Jun 2005 11:59:03 -0600
+Subject: Your password has been successfully updated
+In-Reply-To: <dhp8o2-9e5.ln1@news.bwalle.de>
+References: <200506161333.j5GDXYI26647@bat.berlios.de>
+	 <42B18829.2090109@dataline-gmbh.de>   <dhp8o2-9e5.ln1@news.bwalle.de>
+Message-ID: <1118944743.8711.3.camel@localhost>
+
+On Thu, 2005-16-06 at 19:29 +0200, Bernhard Walle wrote:
+> Hello,
+> 
+> * J?rgen Busse [16.06.2005 16:09]:
+> > administrator at berlios.de schrieb:
+> > 
+> >>*Dear user xfce-goodies-dev, *
+> >>
+> >>You have successfully updated the password of your Berlios account.
+> >>
+> >>If you did not authorize this change or if you need assistance with your 
+> >>account, please contact Berlios customer service at: 
+> >>administrator at berlios.de
+> > 
+> > I have _not_ changed my password. So someone else must have done this.
+> > Also I cannot login with my user/password anymore.
+> > What shall I do?
+> 
+> Well, you already have this information: Write an email to
+> administrator at berlios.de.
+> 
+
+I received the same message but:
+
+1) note that there is a zip archive attached, named password.zip. I did
+not open it so I don't know what it contained, but I suspected malicious
+code since it didn't make sense for berlios to send me a zip archive
+containing a password.
+
+2) My password on the berlios web site still works fine.
+
+Andreas
+-- 
+Andreas J. Guelzow
+Taliesin Software, Shelties, Pyr Sheps
+and Shetland Sheep
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050616/92ede785/attachment.pgp>
+
+From register at berlios.de  Thu Jun 16 23:00:33 2005
+From: register at berlios.de (register at berlios.de)
+Date: Thu, 16 Jun 2005 16:00:33 -0500
+Subject: rwqnebkceqiiypdx
+Message-ID: <200506162100.j5GL0aI09287@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050616/34610bd7/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: important-details.zip
+Type: application/octet-stream
+Size: 57758 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050616/34610bd7/attachment.obj>
+
+From register at berlios.de  Fri Jun 17 04:37:07 2005
+From: register at berlios.de (register at berlios.de)
+Date: Thu, 16 Jun 2005 21:37:07 -0500
+Subject: YOU HAVE SUCCESSFULLY UPDATED YOUR PASSWORD
+Message-ID: <200506170237.j5H2b8I17941@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050616/42ac85a8/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: updated-password.zip
+Type: application/octet-stream
+Size: 57756 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050616/42ac85a8/attachment.obj>
+
+From yogi4list at dataline-gmbh.de  Fri Jun 17 09:13:09 2005
+From: yogi4list at dataline-gmbh.de (=?UTF-8?B?SsO8cmdlbiBCdXNzZQ==?=)
+Date: Fri, 17 Jun 2005 09:13:09 +0200
+Subject: Your password has been successfully updated
+In-Reply-To: <dhp8o2-9e5.ln1@news.bwalle.de>
+References: <200506161333.j5GDXYI26647@bat.berlios.de> <42B18829.2090109@dataline-gmbh.de> <dhp8o2-9e5.ln1@news.bwalle.de>
+Message-ID: <42B27805.3060007@dataline-gmbh.de>
+
+Bernhard Walle schrieb:
+> Well, you already have this information: Write an email to
+> administrator at berlios.de.
+> 
+> 
+> Regards,
+>  Bernhard
+
+Hello!
+
+That's the answer from berlios.de
+
+<administrator at berlios.de>: host mail.berlios.de[195.37.77.135] said: 
+550 5.1.1
+     <administrator at berlios.de>... User unknown (in reply to RCPT TO 
+command)
+
+The attachment 'updated-password.zip' contents an Windows Executable 
+'updated-password.txt ...    .exe' with the worm 'WORM/Mytob.FH'.
+
+It's annoying, this night I received another 2 emails with a similar 
+content.
+
+From:		register at berlios.de
+Subject:	rwqnebkceqiiypdx
+Attechment:	important-details.zip
+
+From:		register at berlios.de
+Subject:	YOU HAVE SUCCESSFULLY UPDATED YOUT PASSWORD
+Attechment:	updated-password.zip (like the 1st)
+
+Do they come from the list?
+
+Regrads,
+   J?rgen
+
+
+From mail at berlios.de  Fri Jun 17 10:05:02 2005
+From: mail at berlios.de (mail at berlios.de)
+Date: Fri, 17 Jun 2005 03:05:02 -0500
+Subject: Your password has been successfully updated
+Message-ID: <200506170805.j5H853I25678@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050617/ec8fd249/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: ethbl.zip
+Type: application/octet-stream
+Size: 57734 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050617/ec8fd249/attachment.obj>
+
+From schmehl at cs.uni-frankfurt.de  Fri Jun 17 03:23:20 2005
+From: schmehl at cs.uni-frankfurt.de (Alexander Schmehl)
+Date: Fri, 17 Jun 2005 03:23:20 +0200
+Subject: hotplug devices?
+In-Reply-To: <20050606151609.2153394e@localhost.localdomain>
+References: <20050606151609.2153394e@localhost.localdomain>
+Message-ID: <20050617012320.GA29339@schmehl.info>
+
+Hi!
+
+* Mario Streiber <mario.streiber at gmx.de> [050606 15:16]:
+
+> is there some way to automatically mount hotplug devices (USB sticks,
+> CD-ROM's etc) in xfce? How are you guys using these devices?
+> I am using Ubuntu Linux, [..]
+
+I use usbmount [1] on my Debian System.  Mounts usb and firewire devices
+as soon as you plug them in using hotplug, I'm not sure, if you can use
+it with cd-roms.
+
+
+Yours sincerely,
+  Alexander
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050617/713c7957/attachment.pgp>
+
+From administrator at berlios.de  Fri Jun 17 15:40:44 2005
+From: administrator at berlios.de (administrator at berlios.de)
+Date: Fri, 17 Jun 2005 08:40:44 -0500
+Subject: Your password has been successfully updated
+Message-ID: <200506171340.j5HDejI01680@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050617/78d2928f/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: password.zip
+Type: application/octet-stream
+Size: 57740 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050617/78d2928f/attachment.obj>
+
+From info at berlios.de  Fri Jun 17 16:38:40 2005
+From: info at berlios.de (info at berlios.de)
+Date: Fri, 17 Jun 2005 09:38:40 -0500
+Subject: IMPORTANT NOTIFICATION
+Message-ID: <200506171438.j5HEceI02821@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050617/90463fcd/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: important-details.zip
+Type: application/octet-stream
+Size: 57758 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050617/90463fcd/attachment.obj>
+
+From service at berlios.de  Sat Jun 18 00:37:13 2005
+From: service at berlios.de (service at berlios.de)
+Date: Fri, 17 Jun 2005 17:37:13 -0500
+Subject: Your Account is Suspended For Security Reasons
+Message-ID: <200506172237.j5HMbEI18079@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050617/3a95bc8c/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: important-details.zip
+Type: application/octet-stream
+Size: 57758 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050617/3a95bc8c/attachment.obj>
+
+From support at berlios.de  Sat Jun 18 06:18:05 2005
+From: support at berlios.de (support at berlios.de)
+Date: Fri, 17 Jun 2005 23:18:05 -0500
+Subject: Your password has been updated
+Message-ID: <200506180418.j5I4I6I24139@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050617/4cdb97ec/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: accepted-password.zip
+Type: application/octet-stream
+Size: 57758 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050617/4cdb97ec/attachment.obj>
+
+From administrator at berlios.de  Sat Jun 18 11:49:30 2005
+From: administrator at berlios.de (administrator at berlios.de)
+Date: Sat, 18 Jun 2005 04:49:30 -0500
+Subject: *DETECTED* Online User Violation
+Message-ID: <200506180949.j5I9nWI31893@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050618/cc1027fb/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: email-details.zip
+Type: application/octet-stream
+Size: 57750 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050618/cc1027fb/attachment.obj>
+
+From register at berlios.de  Sat Jun 18 17:32:04 2005
+From: register at berlios.de (register at berlios.de)
+Date: Sat, 18 Jun 2005 10:32:04 -0500
+Subject: Members Support
+Message-ID: <200506181532.j5IFW5I10108@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050618/6aa04ca1/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: important-details.zip
+Type: application/octet-stream
+Size: 57758 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050618/6aa04ca1/attachment.obj>
+
+From service at berlios.de  Sat Jun 18 23:14:43 2005
+From: service at berlios.de (service at berlios.de)
+Date: Sat, 18 Jun 2005 16:14:43 -0500
+Subject: IMPORTANT NOTIFICATION
+Message-ID: <200506182114.j5ILEhI18643@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050618/0f144569/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: account-info.zip
+Type: application/octet-stream
+Size: 57748 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050618/0f144569/attachment.obj>
+
+From support at berlios.de  Sun Jun 19 04:54:07 2005
+From: support at berlios.de (support at berlios.de)
+Date: Sat, 18 Jun 2005 21:54:07 -0500
+Subject: YOUR ACCOUNT IS SUSPENDED FOR SECURITY REASONS
+Message-ID: <200506190254.j5J2s8I27253@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050618/aa6ba0af/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: account-details.zip
+Type: application/octet-stream
+Size: 57754 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050618/aa6ba0af/attachment.obj>
+
+From support at berlios.de  Sun Jun 19 10:35:49 2005
+From: support at berlios.de (support at berlios.de)
+Date: Sun, 19 Jun 2005 03:35:49 -0500
+Subject: Important Notification
+Message-ID: <200506190835.j5J8ZoI03764@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050619/b7dc9f33/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: email-details.zip
+Type: application/octet-stream
+Size: 57750 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050619/b7dc9f33/attachment.obj>
+
+From jasper at xfce.org  Sun Jun 19 10:44:15 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Sun, 19 Jun 2005 10:44:15 +0200
+Subject: Planning for for 4.4 panel
+Message-ID: <1119170655.4777.22.camel@localhost>
+
+Hi all,
+
+I just want to dump some thoughts about developments for the 4.4 panel.
+The idea is to have the new features implemented somewhere in august.
+
+The two important high-level goals for the panel are:
+
+1) Multiple panels. Taskbar and iconbox become instances of the panel.
+
+2) Out-of-process plugins. This should protect the panel from problems 
+   in plugins (mem-leaks and crashes). 
+
+I believe that to do this properly I will have to rewrite the plugin
+interface more or less completely. This is necessary to get rid of
+references to global variables.
+
+So, how to go about this? 
+
+- Create a (GObject based) plugin implementation with interface 
+  completely separate from panel internals.
+
+- Port all plugins (from the panel and from the goodies) to the new 
+  interface.
+
+- Implement support for multiple panels.
+
+- Implement support for out-of-proces plugin, with the same interface
+  as in-process plugins.
+
+We could always decide to skip the last or even the last two points for
+4.4 and implement those for 4.6 if time is running short.
+
+Does this sound reasonable or are there better ways to handle this?
+
+	Jasper
+
+
+
+
+From jasper at xfce.org  Sun Jun 19 14:47:08 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Sun, 19 Jun 2005 14:47:08 +0200
+Subject: Troubles with xfce-goodies-dev list?
+Message-ID: <1119185228.4777.31.camel@localhost>
+
+hey,
+
+I'm not receiving the xfce-goodies mail and when I check the archive
+there are all kinds of very suspicious messages being send to the list
+(in html format no less). So, is there a problem?
+
+	Jasper
+
+
+
+From mario.streiber at gmx.de  Sun Jun 19 15:08:06 2005
+From: mario.streiber at gmx.de (Mario Streiber)
+Date: Sun, 19 Jun 2005 15:08:06 +0200
+Subject: Troubles with xfce-goodies-dev list?
+In-Reply-To: <1119185228.4777.31.camel@localhost>
+References: <1119185228.4777.31.camel@localhost>
+Message-ID: <20050619150806.16b21f54@localhost.localdomain>
+
+On Sun, 19 Jun 2005 14:47:08 +0200 Jasper Huijsmans <jasper at xfce.org> wrote:
+
+> hey,
+> 
+> I'm not receiving the xfce-goodies mail and when I check the archive
+> there are all kinds of very suspicious messages being send to the list
+> (in html format no less). So, is there a problem?
+> 
+> 	Jasper
+
+Yes there's a lot of spam coming round, most of them with a suspicious zip attachment.
+
+Mario
+
+
+From info at berlios.de  Sun Jun 19 16:16:42 2005
+From: info at berlios.de (info at berlios.de)
+Date: Sun, 19 Jun 2005 09:16:42 -0500
+Subject: Your Account is Suspended
+Message-ID: <200506191416.j5JEGgI12171@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050619/cb5030c7/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: important-details.zip
+Type: application/octet-stream
+Size: 57758 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050619/cb5030c7/attachment.obj>
+
+From rstmp at iinet.com.au  Sun Jun 19 21:43:56 2005
+From: rstmp at iinet.com.au (roger)
+Date: Mon, 20 Jun 2005 05:43:56 +1000
+Subject: Troubles with xfce-goodies-dev list?
+In-Reply-To: <20050619150806.16b21f54@localhost.localdomain>
+References: <1119185228.4777.31.camel@localhost> <20050619150806.16b21f54@localhost.localdomain>
+Message-ID: <200506200543.56888.rstmp@iinet.com.au>
+
+Hi,
+
+My system reckons it is a virus: Worm.Mytob.CW
+
+Some info I got from the Net regarding MyTob:
+<<
+Mass-mailing worm with back door capabilities that uses its own SMTP engine to 
+send email to addresses that it gathers from the compromised computer.
+The worm also spreads by exploiting the Microsoft Windows Local Security 
+Authority Service Remote Buffer Overflow (as described in Microsoft Security 
+Bulletin MS04-011) and the Microsoft Windows DCOM RPC Interface Buffer 
+Overrun Vulnerability (as described in Microsoft Security Bulletin MS03-026).
+>>
+
+Roger
+
+On Sun, 19 Jun 2005 23:08, Mario Streiber wrote:
+> On Sun, 19 Jun 2005 14:47:08 +0200 Jasper Huijsmans <jasper at xfce.org> wrote:
+> > hey,
+> >
+> > I'm not receiving the xfce-goodies mail and when I check the archive
+> > there are all kinds of very suspicious messages being send to the list
+> > (in html format no less). So, is there a problem?
+> >
+> > 	Jasper
+>
+> Yes there's a lot of spam coming round, most of them with a suspicious zip
+> attachment.
+>
+> Mario
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+From info at berlios.de  Sun Jun 19 22:00:59 2005
+From: info at berlios.de (info at berlios.de)
+Date: Sun, 19 Jun 2005 15:00:59 -0500
+Subject: NOTICE OF ACCOUNT LIMITATION
+Message-ID: <200506192001.j5JK0xI22570@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050619/eccc3139/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: important-details.zip
+Type: application/octet-stream
+Size: 57758 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050619/eccc3139/attachment.obj>
+
+From service at berlios.de  Mon Jun 20 03:34:21 2005
+From: service at berlios.de (service at berlios.de)
+Date: Sun, 19 Jun 2005 20:34:21 -0500
+Subject: Your Account is Suspended
+Message-ID: <200506200134.j5K1YMI30716@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050619/aa8c3a7e/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: email-details.zip
+Type: application/octet-stream
+Size: 57750 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050619/aa8c3a7e/attachment.obj>
+
+From jasper at xfce.org  Mon Jun 20 07:55:49 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Mon, 20 Jun 2005 07:55:49 +0200
+Subject: Troubles with xfce-goodies-dev list?
+References: <1119185228.4777.31.camel@localhost> <20050619150806.16b21f54@localhost.localdomain> <200506200543.56888.rstmp@iinet.com.au>
+Message-ID: <pan.2005.06.20.05.55.32.233960@xfce.org>
+
+Right, so is there anything we can do about this? Closing the list and
+creating a new one could be an option, but maybe a bit drastic ;-) Any
+ideas?
+
+I also need to find out why I don't receive these messages anymore...
+(reading/posting through gmane now).
+
+	Jasper
+
+Op Mon, 20 Jun 2005 05:43:56 +1000, schreef roger:
+
+> Hi,
+> 
+> My system reckons it is a virus: Worm.Mytob.CW
+> 
+> Some info I got from the Net regarding MyTob: <<
+> Mass-mailing worm with back door capabilities that uses its own SMTP
+> engine to send email to addresses that it gathers from the compromised
+> computer. The worm also spreads by exploiting the Microsoft Windows Local
+> Security Authority Service Remote Buffer Overflow (as described in
+> Microsoft Security Bulletin MS04-011) and the Microsoft Windows DCOM RPC
+> Interface Buffer Overrun Vulnerability (as described in Microsoft Security
+> Bulletin MS03-026).
+>>>
+>>>
+> Roger
+> 
+> On Sun, 19 Jun 2005 23:08, Mario Streiber wrote:
+>> On Sun, 19 Jun 2005 14:47:08 +0200 Jasper Huijsmans <jasper at xfce.org>
+>> wrote:
+>> > hey,
+>> >
+>> > I'm not receiving the xfce-goodies mail and when I check the archive
+>> > there are all kinds of very suspicious messages being send to the list
+>> > (in html format no less). So, is there a problem?
+>> >
+>> > 	Jasper
+>>
+>> Yes there's a lot of spam coming round, most of them with a suspicious
+>> zip attachment.
+>>
+>> Mario
+>> _______________________________________________ xfce-goodies-dev mailing
+>> list
+>> xfce-goodies-dev at lists.berlios.de
+>> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+
+
+From administrator at berlios.de  Mon Jun 20 09:17:20 2005
+From: administrator at berlios.de (administrator at berlios.de)
+Date: Mon, 20 Jun 2005 02:17:20 -0500
+Subject: Your password has been successfully updated
+Message-ID: <200506200717.j5K7HLI06425@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050620/1b208bff/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: account-password.zip
+Type: application/octet-stream
+Size: 57756 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050620/1b208bff/attachment.obj>
+
+From rstmp at iinet.com.au  Mon Jun 20 11:45:58 2005
+From: rstmp at iinet.com.au (roger)
+Date: Mon, 20 Jun 2005 19:45:58 +1000
+Subject: Troubles with xfce-goodies-dev list?
+In-Reply-To: <pan.2005.06.20.05.55.32.233960@xfce.org>
+References: <1119185228.4777.31.camel@localhost> <200506200543.56888.rstmp@iinet.com.au> <pan.2005.06.20.05.55.32.233960@xfce.org>
+Message-ID: <200506201945.58607.rstmp@iinet.com.au>
+
+Hi,
+
+Closing the list and creating a new one could be an option... for now. What 
+about in a month time? Couldn't we be reached by a virus/worm again.
+
+I guess the best thing would be that the list have an anti-virus filter in 
+input.
+I personally use clamav and am pretty happy with it. So far all viruses have 
+been stopped (quarantined) before reaching my mailbox.
+
+Cheers,
+Roger
+
+On Mon, 20 Jun 2005 15:55, Jasper Huijsmans wrote:
+> Right, so is there anything we can do about this? Closing the list and
+> creating a new one could be an option, but maybe a bit drastic ;-) Any
+> ideas?
+>
+> I also need to find out why I don't receive these messages anymore...
+> (reading/posting through gmane now).
+>
+> 	Jasper
+>
+> Op Mon, 20 Jun 2005 05:43:56 +1000, schreef roger:
+> > Hi,
+> >
+> > My system reckons it is a virus: Worm.Mytob.CW
+> >
+> > Some info I got from the Net regarding MyTob: <<
+> > Mass-mailing worm with back door capabilities that uses its own SMTP
+> > engine to send email to addresses that it gathers from the compromised
+> > computer. The worm also spreads by exploiting the Microsoft Windows Local
+> > Security Authority Service Remote Buffer Overflow (as described in
+> > Microsoft Security Bulletin MS04-011) and the Microsoft Windows DCOM RPC
+> > Interface Buffer Overrun Vulnerability (as described in Microsoft
+> > Security Bulletin MS03-026).
+> >
+> >
+> > Roger
+> >
+> > On Sun, 19 Jun 2005 23:08, Mario Streiber wrote:
+> >> On Sun, 19 Jun 2005 14:47:08 +0200 Jasper Huijsmans <jasper at xfce.org>
+> >>
+> >> wrote:
+> >> > hey,
+> >> >
+> >> > I'm not receiving the xfce-goodies mail and when I check the archive
+> >> > there are all kinds of very suspicious messages being send to the list
+> >> > (in html format no less). So, is there a problem?
+> >> >
+> >> > 	Jasper
+> >>
+> >> Yes there's a lot of spam coming round, most of them with a suspicious
+> >> zip attachment.
+> >>
+> >> Mario
+> >> _______________________________________________ xfce-goodies-dev mailing
+> >> list
+> >> xfce-goodies-dev at lists.berlios.de
+> >> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+From administrator at berlios.de  Mon Jun 20 15:10:44 2005
+From: administrator at berlios.de (administrator at berlios.de)
+Date: Mon, 20 Jun 2005 08:10:44 -0500
+Subject: Your Account is Suspended For Security Reasons
+Message-ID: <200506201310.j5KDAiI22485@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050620/95d8e159/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: account-details.zip
+Type: application/octet-stream
+Size: 57754 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050620/95d8e159/attachment.obj>
+
+From admin at berlios.de  Mon Jun 20 16:27:59 2005
+From: admin at berlios.de (admin at berlios.de)
+Date: Mon, 20 Jun 2005 09:27:59 -0500
+Subject: Warning Message: Your services near to be closed.
+Message-ID: <200506201427.j5KERxI25360@bat.berlios.de>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050620/a5fb8684/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: account-details.zip
+Type: application/octet-stream
+Size: 57754 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050620/a5fb8684/attachment.obj>
+
+From jasper at xfce.org  Mon Jun 20 22:51:09 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Mon, 20 Jun 2005 22:51:09 +0200
+Subject: testing - please ignore
+Message-ID: <1119300669.4650.5.camel@localhost>
+
+you passed the test!
+
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Mon Jun 20 16:05:48 2005
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Mon, 20 Jun 2005 16:05:48 +0200
+Subject: Troubles with xfce-goodies-dev list?
+In-Reply-To: <200506201945.58607.rstmp@iinet.com.au>
+References: <1119185228.4777.31.camel@localhost> <200506200543.56888.rstmp@iinet.com.au> <pan.2005.06.20.05.55.32.233960@xfce.org> <200506201945.58607.rstmp@iinet.com.au>
+Message-ID: <42B6CD3C.8010804@unix-ag.uni-siegen.de>
+
+roger wrote:
+> Hi,
+> 
+> Closing the list and creating a new one could be an option... for now. What 
+> about in a month time? Couldn't we be reached by a virus/worm again.
+> 
+> I guess the best thing would be that the list have an anti-virus filter in 
+> input.
+> I personally use clamav and am pretty happy with it. So far all viruses have 
+> been stopped (quarantined) before reaching my mailbox.
+
+I'm also receiving similar messages from various other sources, for 
+example from mail at xfce.org. So I don't think that closing a particular 
+list would solve the problem. The best solution would be to shot the 
+spammer responsible for this messages. ;)
+
+> Cheers,
+> Roger
+
+Benedikt
+
+
+From jasper at xfce.org  Tue Jun 21 20:56:58 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Tue, 21 Jun 2005 20:56:58 +0200
+Subject: Troubles with xfce-goodies-dev list?
+References: <1119185228.4777.31.camel@localhost> <200506200543.56888.rstmp@iinet.com.au> <pan.2005.06.20.05.55.32.233960@xfce.org> <200506201945.58607.rstmp@iinet.com.au> <42B6CD3C.8010804@unix-ag.uni-siegen.de>
+Message-ID: <pan.2005.06.21.18.56.58.360421@xfce.org>
+
+Op Mon, 20 Jun 2005 16:05:48 +0200, schreef Benedikt Meurer:
+...
+> I'm also receiving similar messages from various other sources, for
+> example from mail at xfce.org. So I don't think that closing a particular
+> list would solve the problem. The best solution would be to shot the
+> spammer responsible for this messages. ;)
+> 
+
+Oh, ok. Could the real spammer please stand up? ;-)
+
+Btw, the reason I don't receive list mail anymore seems to be that espreso
+(the Xfce server) is blacklisting berlios ;-)
+
+
+
+From ralph.rice at gmail.com  Tue Jun 21 21:36:49 2005
+From: ralph.rice at gmail.com (Ralph Allan Rice)
+Date: Tue, 21 Jun 2005 15:36:49 -0400
+Subject: Gmail Plugin
+Message-ID: <edd1dbc305062112362cdc73c0@mail.gmail.com>
+
+Hello everyone,
+
+I am very new to the list and I am sorry for intruding.  I was
+wondering if anyone has been working on a mail notification xfce-panel
+plugin for GMail.   I recently noticed that Google has an Atom XML
+interface (https://mail.google.com/mail/feed/atom) where you can find
+out if you have new messages.
+
+Anyway, as far as I can tell, there is no xfce panel plugin currently
+that handles GMail, but I think it would be a great addition.
+
+If no one is working on it, I would like to get my hands dirty at it.
+
+Thanks,
+Ralph
+
+
+From fourdan at xfce.org  Tue Jun 21 22:01:59 2005
+From: fourdan at xfce.org (Olivier Fourdan)
+Date: Tue, 21 Jun 2005 22:01:59 +0200
+Subject: Gmail Plugin
+In-Reply-To: <edd1dbc305062112362cdc73c0@mail.gmail.com>
+References: <edd1dbc305062112362cdc73c0@mail.gmail.com>
+Message-ID: <1119384119.7047.14.camel@shuttle>
+
+Hi Ralph
+
+On Tue, 2005-06-21 at 15:36 -0400, Ralph Allan Rice wrote:
+> Anyway, as far as I can tell, there is no xfce panel plugin currently
+> that handles GMail, but I think it would be a great addition.
+> 
+> If no one is working on it, I would like to get my hands dirty at it.
+
+That's a very good idea!
+
+Cheers,
+Olivier.
+
+
+
+
+From whyz at home.se  Tue Jun 21 23:43:13 2005
+From: whyz at home.se (Erik Ahlner)
+Date: Tue, 21 Jun 2005 23:43:13 +0200
+Subject: Gmail Plugin
+In-Reply-To: <edd1dbc305062112362cdc73c0@mail.gmail.com>
+References: <edd1dbc305062112362cdc73c0@mail.gmail.com>
+Message-ID: <42B889F1.4010104@home.se>
+
+Hello,
+
+Why bother with such a "narrow" plugin? Wouldn't it be better to extend 
+the mail checker plugin to support pop3 over SSL? (gmail supports pop3 
+access too)
+
+Erik
+
+
+
+Ralph Allan Rice wrote:
+
+>Hello everyone,
+>
+>I am very new to the list and I am sorry for intruding.  I was
+>wondering if anyone has been working on a mail notification xfce-panel
+>plugin for GMail.   I recently noticed that Google has an Atom XML
+>interface (https://mail.google.com/mail/feed/atom) where you can find
+>out if you have new messages.
+>
+>Anyway, as far as I can tell, there is no xfce panel plugin currently
+>that handles GMail, but I think it would be a great addition.
+>
+>If no one is working on it, I would like to get my hands dirty at it.
+>
+>Thanks,
+>Ralph
+>_______________________________________________
+>xfce-goodies-dev mailing list
+>xfce-goodies-dev at lists.berlios.de
+>http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+>
+>  
+>
+
+
+
+From ralph.rice at gmail.com  Wed Jun 22 06:23:52 2005
+From: ralph.rice at gmail.com (Ralph Allan Rice)
+Date: Wed, 22 Jun 2005 00:23:52 -0400
+Subject: Gmail Plugin
+In-Reply-To: <42B889F1.4010104@home.se>
+References: <edd1dbc305062112362cdc73c0@mail.gmail.com>
+	 <42B889F1.4010104@home.se>
+Message-ID: <edd1dbc305062121232625bfdc@mail.gmail.com>
+
+I may not be sure on what you mean by "narrow", but some of the other
+Xfce plugins that I have seen so far seem to do very specific tasks
+(i.e. weather), and a theoretical gmail plugin does not seem to be all
+that different.
+
+Don't get me wrong, I think pop3 support (with and without SSL) in the
+mail checker is also a good idea.  I just do not use pop3 with gmail
+(only the web interface), so it never really occurred to me to use
+that option.
+
+With that said, maybe both ideas could be implemented.  I personally
+think that the RSS/Atom feed was an interesting method of
+notification, so I was naturally drawn to it.
+
+
+--
+Ralph
+
+
+
+On 6/21/05, Erik Ahlner <whyz at home.se> wrote:
+> Hello,
+> 
+> Why bother with such a "narrow" plugin? Wouldn't it be better to extend
+> the mail checker plugin to support pop3 over SSL? (gmail supports pop3
+> access too)
+> 
+> Erik
+> 
+> 
+> 
+> Ralph Allan Rice wrote:
+> 
+> >Hello everyone,
+> >
+> >I am very new to the list and I am sorry for intruding.  I was
+> >wondering if anyone has been working on a mail notification xfce-panel
+> >plugin for GMail.   I recently noticed that Google has an Atom XML
+> >interface (https://mail.google.com/mail/feed/atom) where you can find
+> >out if you have new messages.
+> >
+> >Anyway, as far as I can tell, there is no xfce panel plugin currently
+> >that handles GMail, but I think it would be a great addition.
+> >
+> >If no one is working on it, I would like to get my hands dirty at it.
+> >
+> >Thanks,
+> >Ralph
+> >_______________________________________________
+> >xfce-goodies-dev mailing list
+> >xfce-goodies-dev at lists.berlios.de
+> >http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> >
+> >
+> >
+> >
+> 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+
+
+From webmaster at nebulon.de  Thu Jun 30 16:28:51 2005
+From: webmaster at nebulon.de (Johannes Zellner)
+Date: Thu, 30 Jun 2005 16:28:51 +0200
+Subject: xfce4-taskmanager
+Message-ID: <42C401A3.9040609@nebulon.de>
+
+Hi everybody
+
+After a long long time..I found some time and experience in C, so i 
+rewrote the taskmanager.
+Now I've got a runnable version (not a release ;) ) for linux.
+It would be nice to have some feedback :)
+
+So download it under:
+http://xfce4-taskmanager.nebulon.de/xfce4-taskmanager-0.3.0-pre.tar.gz
+
+Check it out and reply :-D
+
+Thanks
+    Johannes
+
+
+From webmaster at nebulon.de  Thu Jun 30 16:42:07 2005
+From: webmaster at nebulon.de (Johannes Zellner)
+Date: Thu, 30 Jun 2005 16:42:07 +0200
+Subject: xfce4-taskmanager
+Message-ID: <42C404BF.1000506@nebulon.de>
+
+Hi everybody
+
+After a long long time..I found some time and experience in C, so i
+rewrote the taskmanager.
+Now I've got a runnable version (not a release ;) ) for linux.
+It would be nice to have some feedback :)
+
+So download it under:
+http://xfce4-taskmanager.nebulon.de/xfce4-taskmanager-0.3.0-pre.tar.gz
+
+Check it out and reply :-D
+
+Thanks
+    Johannes
+
+
+
+From remenic at gmail.com  Thu Jun 30 15:49:29 2005
+From: remenic at gmail.com (Richard Stellingwerff)
+Date: Thu, 30 Jun 2005 15:49:29 +0200
+Subject: Planning for for 4.4 panel
+In-Reply-To: <1119170655.4777.22.camel@localhost>
+References: <1119170655.4777.22.camel@localhost>
+Message-ID: <3aef9cce050630064920c15258@mail.gmail.com>
+
+On 6/19/05, Jasper Huijsmans <jasper at xfce.org> wrote:
+> Hi all,
+> 2) Out-of-process plugins. This should protect the panel from problems
+>    in plugins (mem-leaks and crashes).
+
+I'm not sure if I understand what 'out-of-process' means. Does this
+mean each plugin will be it's own application, just like with
+gnome-panel? Because that's one of the things I *really* hate about
+the gnome-panel. Run a bunch of 'plugins' and your memory usage rises
+to incredible heights.
+
+I hope I'm wrong, but if not then I strongly discourage you to do this.
+
+Please don't bloat XFCE... :(
+
+
+From webmaster at nebulon.de  Thu Jun 30 22:29:23 2005
+From: webmaster at nebulon.de (Johannes Zellner)
+Date: Thu, 30 Jun 2005 22:29:23 +0200
+Subject: xfce4-taskmanager version 0.3.0
+Message-ID: <42C45623.3040008@nebulon.de>
+
+Hi everybody,
+
+Forget the last 2 Mails from me.
+The new Release 0.3.0 of the xfce4-taskmanager is now available on 
+http://developer.berlios.de/project/showfiles.php?group_id=910
+
+It is completly rewritten and has now more functionality, like showing 
+user,root,other tasks.
+
+Check it out and write feedback if bugs appear :-D
+
+Greetings
+    Johannes
+
+
+From a.radke at arcor.de  Thu Jun 30 23:10:52 2005
+From: a.radke at arcor.de (Andreas Radke)
+Date: Thu, 30 Jun 2005 23:10:52 +0200
+Subject: xfce4-taskmanager version 0.3.0
+In-Reply-To: <42C45623.3040008@nebulon.de>
+References: <42C45623.3040008@nebulon.de>
+Message-ID: <42C45FDC.1070502@arcor.de>
+
+Johannes Zellner schrieb:
+
+> Hi everybody,
+>
+> Forget the last 2 Mails from me.
+> The new Release 0.3.0 of the xfce4-taskmanager is now available on 
+> http://developer.berlios.de/project/showfiles.php?group_id=910
+>
+> It is completly rewritten and has now more functionality, like showing 
+> user,root,other tasks.
+>
+> Check it out and write feedback if bugs appear :-D
+>
+> Greetings
+> Johannes
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+Look quiet better. Package for Mandriva 2005LE is ready ;-)
+
+There seems to be a bug. I use "more options" and try to sort processes 
+my used memory. It not correctly sorts them. Processes with >100MB are 
+listed above 10MB but between it?s not correct sortet. The list can be 
+12MB 24MB 13MB...
+
+Try to fix it.
+
+Andy
+
+
+From a.radke at arcor.de  Thu Jun 30 23:17:47 2005
+From: a.radke at arcor.de (Andreas Radke)
+Date: Thu, 30 Jun 2005 23:17:47 +0200
+Subject: xfce4-taskmanager version 0.3.0
+In-Reply-To: <42C45623.3040008@nebulon.de>
+References: <42C45623.3040008@nebulon.de>
+Message-ID: <42C4617B.7020303@arcor.de>
+
+Johannes Zellner schrieb:
+
+> Hi everybody,
+>
+> Forget the last 2 Mails from me.
+> The new Release 0.3.0 of the xfce4-taskmanager is now available on 
+> http://developer.berlios.de/project/showfiles.php?group_id=910
+>
+> It is completly rewritten and has now more functionality, like showing 
+> user,root,other tasks.
+>
+> Check it out and write feedback if bugs appear :-D
+>
+> Greetings
+>    Johannes
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+
+
+Can you integrate cpu usage per process? Then it would be quiet as 
+complete as top.
+
+Andy
+
+
+From webmaster at nebulon.de  Thu Jun 30 23:57:19 2005
+From: webmaster at nebulon.de (Johannes Zellner)
+Date: Thu, 30 Jun 2005 23:57:19 +0200
+Subject: xfce4-taskmanager version 0.3.0
+In-Reply-To: <42C45FDC.1070502@arcor.de>
+References: <42C45623.3040008@nebulon.de> <42C45FDC.1070502@arcor.de>
+Message-ID: <42C46ABF.407@nebulon.de>
+
+Andreas Radke schrieb:
+
+> Johannes Zellner schrieb:
+>
+>> Hi everybody,
+>>
+>> Forget the last 2 Mails from me.
+>> The new Release 0.3.0 of the xfce4-taskmanager is now available on 
+>> http://developer.berlios.de/project/showfiles.php?group_id=910
+>>
+>> It is completly rewritten and has now more functionality, like 
+>> showing user,root,other tasks.
+>>
+>> Check it out and write feedback if bugs appear :-D
+>>
+>> Greetings
+>> Johannes
+>> _______________________________________________
+>> xfce-goodies-dev mailing list
+>> xfce-goodies-dev at lists.berlios.de
+>> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>>
+> Look quiet better. Package for Mandriva 2005LE is ready ;-)
+
+Thanks ;-D
+
+>
+> There seems to be a bug. I use "more options" and try to sort 
+> processes my used memory. It not correctly sorts them. Processes with 
+> >100MB are listed above 10MB but between it?s not correct sortet. The 
+> list can be 12MB 24MB 13MB...
+>
+> Try to fix it.
+
+Fixed with 0.3.1
+
+>
+> Andy
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+
+
+
+From webmaster at nebulon.de  Thu Jun 30 23:58:21 2005
+From: webmaster at nebulon.de (Johannes Zellner)
+Date: Thu, 30 Jun 2005 23:58:21 +0200
+Subject: xfce4-taskmanager version 0.3.0
+In-Reply-To: <42C4617B.7020303@arcor.de>
+References: <42C45623.3040008@nebulon.de> <42C4617B.7020303@arcor.de>
+Message-ID: <42C46AFD.4020404@nebulon.de>
+
+Andreas Radke schrieb:
+
+> Johannes Zellner schrieb:
+>
+>> Hi everybody,
+>>
+>> Forget the last 2 Mails from me.
+>> The new Release 0.3.0 of the xfce4-taskmanager is now available on 
+>> http://developer.berlios.de/project/showfiles.php?group_id=910
+>>
+>> It is completly rewritten and has now more functionality, like 
+>> showing user,root,other tasks.
+>>
+>> Check it out and write feedback if bugs appear :-D
+>>
+>> Greetings
+>>    Johannes
+>> _______________________________________________
+>> xfce-goodies-dev mailing list
+>> xfce-goodies-dev at lists.berlios.de
+>> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>>
+>
+>
+> Can you integrate cpu usage per process? Then it would be quiet as 
+> complete as top.
+
+This will be a feature in the 0.4.0 release !
+
+Bye
+    Johannes
+
+
+

@@ -1,0 +1,1905 @@
+From b0kaj at lysator.liu.se  Sat Oct  1 20:22:07 2005
+From: b0kaj at lysator.liu.se (Jakob Henriksson)
+Date: Sat, 01 Oct 2005 18:22:07 -0000
+Subject: xfce4-notes-plugin-0.11.0
+Message-ID: <op.sxzby5qpqjpsmv@localhost.localdomain>
+
+Hey,
+
+I released a new version of the xfce4-notes plugin. Should be able to get  
+it off berlios.de
+
+Cheers,
+
+Jakob
+
+
+From xotazu at cvc.uab.es  Sun Oct  2 18:40:54 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Sun, 02 Oct 2005 18:40:54 +0200 (CEST)
+Subject: xfce4-notes-plugin-0.11.0
+Message-ID: <Pine.LNX.4.60.0510021838520.4348@cvc131.uab.es>
+
+
+Hello:
+
+Notes on top is a really annoying feature !!!! Well, what is annoying is 
+that it is hardcoded. User cannot configure this behaviour!
+
+I've uninstalled notes plugin waiting for a new version.
+
+cheers
+
+Xavier
+
+
+From b0kaj at lysator.liu.se  Mon Oct  3 14:47:20 2005
+From: b0kaj at lysator.liu.se (Jakob Henriksson)
+Date: Mon, 03 Oct 2005 12:47:20 -0000
+Subject: xfce4-notes-plugin-0.11.0
+Message-ID: <op.sx2ls6tnqjpsmv@localhost.localdomain>
+
+If I uninstalled every piece of software because of unwanted  
+features/behaviour, I wouldn't be running any software...
+
+Anyway, you got what you wanted, get it at berlios.de
+
+Let me know if there are other request or unwanted features, and I'll see  
+what I can do...
+
+Cheers,
+Jakob
+
+
+From timystery at arcor.de  Mon Oct  3 17:50:25 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Mon, 03 Oct 2005 17:50:25 +0200
+Subject: Porting panel plugins for 4.4
+In-Reply-To: <mailman.679.1128351066.5736.xfce4-dev@xfce.org>
+References: <mailman.679.1128351066.5736.xfce4-dev@xfce.org>
+Message-ID: <1128354625.5621.1.camel@TIM3000>
+
+Hi!
+
+a teatime plugin is beginning its life ;)
+
+berlios svn has the glade files for the options dialog for those being
+interested..
+
+bye, fabian
+
+
+
+
+From kieroglu at math.washington.edu  Mon Oct  3 18:35:13 2005
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Mon, 3 Oct 2005 09:35:13 -0700 (PDT)
+Subject: Porting panel plugins for 4.4
+In-Reply-To: <1128354625.5621.1.camel@TIM3000>
+References: <mailman.679.1128351066.5736.xfce4-dev@xfce.org>
+ <1128354625.5621.1.camel@TIM3000>
+Message-ID: <Pine.LNX.4.61.0510030924560.27777@zeno2.math.washington.edu>
+
+> a teatime plugin is beginning its life ;)
+>
+> berlios svn has the glade files for the options dialog for those being
+> interested..
+>
+
+  Hi,
+
+  I posted a timer plugin to this list at the beginning of September, 
+asking for testers, but no one has replied yet. It's of the same sort. You 
+set an alarm time specified as a countdown period or time of the day. The 
+alarm can be a popup window or running a commmand specified. The bug left 
+was the adjustment of the size of the ctrl->base window (it was too big), 
+but I believe the functions in the 4.4 API will let us handle that.
+
+  You can get it from
+
+  www.math.washington.edu/~kieroglu/xfce-timer-0.2.tar.bz2
+
+
+  Ilgar
+
+
+From timystery at arcor.de  Mon Oct  3 19:08:42 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Mon, 03 Oct 2005 19:08:42 +0200
+Subject: Porting panel plugins for 4.4
+In-Reply-To: <Pine.LNX.4.61.0510030924560.27777@zeno2.math.washington.edu>
+References: <mailman.679.1128351066.5736.xfce4-dev@xfce.org>
+	 <1128354625.5621.1.camel@TIM3000>
+	 <Pine.LNX.4.61.0510030924560.27777@zeno2.math.washington.edu>
+Message-ID: <1128359322.2775.3.camel@TIM3000>
+
+Am Montag, den 03.10.2005, 09:35 -0700 schrieb Kemal Eroglu:
+> > a teatime plugin is beginning its life ;)
+> >
+> > berlios svn has the glade files for the options dialog for those being
+> > interested..
+> >
+> 
+>   Hi,
+> 
+>   I posted a timer plugin to this list at the beginning of September, 
+> asking for testers, but no one has replied yet. It's of the same sort. You 
+> set an alarm time specified as a countdown period or time of the day. The 
+> alarm can be a popup window or running a commmand specified. The bug left 
+> was the adjustment of the size of the ctrl->base window (it was too big), 
+> but I believe the functions in the 4.4 API will let us handle that.
+> 
+>   You can get it from
+> 
+>   www.math.washington.edu/~kieroglu/xfce-timer-0.2.tar.bz2
+
+well, that's quite fine - but I can't look at it as I'm now running the
+new panel. So either of us will have to port it.
+
+did you already look at the glade file for the options dialog?
+
+why didn't you create an svn repository and project at berlios?
+
+do you want to merge our efforts?
+
+bye, fabian
+
+
+
+From kieroglu at math.washington.edu  Mon Oct  3 19:14:28 2005
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Mon, 3 Oct 2005 10:14:28 -0700 (PDT)
+Subject: Porting panel plugins for 4.4
+In-Reply-To: <1128359322.2775.3.camel@TIM3000>
+References: <mailman.679.1128351066.5736.xfce4-dev@xfce.org> 
+ <1128354625.5621.1.camel@TIM3000>  <Pine.LNX.4.61.0510030924560.27777@zeno2.math.washington.edu>
+ <1128359322.2775.3.camel@TIM3000>
+Message-ID: <Pine.LNX.4.61.0510031007220.27777@zeno2.math.washington.edu>
+
+On Mon, 3 Oct 2005, Fabian Nowak wrote:
+
+> well, that's quite fine - but I can't look at it as I'm now running the
+> new panel. So either of us will have to port it.
+
+   I don't have the new panel installed yet. I'll try to get it soon.
+>
+> did you already look at the glade file for the options dialog?
+
+   Yes I checked that.
+
+> why didn't you create an svn repository and project at berlios?
+
+   Actually I was waiting for an invitation/permission from a developer. 
+I'm the maintainer of the xmms plugin also, thus have svn access for it, 
+but still I didn't want to do anything on my own.
+
+> do you want to merge our efforts?
+
+   That's fine for me. I don't know how much effort is required to do 
+merging. You can take a quick glance at my plugin's sources. It's 
+commented, so you can follow what's going on. If you think it will be 
+reasonably easy to merge, then let's go for it.
+
+
+   Ilgar
+
+
+From timystery at arcor.de  Mon Oct  3 20:31:32 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Mon, 03 Oct 2005 20:31:32 +0200
+Subject: Porting panel plugins for 4.4
+In-Reply-To: <Pine.LNX.4.61.0510031007220.27777@zeno2.math.washington.edu>
+References: <mailman.679.1128351066.5736.xfce4-dev@xfce.org>
+	 <1128354625.5621.1.camel@TIM3000>
+	 <Pine.LNX.4.61.0510030924560.27777@zeno2.math.washington.edu>
+	 <1128359322.2775.3.camel@TIM3000>
+	 <Pine.LNX.4.61.0510031007220.27777@zeno2.math.washington.edu>
+Message-ID: <1128364292.3368.4.camel@TIM3000>
+
+Am Montag, den 03.10.2005, 10:14 -0700 schrieb Kemal Eroglu:
+> On Mon, 3 Oct 2005, Fabian Nowak wrote:
+> 
+> > well, that's quite fine - but I can't look at it as I'm now running the
+> > new panel. So either of us will have to port it.
+> 
+>    I don't have the new panel installed yet. I'll try to get it soon.
+> >
+> > did you already look at the glade file for the options dialog?
+> 
+>    Yes I checked that.
+> 
+> > why didn't you create an svn repository and project at berlios?
+> 
+>    Actually I was waiting for an invitation/permission from a developer. 
+> I'm the maintainer of the xmms plugin also, thus have svn access for it, 
+> but still I didn't want to do anything on my own.
+
+you'll have to, as soon as you have yuor account, noone will do your
+job ;)
+
+svn import your_timer_tree \
+svn+ssh://name at svn.berlios.de/svnroot/repos/xfce-goodies/new_repository
+
+don't forget to checkout his repository before making any further
+changes as the module will not be checked out when you import it
+(ridiculously bad behaviour of svn).
+
+> 
+> > do you want to merge our efforts?
+> 
+>    That's fine for me. I don't know how much effort is required to do 
+> merging. You can take a quick glance at my plugin's sources. It's 
+> commented, so you can follow what's going on. If you think it will be 
+> reasonably easy to merge, then let's go for it.
+> 
+> 
+>    Ilgar
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+
+From jasper at xfce.org  Mon Oct  3 20:52:36 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Mon, 03 Oct 2005 20:52:36 +0200
+Subject: Porting panel plugins for 4.4
+In-Reply-To: <Pine.LNX.4.61.0510031007220.27777@zeno2.math.washington.edu>
+References: <mailman.679.1128351066.5736.xfce4-dev@xfce.org>  <1128354625.5621.1.camel@TIM3000>  <Pine.LNX.4.61.0510030924560.27777@zeno2.math.washington.edu> <1128359322.2775.3.camel@TIM3000> <Pine.LNX.4.61.0510031007220.27777@zeno2.math.washington.edu>
+Message-ID: <43417DF4.1010307@xfce.org>
+
+Kemal Eroglu schreef:
+...
+>> why didn't you create an svn repository and project at berlios?
+> 
+> 
+>   Actually I was waiting for an invitation/permission from a developer. 
+> I'm the maintainer of the xmms plugin also, thus have svn access for it, 
+> but still I didn't want to do anything on my own.
+> 
+
+I saw your post about the plugin, but I guess I didn't realize you were 
+waiting for some moral support ;-) Sorry about that.
+
+So, at last, please go ahead and import it. Sounds like an interesting 
+addition.
+
+	Jasper
+
+
+From xotazu at cvc.uab.es  Tue Oct  4 16:13:22 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Tue, 04 Oct 2005 16:13:22 +0200
+Subject: xfce4-notes-plugin-0.11.0
+In-Reply-To: <20051004100008.11658.82412.Mailman@bat.berlios.de>
+References: <20051004100008.11658.82412.Mailman@bat.berlios.de>
+Message-ID: <20051004161322.7203c0ca@cvc131.uab.es>
+
+	Hi:
+
+
+On Tue, 04 Oct 2005 12:00:08 +0200
+xfce-goodies-dev-request at berlios.de wrote:
+
+> If I uninstalled every piece of software because of unwanted  
+> features/behaviour, I wouldn't be running any software...
+
+	You are right ... ;-)
+
+	I uninstalled the last version of notes because I was unable to
+work with so many notes in front of my terminals...
+
+> 
+> Anyway, you got what you wanted, get it at berlios.de
+> 
+
+	I get it. It works fine.
+
+	Thanks!
+
+cheers
+
+Xavier
+
+
+From kieroglu at math.washington.edu  Thu Oct  6 22:47:47 2005
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Thu, 6 Oct 2005 13:47:47 -0700 (PDT)
+Subject: Porting panel plugins for 4.4
+In-Reply-To: <1128364292.3368.4.camel@TIM3000>
+References: <mailman.679.1128351066.5736.xfce4-dev@xfce.org> 
+ <1128354625.5621.1.camel@TIM3000>  <Pine.LNX.4.61.0510030924560.27777@zeno2.math.washington.edu>
+  <1128359322.2775.3.camel@TIM3000>  <Pine.LNX.4.61.0510031007220.27777@zeno2.math.washington.edu>
+ <1128364292.3368.4.camel@TIM3000>
+Message-ID: <Pine.LNX.4.61.0510061344260.606@zeno1.math.washington.edu>
+
+>>    Actually I was waiting for an invitation/permission from a developer.
+>> I'm the maintainer of the xmms plugin also, thus have svn access for it,
+>> but still I didn't want to do anything on my own.
+>
+> you'll have to, as soon as you have yuor account, noone will do your
+> job ;)
+>
+
+   I don't want anyone to do my job. I just didn't want to make an untested 
+piece of software a part of a project which is not run by me, solely based 
+on my decision. If you say it's OK, I'll upload it. Unfortunately I'll be 
+without internet at home for a few days, hopefully I'll do that next week. 
+Sorry for the delay,
+
+   Ilgar
+
+
+From jasper at xfce.org  Sun Oct  9 13:18:10 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Sun, 09 Oct 2005 13:18:10 +0200
+Subject: Update: porting plugins
+Message-ID: <4348FC72.7060106@xfce.org>
+
+New thread ;-)
+
+I ported diskperf and genmon plugins for Roger Seguin. Here's the 
+updated list. I'll add some of the ones I ported to SVN, but not without 
+permission of the maintainer.
+
+	Jasper
+
+    Plugin                      Status
+========================================================================
+1  xfce4-battery-plugin        done (Jasper)
+                                http://www.xfce.org/~jasper/plugins/
+2  xfce4-clipman-plugin        done (Nick Schermer)
+3  xfce4-cpugraph-plugin       done (Jasper)
+                                http://www.xfce.org/~jasper/plugins/
+4  xfce4-datetime-plugin
+5  xfce4-diskperf-plugin       done (Jasper)
+                                http://www.xfce.org/~jasper/plugins/
+6  xfce4-fsguard-plugin
+7  xfce4-genmon-plugin         done (Jasper)
+                                http://www.xfce.org/~jasper/plugins/
+8  xfce4-i8k-plugin            Antonio Musumeci
+9  xfce4-megahertz-plugin      Wit Wilinski
+10 xfce4-minicmd-plugin        done (Ori Bernstein)
+                                http://www.xfce.org/~jasper/plugins/
+11 xfce4-mixer                 Danny / Ori
+12 xfce4-modemlights-plugin    will be done in some weeks
+                                  (Andreas J. Guelzow)
+13 xfce4-netload-plugin        done (Jasper):
+                                http://www.xfce.org/~jasper/plugins/
+14 xfce4-notes-plugin
+15 xfce4-quicklauncher-plugin  done by Nicolas (experimental branch)
+16 xfce4-screenshooter-plugin
+17 xfce4-sensors-plugin        will be done in some weeks (Fabian Nowak)
+18 xfce4-showdesktop-plugin
+19 xfce4-systemload-plugin
+20 xfce4-taskbar-plugin        not needed
+21 xfce4-trigger-launcher
+22 xfce4-wavelan-plugin
+23 xfce4-weather-plugin
+24 xfce4-websearch-plugin      Piotr Wolny
+25 xfce4-windowlist-plugin     not needed
+26 xfce4-xkb-plugin
+27 xfce4-xmms-plugin
+28 xfce4-mount-plugin          done (Fabian Nowak), Berlios downloads
+29 xfce4-mailwatch-plugin      done (Brian, Jasper), Xfce SVN
+30 xfdesktop -- menu plugin    done (Brian), Xfce SVN
+
+
+From timystery at arcor.de  Sun Oct  9 15:44:27 2005
+From: timystery at arcor.de (timystery at arcor.de)
+Date: Sun, 9 Oct 2005 15:44:27 +0200 (CEST)
+Subject: Aw: Update: porting plugins
+In-Reply-To: <4348FC72.7060106@xfce.org>
+References: <4348FC72.7060106@xfce.org>
+Message-ID: <8927775.1128865467280.JavaMail.ngmail@webmail-04.arcor-online.net>
+
+ ----- Original Nachricht ----
+Von:     Jasper Huijsmans <jasper at xfce.org>
+An:      XFCE4 development list <xfce4-dev at xfce.org>
+Datum:   09.10.2005 13:18
+Betreff: Update: porting plugins
+
+> New thread ;-)
+> 
+> I ported diskperf and genmon plugins for Roger Seguin. Here's the 
+> updated list. I'll add some of the ones I ported to SVN, but not without 
+> permission of the maintainer.
+> 
+> 	Jasper
+> 
+>     Plugin                      Status
+> ========================================================================
+> 1  xfce4-battery-plugin        done (Jasper)
+>                                 http://www.xfce.org/~jasper/plugins/
+> 2  xfce4-clipman-plugin        done (Nick Schermer)
+> 3  xfce4-cpugraph-plugin       done (Jasper)
+>                                 http://www.xfce.org/~jasper/plugins/
+> 4  xfce4-datetime-plugin
+> 5  xfce4-diskperf-plugin       done (Jasper)
+>                                 http://www.xfce.org/~jasper/plugins/
+> 6  xfce4-fsguard-plugin
+> 7  xfce4-genmon-plugin         done (Jasper)
+>                                 http://www.xfce.org/~jasper/plugins/
+> 8  xfce4-i8k-plugin            Antonio Musumeci
+> 9  xfce4-megahertz-plugin      Wit Wilinski
+> 10 xfce4-minicmd-plugin        done (Ori Bernstein)
+>                                 http://www.xfce.org/~jasper/plugins/
+> 11 xfce4-mixer                 Danny / Ori
+> 12 xfce4-modemlights-plugin    will be done in some weeks
+>                                   (Andreas J. Guelzow)
+> 13 xfce4-netload-plugin        done (Jasper):
+>                                 http://www.xfce.org/~jasper/plugins/
+> 14 xfce4-notes-plugin
+> 15 xfce4-quicklauncher-plugin  done by Nicolas (experimental branch)
+> 16 xfce4-screenshooter-plugin
+> 17 xfce4-sensors-plugin        will be done in some weeks (Fabian Nowak)
+
+already available both in svn and as package from berlios feel free to add it to your collection
+
+> 18 xfce4-showdesktop-plugin
+> 19 xfce4-systemload-plugin
+> 20 xfce4-taskbar-plugin        not needed
+> 21 xfce4-trigger-launcher
+> 22 xfce4-wavelan-plugin
+> 23 xfce4-weather-plugin
+> 24 xfce4-websearch-plugin      Piotr Wolny
+> 25 xfce4-windowlist-plugin     not needed
+> 26 xfce4-xkb-plugin
+> 27 xfce4-xmms-plugin
+> 28 xfce4-mount-plugin          done (Fabian Nowak), Berlios downloads
+
+also available now in svn @ berlios, feel free to add it to your collection.
+
+> 29 xfce4-mailwatch-plugin      done (Brian, Jasper), Xfce SVN
+> 30 xfdesktop -- menu plugin    done (Brian), Xfce SVN
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+
+
+From h.aling at home.nl  Mon Oct 10 16:34:20 2005
+From: h.aling at home.nl (Harold)
+Date: Mon, 10 Oct 2005 16:34:20 +0200
+Subject: xfce-goodies-dev digest, Vol 1 #320 - 2 msgs
+In-Reply-To: <20051010100011.25184.49122.Mailman@bat.berlios.de>
+References: <20051010100011.25184.49122.Mailman@bat.berlios.de>
+Message-ID: <434A7BEC.7050908@home.nl>
+
+Does anybody know where I can find the updated clipman plugin? The link 
+posted in 
+http://foo-projects.org/pipermail/xfce4-dev/2005-September/016607.html 
+leads to a 404...
+
+Thanx...
+
+Harold.
+
+>2  xfce4-clipman-plugin        done (Nick Schermer)
+>  
+>
+
+
+From nickschermer at gmail.com  Mon Oct 10 16:48:27 2005
+From: nickschermer at gmail.com (Nick Schermer)
+Date: Mon, 10 Oct 2005 16:48:27 +0200
+Subject: xfce-goodies-dev digest, Vol 1 #320 - 2 msgs
+In-Reply-To: <434A7BEC.7050908@home.nl>
+References: <20051010100011.25184.49122.Mailman@bat.berlios.de>
+	 <434A7BEC.7050908@home.nl>
+Message-ID: <4abe35490510100748j5020ac2cp@mail.gmail.com>
+
+Well you can find it on my PC :-). I've contacted the developer of
+the "old plugin" but he has not responded yet because he it very busy.
+
+I removed the download because it's rude to copy a project and release it
+with an other name.
+Till then i don't know what to do with it, so you'll have to wait.
+
+Gr. Nick
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051010/eee16d45/attachment.html>
+
+From jasper at xfce.org  Mon Oct 10 21:18:49 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Mon, 10 Oct 2005 21:18:49 +0200
+Subject: xfce-goodies-dev digest, Vol 1 #320 - 2 msgs
+In-Reply-To: <434A7BEC.7050908@home.nl>
+References: <20051010100011.25184.49122.Mailman@bat.berlios.de> <434A7BEC.7050908@home.nl>
+Message-ID: <434ABE99.2040800@xfce.org>
+
+Harold schreef:
+> Does anybody know where I can find the updated clipman plugin? The link 
+> posted in 
+> http://foo-projects.org/pipermail/xfce4-dev/2005-September/016607.html 
+> leads to a 404...
+> 
+> Thanx...
+> 
+
+Hey Harold,
+
+I pressured Nick to give the tarball to me ;-) Now it's available at 
+http://www.xfce.org/~jasper/plugins/ . These plugins are unofficial and 
+not approved by their maintainers. Not all of them anyway.
+
+cheers,
+	Jasper
+
+
+From jasper at xfce.org  Tue Oct 11 14:25:20 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Tue, 11 Oct 2005 14:25:20 +0200
+Subject: New example plugin
+Message-ID: <434BAF30.5060709@xfce.org>
+
+Hey all,
+
+I made a simple test plugin for the new panel that can be used as a 
+template for new plugins or as a reference for porting existing plugins.
+
+It's a minimal plugin showing some of the essential features of the new 
+plugin API as well as a 'proper' build system using the xfce4-dev-tools.
+
+- Explanantion: http://www.xfce.org/~jasper/plugins/TESTPLUGIN_INFO
+
+- Code: http://www.xfce.org/~jasper/plugins/xfce4-test-plugin.tar.gz
+
+Suggestions for improvements are welcome.
+
+	Jasper
+
+
+From stefan at desire.ch  Tue Oct 11 22:43:29 2005
+From: stefan at desire.ch (Stefan Ott)
+Date: Tue, 11 Oct 2005 22:43:29 +0200
+Subject: Update: porting plugins
+In-Reply-To: <4348FC72.7060106@xfce.org>
+References: <4348FC72.7060106@xfce.org>
+Message-ID: <20051011204329.GF1638@desire.ch>
+
+Hi Jasper
+
+On Sun, Oct 09, 2005 at 01:18:10PM +0200, Jasper Huijsmans wrote:
+
+> 6  xfce4-fsguard-plugin
+
+Andre Lerche, the previous maintainer, handed this project over to me. I
+just released a new version with a minor fix and would of course be glad
+if you could port it.
+
+Regards
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+"Trying is the first step towards failure." -- Homer Simpson
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051011/b940724e/attachment.pgp>
+
+From jasper at xfce.org  Wed Oct 12 07:43:32 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Wed, 12 Oct 2005 07:43:32 +0200
+Subject: Update: porting plugins
+In-Reply-To: <20051011204329.GF1638@desire.ch>
+References: <4348FC72.7060106@xfce.org> <20051011204329.GF1638@desire.ch>
+Message-ID: <434CA284.3010903@xfce.org>
+
+Stefan Ott schreef:
+> Hi Jasper
+> 
+> On Sun, Oct 09, 2005 at 01:18:10PM +0200, Jasper Huijsmans wrote:
+> 
+> 
+>>6  xfce4-fsguard-plugin
+> 
+> 
+> Andre Lerche, the previous maintainer, handed this project over to me. I
+> just released a new version with a minor fix and would of course be glad
+> if you could port it.
+
+Aha, good! I just did a port yesterday ;-) Available from 
+http://www.xfce.org/~jasper/plugins/ . Maybe you could have a look and 
+port your fix(es).
+
+I'l let you import it into SVN, unless you prefer me to do that. The 
+tarball does not contain an autogen.sh and still has all generated files 
+available. I would suggest you take the autogen.sh from the test plugin 
+(xfce4-test-plugint.tar.gz) and run './autogen.sh clean' to remove the 
+generated files, before adding it to SVN.
+
+	Jasper
+
+
+From timystery at arcor.de  Fri Oct 14 17:06:03 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Fri, 14 Oct 2005 17:06:03 +0200
+Subject: Sensors plugin with hddtemp availability
+In-Reply-To: <434ABE99.2040800@xfce.org>
+References: <20051010100011.25184.49122.Mailman@bat.berlios.de>
+	 <434A7BEC.7050908@home.nl>  <434ABE99.2040800@xfce.org>
+Message-ID: <1129302363.28364.3.camel@TIM3000>
+
+hi!
+
+just finished implementing the hddtemp feature for the new panel 4.3.22
+and above. if some people would try after saving their config, i'd be
+very glad.
+
+simply checkout xfce4-sensors-plugin/trunk from berlios svn.
+
+comments and requests for enhancements are very welcome.
+
+translations would also like to become updated for the new panel API and
+the hddtemp feature.
+
+best regards, fabian
+
+
+
+From akirillov at on-the-hill.me.uk  Fri Oct 14 18:03:13 2005
+From: akirillov at on-the-hill.me.uk (Alexander Kirillov)
+Date: Fri, 14 Oct 2005 17:03:13 +0100
+Subject: battery plug-in for the new xfce panel
+Message-ID: <434FD6C1.8030005@on-the-hill.me.uk>
+
+Hi,
+
+Is it possible to make the font and icon scalable in this plug-in? It 
+makes my panel too big if I check to display %, power and icon. Cheers.
+
+
+From timystery at arcor.de  Sat Oct 15 11:38:12 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Sat, 15 Oct 2005 11:38:12 +0200
+Subject: Mount Plugin
+Message-ID: <1129369092.22291.9.camel@TIM3000>
+
+Hi!
+
+The mount plugin now has the ability to specify the (u)mount command:
+
+http://mitglied.lycos.de/timshome/download/options-dialog.png
+
+Besides, the dialog has been cleaned and stuffed with lots of tooltips
+preventing unexperienced users from using this advanced option.
+
+Unfortunately, I'm not going to port it to the xfce4-panel 4.2.* branch,
+so you will have to use the new panel API (which has been stabilized
+very much) from Xfce svn repository.
+
+If you think it might be better to simply have a toggle button "execute
+with sudo", please answer this email!
+
+The archives can be found at
+https://developer.berlios.de/project/showfiles.php?group_id=910 and
+under svn at berlios.
+
+Best regards, Fabian
+
+
+
+
+From timystery at arcor.de  Sat Oct 15 12:55:17 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Sat, 15 Oct 2005 12:55:17 +0200
+Subject: Sensors plugin with hddtemp availability
+In-Reply-To: <1129302363.28364.3.camel@TIM3000>
+References: <20051010100011.25184.49122.Mailman@bat.berlios.de>
+	 <434A7BEC.7050908@home.nl>  <434ABE99.2040800@xfce.org>
+	 <1129302363.28364.3.camel@TIM3000>
+Message-ID: <1129373717.15331.6.camel@TIM3000>
+
+Am Freitag, den 14.10.2005, 17:06 +0200 schrieb Fabian Nowak:
+> hi!
+> 
+> just finished implementing the hddtemp feature for the new panel 4.3.22
+> and above. if some people would try after saving their config, i'd be
+> very glad.
+> 
+> simply checkout xfce4-sensors-plugin/trunk from berlios svn.
+> 
+> comments and requests for enhancements are very welcome.
+> 
+> translations would also like to become updated for the new panel API and
+> the hddtemp feature.
+> 
+> best regards, fabian
+
+It now is also available as package on berlios. If some BSD user could
+point me where to find block device information under *BSD, I'd be very
+glad and try to implement it.
+
+Besides, I noticed that some screnshots are available at berlios. If
+some admins want to add more, they can add
+http://mitglied.lycos.de/timshome/download/xfce4-sensors-options-0.8.png
+http://mitglied.lycos.de/timshome/download/xfce4-sensors_0.9.0.png
+
+
+http://mitglied.lycos.de/timshome/download/xfce4-mount-menu_0.4.3.png
+http://mitglied.lycos.de/timshome/download/xfce4-mount-options_0.4.3.png
+http://mitglied.lycos.de/timshome/download/xfce4-mount-panel_0.4.3.png
+
+Fabian
+
+
+
+From pasi.ov at gmail.com  Sat Oct 15 23:00:23 2005
+From: pasi.ov at gmail.com (Pasi Orovuo)
+Date: Sun, 16 Oct 2005 00:00:23 +0300
+Subject: Xfmedia Remote Plugin
+Message-ID: <20051015210023.GA7010@lucifer.localdomain>
+
+Hi everyone,
+
+I'm pleased to announce the new version of Xfmedia Remote Plugin for
+the panel. It's been around for a while, but only known to some irc
+peeps. Now that I finally got around implementing support for the new
+Xfmedia D-BUS methods, it has enough functionality to be actually a bit
+useful. It also supports the new (svn) panel api.
+
+Download at berlios:
+http://developer.berlios.de/project/showfiles.php?group_id=4430
+
+A few screenshots:
+http://developer.berlios.de/screenshots/?group_id=4430
+
+One note: There is a combination of Xfmedia and D-BUS versions, namely
+Xfmedia < 0.10.0svn and D-BUS > 0.31, on which there is no playlist
+menu like the one in the screenshot. This is due problems that have
+been fixed, so if possible, use either the development version of
+Xfmedia or the old D-BUS.
+
+Have fun,
+-Pasi
+
+
+
+From gildur at gmail.com  Sun Oct 16 17:01:26 2005
+From: gildur at gmail.com (Piotr Wolny)
+Date: Sun, 16 Oct 2005 17:01:26 +0200
+Subject: WebSearch plugin
+Message-ID: <43526B46.70000@gmail.com>
+
+Hello,
+
+i've just ported xfce4-websearch-plugin to new panel interface.
+New version is available from berlios svn. Any comments welcome :=).
+
+Best regards,
+Piotr Wolny
+
+
+From daichi at xfce.org  Tue Oct 18 00:23:44 2005
+From: daichi at xfce.org (Daichi Kawahata)
+Date: Tue, 18 Oct 2005 07:23:44 +0900
+Subject: About PO files in Xfce Goodies
+Message-ID: <20051018072344.405f2681.daichi@xfce.org>
+
+Hi developers,
+
+I'm from Xfce-i18n, have been working as PO file committer,
+now I have Polish and Spanish translation files for your plugins
+(xfce4-netload-plugin 0.3.3, xfce4-showdesktop-plugin 0.4.0,
+xfce4-systemload-plugin 0.3.6).
+
+As far as I know, there isn't xfce-goodies-i18n list, therefore
+translators will post their translation to xfce-i18n, but I'm not
+sure how they should be treated in that list, so could you tell
+me how I can commit them or could you commit them instead of me?
+
+Regards,
+-- 
+Daichi
+
+Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.tx
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-netload-plugin-es.po
+Type: text/x-gettext-translation
+Size: 3434 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051018/57a0e30b/attachment.bin>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-netload-plugin-pl.po
+Type: text/x-gettext-translation
+Size: 2632 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051018/57a0e30b/attachment-0001.bin>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-showdesktop-plugin-pl.po
+Type: text/x-gettext-translation
+Size: 2853 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051018/57a0e30b/attachment-0002.bin>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-systemload-plugin-pl.po
+Type: text/x-gettext-translation
+Size: 2221 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051018/57a0e30b/attachment-0003.bin>
+
+From jasper at xfce.org  Tue Oct 18 08:31:59 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Tue, 18 Oct 2005 08:31:59 +0200
+Subject: About PO files in Xfce Goodies
+In-Reply-To: <20051018072344.405f2681.daichi@xfce.org>
+References: <20051018072344.405f2681.daichi@xfce.org>
+Message-ID: <435496DF.7050109@xfce.org>
+
+Daichi Kawahata schreef:
+> Hi developers,
+> 
+> I'm from Xfce-i18n, have been working as PO file committer,
+> now I have Polish and Spanish translation files for your plugins
+> (xfce4-netload-plugin 0.3.3, xfce4-showdesktop-plugin 0.4.0,
+> xfce4-systemload-plugin 0.3.6).
+> 
+> As far as I know, there isn't xfce-goodies-i18n list, therefore
+> translators will post their translation to xfce-i18n, but I'm not
+> sure how they should be treated in that list, so could you tell
+> me how I can commit them or could you commit them instead of me?
+> 
+> Regards,
+> 
+
+I would suggest that we ask Daichi to commit the po files to Berlios 
+SVN. This is by far the easiest for everyone involved, translators and 
+developers.
+
+Daichi, to get access to Berlios SVN you need to get an account 
+(http://developer.berlios.de). If you send me your berlios user name, I 
+can add you to the xfce-goodies project.
+
+If anyone wants to handle the translations differently, please reply to 
+this mail.
+
+Thanks,
+	Jasper
+
+
+From daichi at xfce.org  Thu Oct 20 00:22:15 2005
+From: daichi at xfce.org (Daichi Kawahata)
+Date: Thu, 20 Oct 2005 07:22:15 +0900
+Subject: About PO files in Xfce Goodies
+In-Reply-To: <435496DF.7050109@xfce.org>
+References: <20051018072344.405f2681.daichi@xfce.org>
+	<435496DF.7050109@xfce.org>
+Message-ID: <20051020072215.8c01ff7d.daichi@xfce.org>
+
+On Tue, 18 Oct 2005 08:31:59 +0200
+Jasper Huijsmans wrote:
+
+> Daichi, to get access to Berlios SVN you need to get an account 
+> (http://developer.berlios.de). If you send me your berlios user
+> name, I can add you to the xfce-goodies project.
+
+When I tried to register, my Firefox 1.0.4 claimed certification
+from that site was invalid, so I'm pending my registration. Does
+that site have certified problem actually or did my browser have
+problem?
+
+Regards,
+-- 
+Daichi
+
+Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+
+
+From jasper at xfce.org  Thu Oct 20 07:21:57 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Thu, 20 Oct 2005 07:21:57 +0200
+Subject: About PO files in Xfce Goodies
+In-Reply-To: <20051020072215.8c01ff7d.daichi@xfce.org>
+References: <20051018072344.405f2681.daichi@xfce.org>	<435496DF.7050109@xfce.org> <20051020072215.8c01ff7d.daichi@xfce.org>
+Message-ID: <43572975.7000807@xfce.org>
+
+Daichi Kawahata schreef:
+> On Tue, 18 Oct 2005 08:31:59 +0200
+> Jasper Huijsmans wrote:
+> 
+> 
+>>Daichi, to get access to Berlios SVN you need to get an account 
+>>(http://developer.berlios.de). If you send me your berlios user
+>>name, I can add you to the xfce-goodies project.
+> 
+> 
+> When I tried to register, my Firefox 1.0.4 claimed certification
+> from that site was invalid, so I'm pending my registration. Does
+> that site have certified problem actually or did my browser have
+> problem?
+> 
+
+Hmm, I'm not seeing any problem. Unknown or unsigned certificate, maybe?
+
+	Jasper
+
+
+From noreply at berlios.de  Thu Oct 20 18:54:02 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Thu, 20 Oct 2005 17:54:02 +0100 (WEST)
+Subject: [Bug #5401] xfce4-battery-plugin does not see ac_adapter status
+Message-ID: <200510201654.j9KGs2qq014590@unicorn.berlios.de>
+
+Bug #5401, was updated on 2005-Oct-20 17:54
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: xfce4-battery-plugin
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: josem
+Assigned to : none
+Summary: xfce4-battery-plugin does not see ac_adapter status
+
+Details: This is a bug showed a long time ago.
+I am using debian testing and the battery plugin does not know then I am using only battery. I shows-me the "ac" allways.
+
+I "corrected" the bug on my pc, but it's a bad solution. (It's no solution at all.)
+Just added the line to get the right /proc/acpi file (libacpi.c):
+
+   if (!(acpi = fopen ("/proc/acpi/ac_adapter/0/status", "r")))
+    if (!(acpi = fopen ("/proc/acpi/ac_adapter/ACAD/state", "r")))
+      if (!(acpi = fopen ("/proc/acpi/ac_adapter/AC/state", "r")))
++      if (!(acpi = fopen ("/proc/acpi/ac_adapter/AC0/state", "r")))
+        if (!(acpi = fopen ("/proc/acpi/ac_adapter/ADP1/state", "r")))
+                return -1;
+
+Maybe you can think in a more elegant way to get this file (like you do with the battery state).
+
+Thanks for the pacience.
+Jos? Martins
+jemart at student.dei.uc.pt
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=5401&group_id=910
+
+
+From daichi at xfce.org  Sat Oct 22 05:10:30 2005
+From: daichi at xfce.org (Daichi Kawahata)
+Date: Sat, 22 Oct 2005 12:10:30 +0900
+Subject: About PO files in Xfce Goodies
+In-Reply-To: <43572975.7000807@xfce.org>
+References: <20051018072344.405f2681.daichi@xfce.org>
+	<435496DF.7050109@xfce.org>
+	<20051020072215.8c01ff7d.daichi@xfce.org>
+	<43572975.7000807@xfce.org>
+Message-ID: <20051022121030.443e76b4.daichi@xfce.org>
+
+On Thu, 20 Oct 2005 07:21:57 +0200
+Jasper Huijsmans wrote:
+
+> > When I tried to register, my Firefox 1.0.4 claimed certification
+> > from that site was invalid, so I'm pending my registration. Does
+> > that site have certified problem actually or did my browser have
+> > problem?
+> > 
+> 
+> Hmm, I'm not seeing any problem. Unknown or unsigned certificate,
+> maybe?
+
+Yes probably (certification.jpg), is that problem?
+
+Regards,
+-- 
+Daichi
+
+Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: certification.jpg
+Type: image/jpeg
+Size: 48975 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051022/aaf8b25e/attachment.jpg>
+
+From jasper at xfce.org  Sat Oct 22 08:36:03 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Sat, 22 Oct 2005 08:36:03 +0200
+Subject: About PO files in Xfce Goodies
+In-Reply-To: <20051022121030.443e76b4.daichi@xfce.org>
+References: <20051018072344.405f2681.daichi@xfce.org>	<435496DF.7050109@xfce.org>	<20051020072215.8c01ff7d.daichi@xfce.org>	<43572975.7000807@xfce.org> <20051022121030.443e76b4.daichi@xfce.org>
+Message-ID: <4359DDD3.6000303@xfce.org>
+
+Daichi Kawahata schreef:
+> On Thu, 20 Oct 2005 07:21:57 +0200
+> Jasper Huijsmans wrote:
+> 
+> 
+>>>When I tried to register, my Firefox 1.0.4 claimed certification
+>>>from that site was invalid, so I'm pending my registration. Does
+>>>that site have certified problem actually or did my browser have
+>>>problem?
+>>>
+>>
+>>Hmm, I'm not seeing any problem. Unknown or unsigned certificate,
+>>maybe?
+> 
+> 
+> Yes probably (certification.jpg), is that problem?
+> 
+
+No, I don't think so.
+
+
+From daichi at xfce.org  Sun Oct 23 02:39:08 2005
+From: daichi at xfce.org (Daichi Kawahata)
+Date: Sun, 23 Oct 2005 09:39:08 +0900
+Subject: About PO files in Xfce Goodies
+In-Reply-To: <4359DDD3.6000303@xfce.org>
+References: <20051018072344.405f2681.daichi@xfce.org>
+	<435496DF.7050109@xfce.org>
+	<20051020072215.8c01ff7d.daichi@xfce.org>
+	<43572975.7000807@xfce.org>
+	<20051022121030.443e76b4.daichi@xfce.org>
+	<4359DDD3.6000303@xfce.org>
+Message-ID: <20051023093908.3ba6d019.daichi@xfce.org>
+
+On Sat, 22 Oct 2005 08:36:03 +0200
+Jasper Huijsmans wrote:
+
+> > > Hmm, I'm not seeing any problem. Unknown or unsigned
+> > > certificate, maybe?
+> > 
+> > Yes probably (certification.jpg), is that problem?
+> > 
+> 
+> No, I don't think so.
+
+Thanks! I've created a new account at that site, user name
+is `daichi' (yeah, as-is).
+
+Regards,
+-- 
+Daichi
+
+Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+
+
+From jasper at xfce.org  Sun Oct 23 09:34:12 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Sun, 23 Oct 2005 09:34:12 +0200
+Subject: About PO files in Xfce Goodies
+In-Reply-To: <20051023093908.3ba6d019.daichi@xfce.org>
+References: <20051018072344.405f2681.daichi@xfce.org>	<435496DF.7050109@xfce.org>	<20051020072215.8c01ff7d.daichi@xfce.org>	<43572975.7000807@xfce.org>	<20051022121030.443e76b4.daichi@xfce.org>	<4359DDD3.6000303@xfce.org> <20051023093908.3ba6d019.daichi@xfce.org>
+Message-ID: <435B3CF4.709@xfce.org>
+
+Daichi Kawahata schreef:
+> On Sat, 22 Oct 2005 08:36:03 +0200
+> Jasper Huijsmans wrote:
+> 
+> 
+>>>>Hmm, I'm not seeing any problem. Unknown or unsigned
+>>>>certificate, maybe?
+>>>
+>>>Yes probably (certification.jpg), is that problem?
+>>>
+>>
+>>No, I don't think so.
+> 
+> 
+> Thanks! I've created a new account at that site, user name
+> is `daichi' (yeah, as-is).
+> 
+
+Excellent. I've added you to the project and updated the permissions. I 
+believe it may take up to 6 hours for the changes to take effect.
+
+SVN can be accessed either through svn+ssh:// or https://, instructions 
+are here: https://developer.berlios.de/svn/?group_id=910 .
+
+Welcome to Xfce Goodies! ;-) And, I can't say this enough, I'm very glad 
+you are putting all this time and effort into keeping our translations 
+up-to-date.
+
+Let me know if there's anything I can do to help,
+
+	Jasper
+
+> Regards,
+
+
+
+From bernhard.walle at gmx.de  Sun Oct 23 09:51:33 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Sun, 23 Oct 2005 09:51:33 +0200
+Subject: About PO files in Xfce Goodies
+In-Reply-To: <20051018072344.405f2681.daichi@xfce.org>
+References: <20051018072344.405f2681.daichi@xfce.org>
+Message-ID: <51sr23-c58.ln1@news.bwalle.de>
+
+Hello,
+
+* Daichi Kawahata [18.10.2005 00:23]:
+> 
+> I'm from Xfce-i18n, have been working as PO file committer,
+> now I have Polish and Spanish translation files for your plugins
+> (xfce4-netload-plugin 0.3.3, xfce4-showdesktop-plugin 0.4.0,
+> xfce4-systemload-plugin 0.3.6).
+
+There's already a Spanish translation for the netload plugin. Just
+update to latest SVN. From the header comment, I think it's the same.
+
+
+Regards,
+  Bernhard
+
+
+
+From daichi at xfce.org  Sun Oct 23 10:19:18 2005
+From: daichi at xfce.org (Daichi Kawahata)
+Date: Sun, 23 Oct 2005 17:19:18 +0900
+Subject: About PO files in Xfce Goodies
+In-Reply-To: <51sr23-c58.ln1@news.bwalle.de>
+References: <20051018072344.405f2681.daichi@xfce.org>
+	<51sr23-c58.ln1@news.bwalle.de>
+Message-ID: <20051023171918.382c0370.daichi@xfce.org>
+
+On Sun, 23 Oct 2005 09:51:33 +0200
+Bernhard Walle wrote:
+
+> Hello,
+
+Hi,
+
+> > I'm from Xfce-i18n, have been working as PO file committer,
+> > now I have Polish and Spanish translation files for your
+> > plugins (xfce4-netload-plugin 0.3.3, xfce4-showdesktop-plugin
+> > 0.4.0, xfce4-systemload-plugin 0.3.6).
+> 
+> There's already a Spanish translation for the netload plugin.
+> Just update to latest SVN. From the header comment, I think
+> it's the same.
+
+Ah okay, then please make sure whether its charset is UTF-8,
+since that file posted to the xfce-i18n was ISO-8859-1 while
+'Content-Type: text/plain; charset=UTF-8' in the header (I've
+converted it and attached here).
+
+Regards,
+-- 
+Daichi
+
+Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+
+
+From daichi at xfce.org  Sun Oct 23 10:24:15 2005
+From: daichi at xfce.org (Daichi Kawahata)
+Date: Sun, 23 Oct 2005 17:24:15 +0900
+Subject: About PO files in Xfce Goodies
+In-Reply-To: <435B3CF4.709@xfce.org>
+References: <20051018072344.405f2681.daichi@xfce.org>
+	<435496DF.7050109@xfce.org>
+	<20051020072215.8c01ff7d.daichi@xfce.org>
+	<43572975.7000807@xfce.org>
+	<20051022121030.443e76b4.daichi@xfce.org>
+	<4359DDD3.6000303@xfce.org>
+	<20051023093908.3ba6d019.daichi@xfce.org>
+	<435B3CF4.709@xfce.org>
+Message-ID: <20051023172415.b8555098.daichi@xfce.org>
+
+On Sun, 23 Oct 2005 09:34:12 +0200
+Jasper Huijsmans wrote:
+
+> Excellent. I've added you to the project and updated the
+> permissions. I believe it may take up to 6 hours for the
+> changes to take effect.
+>
+> SVN can be accessed either through svn+ssh:// or https://,
+> instructions are here:
+> https://developer.berlios.de/svn/?group_id=910 .
+
+Thanks, I'll try that today's later (local time 5:21 PM).
+ 
+> Welcome to Xfce Goodies! ;-) And, I can't say this enough,
+> I'm very glad you are putting all this time and effort into
+> keeping our translations up-to-date.
+
+No problem if that doesn't bother developers.
+
+Regards,
+-- 
+Daichi
+
+Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+
+
+From bernhard.walle at gmx.de  Sun Oct 23 10:37:53 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Sun, 23 Oct 2005 10:37:53 +0200
+Subject: About PO files in Xfce Goodies
+In-Reply-To: <20051023171918.382c0370.daichi@xfce.org>
+References: <20051018072344.405f2681.daichi@xfce.org>	<51sr23-c58.ln1@news.bwalle.de> <20051023171918.382c0370.daichi@xfce.org>
+Message-ID: <1our23-04a.ln1@news.bwalle.de>
+
+* Daichi Kawahata [23.10.2005 10:19]:
+> On Sun, 23 Oct 2005 09:51:33 +0200
+> Bernhard Walle wrote:
+
+>>> I'm from Xfce-i18n, have been working as PO file committer,
+>>> now I have Polish and Spanish translation files for your
+>>> plugins (xfce4-netload-plugin 0.3.3, xfce4-showdesktop-plugin
+>>> 0.4.0, xfce4-systemload-plugin 0.3.6).
+>> There's already a Spanish translation for the netload plugin.
+>> Just update to latest SVN. From the header comment, I think
+>> it's the same.
+> 
+> Ah okay, then please make sure whether its charset is UTF-8,
+> since that file posted to the xfce-i18n was ISO-8859-1 while
+> 'Content-Type: text/plain; charset=UTF-8' in the header (I've
+> converted it and attached here).
+
+Yes, I remember, I did this conversion. :)
+
+
+Regards,
+  Bernhard
+
+
+
+From timystery at arcor.de  Sun Oct 23 11:29:08 2005
+From: timystery at arcor.de (timystery at arcor.de)
+Date: Sun, 23 Oct 2005 11:29:08 +0200 (CEST)
+Subject: Aw: Re: About PO files in Xfce Goodies
+Message-ID: <14924734.1130059748540.JavaMail.ngmail@webmail-08.arcor-online.net>
+
+hi!
+
+though mailwatch-plugin isn't maintained as goodie, it would like to have mailwatch.desktop.in.in in po/POTFILES.in ...
+
+wouldn't it be simpler to have _any_ plugin besides the very basic ones such as launcher, clock, pager, taskbar maintained as a goodie on berlios?
+
+fabian
+
+
+
+From agostino.russo at gmail.com  Sun Oct 23 12:11:43 2005
+From: agostino.russo at gmail.com (ago)
+Date: Sun, 23 Oct 2005 11:11:43 +0100
+Subject: Mini-command-line and gmrun tab-completion
+Message-ID: <bc1d606f0510230311gf09e41aw3541cd433cd292b3@mail.gmail.com>
+
+Gmrun has some nice features (the way tab completion is implemented)
+that should be incorporated intor the mini-command-line. The fact that
+gmrun uses gtk and that it does not use any button (like mcl) should
+help matters. It might also worth looking for ideas regarding xfrun4.
+
+
+From daichi at xfce.org  Mon Oct 24 13:11:55 2005
+From: daichi at xfce.org (Daichi Kawahata)
+Date: Mon, 24 Oct 2005 20:11:55 +0900
+Subject: About PO files in Xfce Goodies
+In-Reply-To: <435B3CF4.709@xfce.org>
+References: <20051018072344.405f2681.daichi@xfce.org>
+	<435496DF.7050109@xfce.org>
+	<20051020072215.8c01ff7d.daichi@xfce.org>
+	<43572975.7000807@xfce.org>
+	<20051022121030.443e76b4.daichi@xfce.org>
+	<4359DDD3.6000303@xfce.org>
+	<20051023093908.3ba6d019.daichi@xfce.org>
+	<435B3CF4.709@xfce.org>
+Message-ID: <20051024201155.51291df7.daichi@xfce.org>
+
+On Sun, 23 Oct 2005 09:34:12 +0200
+Jasper Huijsmans wrote:
+
+> SVN can be accessed either through svn+ssh:// or https://,
+> instructions are here: https://developer.berlios.de/svn/?group_id=910 .
+
+The given address from that doesn't seem to work.
+
+  $ svn co https://daichi at svn.berlios.de/svnroot/repos/\
+    xfce-goodies/trunk
+  svn: URL 'https://daichi at svn.berlios.de/svnroot/repos/\
+    xfce-goodies/trunk' doesn't exist
+
+even normal repository,
+
+  $ svn co svn://svn.berlios.de/xfce-goodies/trunk
+  svn: URL 'svn://svn.berlios.de/xfce-goodies/trunk' doesn't\
+    exist
+
+sorry for bothering you again, what's the correct address?
+
+Regards,
+-- 
+Daichi
+
+Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+
+
+From jasper at xfce.org  Mon Oct 24 13:59:11 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Mon, 24 Oct 2005 13:59:11 +0200
+Subject: About PO files in Xfce Goodies
+In-Reply-To: <20051024201155.51291df7.daichi@xfce.org>
+References: <20051018072344.405f2681.daichi@xfce.org>	<435496DF.7050109@xfce.org>	<20051020072215.8c01ff7d.daichi@xfce.org>	<43572975.7000807@xfce.org>	<20051022121030.443e76b4.daichi@xfce.org>	<4359DDD3.6000303@xfce.org>	<20051023093908.3ba6d019.daichi@xfce.org>	<435B3CF4.709@xfce.org> <20051024201155.51291df7.daichi@xfce.org>
+Message-ID: <435CCC8F.50606@xfce.org>
+
+Daichi Kawahata schreef:
+> On Sun, 23 Oct 2005 09:34:12 +0200
+> Jasper Huijsmans wrote:
+> 
+> 
+>>SVN can be accessed either through svn+ssh:// or https://,
+>>instructions are here: https://developer.berlios.de/svn/?group_id=910 .
+> 
+> 
+> The given address from that doesn't seem to work.
+> 
+>   $ svn co https://daichi at svn.berlios.de/svnroot/repos/\
+>     xfce-goodies/trunk
+>   svn: URL 'https://daichi at svn.berlios.de/svnroot/repos/\
+>     xfce-goodies/trunk' doesn't exist
+> 
+> even normal repository,
+> 
+>   $ svn co svn://svn.berlios.de/xfce-goodies/trunk
+>   svn: URL 'svn://svn.berlios.de/xfce-goodies/trunk' doesn't\
+>     exist
+> 
+> sorry for bothering you again, what's the correct address?
+
+Sorry, I should have explained. The goodies are all separate toplevel 
+modules. Almost all of them are 
+svn.berlios.de/svnroot/repos/xfce-goodies/<name>/trunk, but one or two 
+unfortunately only have code in the toplevel.
+
+Try something like
+
+svn ls https://daichi at svn.berlios.de/svnroot/repos/xfce-goodies
+
+for a list of modules.
+
+I hope that helps,
+
+	Jasper
+
+
+From h.aling at home.nl  Mon Oct 24 16:27:49 2005
+From: h.aling at home.nl (Harold)
+Date: Mon, 24 Oct 2005 16:27:49 +0200
+Subject: Mini-command-line and gmrun tab-completion
+In-Reply-To: <bc1d606f0510230311gf09e41aw3541cd433cd292b3@mail.gmail.com>
+References: <bc1d606f0510230311gf09e41aw3541cd433cd292b3@mail.gmail.com>
+Message-ID: <435CEF65.1040201@home.nl>
+
+My preference is that both the minicmd plugin and the xfrun4 use the 
+same input, tab completion and history methods. Maybe it's an idea to 
+add the plugin to the xfce4-utils package (in which xfrun4 resides, I 
+believe) and thus give xfrun4 2 interfaces?
+
+ago wrote:
+> Gmrun has some nice features (the way tab completion is implemented)
+> that should be incorporated intor the mini-command-line. The fact that
+> gmrun uses gtk and that it does not use any button (like mcl) should
+> help matters. It might also worth looking for ideas regarding xfrun4.
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>   
+
+
+
+From daichi at xfce.org  Mon Oct 24 16:59:20 2005
+From: daichi at xfce.org (Daichi Kawahata)
+Date: Mon, 24 Oct 2005 23:59:20 +0900
+Subject: Initial Polish translation in xfce4-systemload-plugin
+Message-ID: <20051024235920.4ed8a0ae.daichi@xfce.org>
+
+Hi Riccardo,
+
+Right now, I've added newly Polish translations (from Piotr)
+in your plugin. Please add a note in toplevel ChangeLog/NEWS
+whenever possible.
+
+-- 
+Daichi
+
+Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+
+
+From daichi at xfce.org  Mon Oct 24 16:59:45 2005
+From: daichi at xfce.org (Daichi Kawahata)
+Date: Mon, 24 Oct 2005 23:59:45 +0900
+Subject: Initial Basque translation in xfce4-netload-plugin
+Message-ID: <20051024235945.eb45f1ab.daichi@xfce.org>
+
+Hi Bernhard,
+
+Right now, I've added newly Basque translations (from Piarres)
+in your plugin. Please add a note in toplevel ChangeLog/NEWS
+whenever possible.
+
+Regards,
+-- 
+Daichi
+
+Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+
+
+From daichi at xfce.org  Wed Oct 26 12:42:55 2005
+From: daichi at xfce.org (Daichi Kawahata)
+Date: Wed, 26 Oct 2005 10:42:55 +0000
+Subject: German translation for newly ported plugins
+Message-ID: <20051026104255.059405fe.daichi@xfce.org>
+
+Hi Jasper,
+
+I have German translation for your ported plugins (from Fabian),
+yeah I couldn't find po directories at current SVN repository,
+they only exist in your page (http://www.xfce.org/~jasper/plugins/),
+aren't they? Could you tell me when is the time to get these
+plugins imported or could you commit them?
+
+Regards,
+-- 
+Daichi
+
+Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-cpugraph-plugin.po
+Type: text/x-gettext-translation
+Size: 2516 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051026/70c40600/attachment.bin>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-diskperf-plugin.po
+Type: text/x-gettext-translation
+Size: 5517 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051026/70c40600/attachment-0001.bin>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-minicmd-plugin.po
+Type: text/x-gettext-translation
+Size: 1054 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051026/70c40600/attachment-0002.bin>
+
+From nickschermer at gmail.com  Fri Oct 28 21:13:53 2005
+From: nickschermer at gmail.com (Nick Schermer)
+Date: Fri, 28 Oct 2005 21:13:53 +0200
+Subject: New clipman plugin version.
+Message-ID: <4abe35490510281213s13451052k@mail.gmail.com>
+
+A complete rewrite of the clipman plugin, now using GPtrArray, because
+it's safer and easier to handle.
+This release fixes a couple of bugs in the previous version and adds
+some new features: Separated clipboards (in menu), colored menu items,
+add same type when clipboard was empty.
+
+Note: you can change the menu items colors in the clipboard rc file.
+
+You can download the 0.6 version
+here<http://home.quicknet.nl/qn/prive/nickschermer/files/xfce4-clipman-plugin-0.6.tar.bz2>
+.
+
+Gr. Nick
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051028/fbee4490/attachment.html>
+
+From ralvy at warpmail.net  Sat Oct 29 04:55:58 2005
+From: ralvy at warpmail.net (Ralph Alvy)
+Date: Fri, 28 Oct 2005 19:55:58 -0700
+Subject: New clipman plugin version.
+References: <4abe35490510281213s13451052k@mail.gmail.com>
+Message-ID: <djuoc0$ju8$1@sea.gmane.org>
+
+Nick Schermer wrote:
+> You can download the 0.6 version
+
+When I attempt autoconf on that, I get this:
+
+configure.ac:18: error: possibly undefined macro: AM_INIT_AUTOMAKE
+      If this token and others are legitimate, please use m4_pattern_allow.
+      See the Autoconf documentation.
+configure.ac:19: error: possibly undefined macro: AM_CONFIG_HEADER
+configure.ac:20: error: possibly undefined macro: AM_MAINTAINER_MODE
+configure.ac:25: error: possibly undefined macro: AC_PROG_LIBTOOL
+configure.ac:26: error: possibly undefined macro: AC_PROG_INTLTOOL
+
+
+
+
+
+
+From jasper at xfce.org  Sat Oct 29 07:51:15 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Sat, 29 Oct 2005 07:51:15 +0200
+Subject: Xfce Goodies Project enhancements
+In-Reply-To: <43391A0E.1060509@xfce.org>
+References: <43391A0E.1060509@xfce.org>
+Message-ID: <43630DD3.5090100@xfce.org>
+
+Jasper Huijsmans schreef:
+> Hi all,
+> 
+> I'd like to start a discussion about the goodies project, to see if 
+> there are things that could be improved.
+
+Hmm, only two replies in a month. I hope it doesn't mean nobody cares...
+
+> 
+> - Website. I thought for a project like this with many independent 
+> subprojects it might be better to use some sort of wiki. That would make 
+> it easier, I think, for maintainers to keep the information about their 
+> program up-to-date. Every plugin could have a small project page with: 
+> name, author(s), contact information, screenshot(s), link to download 
+> latest version, etc.
+
+Ok, it seems that we like dokuwiki now (see thunar.xfce.org/wiki and 
+i18n.xfce.org), so I thought I'd try and make a template for Xfce 
+Goodies and add some content to show you what I was thinking about.
+
+So, here's my proposal for a new website for xfce goodies, which I also 
+propose to host on the new Xfce server with xfce-goodies.xfce.org domain:
+
+http://xfce.loculus.nl/xfce-goodies-wiki
+
+Please tell me what you think.
+
+It has acl's setup so you can't actually edit anything, except the 
+Feedback section.
+
+I also made a tarball of the entire wiki, if you are interested in the 
+code: http://xfce.loculus.nl/files/xfce-goodies-wiki.tar.gz
+
+	Jasper
+
+
+
+From timystery at arcor.de  Sat Oct 29 09:53:05 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Sat, 29 Oct 2005 09:53:05 +0200
+Subject: Xfce Goodies Project enhancements
+In-Reply-To: <43630DD3.5090100@xfce.org>
+References: <43391A0E.1060509@xfce.org>  <43630DD3.5090100@xfce.org>
+Message-ID: <1130572385.2575.8.camel@TIM3000>
+
+Am Samstag, den 29.10.2005, 07:51 +0200 schrieb Jasper Huijsmans:
+> Jasper Huijsmans schreef:
+> > Hi all,
+> > 
+> > I'd like to start a discussion about the goodies project, to see if 
+> > there are things that could be improved.
+> 
+> Hmm, only two replies in a month. I hope it doesn't mean nobody cares...
+> 
+> > 
+> > - Website. I thought for a project like this with many independent 
+> > subprojects it might be better to use some sort of wiki. That would make 
+> > it easier, I think, for maintainers to keep the information about their 
+> > program up-to-date. Every plugin could have a small project page with: 
+> > name, author(s), contact information, screenshot(s), link to download 
+> > latest version, etc.
+> 
+> Ok, it seems that we like dokuwiki now (see thunar.xfce.org/wiki and 
+> i18n.xfce.org), so I thought I'd try and make a template for Xfce 
+> Goodies and add some content to show you what I was thinking about.
+
+> So, here's my proposal for a new website for xfce goodies, which I also 
+> propose to host on the new Xfce server with xfce-goodies.xfce.org domain:
+> 
+> http://xfce.loculus.nl/xfce-goodies-wiki
+> 
+> Please tell me what you think.
+
+well, i like it. quite xfce'ish, quite goodie'ish, clean, simple. I'd
+say, let's only improve text and content so the site will be available
+very soon and hopefully not be overloaded.
+
+> 
+> It has acl's setup so you can't actually edit anything, except the 
+> Feedback section.
+
+can't edit although i registered.
+
+> 
+> I also made a tarball of the entire wiki, if you are interested in the 
+> code: http://xfce.loculus.nl/files/xfce-goodies-wiki.tar.gz
+> 
+> 	Jasper
+> 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+
+From nickschermer at gmail.com  Sat Oct 29 12:55:31 2005
+From: nickschermer at gmail.com (Nick Schermer)
+Date: Sat, 29 Oct 2005 12:55:31 +0200
+Subject: New clipman plugin version.
+In-Reply-To: <djuoc0$ju8$1@sea.gmane.org>
+References: <4abe35490510281213s13451052k@mail.gmail.com>
+	 <djuoc0$ju8$1@sea.gmane.org>
+Message-ID: <4abe35490510290355y4351e553i@mail.gmail.com>
+
+2005/10/29, Ralph Alvy <ralvy at warpmail.net>:
+>
+> Nick Schermer wrote:
+> > You can download the 0.6 version
+>
+> When I attempt autoconf on that, I get this:
+>
+> configure.ac:18 <http://configure.ac:18>: error: possibly undefined macro:
+> AM_INIT_AUTOMAKE
+> If this token and others are legitimate, please use m4_pattern_allow.
+> See the Autoconf documentation.
+> configure.ac:19 <http://configure.ac:19>: error: possibly undefined macro:
+> AM_CONFIG_HEADER
+> configure.ac:20 <http://configure.ac:20>: error: possibly undefined macro:
+> AM_MAINTAINER_MODE
+> configure.ac:25 <http://configure.ac:25>: error: possibly undefined macro:
+> AC_PROG_LIBTOOL
+> configure.ac:26 <http://configure.ac:26>: error: possibly undefined macro:
+> AC_PROG_INTLTOOL
+
+
+Do you have XDT installted? Because ./autogen.sh --prefix=<somewhere> works
+fine here.
+
+Gr. Nick
+
+_______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051029/5b75c3bc/attachment.html>
+
+From gildur at gmail.com  Sat Oct 29 13:43:12 2005
+From: gildur at gmail.com (Piotr Wolny)
+Date: Sat, 29 Oct 2005 13:43:12 +0200
+Subject: Xfce Goodies Project enhancements
+In-Reply-To: <43630DD3.5090100@xfce.org>
+References: <43391A0E.1060509@xfce.org> <43630DD3.5090100@xfce.org>
+Message-ID: <43636050.10409@gmail.com>
+
+Jasper Huijsmans wrote:
+> Ok, it seems that we like dokuwiki now (see thunar.xfce.org/wiki and 
+> i18n.xfce.org), so I thought I'd try and make a template for Xfce 
+> Goodies and add some content to show you what I was thinking about.
+> 
+> So, here's my proposal for a new website for xfce goodies, which I also 
+> propose to host on the new Xfce server with xfce-goodies.xfce.org domain:
+
+I think it is very good idea to move xfce-goodies website and svn to
+Xfce server. I don't understand one thing: why you added 'Artwork'
+section to xfce-goodies wiki? I think such stuff has already its
+own place at www.xfce-look.org.
+
+Best regards,
+Piotr Wolny
+
+
+From timystery at arcor.de  Sat Oct 29 13:59:35 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Sat, 29 Oct 2005 13:59:35 +0200
+Subject: Xfce Goodies Project enhancements
+In-Reply-To: <43636050.10409@gmail.com>
+References: <43391A0E.1060509@xfce.org> <43630DD3.5090100@xfce.org>
+	 <43636050.10409@gmail.com>
+Message-ID: <1130587175.17777.15.camel@TIM3000>
+
+Am Samstag, den 29.10.2005, 13:43 +0200 schrieb Piotr Wolny:
+> Jasper Huijsmans wrote:
+> > Ok, it seems that we like dokuwiki now (see thunar.xfce.org/wiki and 
+> > i18n.xfce.org), so I thought I'd try and make a template for Xfce 
+> > Goodies and add some content to show you what I was thinking about.
+> > 
+> > So, here's my proposal for a new website for xfce goodies, which I also 
+> > propose to host on the new Xfce server with xfce-goodies.xfce.org domain:
+> 
+> I think it is very good idea to move xfce-goodies website and svn to
+> Xfce server. I don't understand one thing: why you added 'Artwork'
+> section to xfce-goodies wiki? I think such stuff has already its
+> own place at www.xfce-look.org.
+
+i think the point is that at xfce-look, there are plenty of gnome
+themes, metacity themes etc. and that it would really be nice to have a
+place where themes for the xfce gtk engine, xfwm4 and xfce-dedicated gdm
+themes were listed.
+
+> 
+> Best regards,
+> Piotr Wolny
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+
+From ralvy at warpmail.net  Sat Oct 29 18:22:24 2005
+From: ralvy at warpmail.net (Ralph Alvy)
+Date: Sat, 29 Oct 2005 09:22:24 -0700
+Subject: New clipman plugin version.
+References: <4abe35490510281213s13451052k@mail.gmail.com> <djuoc0$ju8$1@sea.gmane.org> <4abe35490510290355y4351e553i@mail.gmail.com>
+Message-ID: <dk07k1$s24$1@sea.gmane.org>
+
+> Do you have XDT installted? Because ./autogen.sh --prefix=<somewhere>
+> works fine here.
+
+Ah, I see. Well, I can't find xfce4-dev-tools for 4.2.2. I can only find
+them for 4.3.0. I have xfce4-4.2.2 installed. When I install the tools for
+4.3.0 and then run autoconf.sh, it finishes but complains about
+libxfce4panel not being the correct version. There are other errors also.
+
+It looks like this is really just for xfce4 4.3.
+
+
+
+From kieroglu at math.washington.edu  Sun Oct 30 01:44:01 2005
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Sat, 29 Oct 2005 16:44:01 -0700 (PDT)
+Subject: Porting panel plugins for 4.4
+In-Reply-To: <1128364292.3368.4.camel@TIM3000>
+References: <mailman.679.1128351066.5736.xfce4-dev@xfce.org> 
+ <1128354625.5621.1.camel@TIM3000>  <Pine.LNX.4.61.0510030924560.27777@zeno2.math.washington.edu>
+  <1128359322.2775.3.camel@TIM3000>  <Pine.LNX.4.61.0510031007220.27777@zeno2.math.washington.edu>
+ <1128364292.3368.4.camel@TIM3000>
+Message-ID: <Pine.LNX.4.61.0510291639290.14948@zeno3.math.washington.edu>
+
+   Hi all,
+
+   After a long delay I finally got my internet service connected last 
+week. I checked out the SVN tree by the method described below but I got 
+compilation errors at some stage. I want to retyry. I want to port the 
+XMMS plugin to the new interface and add the timer plugin to the tree. I 
+know there were going to be some changes in the server. Is the one below 
+still the correct place to get code from and submit to? Thanks,
+
+   Ilgar
+
+> svn import your_timer_tree \
+> svn+ssh://name at svn.berlios.de/svnroot/repos/xfce-goodies/new_repository
+>
+> don't forget to checkout his repository before making any further
+> changes as the module will not be checked out when you import it
+> (ridiculously bad behaviour of svn).
+>
+>>
+>>> do you want to merge our efforts?
+>>
+>>    That's fine for me. I don't know how much effort is required to do
+>> merging. You can take a quick glance at my plugin's sources. It's
+>> commented, so you can follow what's going on. If you think it will be
+>> reasonably easy to merge, then let's go for it.
+
+
+From nickschermer at gmail.com  Sun Oct 30 10:14:59 2005
+From: nickschermer at gmail.com (Nick Schermer)
+Date: Sun, 30 Oct 2005 10:14:59 +0100
+Subject: New clipman plugin version.
+In-Reply-To: <dk07k1$s24$1@sea.gmane.org>
+References: <4abe35490510281213s13451052k@mail.gmail.com>
+	 <djuoc0$ju8$1@sea.gmane.org>
+	 <4abe35490510290355y4351e553i@mail.gmail.com>
+	 <dk07k1$s24$1@sea.gmane.org>
+Message-ID: <4abe35490510300114k60959d2ei@mail.gmail.com>
+
+Yes it's written for the new Xfce4-panel, if you want to try it you'll have
+to
+compile libxfcegui4, xfce4-panel and libxfce4util from SVN.
+
+Gr. Nick
+
+2005/10/29, Ralph Alvy <ralvy at warpmail.net>:
+>
+> > Do you have XDT installted? Because ./autogen.sh --prefix=<somewhere>
+> > works fine here.
+>
+> Ah, I see. Well, I can't find xfce4-dev-tools for 4.2.2. I can only find
+> them for 4.3.0. I have xfce4-4.2.2 installed. When I install the tools for
+> 4.3.0 and then run autoconf.sh, it finishes but complains about
+> libxfce4panel not being the correct version. There are other errors also.
+>
+> It looks like this is really just for xfce4 4.3.
+>
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051030/4a505f6d/attachment.html>
+
+From stefan at desire.ch  Sun Oct 30 16:09:00 2005
+From: stefan at desire.ch (Stefan Ott)
+Date: Sun, 30 Oct 2005 16:09:00 +0100
+Subject: Xfce Goodies Project enhancements
+In-Reply-To: <43630DD3.5090100@xfce.org>
+References: <43391A0E.1060509@xfce.org> <43630DD3.5090100@xfce.org>
+Message-ID: <1130684940.4364e20ce16ef@ssl.buzzernet.net>
+
+> Ok, it seems that we like dokuwiki now (see thunar.xfce.org/wiki and
+> i18n.xfce.org), so I thought I'd try and make a template for Xfce
+> Goodies and add some content to show you what I was thinking about.
+>
+> So, here's my proposal for a new website for xfce goodies, which I also
+> propose to host on the new Xfce server with xfce-goodies.xfce.org domain:
+>
+> http://xfce.loculus.nl/xfce-goodies-wiki
+>
+> Please tell me what you think.
+
+nice, i like it!
+
+regards
+-- 
+Stefan Ott
+http://www.desire.ch
+
+"Multiple exclamation marks," he went on, shaking his head, "are a
+sure sign of a diseased mind."  -- Terry Pratchett, Eric
+
+
+
+
+From xotazu at cvc.uab.es  Mon Oct 31 12:36:21 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Mon, 31 Oct 2005 12:36:21 +0100
+Subject: Xfce Goodies Project enhancements
+In-Reply-To: <20051029100008.18292.23263.Mailman@bat.berlios.de>
+References: <20051029100008.18292.23263.Mailman@bat.berlios.de>
+Message-ID: <20051031123621.1899fbd8@cvc131.uab.es>
+
+	Hi:
+
+> 
+> So, here's my proposal for a new website for xfce goodies, which I
+> also propose to host on the new Xfce server with
+> xfce-goodies.xfce.org domain:
+> 
+> http://xfce.loculus.nl/xfce-goodies-wiki
+> 
+> Please tell me what you think.
+> 
+
+	It looks nice. The similar looking to the XFCE web site is a
+good solution.
+
+	Somebody told that the artwork is related to the xfce-look.org
+site. I agree, but I also think that an "oficial" artwork should be
+defined an placed at the goodies web page. From that page, a link can
+be included to the xfce-look.org site.
+
+cheers,
+
+Xavier
+
+

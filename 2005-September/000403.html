@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> 'hacking' some of XFCE goodies
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-September/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%27hacking%27%20some%20of%20XFCE%20goodies&In-Reply-To=%3C432C4E4E.3010803%40szift.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000402.html">
+   <LINK REL="Next"  HREF="000404.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>'hacking' some of XFCE goodies</H1>
+    <B>&#321;ukasz Hejnak</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%27hacking%27%20some%20of%20XFCE%20goodies&In-Reply-To=%3C432C4E4E.3010803%40szift.org%3E"
+       TITLE="'hacking' some of XFCE goodies">szift at szift.org
+       </A><BR>
+    <I>Sat Sep 17 19:11:42 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000402.html">'hacking' some of XFCE goodies
+</A></li>
+        <LI>Next message: <A HREF="000404.html">'hacking' some of XFCE goodies
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#403">[ date ]</a>
+              <a href="thread.html#403">[ thread ]</a>
+              <a href="subject.html#403">[ subject ]</a>
+              <a href="author.html#403">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi..
+
+Ondrej Mihalyi wrote:
+&gt;<i> Didn't try your app, but I think that it would help, if instead of system() you would use combination of fork(), exec() and waitpid().  Idea is to use fork and exec to spawn the 'top' process and then periodically use non-blocking version of waitpid (there are some flags to make it non-blocking) to check whether the 'top' process finished.
+</I>&gt;<i> I know that you may well not be familiar with those functions, but if you want to succeed in making your app better, I believe that this is kind of easy way how to do it.
+</I>
+Thanks for the help! Indeed I knew not much about these functions, but I 
+googled something about what You wrote and I think I got it right :]
+
+I had a problem with the number of &quot;xfce4-panel &lt;defunct&gt;&quot; growing to 
+milions but I set a kill()er for them and now I think it works without 
+any problems..
+The trace can be found in /tmp dir - where are the top.pid top.old and 
+top.lista files.
+
+The forked child does a system() call to `top` to retrieve info on 
+running processes and channels it to top.lista.
+The top.pid contains the forked child's pid, to trace the status of it,
+when it's over a kill() signal is sent to get rid of the zombie.
+Then the program retrieves data from top.lista, stores the parsed 
+version in top.old and forks a new process.
+While the process is running again, the top.old is used for data source 
+and so on...
+
+The updated (and I hope final) version is already available at the 
+standard location:
+<A HREF="http://szift.org/xfce/xfce4-cpugraph-plugin-szifted.tar.bz2">http://szift.org/xfce/xfce4-cpugraph-plugin-szifted.tar.bz2</A>
+
+Have a nice run :)
+
+--
+Best wishes
+&#321;ukasz Hejnak
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000402.html">'hacking' some of XFCE goodies
+</A></li>
+	<LI>Next message: <A HREF="000404.html">'hacking' some of XFCE goodies
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#403">[ date ]</a>
+              <a href="thread.html#403">[ thread ]</a>
+              <a href="subject.html#403">[ subject ]</a>
+              <a href="author.html#403">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bug #3912] xfce4-battery-plugin leaks memory
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-April/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%20%233912%5D%20xfce4-battery-plugin%20leaks%20memory&In-Reply-To=%3C200504272138.j3RLcp8g001064%40unicorn.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000182.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bug #3912] xfce4-battery-plugin leaks memory</H1>
+    <B>noreply at berlios.de</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%20%233912%5D%20xfce4-battery-plugin%20leaks%20memory&In-Reply-To=%3C200504272138.j3RLcp8g001064%40unicorn.berlios.de%3E"
+       TITLE="[Bug #3912] xfce4-battery-plugin leaks memory">noreply at berlios.de
+       </A><BR>
+    <I>Wed Apr 27 23:38:51 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000182.html">xmms plugin updated
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#183">[ date ]</a>
+              <a href="thread.html#183">[ thread ]</a>
+              <a href="subject.html#183">[ subject ]</a>
+              <a href="author.html#183">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bug #3912, was updated on 2005-Apr-27 23:38
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: xfce4-battery-plugin
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: jziegler
+Assigned to : none
+Summary: xfce4-battery-plugin leaks memory
+
+Details: The code seems unmaintained, judging from WebCVS, so it might have no sense to submit this, but I'll try anyway.
+
+I have evidence, anecdotal at the moment, that the plugin leakes memory. After having my laptop on for cca. 4 days, I noticed my whole swap partition was used, which is unusual. I checked in top and the xfce4-panel was using 400MB of memory (in the VIRT column). After restart, xfce4-panel was using only 18MB. Evidently, there was a leak. I started removing plugins one by one and watched the memory usage. When I removed the xfce4-battery-plugin, the memory usage of  xfce4-panel stopped growing. It is now 18MB for another 2 days.
+
+I can perform more specific investigation, if you let me know what you need and how to do it. 
+
+For detailed info, follow this link:
+<A HREF="http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=3912&amp;group_id=910">http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=3912&amp;group_id=910</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000182.html">xmms plugin updated
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#183">[ date ]</a>
+              <a href="thread.html#183">[ thread ]</a>
+              <a href="subject.html#183">[ subject ]</a>
+              <a href="author.html#183">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

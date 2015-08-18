@@ -1,0 +1,309 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-February/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20ANNOUNCE%3A%20Verve%200.1.0%20-%20A%20panel%20command%20line%20plugin&In-Reply-To=%3C20060211233904.6eb7564a.daichi%40xfce.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000599.html">
+   <LINK REL="Next"  HREF="000606.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>ANNOUNCE: Verve 0.1.0 - A panel command line plugin</H1>
+    <B>Daichi Kawahata</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20ANNOUNCE%3A%20Verve%200.1.0%20-%20A%20panel%20command%20line%20plugin&In-Reply-To=%3C20060211233904.6eb7564a.daichi%40xfce.org%3E"
+       TITLE="ANNOUNCE: Verve 0.1.0 - A panel command line plugin">daichi at xfce.org
+       </A><BR>
+    <I>Sat Feb 11 15:39:04 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000599.html">ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+</A></li>
+        <LI>Next message: <A HREF="000606.html">ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#605">[ date ]</a>
+              <a href="thread.html#605">[ thread ]</a>
+              <a href="subject.html#605">[ subject ]</a>
+              <a href="author.html#605">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Tue, 07 Feb 2006 03:02:17 +0100
+Jannis wrote:
+
+&gt;<i> Hi all,
+</I>
+Hi,
+
+[...]
+
+&gt;<i> Please file bug reports, feature requests and the like on BerliOS
+</I>&gt;<i> or <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">xfce-goodies-dev at lists.berlios.de.</A> Thanks!
+</I>
+Here I am, Verve causes segfault against the xfce4-panel 4.3.28,
+it was compiled with gcc 4.0.1, gtk+ 2.9.0, glib 2.6.0. It was
+happened when I tried to add this plugin to the panel. You can
+stack trace at the attached file (xfce4-panel.bt).
+
+&gt;<i> BTW, I still need translators for it, but I'm not sure where to
+</I>&gt;<i> ask for them - <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">xfce-i18n at xfce.org</A> or
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">xfce-goodies-dev at lists.berlios.de</A>?
+</I>
+Take a look at the attached patch (configure.in.in.patch), without
+this modifying, PACKAGE related strings defined in the config.h must
+be messed with my Autotools (autoconf 2.59, automake 1.9.3).
+
+If you have kind enough also apply the patch for PO files
+(verve-po.patch), your de.po breaks build process without special
+checker flag.
+ 
+Regards,
+-- 
+Daichi
+
+Language Codes: <A HREF="http://www.w3.org/WAI/ER/IG/ert/iso639.htm">http://www.w3.org/WAI/ER/IG/ert/iso639.htm</A>
+Country Codes: <A HREF="http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt">http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt</A>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-panel.bt.bz2
+Type: application/x-bzip2
+Size: 5470 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060211/eb8840cc/attachment.bin">https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060211/eb8840cc/attachment.bin</A>&gt;
+-------------- next part --------------
+Index: configure.in.in
+===================================================================
+--- configure.in.in	(revision 1030)
++++ configure.in.in	(working copy)
+@@ -7,7 +7,7 @@
+ dnl *** Initialize autoconf ***
+ dnl ***************************
+ AC_COPYRIGHT([Copyright (c) 2006 - Jannis Pohlmann &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jannis at xfce.org</A>&gt;])
+-AC_INIT([panel-plugin/verve-plugin.c], [0.1.0], [<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jannis at xfce.org</A>], [verve-plugin])
++AC_INIT([verve-plugin], [0.1.0], [<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jannis at xfce.org</A>], [verve-plugin])
+ AC_REVISION([$Id$])
+ AC_PREREQ([2.50])
+ 
+-------------- next part --------------
+Index: verve-plugin.pot
+===================================================================
+--- verve-plugin.pot	(revision 0)
++++ verve-plugin.pot	(revision 0)
+@@ -0,0 +1,46 @@
++# SOME DESCRIPTIVE TITLE.
++# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
++# This file is distributed under the same license as the PACKAGE package.
++# FIRST AUTHOR &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">EMAIL at ADDRESS</A>&gt;, YEAR.
++#
++#, fuzzy
++msgid &quot;&quot;
++msgstr &quot;&quot;
++&quot;Project-Id-Version: PACKAGE VERSION\n&quot;
++&quot;Report-Msgid-Bugs-To: \n&quot;
++&quot;POT-Creation-Date: 2006-02-08 16:54+0100\n&quot;
++&quot;PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n&quot;
++&quot;Last-Translator: FULL NAME &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">EMAIL at ADDRESS</A>&gt;\n&quot;
++&quot;Language-Team: LANGUAGE &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">LL at li.org</A>&gt;\n&quot;
++&quot;MIME-Version: 1.0\n&quot;
++&quot;Content-Type: text/plain; charset=CHARSET\n&quot;
++&quot;Content-Transfer-Encoding: 8bit\n&quot;
++
++#: ../panel-plugin/verve-plugin.c:186
++msgid &quot;Could not execute command:&quot;
++msgstr &quot;&quot;
++
++#: ../panel-plugin/verve-plugin.c:370
++msgid &quot;Verve Properties&quot;
++msgstr &quot;&quot;
++
++#: ../panel-plugin/verve-plugin.c:384
++msgid &quot;Verve&quot;
++msgstr &quot;&quot;
++
++#: ../panel-plugin/verve-plugin.c:389
++msgid &quot;Appearance&quot;
++msgstr &quot;&quot;
++
++#: ../panel-plugin/verve-plugin.c:400
++msgid &quot;Width (in chars):&quot;
++msgstr &quot;&quot;
++
++#. vim:set expandtab ts=1 sw=2:
++#: ../panel-plugin/verve.desktop.in.in.h:1
++msgid &quot;Command line interface with auto-completion and history browsing&quot;
++msgstr &quot;&quot;
++
++#: ../panel-plugin/verve.desktop.in.in.h:2
++msgid &quot;Verve Command Line&quot;
++msgstr &quot;&quot;
+Index: de.po
+===================================================================
+--- de.po	(revision 1031)
++++ de.po	(working copy)
+@@ -1,17 +1,16 @@
+-# SOME DESCRIPTIVE TITLE.
+-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+-# This file is distributed under the same license as the PACKAGE package.
+-# FIRST AUTHOR &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">EMAIL at ADDRESS</A>&gt;, YEAR.
++# Japanese translations for verve-plugin package.
++# Copyright (C) 2006 Jannis Pohlmann.
++# This file is distributed under the same license as the verve-plugin package.
++# Jannis Pohlmann &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jannis at xfce.org</A>&gt;, 2006.
+ #
+-#, fuzzy
+ msgid &quot;&quot;
+ msgstr &quot;&quot;
+-&quot;Project-Id-Version: PACKAGE VERSION\n&quot;
++&quot;Project-Id-Version: verve-plugin 0.1.0\n&quot;
+ &quot;Report-Msgid-Bugs-To: \n&quot;
+ &quot;POT-Creation-Date: 2006-02-08 16:54+0100\n&quot;
+-&quot;PO-Revision-Date: 2006-02-07 HO:MI+ZONE\n&quot;
++&quot;PO-Revision-Date: 2006-02-07 17:07+0100\n&quot;
+ &quot;Last-Translator: Jannis Pohlmann &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jannis at xfce.org</A>&gt;\n&quot;
+-&quot;Language-Team: de &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jannis at xfce.org</A>&gt;\n&quot;
++&quot;Language-Team: German &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jannis at xfce.org</A>&gt;\n&quot;
+ &quot;MIME-Version: 1.0\n&quot;
+ &quot;Content-Type: text/plain; charset=utf-8\n&quot;
+ &quot;Content-Transfer-Encoding: 8bit\n&quot;
+Index: nl.po
+===================================================================
+--- nl.po	(revision 1031)
++++ nl.po	(working copy)
+@@ -1,16 +1,16 @@
+ # Verve Command Line plugin
+-# Copyright (C) 2006 Jannis
++# Copyright (C) 2006 Jannis Pohlmann.
+ # This file is distributed under the same license as the Verve package.
+ # Jannis &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jannis at xfce.org</A>&gt;, 2006.
+ #
+ msgid &quot;&quot;
+ msgstr &quot;&quot;
+-&quot;Project-Id-Version: 0.1.0\n&quot;
++&quot;Project-Id-Version: verve-plugin 0.1.0\n&quot;
+ &quot;Report-Msgid-Bugs-To: \n&quot;
+ &quot;POT-Creation-Date: 2006-02-08 16:54+0100\n&quot;
+ &quot;PO-Revision-Date: 2006-02-09 16:20+0100\n&quot;
+ &quot;Last-Translator: Vincent &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">imnotb at gmail.com</A>&gt;\n&quot;
+-&quot;Language-Team: Dutch\n&quot;
++&quot;Language-Team: Dutch &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">vertaling at vrijschrift.org</A>&gt;\n&quot;
+ &quot;MIME-Version: 1.0\n&quot;
+ &quot;Content-Type: text/plain; charset=utf-8\n&quot;
+ &quot;Content-Transfer-Encoding: 8bit\n&quot;
+Index: ChangeLog
+===================================================================
+--- ChangeLog	(revision 1031)
++++ ChangeLog	(working copy)
+@@ -1,3 +1,9 @@
++2006-02-11	Daichi Kawahata &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">daichi at xfce.org</A>&gt;
++
++	* Renamed POT file according to the GETTEXT_PACKAGE.
++	* All files are updated as well.
++	* Fixed an error in German translation file.
++
+ 2006-02-09	Jannis Pohlmann &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jannis at xfce.org</A>&gt;
+ 
+ 	* Dutch (nl) translation by Vincent &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">imnotb at gmail.com</A>&gt; added
+Index: verve.pot
+===================================================================
+--- verve.pot	(revision 1031)
++++ verve.pot	(working copy)
+@@ -1,46 +0,0 @@
+-# SOME DESCRIPTIVE TITLE.
+-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+-# This file is distributed under the same license as the PACKAGE package.
+-# FIRST AUTHOR &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">EMAIL at ADDRESS</A>&gt;, YEAR.
+-#
+-#, fuzzy
+-msgid &quot;&quot;
+-msgstr &quot;&quot;
+-&quot;Project-Id-Version: PACKAGE VERSION\n&quot;
+-&quot;Report-Msgid-Bugs-To: \n&quot;
+-&quot;POT-Creation-Date: 2006-02-08 16:54+0100\n&quot;
+-&quot;PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n&quot;
+-&quot;Last-Translator: FULL NAME &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">EMAIL at ADDRESS</A>&gt;\n&quot;
+-&quot;Language-Team: LANGUAGE &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">LL at li.org</A>&gt;\n&quot;
+-&quot;MIME-Version: 1.0\n&quot;
+-&quot;Content-Type: text/plain; charset=CHARSET\n&quot;
+-&quot;Content-Transfer-Encoding: 8bit\n&quot;
+-
+-#: ../panel-plugin/verve-plugin.c:186
+-msgid &quot;Could not execute command:&quot;
+-msgstr &quot;&quot;
+-
+-#: ../panel-plugin/verve-plugin.c:370
+-msgid &quot;Verve Properties&quot;
+-msgstr &quot;&quot;
+-
+-#: ../panel-plugin/verve-plugin.c:384
+-msgid &quot;Verve&quot;
+-msgstr &quot;&quot;
+-
+-#: ../panel-plugin/verve-plugin.c:389
+-msgid &quot;Appearance&quot;
+-msgstr &quot;&quot;
+-
+-#: ../panel-plugin/verve-plugin.c:400
+-msgid &quot;Width (in chars):&quot;
+-msgstr &quot;&quot;
+-
+-#. vim:set expandtab ts=1 sw=2:
+-#: ../panel-plugin/verve.desktop.in.in.h:1
+-msgid &quot;Command line interface with auto-completion and history browsing&quot;
+-msgstr &quot;&quot;
+-
+-#: ../panel-plugin/verve.desktop.in.in.h:2
+-msgid &quot;Verve Command Line&quot;
+-msgstr &quot;&quot;
+Index: fr_CH.po
+===================================================================
+--- fr_CH.po	(revision 1031)
++++ fr_CH.po	(working copy)
+@@ -1,11 +1,16 @@
++# French translations for verve-plugin package.
++# Copyright (C) 2006 Jannis Pohlmann.
++# This file is distributed under the same license as the verve-plugin package.
++# Maximilian Schleiss &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">maxschleiss at bluewin.ch</A>&gt;, 2006.
++#
+ msgid &quot;&quot;
+ msgstr &quot;&quot;
+-&quot;Project-Id-Version: \n&quot;
++&quot;Project-Id-Version: verve-plugin 0.1.0\n&quot;
+ &quot;Report-Msgid-Bugs-To: \n&quot;
+ &quot;POT-Creation-Date: 2006-02-08 16:54+0100\n&quot;
+ &quot;PO-Revision-Date: 2006-02-08 13:25+0100\n&quot;
+ &quot;Last-Translator: Maximilian Schleiss &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">maxschleiss at bluewin.ch</A>&gt;\n&quot;
+-&quot;Language-Team: \n&quot;
++&quot;Language-Team: French &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">traduc at traduc.org</A>&gt;\n&quot;
+ &quot;MIME-Version: 1.0\n&quot;
+ &quot;Content-Type: text/plain; charset=utf-8\n&quot;
+ &quot;Content-Transfer-Encoding: 8bit\n&quot;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000599.html">ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+</A></li>
+	<LI>Next message: <A HREF="000606.html">ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#605">[ date ]</a>
+              <a href="thread.html#605">[ thread ]</a>
+              <a href="subject.html#605">[ subject ]</a>
+              <a href="author.html#605">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

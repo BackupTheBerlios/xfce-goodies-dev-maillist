@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bug 2108] New: Systemload-plugin crash when changing color
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-August/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%202108%5D%20New%3A%20Systemload-plugin%20crash%20when%20changing%20color&In-Reply-To=%3Cbug-2108-590%40http.bugzilla.xfce.org/%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000951.html">
+   <LINK REL="Next"  HREF="000944.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bug 2108] New: Systemload-plugin crash when changing color</H1>
+    <B>bugzilla-daemon at xfce.org</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%202108%5D%20New%3A%20Systemload-plugin%20crash%20when%20changing%20color&In-Reply-To=%3Cbug-2108-590%40http.bugzilla.xfce.org/%3E"
+       TITLE="[Bug 2108] New: Systemload-plugin crash when changing color">bugzilla-daemon at xfce.org
+       </A><BR>
+    <I>Wed Aug  2 12:53:58 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000951.html">[Bug 2106] systemload plugin crashes when trying to change bar color.
+</A></li>
+        <LI>Next message: <A HREF="000944.html">[Bug 2108] Systemload-plugin crash when changing color
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#904">[ date ]</a>
+              <a href="thread.html#904">[ thread ]</a>
+              <a href="subject.html#904">[ subject ]</a>
+              <a href="author.html#904">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+<A HREF="http://bugzilla.xfce.org/show_bug.cgi?id=2108">http://bugzilla.xfce.org/show_bug.cgi?id=2108</A>
+
+           Summary: Systemload-plugin crash when changing color
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Other
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: systemload
+        AssignedTo: <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">xfce-goodies-dev at berlios.de</A>
+        ReportedBy: <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">maxschleiss at bluewin.ch</A>
+
+
+Hi,
+the plugin seems to crash as soon as you try changing the color.
+Here is a backtrace as Brian told me to do here
+<A HREF="http://foo-projects.org/pipermail/xfce/2006-August/018266.html">http://foo-projects.org/pipermail/xfce/2006-August/018266.html</A>
+Hope this is of any help.
+Cheers
+Max
+
+#0  0xb7ac8958 in g_type_check_instance_cast () from
+/usr/lib/libgobject-2.0.so.0
+#1  0x0804b4ed in change_color (global=0x8090a98, count=0) at systemload.c:684
+#2  0xb7abf1a8 in g_cclosure_marshal_VOID__VOID () from
+/usr/lib/libgobject-2.0.so.0
+#3  0xb7aa8a1b in g_closure_invoke () from /usr/lib/libgobject-2.0.so.0
+#4  0xb7abdbb6 in g_signal_has_handler_pending () from
+/usr/lib/libgobject-2.0.so.0
+#5  0xb7abeac8 in g_signal_emit_valist () from /usr/lib/libgobject-2.0.so.0
+#6  0xb7abedb6 in g_signal_emit () from /usr/lib/libgobject-2.0.so.0
+#7  0xb7c9b891 in gtk_button_clicked () from /usr/lib/libgtk-x11-2.0.so.0
+#8  0xb7c9d42c in gtk_button_get_alignment () from /usr/lib/libgtk-x11-2.0.so.0
+#9  0xb7abf1a8 in g_cclosure_marshal_VOID__VOID () from
+/usr/lib/libgobject-2.0.so.0
+#10 0xb7aa8d59 in g_cclosure_new_swap () from /usr/lib/libgobject-2.0.so.0
+#11 0xb7aa8a1b in g_closure_invoke () from /usr/lib/libgobject-2.0.so.0
+#12 0xb7abd4a7 in g_signal_has_handler_pending () from
+/usr/lib/libgobject-2.0.so.0
+#13 0xb7abeac8 in g_signal_emit_valist () from /usr/lib/libgobject-2.0.so.0
+#14 0xb7abedb6 in g_signal_emit () from /usr/lib/libgobject-2.0.so.0
+#15 0xb7c9b7f1 in gtk_button_released () from /usr/lib/libgtk-x11-2.0.so.0
+#16 0xb7c9c911 in gtk_button_set_relief () from /usr/lib/libgtk-x11-2.0.so.0
+#17 0xb7d6e410 in gtk_marshal_VOID__UINT_STRING () from
+/usr/lib/libgtk-x11-2.0.so.0
+#18 0xb7aa8d59 in g_cclosure_new_swap () from /usr/lib/libgobject-2.0.so.0
+#19 0xb7aa8a1b in g_closure_invoke () from /usr/lib/libgobject-2.0.so.0
+#20 0xb7abd72b in g_signal_has_handler_pending () from
+/usr/lib/libgobject-2.0.so.0
+#21 0xb7abe81d in g_signal_emit_valist () from /usr/lib/libgobject-2.0.so.0
+#22 0xb7abedb6 in g_signal_emit () from /usr/lib/libgobject-2.0.so.0
+#23 0xb7e67014 in gtk_widget_activate () from /usr/lib/libgtk-x11-2.0.so.0
+#24 0xb7d6c877 in gtk_propagate_event () from /usr/lib/libgtk-x11-2.0.so.0
+#25 0xb7d6cbaf in gtk_main_do_event () from /usr/lib/libgtk-x11-2.0.so.0
+#26 0xb7bf54c1 in gdk_event_get_graphics_expose () from
+/usr/lib/libgdk-x11-2.0.so.0
+#27 0xb7a39b97 in g_main_context_dispatch () from /usr/lib/libglib-2.0.so.0
+#28 0xb7a3b524 in g_main_context_acquire () from /usr/lib/libglib-2.0.so.0
+---Type &lt;return&gt; to continue, or q &lt;return&gt; to quit---
+#29 0xb7a3b84a in g_main_loop_run () from /usr/lib/libglib-2.0.so.0
+#30 0xb7d6be53 in gtk_main () from /usr/lib/libgtk-x11-2.0.so.0
+#31 0x0804cbf1 in main (argc=7, argv=0xbfd5aff4) at systemload.c:981
+
+
+-- 
+Configure bugmail: <A HREF="http://bugzilla.xfce.org/userprefs.cgi?tab=email">http://bugzilla.xfce.org/userprefs.cgi?tab=email</A>
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000951.html">[Bug 2106] systemload plugin crashes when trying to change bar color.
+</A></li>
+	<LI>Next message: <A HREF="000944.html">[Bug 2108] Systemload-plugin crash when changing color
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#904">[ date ]</a>
+              <a href="thread.html#904">[ thread ]</a>
+              <a href="subject.html#904">[ subject ]</a>
+              <a href="author.html#904">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

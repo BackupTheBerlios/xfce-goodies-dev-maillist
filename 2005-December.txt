@@ -1,0 +1,954 @@
+From kieroglu at math.washington.edu  Thu Dec  1 23:52:43 2005
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Thu, 1 Dec 2005 14:52:43 -0800 (PST)
+Subject: New plugin: Timer and updates to XMMS plugin
+Message-ID: <Pine.LNX.4.61.0512011448540.1267@zeno3.math.washington.edu>
+
+   Hi,
+
+   I committed the changes to the XMMS plugin and imported the timer plugin 
+tree into xfce-goodies SVN repository. Both versions require 4.4 panels. 
+I'll release packages when XFCE 4.4 is released. You can also use the 
+packages I sent to this list in November.
+
+   Ilgar
+
+
+From bugzilla-daemon at xfce.org  Fri Dec  2 10:42:35 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri,  2 Dec 2005 09:42:35 +0000 (UTC)
+Subject: [Bug 1255]  New: Long label messed up in taskbar panel plugin emacs
+Message-ID: <20051202094235.1BD66F2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1255
+
+           Summary: Long label messed up in taskbar panel plugin emacs
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: taskbar
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: deling_ren at 123mail.org
+
+
+I have an emacs window with a long window title. The taskbar plugin does not cut
+off the label. Instead, it overlaps with the next label/icon. Other programs
+don't seem to have this problem. 
+
+Apps I am running: Firefox, gnome-terminal, Thunar, emacs, leafpad, Synaptic,
+links2 -g. I manage to make the window titles long enough for all other apps,
+but emacs seems to be the only to cause problem.
+
+Reproducible: Always
+Steps to Reproduce:
+1. 
+2. 
+3.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri Dec  2 10:45:41 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri,  2 Dec 2005 09:45:41 +0000 (UTC)
+Subject: [Bug 1255] Long label messed up in taskbar panel plugin emacs
+Message-ID: <20051202094541.016A5F2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1255
+
+
+
+
+
+------- Additional Comments From deling_ren at 123mail.org  2005-12-02 09:45 UTC -------
+(In reply to comment #0)
+> I have an emacs window with a long window title. The taskbar plugin does not cut
+> off the label. Instead, it overlaps with the next label/icon. Other programs
+> don't seem to have this problem. 
+> 
+> Apps I am running: Firefox, gnome-terminal, Thunar, emacs, leafpad, Synaptic,
+> links2 -g. I manage to make the window titles long enough for all other apps,
+> but emacs seems to be the only to cause problem.
+
+Actually links as well, I later found out. Hmm, looks like the gtk programs
+don't have this problem.
+
+> 
+> Reproducible: Always
+> Steps to Reproduce:
+> 1. 
+> 2. 
+> 3.
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri Dec  2 10:47:25 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri,  2 Dec 2005 09:47:25 +0000 (UTC)
+Subject: [Bug 1255] Long label messed up in taskbar panel plugin emacs
+Message-ID: <20051202094725.98199F2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1255
+
+
+
+
+
+------- Additional Comments From deling_ren at 123mail.org  2005-12-02 09:47 UTC -------
+Created an attachment (id=355)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=355&action=view)
+Screenshot. Pay attention to the bottom of the screen.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Dec  4 09:56:58 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  4 Dec 2005 08:56:58 +0000 (UTC)
+Subject: [Bug 1261]  New: shows AC eeven when on battery
+Message-ID: <20051204085658.2AEB1F2927@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1261
+
+           Summary: shows AC eeven when on battery
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: battery
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: jani at ubuntu.com
+
+
+reading /proc/acpi/battery on newer linux versions does not work with current code
+so even when unplugged the battery plugin reports it's on AC power.
+see this link for the fix in ubuntu, and the actual patch below
+http://utnubu.alioth.debian.org/scottish/by_maint/pkg-xfce-devel at lists.alioth.debian.org/large/xfce4-battery-plugin/xfce4-battery-plugin_0.3.0-1ubuntu1_packaging.patch
+
+--
+/home/jani/hack/ubuntu/xfce/packages/orig/battery/orig/xfce4-battery-plugin-0.3.0/panel-plugin/libacpi.c
+    2003-09-0+++ libacpi.c   2005-10-07 18:05:53.000000000 +0300
+@@ -272,12 +272,29 @@
+   FILE *acpi;
+   char *ptr;
+   char stat;
++  DIR *acdir;
++  struct dirent *ac;
++  char *name;
++  char acstatus[128];
++
++  acdir = opendir("/proc/acpi/ac_adapter");
++  if (!acdir)
++    return -1;
++/* Works with ACPI versions newer than feb 2002, but this is for 2.6 kernels
+only anyway */
++  while(ac = readdir(acdir)) {
++
++    name = ac->d_name;
++
++    /* skip . and .. */
++    if (name[0] == '.')
++        continue;
++    sprintf (acstatus, "/proc/acpi/ac_adapter/%s/state", name);
++    if (!(acpi = fopen (acstatus, "r")))
++        return -1;
++    break;
++  }
+
+  if (!(acpi = fopen ("/proc/acpi/ac_adapter/0/status", "r")))
+    if (!(acpi = fopen ("/proc/acpi/ac_adapter/ACAD/state", "r")))
+      if (!(acpi = fopen ("/proc/acpi/ac_adapter/AC/state", "r")))
+                                                                               
+                       
+
+
+Reproducible: Always
+Steps to Reproduce:
+1. 
+2. 
+3.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From peter at shevtsov.fanstvo.com  Fri Dec  9 07:37:28 2005
+From: peter at shevtsov.fanstvo.com (Peter A. Shevtsov)
+Date: Fri, 09 Dec 2005 12:37:28 +0600
+Subject: Can't install xfce4-mount-plugin-0.4.3
+Message-ID: <43992628.9080805@shevtsov.fanstvo.com>
+
+I've got the following from ./confugure:
+
+checking for libxfce4panel-1.0 >= 4.3.20... not found
+
+*** The required package libxfce4panel-1.0 was not found on your system.
+
+*** Please install libxfce4panel-1.0 (atleast version 4.3.20) or adjust
+
+*** the PKG_CONFIG_PATH environment variable if you
+
+*** installed the package in a nonstandard prefix so that
+
+*** pkg-config is able to find it.
+
+BTW, I'm running XFCE 4.2.3.2 (installed from RPMs) on Fedora Core 4
+
+
+
+From timystery at arcor.de  Fri Dec  9 08:26:13 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Fri, 09 Dec 2005 08:26:13 +0100
+Subject: Can't install xfce4-mount-plugin-0.4.3
+In-Reply-To: <43992628.9080805@shevtsov.fanstvo.com>
+References: <43992628.9080805@shevtsov.fanstvo.com>
+Message-ID: <1134113173.2567.4.camel@TIM3000>
+
+Am Freitag, den 09.12.2005, 12:37 +0600 schrieb Peter A. Shevtsov:
+> I've got the following from ./confugure:
+> 
+> checking for libxfce4panel-1.0 >= 4.3.20... not found
+> 
+> *** The required package libxfce4panel-1.0 was not found on your system.
+> 
+> *** Please install libxfce4panel-1.0 (atleast version 4.3.20) or adjust
+
+Well, you don't have libxfce4panel from svn ;-)
+
+try to use xfce4-mount-plugin-0.3 from berlios
+(http://download.berlios.de/xfce-goodies/xfce4-mount-plugin-0.3.2.tar.bz2) or a prepackaged version if available.
+
+at berlios or svn, always look at the comments and notes at first to
+find out whether it already requires the new 4.3/4.4 panel.
+
+same will apply if you try to build the current svn panel.
+
+> 
+> *** the PKG_CONFIG_PATH environment variable if you
+> 
+> *** installed the package in a nonstandard prefix so that
+> 
+> *** pkg-config is able to find it.
+> 
+> BTW, I'm running XFCE 4.2.3.2 (installed from RPMs) on Fedora Core 4
+> 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+
+From agordon88 at gmail.com  Mon Dec 19 20:54:37 2005
+From: agordon88 at gmail.com (A. Gordon)
+Date: Mon, 19 Dec 2005 21:54:37 +0200
+Subject: New Plugin: lua-graph
+Message-ID: <43A70FFD.3080308@gmail.com>
+
+Hello,
+
+(a bit of a long story, with a question at the end...)
+
+I've written a new plugin, called Lua-Graph.
+This plugin is a generic Lua-host plugin, which allows a Lua script to 
+set the plugin's content.
+
+With this plugin, you have quick & dirty solution for monitoring any 
+kind of data on your computer, until a fully-fledged dedicated plugin is 
+available.
+
+Explanation:
+Lua (http://www.lua.org) is a light-weight programming language designed 
+for extending applications.
+the Lua library is GPLed, ANSI compatible, very portable and easy to use.
+
+Lua scripts for this plugin should have two functions:
+"init" will be called when the plugin loads, and will create labels and 
+progress bars.
+"update" will be called once every second, and will update the label's 
+text and the progress bar's value and colors.
+
+
+First example: the following Lua-script makes the plugin monitor my 
+computer's temperature (temperature is displayed as a number on the Xfce 
+panel)
+------begin temperature script -----
+function init()
+    add_label("lbl", "0");
+end
+
+function update()
+    value = 
+read_numeric_value_from_file("/proc/acpi/thermal_zone/THM0/temperature","temperature");
+    set_label_text( "lbl", string.format("%d c",value))
+end
+------ end temperature script -----
+
+As you can see, updating the text is very easy...
+"add_label" and "set_label_text" are two plugin functions that create a 
+label on the Xfce-panel, and update the label's text.
+
+Second Example:
+Read Battery level and AC state (only later I found out there's an 
+'xfce-battery' plugin...)
+------begin Battery script ------
+
+function init()
+    add_label("lbl", "");
+    add_progressbar("prg",0,0,0);
+   
+    max_bat_charge = 
+read_numeric_value_from_file("/proc/acpi/battery/BAT0/info","last full 
+capacity");
+end
+
+function update()
+    local current_charge = 
+read_numeric_value_from_file("/proc/acpi/battery/BAT0/state","remaining 
+capacity");
+       
+    local ac = read_line_from_file("/proc/acpi/ac_adapter/AC/state");
+    local i = string.find(ac,"on");
+   
+    local state = "<span background=\"#FF009D\">BAT</span>" ;
+    if i ~= nil then
+        state = "AC";
+    end;
+   
+    percent = current_charge*100/max_bat_charge;
+    set_label_text( "lbl", state .. "\n" ..string.format("%d%%", percent)) ;
+    set_progress_bar_value( "prg", percent ) ;
+    set_progress_bar_color( "prg", get_status_color(percent) ) ;
+end
+
+----- end battery script -----
+The above script read the AC status, and when I'm running on batteries, 
+displays "BAT" with a pinkish background.
+It also displays the battery charge (as percentage), and a colored 
+progress bar.
+
+
+And now, my (very technical) question:
+In order to compile the plugin, I need the "Lua" shared library.
+The "C" source uses
+    #include <lua50/lua.h>
+    #include <lua50/lualib.h>
+and the linking phase requires
+    LDFLAGS += -llua50 -llualib50
+
+It works on my computer (because I have the "lua-dev" installed, after I 
+manually added the "LDFLAGS" to the "Makefile").
+But how do I make the "configure" script check for the existence of "Lua" ?
+The whole gnu build process it a bit confusing... (automake, autoconf, 
+m4 ??)
+I guess I should add "AC_CHECK_HEADER(lua50.h)" somewhere, but I don't 
+know where, and how to re-create everything (simply running "autoconf" 
+did not work).
+
+Thank you for your help.
+
+If anyone is interested in this plugin, I'll be happy to send it, or 
+upload it to the Xfce-Goodies project.
+
+
+Gordon.
+
+
+From masse_nicolas at yahoo.fr  Tue Dec 20 01:01:46 2005
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Tue, 20 Dec 2005 00:01:46 +0000
+Subject: New Plugin: lua-graph
+In-Reply-To: <43A70FFD.3080308@gmail.com>
+References: <43A70FFD.3080308@gmail.com>
+Message-ID: <20051220000146.31fa8dbe.masse_nicolas@yahoo.fr>
+
+On Mon, 19 Dec 2005 21:54:37 +0200
+"A. Gordon" <agordon88 at gmail.com> wrote:
+
+> Hello,
+> 
+> (a bit of a long story, with a question at the end...)
+> 
+> I've written a new plugin, called Lua-Graph.
+> This plugin is a generic Lua-host plugin, which allows a Lua script to 
+> set the plugin's content.
+> 
+Waw, that's not bad at all ;).
+
+> With this plugin, you have quick & dirty solution for monitoring any 
+> kind of data on your computer, until a fully-fledged dedicated plugin is 
+> available.
+> 
+> Explanation:
+> Lua (http://www.lua.org) is a light-weight programming language designed 
+> for extending applications.
+> the Lua library is GPLed, ANSI compatible, very portable and easy to use.
+> 
+> Lua scripts for this plugin should have two functions:
+> "init" will be called when the plugin loads, and will create labels and 
+> progress bars.
+> "update" will be called once every second, and will update the label's 
+> text and the progress bar's value and colors.
+> 
+> 
+> First example: the following Lua-script makes the plugin monitor my 
+> computer's temperature (temperature is displayed as a number on the Xfce 
+> panel)
+> ------begin temperature script -----
+> function init()
+>     add_label("lbl", "0");
+> end
+> 
+> function update()
+>     value = 
+> read_numeric_value_from_file("/proc/acpi/thermal_zone/THM0/temperature","temperature");
+>     set_label_text( "lbl", string.format("%d c",value))
+> end
+> ------ end temperature script -----
+> 
+> As you can see, updating the text is very easy...
+> "add_label" and "set_label_text" are two plugin functions that create a 
+> label on the Xfce-panel, and update the label's text.
+> 
+> Second Example:
+> Read Battery level and AC state (only later I found out there's an 
+> 'xfce-battery' plugin...)
+> ------begin Battery script ------
+> 
+> function init()
+>     add_label("lbl", "");
+>     add_progressbar("prg",0,0,0);
+>    
+>     max_bat_charge = 
+> read_numeric_value_from_file("/proc/acpi/battery/BAT0/info","last full 
+> capacity");
+> end
+> 
+> function update()
+>     local current_charge = 
+> read_numeric_value_from_file("/proc/acpi/battery/BAT0/state","remaining 
+> capacity");
+>        
+>     local ac = read_line_from_file("/proc/acpi/ac_adapter/AC/state");
+>     local i = string.find(ac,"on");
+>    
+>     local state = "<span background=\"#FF009D\">BAT</span>" ;
+>     if i ~= nil then
+>         state = "AC";
+>     end;
+>    
+>     percent = current_charge*100/max_bat_charge;
+>     set_label_text( "lbl", state .. "\n" ..string.format("%d%%", percent)) ;
+>     set_progress_bar_value( "prg", percent ) ;
+>     set_progress_bar_color( "prg", get_status_color(percent) ) ;
+> end
+> 
+> ----- end battery script -----
+> The above script read the AC status, and when I'm running on batteries, 
+> displays "BAT" with a pinkish background.
+> It also displays the battery charge (as percentage), and a colored 
+> progress bar.
+> 
+> 
+> And now, my (very technical) question:
+> In order to compile the plugin, I need the "Lua" shared library.
+> The "C" source uses
+>     #include <lua50/lua.h>
+>     #include <lua50/lualib.h>
+> and the linking phase requires
+>     LDFLAGS += -llua50 -llualib50
+> 
+> It works on my computer (because I have the "lua-dev" installed, after I 
+> manually added the "LDFLAGS" to the "Makefile").
+> But how do I make the "configure" script check for the existence of "Lua" ?
+> The whole gnu build process it a bit confusing... (automake, autoconf, 
+> m4 ??)
+> I guess I should add "AC_CHECK_HEADER(lua50.h)" somewhere, but I don't 
+> know where, and how to re-create everything (simply running "autoconf" 
+> did not work).
+> 
+> Thank you for your help.
+> 
+Hmm, very technical, yes. Lots of us use xfce4-dev-tools for that kind of things. 
+Perhaps having a look at the other plugins can help.
+Also, it makes me asking one thing: does your plugin work with the 4.2.x version of the panel?
+Because some things have changed since for the upcoming 4.4 version of the panel. (but don't worry, the port 
+is not very hard to do).
+> If anyone is interested in this plugin, I'll be happy to send it, or 
+> upload it to the Xfce-Goodies project.
+> 
+For Sure, you're welcome. Just get an account on berlios and then the projects leaders can add you to the project.
+
+> 
+> Gordon.
+
+Bountykiller.
+
+Ps: Since I'm currently rewritting a little the site in order to add some sections, I'll be happy to post a news
+to wish you welcome. No objections?
+
+
+From alan at lizella.net  Tue Dec 20 07:03:36 2005
+From: alan at lizella.net (Alan Hicks)
+Date: Tue, 20 Dec 2005 01:03:36 -0500
+Subject: Adding support for ASUS Z71v laptop batteries to xfce4-battery
+Message-ID: <20051220060336.GA90472@lizella.net>
+
+Hello,
+
+I just joined his mailing list in hopes that you can help me solve a
+problem I'm having with the xfce-battery-plugin. I have an ASUS Z71v
+which has two batteries in it. Status for neither battery is reported
+by the applet and seems to default to saying the battery is dead, but
+on AC charge.
+
+I have attempted to compile the software with --enable-debug=3D"yes|full"
+and in either case it fails to compile, stating that some variables are
+defined but not used.  I am unsure if that error message is important
+or not, but as the software compiles successfully without that message,
+I have elected not to include it.
+
+The information regarding battery state can be found in the files:
+
+  /proc/acpi/battery/BAT0/state
+  /proc/acpi/battery/BAT1/state
+
+IIUC, the norm is for this information to be stored in the files:
+
+  /proc/acpi/battery/[0-9]/state
+  /proc/acpi/battery/[0-9]/status
+
+I can only assume that the "BAT" prefix is causing the plugin to fail
+to find the state file from what I've gathered from the code I've
+looked over.
+
+I have absolutely no real programming skill (some bash scripting,
+trying to teach myself some C) and would like to add support for my
+batteries to this applet. From what I've gathered with my meager
+code-reading skills, the following lines in libacpi.c try to get an
+integer count of the batteries under /proc/acpi/battery and then use
+that integer value to locate the state file.
+
+<snip>
+
+1    /* now enumerate batteries */
+2    batt_count =3D 0;
+3    battdir =3D opendir ("/proc/acpi/battery");
+4    if (battdir =3D=3D 0)
+5    {
+6  #ifdef DEBUG
+7  	  printf("DBG:No battery. /proc/acpi/battery not found!\n");
+8  #endif
+9      return 2;
+10   }
+11   while ((batt =3D readdir (battdir)))
+12   {
+13     name =3D batt->d_name;
+14=20
+15     /* skip . and .. */
+16     if (!strncmp (".", name, 1) || !strncmp ("..", name, 2)) continue;
+17    =20
+18     sprintf (batteries[batt_count], "/proc/acpi/battery/%s/state", name);
+19     if (!(acpi =3D fopen (batteries[batt_count], "r"))) {
+20        sprintf (batteries[batt_count], "/proc/acpi/battery/%s/status", n=
+ame);
+21     }
+22     else fclose (acpi);
+23    =20
+24 #if 0   =20
+25     if (!(acpi =3D fopen ("/proc/acpi/battery/1/status", "r")))
+26 	    sprintf (batteries[batt_count], "/proc/acpi/battery/%s/state", name=
+);
+27     else
+28 	    sprintf (batteries[batt_count], "/proc/acpi/battery/%s/status", nam=
+e);
+29 #endif   =20
+
+</snip>
+
+
+Thanks for your time and attention.  I'd really like to help to get
+this working, both to have proper battery monitoring in everyone's
+favorite cholestorel free DE, and to maybe learn a thing or two about
+C. I regret that I am not able to write a patch myself for submission.
+
+-- 
+It is better to hear the rebuke of the wise,
+Than for a man to hear the song of fools.
+Ecclesiastes 7:5
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 187 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051220/b25e0fcc/attachment.pgp>
+
+From agordon88 at gmail.com  Tue Dec 20 21:58:40 2005
+From: agordon88 at gmail.com (A. Gordon)
+Date: Tue, 20 Dec 2005 22:58:40 +0200
+Subject: New Plugin: lua-graph
+In-Reply-To: <20051220000146.31fa8dbe.masse_nicolas@yahoo.fr>
+References: <43A70FFD.3080308@gmail.com> <20051220000146.31fa8dbe.masse_nicolas@yahoo.fr>
+Message-ID: <43A87080.2000405@gmail.com>
+
+masse_nicolas at yahoo.fr wrote:
+
+>Hmm, very technical, yes. Lots of us use xfce4-dev-tools for that kind of things. 
+>Perhaps having a look at the other plugins can help.
+>Also, it makes me asking one thing: does your plugin work with the 4.2.x version of the panel?
+>Because some things have changed since for the upcoming 4.4 version of the panel. (but don't worry, the port 
+>is not very hard to do).
+>  
+>
+I'm using debian/testing, so the current version of xfce4-everything is 4.2.
+Therefore:
+1. will 'xfce4-dev-tools' work with debian's version 4.2 ?
+2. There's no 'xfce4-dev-tools' as a debian package. Can I download the 
+'xfce4-dev-tools' from its website, and it will work with debian's xfce4 ?
+3. The panel is 4.2, but I've based my plugin on Wit Wilinski's 
+megahertz plugin, so I hope it is pretty standard and easy to port.
+
+>[...] Just get an account on berlios and then the projects leaders can add you to the project.
+>  
+>
+Got an account ('agordon'), what's next ?
+
+>Ps: Since I'm currently rewritting a little the site in order to add some sections, I'll be happy to post a news
+>to wish you welcome. No objections
+>
+No objections, of course.
+
+
+From masse_nicolas at yahoo.fr  Wed Dec 21 00:15:00 2005
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Tue, 20 Dec 2005 23:15:00 +0000
+Subject: New Plugin: lua-graph
+In-Reply-To: <43A87080.2000405@gmail.com>
+References: <43A70FFD.3080308@gmail.com>
+	<20051220000146.31fa8dbe.masse_nicolas@yahoo.fr>
+	<43A87080.2000405@gmail.com>
+Message-ID: <20051220231500.735abd97.masse_nicolas@yahoo.fr>
+
+On Tue, 20 Dec 2005 22:58:40 +0200
+"A. Gordon" <agordon88 at gmail.com> wrote:
+
+> masse_nicolas at yahoo.fr wrote:
+> 
+> >Hmm, very technical, yes. Lots of us use xfce4-dev-tools for that kind of things. 
+> >Perhaps having a look at the other plugins can help.
+> >Also, it makes me asking one thing: does your plugin work with the 4.2.x version of the panel?
+> >Because some things have changed since for the upcoming 4.4 version of the panel. (but don't worry, the port 
+> >is not very hard to do).
+> >  
+> >
+> I'm using debian/testing, so the current version of xfce4-everything is 4.2.
+> Therefore:
+> 1. will 'xfce4-dev-tools' work with debian's version 4.2 ?
+> 2. There's no 'xfce4-dev-tools' as a debian package. Can I download the 
+> 'xfce4-dev-tools' from its website, and it will work with debian's xfce4 ?
+Downloading the source and installing them must work. There must not be any packages in debian-testing for that
+because it hasn't been realised yet.
+
+> 3. The panel is 4.2, but I've based my plugin on Wit Wilinski's 
+> megahertz plugin, so I hope it is pretty standard and easy to port.
+> 
+Just a little thing: If you want to port your plugin to the next version of the panel, 
+you will also need too install some libs from the xfce svn. But as I said, the port itself is not
+too hard. Also nothing is urgent since 4.4 will not be there before 2 or 3 month (perhaps more).
+
+> >[...] Just get an account on berlios and then the projects leaders can add you to the project.
+> >  
+> >
+> Got an account ('agordon'), what's next ?
+> 
+I've added you to the project. I will also create a svn branche for your plugin, so you can upload your files in.
+I will call this 'xfce4-lua-graph-plugin', so its name will be in the same format than for the other plugins.
+You must also be able to realise files if you want. You can refer to the doc available on berlios for most of these 
+tasks. 
+
+> >Ps: Since I'm currently rewritting a little the site in order to add some sections, I'll be happy to post a news
+> >to wish you welcome. No objections
+> >
+> No objections, of course.
+
+Done. :-)
+
+
+From bugzilla-daemon at xfce.org  Wed Dec 21 10:11:12 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 21 Dec 2005 09:11:12 +0000 (UTC)
+Subject: [Bug 670] Panel crashes when closing one of the folded apps with right click and context menu
+Message-ID: <20051221091112.4D83AF2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=670
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-12-21 09:11 UTC -------
+Closing as FIXED, for lack of feedback in 7 months.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Dec 21 10:37:33 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 21 Dec 2005 09:37:33 +0000 (UTC)
+Subject: [Bug 670] Panel crashes when closing one of the folded apps with right click and context menu
+Message-ID: <20051221093733.473EFF2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=670
+
+
+
+
+
+------- Additional Comments From lzap at seznam.cz  2005-12-21 09:37 UTC -------
+I am sorry, I missed your responses. Now I use 4.2.2, its fine. THanks
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Dec 21 10:40:32 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 21 Dec 2005 09:40:32 +0000 (UTC)
+Subject: [Bug 1222] i18n support
+Message-ID: <20051221094032.2EA36F2927@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1222
+
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-12-21 09:40 UTC -------
+*** Bug 1223 has been marked as a duplicate of this bug. ***
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Dec 21 10:46:36 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 21 Dec 2005 09:46:36 +0000 (UTC)
+Subject: [Bug 670] Panel crashes when closing one of the folded apps with right click and context menu
+Message-ID: <20051221094636.9D013F2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=670
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|RESOLVED                    |VERIFIED
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-12-21 09:46 UTC -------
+Ok, that's great. Thanks for reponding.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu Dec 22 08:16:51 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 22 Dec 2005 07:16:51 +0000 (UTC)
+Subject: [Bug 1255] Long label messed up in taskbar panel plugin emacs
+Message-ID: <20051222071651.BDD8DF2927@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1255
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-12-22 07:16 UTC -------
+This is a change in behaviour in the latest Gtk versions. If you update to the
+latest Xfce release it will be fixed.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri Dec 23 11:44:35 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri, 23 Dec 2005 10:44:35 +0000 (UTC)
+Subject: [Bug 1235] Date&Time Plugin : "Week day starts on Monday" doesn't work
+Message-ID: <20051223104435.BDA0AF2926@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1235
+
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-12-23 10:44 UTC -------
+I'm fairly certain that this is because newer Gtk version take this value from
+the locale settings and don't allow the developer to set it manually.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From agordon88 at gmail.com  Sat Dec 24 15:11:39 2005
+From: agordon88 at gmail.com (A. Gordon)
+Date: Sat, 24 Dec 2005 16:11:39 +0200
+Subject: Lua-Graph plugin released
+Message-ID: <43AD571B.9000608@gmail.com>
+
+Happy Holidays everyone,
+
+Version 0.1 of the Lua-Graph plugin has been released.
+
+You can download it at
+  http://download.berlios.de/xfce-goodies/xfce4-lua-graph-plugin-0.1.tar.gz
+or with SVN:
+  svn checkout 
+svn://svn.berlios.de/xfce-goodies/xfce4-lua-graph-plugin/trunk
+
+I would like to thank Masse Nicolas for his invaluable help in getting 
+this done!
+
+Lua-Graph is a Lua driven plugin for the xfce4 panel.
+It provides a quick solution for displaying any kind of information on 
+the xfce4 panel.
+
+See the "README" file for more explanations and detailed examples.
+
+Comments and feedback are of course welcomed.
+
+
+Gordon.
+
+
+From bugzilla-daemon at xfce.org  Mon Dec 26 03:52:15 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 26 Dec 2005 02:52:15 +0000 (UTC)
+Subject: [Bug 1235] Date&Time Plugin : "Week day starts on Monday" doesn't work
+Message-ID: <20051226025215.9A856F2926@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1235
+
+
+
+
+
+------- Additional Comments From choe.hwanjin at gmail.com  2005-12-26 02:52 UTC -------
+I confirmed it on the web gtk+2 manual.
+Then, I think that it is more reasonable to remove this option "Week day starts
+on Monday".
+
+If there is no objection, I will close this bug and remove this option.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From a.radke at arcor.de  Fri Dec 30 07:41:38 2005
+From: a.radke at arcor.de (Andreas Radke)
+Date: Fri, 30 Dec 2005 07:41:38 +0100
+Subject: system-load-plugin 0.3.6 shows wrong free memory in 64bit linux
+Message-ID: <43B4D6A2.8070800@arcor.de>
+
+I'm using Archlinux 64bit and run Xfce 4.2.3.2 with the latest plugin
+xfce-system-load-plugin 0.3.6.
+
+I'm getting a strange output of free memory. the plugin shows right now:
+2805MB used memory
+and the output from free -m is:
+
+ free -m
+             total       used       free     shared    buffers     cached
+Mem:          3016       2988         27          0        803        182
+-/+ buffers/cache:       2002       1013
+Swap:          235          0        235
+
+
+So I guess it shows the amount of real free memory 2002MB + used buffers
+803MB. Should that be right?
+
+And as I remember I hadn't this behavoir in archlinux 32bit.
+
+Andreas Radke
+
+

@@ -1,0 +1,51 @@
+From kapouer_nabble at melix.org  Fri Feb  8 12:52:35 2008
+From: kapouer_nabble at melix.org (kapouer)
+Date: Fri, 8 Feb 2008 03:52:35 -0800 (PST)
+Subject: xfce4-mixer : free space in the panel, change right-click behaviour ?
+Message-ID: <15181860.post@talk.nabble.com>
+
+
+Hi,
+i'm using this plugin and feel that it takes too much space in the panel
+(the gnome equivalent
+was neat, but i'm trying to get rid of those applets).
+
+
+so to get closer i just suppressed the volume icon (mixer properties should
+be
+accessed by context-menu, right-click on the tiny slider), and disabled the
+middle and right
+click behaviour (to get access to the context menu).
+
+
+The only thing one would object is that there's nothing telling this slider
+is to change sound...
+But that way, it frees a lot of space in the panel.
+
+
+The modifs i did are simply comment gtk_widget_show (mixer->box); in
+plugin.c and return FALSE for
+middle and right clicks in xfce-mixer-slider-tiny.c :
+
+
+if (b->button == 1) {
+	sy = widget->allocation.height;
+	if (sy != 0) {
+		y = (sy + 2 - y) * 100 / sy;
+		if (y <= 0) y = 0;
+	} else y = 0;
+} else {
+	return FALSE;
+}
+
+
+And here's what it looks like :
+
+http://www.nabble.com/file/p15181860/Screenshot-1.png 
+-- 
+View this message in context: http://www.nabble.com/xfce4-mixer-%3A-free-space-in-the-panel%2C-change-right-click-behaviour---tp15181860p15181860.html
+Sent from the Xfce - Dev - Goodies mailing list archive at Nabble.com.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20080208/4c6da53b/attachment.html>
+

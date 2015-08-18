@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> xfce4-mixer : free space in the panel, change right-click behaviour ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2008-February/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20xfce4-mixer%20%3A%20free%20space%20in%20the%20panel%2C%20change%20right-click%20behaviour%20%3F&In-Reply-To=%3C15181860.post%40talk.nabble.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>xfce4-mixer : free space in the panel, change right-click behaviour ?</H1>
+    <B>kapouer</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20xfce4-mixer%20%3A%20free%20space%20in%20the%20panel%2C%20change%20right-click%20behaviour%20%3F&In-Reply-To=%3C15181860.post%40talk.nabble.com%3E"
+       TITLE="xfce4-mixer : free space in the panel, change right-click behaviour ?">kapouer_nabble at melix.org
+       </A><BR>
+    <I>Fri Feb  8 12:52:35 CET 2008</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#970">[ date ]</a>
+              <a href="thread.html#970">[ thread ]</a>
+              <a href="subject.html#970">[ subject ]</a>
+              <a href="author.html#970">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Hi,
+i'm using this plugin and feel that it takes too much space in the panel
+(the gnome equivalent
+was neat, but i'm trying to get rid of those applets).
+
+
+so to get closer i just suppressed the volume icon (mixer properties should
+be
+accessed by context-menu, right-click on the tiny slider), and disabled the
+middle and right
+click behaviour (to get access to the context menu).
+
+
+The only thing one would object is that there's nothing telling this slider
+is to change sound...
+But that way, it frees a lot of space in the panel.
+
+
+The modifs i did are simply comment gtk_widget_show (mixer-&gt;box); in
+plugin.c and return FALSE for
+middle and right clicks in xfce-mixer-slider-tiny.c :
+
+
+if (b-&gt;button == 1) {
+	sy = widget-&gt;allocation.height;
+	if (sy != 0) {
+		y = (sy + 2 - y) * 100 / sy;
+		if (y &lt;= 0) y = 0;
+	} else y = 0;
+} else {
+	return FALSE;
+}
+
+
+And here's what it looks like :
+
+<A HREF="http://www.nabble.com/file/p15181860/Screenshot-1.png">http://www.nabble.com/file/p15181860/Screenshot-1.png</A> 
+-- 
+View this message in context: <A HREF="http://www.nabble.com/xfce4-mixer-%3A-free-space-in-the-panel%2C-change-right-click-behaviour---tp15181860p15181860.html">http://www.nabble.com/xfce4-mixer-%3A-free-space-in-the-panel%2C-change-right-click-behaviour---tp15181860p15181860.html</A>
+Sent from the Xfce - Dev - Goodies mailing list archive at Nabble.com.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20080208/4c6da53b/attachment.html">https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20080208/4c6da53b/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#970">[ date ]</a>
+              <a href="thread.html#970">[ thread ]</a>
+              <a href="subject.html#970">[ subject ]</a>
+              <a href="author.html#970">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

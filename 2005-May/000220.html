@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> need help in plugin development....xfce4-mount-plugin
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-May/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20need%20help%20in%20plugin%20development....xfce4-mount-plugin&In-Reply-To=%3C4294CF76.3090009%40no-log.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000219.html">
+   <LINK REL="Next"  HREF="000221.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>need help in plugin development....xfce4-mount-plugin</H1>
+    <B>jean-baptiste dulong</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20need%20help%20in%20plugin%20development....xfce4-mount-plugin&In-Reply-To=%3C4294CF76.3090009%40no-log.org%3E"
+       TITLE="need help in plugin development....xfce4-mount-plugin">jean-baptiste.dulong at no-log.org
+       </A><BR>
+    <I>Wed May 25 21:18:14 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000219.html">Voting: Move to SVN
+</A></li>
+        <LI>Next message: <A HREF="000221.html">need help in plugin development....xfce4-mount-plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#220">[ date ]</a>
+              <a href="thread.html#220">[ thread ]</a>
+              <a href="subject.html#220">[ subject ]</a>
+              <a href="author.html#220">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+I'm working on the xfce4-mount-plugin and would like to add a new 
+functionality. I'd like the plugin to launch a command upon a 
+successfull mount (eg: a terminal). The command won't depend on a 
+specific device but will be a general options for the plugin.
+Therefore I added an element in the structure that hold the plugin 
+(Control-&gt;data) to store that command :
+
+typedef struct
+{
+	/* added string to hold command value */
+	char * on_mount_cmd ;
+	GtkWidget * button ;
+	GtkWidget * menu ;
+	GPtrArray * pdisks ;
+	GPtrArray * pdisk_display ;
+} t_mounter ;
+
+I also added a mounter_read_config and a mounter_write_config function 
+to store and restore the option value.
+My next step (before implementing a graphical interface for the user to 
+change the options) is to actually use the value in on_mount_cmd when 
+mounting a device.
+For mounting a device, I catch an event from a menu item with this 
+simple function :
+
+static void on_activate_disk_display(GtkWidget * widget,t_disk * disk)
+{
+	if (disk != NULL)
+	{
+		if (disk-&gt;mount_info != NULL)
+		{
+			disk_umount(disk);
+		}
+		else
+		{
+			disk_mount(disk);					 
+/*exec_cmd_silent(g_strconcat(mt-&gt;on_mount_cmd,disk-&gt;mount_point,NULL),FALSE,TRUE);*/
+		}
+	}
+}
+And this function would love to use mt-&gt;on_mount_cmd to launch 
+something, but we don't have access to it and the gpointer element in 
+the callback function is already used, we need a pointer on the t_disk * 
+disk element.
+So is there a way to access the Control-&gt;data from some function like 
+this one ?? Is it possible to add argument to the function with a 
+pointer to Control-&gt;data ?? Is there a magic spell ??
+
+If all this doesn't sound clear at all, leave it, I'll spend my 
+desperate nights on it... :-))
+If the answer is trivial, it will help anyway...
+
+
+-- 
+---------------------------------------------------
+Jean-Baptiste Dulong
+---------------------------------------------------
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: mount-plugin.c
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050525/96848c5c/attachment.c">https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050525/96848c5c/attachment.c</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000219.html">Voting: Move to SVN
+</A></li>
+	<LI>Next message: <A HREF="000221.html">need help in plugin development....xfce4-mount-plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#220">[ date ]</a>
+              <a href="thread.html#220">[ thread ]</a>
+              <a href="subject.html#220">[ subject ]</a>
+              <a href="author.html#220">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

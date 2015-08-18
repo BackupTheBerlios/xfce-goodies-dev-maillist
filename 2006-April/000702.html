@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> ANNOUNCE: Verve Plugin 0.3.0 Released
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-April/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20ANNOUNCE%3A%20Verve%20Plugin%200.3.0%20Released&In-Reply-To=%3C20060403213811.94699cac.jannis%40xfce.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000701.html">
+   <LINK REL="Next"  HREF="000703.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>ANNOUNCE: Verve Plugin 0.3.0 Released</H1>
+    <B>Jannis Pohlmann</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20ANNOUNCE%3A%20Verve%20Plugin%200.3.0%20Released&In-Reply-To=%3C20060403213811.94699cac.jannis%40xfce.org%3E"
+       TITLE="ANNOUNCE: Verve Plugin 0.3.0 Released">jannis at xfce.org
+       </A><BR>
+    <I>Mon Apr  3 21:38:11 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000701.html">[Bug 1634] New: bad free() on plugin remove
+</A></li>
+        <LI>Next message: <A HREF="000703.html">ANNOUNCE: Verve Plugin 0.3.0 Released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#702">[ date ]</a>
+              <a href="thread.html#702">[ thread ]</a>
+              <a href="subject.html#702">[ subject ]</a>
+              <a href="author.html#702">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hey all,
+
+I am pleased to announce the third release of my panel command line
+plugin. It has at least one cool new feature: Grabbing the focus through
+a shell command (which can e.g. be connected to a keyboard shortcut).
+
+But first of all we have a few bug fixes:
+
+  * If you enter a command twice, the last one is not added to the
+    command history anymore (fixes bug #6900). This avoids having a
+    history looking like this:
+    
+      xfce4-appfinder
+      thunar
+      thunar
+      thunar
+
+    Instead, this would now look like this:
+
+      xfce4-appfinder
+      thunar
+
+    This makes browsing the history faster.
+
+  * Shell errors, which e.g. occured when entering a single quote (')
+    no longer crash the plugin (bug #6663). 
+
+  * Commands from the history now appear in the auto-completion results.
+
+Now for the new features:
+
+  * Terminal startup: You can now run commands in your favourite
+    terminal emulator by holding down the CTRL key while pressing ENTER
+    to execute your input. In future Versions of Xfce (&gt;= 4.4) you can
+    adjust your preferred terminal emulator in the &quot;Preferred
+    Applications&quot; section of the MCS manager.
+
+  * Focus grabbing: There's now a helper script (written in Python)
+    which makes it possible to let Verve grab the focus. It's called
+    &quot;verve-focus&quot; and is copied to $(bindir) (e.g. /usr/local/bin)
+    during the installation. You'll need D-BUS bindings for Python in
+    order to make use of it. 
+
+    Note that you can easily assign a keyboard shortcut for Verve now.
+    Just add an entry to the shorcut or keyboard plugin in the MCS
+    manager to run verve-focus. 
+
+    After running the script, Verve should start to flash. You can stop
+    this by either simply typing what you wanted to type, by pressing
+    an unimportant key like SHIFT or by clicking into the input field
+    with the first or second mouse button.
+
+  * org.xfce.RunDialog D-BUS service: Verve now supports this service
+    which can be used as a backend for xfrun4 Xfce &gt;= 4.4. xfrun4 will
+    check for a running org.xfce.RunDialog service and call the
+    first one available instead of popping up the well-known dialog
+    window.
+
+That's it. 
+
+ChangeLog is available on
+  
+  <A HREF="https://developer.berlios.de/project/shownotes.php?release_id=9652">https://developer.berlios.de/project/shownotes.php?release_id=9652</A>
+
+The release tarball can be downloaded from
+  
+  <A HREF="http://prdownload.berlios.de/xfce-goodies/verve-plugin-0.3.0.tar.bz2">http://prdownload.berlios.de/xfce-goodies/verve-plugin-0.3.0.tar.bz2</A>
+
+Regards,
+Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 191 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060403/3bda7a7e/attachment.pgp">https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060403/3bda7a7e/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000701.html">[Bug 1634] New: bad free() on plugin remove
+</A></li>
+	<LI>Next message: <A HREF="000703.html">ANNOUNCE: Verve Plugin 0.3.0 Released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#702">[ date ]</a>
+              <a href="thread.html#702">[ thread ]</a>
+              <a href="subject.html#702">[ subject ]</a>
+              <a href="author.html#702">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

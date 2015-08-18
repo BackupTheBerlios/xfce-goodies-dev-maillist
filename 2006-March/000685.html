@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [PATCH] NetBSD support for xfce4-battery-plugin
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-March/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BPATCH%5D%20NetBSD%20support%20for%20xfce4-battery-plugin&In-Reply-To=%3C20060320170816.GA1800%40dice.bliss.lan%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000679.html">
+   <LINK REL="Next"  HREF="000686.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[PATCH] NetBSD support for xfce4-battery-plugin</H1>
+    <B>Stefan Sperling</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BPATCH%5D%20NetBSD%20support%20for%20xfce4-battery-plugin&In-Reply-To=%3C20060320170816.GA1800%40dice.bliss.lan%3E"
+       TITLE="[PATCH] NetBSD support for xfce4-battery-plugin">stsp at stsp.in-berlin.de
+       </A><BR>
+    <I>Mon Mar 20 18:08:16 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000679.html">[Bug 657] Panel takes long time to load when weather plugin cannot contact information site
+</A></li>
+        <LI>Next message: <A HREF="000686.html">[Bug 1519] genmon plugin for svn panel has truncated output
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#685">[ date ]</a>
+              <a href="thread.html#685">[ thread ]</a>
+              <a href="subject.html#685">[ subject ]</a>
+              <a href="author.html#685">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+
+I've switched my notebook to NetBSD, and when I found out that
+the XFCE battery plugin had no support for NetBSD, I decided to
+add support myself.
+
+The attached patch makes it work with APM on NetBSD.
+In fact things work very similar to OpenBSD, so the patch
+is quite small.
+
+The only problem that I've found so far is that the panel
+crashes if I tick &quot;Display power&quot; in the configuration dialogue.
+I don't really understand why that tickbox exists if the plugin
+is running in APM mode, since the code that runs when the display_power
+flag is set seems to be interested only in things like fan speed
+and temperature. Which I always thought were ACPI-only features.
+Somebody else with more knowledge of the code should take a look
+at this. I don't know if the same crash occurs on OpenBSD, too...
+
+thanks,
+-- 
+stefan
+<A HREF="http://stsp.in-berlin.de">http://stsp.in-berlin.de</A>                                 PGP Key: 0xF59D25F0
+-------------- next part --------------
+diff -urN xfce4-battery-plugin-0.3.0.orig/panel-plugin/battmon.c xfce4-battery-plugin-0.3.0/panel-plugin/battmon.c
+--- xfce4-battery-plugin-0.3.0.orig/panel-plugin/battmon.c	2005-08-06 11:30:51.000000000 +0200
++++ xfce4-battery-plugin-0.3.0/panel-plugin/battmon.c	2006-03-20 17:41:18.000000000 +0100
+@@ -37,6 +37,11 @@
+ #elif __OpenBSD__
+ #include &lt;sys/param.h&gt;
+ #include &lt;machine/apmvar.h&gt;
++#elif __NetBSD__
++#include &lt;sys/param.h&gt;
++#include &lt;sys/ioctl.h&gt;
++#include &lt;machine/apmvar.h&gt;
++#define APMDEVICE &quot;/dev/apm&quot;
+ #elif __linux__
+ #include &lt;apm.h&gt;
+ #endif
+@@ -152,12 +157,6 @@
+ gboolean
+ detect_battery_info(t_battmon *battmon)
+ {
+-#ifdef __OpenBSD__
+-	struct apm_power_info apm;
+-#else
+-	struct apm_info apm;
+-#endif
+-
+ #ifdef __FreeBSD__
+   /* This is how I read the information from the APM subsystem under
+      FreeBSD.  Each time this functions is called (once every second)
+@@ -166,7 +165,7 @@
+      except that is does not work on FreeBSD  
+      
+   */
+-	
++	struct apm_info apm;
+   	int fd;
+ 
+ 	/* First check to see if ACPI is available */
+@@ -193,27 +192,32 @@
+   	fd = open(APMDEVICE, O_RDONLY);
+   	if (fd == -1) return FALSE;
+ 
+-  	if (ioctl(fd, APMIO_GETINFO, &amp;apm) == -1)
++  	if (ioctl(fd, APMIO_GETINFO, &amp;apm) == -1) {
++		close(fd);
+      		return FALSE;
+-
++	}
+   	close(fd);
+   	battmon-&gt;method = BM_USE_APM;
+ #endif
+   	return TRUE;
+-#elif __OpenBSD__
++#elif defined(__OpenBSD__) || defined(__NetBSD__)
+   /* Code for OpenBSD by Joe Ammond &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jra at twinight.org</A>&gt;. Using the same
+      procedure as for FreeBSD.
++     Made to work on NetBSD by Stefan Sperling &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">stsp at stsp.in-berlin.de</A>&gt;
+   */
++	struct apm_power_info apm;
+   	int fd;
+ 
+   	battmon-&gt;method = BM_BROKEN;
+   	fd = open(APMDEVICE, O_RDONLY);
+   	if (fd == -1) return FALSE;
+-  	if (ioctl(fd, APM_IOC_GETPOWER, &amp;apm) == -1)
++  	if (ioctl(fd, APM_IOC_GETPOWER, &amp;apm) == -1) {
++		close(fd);
+     		return FALSE;
++	}
+   	close(fd);
+   	battmon-&gt;method = BM_USE_APM;
+-  
++ 
+   	return TRUE;
+ #elif __linux__
+ 	/* First check to see if ACPI is available */
+@@ -250,11 +254,6 @@
+ static gboolean
+ update_apm_status(t_battmon *battmon)
+ {
+-#ifdef __OpenBSD__
+-	struct apm_power_info apm;
+-#else
+-	struct apm_info apm;
+-#endif
+ 	int charge=0;
+ 	gboolean fan=FALSE;
+ 	const char *temp;
+@@ -262,24 +261,27 @@
+ 	gboolean acline;
+ 	gchar buffer[128];
+ 
+-
+-#ifdef __OpenBSD__
++#if defined(__OpenBSD__) || defined(__NetBSD__)
+   /* Code for OpenBSD by Joe Ammond &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jra at twinight.org</A>&gt;. Using the same
+      procedure as for FreeBSD.
++     Made to work on NetBSD by Stefan Sperling &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">stsp at stsp.in-berlin.de</A>&gt;
+   */
++	struct apm_power_info apm;
+   	int fd;
+ 
+   	battmon-&gt;method = BM_BROKEN;
+   	fd = open(APMDEVICE, O_RDONLY);
+   	if (fd == -1) return TRUE;
+-  	if (ioctl(fd, APM_IOC_GETPOWER, &amp;apminfo) == -1)
++  	if (ioctl(fd, APM_IOC_GETPOWER, &amp;apm) == -1) {
++		close(fd);
+     		return TRUE;
+-  	close(fd);
++	}
++   	close(fd);
+   	charge = apm.battery_life;
+   	time_remaining = apm.minutes_left;
+   	acline = apm.ac_state ? TRUE : FALSE;
+-	
+ #else
++	struct apm_info apm;
+ #ifdef DEBUG
+ 	printf(&quot;updating battery status...\n&quot;);
+ #endif
+@@ -347,9 +349,10 @@
+   	 fd = open(APMDEVICE, O_RDONLY);
+   	 if (fd == -1) return TRUE;
+ 
+-  	 if (ioctl(fd, APMIO_GETINFO, &amp;apm) == -1)
+-     		return TRUE;
+-
++  	 if (ioctl(fd, APMIO_GETINFO, &amp;apm) == -1) {
++		close(fd);
++		return TRUE;
++	 }
+   	 close(fd);
+ 
+   	 acline = apm.ai_acline ? TRUE : FALSE;
+diff -urN xfce4-battery-plugin-0.3.0.orig/panel-plugin/libacpi.c xfce4-battery-plugin-0.3.0/panel-plugin/libacpi.c
+--- xfce4-battery-plugin-0.3.0.orig/panel-plugin/libacpi.c	2003-09-09 15:49:16.000000000 +0200
++++ xfce4-battery-plugin-0.3.0/panel-plugin/libacpi.c	2006-03-20 17:25:30.000000000 +0100
+@@ -42,6 +42,14 @@
+ #include &lt;dirent.h&gt;
+ 
+ #if HAVE_SYSCTL
++
++#ifdef __NetBSD__
++#include &lt;sys/param.h&gt;
++/* CTLTYPE does not exist in NetBSD headers.
++ * Defining it to 0x0f here won't do any harm though. */
++#define CTLTYPE 0x0f
++#endif
++
+ #include &lt;sys/sysctl.h&gt;
+ #include &lt;err.h&gt;
+ #include &lt;errno.h&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000679.html">[Bug 657] Panel takes long time to load when weather plugin cannot contact information site
+</A></li>
+	<LI>Next message: <A HREF="000686.html">[Bug 1519] genmon plugin for svn panel has truncated output
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#685">[ date ]</a>
+              <a href="thread.html#685">[ thread ]</a>
+              <a href="subject.html#685">[ subject ]</a>
+              <a href="author.html#685">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

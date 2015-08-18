@@ -1,0 +1,3408 @@
+From daichi at xfce.org  Sun Apr  2 12:03:23 2006
+From: daichi at xfce.org (Daichi Kawahata)
+Date: Sun, 2 Apr 2006 19:03:23 +0900
+Subject: Xfce-goodies with Xfce 4.4
+Message-ID: <20060402190323.56b252f2.daichi@xfce.org>
+
+Hi,
+
+The packages listed below may work with forthcoming 4.4,
+if you find the missing names, let me know.
+
+Thunar plugin:
+
+  thunar-archive-plugin 0.1.1svn (de hu ja ru)
+  thunar-media-tags-plugin 0.1.0svn (de el hu ja)
+
+Xfce4-panel plugin:
+
+  verve-plugin 0.2.0 (de eu fr ja nl vi)
+  xfce4-fsguard-plugin 0.3.0 (de fr hu ko lt pl vi)
+  xfce4-modemlights-plugin 0.1.2 (eu hu ko nl vi)
+  xfce4-mount-plugin 0.4.5 (de el eu fr hu ko lt ru uk vi)
+  xfce4-quicklauncher-plugin 1.9.1 (eu fr hu ja vi)
+  xfce4-sensors-plugin 0.9.0 (de el eu fr hu ja ko lt vi)
+  xfce4-timer-plugin 0.3 (hu ja)
+  xfce4-websearch-plugin 0.2.0 (de hu ja pl vi)
+  xfce4-xfapplet-plugin 0.0.1 (fr hu ja nl pt_BR ru vi zh_CN)
+  xfce4-xkb-plugin 0.4.1 (bg hu ja)
+  xfce4-xmms-plugin 0.4 (de eu hu ja ko lt vi)
+
+Independent:
+
+  xfce4-taskmanager 0.4.0-rc1 (de eu fi fr hu ja pt_BR vi)
+
+Regards,
+-- 
+Daichi
+
+Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+
+
+From daichi at xfce.org  Sun Apr  2 13:12:52 2006
+From: daichi at xfce.org (Daichi Kawahata)
+Date: Sun, 2 Apr 2006 20:12:52 +0900
+Subject: Xfce-goodies with Xfce 4.4
+In-Reply-To: <20060402190323.56b252f2.daichi@xfce.org>
+References: <20060402190323.56b252f2.daichi@xfce.org>
+Message-ID: <20060402201252.08bbf813.daichi@xfce.org>
+
+On Sun, 2 Apr 2006 19:03:23 +0900
+Daichi Kawahata wrote:
+
+> Hi,
+> 
+> The packages listed below may work with forthcoming 4.4,
+> if you find the missing names, let me know.
+
+(snip)
+
+>   xfce4-modemlights-plugin 0.1.2 (eu hu ko nl vi)
+
+No, it doesn't work with Xfce4-panel 4.4.
+
+Regards,
+-- 
+Daichi
+
+Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+
+
+From bugzilla-daemon at xfce.org  Mon Apr  3 11:16:34 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  3 Apr 2006 09:16:34 +0000 (UTC)
+Subject: [Bug 1634] New: bad free() on plugin remove
+Message-ID: <bug-1634-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1634
+
+           Summary: bad free() on plugin remove
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Other
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: clipman
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: jani at ubuntu.com
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.1)
+Gecko/20060324 Ubuntu/dapper Firefox/1.5.0.1
+Build Identifier: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.1)
+Gecko/20060324 Ubuntu/dapper Firefox/1.5.0.1
+
+On removing clipman 0.6.1 from the panel this is printed
+
+*** glibc detected *** free(): invalid pointer: 0x08093a90 ***
+otherwise the plugin in removed just fine.
+
+tested on ubuntu dapper with current svn panel. 
+
+Reproducible: Always
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From jannis at xfce.org  Mon Apr  3 21:38:11 2006
+From: jannis at xfce.org (Jannis Pohlmann)
+Date: Mon, 3 Apr 2006 21:38:11 +0200
+Subject: ANNOUNCE: Verve Plugin 0.3.0 Released
+Message-ID: <20060403213811.94699cac.jannis@xfce.org>
+
+Hey all,
+
+I am pleased to announce the third release of my panel command line
+plugin. It has at least one cool new feature: Grabbing the focus through
+a shell command (which can e.g. be connected to a keyboard shortcut).
+
+But first of all we have a few bug fixes:
+
+  * If you enter a command twice, the last one is not added to the
+    command history anymore (fixes bug #6900). This avoids having a
+    history looking like this:
+    
+      xfce4-appfinder
+      thunar
+      thunar
+      thunar
+
+    Instead, this would now look like this:
+
+      xfce4-appfinder
+      thunar
+
+    This makes browsing the history faster.
+
+  * Shell errors, which e.g. occured when entering a single quote (')
+    no longer crash the plugin (bug #6663). 
+
+  * Commands from the history now appear in the auto-completion results.
+
+Now for the new features:
+
+  * Terminal startup: You can now run commands in your favourite
+    terminal emulator by holding down the CTRL key while pressing ENTER
+    to execute your input. In future Versions of Xfce (>= 4.4) you can
+    adjust your preferred terminal emulator in the "Preferred
+    Applications" section of the MCS manager.
+
+  * Focus grabbing: There's now a helper script (written in Python)
+    which makes it possible to let Verve grab the focus. It's called
+    "verve-focus" and is copied to $(bindir) (e.g. /usr/local/bin)
+    during the installation. You'll need D-BUS bindings for Python in
+    order to make use of it. 
+
+    Note that you can easily assign a keyboard shortcut for Verve now.
+    Just add an entry to the shorcut or keyboard plugin in the MCS
+    manager to run verve-focus. 
+
+    After running the script, Verve should start to flash. You can stop
+    this by either simply typing what you wanted to type, by pressing
+    an unimportant key like SHIFT or by clicking into the input field
+    with the first or second mouse button.
+
+  * org.xfce.RunDialog D-BUS service: Verve now supports this service
+    which can be used as a backend for xfrun4 Xfce >= 4.4. xfrun4 will
+    check for a running org.xfce.RunDialog service and call the
+    first one available instead of popping up the well-known dialog
+    window.
+
+That's it. 
+
+ChangeLog is available on
+  
+  https://developer.berlios.de/project/shownotes.php?release_id=9652
+
+The release tarball can be downloaded from
+  
+  http://prdownload.berlios.de/xfce-goodies/verve-plugin-0.3.0.tar.bz2
+
+Regards,
+Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 191 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060403/3bda7a7e/attachment.pgp>
+
+From jannis at xfce.org  Mon Apr  3 21:41:27 2006
+From: jannis at xfce.org (Jannis Pohlmann)
+Date: Mon, 3 Apr 2006 21:41:27 +0200
+Subject: ANNOUNCE: Verve Plugin 0.3.0 Released
+In-Reply-To: <20060403213811.94699cac.jannis@xfce.org>
+References: <20060403213811.94699cac.jannis@xfce.org>
+Message-ID: <20060403214127.97cfbb17.jannis@xfce.org>
+
+Oops, forgot to mention one feature.
+
+> 
+> Now for the new features:
+> 
+
+  * Directories can now be opened with exo-open (Xfce SVN).
+
+Regards,
+Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 191 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060403/aeb285b8/attachment.pgp>
+
+From masse_nicolas at yahoo.fr  Tue Apr  4 21:43:30 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Tue, 4 Apr 2006 21:43:30 +0200
+Subject: Xfce-goodies with Xfce 4.4
+In-Reply-To: <20060402190323.56b252f2.daichi@xfce.org>
+References: <20060402190323.56b252f2.daichi@xfce.org>
+Message-ID: <20060404214330.6e753e65.masse_nicolas@yahoo.fr>
+
+On Sun, 2 Apr 2006 19:03:23 +0900
+Daichi Kawahata <daichi at xfce.org> wrote:
+
+> Hi,
+> 
+> The packages listed below may work with forthcoming 4.4,
+> if you find the missing names, let me know.
+> 
+> Thunar plugin:
+> 
+>   thunar-archive-plugin 0.1.1svn (de hu ja ru)
+>   thunar-media-tags-plugin 0.1.0svn (de el hu ja)
+> 
+
+I did maintain such a list at a time, and here is the differences I have:
+
+DONE
+====
+*Tested 
+xfce4-mount-plugin       by Fabian Nowak
+xfce4-showdesktop-plugin   (4)
+xfce4-battery-plugin     by Jasper                        (1) (2)    
+
+*untested
+xfce4-clipman-plugin    by Nick Schermer        (5) 
+xfce4-cpugraph-plugin by Jasper                       (1) (2)
+xfce4-diskperf-plugin   by Jasper                        (1) (2)
+xfce4-genmon-plugin   by Jasper                        (1) (2)
+xfce4-i8k-plugin             by Antonio Musumeci  (3)
+xfce4-megahertz-plugin  by  Wit Wilinski           (3)
+xfce4-minicmd-plugin  by Ori Bernstein           (2) (3) 
+xfce4-mixer                    by Danny / Ori                (4)
+xfce4-netload-plugin    by Jasper                        (1) (2)
+xfce4-websearch-plugin  by Piotr Wolny
+xfce4-mailwatch-plugin      by Brian an Jasper (4)
+
+
+(1) can be found at  http://www.xfce.org/~jasper/plugins/
+(2) unofficial
+(3) Some said they did, but I found nothing in berlios svn (in trunk) like it should be
+(4) Are part of the Xfce SVN
+(5) available at http://foo-projects.org/~nick/plugins/ (will probably replace the original)
+
+
+
+> Xfce4-panel plugin:
+> 
+>   verve-plugin 0.2.0 (de eu fr ja nl vi)
+>   xfce4-fsguard-plugin 0.3.0 (de fr hu ko lt pl vi)
+>   xfce4-modemlights-plugin 0.1.2 (eu hu ko nl vi)
+>   xfce4-mount-plugin 0.4.5 (de el eu fr hu ko lt ru uk vi)
+>   xfce4-quicklauncher-plugin 1.9.1 (eu fr hu ja vi)
+>   xfce4-sensors-plugin 0.9.0 (de el eu fr hu ja ko lt vi)
+>   xfce4-timer-plugin 0.3 (hu ja)
+>   xfce4-websearch-plugin 0.2.0 (de hu ja pl vi)
+>   xfce4-xfapplet-plugin 0.0.1 (fr hu ja nl pt_BR ru vi zh_CN)
+>   xfce4-xkb-plugin 0.4.1 (bg hu ja)
+>   xfce4-xmms-plugin 0.4 (de eu hu ja ko lt vi)
+> 
+> Independent:
+> 
+>   xfce4-taskmanager 0.4.0-rc1 (de eu fi fr hu ja pt_BR vi)
+> 
+> Regards,
+> -- 
+> Daichi
+> 
+> Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+> Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+From bugzilla-daemon at xfce.org  Fri Apr  7 16:04:54 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri,  7 Apr 2006 14:04:54 +0000 (UTC)
+Subject: [Bug 1646] New: layout indicator is not updated and wrong flag/code is shown
+Message-ID: <bug-1646-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1646
+
+           Summary: layout indicator is not updated and wrong flag/code is
+                    shown
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: All
+               URL: http://forum.xfce.org/index.php?topic=2343.msg10117
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: xkb
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: zitbag at post.sk
+
+
+User-Agent:       Opera/9.00 (X11; Linux i686; U; en)
+Build Identifier: Ubuntu 5.10 2.6.12-10-686-smp, XFCE 4.2.2, xfce4-xkb-plugin
+0.3.2-3ubuntu2
+
+1) XKB switcher doesn't react to setxkbmap. <a
+href="http://bugzilla.xfce.org/show_bug.cgi?id=674">BUG 674</a>
+2) The indicated layout flag / code does not correspond with the real layout,
+but is shifted by one or the "default" 'PC' is shown.
+
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. install multiple keyboard layouts, eg. [EN, IT, HU]
+2. click on the applet.
+
+Actual Results:  
+the current keyboard layout and the indicated code does not correspond:
+  ...
+  layout: EN shown: PC
+  layout: IT shown: EN
+  layout: HU shown: IT
+  layout: EN shown: PC
+  ...
+
+Expected Results:  
+1) + 2) XKB should reflect the correct keyboard layout currently set.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri Apr  7 16:40:12 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri,  7 Apr 2006 14:40:12 +0000 (UTC)
+Subject: [Bug 1646] layout indicator is not updated and wrong flag/code is shown
+In-Reply-To: <bug-1646-590@http.bugzilla.xfce.org/>
+Message-ID: <20060407144012.B74E2F2927@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1646
+
+
+sasoiliev at mamul.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |sasoiliev at mamul.org
+
+
+
+
+------- Comment #1 from sasoiliev at mamul.org  2006-04-07 14:40 UTC -------
+Can you specify the version of the plugin with which this behaviour is
+observed?
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri Apr  7 17:47:22 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri,  7 Apr 2006 15:47:22 +0000 (UTC)
+Subject: [Bug 674] Setting layout with setxkbmap freezes xkb applet
+In-Reply-To: <bug-674-590@http.bugzilla.xfce.org/>
+Message-ID: <20060407154722.CADD6F2A31@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=674
+
+
+sasoiliev at mamul.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |sasoiliev at mamul.org
+
+
+
+
+------- Comment #1 from sasoiliev at mamul.org  2006-04-07 15:47 UTC -------
+The plugin does not handle the XKB configuration runtime changes. This is a
+known issue and will be fixed in some version in the future.
+
+a sidenote: Freezing the panel should require just restarting the panel itself,
+not X.
+
+I wonder what makes you call setxkbmap in order to switch layouts? I mean, the
+common setup should be to configure XKB layouts through XF86Config/xorg.conf or
+by running setxkbmap on X startup and then switch layouts through a keyboard
+shortcut (e.g. Alt-Shift).
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri Apr  7 18:05:31 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri,  7 Apr 2006 16:05:31 +0000 (UTC)
+Subject: [Bug 674] Setting layout with setxkbmap freezes xkb applet
+In-Reply-To: <bug-674-590@http.bugzilla.xfce.org/>
+Message-ID: <20060407160531.20921F2A31@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=674
+
+
+
+
+
+------- Comment #2 from andrewski at fr.st  2006-04-07 16:05 UTC -------
+(In reply to comment #1)
+> I wonder what makes you call setxkbmap in order to switch layouts? I mean, the
+> common setup should be to configure XKB layouts through XF86Config/xorg.conf or
+> by running setxkbmap on X startup and then switch layouts through a keyboard
+> shortcut (e.g. Alt-Shift).
+
+At one point, I had used setxkbmap to set the XKB layout to my secondary layout
+in my ~/.bashrc, so that it would be loaded when X started.  This is when I had
+noticed this bug.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sat Apr  8 12:21:14 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat,  8 Apr 2006 10:21:14 +0000 (UTC)
+Subject: [Bug 1646] layout indicator is not updated and wrong flag/code is shown
+In-Reply-To: <bug-1646-590@http.bugzilla.xfce.org/>
+Message-ID: <20060408102114.1253EF2A2F@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1646
+
+
+
+
+
+------- Comment #2 from zitbag at post.sk  2006-04-08 10:21 UTC -------
+xfce4-xkb-plugin 0.3.2-3ubuntu2 shipped with XUbuntu 5.10 
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sat Apr  8 12:26:32 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat,  8 Apr 2006 10:26:32 +0000 (UTC)
+Subject: [Bug 1646] layout indicator is not updated and wrong flag/code is shown
+In-Reply-To: <bug-1646-590@http.bugzilla.xfce.org/>
+Message-ID: <20060408102632.0F21AF2927@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1646
+
+
+
+
+
+------- Comment #3 from sasoiliev at mamul.org  2006-04-08 10:26 UTC -------
+This bug is fixed in:
+version 0.3.5 for Xfce 4.2 panel and
+version 0.4.1 for Xfce 4.4 panel
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From rcoacci at gmail.com  Sun Apr  9 00:07:19 2006
+From: rcoacci at gmail.com (Rodrigo Coacci)
+Date: Sat, 8 Apr 2006 19:07:19 -0300
+Subject: Xfce 4.4
+Message-ID: <b39c97d70604081507n796d723em5cbd3f235edefce6@mail.gmail.com>
+
+Is there any plans about migrating the panel plugins for Xfce 4.4?
+I've tried some of the plugins but no one seemed to work with svn versions
+of Xfce 4.4...
+Is there any API freeze delay?
+
+--
+Abra?os,
+      Rodrigo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060408/c870c54d/attachment.html>
+
+From rcoacci at gmail.com  Sun Apr  9 00:08:18 2006
+From: rcoacci at gmail.com (Rodrigo Coacci)
+Date: Sat, 8 Apr 2006 19:08:18 -0300
+Subject: Xfce 4.4
+Message-ID: <b39c97d70604081508i1972b6b6j4544186419b3e3a4@mail.gmail.com>
+
+Is there any plans about migrating the panel plugins for Xfce 4.4?
+I've tried some of the plugins but no one seemed to work with svn versions
+of Xfce 4.4...
+Is there any API freeze delay?
+
+
+--
+Cheers,
+      Rodrigo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060408/1e762aa2/attachment.html>
+
+From sasoiliev at mamul.org  Sun Apr  9 04:54:46 2006
+From: sasoiliev at mamul.org (Alexander Iliev)
+Date: Sun, 09 Apr 2006 05:54:46 +0300
+Subject: Xfce 4.4
+In-Reply-To: <b39c97d70604081507n796d723em5cbd3f235edefce6@mail.gmail.com>
+References: <b39c97d70604081507n796d723em5cbd3f235edefce6@mail.gmail.com>
+Message-ID: <44387776.3030107@mamul.org>
+
+Rodrigo Coacci wrote:
+> Is there any plans about migrating the panel plugins for Xfce 4.4?
+> I've tried some of the plugins but no one seemed to work with svn 
+> versions of Xfce 4.4...
+
+Daichi Kawahata has posted a list of goodies, supporting the Xfce 4.4
+panel plugin interface. This list is right here:
+
+https://lists.berlios.de/pipermail/xfce-goodies-dev/2006-April/001010.html
+
+> Is there any API freeze delay?
+
+I think Jasper should answer this.
+
+
+Cheers,
+-- 
+Alexander Iliev
+
+
+From jasper at xfce.org  Sun Apr  9 09:25:18 2006
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Sun, 09 Apr 2006 09:25:18 +0200
+Subject: Xfce 4.4
+In-Reply-To: <44387776.3030107@mamul.org>
+References: <b39c97d70604081507n796d723em5cbd3f235edefce6@mail.gmail.com> <44387776.3030107@mamul.org>
+Message-ID: <4438B6DE.80901@xfce.org>
+
+Alexander Iliev schreef:
+> Rodrigo Coacci wrote:
+>> Is there any plans about migrating the panel plugins for Xfce 4.4?
+>> I've tried some of the plugins but no one seemed to work with svn 
+>> versions of Xfce 4.4...
+> 
+> Daichi Kawahata has posted a list of goodies, supporting the Xfce 4.4
+> panel plugin interface. This list is right here:
+> 
+> https://lists.berlios.de/pipermail/xfce-goodies-dev/2006-April/001010.html
+> 
+>> Is there any API freeze delay?
+> 
+> I think Jasper should answer this.
+> 
+
+People should really port their plugins as soon as possible, since we 
+are close to a first 4.4 beta release. I made a couple of ports, mostly 
+as an example, but I don't have enough time do do this myself.
+
+The idea of the plugins always was that 'third-party developers' (read: 
+other people than me) would write, develop and maintain them. However, 
+there has not been a lot of discussion on this list I'm afraid, so I can 
+only presume that many plugin writers are just as busy as I am :(
+
+	Jasper
+
+
+
+From daichi at xfce.org  Sun Apr  9 12:16:11 2006
+From: daichi at xfce.org (Daichi Kawahata)
+Date: Sun, 9 Apr 2006 19:16:11 +0900
+Subject: xfce4-clipman-plugin 0.6.2
+Message-ID: <20060409191611.281129ee.daichi@xfce.org>
+
+Hi Nick,
+
+Please take a look at the attached patch which enables
+working i18n (Japanese translations incl.).
+
+Also, the clip manager plugin crashes on exit, check
+the attached stack trace log as well. My build environment
+was GTK+ 2.9.0, GLib 2.11.0, gcc 4.0.1 on IRIX 6.5.22m.
+
+Regards,
+-- 
+Daichi
+
+Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: ja.po.gz
+Type: application/x-gzip
+Size: 1438 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060409/71f4211e/attachment.bin>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-clipman-plugin-0.6.2.bt.gz
+Type: application/x-gzip
+Size: 3731 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060409/71f4211e/attachment-0001.bin>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-clipman-plugin-0.6.2-i18n.patch.gz
+Type: application/x-gzip
+Size: 1556 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060409/71f4211e/attachment-0002.bin>
+
+From nickschermer at gmail.com  Sun Apr  9 13:24:10 2006
+From: nickschermer at gmail.com (Nick Schermer)
+Date: Sun, 9 Apr 2006 13:24:10 +0200
+Subject: xfce4-clipman-plugin 0.6.2
+In-Reply-To: <20060409191611.281129ee.daichi@xfce.org>
+References: <20060409191611.281129ee.daichi@xfce.org>
+Message-ID: <4abe35490604090424o7cbcf704mc21a1c587e80fa35@mail.gmail.com>
+
+I'll do that later this day, thanks Daichi.
+
+Nick
+
+2006/4/9, Daichi Kawahata <daichi at xfce.org>:
+>
+> Hi Nick,
+>
+> Please take a look at the attached patch which enables
+> working i18n (Japanese translations incl.).
+>
+> Also, the clip manager plugin crashes on exit, check
+> the attached stack trace log as well. My build environment
+> was GTK+ 2.9.0, GLib 2.11.0, gcc 4.0.1 on IRIX 6.5.22m.
+>
+> Regards,
+> --
+> Daichi
+>
+> Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+> Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+>
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060409/e25bcc91/attachment.html>
+
+From nickschermer at gmail.com  Sun Apr  9 20:30:24 2006
+From: nickschermer at gmail.com (Nick Schermer)
+Date: Sun, 9 Apr 2006 20:30:24 +0200
+Subject: xfce4-clipman-plugin 0.6.2
+In-Reply-To: <4abe35490604090424o7cbcf704mc21a1c587e80fa35@mail.gmail.com>
+References: <20060409191611.281129ee.daichi@xfce.org>
+	 <4abe35490604090424o7cbcf704mc21a1c587e80fa35@mail.gmail.com>
+Message-ID: <4abe35490604091130r18cbc66bs6d26b01106e490e1@mail.gmail.com>
+
+Fixed a couple of bugs (including yours Daichi), removed colors, new pref.
+dialog.
+I've also added tooltips to the pref. dialog, can you guys check it?
+Probably some corrections needed!
+
+Nick
+
+http://www.foo-projects.org/~nick/plugins/xfce4-clipman-plugin-0.6.3.tar.bz2
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060409/9aec7eaf/attachment.html>
+
+From bugzilla-daemon at xfce.org  Sun Apr  9 21:37:27 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  9 Apr 2006 19:37:27 +0000 (UTC)
+Subject: [Bug 1651] New: borders of windows being displayed when mouse moved over taskbar
+Message-ID: <bug-1651-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1651
+
+           Summary: borders of windows being displayed when mouse moved over
+                    taskbar
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: All
+        OS/Version: All
+            Status: NEW
+          Severity: enhancement
+          Priority: Medium
+         Component: taskbar
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: lv at lekv.de
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux i686; de-DE; rv:1.7.12)
+Gecko/20051010 Firefox/1.0.4 (Ubuntu package 1.0.7)
+Build Identifier: Mozilla/5.0 (X11; U; Linux i686; de-DE; rv:1.7.12)
+Gecko/20051010 Firefox/1.0.4 (Ubuntu package 1.0.7)
+
+I tought, it would be nice to have the borders of windows shown when i move the
+mouse over the correspondig buttons on the taskbar. This should look just like
+alt-tab does. I'm using the ubuntu-breezy debs and dunno, if alt-tab still has
+that feature.
+The reason for this is, that i recognize windows by there size and position
+much faster than by their name, which i would have to read, interpret and so
+on. Not that i'm an analphabet (i'm typing, eh?). But if i alt-tab-cycle
+through lots of terminals i usually know, where which session was located...
+but am to lazy to parse the whole user at machine:/dir string which even doesn't
+reveal the program running in the session.
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. Move mouse over taskbar
+2.
+3.
+
+Actual Results:  
+nothin
+
+Expected Results:  
+Frames of windows apperaing
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Apr  9 21:49:16 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  9 Apr 2006 19:49:16 +0000 (UTC)
+Subject: [Bug 1652] New: option to show only iconified/normal windows
+Message-ID: <bug-1652-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1652
+
+           Summary: option to show only iconified/normal windows
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: All
+        OS/Version: Linux
+            Status: NEW
+          Severity: enhancement
+          Priority: Low
+         Component: taskbar
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: bjoern.martensen at gmail.com
+
+
+so you can set up two taskbars for example, where one displays all normal
+windows, and one shows only minimized windows. i used sth like that in my fvwm
+setup and i think it would be a nice addition. the "icon box" plugin can show
+only minimized apps, but i like the view of the taskbar better.
+
+perhaps a combobox "show window type" with the options "only minimized
+windows", "no minimized windows" and "all windows" in the taskbar plugin
+preferences.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From craesh at craesh.net  Tue Apr 11 12:00:10 2006
+From: craesh at craesh.net (Sacher Khoudari)
+Date: Tue, 11 Apr 2006 12:00:10 +0200
+Subject: Patch for battery-plugin - warn as soon as the battery is fully charged
+Message-ID: <443B7E2A.1030708@craesh.net>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Hi!
+
+Because my Thinkpad 600e has this annoying battery problem I need
+something that warns me as soon as my battery is fully charged, to not
+overcharge it. I had once written a small python-script. But because the
+battery-plugin already warns you about almost-empty batteries, I had the
+idea to now patch it for this purpose. I actually just did a copy &
+paste & :s/low/full/g, so it's nothing special ;)
+
+I'm not sure how many Xfce users will need it. I think most laptops
+prevent the battery from being overcharged. But it won't harm anyone to
+give the users the option to be warned. So you are free to use this
+patch if you want to ;)
+
+Greetings!
+Sacher
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+Comment: Using GnuPG with Thunderbird - http://enigmail.mozdev.org
+
+iD8DBQFEO34lqj8R1rngt5kRAn0ZAKCnvCt4s2UuL2wcWLcPV81l/SkhSQCgisHi
+JC86m6PN11uivvzTOm0YFwg=
+=Nw+j
+-----END PGP SIGNATURE-----
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: battmon.c.patch
+Type: text/x-patch
+Size: 9997 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060411/417ed732/attachment.bin>
+
+From bugzilla-daemon at xfce.org  Tue Apr 11 20:59:32 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 11 Apr 2006 18:59:32 +0000 (UTC)
+Subject: [Bug 1235] Date&Time Plugin : "Week day starts on Monday" doesn't work
+In-Reply-To: <bug-1235-590@http.bugzilla.xfce.org/>
+Message-ID: <20060411185932.0D54AF2927@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1235
+
+
+vitaly at harisov.name changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |vitaly at harisov.name
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Mon Apr 17 12:57:48 2006
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Mon, 17 Apr 2006 12:57:48 +0200
+Subject: thunar-archive-plugin 0.1.2
+Message-ID: <444374AC.6060508@unix-ag.uni-siegen.de>
+
+I just released the second version of the thunar-archive-plugin. It
+includes a bunch of new translations, and fixes the problem that the
+folder was not properly reloaded after creating or extracting an
+archive. It requires Thunar 0.2.2alpha2 or above and file-roller.
+
+Download:
+http://developer.berlios.de/project/showfiles.php?group_id=910&release_id=9778
+
+Release notes:
+http://developer.berlios.de/project/shownotes.php?release_id=9778
+
+Website (with screenshots):
+http://xfce.org/~benny/projects/thunar-archive-plugin/index.html
+
+Benedikt
+
+
+From bugzilla-daemon at xfce.org  Mon Apr 17 22:16:16 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 17 Apr 2006 20:16:16 +0000 (UTC)
+Subject: [Bug 1672] Space between the taskbar icon and label
+In-Reply-To: <bug-1672-590@http.bugzilla.xfce.org/>
+Message-ID: <20060417201616.CC1B6F2A30@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1672
+
+
+
+
+
+------- Comment #1 from nick at xfce.org  2006-04-17 20:16 UTC -------
+Created an attachment (id=501)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=501&action=view)
+4px space between icon and label
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Apr 17 22:15:24 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 17 Apr 2006 20:15:24 +0000 (UTC)
+Subject: [Bug 1672] New: Space between the taskbar icon and label
+Message-ID: <bug-1672-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1672
+
+           Summary: Space between the taskbar icon and label
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Other
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: taskbar
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: nick at xfce.org
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8)
+Gecko/20060412 Firefox/2.0a1
+Build Identifier: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8)
+Gecko/20060412 Firefox/2.0a1
+
+(Officially this is a patch for libxfcegui4)
+
+There is no space between the taskbar icon and the label. This may
+look a bit confusing when the icon has a black border. This patch added
+some cell space in the table when the taskbar labels are enabled.
+
+Reproducible: Always
+
+Steps to Reproduce:
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Apr 17 22:54:21 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 17 Apr 2006 20:54:21 +0000 (UTC)
+Subject: [Bug 1672] Space between the taskbar icon and label
+In-Reply-To: <bug-1672-590@http.bugzilla.xfce.org/>
+Message-ID: <20060417205421.4954FF2A31@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1672
+
+
+pollux at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+         AssignedTo|xfce-goodies-dev at berlios.de |jasper at xfce.org
+          Component|taskbar                     |xfce4-panel
+            Product|Xfce Panel Plugins          |Xfce
+   Target Milestone|---                         |unknown
+            Version|unspecified                 |4.3.90.1 (4.4BETA1)
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+You are the assignee for the bug, or are watching the assignee.
+
+
+From corsac at corsac.net  Tue Apr 18 23:08:50 2006
+From: corsac at corsac.net (Yves-Alexis Perez)
+Date: Tue, 18 Apr 2006 23:08:50 +0200
+Subject: problem in install target of verve plugin
+Message-ID: <1145394530.22760.1.camel@hidalgo>
+
+During debian verve plugin packaging I found a little bug in the
+Makefile.in file which causes problems for packaging (installing in the
+package).
+
+The patch attached fixes the problem.
+
+Regards,
+-- 
+Yves-Alexis Perez
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 01_fix-install-target.patch
+Type: text/x-patch
+Size: 423 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060418/cf2db195/attachment.bin>
+
+From h.aling at home.nl  Tue Apr 18 23:27:35 2006
+From: h.aling at home.nl (Harold Aling)
+Date: Tue, 18 Apr 2006 23:27:35 +0200
+Subject: problem in install target of verve plugin
+In-Reply-To: <1145394530.22760.1.camel@hidalgo>
+References: <1145394530.22760.1.camel@hidalgo>
+Message-ID: <444559C7.2070101@home.nl>
+
+Thank you!
+
+I was having the same problem in my ebuild for Gentoo... Your patch 
+fixed it...
+
+-H-
+
+Yves-Alexis Perez wrote:
+> During debian verve plugin packaging I found a little bug in the
+> Makefile.in file which causes problems for packaging (installing in the
+> package).
+>
+> The patch attached fixes the problem.
+>
+> Regards,
+>   
+> ------------------------------------------------------------------------
+>
+> --- scripts/Makefile.in.old	2006-04-03 21:52:01.000000000 +0200
+> +++ scripts/Makefile.in	2006-04-18 23:03:36.000000000 +0200
+> @@ -385,7 +385,8 @@
+>  
+>  
+>  install:
+> -	$(INSTALL) verve-focus $(bindir)
+> +	test -z "$(bindir)" || $(mkdir_p) "$(DESTDIR)$(bindir)"
+> +	$(INSTALL) verve-focus $(DESTDIR)$(bindir)
+>  
+>  # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
+>  # Tell versions [3.59,3.63) of GNU make to not export all variables.
+>   
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060418/27c1617c/attachment.html>
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Wed Apr 19 21:27:10 2006
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Wed, 19 Apr 2006 21:27:10 +0200
+Subject: Panel plugins for 4.4
+Message-ID: <44468F0E.3020005@unix-ag.uni-siegen.de>
+
+I think the time has come to update the goodies to the new panel. I'd
+like to port some of them (i.e. the CPU graph plugin) to Solaris for
+Xfce 4.4.0. Jasper has done the work for several plugins already. Now
+its time to merge that work into trunk.
+
+What do you think?
+
+Benedikt
+
+
+From jasper at xfce.org  Wed Apr 19 21:45:45 2006
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Wed, 19 Apr 2006 21:45:45 +0200
+Subject: Panel plugins for 4.4
+In-Reply-To: <44468F0E.3020005@unix-ag.uni-siegen.de>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de>
+Message-ID: <44469369.5080307@xfce.org>
+
+Benedikt Meurer schreef:
+> I think the time has come to update the goodies to the new panel. I'd
+> like to port some of them (i.e. the CPU graph plugin) to Solaris for
+> Xfce 4.4.0. Jasper has done the work for several plugins already. Now
+> its time to merge that work into trunk.
+> 
+> What do you think?
+> 
+
+Yes, this is really needed.
+
+Let me be honest. I have a feeling that several plugins are rather 
+unmaintained at the moment. Plugins for which there is no indication 
+that they are being ported now, probably will not be ported before the 
+release unless someone else does the work.
+
+So we (read: you ;-) can probably start porting the missing plugins, 
+unless the maintainer indicates they are working on it.
+
+Does someone have a reasonably up-to-date list of ported plugins? 
+Nicolas perhaps?
+
+	Jasper
+
+
+
+From asm3072 at njit.edu  Wed Apr 19 21:56:39 2006
+From: asm3072 at njit.edu (Antonio SJ Musumeci)
+Date: Wed, 19 Apr 2006 15:56:39 -0400
+Subject: Panel plugins for 4.4
+In-Reply-To: <44469369.5080307@xfce.org>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de> <44469369.5080307@xfce.org>
+Message-ID: <444695F7.8060304@njit.edu>
+
+I started to do a full rewrite of the i8k plugin to add acpi support and 
+allow for it to be easily extended to other archs... but i'm not close 
+to finishing it at the moment and have another project that has all my 
+attention for the next month. If someone is willing to port it i'd be 
+very grateful.
+
+-antonio
+
+Jasper Huijsmans wrote:
+> Benedikt Meurer schreef:
+>> I think the time has come to update the goodies to the new panel. I'd
+>> like to port some of them (i.e. the CPU graph plugin) to Solaris for
+>> Xfce 4.4.0. Jasper has done the work for several plugins already. Now
+>> its time to merge that work into trunk.
+>>
+>> What do you think?
+>>
+> 
+> Yes, this is really needed.
+> 
+> Let me be honest. I have a feeling that several plugins are rather 
+> unmaintained at the moment. Plugins for which there is no indication 
+> that they are being ported now, probably will not be ported before the 
+> release unless someone else does the work.
+> 
+> So we (read: you ;-) can probably start porting the missing plugins, 
+> unless the maintainer indicates they are working on it.
+> 
+> Does someone have a reasonably up-to-date list of ported plugins? 
+> Nicolas perhaps?
+> 
+>     Jasper
+> 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+
+
+From kieroglu at math.washington.edu  Wed Apr 19 21:59:34 2006
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Wed, 19 Apr 2006 12:59:34 -0700 (PDT)
+Subject: Panel plugins for 4.4
+In-Reply-To: <44469369.5080307@xfce.org>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de> <44469369.5080307@xfce.org>
+Message-ID: <Pine.LNX.4.64.0604191256100.1861@zeno3.math.washington.edu>
+
+  Here's a message that was prevoiously sent to this list, it contains a 
+table of plugins and their status.
+
+  Let me mention what I have on my side: I maintain the xmms and timer 
+plugins. xmms was ported to 4.4 months ago, and timer was written for 4.4 
+already. There was a recent patch proposed for the xmms plugin, I'll check 
+if I have time to apply it soon (I'll be very busy until the end of next 
+week).
+
+On Tue, 4 Apr 2006, masse_nicolas at yahoo.fr wrote:
+> 
+> Date: Tue, 4 Apr 2006 21:43:30 +0200
+> From: masse_nicolas at yahoo.fr
+> Reply-To: xfce-goodies-dev at berlios.de
+> To: xfce-goodies-dev at berlios.de
+> Subject: Re: Xfce-goodies with Xfce 4.4
+> 
+> On Sun, 2 Apr 2006 19:03:23 +0900
+> Daichi Kawahata <daichi at xfce.org> wrote:
+> 
+> > Hi,
+> > 
+> > The packages listed below may work with forthcoming 4.4,
+> > if you find the missing names, let me know.
+> > 
+> > Thunar plugin:
+> > 
+> >   thunar-archive-plugin 0.1.1svn (de hu ja ru)
+> >   thunar-media-tags-plugin 0.1.0svn (de el hu ja)
+> > 
+> 
+> I did maintain such a list at a time, and here is the differences I have:
+> 
+> DONE
+> ====
+> *Tested 
+> xfce4-mount-plugin       by Fabian Nowak
+> xfce4-showdesktop-plugin   (4)
+> xfce4-battery-plugin     by Jasper                        (1) (2) 
+> 
+> *untested
+> xfce4-clipman-plugin    by Nick Schermer        (5) 
+> xfce4-cpugraph-plugin by Jasper                       (1) (2)
+> xfce4-diskperf-plugin   by Jasper                        (1) (2)
+> xfce4-genmon-plugin   by Jasper                        (1) (2)
+> xfce4-i8k-plugin             by Antonio Musumeci  (3)
+> xfce4-megahertz-plugin  by  Wit Wilinski           (3)
+> xfce4-minicmd-plugin  by Ori Bernstein           (2) (3) 
+> xfce4-mixer                    by Danny / Ori                (4)
+> xfce4-netload-plugin    by Jasper                        (1) (2)
+> xfce4-websearch-plugin  by Piotr Wolny
+> xfce4-mailwatch-plugin      by Brian an Jasper (4)
+> 
+> 
+> (1) can be found at  http://www.xfce.org/~jasper/plugins/
+> (2) unofficial
+> (3) Some said they did, but I found nothing in berlios svn (in trunk) like it should be
+> (4) Are part of the Xfce SVN
+> (5) available at http://foo-projects.org/~nick/plugins/ (will probably replace the original)
+> 
+> 
+> 
+> > Xfce4-panel plugin:
+> > 
+> >   verve-plugin 0.2.0 (de eu fr ja nl vi)
+> >   xfce4-fsguard-plugin 0.3.0 (de fr hu ko lt pl vi)
+> >   xfce4-modemlights-plugin 0.1.2 (eu hu ko nl vi)
+> >   xfce4-mount-plugin 0.4.5 (de el eu fr hu ko lt ru uk vi)
+> >   xfce4-quicklauncher-plugin 1.9.1 (eu fr hu ja vi)
+> >   xfce4-sensors-plugin 0.9.0 (de el eu fr hu ja ko lt vi)
+> >   xfce4-timer-plugin 0.3 (hu ja)
+> >   xfce4-websearch-plugin 0.2.0 (de hu ja pl vi)
+> >   xfce4-xfapplet-plugin 0.0.1 (fr hu ja nl pt_BR ru vi zh_CN)
+> >   xfce4-xkb-plugin 0.4.1 (bg hu ja)
+> >   xfce4-xmms-plugin 0.4 (de eu hu ja ko lt vi)
+> > 
+> > Independent:
+> > 
+> >   xfce4-taskmanager 0.4.0-rc1 (de eu fi fr hu ja pt_BR vi)
+> > 
+> > Regards,
+> > -- 
+> > Daichi
+> > 
+> > Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+> > Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+> > _______________________________________________
+> > xfce-goodies-dev mailing list
+> > xfce-goodies-dev at lists.berlios.de
+> > http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+>     [ Note: This message contains email list management information ]
+>
+
+On Wed, 19 Apr 2006, Jasper Huijsmans wrote:
+
+> Benedikt Meurer schreef:
+>> I think the time has come to update the goodies to the new panel. I'd
+>> like to port some of them (i.e. the CPU graph plugin) to Solaris for
+>> Xfce 4.4.0. Jasper has done the work for several plugins already. Now
+>> its time to merge that work into trunk.
+>> 
+>> What do you think?
+>> 
+>
+> Yes, this is really needed.
+>
+> Let me be honest. I have a feeling that several plugins are rather 
+> unmaintained at the moment. Plugins for which there is no indication that 
+> they are being ported now, probably will not be ported before the release 
+> unless someone else does the work.
+>
+> So we (read: you ;-) can probably start porting the missing plugins, unless 
+> the maintainer indicates they are working on it.
+>
+> Does someone have a reasonably up-to-date list of ported plugins? Nicolas 
+> perhaps?
+>
+> 	Jasper
+>
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+
+
+From masse_nicolas at yahoo.fr  Wed Apr 19 22:29:12 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Wed, 19 Apr 2006 22:29:12 +0200
+Subject: Panel plugins for 4.4
+In-Reply-To: <20060419221234.f2fe45f8.masse_nicolas@yahoo.fr>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de>
+	<44469369.5080307@xfce.org>
+	<20060419221234.f2fe45f8.masse_nicolas@yahoo.fr>
+Message-ID: <20060419222912.d906ad2e.masse_nicolas@yahoo.fr>
+
+Oups, i send it to the wrong list, sorry.
+
+On Wed, 19 Apr 2006 22:12:34 +0200
+masse_nicolas at yahoo.fr wrote:
+
+> On Wed, 19 Apr 2006 21:45:45 +0200
+> Jasper Huijsmans <jasper at xfce.org> wrote:
+> 
+> > Benedikt Meurer schreef:
+> > > I think the time has come to update the goodies to the new panel. I'd
+> > > like to port some of them (i.e. the CPU graph plugin) to Solaris for
+> > > Xfce 4.4.0. Jasper has done the work for several plugins already. Now
+> > > its time to merge that work into trunk.
+> > > 
+> > > What do you think?
+> > > 
+> > 
+> > Yes, this is really needed.
+> > 
+> > Let me be honest. I have a feeling that several plugins are rather 
+> > unmaintained at the moment. Plugins for which there is no indication 
+> > that they are being ported now, probably will not be ported before the 
+> > release unless someone else does the work.
+> > 
+> > So we (read: you ;-) can probably start porting the missing plugins, 
+> > unless the maintainer indicates they are working on it.
+> > 
+> > Does someone have a reasonably up-to-date list of ported plugins? 
+> > Nicolas perhaps?
+> 
+> Here is the list I have, but I didn't verify all that since some time.
+> Also, it's based on what was said on the mailing list, but as it's written, some of these plugins
+> wasn't available on berlios last time I checked (make some time now).
+> I will try to verify and update this list this week. (Starting just now :-) )
+> 
+> UNKNOW
+> ====== 
+>  xfce4-trigger-launcher
+> 
+> DONE
+> ====
+> *Tested
+> xfce4-quicklauncher-plugin   by Nicolas (myself :-)
+> xfce4-mount-plugin       by Fabian Nowak
+> xfdesktop -- menu plugin    by Brian (4)
+> xfce4-showdesktop-plugin   (4)
+> xfce4-battery-plugin     by Jasper                        (1) (2)    
+> verve-plugin 0.2.0
+> 
+> *untested
+> xfce4-xkb-plugin
+> xfce4-xfapplet-plugin 0.0.1
+> xfce4-fsguard-plugin   
+> xfce4-clipman-plugin    by Nick Schermer        (5) 
+> xfce4-cpugraph-plugin by Jasper                       (1) (2)
+> xfce4-diskperf-plugin   by Jasper                        (1) (2)
+> xfce4-genmon-plugin   by Jasper                        (1) (2)
+> xfce4-i8k-plugin             by Antonio Musumeci  (3)
+> xfce4-megahertz-plugin  by  Wit Wilinski           (3)
+> xfce4-minicmd-plugin  by Ori Bernstein           (2) (3) 
+> xfce4-mixer                    by Danny / Ori                (4)
+> xfce4-netload-plugin    by Jasper                        (1) (2)
+> xfce4-sensors-plugin
+> xfce4-taskbar-plugin (integrated in the panel)
+> xfce4-websearch-plugin  by Piotr Wolny
+> xfce4-windowlist-plugin (marked as not needed)
+> xfce4-xmms-plugin
+> xfce4-timer-plugin
+> xfce4-mailwatch-plugin      by Brian an Jasper (4)
+> xfce4-modemlights-plugin 0.1.2
+> 
+> (1) can be found at  http://www.xfce.org/~jasper/plugins/
+> (2) unofficial
+> (3) Some said they did, but I found nothing in berlios svn (in trunk) like it should be
+> (4) Are part of the Xfce SVN
+> (5) available at http://foo-projects.org/~nick/plugins/ (will probably replace the original)
+> 
+> NOT DONE:
+> =======
+> xfce4-datetime-plugin (will be replaced by orage)
+> xfce4-notes-plugin
+> xfce4-screenshooter-plugin
+> xfce4-systemload-plugin
+> xfce4-wavelan-plugin
+> xfce4-weather-plugin
+> xfce4-lua-graph-plugin
+> xfce4-eyes
+> xfce4-teatime-plugin
+> xfce4-bglist-editor
+> 
+> > 
+> > 	Jasper
+> > 
+> > _______________________________________________
+> > Xfce4-dev mailing list
+> > Xfce4-dev at xfce.org
+> > http://foo-projects.org/mailman/listinfo/xfce4-dev
+> _______________________________________________
+> Xfce4-dev mailing list
+> Xfce4-dev at xfce.org
+> http://foo-projects.org/mailman/listinfo/xfce4-dev
+
+
+From masse_nicolas at yahoo.fr  Wed Apr 19 23:47:58 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Wed, 19 Apr 2006 23:47:58 +0200
+Subject: Panel plugins for 4.4
+In-Reply-To: <20060419222912.d906ad2e.masse_nicolas@yahoo.fr>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de>
+	<44469369.5080307@xfce.org>
+	<20060419221234.f2fe45f8.masse_nicolas@yahoo.fr>
+	<20060419222912.d906ad2e.masse_nicolas@yahoo.fr>
+Message-ID: <20060419234758.e2ab7faa.masse_nicolas@yahoo.fr>
+
+On Wed, 19 Apr 2006 22:29:12 +0200
+masse_nicolas at yahoo.fr wrote:
+>
+> ...
+
+Ok, before I go to sleep, here is the updated list:
+
+UNKNOW
+====== 
+ xfce4-trigger-launcher
+
+DONE
+====
+*Tested
+xfce4-messenger-plugin
+xfce4-quicklauncher-plugin   
+xfce4-mount-plugin       
+xfdesktop -- menu plugin    
+xfce4-showdesktop-plugin  
+xfce4-battery-plugin                     
+verve-plugin 
+xfce4-xkb-plugin
+xfce4-fsguard-plugin   
+xfce4-clipman-plugin         
+xfce4-cpugraph-plugin                   
+xfce4-diskperf-plugin                      
+xfce4-genmon-plugin                     
+xfce4-minicmd-plugin             
+xfce4-netload-plugin                     
+xfce4-systemload-plugin
+xfce4-weather-plugin (has some bug)
+xfce4-screenshooter-plugin
+xfce4-windowlist-plugin
+xfce4-timer-plugin
+xfce4-websearch-plugin
+xfce4-xmms-plugin 
+(need to do "touch ./NEWS"; 
+xmms is used by default, wich can be boring->can't you make it better autodetected?) 
+xfce4-mailwatch-plugin (no icon the first time the plugin is added -> need a default one)
+
+
+*untested
+xfce4-xfapplet-plugin 0.0.1 (under developement)
+xfce4-i8k-plugin             (being rewritten)
+xfce4-mixer     (libxfce4mcs taken from svn seems too old ==> I won't test it today)
+xfce4-sensors-plugin (I must install libsensor to test this)
+
+NOT DONE:
+=======
+xfce4-modemlights-plugin (I tested the version in svn, it doesn't seems to have been ported)
+xfce4-megahertz-plugin (I tested the version in svn, it doesn't seems to have been ported)
+
+xfce4-datetime-plugin (will be replaced by orage)
+xfce4-notes-plugin (at least, not in trunk)
+xfce4-wavelan-plugin(at least, not in trunk)
+xfce4-lua-graph-plugin(at least, not in trunk)
+xfce4-eyes(at least, not in trunk)
+xfce4-bglist-editor(at least, not in trunk)
+
+xfce4-teatime-plugin(compiles, but doesn't seem to work..., how does it work??? :) )
+
+
+I've tested all the packages who were marked as not done-untested.
+I've also added some comment for some of them. (Perhaps should I add some of them in the bug database???)
+
+Good night, (assuming it makes also night for you)
+Bountykiller.
+
+
+From bjt23 at cornell.edu  Thu Apr 20 01:15:12 2006
+From: bjt23 at cornell.edu (Brian J. Tarricone)
+Date: Wed, 19 Apr 2006 16:15:12 -0700
+Subject: Panel plugins for 4.4
+In-Reply-To: <44468F0E.3020005@unix-ag.uni-siegen.de>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de>
+Message-ID: <4446C480.5030809@cornell.edu>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+On 4/19/2006 12:27 PM, Benedikt Meurer wrote:
+> I think the time has come to update the goodies to the new panel. I'd
+> like to port some of them (i.e. the CPU graph plugin) to Solaris for
+> Xfce 4.4.0. Jasper has done the work for several plugins already. Now
+> its time to merge that work into trunk.
+> 
+> What do you think?
+
+This also reminds me of the default clock plugin.  I mostly rewrote it
+to have datetime-like features, and I remember someone (Nick?) added
+multi-timezone support to what I did, though I don't know where that
+patch is offhand.
+
+The only gripe I recall is that it was missing the analog and LED modes,
+which shouldn't be too hard to add back in.  So...
+
+I have my patch, without the multi-timezone stuff.  Does anyone know
+where the multi-timezone patch is?  I don't mind cleaning it up and
+adding the analog and LED stuff.
+
+	-brian
+
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (MingW32)
+
+iD8DBQFERsSA6XyW6VEeAnsRAiSoAKDS/Tgy0t2PsGCV9AX0lUY/PjMxvACeO7A5
+enkIOke2Yf7SmCKnSekmxZU=
+=Gu3g
+-----END PGP SIGNATURE-----
+
+
+From xotazu at cvc.uab.es  Thu Apr 20 13:29:35 2006
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Thu, 20 Apr 2006 13:29:35 +0200
+Subject: Panel plugins for 4.4
+In-Reply-To: <20060420100010.4641.2850.Mailman@bat.berlios.de>
+References: <20060420100010.4641.2850.Mailman@bat.berlios.de>
+Message-ID: <20060420132935.65f572df@cvc131.uab.es>
+
+	Hello:
+
+	I would like to ask the developer of xfce4-diskperf-plugin to
+port it to FreeBSD.
+
+	I tried to port it to FreeBSD, but system functions are
+different from NetBSD ones that are on the source code.
+
+cheers
+
+Xavier
+
+
+On Thu, 20 Apr 2006 12:00:10 +0200
+xfce-goodies-dev-request at berlios.de wrote:
+
+> I think the time has come to update the goodies to the new panel. I'd
+> like to port some of them (i.e. the CPU graph plugin) to Solaris for
+> Xfce 4.4.0. Jasper has done the work for several plugins already. Now
+> its time to merge that work into trunk.
+> 
+> What do you think?
+> 
+> Benedikt
+
+
+From sas at 321.hu  Fri Apr 21 08:11:08 2006
+From: sas at 321.hu (=?iso-8859-2?Q?SZERV=C1C_Attila?=)
+Date: Fri, 21 Apr 2006 08:11:08 +0200 (CEST)
+Subject: New Backdrop :-)
+Message-ID: <Pine.LNX.4.56L0.0604210802390.10532@localhost>
+
+ Hi,
+
+ I've added beatiful Starfish backdrop (1st strange animal:-)))
+
+ We have 3 Nature background now (+ flower.png)
+
+ Is it time 2 split
+
+ /usr/share/xfce4/backdrops/ to separate backdrops dir?
+
+ /usr/share/xfce4/backdrops/Xfce
+
+ /usr/share/xfce4/backdrops/Nature
+
+ /usr/share/xfce4/backdrops/Other
+
+ Hali: sas aka satie
+
+
+From rcoacci at gmail.com  Fri Apr 21 16:39:33 2006
+From: rcoacci at gmail.com (Rodrigo Coacci)
+Date: Fri, 21 Apr 2006 11:39:33 -0300
+Subject: Panel plugins for 4.4
+In-Reply-To: <4446C480.5030809@cornell.edu>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de>
+	 <4446C480.5030809@cornell.edu>
+Message-ID: <b39c97d70604210739s6cfe09d6o28539024efc37b5c@mail.gmail.com>
+
+What is this xfce4-messenger plugin? And where is it, I can't find it in
+berlios svn
+
+On 4/19/06, Brian J. Tarricone <bjt23 at cornell.edu> wrote:
+>
+> -----BEGIN PGP SIGNED MESSAGE-----
+> Hash: SHA1
+>
+> On 4/19/2006 12:27 PM, Benedikt Meurer wrote:
+> > I think the time has come to update the goodies to the new panel. I'd
+> > like to port some of them (i.e. the CPU graph plugin) to Solaris for
+> > Xfce 4.4.0. Jasper has done the work for several plugins already. Now
+> > its time to merge that work into trunk.
+> >
+> > What do you think?
+>
+> This also reminds me of the default clock plugin.  I mostly rewrote it
+> to have datetime-like features, and I remember someone (Nick?) added
+> multi-timezone support to what I did, though I don't know where that
+> patch is offhand.
+>
+> The only gripe I recall is that it was missing the analog and LED modes,
+> which shouldn't be too hard to add back in.  So...
+>
+> I have my patch, without the multi-timezone stuff.  Does anyone know
+> where the multi-timezone patch is?  I don't mind cleaning it up and
+> adding the analog and LED stuff.
+>
+>         -brian
+>
+>
+> -----BEGIN PGP SIGNATURE-----
+> Version: GnuPG v1.4.2.2 (MingW32)
+>
+> iD8DBQFERsSA6XyW6VEeAnsRAiSoAKDS/Tgy0t2PsGCV9AX0lUY/PjMxvACeO7A5
+> enkIOke2Yf7SmCKnSekmxZU=
+> =Gu3g
+> -----END PGP SIGNATURE-----
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+
+
+
+--
+Abra?os,
+      Rodrigo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060421/cf376401/attachment.html>
+
+From rcoacci at gmail.com  Fri Apr 21 16:59:21 2006
+From: rcoacci at gmail.com (Rodrigo Coacci)
+Date: Fri, 21 Apr 2006 11:59:21 -0300
+Subject: Panel plugins for 4.4
+In-Reply-To: <20060419234758.e2ab7faa.masse_nicolas@yahoo.fr>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de>
+	 <44469369.5080307@xfce.org>
+	 <20060419221234.f2fe45f8.masse_nicolas@yahoo.fr>
+	 <20060419222912.d906ad2e.masse_nicolas@yahoo.fr>
+	 <20060419234758.e2ab7faa.masse_nicolas@yahoo.fr>
+Message-ID: <b39c97d70604210759s7c2bf817xbfcbbcfbc9f96280@mail.gmail.com>
+
+If i'm not wrong those in the TESTED lista were tested with the new
+xfce4-panel right? Where is that xfce4-screenshooter from? I got the last
+svn version and it complains with :
+
+checking for XFCE4_PANEL... configure: error: Package requirements (
+xfce4-panel-1.0 >= 0.10.1) were not met:
+
+No package 'xfce4-panel-1.0' found
+
+
+On 4/19/06, masse_nicolas at yahoo.fr <masse_nicolas at yahoo.fr> wrote:
+>
+> On Wed, 19 Apr 2006 22:29:12 +0200
+> masse_nicolas at yahoo.fr wrote:
+> >
+> > ...
+>
+> Ok, before I go to sleep, here is the updated list:
+>
+> UNKNOW
+> ======
+> xfce4-trigger-launcher
+>
+> DONE
+> ====
+> *Tested
+> xfce4-messenger-plugin
+> xfce4-quicklauncher-plugin
+> xfce4-mount-plugin
+> xfdesktop -- menu plugin
+> xfce4-showdesktop-plugin
+> xfce4-battery-plugin
+> verve-plugin
+> xfce4-xkb-plugin
+> xfce4-fsguard-plugin
+> xfce4-clipman-plugin
+> xfce4-cpugraph-plugin
+> xfce4-diskperf-plugin
+> xfce4-genmon-plugin
+> xfce4-minicmd-plugin
+> xfce4-netload-plugin
+> xfce4-systemload-plugin
+> xfce4-weather-plugin (has some bug)
+> xfce4-screenshooter-plugin
+> xfce4-windowlist-plugin
+> xfce4-timer-plugin
+> xfce4-websearch-plugin
+> xfce4-xmms-plugin
+> (need to do "touch ./NEWS";
+> xmms is used by default, wich can be boring->can't you make it better
+> autodetected?)
+> xfce4-mailwatch-plugin (no icon the first time the plugin is added -> need
+> a default one)
+>
+>
+> *untested
+> xfce4-xfapplet-plugin 0.0.1 (under developement)
+> xfce4-i8k-plugin             (being rewritten)
+> xfce4-mixer     (libxfce4mcs taken from svn seems too old ==> I won't test
+> it today)
+> xfce4-sensors-plugin (I must install libsensor to test this)
+>
+> NOT DONE:
+> =======
+> xfce4-modemlights-plugin (I tested the version in svn, it doesn't seems to
+> have been ported)
+> xfce4-megahertz-plugin (I tested the version in svn, it doesn't seems to
+> have been ported)
+>
+> xfce4-datetime-plugin (will be replaced by orage)
+> xfce4-notes-plugin (at least, not in trunk)
+> xfce4-wavelan-plugin(at least, not in trunk)
+> xfce4-lua-graph-plugin(at least, not in trunk)
+> xfce4-eyes(at least, not in trunk)
+> xfce4-bglist-editor(at least, not in trunk)
+>
+> xfce4-teatime-plugin(compiles, but doesn't seem to work..., how does it
+> work??? :) )
+>
+>
+> I've tested all the packages who were marked as not done-untested.
+> I've also added some comment for some of them. (Perhaps should I add some
+> of them in the bug database???)
+>
+> Good night, (assuming it makes also night for you)
+> Bountykiller.
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+
+
+
+--
+Abra?os,
+      Rodrigo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060421/4cc6c338/attachment.html>
+
+From masse_nicolas at yahoo.fr  Fri Apr 21 21:48:42 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Fri, 21 Apr 2006 21:48:42 +0200
+Subject: Panel plugins for 4.4
+In-Reply-To: <b39c97d70604210759s7c2bf817xbfcbbcfbc9f96280@mail.gmail.com>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de>
+	<44469369.5080307@xfce.org>
+	<20060419221234.f2fe45f8.masse_nicolas@yahoo.fr>
+	<20060419222912.d906ad2e.masse_nicolas@yahoo.fr>
+	<20060419234758.e2ab7faa.masse_nicolas@yahoo.fr>
+	<b39c97d70604210759s7c2bf817xbfcbbcfbc9f96280@mail.gmail.com>
+Message-ID: <20060421214842.5310b61c.masse_nicolas@yahoo.fr>
+
+On Fri, 21 Apr 2006 11:59:21 -0300
+"Rodrigo Coacci" <rcoacci at gmail.com> wrote:
+
+> If i'm not wrong those in the TESTED lista were tested with the new
+> xfce4-panel right? Where is that xfce4-screenshooter from? I got the last
+> svn version and it complains with :
+> 
+> checking for XFCE4_PANEL... configure: error: Package requirements (
+> xfce4-panel-1.0 >= 0.10.1) were not met:
+> 
+> No package 'xfce4-panel-1.0' found
+> 
+> 
+
+
+From foxy at on-the-hill.me.uk  Fri Apr 21 23:28:53 2006
+From: foxy at on-the-hill.me.uk (Foxy)
+Date: Fri, 21 Apr 2006 22:28:53 +0100
+Subject: Panel plugins for 4.4
+In-Reply-To: <20060421214842.5310b61c.masse_nicolas@yahoo.fr>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de>	<44469369.5080307@xfce.org>	<20060419221234.f2fe45f8.masse_nicolas@yahoo.fr>	<20060419222912.d906ad2e.masse_nicolas@yahoo.fr>	<20060419234758.e2ab7faa.masse_nicolas@yahoo.fr>	<b39c97d70604210759s7c2bf817xbfcbbcfbc9f96280@mail.gmail.com> <20060421214842.5310b61c.masse_nicolas@yahoo.fr>
+Message-ID: <44494E95.9060905@on-the-hill.me.uk>
+
+masse_nicolas at yahoo.fr wrote:
+> On Fri, 21 Apr 2006 11:59:21 -0300
+> "Rodrigo Coacci" <rcoacci at gmail.com> wrote:
+>
+>   
+>> If i'm not wrong those in the TESTED lista were tested with the new
+>> xfce4-panel right? Where is that xfce4-screenshooter from? I got the last
+>> svn version and it complains with :
+>>
+>> checking for XFCE4_PANEL... configure: error: Package requirements (
+>> xfce4-panel-1.0 >= 0.10.1) were not met:
+>>
+>> No package 'xfce4-panel-1.0' found
+>>
+>>
+>>     
+>
+> >From the xfce mailing list:
+>
+> On Thu, 20 Apr 2006 00:23:08 +0300
+> Jani Monoses <jani.monoses at gmail.com> wrote:
+>   
+>> ...
+>>     
+>>> NOT DONE:
+>>> =======
+>>> xfce4-screenshooter-plugin
+>>>       
+>> I have posted a port a while ago to the devel list.
+>> ...
+>>     
+> So I assume we have to look trought the mailing list. 
+> Also, I've remarked that the plugins ported by Jasper aren't in berlios svn yet, so if 
+> nobody complains, I will probably tomorow update the svn version with the ones from Jasper.
+>
+> Bountykiller 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>   
+can anyone fix a weather plugin? being a forecast freak I have to add it 
+to the panel every time I log in. please?
+
+
+From rcoacci at gmail.com  Sat Apr 22 05:06:50 2006
+From: rcoacci at gmail.com (Rodrigo Coacci)
+Date: Sat, 22 Apr 2006 00:06:50 -0300
+Subject: Panel plugins for 4.4
+In-Reply-To: <20060421214842.5310b61c.masse_nicolas@yahoo.fr>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de>
+	 <44469369.5080307@xfce.org>
+	 <20060419221234.f2fe45f8.masse_nicolas@yahoo.fr>
+	 <20060419222912.d906ad2e.masse_nicolas@yahoo.fr>
+	 <20060419234758.e2ab7faa.masse_nicolas@yahoo.fr>
+	 <b39c97d70604210759s7c2bf817xbfcbbcfbc9f96280@mail.gmail.com>
+	 <20060421214842.5310b61c.masse_nicolas@yahoo.fr>
+Message-ID: <b39c97d70604212006s58daee59w4ae7b9288b89af74@mail.gmail.com>
+
+Hum ok, I'll check out the miling list for the mentioned post...
+Thanks!
+
+On 4/21/06, masse_nicolas at yahoo.fr <masse_nicolas at yahoo.fr> wrote:
+>
+> On Fri, 21 Apr 2006 11:59:21 -0300
+> "Rodrigo Coacci" <rcoacci at gmail.com> wrote:
+>
+> > If i'm not wrong those in the TESTED lista were tested with the new
+> > xfce4-panel right? Where is that xfce4-screenshooter from? I got the
+> last
+> > svn version and it complains with :
+> >
+> > checking for XFCE4_PANEL... configure: error: Package requirements (
+> > xfce4-panel-1.0 >= 0.10.1) were not met:
+> >
+> > No package 'xfce4-panel-1.0' found
+> >
+> >
+>
+> From the xfce mailing list:
+>
+> On Thu, 20 Apr 2006 00:23:08 +0300
+> Jani Monoses <jani.monoses at gmail.com> wrote:
+> >...
+> > > NOT DONE:
+> > > =======
+> > > xfce4-screenshooter-plugin
+> > I have posted a port a while ago to the devel list.
+> >...
+> So I assume we have to look trought the mailing list.
+> Also, I've remarked that the plugins ported by Jasper aren't in berlios
+> svn yet, so if
+> nobody complains, I will probably tomorow update the svn version with the
+> ones from Jasper.
+>
+> Bountykiller
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>
+
+
+
+--
+Abra?os,
+      Rodrigo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060422/d302766d/attachment.html>
+
+From rmg57 at telus.net  Sat Apr 22 11:35:42 2006
+From: rmg57 at telus.net (Myles Green)
+Date: Sat, 22 Apr 2006 03:35:42 -0600
+Subject: xfce-goodies-dev -- confirmation of subscription -- request
+ 426798
+In-Reply-To: <20060422074712.9620.6718.Mailman@bat.berlios.de>
+References: <20060422074712.9620.6718.Mailman@bat.berlios.de>
+Message-ID: <20060422033542.524cf397@localhost.localdomain>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+On Sat, 22 Apr 2006 09:47:12 +0200
+xfce-goodies-dev-request at berlios.de wrote:
+
+> xfce-goodies-dev -- confirmation of subscription -- request 426798
+> 
+> We have received a request from 199.126.170.211 for subscription of
+> your email address, <rmg57 at telus.net>, to the
+> xfce-goodies-dev at lists.berlios.de mailing list.  To confirm the
+> request, please send a message to
+> xfce-goodies-dev-request at lists.berlios.de, and either:
+> 
+> - maintain the subject line as is (the reply's additional "Re:" is
+> ok),
+> 
+> - or include the following line - and only the following line - in the
+> message body: 
+> 
+> confirm 426798
+> 
+> (Simply sending a 'reply' to this message should work from most email
+> interfaces, since that usually leaves the subject line in the right
+> form.)
+> 
+> If you do not wish to subscribe to this list, please simply disregard
+> this message.  Send questions to
+> xfce-goodies-dev-admin at lists.berlios.de.
+
+
+- -- 
+Don't tell any big lies today.  Small ones can be just as effective.
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFESfjuf8E1+O/Jq5YRAtF8AJsF0Tf6lTknFPNKk/2kOG3XI0R+yQCfcPlh
+Hrl5zPejIawbkYWcga6E0WI=
+=GdHR
+-----END PGP SIGNATURE-----
+
+
+From rstmp at iinet.com.au  Wed Apr 19 09:12:28 2006
+From: rstmp at iinet.com.au (roger)
+Date: Wed, 19 Apr 2006 17:12:28 +1000
+Subject: Diskperf 2.0 (Xfce 4.4) doesn't seem to work
+Message-ID: <200604191712.28087.rstmp@iinet.com.au>
+
+Thanks Jasper for your time spent on porting genmon and diskperf.
+Though genmon is OK on my system with Xfce 4.3.90.1 (Xfce 4.4 beta 1), I can't 
+get diskperf to work at all. I even don't have the tooltips and if I add a 
+second instance of the plugin, when restarting the panel the 2nd instance is 
+gone.
+Has anyone got this plugin working? Anyway, I'll try to have a look in the 
+code sometimes during the next couple of weeks.
+
+Besides, I also installed Jasper's ports of systemload, netload and 
+weatherupdate: all of them seem to be fine so far.
+
+Cheers,
+Roger Seguin
+
+
+From juha at xfce.org  Wed Apr 19 21:34:04 2006
+From: juha at xfce.org (Juha)
+Date: Wed, 19 Apr 2006 22:34:04 +0300
+Subject: Panel plugins for 4.4
+In-Reply-To: <44468F0E.3020005@unix-ag.uni-siegen.de>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de>
+Message-ID: <444690AC.80902@xfce.org>
+
+Definitely. Rather difficult now to know which are available.
+
+For example has somebody ported trigger-launcher
+already to 4.4?
+
+
+/Juha
+
+Benedikt Meurer wrote:
+
+>I think the time has come to update the goodies to the new panel. I'd
+>like to port some of them (i.e. the CPU graph plugin) to Solaris for
+>Xfce 4.4.0. Jasper has done the work for several plugins already. Now
+>its time to merge that work into trunk.
+>
+>What do you think?
+>
+>Benedikt
+>_______________________________________________
+>Xfce4-dev mailing list
+>Xfce4-dev at xfce.org
+>http://foo-projects.org/mailman/listinfo/xfce4-dev
+>  
+>
+
+
+From info at sten-net.de  Wed Apr 19 22:06:07 2006
+From: info at sten-net.de (Jannis Pohlmann)
+Date: Wed, 19 Apr 2006 22:06:07 +0200
+Subject: Panel plugins for 4.4
+In-Reply-To: <Pine.LNX.4.64.0604191256100.1861@zeno3.math.washington.edu>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de>
+	<44469369.5080307@xfce.org>
+	<Pine.LNX.4.64.0604191256100.1861@zeno3.math.washington.edu>
+Message-ID: <20060419220607.e1e66e90.info@sten-net.de>
+
+On Wed, 19 Apr 2006 12:59:34 -0700 (PDT)
+Kemal Eroglu <kieroglu at math.washington.edu> wrote:
+
+> 
+>   Here's a message that was prevoiously sent to this list, it
+> contains a table of plugins and their status.
+> 
+>   Let me mention what I have on my side: I maintain the xmms and
+> timer plugins. xmms was ported to 4.4 months ago, and timer was
+> written for 4.4 already. There was a recent patch proposed for the
+> xmms plugin, I'll check if I have time to apply it soon (I'll be very
+> busy until the end of next week).
+> 
+> On Tue, 4 Apr 2006, masse_nicolas at yahoo.fr wrote:
+> > 
+> > Date: Tue, 4 Apr 2006 21:43:30 +0200
+> > From: masse_nicolas at yahoo.fr
+> > Reply-To: xfce-goodies-dev at berlios.de
+> > To: xfce-goodies-dev at berlios.de
+> > Subject: Re: Xfce-goodies with Xfce 4.4
+> > 
+> > On Sun, 2 Apr 2006 19:03:23 +0900
+> > Daichi Kawahata <daichi at xfce.org> wrote:
+> > 
+> > > Hi,
+> > > 
+> > > The packages listed below may work with forthcoming 4.4,
+> > > if you find the missing names, let me know.
+> > > 
+> > > Thunar plugin:
+> > > 
+> > >   thunar-archive-plugin 0.1.1svn (de hu ja ru)
+> > >   thunar-media-tags-plugin 0.1.0svn (de el hu ja)
+> > > 
+> > 
+> > I did maintain such a list at a time, and here is the differences I
+> > have:
+> > 
+> > DONE
+> > ====
+> > *Tested 
+> > xfce4-mount-plugin       by Fabian Nowak
+> > xfce4-showdesktop-plugin   (4)
+> > xfce4-battery-plugin     by Jasper                        (1) (2) 
+> > 
+> > *untested
+
+> > xfce4-minicmd-plugin  by Ori Bernstein           (2) (3) 
+
+Maybe we should drop this one. I'm not sure whether Verve covers all
+functionality already, but I think so. So having two plugins providing
+the same might be confusing.
+
+Perhaps we can set up a wiki page for this and enter all plugins to
+have a better overview? xfcewiki.org seems to be down, but we could also
+use the Thunar wiki temporarily, I think. What do you think, Benny? 
+
+- Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060419/4bf5962d/attachment.pgp>
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Sun Apr 23 13:32:34 2006
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Sun, 23 Apr 2006 13:32:34 +0200
+Subject: Panel plugins for 4.4
+In-Reply-To: <20060419220607.e1e66e90.info@sten-net.de>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de>	<44469369.5080307@xfce.org>	<Pine.LNX.4.64.0604191256100.1861@zeno3.math.washington.edu> <20060419220607.e1e66e90.info@sten-net.de>
+Message-ID: <444B65D2.3040500@unix-ag.uni-siegen.de>
+
+Jannis Pohlmann wrote:
+> Perhaps we can set up a wiki page for this and enter all plugins to
+> have a better overview? xfcewiki.org seems to be down, but we could also
+> use the Thunar wiki temporarily, I think. What do you think, Benny? 
+
+I can setup a wiki for xfce goodies on xfce.org (goodies.xfce.org,
+Auke?) if you want, I just need to adjust the templates I created for
+the thunar wiki. Adding Xfce panel stuff to the thunar wiki doesn't make
+much sense IMHO.
+
+> - Jannis
+
+Benedikt
+
+
+From jannis at xfce.org  Sun Apr 23 14:54:45 2006
+From: jannis at xfce.org (Jannis Pohlmann)
+Date: Sun, 23 Apr 2006 14:54:45 +0200
+Subject: Panel plugins for 4.4
+In-Reply-To: <444B65D2.3040500@unix-ag.uni-siegen.de>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de>
+	<44469369.5080307@xfce.org>
+	<Pine.LNX.4.64.0604191256100.1861@zeno3.math.washington.edu>
+	<20060419220607.e1e66e90.info@sten-net.de>
+	<444B65D2.3040500@unix-ag.uni-siegen.de>
+Message-ID: <20060423145445.88b3c171.jannis@xfce.org>
+
+On Sun, 23 Apr 2006 13:32:34 +0200, Benedikt Meurer wrote:
+
+> Jannis Pohlmann wrote:
+> > Perhaps we can set up a wiki page for this and enter all plugins to
+> > have a better overview? xfcewiki.org seems to be down, but we could
+> > also use the Thunar wiki temporarily, I think. What do you think,
+> > Benny? 
+> 
+> I can setup a wiki for xfce goodies on xfce.org (goodies.xfce.org,
+> Auke?) if you want, I just need to adjust the templates I created for
+> the thunar wiki. Adding Xfce panel stuff to the thunar wiki doesn't
+> make much sense IMHO.
+
+Yeah, would just have been a temporary solution in order to get a fast
+overview. Anyway, the Wiki you are using for Thunar looks quite good, so
+I vote for using it. It even ships RSS feeds, yay!
+
+- Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060423/8dc70deb/attachment.pgp>
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Sun Apr 23 15:00:15 2006
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Sun, 23 Apr 2006 15:00:15 +0200
+Subject: Panel plugins for 4.4
+In-Reply-To: <20060423145445.88b3c171.jannis@xfce.org>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de>	<44469369.5080307@xfce.org>	<Pine.LNX.4.64.0604191256100.1861@zeno3.math.washington.edu>	<20060419220607.e1e66e90.info@sten-net.de>	<444B65D2.3040500@unix-ag.uni-siegen.de> <20060423145445.88b3c171.jannis@xfce.org>
+Message-ID: <444B7A5F.60304@unix-ag.uni-siegen.de>
+
+Jannis Pohlmann wrote:
+>>>Perhaps we can set up a wiki page for this and enter all plugins to
+>>>have a better overview? xfcewiki.org seems to be down, but we could
+>>>also use the Thunar wiki temporarily, I think. What do you think,
+>>>Benny? 
+>>
+>>I can setup a wiki for xfce goodies on xfce.org (goodies.xfce.org,
+>>Auke?) if you want, I just need to adjust the templates I created for
+>>the thunar wiki. Adding Xfce panel stuff to the thunar wiki doesn't
+>>make much sense IMHO.
+> 
+> Yeah, would just have been a temporary solution in order to get a fast
+> overview. Anyway, the Wiki you are using for Thunar looks quite good, so
+> I vote for using it. It even ships RSS feeds, yay!
+
+It's a customized DokuWiki. If you talk to Auke/Olivier about setting up
+goodies.xfce.org, and the provider of the current wiki, we can move that
+stuff to mocha.
+
+> - Jannis
+
+Benedikt
+
+
+From masse_nicolas at yahoo.fr  Sun Apr 23 21:01:06 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Sun, 23 Apr 2006 21:01:06 +0200
+Subject: Panel plugins for 4.4
+In-Reply-To: <20060419220607.e1e66e90.info@sten-net.de>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de>
+	<44469369.5080307@xfce.org>
+	<Pine.LNX.4.64.0604191256100.1861@zeno3.math.washington.edu>
+	<20060419220607.e1e66e90.info@sten-net.de>
+Message-ID: <20060423210106.2f227098.masse_nicolas@yahoo.fr>
+
+On Wed, 19 Apr 2006 22:06:07 +0200
+Jannis Pohlmann <info at sten-net.de> wrote:
+
+> 
+> > 
+> >  ...
+> > > 
+> > > *untested
+> 
+> > > xfce4-minicmd-plugin  by Ori Bernstein           (2) (3) 
+> 
+> Maybe we should drop this one. I'm not sure whether Verve covers all
+> functionality already, but I think so. So having two plugins providing
+> the same might be confusing.
+
+It was just a list of ported plugins, and this one was. But now we can for example mark it as deprecated(in favour of the verve-plguin), yes.
+
+> Perhaps we can set up a wiki page for this and enter all plugins to
+> have a better overview? xfcewiki.org seems to be down, but we could also
+> use the Thunar wiki temporarily, I think. What do you think, Benny? 
+> 
+We do you excatly mean? 
+If I understand well; this would just be a page where we can see a list of the ported plugins, isn't it?
+If you want, I can post such a page on the berlios website, with my current list. I think she's quite complete now.
+(but igree that a wiki would be the best way to di this, since every body is able to edit the page easily)
+> - Jannis
+> 
+bountykiller
+
+
+From jannis at xfce.org  Sun Apr 23 21:08:53 2006
+From: jannis at xfce.org (Jannis Pohlmann)
+Date: Sun, 23 Apr 2006 21:08:53 +0200
+Subject: Panel plugins for 4.4
+In-Reply-To: <20060423210106.2f227098.masse_nicolas@yahoo.fr>
+References: <44468F0E.3020005@unix-ag.uni-siegen.de>
+	<44469369.5080307@xfce.org>
+	<Pine.LNX.4.64.0604191256100.1861@zeno3.math.washington.edu>
+	<20060419220607.e1e66e90.info@sten-net.de>
+	<20060423210106.2f227098.masse_nicolas@yahoo.fr>
+Message-ID: <20060423210853.a4cbb4cf.jannis@xfce.org>
+
+On Sun, 23 Apr 2006 21:01:06 +0200, masse_nicolas at yahoo.fr wrote:
+
+> On Wed, 19 Apr 2006 22:06:07 +0200
+> Jannis Pohlmann <info at sten-net.de> wrote:
+> 
+> > 
+> > > 
+> > >  ...
+> > > > 
+> > > > *untested
+> > 
+> > > > xfce4-minicmd-plugin  by Ori Bernstein           (2) (3) 
+> > 
+> > Maybe we should drop this one. I'm not sure whether Verve covers all
+> > functionality already, but I think so. So having two plugins
+> > providing the same might be confusing.
+> 
+> It was just a list of ported plugins, and this one was. But now we
+> can for example mark it as deprecated(in favour of the verve-plguin),
+> yes.
+> 
+> > Perhaps we can set up a wiki page for this and enter all plugins to
+> > have a better overview? xfcewiki.org seems to be down, but we could
+> > also use the Thunar wiki temporarily, I think. What do you think,
+> > Benny? 
+> > 
+> We do you excatly mean? 
+> If I understand well; this would just be a page where we can see a
+> list of the ported plugins, isn't it? If you want, I can post such a
+> page on the berlios website, with my current list. I think she's
+> quite complete now. (but igree that a wiki would be the best way to
+> di this, since every body is able to edit the page easily)
+
+Hm, yeah, the most important thing is to have get an overview now.
+Anyway, it would be cool to have a Wiki and RSS feeds to notify users
+of changes made to the Goodies. The DokuWiki system Benny is using
+provides both. Auke is going to create goodies.xfce.org for us next
+week so we can set it up.
+
+After that we could slowly drop the BerliOS website, hopefully. It's
+just too slow and down too often. After 4.4 we will could import the
+goodies repository into the Xfce SVN and also create DokuWiki accounts
+for all participating developers, translators and so forth.
+
+Regards,
+Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060423/35781367/attachment.pgp>
+
+From bugzilla-daemon at xfce.org  Sun Apr 23 21:59:23 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun, 23 Apr 2006 19:59:23 +0000 (UTC)
+Subject: [Bug 1646] layout indicator is not updated and wrong flag/code is shown
+In-Reply-To: <bug-1646-590@http.bugzilla.xfce.org/>
+Message-ID: <20060423195923.7969BF29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1646
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #4 from jasper at xfce.org  2006-04-23 19:59 UTC -------
+Fixed accoring to the comments.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From a.radke at arcor.de  Sun Apr 23 22:49:56 2006
+From: a.radke at arcor.de (Andreas Radke)
+Date: Sun, 23 Apr 2006 22:49:56 +0200
+Subject: [Bug 1590] xfce panel crashes with glib2 2.10
+In-Reply-To: <20060328105848.B18B9F2A2F@mocha.foo-projects.org>
+References: <bug-1590-590@http.bugzilla.xfce.org/>
+	<20060328105848.B18B9F2A2F@mocha.foo-projects.org>
+Message-ID: <200604232049.k3NKnWt01214@bat.berlios.de>
+
+Am Tue, 28 Mar 2006 10:58:48 +0000 (UTC)
+schrieb bugzilla-daemon at xfce.org:
+
+> Do NOT reply to this email.  To make further comments on this bug, use
+> the URL below:
+> http://bugzilla.xfce.org/show_bug.cgi?id=1590
+> 
+> 
+> 
+> 
+> 
+> ------- Comment #4 from corsac at corsac.net  2006-03-28 10:58 UTC
+> ------- This patch don't fix the problem, I still have 
+> 
+> *** glibc detected *** free(): invalid pointer: 0x1042e450 ***
+> 
+> 
+> Regards,
+> 
+> Yves-Alexis Perez
+> 
+> 
+
+Any news how to resolve this bug? Or do the devs no  more support the
+4.2.x series?
+
+Andreas Radke
+
+
+From a.radke at arcor.de  Sun Apr 23 22:49:56 2006
+From: a.radke at arcor.de (Andreas Radke)
+Date: Sun, 23 Apr 2006 22:49:56 +0200
+Subject: [Bug 1590] xfce panel crashes with glib2 2.10
+In-Reply-To: <20060328105848.B18B9F2A2F@mocha.foo-projects.org>
+References: <bug-1590-590@http.bugzilla.xfce.org/>
+	<20060328105848.B18B9F2A2F@mocha.foo-projects.org>
+Message-ID: <200604232049.k3NKnWt01213@bat.berlios.de>
+
+Am Tue, 28 Mar 2006 10:58:48 +0000 (UTC)
+schrieb bugzilla-daemon at xfce.org:
+
+> Do NOT reply to this email.  To make further comments on this bug, use
+> the URL below:
+> http://bugzilla.xfce.org/show_bug.cgi?id=1590
+> 
+> 
+> 
+> 
+> 
+> ------- Comment #4 from corsac at corsac.net  2006-03-28 10:58 UTC
+> ------- This patch don't fix the problem, I still have 
+> 
+> *** glibc detected *** free(): invalid pointer: 0x1042e450 ***
+> 
+> 
+> Regards,
+> 
+> Yves-Alexis Perez
+> 
+> 
+
+Any news how to resolve this bug? Or do the devs no  more support the
+4.2.x series?
+
+Andreas Radke
+
+
+From awbess at gmail.com  Tue Apr 25 18:40:45 2006
+From: awbess at gmail.com (Adriano Winter Bess)
+Date: Tue, 25 Apr 2006 13:40:45 -0300
+Subject: Bug tracker categories
+Message-ID: <de9c79ca0604250940n37fe668dkd69514836f333965@mail.gmail.com>
+
+Hi,
+
+I would like to ask a project admin to add the missing categories for
+xfce-goodies bug tracker. Currently only verve, battery, systemload
+and xmms plugins have their own category.
+
+Regards,
+Adriano
+--
+Adriano Winter Bess
+awbess <at> gmail <dot> com
+
+
+From jannis at xfce.org  Tue Apr 25 20:57:37 2006
+From: jannis at xfce.org (Jannis Pohlmann)
+Date: Tue, 25 Apr 2006 20:57:37 +0200
+Subject: Bug tracker categories
+In-Reply-To: <de9c79ca0604250940n37fe668dkd69514836f333965@mail.gmail.com>
+References: <de9c79ca0604250940n37fe668dkd69514836f333965@mail.gmail.com>
+Message-ID: <20060425205737.ecc9cbcf.jannis@xfce.org>
+
+On Tue, 25 Apr 2006 13:40:45 -0300, Adriano Winter Bess wrote:
+
+> Hi,
+> 
+> I would like to ask a project admin to add the missing categories for
+> xfce-goodies bug tracker. Currently only verve, battery, systemload
+> and xmms plugins have their own category.
+
+I just browsed the goodies member list - you have an account, don't
+you? You can create categories on your own. Anyway, if there are
+problems, just tell me and I will do it.
+
+- Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060425/14a6330f/attachment.pgp>
+
+From masse_nicolas at yahoo.fr  Tue Apr 25 21:43:57 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Tue, 25 Apr 2006 21:43:57 +0200
+Subject: Bug tracker categories
+In-Reply-To: <de9c79ca0604250940n37fe668dkd69514836f333965@mail.gmail.com>
+References: <de9c79ca0604250940n37fe668dkd69514836f333965@mail.gmail.com>
+Message-ID: <20060425214357.045540f0.masse_nicolas@yahoo.fr>
+
+On Tue, 25 Apr 2006 13:40:45 -0300
+"Adriano Winter Bess" <awbess at gmail.com> wrote:
+
+> Hi,
+> 
+> I would like to ask a project admin to add the missing categories for
+> xfce-goodies bug tracker. Currently only verve, battery, systemload
+> and xmms plugins have their own category.
+> 
+I don't who had these category, and in fact I didn't knew that such category was existing before your mail.
+Anyway, I think that creating a new category for each plugin would be too much. I think it would be better
+to create 4 category:
+a)Panel plugin
+b)File manager plugin
+c)applications
+d)artwork
+
+
+> Regards,
+> Adriano
+> --
+
+Bountykiller.
+
+> Adriano Winter Bess
+> awbess <at> gmail <dot> com
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+From jannis at xfce.org  Tue Apr 25 22:18:47 2006
+From: jannis at xfce.org (Jannis Pohlmann)
+Date: Tue, 25 Apr 2006 22:18:47 +0200
+Subject: Bug tracker categories
+In-Reply-To: <20060425214357.045540f0.masse_nicolas@yahoo.fr>
+References: <de9c79ca0604250940n37fe668dkd69514836f333965@mail.gmail.com>
+	<20060425214357.045540f0.masse_nicolas@yahoo.fr>
+Message-ID: <20060425221847.f2304fe9.jannis@xfce.org>
+
+On Tue, 25 Apr 2006 21:43:57 +0200, masse_nicolas at yahoo.fr wrote:
+
+> On Tue, 25 Apr 2006 13:40:45 -0300
+> "Adriano Winter Bess" <awbess at gmail.com> wrote:
+> 
+> > Hi,
+> > 
+> > I would like to ask a project admin to add the missing categories
+> > for xfce-goodies bug tracker. Currently only verve, battery,
+> > systemload and xmms plugins have their own category.
+> > 
+> I don't who had these category, and in fact I didn't knew that such
+> category was existing before your mail. Anyway, I think that creating
+> a new category for each plugin would be too much. I think it would be
+> better to create 4 category: a)Panel plugin
+> b)File manager plugin
+> c)applications
+> d)artwork
+
+We can create groups with that, but there should be one category per
+product.
+
+- Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060425/b532eb7f/attachment.pgp>
+
+From awbess at gmail.com  Tue Apr 25 22:27:50 2006
+From: awbess at gmail.com (Adriano Winter Bess)
+Date: Tue, 25 Apr 2006 17:27:50 -0300
+Subject: Bug tracker categories
+In-Reply-To: <20060425205737.ecc9cbcf.jannis@xfce.org>
+References: <de9c79ca0604250940n37fe668dkd69514836f333965@mail.gmail.com>
+	 <20060425205737.ecc9cbcf.jannis@xfce.org>
+Message-ID: <de9c79ca0604251327hd282ba0h37aa1a7c70b37a1@mail.gmail.com>
+
+2006/4/25, Jannis Pohlmann <jannis at xfce.org>:
+> I just browsed the goodies member list - you have an account, don't
+> you? You can create categories on your own. Anyway, if there are
+> problems, just tell me and I will do it.
+
+Hum, I thought I needed an admin account to do it. Thanks, I'll create
+it myself.
+
+Regards,
+Adriano
+--
+Adriano Winter Bess
+awbess <at> gmail <dot> com
+
+
+From masse_nicolas at yahoo.fr  Tue Apr 25 23:06:55 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Tue, 25 Apr 2006 23:06:55 +0200
+Subject: update of the plugins
+Message-ID: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+
+Hi everyone.
+
+I just wanna say that i've finished to update the current svn on Berlios. I've added in the ports of the plugins that Jasper made some time ago.
+Note that I've tested them all and they are working on my system. 
+Note that I also had to update the ./autogen.sh script for most of them in order to use the xfce-dev-tools.
+I think I will wait for xfce4.4 being out before I post the packages on Berlios.
+
+Bountykiller
+
+
+From bugzilla-daemon at xfce.org  Wed Apr 26 00:29:47 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 25 Apr 2006 22:29:47 +0000 (UTC)
+Subject: [Bug 1652] option to show only iconified/normal windows
+In-Reply-To: <bug-1652-590@http.bugzilla.xfce.org/>
+Message-ID: <20060425222947.CDC91F29F8@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1652
+
+
+bjoern.martensen at gmail.com changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |INVALID
+
+
+
+
+------- Comment #1 from bjoern.martensen at gmail.com  2006-04-25 22:29 UTC -------
+nvm
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From huggie at earth.li  Wed Apr 26 13:13:45 2006
+From: huggie at earth.li (Simon Huggins)
+Date: Wed, 26 Apr 2006 12:13:45 +0100
+Subject: update of the plugins
+In-Reply-To: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+References: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+Message-ID: <20060426111345.GR15745@paranoidfreak.co.uk>
+
+On Tue, Apr 25, 2006 at 11:06:55PM +0200, masse_nicolas at yahoo.fr wrote:
+> I just wanna say that i've finished to update the current svn on
+> Berlios. I've added in the ports of the plugins that Jasper made some
+> time ago.
+> Note that I've tested them all and they are working on my system. 
+> Note that I also had to update the ./autogen.sh script for most of
+> them in order to use the xfce-dev-tools.
+> I think I will wait for xfce4.4 being out before I post the packages
+> on Berlios.
+
+It would in my opinion be better to put them up /somewhere/ now so that
+packagers can upload 4.4 to distributions with working plugins for
+testing.
+
+Simon.
+
+-- 
+[ "Did someone say they wanted toast?" -- Talkie Toaster               ]
+
+
+From masse_nicolas at yahoo.fr  Wed Apr 26 21:11:45 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Wed, 26 Apr 2006 21:11:45 +0200
+Subject: update of the plugins
+In-Reply-To: <20060426111345.GR15745@paranoidfreak.co.uk>
+References: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+	<20060426111345.GR15745@paranoidfreak.co.uk>
+Message-ID: <20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+
+On Wed, 26 Apr 2006 12:13:45 +0100
+Simon Huggins <huggie at earth.li> wrote:
+
+> On Tue, Apr 25, 2006 at 11:06:55PM +0200, masse_nicolas at yahoo.fr wrote:
+> > I just wanna say that i've finished to update the current svn on
+> > Berlios. I've added in the ports of the plugins that Jasper made some
+> > time ago.
+> > Note that I've tested them all and they are working on my system. 
+> > Note that I also had to update the ./autogen.sh script for most of
+> > them in order to use the xfce-dev-tools.
+> > I think I will wait for xfce4.4 being out before I post the packages
+> > on Berlios.
+> 
+> It would in my opinion be better to put them up /somewhere/ now so that
+> packagers can upload 4.4 to distributions with working plugins for
+> testing.
+> 
+Not false.
+Probably the best solution would be tu use the ftp we have...ok, I'm working on it.
+(Also, it will reduce the confusion for the users)
+> Simon.
+> 
+Bountykiller
+
+> -- 
+> [ "Did someone say they wanted toast?" -- Talkie Toaster               ]
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+From corsac at corsac.net  Sun Apr 30 12:00:04 2006
+From: corsac at corsac.net (Yves-Alexis Perez)
+Date: Sun, 30 Apr 2006 12:00:04 +0200
+Subject: update of the plugins
+In-Reply-To: <20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+References: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+	 <20060426111345.GR15745@paranoidfreak.co.uk>
+	 <20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+Message-ID: <1146391205.1188.6.camel@hidalgo>
+
+On Wed, 2006-04-26 at 21:11 +0200, masse_nicolas at yahoo.fr wrote:
+> Not false.
+> Probably the best solution would be tu use the ftp we have...ok, I'm
+> working on it.
+> (Also, it will reduce the confusion for the users) 
+
+Do we have some news on this ? (We are waiting for update on the goodies
+to upload 4.4B1 on debian unstable)
+
+Regards,
+-- 
+Yves-Alexis Perez
+
+
+
+From masse_nicolas at yahoo.fr  Sun Apr 30 12:15:34 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Sun, 30 Apr 2006 12:15:34 +0200
+Subject: update of the plugins
+In-Reply-To: <1146391205.1188.6.camel@hidalgo>
+References: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+	<20060426111345.GR15745@paranoidfreak.co.uk>
+	<20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+	<1146391205.1188.6.camel@hidalgo>
+Message-ID: <20060430121534.2e02bbf9.masse_nicolas@yahoo.fr>
+
+On Sun, 30 Apr 2006 12:00:04 +0200
+Yves-Alexis Perez <corsac at corsac.net> wrote:
+
+> On Wed, 2006-04-26 at 21:11 +0200, masse_nicolas at yahoo.fr wrote:
+> > Not false.
+> > Probably the best solution would be tu use the ftp we have...ok, I'm
+> > working on it.
+> > (Also, it will reduce the confusion for the users) 
+> 
+> Do we have some news on this ? (We are waiting for update on the goodies
+> to upload 4.4B1 on debian unstable)
+
+Just have a look on the site here:
+
+http://xfce-goodies.berlios.de/news.php
+
+;)
+
+> 
+> Regards,
+> -- 
+> Yves-Alexis Perez
+> 
+Bountykiller
+
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+From masse_nicolas at yahoo.fr  Sun Apr 30 12:15:34 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Sun, 30 Apr 2006 12:15:34 +0200
+Subject: update of the plugins
+In-Reply-To: <1146391205.1188.6.camel@hidalgo>
+References: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+	<20060426111345.GR15745@paranoidfreak.co.uk>
+	<20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+	<1146391205.1188.6.camel@hidalgo>
+Message-ID: <20060430121534.2e02bbf9.masse_nicolas@yahoo.fr>
+
+On Sun, 30 Apr 2006 12:00:04 +0200
+Yves-Alexis Perez <corsac at corsac.net> wrote:
+
+> On Wed, 2006-04-26 at 21:11 +0200, masse_nicolas at yahoo.fr wrote:
+> > Not false.
+> > Probably the best solution would be tu use the ftp we have...ok, I'm
+> > working on it.
+> > (Also, it will reduce the confusion for the users) 
+> 
+> Do we have some news on this ? (We are waiting for update on the goodies
+> to upload 4.4B1 on debian unstable)
+
+Just have a look on the site here:
+
+http://xfce-goodies.berlios.de/news.php
+
+;)
+
+> 
+> Regards,
+> -- 
+> Yves-Alexis Perez
+> 
+Bountykiller
+
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+From corsac at corsac.net  Sun Apr 30 12:21:50 2006
+From: corsac at corsac.net (Yves-Alexis Perez)
+Date: Sun, 30 Apr 2006 12:21:50 +0200
+Subject: update of the plugins
+In-Reply-To: <20060430121534.2e02bbf9.masse_nicolas@yahoo.fr>
+References: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+	 <20060426111345.GR15745@paranoidfreak.co.uk>
+	 <20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+	 <1146391205.1188.6.camel@hidalgo>
+	 <20060430121534.2e02bbf9.masse_nicolas@yahoo.fr>
+Message-ID: <1146392510.1188.8.camel@hidalgo>
+
+On Sun, 2006-04-30 at 12:15 +0200, masse_nicolas at yahoo.fr wrote:
+> Just have a look on the site here:
+> 
+> http://xfce-goodies.berlios.de/news.php
+
+Ah yes, thank you :)
+> 
+-- 
+Yves-Alexis Perez
+
+
+
+From corsac at corsac.net  Sun Apr 30 15:54:57 2006
+From: corsac at corsac.net (Yves-Alexis Perez)
+Date: Sun, 30 Apr 2006 15:54:57 +0200
+Subject: update of the plugins
+In-Reply-To: <1146392510.1188.8.camel@hidalgo>
+References: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+	 <20060426111345.GR15745@paranoidfreak.co.uk>
+	 <20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+	 <1146391205.1188.6.camel@hidalgo>
+	 <20060430121534.2e02bbf9.masse_nicolas@yahoo.fr>
+	 <1146392510.1188.8.camel@hidalgo>
+Message-ID: <1146405297.1188.11.camel@hidalgo>
+
+On Sun, 2006-04-30 at 12:21 +0200, Yves-Alexis Perez wrote:
+> On Sun, 2006-04-30 at 12:15 +0200, masse_nicolas at yahoo.fr wrote:
+> > Just have a look on the site here:
+> > 
+> > http://xfce-goodies.berlios.de/news.php
+> 
+> Ah yes, thank you :)
+> > 
+
+clipman-plugin tarballs seems to be shipped with ./autogen.sh already
+done, so Makefile is generated with static path etc... There's also .svn
+folder in the tarball.
+
+just to let people know..
+-- 
+Yves-Alexis Perez
+
+
+
+From masse_nicolas at yahoo.fr  Sun Apr 30 17:31:52 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Sun, 30 Apr 2006 17:31:52 +0200
+Subject: update of the plugins
+In-Reply-To: <1146405297.1188.11.camel@hidalgo>
+References: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+	<20060426111345.GR15745@paranoidfreak.co.uk>
+	<20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+	<1146391205.1188.6.camel@hidalgo>
+	<20060430121534.2e02bbf9.masse_nicolas@yahoo.fr>
+	<1146392510.1188.8.camel@hidalgo>
+	<1146405297.1188.11.camel@hidalgo>
+Message-ID: <20060430173152.fd174f86.masse_nicolas@yahoo.fr>
+
+On Sun, 30 Apr 2006 15:54:57 +0200
+> 
+> clipman-plugin tarballs seems to be shipped with ./autogen.sh already
+> done, so Makefile is generated with static path etc... There's also .svn
+> folder in the tarball.
+> 
+Forgot to clean this one... Thanks for reporting. (I've updated the tarball).
+
+> -- 
+> Yves-Alexis Perez
+> 
+
+Bountykiller
+
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+From masse_nicolas at yahoo.fr  Sun Apr 30 17:31:52 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Sun, 30 Apr 2006 17:31:52 +0200
+Subject: update of the plugins
+In-Reply-To: <1146405297.1188.11.camel@hidalgo>
+References: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+	<20060426111345.GR15745@paranoidfreak.co.uk>
+	<20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+	<1146391205.1188.6.camel@hidalgo>
+	<20060430121534.2e02bbf9.masse_nicolas@yahoo.fr>
+	<1146392510.1188.8.camel@hidalgo>
+	<1146405297.1188.11.camel@hidalgo>
+Message-ID: <20060430173152.fd174f86.masse_nicolas@yahoo.fr>
+
+On Sun, 30 Apr 2006 15:54:57 +0200
+> 
+> clipman-plugin tarballs seems to be shipped with ./autogen.sh already
+> done, so Makefile is generated with static path etc... There's also .svn
+> folder in the tarball.
+> 
+Forgot to clean this one... Thanks for reporting. (I've updated the tarball).
+
+> -- 
+> Yves-Alexis Perez
+> 
+
+Bountykiller
+
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+From corsac at corsac.net  Sun Apr 30 17:54:29 2006
+From: corsac at corsac.net (Yves-Alexis Perez)
+Date: Sun, 30 Apr 2006 17:54:29 +0200
+Subject: update of the plugins
+In-Reply-To: <20060430173152.fd174f86.masse_nicolas@yahoo.fr>
+References: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+	 <20060426111345.GR15745@paranoidfreak.co.uk>
+	 <20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+	 <1146391205.1188.6.camel@hidalgo>
+	 <20060430121534.2e02bbf9.masse_nicolas@yahoo.fr>
+	 <1146392510.1188.8.camel@hidalgo> <1146405297.1188.11.camel@hidalgo>
+	 <20060430173152.fd174f86.masse_nicolas@yahoo.fr>
+Message-ID: <1146412470.1188.19.camel@hidalgo>
+
+On Sun, 2006-04-30 at 17:31 +0200, masse_nicolas at yahoo.fr wrote:
+> On Sun, 30 Apr 2006 15:54:57 +0200
+> > 
+> > clipman-plugin tarballs seems to be shipped with ./autogen.sh already
+> > done, so Makefile is generated with static path etc... There's also .svn
+> > folder in the tarball.
+> > 
+> Forgot to clean this one... Thanks for reporting. (I've updated the tarball).
+
+Other ones haven't been cleaned:
+
+xfce4-cpugraph-plugin
+xfce4-genmon-plugin
+xfce4-minicmd-plugin
+
+and xfce4-diskperf-plugin seems to have wrong version (0.2 after 1.6 ?
+shouldn't be 2.0 ?)
+
+Maybe there are others, I'll let you know, as I'm packaging them all.
+-- 
+Yves-Alexis Perez
+
+
+
+From awbess at gmail.com  Sun Apr 30 18:13:10 2006
+From: awbess at gmail.com (Adriano Winter Bess)
+Date: Sun, 30 Apr 2006 13:13:10 -0300
+Subject: update of the plugins
+In-Reply-To: <1146412470.1188.19.camel@hidalgo>
+References: <20060425230655.c41f3052.masse_nicolas@yahoo.fr> <20060426111345.GR15745@paranoidfreak.co.uk> <20060426211145.18e68ec9.masse_nicolas@yahoo.fr> <1146391205.1188.6.camel@hidalgo> <20060430121534.2e02bbf9.masse_nicolas@yahoo.fr> <1146392510.1188.8.camel@hidalgo> <1146405297.1188.11.camel@hidalgo> <20060430173152.fd174f86.masse_nicolas@yahoo.fr> <1146412470.1188.19.camel@hidalgo>
+Message-ID: <20060430161310.GB2161@icablenet.com.br>
+
+Hi,
+
+I have xfce4-xfapplet-plugin 0.1.0 packaged and ready to be uploaded, but I
+can't figure out how to create a new package on BerliOS to release the file
+neither how to upload it to the FTP. Can anyone help? I'll probably be on #xfce
+the next hours.
+
+Regards,
+Adriano
+-- 
+Adriano Winter Bess
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060430/b969c8e5/attachment.pgp>
+
+From masse_nicolas at yahoo.fr  Sun Apr 30 18:32:06 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Sun, 30 Apr 2006 18:32:06 +0200
+Subject: update of the plugins
+In-Reply-To: <20060430161310.GB2161@icablenet.com.br>
+References: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+	<20060426111345.GR15745@paranoidfreak.co.uk>
+	<20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+	<1146391205.1188.6.camel@hidalgo>
+	<20060430121534.2e02bbf9.masse_nicolas@yahoo.fr>
+	<1146392510.1188.8.camel@hidalgo>
+	<1146405297.1188.11.camel@hidalgo>
+	<20060430173152.fd174f86.masse_nicolas@yahoo.fr>
+	<1146412470.1188.19.camel@hidalgo>
+	<20060430161310.GB2161@icablenet.com.br>
+Message-ID: <20060430183206.27f7bb5a.masse_nicolas@yahoo.fr>
+
+On Sun, 30 Apr 2006 13:13:10 -0300
+Adriano Winter Bess <awbess at gmail.com> wrote:
+
+> Hi,
+> 
+> I have xfce4-xfapplet-plugin 0.1.0 packaged and ready to be uploaded, but I
+> can't figure out how to create a new package on BerliOS to release the file
+> neither how to upload it to the FTP. Can anyone help? I'll probably be on #xfce
+> the next hours.
+> 
+In order to upload on the ftp:
+scp  username at shell.berlios.de:/home/groups/ftp/pub/xfce-goodies/directory/package.tar.bz2
+
+On Berlios: 
+you must upload the files in ftp://ftp.berlios.de/incoming
+and then create a new package version. 
+
+> Regards,
+> Adriano
+> -- 
+
+Bountykiller
+
+> Adriano Winter Bess
+> 
+> 
+
+
+From awbess at gmail.com  Sun Apr 30 18:39:41 2006
+From: awbess at gmail.com (Adriano Winter Bess)
+Date: Sun, 30 Apr 2006 13:39:41 -0300
+Subject: update of the plugins
+In-Reply-To: <20060430183206.27f7bb5a.masse_nicolas@yahoo.fr>
+References: <20060426111345.GR15745@paranoidfreak.co.uk> <20060426211145.18e68ec9.masse_nicolas@yahoo.fr> <1146391205.1188.6.camel@hidalgo> <20060430121534.2e02bbf9.masse_nicolas@yahoo.fr> <1146392510.1188.8.camel@hidalgo> <1146405297.1188.11.camel@hidalgo> <20060430173152.fd174f86.masse_nicolas@yahoo.fr> <1146412470.1188.19.camel@hidalgo> <20060430161310.GB2161@icablenet.com.br> <20060430183206.27f7bb5a.masse_nicolas@yahoo.fr>
+Message-ID: <20060430163941.GC2161@icablenet.com.br>
+
+On Sun, Apr 30, 2006 at 06:32:06PM +0200, masse_nicolas at yahoo.fr wrote:
+> In order to upload on the ftp:
+> scp  username at shell.berlios.de:/home/groups/ftp/pub/xfce-goodies/directory/package.tar.bz2
+
+Thanks.
+ 
+> On Berlios: 
+> you must upload the files in ftp://ftp.berlios.de/incoming
+> and then create a new package version. 
+
+This is the problem, there's no package 'xfce4-xfapplet-plugin' yet to create a
+new version and I don't know how to create it.
+
+Regards,
+Adriano
+-- 
+Adriano Winter Bess
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060430/544874e1/attachment.pgp>
+
+From masse_nicolas at yahoo.fr  Sun Apr 30 18:57:56 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Sun, 30 Apr 2006 18:57:56 +0200
+Subject: update of the plugins
+In-Reply-To: <20060430163941.GC2161@icablenet.com.br>
+References: <20060426111345.GR15745@paranoidfreak.co.uk>
+	<20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+	<1146391205.1188.6.camel@hidalgo>
+	<20060430121534.2e02bbf9.masse_nicolas@yahoo.fr>
+	<1146392510.1188.8.camel@hidalgo>
+	<1146405297.1188.11.camel@hidalgo>
+	<20060430173152.fd174f86.masse_nicolas@yahoo.fr>
+	<1146412470.1188.19.camel@hidalgo>
+	<20060430161310.GB2161@icablenet.com.br>
+	<20060430183206.27f7bb5a.masse_nicolas@yahoo.fr>
+	<20060430163941.GC2161@icablenet.com.br>
+Message-ID: <20060430185756.4443739d.masse_nicolas@yahoo.fr>
+
+On Sun, 30 Apr 2006 13:39:41 -0300
+Adriano Winter Bess <awbess at gmail.com> wrote:
+
+> On Sun, Apr 30, 2006 at 06:32:06PM +0200, masse_nicolas at yahoo.fr wrote:
+> > In order to upload on the ftp:
+> > scp  username at shell.berlios.de:/home/groups/ftp/pub/xfce-goodies/directory/package.tar.bz2
+> 
+> Thanks.
+>  
+> > On Berlios: 
+> > you must upload the files in ftp://ftp.berlios.de/incoming
+> > and then create a new package version. 
+> 
+> This is the problem, there's no package 'xfce4-xfapplet-plugin' yet to create a
+> new version and I don't know how to create it.
+> 
+> Regards,
+> Adriano
+log into berlios: https://developer.berlios.de/account/login.php
+then go to the xfce-goodies project page, then Admin. of the Project (on the left side) then Edit/Release Files. (search for the string if you don't find the link).
+I've created the package and the version 0.1 for you.
+ 
+> -- 
+> Adriano Winter Bess
+> 
+> 
+
+
+From corsac at corsac.net  Sun Apr 30 18:59:04 2006
+From: corsac at corsac.net (Yves-Alexis Perez)
+Date: Sun, 30 Apr 2006 18:59:04 +0200
+Subject: update of the plugins
+In-Reply-To: <1146412470.1188.19.camel@hidalgo>
+References: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+	 <20060426111345.GR15745@paranoidfreak.co.uk>
+	 <20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+	 <1146391205.1188.6.camel@hidalgo>
+	 <20060430121534.2e02bbf9.masse_nicolas@yahoo.fr>
+	 <1146392510.1188.8.camel@hidalgo> <1146405297.1188.11.camel@hidalgo>
+	 <20060430173152.fd174f86.masse_nicolas@yahoo.fr>
+	 <1146412470.1188.19.camel@hidalgo>
+Message-ID: <1146416344.1188.30.camel@hidalgo>
+
+On Sun, 2006-04-30 at 17:54 +0200, Yves-Alexis Perez wrote:
+> Maybe there are others, I'll let you know, as I'm packaging them all.
+
+xfce4-netload-plugin isn't clean either.
+
+Btw xfce4-clipman-plugin new version still isn't clean. (config.status)
+-- 
+Yves-Alexis Perez
+
+
+
+From masse_nicolas at yahoo.fr  Sun Apr 30 19:00:29 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Sun, 30 Apr 2006 19:00:29 +0200
+Subject: update of the plugins
+In-Reply-To: <1146412470.1188.19.camel@hidalgo>
+References: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+	<20060426111345.GR15745@paranoidfreak.co.uk>
+	<20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+	<1146391205.1188.6.camel@hidalgo>
+	<20060430121534.2e02bbf9.masse_nicolas@yahoo.fr>
+	<1146392510.1188.8.camel@hidalgo>
+	<1146405297.1188.11.camel@hidalgo>
+	<20060430173152.fd174f86.masse_nicolas@yahoo.fr>
+	<1146412470.1188.19.camel@hidalgo>
+Message-ID: <20060430190029.b976e9c2.masse_nicolas@yahoo.fr>
+
+On Sun, 30 Apr 2006 17:54:29 +0200
+Yves-Alexis Perez <corsac at corsac.net> wrote:
+
+> On Sun, 2006-04-30 at 17:31 +0200, masse_nicolas at yahoo.fr wrote:
+> > On Sun, 30 Apr 2006 15:54:57 +0200
+> > > 
+> > > clipman-plugin tarballs seems to be shipped with ./autogen.sh already
+> > > done, so Makefile is generated with static path etc... There's also .svn
+> > > folder in the tarball.
+> > > 
+> > Forgot to clean this one... Thanks for reporting. (I've updated the tarball).
+> 
+> Other ones haven't been cleaned:
+> 
+> xfce4-cpugraph-plugin
+> xfce4-genmon-plugin
+> xfce4-minicmd-plugin
+> 
+They seems clean to me...(except perheps one or two files).
+
+> and xfce4-diskperf-plugin seems to have wrong version (0.2 after 1.6 ?
+> shouldn't be 2.0 ?)
+> 
+Right, i'll fix it.
+
+> Maybe there are others, I'll let you know, as I'm packaging them all.
+> -- 
+> Yves-Alexis Perez
+> 
+
+Bountykiller
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+From masse_nicolas at yahoo.fr  Sun Apr 30 19:00:29 2006
+From: masse_nicolas at yahoo.fr (masse_nicolas at yahoo.fr)
+Date: Sun, 30 Apr 2006 19:00:29 +0200
+Subject: update of the plugins
+In-Reply-To: <1146412470.1188.19.camel@hidalgo>
+References: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+	<20060426111345.GR15745@paranoidfreak.co.uk>
+	<20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+	<1146391205.1188.6.camel@hidalgo>
+	<20060430121534.2e02bbf9.masse_nicolas@yahoo.fr>
+	<1146392510.1188.8.camel@hidalgo>
+	<1146405297.1188.11.camel@hidalgo>
+	<20060430173152.fd174f86.masse_nicolas@yahoo.fr>
+	<1146412470.1188.19.camel@hidalgo>
+Message-ID: <20060430190029.b976e9c2.masse_nicolas@yahoo.fr>
+
+On Sun, 30 Apr 2006 17:54:29 +0200
+Yves-Alexis Perez <corsac at corsac.net> wrote:
+
+> On Sun, 2006-04-30 at 17:31 +0200, masse_nicolas at yahoo.fr wrote:
+> > On Sun, 30 Apr 2006 15:54:57 +0200
+> > > 
+> > > clipman-plugin tarballs seems to be shipped with ./autogen.sh already
+> > > done, so Makefile is generated with static path etc... There's also .svn
+> > > folder in the tarball.
+> > > 
+> > Forgot to clean this one... Thanks for reporting. (I've updated the tarball).
+> 
+> Other ones haven't been cleaned:
+> 
+> xfce4-cpugraph-plugin
+> xfce4-genmon-plugin
+> xfce4-minicmd-plugin
+> 
+They seems clean to me...(except perheps one or two files).
+
+> and xfce4-diskperf-plugin seems to have wrong version (0.2 after 1.6 ?
+> shouldn't be 2.0 ?)
+> 
+Right, i'll fix it.
+
+> Maybe there are others, I'll let you know, as I'm packaging them all.
+> -- 
+> Yves-Alexis Perez
+> 
+
+Bountykiller
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+From awbess at gmail.com  Sun Apr 30 19:05:34 2006
+From: awbess at gmail.com (Adriano Winter Bess)
+Date: Sun, 30 Apr 2006 14:05:34 -0300
+Subject: update of the plugins
+In-Reply-To: <20060430183206.27f7bb5a.masse_nicolas@yahoo.fr>
+References: <20060426111345.GR15745@paranoidfreak.co.uk> <20060426211145.18e68ec9.masse_nicolas@yahoo.fr> <1146391205.1188.6.camel@hidalgo> <20060430121534.2e02bbf9.masse_nicolas@yahoo.fr> <1146392510.1188.8.camel@hidalgo> <1146405297.1188.11.camel@hidalgo> <20060430173152.fd174f86.masse_nicolas@yahoo.fr> <1146412470.1188.19.camel@hidalgo> <20060430161310.GB2161@icablenet.com.br> <20060430183206.27f7bb5a.masse_nicolas@yahoo.fr>
+Message-ID: <20060430170534.GD2161@icablenet.com.br>
+
+On Sun, Apr 30, 2006 at 06:32:06PM +0200, masse_nicolas at yahoo.fr wrote:
+> In order to upload on the ftp:
+> scp  username at shell.berlios.de:/home/groups/ftp/pub/xfce-goodies/directory/package.tar.bz2
+
+The group 'xfce-goodies' doesn't have permission to write to the directories
+under xfce-goodies FTP, so the above doesn't work.
+
+Regards,
+Adriano
+-- 
+Adriano Winter Bess
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060430/8c37c6a0/attachment.pgp>
+
+From corsac at corsac.net  Sun Apr 30 19:19:15 2006
+From: corsac at corsac.net (Yves-Alexis Perez)
+Date: Sun, 30 Apr 2006 19:19:15 +0200
+Subject: update of the plugins
+In-Reply-To: <20060430190029.b976e9c2.masse_nicolas@yahoo.fr>
+References: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+	 <20060426111345.GR15745@paranoidfreak.co.uk>
+	 <20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+	 <1146391205.1188.6.camel@hidalgo>
+	 <20060430121534.2e02bbf9.masse_nicolas@yahoo.fr>
+	 <1146392510.1188.8.camel@hidalgo> <1146405297.1188.11.camel@hidalgo>
+	 <20060430173152.fd174f86.masse_nicolas@yahoo.fr>
+	 <1146412470.1188.19.camel@hidalgo>
+	 <20060430190029.b976e9c2.masse_nicolas@yahoo.fr>
+Message-ID: <1146417556.1188.35.camel@hidalgo>
+
+On Sun, 2006-04-30 at 19:00 +0200, masse_nicolas at yahoo.fr wrote:
+> They seems clean to me...(except perheps one or two files).
+
+xfce4-cpugraph-plugin, xfce4-genmon-plugin andxfce4-minicmd-plugin ship
+config.status file. (and maybe others but I don't really know autotools)
+-- 
+Yves-Alexis Perez
+
+
+
+From corsac at corsac.net  Sun Apr 30 19:54:10 2006
+From: corsac at corsac.net (Yves-Alexis Perez)
+Date: Sun, 30 Apr 2006 19:54:10 +0200
+Subject: update of the plugins
+In-Reply-To: <1146417556.1188.35.camel@hidalgo>
+References: <20060425230655.c41f3052.masse_nicolas@yahoo.fr>
+	 <20060426111345.GR15745@paranoidfreak.co.uk>
+	 <20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+	 <1146391205.1188.6.camel@hidalgo>
+	 <20060430121534.2e02bbf9.masse_nicolas@yahoo.fr>
+	 <1146392510.1188.8.camel@hidalgo> <1146405297.1188.11.camel@hidalgo>
+	 <20060430173152.fd174f86.masse_nicolas@yahoo.fr>
+	 <1146412470.1188.19.camel@hidalgo>
+	 <20060430190029.b976e9c2.masse_nicolas@yahoo.fr>
+	 <1146417556.1188.35.camel@hidalgo>
+Message-ID: <1146419650.1188.37.camel@hidalgo>
+
+On Sun, 2006-04-30 at 19:19 +0200, Yves-Alexis Perez wrote:
+> xfce4-cpugraph-plugin, xfce4-genmon-plugin andxfce4-minicmd-plugin
+> ship
+> config.status file. (and maybe others but I don't really know
+> autotools) 
+
+And xfce4-weather-plugin has config.status too. It's a problem for
+debian packaging because it prevents the system to run configure, trying
+to run make only (and there is no Makefile at this time).
+-- 
+Yves-Alexis Perez
+
+
+
+From awbess at gmail.com  Sun Apr 30 20:26:47 2006
+From: awbess at gmail.com (Adriano Winter Bess)
+Date: Sun, 30 Apr 2006 15:26:47 -0300
+Subject: update of the plugins
+In-Reply-To: <1146419650.1188.37.camel@hidalgo>
+References: <20060426211145.18e68ec9.masse_nicolas@yahoo.fr> <1146391205.1188.6.camel@hidalgo> <20060430121534.2e02bbf9.masse_nicolas@yahoo.fr> <1146392510.1188.8.camel@hidalgo> <1146405297.1188.11.camel@hidalgo> <20060430173152.fd174f86.masse_nicolas@yahoo.fr> <1146412470.1188.19.camel@hidalgo> <20060430190029.b976e9c2.masse_nicolas@yahoo.fr> <1146417556.1188.35.camel@hidalgo> <1146419650.1188.37.camel@hidalgo>
+Message-ID: <20060430182647.GE2161@icablenet.com.br>
+
+On Sun, Apr 30, 2006 at 07:54:10PM +0200, Yves-Alexis Perez wrote:
+
+Hi Yves,
+
+> And xfce4-weather-plugin has config.status too. It's a problem for
+> debian packaging because it prevents the system to run configure, trying
+> to run make only (and there is no Makefile at this time).
+
+I've just uploaded xfce4-xfapplet-plugin to BerliOS. Would you mind checking if
+it is clean as you expect it to be and doesn't brake Debian build? As a Debian
+user myself, it really matters to me that it can be packaged just fine for
+Debian.
+
+Regards,
+Adriano
+-- 
+Adriano Winter Bess
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060430/772f38df/attachment.pgp>
+
+From corsac at corsac.net  Sun Apr 30 20:52:25 2006
+From: corsac at corsac.net (Yves-Alexis Perez)
+Date: Sun, 30 Apr 2006 20:52:25 +0200
+Subject: update of the plugins
+In-Reply-To: <20060430182647.GE2161@icablenet.com.br>
+References: <20060426211145.18e68ec9.masse_nicolas@yahoo.fr>
+	 <1146391205.1188.6.camel@hidalgo>
+	 <20060430121534.2e02bbf9.masse_nicolas@yahoo.fr>
+	 <1146392510.1188.8.camel@hidalgo> <1146405297.1188.11.camel@hidalgo>
+	 <20060430173152.fd174f86.masse_nicolas@yahoo.fr>
+	 <1146412470.1188.19.camel@hidalgo>
+	 <20060430190029.b976e9c2.masse_nicolas@yahoo.fr>
+	 <1146417556.1188.35.camel@hidalgo> <1146419650.1188.37.camel@hidalgo>
+	 <20060430182647.GE2161@icablenet.com.br>
+Message-ID: <1146423145.1188.40.camel@hidalgo>
+
+On Sun, 2006-04-30 at 15:26 -0300, Adriano Winter Bess wrote:
+> I've just uploaded xfce4-xfapplet-plugin to BerliOS. Would you mind
+> checking if
+> it is clean as you expect it to be and doesn't brake Debian build? As
+> a Debian
+> user myself, it really matters to me that it can be packaged just fine
+> for
+> Debian. 
+
+just build it.  No problem, it works and seems very nice :)
+-- 
+Yves-Alexis Perez
+
+
+

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> xfce4-mount-plugin problem
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-May/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20xfce4-mount-plugin%20problem&In-Reply-To=%3C20050526212403.353fd61b%40cvc131.uab.es%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000224.html">
+   <LINK REL="Next"  HREF="000226.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>xfce4-mount-plugin problem</H1>
+    <B>Xavier Otazu</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20xfce4-mount-plugin%20problem&In-Reply-To=%3C20050526212403.353fd61b%40cvc131.uab.es%3E"
+       TITLE="xfce4-mount-plugin problem">xotazu at cvc.uab.es
+       </A><BR>
+    <I>Thu May 26 21:24:03 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000224.html">xfce4-mount-plugin problem
+</A></li>
+        <LI>Next message: <A HREF="000226.html">xfce4-mount-plugin problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#225">[ date ]</a>
+              <a href="thread.html#225">[ thread ]</a>
+              <a href="subject.html#225">[ subject ]</a>
+              <a href="author.html#225">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>	Hi:
+
+
+	The problem was solved when I unmounted a remote windows
+directory using samba. Are samba directories 'supported' by this
+plugin? If not, it would be agood idea to include support.
+
+	Sorry again for the noise ...
+
+cheers
+
+Xavier
+
+
+On Thu, 26 May 2005 20:53:55 +0200
+Xavier Otazu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">xotazu at cvc.uab.es</A>&gt; wrote:
+
+&gt;<i> 
+</I>&gt;<i>  	Hi:
+</I>&gt;<i>  
+</I>&gt;<i>  	I sent this message to the xfce-dev list, but this is the
+</I>&gt;<i>  right list. I am sorry for the noise.
+</I>&gt;<i>  
+</I>&gt;<i>  
+</I>&gt;<i>  	There is a problem with mount plugin 0.1 (I do not use 0.2
+</I>&gt;<i>  because I do not have gtk 2.6). I do not know if it is solved on 0.2.
+</I>&gt;<i>  
+</I>&gt;<i>  	Sometimes, when I click on the mount plugin panel freezes, it
+</I>&gt;<i>  does not respond to mouse click, and I event cannot change to another
+</I>&gt;<i>  workspace using the configured shorcut. After some time (around 1 or
+</I>&gt;<i> 2 minutes) it &quot;de-freezes&quot;, but it freezes again when I click (either
+</I>&gt;<i>  left or right button) on the plugin.
+</I>&gt;<i>  
+</I>&gt;<i>  	I remove it from panel, but when adding it, it freezes again.
+</I>&gt;<i>  
+</I>&gt;<i>  Here I attach a backtrace when process freezes
+</I>&gt;<i>  
+</I>&gt;<i>  #0  0x4083eeb1 in statfs () from /lib/libc.so.6
+</I>&gt;<i>  #1  0x40bb2305 in disks_refresh ()
+</I>&gt;<i>     from /opt/xfce/lib/xfce4/panel-plugins/libmount.so
+</I>&gt;<i>  #2  0x40bb25c1 in disks_refresh ()
+</I>&gt;<i>     from /opt/xfce/lib/xfce4/panel-plugins/libmount.so
+</I>&gt;<i>  #3  0x40192714 in gtk_marshal_VOID__UINT_STRING ()
+</I>&gt;<i>     from /usr/lib/libgtk-x11-2.0.so.0
+</I>&gt;<i>  #4  0x405482c0 in g_closure_invoke () from /usr/lib/libgobject-2.0.
+</I>&gt;<i>  so.0 #5  0x4055c2c5 in g_signal_emit_by_name () from /usr/lib/
+</I>&gt;<i>  libgobject-2.0. so.0 #6  0x4055b07e in g_signal_emit_valist () from /
+</I>&gt;<i>  usr/lib/libgobject- 2.0.so.0 #7  0x4055b5a4 in g_signal_emit ()
+</I>&gt;<i> from / usr/lib/libgobject- 2.0.so.0 #8  0x402915f7 in
+</I>&gt;<i> gtk_widget_send_expose () from /usr/lib/ libgtk-x11-2.0.so.0 #9
+</I>&gt;<i> 0x40190cb2 in gtk_propagate_event () from /usr/ lib/libgtk-x11-2.0.
+</I>&gt;<i> so.0 #10 0x4018fa06 in gtk_main_do_event () from / usr/lib/libgtk-x11-
+</I>&gt;<i> 2.0.so.0 #11 0x40385985 in gdk_x11_register_standard_event_type ()
+</I>&gt;<i> from /usr/ lib/libgdk-x11-2.0. so.0 #12 0x4059bf72 in g_main_depth ()
+</I>&gt;<i> from /usr/ lib/libglib-2.0.so.0 #13 0x4059d048 in
+</I>&gt;<i> g_main_context_dispatch () from /usr/lib/libglib-2.0. so.0 #14
+</I>&gt;<i> 0x4059d380 in g_main_context_dispatch () from /usr/lib/libglib- 2.0.
+</I>&gt;<i> so.0 #15 0x4059d9c3 in g_main_loop_run () from /usr/lib/libglib-2.0.
+</I>&gt;<i> so.0 #16 0x4018f2c3 in gtk_main () from /usr/lib/libgtk-x11-2.0.so.0
+</I>&gt;<i> #17 0x08058c27 in main ()
+</I>&gt;<i>  
+</I>&gt;<i>  
+</I>&gt;<i>  cheers
+</I>&gt;<i>  
+</I>&gt;<i>  Xavier
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000224.html">xfce4-mount-plugin problem
+</A></li>
+	<LI>Next message: <A HREF="000226.html">xfce4-mount-plugin problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#225">[ date ]</a>
+              <a href="thread.html#225">[ thread ]</a>
+              <a href="subject.html#225">[ subject ]</a>
+              <a href="author.html#225">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

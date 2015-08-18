@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> new plugin : xfce4-mount-plugin
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-April/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20new%20plugin%20%3A%20xfce4-mount-plugin&In-Reply-To=%3C20050411205506.523faa18%40max.local%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000150.html">
+   <LINK REL="Next"  HREF="000152.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>new plugin : xfce4-mount-plugin</H1>
+    <B>Mario Streiber</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20new%20plugin%20%3A%20xfce4-mount-plugin&In-Reply-To=%3C20050411205506.523faa18%40max.local%3E"
+       TITLE="new plugin : xfce4-mount-plugin">mario.streiber at gmx.de
+       </A><BR>
+    <I>Mon Apr 11 20:55:06 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000150.html">quicklauncher plugin updated
+</A></li>
+        <LI>Next message: <A HREF="000152.html">xfce4-battery-plugin bug
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#151">[ date ]</a>
+              <a href="thread.html#151">[ thread ]</a>
+              <a href="subject.html#151">[ subject ]</a>
+              <a href="author.html#151">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Jean-Baptiste,
+
+
+this is really a useful plugin. What I missed right from the start is
+that the list of devices is static, so e.g. a hotplugged USB stick
+will not show up in the menu. The only thing that gets updated is the
+disk statistics.
+
+I just changed mount-plugin.c so that each time you click on the
+panel button the complete menu is rebuilt from fstab, and I'd like to
+share that feature, so I attached the changed file.
+
+I hope someone else will find that useful as well.
+
+
+Regards
+Mario
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: mount-plugin.c
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050411/86562fe7/attachment.c">https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050411/86562fe7/attachment.c</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000150.html">quicklauncher plugin updated
+</A></li>
+	<LI>Next message: <A HREF="000152.html">xfce4-battery-plugin bug
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#151">[ date ]</a>
+              <a href="thread.html#151">[ thread ]</a>
+              <a href="subject.html#151">[ subject ]</a>
+              <a href="author.html#151">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,1130 @@
+From jemart at ci.uc.pt  Mon Aug  1 16:45:19 2005
+From: jemart at ci.uc.pt (=?ISO-8859-15?Q?Jos=E9_Eduardo_Martins?=)
+Date: Mon, 01 Aug 2005 15:45:19 +0100
+Subject: hwsensors-plugin on debian testing
+Message-ID: <42EE357F.7000909@student.dei.uc.pt>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Greetings.
+
+I'm using debian testing and installed libsensors3 and libsensors-dev.
+Compiled and installed ok. But, when I run xfce4-panel, it gives-me the
+folowing output.
+
+** Message: xfce4-panel: module minicmd successfully loaded
+
+** (xfce4-panel:19500): WARNING **: xfce4-panel: module
+/usr/lib/xfce4/panel-plugins/libsensors.so cannot be opened
+(/usr/lib/xfce4/panel-plugins/libsensors.so: undefined symbol:
+control_class_set_unique)
+** Message: xfce4-panel: module wavelan successfully loaded
+
+I've added /usr/lib/xfce4/panel-plugins to ld.so.conf and run depmod -a.
+And it still gives me the same message.
+Can you help me tracing the problem?
+
+Thanks.
+
+- --
+Jos? Eduardo Bastos Nunes Martins
+http://pgp.dei.uc.pt:11371/pks/lookup?search=0xD3BB9CCA&op=index
+http://talkerspt.no-ip.org/
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+Comment: Using GnuPG with Thunderbird - http://enigmail.mozdev.org
+
+iD8DBQFC7jV/JObLD9O7nMoRAqRaAKCUOjn7YE+iNEc9aTUYI8hDLwgnYwCgs5VI
+pSfMXaOLJ8GTO7vXjAlwlY0=
+=GQ0t
+-----END PGP SIGNATURE-----
+
+
+From timystery at arcor.de  Mon Aug  1 18:46:58 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Mon, 01 Aug 2005 18:46:58 +0200
+Subject: hwsensors-plugin on debian testing
+In-Reply-To: <42EE357F.7000909@student.dei.uc.pt>
+References: <42EE357F.7000909@student.dei.uc.pt>
+Message-ID: <1122914818.5819.3.camel@TIM3000>
+
+Am Montag, den 01.08.2005, 15:45 +0100 schrieb Jos? Eduardo Martins:
+> -----BEGIN PGP SIGNED MESSAGE-----
+> Hash: SHA1
+> 
+> Greetings.
+> 
+> I'm using debian testing and installed libsensors3 and libsensors-dev.
+> Compiled and installed ok. But, when I run xfce4-panel, it gives-me the
+> folowing output.
+> 
+> ** Message: xfce4-panel: module minicmd successfully loaded
+> 
+> ** (xfce4-panel:19500): WARNING **: xfce4-panel: module
+> /usr/lib/xfce4/panel-plugins/libsensors.so cannot be opened
+> (/usr/lib/xfce4/panel-plugins/libsensors.so: undefined symbol:
+> control_class_set_unique)
+> ** Message: xfce4-panel: module wavelan successfully loaded
+> 
+> I've added /usr/lib/xfce4/panel-plugins to ld.so.conf and run depmod -a.
+> And it still gives me the same message.
+> Can you help me tracing the problem?
+
+versions: xfce, libsensors?
+
+which version of hwsensors-plugin are you using? try using
+xfce4-sensors-plugin v0.6.1 from xfce-goodies.berlios.de.
+
+control_class_set_unique is an xfce-panel call to disallow the plugin to
+be loaded twice into the panel.
+so installing xfce4.2.* from os-works.com might help.
+
+other "unique" plugins should also cause problems, like the clock and
+volume plugin, if it's due to the xfce libs.
+
+bye, fabian
+
+
+
+
+From jemart at ci.uc.pt  Mon Aug  1 19:05:32 2005
+From: jemart at ci.uc.pt (=?ISO-8859-15?Q?Jos=E9_Eduardo_Martins?=)
+Date: Mon, 01 Aug 2005 18:05:32 +0100
+Subject: hwsensors-plugin on debian testing
+In-Reply-To: <1122914818.5819.3.camel@TIM3000>
+References: <42EE357F.7000909@student.dei.uc.pt> <1122914818.5819.3.camel@TIM3000>
+Message-ID: <42EE565C.2050903@student.dei.uc.pt>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Fabian Nowak wrote:
+> Am Montag, den 01.08.2005, 15:45 +0100 schrieb Jos? Eduardo Martins:
+> 
+>>-----BEGIN PGP SIGNED MESSAGE-----
+>>Hash: SHA1
+>>
+>>Greetings.
+>>
+>>I'm using debian testing and installed libsensors3 and libsensors-dev.
+>>Compiled and installed ok. But, when I run xfce4-panel, it gives-me the
+>>folowing output.
+>>
+>>** Message: xfce4-panel: module minicmd successfully loaded
+>>
+>>** (xfce4-panel:19500): WARNING **: xfce4-panel: module
+>>/usr/lib/xfce4/panel-plugins/libsensors.so cannot be opened
+>>(/usr/lib/xfce4/panel-plugins/libsensors.so: undefined symbol:
+>>control_class_set_unique)
+>>** Message: xfce4-panel: module wavelan successfully loaded
+>>
+>>I've added /usr/lib/xfce4/panel-plugins to ld.so.conf and run depmod -a.
+>>And it still gives me the same message.
+>>Can you help me tracing the problem?
+> 
+> 
+> versions: xfce, libsensors?
+> 
+> which version of hwsensors-plugin are you using? try using
+> xfce4-sensors-plugin v0.6.1 from xfce-goodies.berlios.de.
+> 
+> control_class_set_unique is an xfce-panel call to disallow the plugin to
+> be loaded twice into the panel.
+> so installing xfce4.2.* from os-works.com might help.
+> 
+> other "unique" plugins should also cause problems, like the clock and
+> volume plugin, if it's due to the xfce libs.
+> 
+
+Ah. Got it.
+My sensors-plugin is 0.6.1, but xfce4-panel is version 4.0.6-1.
+As I don't like much to "confuse" the system with mixed versions of the
+same software, I will mantain current xfce4 installed (and let debian
+install a new version when "he" wants to) and try an older version of
+sensors-plugin.
+
+BTW, how about adding a line in configure.ac to check current xfce4
+version. If there is such limitation, the users should be warned.
+
+Many thanks for the help.
+
+> bye, fabian
+> 
+> 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+
+- --
+Jos? Eduardo Bastos Nunes Martins
+http://pgp.dei.uc.pt:11371/pks/lookup?search=0xD3BB9CCA&op=index
+http://talkerspt.no-ip.org/
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+Comment: Using GnuPG with Thunderbird - http://enigmail.mozdev.org
+
+iD8DBQFC7lZcJObLD9O7nMoRAhV4AJ9DkqieDYpy9iAZLYw+Jotaqq27GQCg161k
+Ye2gK6Lkt3y7PtbGFqjA8wM=
+=5gdH
+-----END PGP SIGNATURE-----
+
+
+From timystery at arcor.de  Mon Aug  1 21:04:39 2005
+From: timystery at arcor.de (Fabian Nowak)
+Date: Mon, 01 Aug 2005 21:04:39 +0200
+Subject: hwsensors-plugin on debian testing
+In-Reply-To: <42EE565C.2050903@student.dei.uc.pt>
+References: <42EE357F.7000909@student.dei.uc.pt>
+	 <1122914818.5819.3.camel@TIM3000>  <42EE565C.2050903@student.dei.uc.pt>
+Message-ID: <1122923079.8530.6.camel@TIM3000>
+
+> >>
+> >>I'm using debian testing and installed libsensors3 and libsensors-dev.
+> >>Compiled and installed ok. But, when I run xfce4-panel, it gives-me the
+> >>folowing output.
+> >>
+> >>** Message: xfce4-panel: module minicmd successfully loaded
+> >>
+> >>** (xfce4-panel:19500): WARNING **: xfce4-panel: module
+> >>/usr/lib/xfce4/panel-plugins/libsensors.so cannot be opened
+> >>(/usr/lib/xfce4/panel-plugins/libsensors.so: undefined symbol:
+> >>control_class_set_unique)
+> >>** Message: xfce4-panel: module wavelan successfully loaded
+> >>
+> >>I've added /usr/lib/xfce4/panel-plugins to ld.so.conf and run depmod -a.
+> >>And it still gives me the same message.
+> >>Can you help me tracing the problem?
+> > 
+> > 
+> > versions: xfce, libsensors?
+> > 
+> > which version of hwsensors-plugin are you using? try using
+> > xfce4-sensors-plugin v0.6.1 from xfce-goodies.berlios.de.
+> > 
+> > control_class_set_unique is an xfce-panel call to disallow the plugin to
+> > be loaded twice into the panel.
+> > so installing xfce4.2.* from os-works.com might help.
+> > 
+> > other "unique" plugins should also cause problems, like the clock and
+> > volume plugin, if it's due to the xfce libs.
+> > 
+> 
+> Ah. Got it.
+> My sensors-plugin is 0.6.1, but xfce4-panel is version 4.0.6-1.
+> As I don't like much to "confuse" the system with mixed versions of the
+> same software, I will mantain current xfce4 installed (and let debian
+> install a new version when "he" wants to) and try an older version of
+> sensors-plugin.
+> 
+> BTW, how about adding a line in configure.ac to check current xfce4
+> version. If there is such limitation, the users should be warned.
+> 
+> Many thanks for the help.
+> 
+
+no prob, but please help us: did you try the newer clock and volume
+plugins and also get this behavior or did they still work properly?
+
+so let's assign this "configure.ac task" to a person being more capable
+to handle that auto* stuff than me - what about you?
+
+btw., as a debian user myself, i somehow doubt that debian itself will
+provide xfce4.2++ packages one day...
+
+bye, fabian
+
+
+
+
+From jemart at student.dei.uc.pt  Tue Aug  2 01:43:45 2005
+From: jemart at student.dei.uc.pt (=?ISO-8859-15?Q?Jos=E9_Eduardo_Martins?=)
+Date: Tue, 02 Aug 2005 00:43:45 +0100
+Subject: hwsensors-plugin on debian testing
+In-Reply-To: <1122923079.8530.6.camel@TIM3000>
+References: <42EE357F.7000909@student.dei.uc.pt>	 <1122914818.5819.3.camel@TIM3000>  <42EE565C.2050903@student.dei.uc.pt> <1122923079.8530.6.camel@TIM3000>
+Message-ID: <42EEB3B1.9080207@student.dei.uc.pt>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Fabian Nowak wrote:
+> 
+> no prob, but please help us: did you try the newer clock and volume
+> plugins and also get this behavior or did they still work properly?
+> 
+
+I use mostly plugins from the deb tree. I only compiled that because
+it's not in the deb testing tree. You people were talking a lot about it
+and I surely wanted to give it a try.
+Datetime is version 0.3.1 and it works ok.
+The volume plugin, xfce4-mixer, is version 4.0.6-1. Also ok.
+
+> so let's assign this "configure.ac task" to a person being more capable
+> to handle that auto* stuff than me - what about you?
+
+Ok. I'll look around about that. You'll hear from me soon. (real soon.)
+
+> 
+> btw., as a debian user myself, i somehow doubt that debian itself will
+> provide xfce4.2++ packages one day...
+> 
+
+You know debian's lemma. "Debian releases when it's time [and there is a
+total alignment with 45% of all planets of the solar system (including
+planet X), and non of them has on his name the third letter of the
+developer name that has a white, blue or yellow t-shirt given by a
+younger daughter of one's brother or sister or of the brother or sister
+of one's spouse that has an a child of a first cousin living on a state
+with at least 7 letters on it's name]". It's quite simple and regular. :-)
+(To better understand this joke, refer to "Monty Python" in "The meaning
+of Life".)
+
+Now, seriously. I'm using debian testing. On unstable, I'll find
+xfce4.2.2. But I stopped using unstable when I found apache2 rendered
+unusable. So, I guess I'll keep using 4.0 for a while. Not before
+xfce4.2 jumps to testing (or stable, but that... huh.. yeah. :-] ).
+
+> 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+
+- --
+Jos? Eduardo Bastos Nunes Martins
+http://pgp.dei.uc.pt:11371/pks/lookup?search=0xD3BB9CCA&op=index
+http://talkerspt.no-ip.org/
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+Comment: Using GnuPG with Thunderbird - http://enigmail.mozdev.org
+
+iD8DBQFC7rOxJObLD9O7nMoRAvpxAKC/GS7PwxU8Mw5Wr8LxgynzGApgmwCffhka
+bZ5L8397JOu/zXusM5kiwWs=
+=rSLm
+-----END PGP SIGNATURE-----
+
+
+From jemart at student.dei.uc.pt  Tue Aug  2 02:15:36 2005
+From: jemart at student.dei.uc.pt (=?ISO-8859-15?Q?Jos=E9_Eduardo_Martins?=)
+Date: Tue, 02 Aug 2005 01:15:36 +0100
+Subject: hwsensors-plugin on debian testing
+In-Reply-To: <1122923079.8530.6.camel@TIM3000>
+References: <42EE357F.7000909@student.dei.uc.pt>	 <1122914818.5819.3.camel@TIM3000>  <42EE565C.2050903@student.dei.uc.pt> <1122923079.8530.6.camel@TIM3000>
+Message-ID: <42EEBB28.4090602@student.dei.uc.pt>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Fabian Nowak wrote:
+>>
+>>BTW, how about adding a line in configure.ac to check current xfce4
+>>version. If there is such limitation, the users should be warned.
+>>
+> 
+> so let's assign this "configure.ac task" to a person being more capable
+> to handle that auto* stuff than me - what about you?
+
+Ok. This was quicker than I expected. But I need you to test it on a
+"ok" enviroment. On mine, it fails as it is suposed to do.
+Apply the folowing patch:
+
+***begin patch***
+
+- --- configure.ac.old    2005-08-02 01:05:10.000000000 +0100
++++ configure.ac        2005-08-02 01:04:39.000000000 +0100
+@@ -32,6 +32,12 @@
+        exit -1
+ ])
+
++dnl Check for control_class_set_unique
++AC_CHECK_FUNC([control_class_set_unique], [], [
++       echo "Error! You need to upgrade xfce4 to 4.2."
++       exit -1
++])
++
+ dnl configure the panel plugin
+ XFCE_PANEL_PLUGIN([XFCE4_PANEL], [4.0.0])
+
+
+***end patch*
+
+Run 'autoconf' on the directory and test with './configure'. On mine,
+fails with:
+checking for sensors_get_detected_chips in -lsensors... yes
+checking for control_class_set_unique... no
+Error! You need to upgrade xfce4 to 4.2
+mini-me:/usr/src/svn/xfce4-sensors-plugin/trunk#
+
+On a xfce4.2 system, it should go ok till the end of ./configure.
+
+Tomorow I'll be unable to read e-mail during day. I'll try to see the
+e-mail on the end of the day (22:00 GMT).
+
+Thanks for all.
+
+- --
+Jos? Eduardo Bastos Nunes Martins
+http://pgp.dei.uc.pt:11371/pks/lookup?search=0xD3BB9CCA&op=index
+http://talkerspt.no-ip.org/
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+Comment: Using GnuPG with Thunderbird - http://enigmail.mozdev.org
+
+iD8DBQFC7rsnJObLD9O7nMoRAs4bAJ4tcy8tpPOXuA/2zpV9za5FqpD++wCfYaQ7
+vw4grI9/P2wR6gp5Hrkuzq0=
+=0KwE
+-----END PGP SIGNATURE-----
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-sensors-plugin.patch
+Type: text/x-patch
+Size: 377 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050802/4c7777e4/attachment.bin>
+
+From jasper at xfce.org  Tue Aug  2 07:59:08 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Tue, 2 Aug 2005 00:59:08 -0500
+Subject: hwsensors-plugin on debian testing
+In-Reply-To: <42EEBB28.4090602@student.dei.uc.pt>
+References: <42EE357F.7000909@student.dei.uc.pt> <1122914818.5819.3.camel@TIM3000> <42EE565C.2050903@student.dei.uc.pt> <1122923079.8530.6.camel@TIM3000> <42EEBB28.4090602@student.dei.uc.pt>
+Message-ID: <20050802055908.GA2248@baudolino.home.nl>
+
+On Tue, Aug 02, 2005 at 01:15:36AM +0100, Jos? Eduardo Martins wrote:
+
+Hey guys,
+
+Sorry for not responding earlier.
+
+> Fabian Nowak wrote:
+> >>
+> >>BTW, how about adding a line in configure.ac to check current xfce4
+> >>version. If there is such limitation, the users should be warned.
+> >>
+> > 
+> > so let's assign this "configure.ac task" to a person being more capable
+> > to handle that auto* stuff than me - what about you?
+> 
+> Ok. This was quicker than I expected. But I need you to test it on a
+> "ok" enviroment. On mine, it fails as it is suposed to do.
+> Apply the folowing patch:
+> 
+> ***begin patch***
+> 
+> - --- configure.ac.old    2005-08-02 01:05:10.000000000 +0100
+> +++ configure.ac        2005-08-02 01:04:39.000000000 +0100
+> @@ -32,6 +32,12 @@
+>         exit -1
+>  ])
+> 
+> +dnl Check for control_class_set_unique
+> +AC_CHECK_FUNC([control_class_set_unique], [], [
+> +       echo "Error! You need to upgrade xfce4 to 4.2."
+> +       exit -1
+> +])
+> +
+>  dnl configure the panel plugin
+>  XFCE_PANEL_PLUGIN([XFCE4_PANEL], [4.0.0])
+> 
+
+Ehm, how about using 'XFCE_PANEL_PLUGIN([XFCE4_PANEL], [4.2.0])' instead? 
+
+	Jasper
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Tue Aug  2 13:34:54 2005
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Tue, 02 Aug 2005 13:34:54 +0200
+Subject: hwsensors-plugin on debian testing
+In-Reply-To: <42EEBB28.4090602@student.dei.uc.pt>
+References: <42EE357F.7000909@student.dei.uc.pt>	 <1122914818.5819.3.camel@TIM3000>  <42EE565C.2050903@student.dei.uc.pt> <1122923079.8530.6.camel@TIM3000> <42EEBB28.4090602@student.dei.uc.pt>
+Message-ID: <42EF5A5E.4010200@unix-ag.uni-siegen.de>
+
+Jos? Eduardo Martins wrote:
+> ***begin patch***
+> 
+> --- configure.ac.old    2005-08-02 01:05:10.000000000 +0100
+> +++ configure.ac        2005-08-02 01:04:39.000000000 +0100
+> @@ -32,6 +32,12 @@
+>         exit -1
+>  ])
+> 
+> +dnl Check for control_class_set_unique
+> +AC_CHECK_FUNC([control_class_set_unique], [], [
+> +       echo "Error! You need to upgrade xfce4 to 4.2."
+> +       exit -1
+> +])
+
+This won't work, as it only checks for control_class_set_unique in all 
+libraries listed in $LIBS (plus the system libraries determined by the 
+AC_LANG).
+
+>  dnl configure the panel plugin
+>  XFCE_PANEL_PLUGIN([XFCE4_PANEL], [4.0.0])
+
+As Jasper suggested, use XFCE_PANEL_PLUGIN([XFCE4_PANEL], [4.2.0]).
+
+greets,
+Benedikt
+
+
+From stefan at desire.ch  Tue Aug  2 19:51:02 2005
+From: stefan at desire.ch (Stefan Ott)
+Date: Tue, 2 Aug 2005 19:51:02 +0200
+Subject: hwsensors-plugin on debian testing
+In-Reply-To: <42EF5A5E.4010200@unix-ag.uni-siegen.de>
+References: <42EE357F.7000909@student.dei.uc.pt> <1122914818.5819.3.camel@TIM3000> <42EE565C.2050903@student.dei.uc.pt> <1122923079.8530.6.camel@TIM3000> <42EEBB28.4090602@student.dei.uc.pt> <42EF5A5E.4010200@unix-ag.uni-siegen.de>
+Message-ID: <20050802175101.GB508@desire.ch>
+
+On Tue, Aug 02, 2005 at 01:34:54PM +0200, Benedikt Meurer wrote:
+
+> As Jasper suggested, use XFCE_PANEL_PLUGIN([XFCE4_PANEL], [4.2.0]).
+
+Okay, the changes have been made on svn.
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+"Give a man a fire and he's warm for a day, but set fire to him and he's
+warm for the rest of his life."  -- Terry Pratchett, Jingo
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050802/0424c0ee/attachment.pgp>
+
+From stefan at desire.ch  Tue Aug  2 19:57:30 2005
+From: stefan at desire.ch (Stefan Ott)
+Date: Tue, 2 Aug 2005 19:57:30 +0200
+Subject: hwsensors-plugin on debian testing
+In-Reply-To: <42EE565C.2050903@student.dei.uc.pt>
+References: <42EE357F.7000909@student.dei.uc.pt> <1122914818.5819.3.camel@TIM3000> <42EE565C.2050903@student.dei.uc.pt>
+Message-ID: <20050802175728.GC508@desire.ch>
+
+On Mon, Aug 01, 2005 at 06:05:32PM +0100, Jos? Eduardo Martins wrote:
+
+> Ah. Got it.
+> My sensors-plugin is 0.6.1, but xfce4-panel is version 4.0.6-1.
+> As I don't like much to "confuse" the system with mixed versions of the
+> same software, I will mantain current xfce4 installed (and let debian
+> install a new version when "he" wants to) and try an older version of
+> sensors-plugin.
+> 
+> BTW, how about adding a line in configure.ac to check current xfce4
+> version. If there is such limitation, the users should be warned.
+> 
+> Many thanks for the help.
+
+btw, debian packages of 0.6.1 (for unstable) are currently in work -
+eventually they might get through to testing.
+
+regards
+-- 
+Stefan Ott
+http://www.desire.ch/
+
+"Give a man a fire and he's warm for a day, but set fire to him and he's
+warm for the rest of his life."  -- Terry Pratchett, Jingo
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050802/b64cddf7/attachment.pgp>
+
+From timystery at arcor.de  Sat Aug  6 23:39:05 2005
+From: timystery at arcor.de (timystery at arcor.de)
+Date: Sat, 6 Aug 2005 23:39:05 +0200 (CEST)
+Subject: Real Xfce GDM theme
+In-Reply-To: <42F5164D.6080309@marktrompell.de>
+References: <42F5164D.6080309@marktrompell.de> <42F4A44D.5080308@xfce.org> <42F4A9BE.80700@marktrompell.de>
+	<42F50A89.602@cornell.edu>
+Message-ID: <6823323.1123364345473.JavaMail.ngmail@webmail-04.arcor-online.net>
+
+Hi!
+
+Having found some hours of spare time, I created a GDM theme based on an xfce wallpaper and the Rodent and hicolor icon themes, so it realy gives the xfce flair to any GDM user ;)
+
+You can find the theme at http://www.xfce-look.org/content/show.php?content=27429 or download it directly from http://mitglied.lycos.de/timshome/download/gdm-xfce_0.1.tar.bz2 .
+
+Maybe it's also interesting for xfce-artowrk despite its size of more than 900KB.
+
+Feel free to suggest changes, improvements or patches; it's the only way to improve it (if necessary?).
+
+Greets, Fabian 
+
+
+From pollux at xfce.org  Sat Aug  6 23:43:44 2005
+From: pollux at xfce.org (=?ISO-8859-1?Q?Jean-Fran=E7ois?= Wauthy)
+Date: Sat, 06 Aug 2005 23:43:44 +0200
+Subject: Real Xfce GDM theme
+In-Reply-To: <6823323.1123364345473.JavaMail.ngmail@webmail-04.arcor-online.net>
+References: <42F5164D.6080309@marktrompell.de> <42F4A44D.5080308@xfce.org>
+	 <42F4A9BE.80700@marktrompell.de> <42F50A89.602@cornell.edu>
+	 <6823323.1123364345473.JavaMail.ngmail@webmail-04.arcor-online.net>
+Message-ID: <1123364624.12193.25.camel@localhost>
+
+you should post on the xfce users list too... i think lots of people
+would be interested.
+
+Le samedi 06 ao?t 2005 ? 23:39 +0200, timystery at arcor.de a ?crit :
+> Hi!
+> 
+> Having found some hours of spare time, I created a GDM theme based on an xfce wallpaper and the Rodent and hicolor icon themes, so it realy gives the xfce flair to any GDM user ;)
+> 
+> You can find the theme at http://www.xfce-look.org/content/show.php?content=27429 or download it directly from http://mitglied.lycos.de/timshome/download/gdm-xfce_0.1.tar.bz2 .
+> 
+> Maybe it's also interesting for xfce-artowrk despite its size of more than 900KB.
+> 
+> Feel free to suggest changes, improvements or patches; it's the only way to improve it (if necessary?).
+> 
+> Greets, Fabian 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+-- 
+Jean-Fran?ois Wauthy <pollux at xfce.org>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050806/a9f9f73d/attachment.pgp>
+
+From noreply at berlios.de  Wed Aug 10 15:09:13 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Wed, 10 Aug 2005 15:09:13 +0200 (CEST)
+Subject: [Bug #4768] Terminal uses 100% of processor.
+Message-ID: <200508101309.j7AD9DcA023840@unicorn.berlios.de>
+
+Bug #4768, was updated on 2005-Aug-10 15:09
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: None
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: malin
+Assigned to : none
+Summary: Terminal uses 100% of processor.
+
+Details: While running Terminal --geometry, and i am giving to maximize it, processor uses 100%. Also disk is hard working. Even if i kill Terminal, xfce uses still 100% of processor, so i have to kill it.
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=4768&group_id=910
+
+
+From rogerio.araujo at gmail.com  Fri Aug 12 18:25:11 2005
+From: rogerio.araujo at gmail.com (Rogerio Pereira)
+Date: Fri, 12 Aug 2005 13:25:11 -0300
+Subject: Problems with battery monitor
+Message-ID: <41e8ec0c05081209257c4d5b3b@mail.gmail.com>
+
+Hi,
+
+I have a Compaq Presario R3000, i installed the battery monitor plugin
+in my xfce but the plugins doesn't show any warning when the battery
+is in critical state.
+
+Thanks for any answer.
+
+Rog?rio
+
+
+From rogerio.araujo at gmail.com  Sat Aug 13 17:51:55 2005
+From: rogerio.araujo at gmail.com (Rogerio Pereira)
+Date: Sat, 13 Aug 2005 12:51:55 -0300
+Subject: What i changed to display the warning message.
+Message-ID: <41e8ec0c05081308515c4f6e62@mail.gmail.com>
+
+//  if (!(acpi = fopen ("/proc/acpi/ac_adapter/0/status", "r")))
+//    if (!(acpi = fopen ("/proc/acpi/ac_adapter/ACAD/state", "r")))
+//      if (!(acpi = fopen ("/proc/acpi/ac_adapter/AC/state", "r")))
+//        if (!(acpi = fopen ("/proc/acpi/ac_adapter/ADP1/state", "r")))
+//	        return -1;
+
+  if (!(acpi = fopen ("/proc/acpi/battery/BAT1/state", "r")))
+        return -1;
+
+  fread (buf, 512, 1, acpi);
+  fclose (acpi);
+  if (!acadstate) acadstate=(ACADstate *)malloc(sizeof(ACADstate));
+
+  if ( (ptr = strstr(buf, "charging state:")) )
+  {
+    stat = *(ptr + 25);
+    if (stat == 'c') acadstate->state = 1;
+    if (stat == 'd')
+  	{
+	    acadstate->state = 0;
+	    return 0;
+  	}
+  }
+
+
+From masse_nicolas at yahoo.fr  Mon Aug 15 17:08:43 2005
+From: masse_nicolas at yahoo.fr (Nicolas Masse)
+Date: Mon, 15 Aug 2005 17:08:43 +0200
+Subject: xfce - quicklauncher
+In-Reply-To: <43007DBB.4010902@physik.uni-greifswald.de>
+References: <42FAFDFD.80308@physik.uni-greifswald.de>
+	<20050811171839.3029ab32.masse_nicolas@yahoo.fr>
+	<42FCA9D5.9090708@physik.uni-greifswald.de>
+	<20050815132224.1ab98ef3.masse_nicolas@yahoo.fr>
+	<43007DBB.4010902@physik.uni-greifswald.de>
+Message-ID: <20050815170843.42d52b5d.masse_nicolas@yahoo.fr>
+
+:-(. The main problem for me is that I can't reproduce the bug. What's your glib/gtk version? What' s also your version of XFCE (and libxfcegui)? does this bug happens on other prog? (Can you try to change the icon of the xfce manu plugin in the panel to see if it works?). I would like to help you, but for now i'm just unable to see where this bug does comes from. (oh and also I forgot, did you restart the panel after reinstalling the plugin?) 
+
+Ps:I have cc the xfce-goodies-dev lists since this discussion can interrest them (and perhaps can they provide some help). 
+ 
+>On Fri, 12 Aug 2005 15:53:25 +0200
+>Gordon Grubert <grubert at physik.uni-greifswald.de> wrote:
+>
+>> Hello Nicolas,
+>> 
+>> >>But I have a little question.
+>> >>Can I individualize the iocons for the applications?
+>> >>If I selected "..." for another icon and change
+>> >>into a directory, I never can seleced any icon file
+>> >>because they are not shown. I am using version 0.81.
+>> >>    
+>> >>
+>> >Hmm... I don't really understand what you mean. you must have a filchooser dialog
+>> >who show you all the icons present in your current directory (default is /usr/share/pixmap).
+>> >  
+>> >
+>> I really get the dialog box. But in the right frame I never see any icon 
+>> files although there are
+>> files in the directory, e.g. /usr/share/pixmap.
+>> 
+>So it's just the preview who doesn't work. I'll have a look when i'll have time. (so propably not before 2-3 days :-( )
+>> >You must also be able to change the current directory.
+>> >
+>> Yes, but the same problem in other directories. All directories seem to 
+>> be empty.
+>> 
+>> >Just one question: do you have read access to
+>> >the directory(ies) who causes problems? 
+>> >  
+>> >
+>> Yes, of course. ;-)
+>> 
+>> My "dirty" solution:
+>> I have edited the file ~/.config/xfce4/panel/contents.xml.active in the 
+>> following way:
+>> <launcher command="nedit" 
+>> icon="/home/grubert/Documents/icons/nedit-icon.png" iconID="19"/>
+>> It works with the IconID 19 only.
+>> 
+>
+>Yes. The 19 is normal. It just mean that the icon you 're using is specified by the icon entry (here "/home/grubert/Documents/>icons/nedit-icon.png"). Other value can specify directly an icon (value < 17) or the fact that the icon must change with your >icon theme and is specific with your application (IconID = "18" => not done yet).
+>
+>> Greetings,
+>> Gordon
+>> 
+>
+>thanks for reporting the problem,
+>Masse Nicolas.
+
+>On Mon, 15 Aug 2005 13:34:19 +0200
+>Gordon Grubert <grubert at physik.uni-greifswald.de> wrote:
+>
+> 
+> >Can you try the version currently in svn? thanks.
+> >  
+> >
+> I am really sorry, but the problem already exists :-(
+> 
+> 
+
+
+From masse_nicolas at yahoo.fr  Tue Aug 16 19:39:59 2005
+From: masse_nicolas at yahoo.fr (Nicolas Masse)
+Date: Tue, 16 Aug 2005 19:39:59 +0200
+Subject: Fw: Re: xfce - quicklauncher
+Message-ID: <20050816193959.5f711f14.masse_nicolas@yahoo.fr>
+
+
+Begin forwarded message:
+
+Date: Tue, 16 Aug 2005 10:21:56 +0200
+From: Gordon Grubert <grubert at physik.uni-greifswald.de>
+To: Nicolas Masse <masse_nicolas at yahoo.fr>
+Subject: Re: xfce - quicklauncher
+
+
+Hello Nicolas,
+
+meanwhile, I tested the plugin on another Suse 9.2 32Bit system (xfce 
+4.2.1).
+Do you want to know the result??
+It is the same phenomenon like on my system :-(
+
+If I have time I will test your plugin on a debian linux machine.
+
+Gordon
+
+
+
+From masse_nicolas at yahoo.fr  Tue Aug 16 19:40:07 2005
+From: masse_nicolas at yahoo.fr (Nicolas Masse)
+Date: Tue, 16 Aug 2005 19:40:07 +0200
+Subject: Fw: Re: xfce - quicklauncher
+Message-ID: <20050816194007.16c46da0.masse_nicolas@yahoo.fr>
+
+
+Begin forwarded message:
+
+Date: Tue, 16 Aug 2005 07:16:24 +0200
+From: Gordon Grubert <grubert at physik.uni-greifswald.de>
+To: Nicolas Masse <masse_nicolas at yahoo.fr>
+Subject: Re: xfce - quicklauncher
+
+
+Hello Nicolas,
+
+>The main problem for me is that I can't reproduce the bug.
+>  
+>
+that is not good :-(
+
+>What's your glib/gtk version? What' s also your version of XFCE (and libxfcegui)?
+>
+I am using the following Software:
+OS - Suse Linux 9.2 AMD64
+Kernel - 2.6.8-24.14-default
+glib - 1.2.10-589
+gtk - 1.2.10-882
+xfce - 4.2.2
+
+>does this bug happens on other prog?
+>  
+>
+No.
+
+>Can you try to change the icon of the xfce manu plugin in the panel to see if it works?.
+>
+Yes, it works.
+
+>I would like to help you, but for now i'm just unable to see where this bug does comes from.
+>(oh and also I forgot, did you restart the panel after reinstalling the plugin?)
+>  
+>
+Yes, I executed "killall -USR1 xfce4-panel". I will try to install the 
+plugin on another system
+and to verify the problem. I will send a message to you if I know more.....
+
+Thanks a lot for your help. Greetings
+Gordon
+
+
+
+From masse_nicolas at yahoo.fr  Wed Aug 17 17:21:26 2005
+From: masse_nicolas at yahoo.fr (masse nicolas)
+Date: Wed, 17 Aug 2005 17:21:26 +0200 (CEST)
+Subject: xfce - quicklauncher
+In-Reply-To: <43034719.70702@physik.uni-greifswald.de>
+Message-ID: <20050817152126.48973.qmail@web26005.mail.ukl.yahoo.com>
+
+--- Gordon Grubert <grubert at physik.uni-greifswald.de>
+a ?crit :
+
+Thanks for the information. I think I will have to
+install a suse on my pc to see what's going there. I'
+ll perhaps will do it if I found time, but not these
+days.
+
+Masse Nicolas.
+> Hello Nicolas,
+> 
+> I have good news for you. I installed a new Debian
+> Sarge system
+> with xfce 4.2.2 and your plugin 0.81.
+> Here, the problem does not occur. It seems to be a
+> problem
+> of Suse Linux.
+> 
+> Greetings,
+> Gordon
+> 
+> 
+
+
+
+	
+
+	
+		
+___________________________________________________________________________ 
+Appel audio GRATUIT partout dans le monde avec le nouveau Yahoo! Messenger 
+T?l?chargez cette version sur http://fr.messenger.yahoo.com
+
+
+From bugzilla-daemon at xfce.org  Sun Aug 21 04:26:04 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun, 21 Aug 2005 02:26:04 +0000 (UTC)
+Subject: [Bug 1126]  New: Not able to scroll up and down in big (large) notes
+Message-ID: <20050821022604.E0C151F711B@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1126
+
+           Summary: Not able to scroll up and down in big (large) notes
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: notes
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: gozar at gozar.dynu.com
+
+
+If you create a note with more text than that can be displayed on the screen
+(100 lines or so) you are not able to scroll up and down in the note. You can
+only see the top of the note
+
+Reproducible: Always
+Steps to Reproduce:
+1. Create a big note (100 or so lines)
+2. Now you can't scroll to the buttom of the note
+3. 
+
+
+
+Expected Results:  
+Able to scroll up and down in the note
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bernhard.walle at gmx.de  Sun Aug 21 12:55:34 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Sun, 21 Aug 2005 12:55:34 +0200
+Subject: Xfce4 netload plugin 0.3.3
+Message-ID: <43085DA6.7090902@mail.bwalle.de>
+
+Hello,
+
+today I released 0.3.3 of the netload plugin:
+
+2005-08-21 Bernhard Walle
+        * Fixed memory leak (thanks to Brian J. Tarricone)
+        * Custom bar colors now also work with special Gtk theme engine
+          where the previous code doesn't work (thanks to Brian J.
+          Tarricone)
+        * Fixed bug that causes an invalid displayed string if no device
+          name was set.
+        * Released 0.3.3.
+
+@Ilkka: Can you sync apt repository? (Not only netload, there are some
+minor modifications of other packages.)
+
+
+Regards,
+ Bernhard
+
+
+
+From paul at aptanet.com  Mon Aug 22 00:21:00 2005
+From: paul at aptanet.com (Paul Tansom)
+Date: Sun, 21 Aug 2005 23:21:00 +0100
+Subject: Notes plugin - when does it save?
+Message-ID: <4308FE4C.1060302@aptanet.com>
+
+I've just had a minor run in with the notes plugin. I seem to remember
+when I first started usign it being surprised that it retained so much
+data over an X restart - i.e. it seemed to keep the data but lose the
+positioning. The other day, however, X was killed (not entirely sure
+why, nothing logged and it was over night so I didn't see it happen) and
+the last couple of days notes were lost. Not a big issue it terms of
+data loss, but it does seem to indicate that any new notes are stored in
+memory until you log out - is this correct or have I hit a bug of some
+sort. Out of interest is there somewhere I could look for the working
+file should I wish to try to recover the missing notes? (no doubt
+overwritten now if there is one in this case!).
+
+-- 
+Paul Tansom | Aptanet Ltd. | http://www.aptanet.com/
+
+
+
+From chris at areti.co.uk  Thu Aug 25 13:27:50 2005
+From: chris at areti.co.uk (Chris Green)
+Date: Thu, 25 Aug 2005 12:27:50 +0100
+Subject: The weather app/plugin
+Message-ID: <20050825112750.GA28176@areti.co.uk>
+
+Well I'm subscribed here now.
+
+I've mailed the existing maintainer of the weather app. to see if he's
+happy with me taking over.
+
+I'll download the plugin software in due course and take a look to see
+if it makes any sense to me at all.
+
+How is development done usually for this code?  I see that Berlios
+offers ssh access, I'm very used to that, I have ssh working from work
+to home and from home to work.  I also access this system where I read
+my E-Mail by ssh.
+
+How is CM done?
+
+-- 
+Chris Green (chris at areti.co.uk)
+
+    "Never ascribe to malice that which can be explained by incompetence."
+
+
+From bugzilla-daemon at xfce.org  Sat Aug 27 14:15:14 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat, 27 Aug 2005 12:15:14 +0000 (UTC)
+Subject: [Bug 1131]  New: the text is span over to the place of the next tab
+Message-ID: <20050827121514.3460D1F7043@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1131
+
+           Summary: the text is span over to the place of the next tab
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: taskbar
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: bmh1980de at yahoo.de
+
+
+The summary tell it: the text is span over to the place of the next tab
+
+Sorry, I don't more to report. After reporting I add a screenshot
+
+Reproducible: Always
+Steps to Reproduce:
+1. Start Xfce4
+2. If missing, start the taskbar or add it to the panel
+
+
+
+
+xfce-utils 4.2.2
+dbh 1.0.24
+libxfce4mcs 4.2.2
+libxfcegui4 4.2.2
+startup-notification 0.8
+gtk+2 2.8.2
+pango 1.10.0
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sat Aug 27 14:16:45 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat, 27 Aug 2005 12:16:45 +0000 (UTC)
+Subject: [Bug 1131] the text is span over to the place of the next tab
+Message-ID: <20050827121645.660821F7044@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1131
+
+
+
+
+
+------- Additional Comments From bmh1980de at yahoo.de  2005-08-27 12:16 UTC -------
+Created an attachment (id=299)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=299&action=view)
+Screenshot of the panel with the spanned text
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sat Aug 27 14:18:14 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat, 27 Aug 2005 12:18:14 +0000 (UTC)
+Subject: [Bug 1131] the text is span over to the place of the next tab
+Message-ID: <20050827121814.7CAB91F7043@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1131
+
+
+
+
+
+------- Additional Comments From bmh1980de at yahoo.de  2005-08-27 12:18 UTC -------
+Created an attachment (id=300)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=300&action=view)
+Generated with strace -o xftaskbar4.log xftaskbar4
+
+I hope this outpot of strace is helpfull for you.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sat Aug 27 18:11:48 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat, 27 Aug 2005 16:11:48 +0000 (UTC)
+Subject: [Bug 1131] the text is span over to the place of the next tab
+Message-ID: <20050827161148.D0D871F7043@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1131
+
+
+pollux at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |DUPLICATE
+
+
+
+
+------- Additional Comments From pollux at xfce.org  2005-08-27 16:11 UTC -------
+
+
+*** This bug has been marked as a duplicate of 1099 ***
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+

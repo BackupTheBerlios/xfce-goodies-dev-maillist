@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> What i changed to display the warning message.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-August/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20What%20i%20changed%20to%20display%20the%20warning%20message.&In-Reply-To=%3C41e8ec0c05081308515c4f6e62%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000384.html">
+   <LINK REL="Next"  HREF="000386.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>What i changed to display the warning message.</H1>
+    <B>Rogerio Pereira</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20What%20i%20changed%20to%20display%20the%20warning%20message.&In-Reply-To=%3C41e8ec0c05081308515c4f6e62%40mail.gmail.com%3E"
+       TITLE="What i changed to display the warning message.">rogerio.araujo at gmail.com
+       </A><BR>
+    <I>Sat Aug 13 17:51:55 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000384.html">Problems with battery monitor
+</A></li>
+        <LI>Next message: <A HREF="000386.html">xfce - quicklauncher
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#385">[ date ]</a>
+              <a href="thread.html#385">[ thread ]</a>
+              <a href="subject.html#385">[ subject ]</a>
+              <a href="author.html#385">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>//  if (!(acpi = fopen (&quot;/proc/acpi/ac_adapter/0/status&quot;, &quot;r&quot;)))
+//    if (!(acpi = fopen (&quot;/proc/acpi/ac_adapter/ACAD/state&quot;, &quot;r&quot;)))
+//      if (!(acpi = fopen (&quot;/proc/acpi/ac_adapter/AC/state&quot;, &quot;r&quot;)))
+//        if (!(acpi = fopen (&quot;/proc/acpi/ac_adapter/ADP1/state&quot;, &quot;r&quot;)))
+//	        return -1;
+
+  if (!(acpi = fopen (&quot;/proc/acpi/battery/BAT1/state&quot;, &quot;r&quot;)))
+        return -1;
+
+  fread (buf, 512, 1, acpi);
+  fclose (acpi);
+  if (!acadstate) acadstate=(ACADstate *)malloc(sizeof(ACADstate));
+
+  if ( (ptr = strstr(buf, &quot;charging state:&quot;)) )
+  {
+    stat = *(ptr + 25);
+    if (stat == 'c') acadstate-&gt;state = 1;
+    if (stat == 'd')
+  	{
+	    acadstate-&gt;state = 0;
+	    return 0;
+  	}
+  }
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000384.html">Problems with battery monitor
+</A></li>
+	<LI>Next message: <A HREF="000386.html">xfce - quicklauncher
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#385">[ date ]</a>
+              <a href="thread.html#385">[ thread ]</a>
+              <a href="subject.html#385">[ subject ]</a>
+              <a href="author.html#385">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

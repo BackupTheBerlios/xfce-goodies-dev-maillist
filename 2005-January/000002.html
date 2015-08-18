@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bug 660]  New: Taskbar plugin causes panel to 'shake' when available space changes using &quot;Expand to fill screen&quot;
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-January/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%20660%5D%20%20New%3A%20Taskbar%20plugin%20causes%20panel%20to%20%27shake%27%20when%20available%20space%20changes%20using%20%22Expand%20to%20fill%20screen%22&In-Reply-To=%3C20050107133704.049121F7045%40espresso.foo-projects.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000001.html">
+   <LINK REL="Next"  HREF="000003.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bug 660]  New: Taskbar plugin causes panel to 'shake' when available space changes using &quot;Expand to fill screen&quot;</H1>
+    <B>bugzilla-daemon at xfce.org</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%20660%5D%20%20New%3A%20Taskbar%20plugin%20causes%20panel%20to%20%27shake%27%20when%20available%20space%20changes%20using%20%22Expand%20to%20fill%20screen%22&In-Reply-To=%3C20050107133704.049121F7045%40espresso.foo-projects.org%3E"
+       TITLE="[Bug 660]  New: Taskbar plugin causes panel to 'shake' when available space changes using &quot;Expand to fill screen&quot;">bugzilla-daemon at xfce.org
+       </A><BR>
+    <I>Fri Jan  7 14:37:04 CET 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000001.html">New plugin: xfce4-sensors-plugin
+</A></li>
+        <LI>Next message: <A HREF="000003.html">[Bug 660] Taskbar plugin causes panel to 'shake' when available space changes using &quot;Expand to fill screen&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2">[ date ]</a>
+              <a href="thread.html#2">[ thread ]</a>
+              <a href="subject.html#2">[ subject ]</a>
+              <a href="author.html#2">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="http://bugzilla.xfce.org/show_bug.cgi?id=660">http://bugzilla.xfce.org/show_bug.cgi?id=660</A>
+
+           Summary: Taskbar plugin causes panel to 'shake' when available
+                    space changes using &quot;Expand to fill screen&quot;
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: taskbar
+        AssignedTo: <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">xfce-goodies-dev at berlios.de</A>
+        ReportedBy: <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">umkowa17 at cc.umanitoba.ca</A>
+
+
+When the taskbar plugin is in the panel with &quot;Expand to fill screen&quot; enabled,
+and I do something that changes (increasing or decreasing) the available space,
+such as adding an item to the panel, removing an icon from the panel, or
+changing the amount of workspaces (with the graphical pager on the panel), the
+panel will 'shake' (resizing itself?) for a variable amount of time (~1-5
+seconds).  The xorg composite extension is disabled.
+
+
+Reproducible: Always
+Steps to Reproduce:
+1. Enable the panel taskbar plugin
+2. Enable its &quot;Expand to fill screen&quot; option&quot;
+3. Enable the System Buttons taskbar plugin
+4. Toggle the option to &quot;Hide&quot; Button 2 (try a few times)
+
+Actual Results:  
+The panel resized itself many times before stopping.
+
+Expected Results:  
+A single resizing before halting
+
+I'm using the AMD64 deb packages (4.2 RC3) in Ubuntu from
+<A HREF="http://www.it-weber.net/debian/xfce4/">http://www.it-weber.net/debian/xfce4/</A>
+
+-- 
+Configure bugmail: <A HREF="http://bugzilla.xfce.org/userprefs.cgi?tab=email">http://bugzilla.xfce.org/userprefs.cgi?tab=email</A>
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000001.html">New plugin: xfce4-sensors-plugin
+</A></li>
+	<LI>Next message: <A HREF="000003.html">[Bug 660] Taskbar plugin causes panel to 'shake' when available space changes using &quot;Expand to fill screen&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2">[ date ]</a>
+              <a href="thread.html#2">[ thread ]</a>
+              <a href="subject.html#2">[ subject ]</a>
+              <a href="author.html#2">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

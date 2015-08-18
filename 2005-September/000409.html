@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> 'hacking' some of XFCE goodies
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-September/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%27hacking%27%20some%20of%20XFCE%20goodies&In-Reply-To=%3C20050918111835.00004a0c%40ACER_ONDRA%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000414.html">
+   <LINK REL="Next"  HREF="000405.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>'hacking' some of XFCE goodies</H1>
+    <B>Ondrej Mihalyi</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%27hacking%27%20some%20of%20XFCE%20goodies&In-Reply-To=%3C20050918111835.00004a0c%40ACER_ONDRA%3E"
+       TITLE="'hacking' some of XFCE goodies">mihalyi at centrum.cz
+       </A><BR>
+    <I>Sun Sep 18 11:18:35 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000414.html">'hacking' some of XFCE goodies
+</A></li>
+        <LI>Next message: <A HREF="000405.html">Updated Xfce4-clipman-plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#409">[ date ]</a>
+              <a href="thread.html#409">[ thread ]</a>
+              <a href="subject.html#409">[ subject ]</a>
+              <a href="author.html#409">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>When you say you fork and then call system(), it was not what I meant.  More direct way is to call a variation of a function exec to run the top program (execl, execv, ... try 'man 3 exec' into console).  The advantage is that you spawn only the forked process, which upon calling something like execlp(&quot;top&quot;, &quot;top&quot;, &quot;options&quot;, &quot;moreoptions&quot;, NULL) will replace your code in the forked child by the code of 'top' and execute it with given parameters.  (don't forget, that first parameter in unixes starts with the path to file name of the executable, therefore I wrote &quot;top&quot; twice in the argument list of function execlp)
+
+BUT remember, 'top' doesn't have an option to save output to a file, so you have to redirect it's output to a file.
+After fork(), but before exec(), you must open a file by function open() (similar to fopen, but returns integer - file descriptor instead of FILE*), call close(1) (close standard output), call dup2(filedesc, 1), close(filedesc).
+
+Code snippet:
+fork();
+int fd = open(&quot;filename&quot;, O_CREAT|O_WRONLY|O_TRUNC);
+close(1);
+dup2(fd, 1);
+close(fd);
+execlp(&quot;top&quot;, &quot;top&quot;, &quot;options&quot;, &quot;moreoptions&quot;, NULL);
+
+Then you don't have to kill the new process, just in your main program call the function waitpid(pid_of_forked_process, &amp;status, flags) to get rid of the defunct process (zombie) - you always have to call some variation of wait() function after calling fork to get rid of the zombie process.
+
+If you set flags in waitpid to WNOHANG, waitpid becomes non blocking and you can periodically check if your spawned process finished and only then reread the top.lista file.
+
+Even better way is to use system pipes in your program to directly read the output of top (not through file), but it's more complicated.  
+
+I really hope I didn't cofuse you :) Ask me if you want more info.  Maybe you should read somewhere about linux system programming, it would sure help.
+
+Cheers,
+
+Ondrej
+
+On Sat, 17 Sep 2005 19:11:42 +0200
+&gt;<i> I had a problem with the number of &quot;xfce4-panel &lt;defunct&gt;&quot; growing to 
+</I>&gt;<i> milions but I set a kill()er for them and now I think it works without 
+</I>&gt;<i> any problems..
+</I>&gt;<i> The trace can be found in /tmp dir - where are the top.pid top.old and 
+</I>&gt;<i> top.lista files.
+</I>&gt;<i> 
+</I>&gt;<i> The forked child does a system() call to `top` to retrieve info on 
+</I>&gt;<i> running processes and channels it to top.lista.
+</I>&gt;<i> The top.pid contains the forked child's pid, to trace the status of it,
+</I>&gt;<i> when it's over a kill() signal is sent to get rid of the zombie.
+</I>&gt;<i> Then the program retrieves data from top.lista, stores the parsed 
+</I>&gt;<i> version in top.old and forks a new process.
+</I>&gt;<i> While the process is running again, the top.old is used for data source 
+</I>&gt;<i> and so on...
+</I>&gt;<i> 
+</I>&gt;<i> The updated (and I hope final) version is already available at the 
+</I>&gt;<i> standard location:
+</I>&gt;<i> <A HREF="http://szift.org/xfce/xfce4-cpugraph-plugin-szifted.tar.bz2">http://szift.org/xfce/xfce4-cpugraph-plugin-szifted.tar.bz2</A>
+</I>&gt;<i> 
+</I>&gt;<i> Have a nice run :)
+</I>&gt;<i> 
+</I>&gt;<i> --
+</I>&gt;<i> Best wishes
+</I>&gt;<i> _ukasz Hejnak
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> xfce-goodies-dev mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">xfce-goodies-dev at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000414.html">'hacking' some of XFCE goodies
+</A></li>
+	<LI>Next message: <A HREF="000405.html">Updated Xfce4-clipman-plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#409">[ date ]</a>
+              <a href="thread.html#409">[ thread ]</a>
+              <a href="subject.html#409">[ subject ]</a>
+              <a href="author.html#409">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

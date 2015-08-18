@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Panel changes for 4.4
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-March/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Panel%20changes%20for%204.4&In-Reply-To=%3C20050330174936.13614.qmail%40web26007.mail.ukl.yahoo.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000141.html">
+   <LINK REL="Next"  HREF="000146.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Panel changes for 4.4</H1>
+    <B>masse nicolas</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Panel%20changes%20for%204.4&In-Reply-To=%3C20050330174936.13614.qmail%40web26007.mail.ukl.yahoo.com%3E"
+       TITLE="Panel changes for 4.4">masse_nicolas at yahoo.fr
+       </A><BR>
+    <I>Wed Mar 30 19:49:36 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000141.html">[Bug 876] Plugin should also have a left click launcher option
+</A></li>
+        <LI>Next message: <A HREF="000146.html">Panel changes for 4.4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#145">[ date ]</a>
+              <a href="thread.html#145">[ thread ]</a>
+              <a href="subject.html#145">[ subject ]</a>
+              <a href="author.html#145">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>--- Jasper Huijsmans &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jasper at xfce.org</A>&gt; wrote:
+&gt;<i> Alexander Iliev wrote:
+</I>&gt;<i> &gt; Jasper Huijsmans &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jasper at xfce.org</A>&gt; wrote:
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt;&gt;Alexander Iliev wrote:
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;Hei, I thought of another addition to the new
+</I>&gt;<i> API:
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;gboolean
+</I>&gt;<i> xfce_panel_plugin_test_availability(gchar
+</I>&gt;<i> &gt;&gt;&gt;**return_msg);
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;Good idea, but I think it should be sufficient to
+</I>&gt;<i> have a
+</I>&gt;<i> &gt;&gt;'Unique = True'
+</I>&gt;<i> &gt;&gt;field in the .desktop file for the plugin. I can't
+</I>&gt;<i> really
+</I>&gt;<i> &gt;&gt;think of a
+</I>&gt;<i> &gt;&gt;situation where this wouldn't work.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> 
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; Ok, since this is pretty similar to my previous
+</I>&gt;<i> suggestion
+</I>&gt;<i> &gt; some more explanation would be needed. First - the
+</I>&gt;<i> idea
+</I>&gt;<i> &gt; is pretty different here. It's not about plugin
+</I>&gt;<i> being
+</I>&gt;<i> &gt; unique or not, it's about cheching for certain
+</I>&gt;<i> conditions
+</I>&gt;<i> &gt; which should be fulfilled.
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; Take for example the xkb plugin. If I run a Xvnc
+</I>&gt;<i> server
+</I>&gt;<i> &gt; and connect to the server there is no XKB
+</I>&gt;<i> extension
+</I>&gt;<i> &gt; available
+</I>&gt;<i> &gt; (Xvnc does not implement XKB). So the xkb plugin
+</I>&gt;<i> could not
+</I>&gt;<i> &gt; function at all. As a result the panel currently
+</I>&gt;<i> crashes.
+</I>&gt;<i> &gt; This is firstly plugin's fault and I'm working on
+</I>&gt;<i> a rewrite
+</I>&gt;<i> &gt; of this plugin which sould handle such situations
+</I>&gt;<i> more
+</I>&gt;<i> &gt; gracefully. I also know that with the new
+</I>&gt;<i> out-of-process
+</I>&gt;<i> &gt; plugins a crash in one plugin should not crash the
+</I>&gt;<i> whole
+</I>&gt;<i> &gt; panel. But nevertheless I think such API would be
+</I>&gt;<i> of help
+</I>&gt;<i> &gt; in making XFCE more user-oriented desktop.
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; I think having such a function is a good thing,
+</I>&gt;<i> since the
+</I>&gt;<i> &gt; plugin writers can use it to check for certain
+</I>&gt;<i> conditions
+</I>&gt;<i> &gt; needed to run their plugins. If the plugin doesn't
+</I>&gt;<i> depend
+</I>&gt;<i> &gt; on any such conditions or the plugin writer
+</I>&gt;<i> doesn't want to
+</I>&gt;<i> &gt; implement it the simpliest thing is to &quot;return
+</I>&gt;<i> TRUE;&quot;. I
+</I>&gt;<i> &gt; think it wouldn't be hard to implement this from
+</I>&gt;<i> the panel
+</I>&gt;<i> &gt; side. It might slow the add new item dialog (or
+</I>&gt;<i> whatever
+</I>&gt;<i> &gt; it will become in the future), but this is pretty
+</I>&gt;<i> rarely
+</I>&gt;<i> &gt; performed task.
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; Hey, that's just my opinion. :-)
+</I>&gt;<i> &gt; It's up to you, I just think such an API would
+</I>&gt;<i> help in
+</I>&gt;<i> &gt; creating a more &quot;usable&quot; desktop environment.
+</I>&gt;<i> &gt; 
+</I>&gt;<i> 
+</I>&gt;<i> Thanks, that's a very interesting use case. My
+</I>&gt;<i> previous reply may have 
+</I>&gt;<i> sounded like I didn't agree with the feature, but
+</I>&gt;<i> what I meant was to 
+</I>&gt;<i> ask you when it would be useful ;-)
+</I>&gt;<i> 
+</I>&gt;<i> I'm trying to keep the interface as small as
+</I>&gt;<i> possible, especially since 
+</I>&gt;<i> it must be based on sending messages because you
+</I>&gt;<i> can't directly call a 
+</I>&gt;<i> function in an external plugin. That's why I'll be
+</I>&gt;<i> asking for use cases 
+</I>&gt;<i> for every API addition and will try to find
+</I>&gt;<i> alternatives that don't 
+</I>&gt;<i> involve communication.
+</I>&gt;<i> 
+</I>&gt;<i> Anyway, back to your suggestion, there are two
+</I>&gt;<i> situations here that are 
+</I>&gt;<i> important:
+</I>&gt;<i> 
+</I>&gt;<i> - Add a new plugin.
+</I>&gt;<i> 
+</I>&gt;<i> - Start the panel with an existing configuration in
+</I>&gt;<i> a different environment.
+</I>&gt;<i> 
+</I>&gt;<i> The second on will be much harder to handle, because
+</I>&gt;<i> you do want it to 
+</I>&gt;<i> show up again the next time you log in to an
+</I>&gt;<i> environment where the 
+</I>&gt;<i> plugin does work again.
+</I>&gt;<i> 
+</I>&gt;<i> Don't you think it would be better if the plugin
+</I>&gt;<i> would show an error 
+</I>&gt;<i> icon and/or a dialog explaining the situation, and
+</I>&gt;<i> perhaps offering the 
+</I>&gt;<i> user to hide and try again in the next session? This
+</I>&gt;<i> would not need 
+</I>&gt;<i> communication with the panel.
+</I>&gt;<i> 
+</I>
+Alternatively what can be done is to do so that the
+function responsible of loading the plugin can return
+TRUE or FALSE, depending if the plugin was
+successfully loaded. If ot is not the case, the plugin
+can then dispay why and what was wrong. It seems that
+the current panel already work that way... 
+The only benefit of Alexander's method (I think) is
+that the plugin writer will have to implement the
+ask_availability method, when for now nothing is done
+to say him that he needs to verify the availability of
+some plugin-required components. (Perhaps writing
+something like guidelines can help on this point) 
+
+PS: In the case where a plugin fail to load, the panel
+can always ask if he must try to load this plugin next
+time.
+
+
+&gt;<i> 	Jasper
+</I>
+Masse Nicolas. 
+&gt;<i> _______________________________________________
+</I>&gt;<i> xfce-goodies-dev mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">xfce-goodies-dev at lists.berlios.de</A>
+</I>&gt;<i>
+</I><A HREF="http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev</A>
+&gt;<i> 
+</I>
+
+	
+
+	
+		
+__________________________________________________________________
+D&#233;couvrez le nouveau Yahoo! Mail : 250 Mo d'espace de stockage pour vos mails ! 
+Cr&#233;ez votre Yahoo! Mail sur <A HREF="http://fr.mail.yahoo.com/">http://fr.mail.yahoo.com/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000141.html">[Bug 876] Plugin should also have a left click launcher option
+</A></li>
+	<LI>Next message: <A HREF="000146.html">Panel changes for 4.4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#145">[ date ]</a>
+              <a href="thread.html#145">[ thread ]</a>
+              <a href="subject.html#145">[ subject ]</a>
+              <a href="author.html#145">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

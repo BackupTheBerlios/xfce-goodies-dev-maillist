@@ -1,0 +1,1083 @@
+From bugzilla-daemon at xfce.org  Wed Nov  2 10:21:00 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  2 Nov 2005 09:21:00 +0000 (UTC)
+Subject: [Bug 1206]  New: weather plugin build error on solaris 10 x86
+Message-ID: <20051102092100.676E1F2928@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1206
+
+           Summary: weather plugin build error on solaris 10 x86
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Other
+        OS/Version: other
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: weather
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: nobody at bg.pearl.dtdns.net
+
+
+xfce4 version 4.2.2.  When building on solaris 10 x86 from pkgsrc I 
+receive compiler errors in function create_summary_tab and the build exits. 
+  
+  
+
+Reproducible: Always
+Steps to Reproduce:
+1. cd pkgsrc/misc/xfce4-weather-plugin  
+2. bmake  install 
+3. after fixing the mixer plugin build as described in another forum,  
+everything will build for xfce, except the weather plugin  
+  
+Actual Results:  
+summary_window.c: In function `create_summary_tab': 
+summary_window.c:25: error: syntax error before numeric constant 
+summary_window.c:112: error: invalid lvalue in assignment 
+summary_window.c:114: warning: pointer/integer type mismatch in conditional 
+expression 
+summary_window.c:116: warning: passing arg 1 of `g_free' makes pointer from 
+integer without a cast 
+summary_window.c:120: error: invalid lvalue in assignment 
+summary_window.c:122: warning: pointer/integer type mismatch in conditional 
+expression 
+summary_window.c:124: warning: passing arg 1 of `g_free' makes pointer from 
+integer without a cast 
+summary_window.c:130: error: `vis' undeclared (first use in this function) 
+summary_window.c:130: error: (Each undeclared identifier is reported only once 
+summary_window.c:130: error: for each function it appears in.) 
+gmake: *** [libweather_la-summary_window.lo] Error 1 
+ 
+
+Expected Results:  
+The plugin should have been built and installed  
+
+Here is the link to the xfce forum post, where others are having similar   
+issues with building on solaris/solaris (sparc).  There is a listed  
+fix that works for the mixer plugin and allows compilation to continue until  
+you get to the weather plugin, for which, I've found no fix.  
+  
+http://www.os-cillation.de/cgi-bin/yabb/YaBB.cgi?board=Help;action=display;num=1109782807  
+ 
+You can see that I receive the same error in the weather plugin as another user 
+two xfce versions ago and several lines have been added to summary_window.c 
+since then. 
+  
+  
+# gcc -v    
+Reading specs from /usr/sfw/lib/gcc/i386-pc-solaris2.10/3.4.3/specs    
+Configured with: /builds/sfw10-gate/usr/src/cmd/gcc/gcc-3.4.3/configure    
+--prefix=/usr/sfw --with-as=/usr/sfw/bin/gas --with-gnu-as    
+--with-ld=/usr/ccs/bin/ld --without-gnu-ld --enable-languages=c,c++    
+--enable-shared    
+Thread model: posix    
+gcc version 3.4.3 (csl-sol210-3_4-branch+sol_rpath)    
+    
+--    
+GNU Make 3.80    
+--
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Nov  2 16:29:50 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  2 Nov 2005 15:29:50 +0000 (UTC)
+Subject: [Bug 1206] weather plugin build error on solaris 10 x86
+Message-ID: <20051102152950.AEEC7F2928@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1206
+
+
+
+
+
+------- Additional Comments From blackhole at atreidis.nl.eu.org  2005-11-02 15:29 UTC -------
+Created an attachment (id=334)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=334&action=view)
+Patch to fix this
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Nov  2 16:30:36 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  2 Nov 2005 15:30:36 +0000 (UTC)
+Subject: [Bug 1206] weather plugin build error on solaris 10 x86
+Message-ID: <20051102153036.386E1F2928@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1206
+
+
+
+
+
+------- Additional Comments From blackhole at atreidis.nl.eu.org  2005-11-02 15:30 UTC -------
+It seems that a header is included which defines the a symbolic constant named
+"sun". As the code tries to declare a variable named "sun" it obviously doesn't
+work.
+The attached patch should fix this by changing the name of the variable used.
+Apply with path -p0 < sun_patch.diff
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Nov  2 18:03:23 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  2 Nov 2005 17:03:23 +0000 (UTC)
+Subject: [Bug 1206] weather plugin build error on solaris 10 x86
+Message-ID: <20051102170323.96821F2928@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1206
+
+
+
+
+
+------- Additional Comments From nobody at pearl.dtdns.net  2005-11-02 17:03 UTC -------
+Thanks
+I appilied your patch to panel-plugin/summary_window.c
+This fixed the issue and the build completed smoothly
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From daichi at xfce.org  Fri Nov  4 10:45:56 2005
+From: daichi at xfce.org (Daichi Kawahata)
+Date: Fri, 4 Nov 2005 18:45:56 +0900
+Subject: Aw: Re: About PO files in Xfce Goodies
+In-Reply-To: <14924734.1130059748540.JavaMail.ngmail@webmail-08.arcor-online.net>
+References: <14924734.1130059748540.JavaMail.ngmail@webmail-08.arcor-online.net>
+Message-ID: <20051104184556.2c8ff786.daichi@xfce.org>
+
+On Sun, 23 Oct 2005 11:29:08 +0200 (CEST)
+timystery at arcor.de wrote:
+
+> hi!
+
+Hi,
+
+> though mailwatch-plugin isn't maintained as goodie, it would
+> like to have mailwatch.desktop.in.in in po/POTFILES.in ...
+
+I've added missing file in POTFILES.in and updated related
+files finally (sorry to delay)
+
+Regards,
+-- 
+Daichi
+
+Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+
+
+From noreply at berlios.de  Mon Nov  7 00:14:38 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Sun, 6 Nov 2005 21:14:38 -0200 (BRST)
+Subject: [Bug #5565] GTK 2.8 breaks the taskbar plugin
+Message-ID: <200511062314.jA6NEcT7029776@unicorn.berlios.de>
+
+Bug #5565, was updated on 2005-Nov-06 21:14
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: None
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: rainer_alves
+Assigned to : none
+Summary: GTK 2.8 breaks the taskbar plugin
+
+Details: I've upgraded GTK to version 2.8 on my FreeBSD box, and it seriously breaks the taskbar plugin, here is the screenshot: http://www.powered.net/rainer/xfce_taskbarplugin_gtk28.jpg
+It looks like the plugin no longer grabs each button's width correctly, and thus doesn't wrap the label properly, putting all labels on top of each other.
+
+Note that I've recompiled all xfce pieces after the GTK upgrade, and everything else works perfectly fine.
+
+PS: Everything was upgraded using the ports system.
+
+--
+Rainer Alves
+
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=5565&group_id=910
+
+
+From bugzilla-daemon at xfce.org  Mon Nov  7 00:39:21 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  6 Nov 2005 23:39:21 +0000 (UTC)
+Subject: [Bug 1212]  New: Long Window names "spill out" and obscure other windows
+Message-ID: <20051106233921.94BB2F2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1212
+
+           Summary: Long Window names "spill out" and obscure other windows
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: taskbar
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: bhalash at gmail.com
+
+
+XFCE4 4.2.2 with version 0.2.2 of the taskbar plugin
+
+Long window names - such as a browser window or a deep folder name - will "spill
+out" to the and cover the buttons of the other windows. 
+
+For example, the window for this site is titled "Enter A Bug - Mozilla Firefox".
+The "Mozilla Firefox" is too big to fit within the box and so spills over and
+covers the window to the right. 
+
+I've compiled both the panel and taskbar plugin several times, using two
+versions of the plugin. 
+
+This is a cosmetic, but annoying bug, as while it doesn't interfere in any way
+with being able to click on another window
+
+Reproducible: Always
+Steps to Reproduce:
+No special steps are needed, this is a constant annoyance
+
+
+
+Gentoo Linux distro, using kernel 2.6.12-gentoo-r8
+
+GTK version 2.6.8
+
+XFCE 4.2.2 and xfce-taskbar plugin 0.2.2
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Nov  7 00:40:36 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  6 Nov 2005 23:40:36 +0000 (UTC)
+Subject: [Bug 1212] Long Window names "spill out" and obscure other windows
+Message-ID: <20051106234036.84473F2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1212
+
+
+
+
+
+------- Additional Comments From bhalash at gmail.com  2005-11-06 23:40 UTC -------
+Created an attachment (id=337)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=337&action=view)
+A screenshot of a window name spilling out of its box
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Nov  7 00:58:00 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  6 Nov 2005 23:58:00 +0000 (UTC)
+Subject: [Bug 1212] Long Window names "spill out" and obscure other windows
+Message-ID: <20051106235800.BCEEBF2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1212
+
+
+
+
+
+------- Additional Comments From rainer at powered.net  2005-11-06 23:58 UTC -------
+As I said in the bug report I've created earlier today, (#5565, "GTK 2.8 breaks
+the taskbar plugin"), I'm having the exact same problem.. my screenshot showing
+the problem is here: http://www.powered.net/rainer/xfce_taskbarplugin_gtk28.jpg
+
+I initially thought this problem was limited to gtk 2.8 (since the taskbar
+plugin worked fine here while I used gtk 2.6).
+
+--
+Rainer Alves
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Nov  7 21:49:08 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  7 Nov 2005 20:49:08 +0000 (UTC)
+Subject: [Bug 1217]  New: taskbar does not shorten label/title
+Message-ID: <20051107204908.8D331F2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1217
+
+           Summary: taskbar does not shorten label/title
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Other
+        OS/Version: FreeBSD
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: taskbar
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: sgaerner at gmx.net
+
+
+The label/title of the program that is shown in the taskbar plugin is not
+shortened. If the label/title is longer than the width of the button, the
+label/title is drawn over the next button in the taskbar.
+
+Reproducible: Always
+Steps to Reproduce:
+1. Taskbar settings: expand to fill screen, show label
+2. Open a program with a long title, e.g. sylpheed.
+3. Show the taskbar plugin. The title is not cut to the button width.
+
+
+
+Expected Results:  
+The label/title shown in the taskbar plugin should be limited to the width of
+the button otherwise all buttons are more or less unreadable.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue Nov  8 00:25:56 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  7 Nov 2005 23:25:56 +0000 (UTC)
+Subject: [Bug 1217] taskbar does not shorten label/title
+Message-ID: <20051107232556.368EFF2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1217
+
+
+sgaerner at gmx.net changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |DUPLICATE
+
+
+
+
+------- Additional Comments From sgaerner at gmx.net  2005-11-07 23:25 UTC -------
+
+
+*** This bug has been marked as a duplicate of 1212 ***
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue Nov  8 00:25:56 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  7 Nov 2005 23:25:56 +0000 (UTC)
+Subject: [Bug 1212] Long Window names "spill out" and obscure other windows
+Message-ID: <20051107232556.400B9F2926@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1212
+
+
+sgaerner at gmx.net changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |sgaerner at gmx.net
+
+
+
+
+------- Additional Comments From sgaerner at gmx.net  2005-11-07 23:25 UTC -------
+*** Bug 1217 has been marked as a duplicate of this bug. ***
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue Nov  8 22:14:25 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue,  8 Nov 2005 21:14:25 +0000 (UTC)
+Subject: [Bug 750] Notes plugin does not use user-specified icon
+Message-ID: <20051108211425.EA57BF2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=750
+
+
+robrwo at gmail.com changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |robrwo at gmail.com
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Nov  9 19:18:47 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  9 Nov 2005 18:18:47 +0000 (UTC)
+Subject: [Bug 1212] Long Window names "spill out" and obscure other windows
+Message-ID: <20051109181847.06692F2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1212
+
+
+
+
+
+------- Additional Comments From woutersmeenk at gmail.com  2005-11-09 18:18 UTC -------
+I am also using gentoo .. and having this bug.
+
+xfce4-session version says this:
+
+Built with Gtk+-2.6.8, running with Gtk+-2.83.
+
+Maybe it could be this mismatch that causes the bug.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Nov  9 20:42:35 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  9 Nov 2005 19:42:35 +0000 (UTC)
+Subject: [Bug 1212] Long Window names "spill out" and obscure other windows
+Message-ID: <20051109194235.61806F2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1212
+
+
+pollux at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |DUPLICATE
+
+
+
+
+------- Additional Comments From pollux at xfce.org  2005-11-09 19:42 UTC -------
+
+
+*** This bug has been marked as a duplicate of 1099 ***
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Nov  9 21:20:17 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  9 Nov 2005 20:20:17 +0000 (UTC)
+Subject: [Bug 1212] Long Window names "spill out" and obscure other windows
+Message-ID: <20051109202017.0C2E5F2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1212
+
+
+
+
+
+------- Additional Comments From fourdan at xfce.org  2005-11-09 20:20 UTC -------
+Please update to Xfce 4.2.3.1.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu Nov 10 13:06:08 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 10 Nov 2005 12:06:08 +0000 (UTC)
+Subject: [Bug 1222]  New: i18n support
+Message-ID: <20051110120608.063ADF2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1222
+
+           Summary: i18n support
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: enhancement
+          Priority: Medium
+         Component: battery
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: rogerio.araujo at gmail.com
+
+
+i would like have i18n support in this plugin to translate this plugin to
+brazilian portuguese.
+
+Reproducible: Always
+Steps to Reproduce:
+
+Actual Results:  
+Only english language support is avaliable.
+
+Expected Results:  
+The plugin translated to brazilian portuguese.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From foxy at on-the-hill.me.uk  Fri Nov 11 18:45:57 2005
+From: foxy at on-the-hill.me.uk (Foxy)
+Date: Fri, 11 Nov 2005 17:45:57 +0000
+Subject: plugins for new panel
+Message-ID: <4374D8D5.8080706@on-the-hill.me.uk>
+
+I wonder if anyone knows when the plugins are going to be ported to a 
+new panel? I know that there are some of the are unofficially ported by 
+Jasper, but it's only a few... Being on svn version of xfce I miss some 
+of them (xkb, datetime, wavelan, showdesktop).
+
+
+From asm3072 at njit.edu  Tue Nov 15 23:24:53 2005
+From: asm3072 at njit.edu (Antonio SJ Musumeci)
+Date: Tue, 15 Nov 2005 17:24:53 -0500
+Subject: xfce4-i8k-plugin-0.0.2
+Message-ID: <437A6035.6030908@njit.edu>
+
+I've just released 0.0.2 of the Dell i8k plugin...
+no major functional changes but several clean ups and just better design.
+
+-Timeout between updates configurable.
+-If i8k module not installed or error with /proc/i8k it will display 
+"Disabled"
+-No longer uses i8k userland utils but the ioctl's.
+
+I'll be releasing a 4.4 version soon with some more enhancements.
+
+-Antonio
+
+
+From kieroglu at math.washington.edu  Thu Nov 17 13:34:13 2005
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Thu, 17 Nov 2005 04:34:13 -0800 (PST)
+Subject: XFCE 4.4 timer plugin
+Message-ID: <Pine.LNX.4.61.0511170423470.15947@zeno3.math.washington.edu>
+
+
+   Hi everyone,
+
+   After a long busy period I found some time to install the SVN version of 
+XFCE. Attached is my new timer plugin for XFCE 4.4 panels. I've sent a 
+version for 4.2 panels about 2 months ago but it had size adjustment 
+problems. This one works OK thanks to the new API. A quick reminder: This 
+works similar to the KTeaTime applet for KDE. You specify a countdown 
+period or set an alarm time. When the time comes, you get a warning window 
+and/or a command you specify is run. Currently I'm using a progressbar to 
+indicate the time elapsed. Maybe I'll later replace it with a nice 
+sequence of images. Also we may have a default sound file to play as the 
+alarm. Feedbacks are welcome.
+
+   I'll upload this to SVN soon. I'm also the maintainer of the XMMS 
+plugin, and I'll port that one also to the new API.
+
+   Ilgar
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-xmms-plugin-0.3.0.tar.bz2
+Type: application/x-bzip2
+Size: 151582 bytes
+Desc: 
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051117/c197d84c/attachment.bin>
+
+From foxy at on-the-hill.me.uk  Thu Nov 17 13:42:20 2005
+From: foxy at on-the-hill.me.uk (Foxy)
+Date: Thu, 17 Nov 2005 12:42:20 +0000
+Subject: XFCE 4.4 timer plugin
+In-Reply-To: <Pine.LNX.4.61.0511170423470.15947@zeno3.math.washington.edu>
+References: <Pine.LNX.4.61.0511170423470.15947@zeno3.math.washington.edu>
+Message-ID: <437C7AAC.7070206@on-the-hill.me.uk>
+
+Kemal Eroglu wrote:
+
+>
+>   Hi everyone,
+>
+>   After a long busy period I found some time to install the SVN 
+> version of XFCE. Attached is my new timer plugin for XFCE 4.4 panels. 
+> I've sent a version for 4.2 panels about 2 months ago but it had size 
+> adjustment problems. This one works OK thanks to the new API. A quick 
+> reminder: This works similar to the KTeaTime applet for KDE. You 
+> specify a countdown period or set an alarm time. When the time comes, 
+> you get a warning window and/or a command you specify is run. 
+> Currently I'm using a progressbar to indicate the time elapsed. Maybe 
+> I'll later replace it with a nice sequence of images. Also we may have 
+> a default sound file to play as the alarm. Feedbacks are welcome.
+>
+>   I'll upload this to SVN soon. I'm also the maintainer of the XMMS 
+> plugin, and I'll port that one also to the new API.
+>
+>   Ilgar
+
+the file attached is xfce4-xmms-plugin-0.3.0... is it a wrong name or 
+wrong file?
+
+
+From kieroglu at math.washington.edu  Thu Nov 17 18:51:22 2005
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Thu, 17 Nov 2005 09:51:22 -0800 (PST)
+Subject: XFCE 4.4 timer plugin
+In-Reply-To: <437C7AAC.7070206@on-the-hill.me.uk>
+References: <Pine.LNX.4.61.0511170423470.15947@zeno3.math.washington.edu>
+ <437C7AAC.7070206@on-the-hill.me.uk>
+Message-ID: <Pine.LNX.4.61.0511170949380.16653@zeno3.math.washington.edu>
+
+On Thu, 17 Nov 2005, Foxy wrote:
+>
+> the file attached is xfce4-xmms-plugin-0.3.0... is it a wrong name or wrong 
+> file?
+
+   Grr, it's been hours and my two messages didn't make it to the list. 
+This time I won't attach the correct file, but just give a link:
+
+   http://www.math.washington.edu/~kieroglu/xfce4-timer-0.3.tar.bz2
+
+   Sorry again for the problems,
+
+   Ilgar
+
+
+From bugzilla-daemon at xfce.org  Sat Nov 19 13:09:11 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat, 19 Nov 2005 12:09:11 +0000 (UTC)
+Subject: [Bug 1235]  New: Date&Time Plugin : "Week day starts on Monday" doesn't work
+Message-ID: <20051119120911.85B65F2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1235
+
+           Summary: Date&Time Plugin : "Week day starts on Monday" doesn't
+                    work
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: datetime
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: pete2004 at radiosilence.de
+
+
+When using the Data&Time plugin for the panel, setting "Week day starts on
+Monday" in the Preferences has no effect. On the displayed calender the week
+always starts on sunday.
+
+Reproducible: Always
+Steps to Reproduce:
+1. Set "Week day starts on Monday" in the Date&Time panel plugin preferences
+Actual Results:  
+On the displayed calender the week always starts on sunday.
+
+Expected Results:  
+On the displayed calender the week should have started on monday.
+
+Installed:
+Xfce 4.2.3.2 (installer)
+Xfce-Goodies 4.2.1 (installer)
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From kieroglu at math.washington.edu  Sat Nov 19 14:46:31 2005
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Sat, 19 Nov 2005 05:46:31 -0800 (PST)
+Subject: XMMS plugin port for XFCE 4.4 panel
+Message-ID: <Pine.LNX.4.61.0511190540031.11933@zeno1.math.washington.edu>
+
+   Hi,
+
+   Here's the link to the ported plugin package. I have Gtk 2.8 so I had to 
+throw in some Cairo cflags and ldflags. I don't know much about autoconf 
+scripts so I'd appreciate if someone could verify that it works well with 
+Gtk 2.6 (Note that this plugin requires Pango >= 1.8.0). The official 
+release that I'll upload to SVN will include some tiny modifications to 
+this one, and possibly changes suggested in the feedbacks.
+
+   http://www.math.washington.edu/~kieroglu/xfce4-xmms-plugin-0.4.tar.bz2
+
+   Ilgar
+
+
+From redondos at gmail.com  Thu Nov 24 15:57:44 2005
+From: redondos at gmail.com (redondos)
+Date: Thu, 24 Nov 2005 11:57:44 -0300
+Subject: xkb-plugin names & flags
+Message-ID: <4385d4f8.1e7cd2db.6a0a.ffff86c2@mx.gmail.com>
+
+Hi.
+
+I have two layouts in my xorg.conf file: us and es. I can switch between
+them either with a key combination or by clicking the button that I added to
+my panel. (xfce4-xkb-plugin) 
+
+This is what is displayed on the button label when I switch between these
+two layouts:
+
+Layout	Text		Flag
+us		"PC"		none, "PC" is also shown
+es		"US"		United States
+
+You can imagine how annoying and confusing this is. So, where does the
+plugin take the names and flags from, so that I can change that to something
+coherent. I care the most about the text, flags don't really matter.
+
+Thanks in advance, and sorry if I posted a FAQ, I couldn't find it in the
+lists. 
+
+--
+redondos
+
+
+
+From noreply at berlios.de  Fri Nov 11 15:22:38 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Fri, 11 Nov 2005 15:22:38 +0100 (CET)
+Subject: [Feature #1497] bars and hints for genmon plugin
+Message-ID: <200511111422.jABEMb1m027933@unicorn.berlios.de>
+
+Feature Request #1497, was updated on 2005-Nov-11 15:22
+You can respond by visiting: 
+http://developer.berlios.de/feature/?func=detailfeature&feature_id=1497&group_id=910
+
+Category: None
+Status: Open
+Priority: 5
+Summary: bars and hints for genmon plugin
+
+By: michalk
+Date: 2005-Nov-11 15:22
+
+Message:
+Logged In: YES 
+user_id=21550
+Browser: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.12) Gecko/20050922 Firefox/1.0.7 (Ubuntu package 1.0.7)
+
+Hi,
+
+The genmon plugin is, IMHO, an extremely good idea as
+it allows for creating new plugins in a fast way, using
+output of some simple scripts (instead of writing GTK
+stuff each time). However, the following features could
+be added:
+
+1. A bar (or a few of them) below the text showing
+graphically the current value (like for system load)
+provided by the input script.
+
+2. A configurable text in the tooltips, also provided
+by the input script.
+
+For example, a script could output the following format
+of data each time executed:
+
+Data
+30 50
+This is a dynamic tooltip (30/50)
+
+and the plugin would then show the text "Data", two
+bars: the former filled in 30% and the latter in 50%
+with the defined tooltip.
+
+Michal
+
+
+----------------------------------------------------------------------
+You can respond by visiting: 
+http://developer.berlios.de/feature/?func=detailfeature&feature_id=1497&group_id=910
+
+
+From matthias.eller at static-void-main.de  Tue Nov 15 09:34:48 2005
+From: matthias.eller at static-void-main.de (Matthias Eller)
+Date: Tue, 15 Nov 2005 09:34:48 +0100
+Subject: Bug in the battery plugin
+Message-ID: <43799DA8.2090108@static-void-main.de>
+
+hi,
+
+if you start the plugin with no battery attached the percentage of
+remaining battery capacity is not shown if you later plug in the battery.
+This is because the plug in could not load the last full capacity
+(because no battery was present).
+
+A possible solution is to add
+
+stat = *(ptr + 25);
+if (stat == 'y')
+{
++ if (acpiinfo->present == 0)
++ {
++	read_acpi_info(battery);
++ }
+if ((ptr = strstr (buf, "charging state:")) || (ptr = strstr (buf,
+"State:")))
+{
+
+to line 529 to get the necessary data.
+
+greetings
+Matthias Eller
+
+
+From kieroglu at math.washington.edu  Thu Nov 17 13:38:38 2005
+From: kieroglu at math.washington.edu (Kemal Eroglu)
+Date: Thu, 17 Nov 2005 04:38:38 -0800 (PST)
+Subject: XFCE 4.4 timer plugin
+In-Reply-To: <Pine.LNX.4.61.0511170423470.15947@zeno3.math.washington.edu>
+References: <Pine.LNX.4.61.0511170423470.15947@zeno3.math.washington.edu>
+Message-ID: <Pine.LNX.4.61.0511170437230.15947@zeno3.math.washington.edu>
+
+
+   Oops, I attached the wrong file to the previous message; sorry for this 
+mistake. The correct one is attached here,
+
+   Ilgar
+
+
+On Thu, 17 Nov 2005, Kemal Eroglu wrote:
+
+>
+>  Hi everyone,
+>
+>  After a long busy period I found some time to install the SVN version of 
+> XFCE. Attached is my new timer plugin for XFCE 4.4 panels. I've sent a 
+> version for 4.2 panels about 2 months ago but it had size adjustment 
+> problems. This one works OK thanks to the new API. A quick reminder: This 
+> works similar to the KTeaTime applet for KDE. You specify a countdown period 
+> or set an alarm time. When the time comes, you get a warning window and/or a 
+> command you specify is run. Currently I'm using a progressbar to indicate the 
+> time elapsed. Maybe I'll later replace it with a nice sequence of images. 
+> Also we may have a default sound file to play as the alarm. Feedbacks are 
+> welcome.
+>
+>  I'll upload this to SVN soon. I'm also the maintainer of the XMMS plugin, 
+> and I'll port that one also to the new API.
+>
+>  Ilgar
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xfce4-timer-0.3.tar.bz2
+Type: application/x-bzip2
+Size: 264690 bytes
+Desc: 
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051117/f2a0eeb6/attachment.bin>
+
+From bugzilla-daemon at xfce.org  Mon Nov 28 19:59:49 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 28 Nov 2005 18:59:49 +0000 (UTC)
+Subject: [Bug 1244]  New: image of clipman button does not resize to fit the size of the button (wich depends on the size of the panel), looking awful
+Message-ID: <20051128185949.633EDF2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1244
+
+           Summary: image of clipman button does not resize to fit the size
+                    of the button (wich depends on the size of the panel),
+                    looking awful
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: trivial
+          Priority: Medium
+         Component: clipman
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: molesto at riseup.net
+
+
+clipman button image does not scalate, but the other buttons images do
+
+Reproducible: Always
+Steps to Reproduce:
+1. get the latest xfce version
+2. install clipman
+3. resize the panel to a small size
+
+Actual Results:  
+the image (icon or wathever) of the clipman button does not scalate to fit the
+button
+
+Expected Results:  
+scalate the image so that the button does not look like a toast with excess cheese
+
+i was using debian sid (unstable), with everything up to date, this has been
+happening since a long time, my resolution was set at 1024*768
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Nov 28 20:08:06 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 28 Nov 2005 19:08:06 +0000 (UTC)
+Subject: [Bug 1244] image of clipman button does not resize to fit the size of the button (wich depends on the size of the panel), looking awful
+Message-ID: <20051128190806.5C9BAF2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1244
+
+
+
+
+
+------- Additional Comments From nickschermer at gmail.com  2005-11-28 19:08 UTC -------
+I'll fix this tomorrow and release 0.6.1.
+
+Gr. Nick
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From nickschermer at gmail.com  Tue Nov 29 12:03:09 2005
+From: nickschermer at gmail.com (Nick Schermer)
+Date: Tue, 29 Nov 2005 12:03:09 +0100
+Subject: Clipman plugin 0.6.1
+Message-ID: <4abe35490511290303h3bf25ad2v@mail.gmail.com>
+
+New clipman version, download
+here.<http://home.quicknet.nl/qn/prive/nickschermer/clipman/xfce4-clipman-plugin-0.6.1.tar.bz2>
+
+Changes:
+* Proper icon resize (I hope??)
+* Popup menu position is now fixed when the panel is fixed.
+* Toggle button
+* Convert HTML Characters in menu items (remove new lines and tabs)
+* Free everything when the plugin is closed
+
+Greets, Nick Schermer
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20051129/b6b56de2/attachment.html>
+
+From bugzilla-daemon at xfce.org  Tue Nov 29 12:06:42 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 29 Nov 2005 11:06:42 +0000 (UTC)
+Subject: [Bug 1244] image of clipman button does not resize to fit the size of the button (wich depends on the size of the panel), looking awful
+Message-ID: <20051129110642.E18BDF2925@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1244
+
+
+
+
+
+------- Additional Comments From nickschermer at gmail.com  2005-11-29 11:06 UTC -------
+I hope this'll fix the icon size. But it probably needs some testing.
+
+http://home.quicknet.nl/qn/prive/nickschermer/clipman/xfce4-clipman-plugin-0.6.1.tar.bz2
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From peter at shevtsov.fanstvo.com  Tue Nov 29 12:24:50 2005
+From: peter at shevtsov.fanstvo.com (Peter A. Shevtsov)
+Date: Tue, 29 Nov 2005 17:24:50 +0600
+Subject: Is this possible with xfce notes plugin?
+Message-ID: <438C3A82.6040203@shevtsov.fanstvo.com>
+
+Hi!
+
+Is this somehow possible to make new notes with notes-plugin from the 
+command line?
+
+

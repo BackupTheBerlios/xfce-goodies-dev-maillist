@@ -1,0 +1,339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bug #4058] Added support for Solaris
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-May/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%20%234058%5D%20Added%20support%20for%20Solaris&In-Reply-To=%3C200505182356.j4INuofp026023%40unicorn.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000192.html">
+   <LINK REL="Next"  HREF="000194.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bug #4058] Added support for Solaris</H1>
+    <B>noreply at berlios.de</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%20%234058%5D%20Added%20support%20for%20Solaris&In-Reply-To=%3C200505182356.j4INuofp026023%40unicorn.berlios.de%3E"
+       TITLE="[Bug #4058] Added support for Solaris">noreply at berlios.de
+       </A><BR>
+    <I>Thu May 19 01:56:50 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000192.html">[Bug 971] memory leak
+</A></li>
+        <LI>Next message: <A HREF="000194.html">[Patch #445] Addition of UTC option to datetime-plugin (Feature req #434)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#193">[ date ]</a>
+              <a href="thread.html#193">[ thread ]</a>
+              <a href="subject.html#193">[ subject ]</a>
+              <a href="author.html#193">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bug #4058, was updated on 2005-May-19 00:56
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: xfce4-systemload-plugin
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: aalmroth
+Assigned to : none
+Summary: Added support for Solaris
+
+Details: Added support for Solaris SPARC/x86 by adding sections for SVR4 in the files cpu.c, uptime.c and memswap.c;
+
+Diff files;
+
+cpu.c.orig,cpu.c:
+257a258,261
+&gt;<i> #elif defined(__SVR4)  /* Solaris, actually */
+</I>&gt;<i> /* Added by Phil Brown for CSW build of xfce 4.0 */
+</I>&gt;<i> /* Added again by Andreas Almroth for CSW build of xfce 4.2.1 */
+</I>&gt;<i> /* 2005-05-18 tidying up */
+</I>258a263,356
+&gt;<i> #include &lt;fcntl.h&gt;
+</I>&gt;<i> #include &lt;limits.h&gt;
+</I>&gt;<i> #include &lt;stdio.h&gt;
+</I>&gt;<i> #include &lt;stdlib.h&gt;
+</I>&gt;<i> #include &lt;string.h&gt;
+</I>&gt;<i> #include &lt;errno.h&gt;
+</I>&gt;<i> #include &lt;sys/stat.h&gt;
+</I>&gt;<i> #include &lt;sys/types.h&gt;
+</I>&gt;<i> #include &lt;sys/time.h&gt;
+</I>&gt;<i> #include &lt;kstat.h&gt;
+</I>&gt;<i> #include &lt;sys/param.h&gt;
+</I>&gt;<i> #include &lt;sys/sysconfig.h&gt;
+</I>&gt;<i> 
+</I>&gt;<i> #include &lt;sys/sysinfo.h&gt;
+</I>&gt;<i> 
+</I>&gt;<i> #define MAXCPUS 10 /* get real, we wont have more than 10 cpus for a GUI box*/
+</I>&gt;<i> cpu_stat_t olddata[MAXCPUS], newdata[MAXCPUS];
+</I>&gt;<i> 
+</I>&gt;<i> /* for use by read_uptime() */
+</I>&gt;<i> gulong solaris_uptime_secs;
+</I>&gt;<i> 
+</I>&gt;<i> gulong read_cpuload(){
+</I>&gt;<i>   static int hz=100; /* temp value just in case */
+</I>&gt;<i>   static kstat_ctl_t *kc = NULL;
+</I>&gt;<i>   kstat_t     *ks = NULL;
+</I>&gt;<i>   kstat_named_t *kn = NULL;
+</I>&gt;<i>   static int ncpus=-1;
+</I>&gt;<i>   int count=0;
+</I>&gt;<i>   uint_t tickstotal=0, ticksused=0;
+</I>&gt;<i>   
+</I>&gt;<i>   if(ncpus==-1){
+</I>&gt;<i>     ncpus=_sysconfig(_CONFIG_NPROC_CONF);
+</I>&gt;<i>     /*                printf(&quot;DEBUG-systemload: ncpus=%d\n&quot;, ncpus);*/
+</I>&gt;<i>     hz=HZ;
+</I>&gt;<i>   }
+</I>&gt;<i>   if(kc==NULL){
+</I>&gt;<i>     memset(olddata, 0, sizeof(cpu_stat_t)*MAXCPUS);
+</I>&gt;<i>     kc=kstat_open();
+</I>&gt;<i>   }
+</I>&gt;<i>   
+</I>&gt;<i>   /* cheat and calculate uptime in here also */
+</I>&gt;<i>   /* although couldn't we do this from one of the cpu_stat structs?*/
+</I>&gt;<i>   ks=kstat_lookup(kc, &quot;unix&quot;, 0, &quot;system_misc&quot; );
+</I>&gt;<i>   /*  printf(&quot;DEBUG-systemload: ks=%p\n&quot;,ks);*/
+</I>&gt;<i>   
+</I>&gt;<i>   /* random &quot;just do it&quot; kinda thing here */
+</I>&gt;<i>   kstat_read(kc, ks, 0);
+</I>&gt;<i>   
+</I>&gt;<i>   kn=kstat_data_lookup(ks, &quot;lbolt&quot;);
+</I>&gt;<i>   solaris_uptime_secs=kn-&gt;value.ui32 / hz;
+</I>&gt;<i>   
+</I>&gt;<i>   
+</I>&gt;<i>   for(count=0;count&lt;ncpus;count++){
+</I>&gt;<i>     /* It might be slow parsing this every time.
+</I>&gt;<i>      * Should probably cache it
+</I>&gt;<i>      */
+</I>&gt;<i>     ks=kstat_lookup(kc, &quot;cpu_stat&quot;, 0, NULL /*&quot;cpu_stat&quot;*/ );
+</I>&gt;<i>     if(ks==NULL){
+</I>&gt;<i>       printf(&quot;DEBUG: null output for kstat on cpu%d\n&quot;,count);
+</I>&gt;<i>       continue;
+</I>&gt;<i>     }
+</I>&gt;<i>     
+</I>&gt;<i>     kstat_read(kc, ks, &amp;newdata[count]);
+</I>&gt;<i>   }
+</I>&gt;<i>   
+</I>&gt;<i>   if(olddata[0].cpu_sysinfo.cpu[CPU_KERNEL]==0){
+</I>&gt;<i>     /* first time here. Nothing to compare to */
+</I>&gt;<i>     memcpy(olddata, newdata, sizeof(cpu_stat_t)*MAXCPUS);
+</I>&gt;<i>     return 0;
+</I>&gt;<i>     
+</I>&gt;<i>   }
+</I>&gt;<i>   
+</I>&gt;<i>   for(count=0;count&lt;ncpus;count++){
+</I>&gt;<i>     ticksused += newdata[count].cpu_sysinfo.cpu[CPU_USER] -
+</I>&gt;<i>       olddata[count].cpu_sysinfo.cpu[CPU_USER];
+</I>&gt;<i>     ticksused += newdata[count].cpu_sysinfo.cpu[CPU_KERNEL] -
+</I>&gt;<i>       olddata[count].cpu_sysinfo.cpu[CPU_KERNEL];
+</I>&gt;<i>     
+</I>&gt;<i>     
+</I>&gt;<i>     tickstotal += newdata[count].cpu_sysinfo.cpu[CPU_USER] -
+</I>&gt;<i>       olddata[count].cpu_sysinfo.cpu[CPU_USER];
+</I>&gt;<i>     tickstotal += newdata[count].cpu_sysinfo.cpu[CPU_KERNEL] -
+</I>&gt;<i>       olddata[count].cpu_sysinfo.cpu[CPU_KERNEL];
+</I>&gt;<i>     tickstotal += newdata[count].cpu_sysinfo.cpu[CPU_IDLE] -
+</I>&gt;<i>       olddata[count].cpu_sysinfo.cpu[CPU_IDLE];
+</I>&gt;<i>     tickstotal += newdata[count].cpu_sysinfo.cpu[CPU_WAIT] -
+</I>&gt;<i>       olddata[count].cpu_sysinfo.cpu[CPU_WAIT];
+</I>&gt;<i>   }
+</I>&gt;<i>   
+</I>&gt;<i>   memcpy(olddata, newdata, sizeof(cpu_stat_t)*MAXCPUS);
+</I>&gt;<i>   
+</I>&gt;<i>   return ((ticksused * 100) / tickstotal) ;
+</I>&gt;<i> }
+</I>&gt;<i> 
+</I>260c358
+&lt; #error &quot;Your plattform is not yet supported&quot;
+---
+&gt;<i> #error &quot;Your platform is not yet supported&quot;
+</I>
+
+uptime.c.orig, uptime.c:
+112a113
+&gt;<i> #elif defined(__SVR4) /* Solaris */
+</I>113a115,124
+&gt;<i> extern gulong solaris_uptime_secs;
+</I>&gt;<i> gulong read_uptime()
+</I>&gt;<i> {
+</I>&gt;<i>       /* we already have kstat open in cpu.c
+</I>&gt;<i>        * so do the reading there, not here
+</I>&gt;<i>        */
+</I>&gt;<i>       return solaris_uptime_secs;
+</I>&gt;<i> }
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>
+memswap.c.orig, memswap.c:
+442a443,446
+&gt;<i> #elif defined(__SVR4) /* well, actually this is for Solaris */
+</I>&gt;<i> /* Added by Phil Brown for CSW build of xfce 4.0 */
+</I>&gt;<i> /* Added again by Andreas Almroth for CSW build of xfce 4.2.1 */
+</I>&gt;<i> /* 2005-05-18 tidying up with using kstat and new swapctl */
+</I>443a448,571
+&gt;<i> #include &lt;stdio.h&gt;
+</I>&gt;<i> #include &lt;stdlib.h&gt; 
+</I>&gt;<i> #include &lt;unistd.h&gt;
+</I>&gt;<i> #include &lt;sys/stat.h&gt;
+</I>&gt;<i> #include &lt;sys/swap.h&gt;
+</I>&gt;<i> #include &lt;vm/anon.h&gt;
+</I>&gt;<i> #include &lt;kstat.h&gt;
+</I>&gt;<i> #include &lt;sys/sysinfo.h&gt;
+</I>&gt;<i> 
+</I>&gt;<i> static kstat_ctl_t     *kc         = NULL;
+</I>&gt;<i> static kstat_t         *sys_pagesp = NULL;
+</I>&gt;<i> static int             pagesize    = -1;
+</I>&gt;<i> static unsigned long   physmem     = 0;
+</I>&gt;<i> static unsigned long   freemem     = 0;
+</I>&gt;<i> static swaptbl_t *swap_entries = NULL;
+</I>&gt;<i> 
+</I>&gt;<i> int alloc_table() {
+</I>&gt;<i>   int num;
+</I>&gt;<i>   int i;
+</I>&gt;<i> 
+</I>&gt;<i>   num = swapctl(SC_GETNSWP,0);
+</I>&gt;<i> 
+</I>&gt;<i>   if (num == 0)
+</I>&gt;<i>     return -1;
+</I>&gt;<i>   
+</I>&gt;<i>   swap_entries = (swaptbl_t *)malloc(num * sizeof(swapent_t) + 
+</I>&gt;<i>                                    sizeof(struct swaptable));
+</I>&gt;<i>     
+</I>&gt;<i>   if (swap_entries == NULL)
+</I>&gt;<i>       return -1;
+</I>&gt;<i> 
+</I>&gt;<i>   for (i = 0; i &lt; (num + 1); i++)
+</I>&gt;<i>     swap_entries-&gt;swt_ent[i].ste_path = malloc(MAXPATHLEN);
+</I>&gt;<i>     
+</I>&gt;<i>   swap_entries-&gt;swt_n = num + 1;
+</I>&gt;<i> 
+</I>&gt;<i>   return num + 1;
+</I>&gt;<i> }
+</I>&gt;<i> 
+</I>&gt;<i> gint read_memswap(gulong *mem, gulong *swap, gulong *MT, gulong *MU, gulong *ST, gulong *SU)
+</I>&gt;<i> {
+</I>&gt;<i>   kstat_named_t *kn;
+</I>&gt;<i>   uint64_t swap_total = 0;
+</I>&gt;<i>   uint64_t swap_free  = 0;
+</I>&gt;<i> 
+</I>&gt;<i>   int num;
+</I>&gt;<i>   int i,n;
+</I>&gt;<i> 
+</I>&gt;<i>   /* Read page size first time */
+</I>&gt;<i>   if(pagesize == -1){
+</I>&gt;<i>      pagesize = sysconf(_SC_PAGESIZE);
+</I>&gt;<i>   }
+</I>&gt;<i> 
+</I>&gt;<i>   /* Open kstat first time and read total memory */
+</I>&gt;<i>   if (kc == NULL) {
+</I>&gt;<i>     kc = kstat_open(); /* Should check for rc */
+</I>&gt;<i> 
+</I>&gt;<i>     sys_pagesp = kstat_lookup(kc, &quot;unix&quot;, 0, &quot;system_pages&quot;);
+</I>&gt;<i>     
+</I>&gt;<i>     kstat_read(kc,sys_pagesp,0);
+</I>&gt;<i>     
+</I>&gt;<i>     kn = kstat_data_lookup(sys_pagesp,&quot;physmem&quot;);
+</I>&gt;<i>     
+</I>&gt;<i>     if (kn != NULL)
+</I>&gt;<i>       physmem = (kn-&gt;value.ul * pagesize) &gt;&gt; 10;
+</I>&gt;<i>     else
+</I>&gt;<i>       physmem = 0;
+</I>&gt;<i>   }
+</I>&gt;<i> 
+</I>&gt;<i>   /* Read current free memory */
+</I>&gt;<i> 
+</I>&gt;<i>   kstat_read(kc,sys_pagesp,0);
+</I>&gt;<i> 
+</I>&gt;<i>   kn = kstat_data_lookup(sys_pagesp,&quot;freemem&quot;);
+</I>&gt;<i> 
+</I>&gt;<i>   freemem = (kn-&gt;value.ul * pagesize) &gt;&gt; 10;
+</I>&gt;<i> 
+</I>&gt;<i>   *mem = ((physmem - freemem) * 100) / physmem;
+</I>&gt;<i>   *MT  = physmem;
+</I>&gt;<i>   *MU  = physmem - freemem;
+</I>&gt;<i> 
+</I>&gt;<i>   /* Get swapctl stats */
+</I>&gt;<i> 
+</I>&gt;<i>   if (swap_entries == NULL) {
+</I>&gt;<i>     if ((num = alloc_table()) == -1) {
+</I>&gt;<i>       *swap = 0;
+</I>&gt;<i>       *ST   = 0;
+</I>&gt;<i>       *SU   = 0;
+</I>&gt;<i>       return 0;
+</I>&gt;<i>     }
+</I>&gt;<i>   }
+</I>&gt;<i>   else
+</I>&gt;<i>     num = swap_entries-&gt;swt_n;
+</I>&gt;<i> 
+</I>&gt;<i>   n = swapctl(SC_LIST,swap_entries);
+</I>&gt;<i> 
+</I>&gt;<i>   if (n &gt; num) {
+</I>&gt;<i>     /* Geesh, someone added swap, clean up and allocate again */
+</I>&gt;<i>     for (i = 0; i &lt; num; i++)
+</I>&gt;<i>       free(swap_entries-&gt;swt_ent[i].ste_path);
+</I>&gt;<i> 
+</I>&gt;<i>     free(swap_entries);
+</I>&gt;<i> 
+</I>&gt;<i>     swap_entries = NULL;
+</I>&gt;<i> 
+</I>&gt;<i>     if ((num = alloc_table()) == -1)
+</I>&gt;<i>       *swap = 0;
+</I>&gt;<i>       *ST   = 0;
+</I>&gt;<i>       *SU   = 0;
+</I>&gt;<i>       return 0;
+</I>&gt;<i>   }
+</I>&gt;<i>   
+</I>&gt;<i>   for (i = 0; i &lt; n; i++) {
+</I>&gt;<i>     swap_total += (swap_entries-&gt;swt_ent[i].ste_pages);
+</I>&gt;<i>     swap_free  += (swap_entries-&gt;swt_ent[i].ste_free);
+</I>&gt;<i>   }
+</I>&gt;<i> 
+</I>&gt;<i>   *swap = ((swap_total - swap_free) * 100) / swap_total;
+</I>&gt;<i>   *ST = (gulong)(swap_total * pagesize) /1024;
+</I>&gt;<i>   *SU = (gulong)((swap_total - swap_free) * pagesize) / 1024;
+</I>&gt;<i> 
+</I>&gt;<i>   return 0;
+</I>&gt;<i> }
+</I>&gt;<i> 
+</I>445c573
+&lt; #error &quot;Your platform is not yet support&quot;
+---
+&gt;<i> #error &quot;Your platform is not yet supported&quot;
+</I>
+
+For detailed info, follow this link:
+<A HREF="http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=4058&amp;group_id=910">http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=4058&amp;group_id=910</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000192.html">[Bug 971] memory leak
+</A></li>
+	<LI>Next message: <A HREF="000194.html">[Patch #445] Addition of UTC option to datetime-plugin (Feature req #434)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#193">[ date ]</a>
+              <a href="thread.html#193">[ thread ]</a>
+              <a href="subject.html#193">[ subject ]</a>
+              <a href="author.html#193">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

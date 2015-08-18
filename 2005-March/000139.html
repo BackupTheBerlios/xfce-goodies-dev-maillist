@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Panel changes for 4.4
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-March/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Panel%20changes%20for%204.4&In-Reply-To=%3C1112133278.760d4d7cb8ff4%40mail.bg%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000131.html">
+   <LINK REL="Next"  HREF="000142.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Panel changes for 4.4</H1>
+    <B>Alexander Iliev</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Panel%20changes%20for%204.4&In-Reply-To=%3C1112133278.760d4d7cb8ff4%40mail.bg%3E"
+       TITLE="Panel changes for 4.4">sasoiliev_trash at mail.bg
+       </A><BR>
+    <I>Tue Mar 29 23:54:38 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000131.html">Panel changes for 4.4
+</A></li>
+        <LI>Next message: <A HREF="000142.html">Panel changes for 4.4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#139">[ date ]</a>
+              <a href="thread.html#139">[ thread ]</a>
+              <a href="subject.html#139">[ subject ]</a>
+              <a href="author.html#139">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hei, I thought of another addition to the new API:
+
+gboolean xfce_panel_plugin_test_availability(gchar
+**return_msg);
+
+The panel could call this function when a user
+selects &quot;Add new item&quot; for each plugin and when
+a particular plugin returns FALSE it could be
+grayed out (disabled). The plugin would store an
+explanation of the reason why it could not be
+added this time and it might be displayed somehow
+to the user.
+
+Excuse me with all my stupid ideas, but I'm just
+trying to think in terms of usability (that's a
+VERY VERY modern word these days :-) ) and I think
+it's quite more appropriate not to be able to add
+some plugin under certain curcumstances than to be
+able to add the plugin and it not to function
+properly. ;-)
+
+Again, sorry for the crap and for my not very good
+english. Just needed to share these thoughts.
+
+Thanks,
+Alexander
+
+
+-----------------------------
+
+Work &amp; Travel in USA - &#1057;&#1090;&#1091;&#1076;&#1077;&#1085;&#1090;&#1089;&#1082;&#1080; &#1073;&#1088;&#1080;&#1075;&#1072;&#1076;&#1080; &#1074; &#1057;&#1040;&#1065;.
+&#1048;&#1089;&#1082;&#1072;&#1096; &#1083;&#1080; &#1076;&#1072; &#1089;&#1087;&#1077;&#1095;&#1077;&#1083;&#1080;&#1096; $$$? &#1050;&#1072;&#1082;&#1074;&#1086; &#1095;&#1072;&#1082;&#1072;&#1096; &#1086;&#1097;&#1077;? &#1047;&#1072;&#1087;&#1080;&#1096;&#1080; &#1089;&#1077;!
+&#1055;&#1086;&#1076;&#1088;&#1086;&#1073;&#1085;&#1086;&#1089;&#1090;&#1080; &#1085;&#1072; &#1072;&#1076;&#1088;&#1077;&#1089;: <A HREF="http://www.vega-exchanges.org">http://www.vega-exchanges.org</A> 
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000131.html">Panel changes for 4.4
+</A></li>
+	<LI>Next message: <A HREF="000142.html">Panel changes for 4.4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#139">[ date ]</a>
+              <a href="thread.html#139">[ thread ]</a>
+              <a href="subject.html#139">[ subject ]</a>
+              <a href="author.html#139">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

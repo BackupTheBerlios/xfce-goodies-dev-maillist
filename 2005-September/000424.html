@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Plugin compilation
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-September/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Plugin%20compilation&In-Reply-To=%3C4abe35490509280616544fce70%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000423.html">
+   <LINK REL="Next"  HREF="000425.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Plugin compilation</H1>
+    <B>Nick Schermer</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Plugin%20compilation&In-Reply-To=%3C4abe35490509280616544fce70%40mail.gmail.com%3E"
+       TITLE="Plugin compilation">nickschermer at gmail.com
+       </A><BR>
+    <I>Wed Sep 28 15:16:55 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000423.html">Plugin compilation
+</A></li>
+        <LI>Next message: <A HREF="000425.html">Plugin compilation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#424">[ date ]</a>
+              <a href="thread.html#424">[ thread ]</a>
+              <a href="subject.html#424">[ subject ]</a>
+              <a href="author.html#424">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Is this for the new panel?
+Look if you plugin is internal or external and @
+<A HREF="http://xfce.loculus.nl/documentation/API/">http://xfce.loculus.nl/documentation/API/</A>
+
+Gr. Nick
+
+Greets, Nick
+
+2005/9/28, Hennie Muller &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">hjmuller at webmail.co.za</A>&gt;:
+&gt;<i>
+</I>&gt;<i> Hi all,
+</I>&gt;<i>
+</I>&gt;<i> I've got a small problem. I'm new to linux, new to C
+</I>&gt;<i> programming, and now I've decided to write a plugin for
+</I>&gt;<i> xfce.
+</I>&gt;<i> When trying to compile the sample plugin I get the
+</I>&gt;<i> following error:
+</I>&gt;<i>
+</I>&gt;<i> /usr/lib/gcc-lib/i586-suse-linux/3.3.5/../../../crt1.o(.text+0x18):
+</I>&gt;<i> In function `_start':
+</I>&gt;<i> ../sysdeps/i386/elf/start.S:115: undefined reference to
+</I>&gt;<i> `main'
+</I>&gt;<i> /tmp/ccwgsehR.o(.text+0x56): In function
+</I>&gt;<i> `xfce_control_class_init':
+</I>&gt;<i> sample.c: undefined reference to `control_class_set_unique'
+</I>&gt;<i> /tmp/ccwgsehR.o(.text+0x60):sample.c: undefined reference
+</I>&gt;<i> to `control_class_set_unloadable'
+</I>&gt;<i> /tmp/ccwgsehR.o(.text+0x8b):sample.c: undefined reference
+</I>&gt;<i> to `control_class_set_icon'
+</I>&gt;<i> /tmp/ccwgsehR.o(.text+0xc): In function
+</I>&gt;<i> `g_module_check_init':
+</I>&gt;<i> sample.c: undefined reference to
+</I>&gt;<i> `xfce_plugin_check_version'
+</I>&gt;<i> collect2: ld returned 1 exit status
+</I>&gt;<i>
+</I>&gt;<i> I use the following command to compile:
+</I>&gt;<i> gcc -Wall -O2 `pkg-config xfce4-panel-1.0 --libs --cflags`
+</I>&gt;<i> sample.c -o sample
+</I>&gt;<i>
+</I>&gt;<i> Can someone please point me in the right direction?
+</I>&gt;<i> _____________________________________________________________________
+</I>&gt;<i> For super low premiums, click here <A HREF="http://www.dialdirect.co.za/quote">http://www.dialdirect.co.za/quote</A>
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://www.webmail.co.za">http://www.webmail.co.za</A> the South African FREE email service
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> xfce-goodies-dev mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">xfce-goodies-dev at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050928/8614eb69/attachment.html">https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050928/8614eb69/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000423.html">Plugin compilation
+</A></li>
+	<LI>Next message: <A HREF="000425.html">Plugin compilation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#424">[ date ]</a>
+              <a href="thread.html#424">[ thread ]</a>
+              <a href="subject.html#424">[ subject ]</a>
+              <a href="author.html#424">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

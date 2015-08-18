@@ -1,0 +1,134 @@
+From bogus@does.not.exist.com  Wed Mar 14 16:40:00 2012
+From: bogus@does.not.exist.com ()
+Date: Wed, 14 Mar 2012 15:40:00 -0000
+Subject: No subject
+Message-ID: <mailman.0.1331739605.15089.xfce-goodies-dev@lists.berlios.de>
+
+attached stack trace shows a similar path to the crash though.
+
+FYI Jannis, the installations in my machine are different from
+Linux's, i.e. my working SHELL is /usr/freeware/bin/bash,
+haven't PHP installed etc. which may cause a problem at frame
+2 (while compile flag has `-g', it says `No locals.' in the
+full trace).
+
+Regards,
+-- 
+Daichi
+
+Language Codes: http://www.w3.org/WAI/ER/IG/ert/iso639.htm
+Country Codes: http://www.ics.uci.edu/pub/ietf/http/related/iso3166.txt
+
+--Multipart=_Sun__12_Feb_2006_12_50_36_+0900_WIMefRY5WCcUkGW/
+Content-Type: application/x-gzip;
+ name="xfce4-verve-plugin.bt.gz"
+Content-Disposition: attachment;
+ filename="xfce4-verve-plugin.bt.gz"
+Content-Transfer-Encoding: base64
+
+H4sICLqq7kMAA3hmY2U0LXZlcnZlLXBsdWdpbi5idADdHGlv3Lj1+/wKYlKgTmFPJFFnURfIbhLX
+QNZJ42y7RbdQdVBj1RppqsPHBvvf+x4p6hpNPBpPnGyNHBL57ouPFJOzix/JMvSJsaCz77P1fR4v
+r0qiKYpG3uSMkcssKm+9nJE3WZWGXhln6TE5T4PF7OzVdyQuSIRQRQ11TILshuUsJP49Ka8YOQPy
+ZyxluZeQ95WfxAF5GwcsLQDUS0Nyn1UE8Ga3LAmyFSNlRoIrL10yEpcI8CLLSRgXZR77VcmA+jpm
+BckinAZ5WE4ClpdenMJUGsYoXrGYfbxfMzIvrrJbxLiP0+UcKRcgKQrVA70CcVEPzy+yBHgk9yTN
+CCiTe2l5TyIQADRdENIhKmfnfDpkIEDCaQEdNMutVyCTKF5WaAt4m6/idXFSLOOTOI/vzIUxXywW
+YHDgjcBLbqJS2O3fd1HA9BOw4w07WSfVMk5/v5i9z7Nl7q1IyfJVnHLY27i8IkW8TMG4qnJMvqsK
+wvI8yxezD8wLQW1S3K/8LEEvZSvyoiryF0kWeMmLJPaphn+yu+xEWdBFkS1UECnMUraYvc28EOg3
+yKDkQ7i7c+Tarb2UJYioTWU6QJ/Gd1nFOqIZ+3BtkHfnuSyvT+5U9URbKHtZeIg/gXP4SM7hvpw9
+kFndk2sXd5Ku7jq+86voMeoOSXyOv0RbIeSDrLrQu2sFMb6EkTjP9jbnCImJ/B/Heg+uXFrEoVM5
+tpgTIifz/8OCcv+wGeBP4LzKwiph+3Me4E+sv1UZJ3tZuY89QV/4vb+yXeTdecZpycXUp/JrECfw
+gvX+Zi+LtpgTcjPI2X5pKRF3qW4/qeqOTIYYu1APJtIOdpe7nFSWOfjuti9KLy+r9UmalXEUB7wl
+PtnVUDuT2l2eKEtL0Wzu1U8N0Hfn+xO0wGG+V8h3UHfyJ7ub6FGBMEGXoMqLLN/LgF3cKdZjuH3Z
+K2y6uBM4RvEdK/Zj2KJO7B+iUntcC9ElMCEnYFNawn4N0azJGdFF3p3nL0JJbXo6tJgTrJsuVQ3x
+FI45Wckh/qSVvPxlr0xpMSd0K6tE269RkYi7VJh1eZUD1KQi0+JM2W2vvXLPvbbE3JEbbh2hZXqh
+QfujvGDpMk5ZwdfRhHl5kmXXxU7qTiY5e6YQsnRB3Cs3Llx5rkKOojhhbuqt2KlyF9U/5E8vwzBn
+RUE6Y1lV4hGPjydOxZ+fE68kS2w5i0XwR4tqM/hNxE8ckaMz9/zSfXX+wb18/f7lh5cf333osPqn
+8q/nz2dHy9B/Tvzyy4v2TCUArugqjVRqkzgFdlGchu5aHN+4ccrZk6N64DEMqWPPnmnIUFUUxYw0
+BRnycyOXpTfAKy7JETydcggzCn2FU1gsXnAo8ecJQAA11QBqFKkZkW17zKrFx1LoQtvolQwoQsuS
+BmAxHD3VTNt2DEcRVJe8aCIh05o902tKpmVZgaAkNksudBtFmVdBCTEm6Ji2RW1NNY9J2s6iydYs
+L2NWnCp4sNiMe2A3GLur2QqyyFhRjdkzo2HMFKXHOGW3N+SofukoYFsacuZ0Wclyzq/7dqerjq7Z
+Q36OCg43JTvbifQhO/fGS+Ki3Mo0ivOiUfReRiBwv/Fy18uXyNuKIt8yqULm8yF/A9S1Gv5+FAz5
+T2U8YGA5dPbMbgIsFI5sA2zJQLXPRJSizJ45El03g058inNNN4GyAy5frROGzS85Cn1ubjsMPJtT
+7h6DokiYY0pN0tCNYINkEyiQY3xERL9uK4YyRlEzwYqqytNWUUJP416U1NgNS0s3ZwGLb6A+Ht1y
+erWAx4TVuaUYlGHQjDLEPfMJP7I8gcaU5amXtOwhroC9xp0YUs30eNq5UGvdlZcXV17ifvfu3dvX
+Ly9cePjp9StyFCRZUeVMsDE8IwTOOSurPMV4q5gMGovZTVyLmeJUNerQlgM1rKMB7IzX1PQmE1sR
+9wo2wgBAgb6UJfRKDw0AlnKoXef9dT0LyQIa2RA0KhVRCb/8uo7UUrtI/5o9TgvtM0psys/nbMV+
+zvVDiWveaH4HYlTVhbSWqUdcWnGo7rJVXLpVCmvgNQtdWFfSLKwFpsyLgJk4+8d6IUtjx/kQHqu4
+KFASoVgjS9hBcD1cHmRNk3q0sgpZMFB1iqFi1LJavl7ne1daWXBGxakB4xAFbkUfFhvfaotNy11T
+oKqrZs3d1uTy1uHeY9vjp2GJV3S9NZmm6paKVdPcYKSrwMjijBgsRLao4pAQt3EIJafOSfAtTyXM
+SRzuGx5Bak8ZQSQXqGsBimunZejAxRZ5p0We2nBZeZD3YSbYwPq5hRSCYZGjNnrF4YR8TYuoIBRe
+13KGcQErfgBLfpFVuTQNdFWJ7wXXPamrguUyw2SgCHbhNSdW4Jk82oiqYCNNEb2GElK/Xnq47FAB
+Syg0Hc71SK2FTc06c6UOjmoCOVEDVVUN6Bi5uOTfqMaoHRMfk+RUPSaSKT4XLIk2LFfz1Awd4knT
+ap6a6gcdntBMrt28ggUBn+r+JTDYgIZloBlo7URm151G7cR6bWp95dgOgOty9bBM7ioBCgkQnFrH
+BP6+keZnhj62YuhUb1pKEn35prJudonrvv/w+uPHf7hvfrz4/uP5O1gRyCmZb/KeP30fKmXkRE95
+jBRYaK+8nPzhuSgaXgStIlSWFngUEpotqkKvMKqYRE1YCsjQ7z1onDG15wfumy8ywjdKxeKALbTU
+DBcdNBR+gL7AZ24lEMxSTFtpwBrCAHqGsOdyQMJzRRr4IPHAxRL4e/7WQDJKW5/GaOnmrcxKqOlF
+/AsTDvhqnb4USIxyTd6JR66G8tRbgcZf/61YxTryXODx7v1f+Wgt2oOyb3pJzH/OT1Was8idglHw
+ZgFhL9/i04B56gpnB8IRANidGx/NxmFFo9YbDRrmY7wx6OoeATqCh9O849j5V9+V7eC9yDd1FnQL
+Z222o7P3Mt4EpOyCW3PC7Gjl5J2EijX2Z0VTfoa339n1k/GzRs0r+TJ/KAAlpY4LR/0KXUwWsHBs
+cgdP1Y6Yf/ldrBRKehAl7fpwitTzx+6Ju6vF4bfHTexlqxVsLYqtGdahiyDft68yBAzPjJQvsd/u
+WuDrbr17kvyf7cKloxFa5REvbdOb0santmTCZ2wy/43t+x/M+b7o89/UQYFUzguCalUlHvZgkOaX
+HOhlZ7Cp99BQtmhSIMD5lELq8BjpCNOLGRhGkyNss+WHF7M5ZUBo8HKV8hIOb2fu5fnZxcu37ocf
+L9w35x8uP/4K28USt5en5PUP55eX6AaY5OkAK1zcoOq/9pdX6SVRxOpnqRSNArtV6gosCOnhysbj
+L+K9NQELOw11HZRoQE77bxhzW5bkGujTUkqpoe6QXDj4CbcUpbDBjVt1npMsXTbj3ReAMfUuRvsW
+waLQEAizyk+YeKuFuXHXGT8bES4Duz4R/yHjX1tH9aOiGV55d27BoF1OyximpXvSauVzKpo1dAbP
+e+g6Sn7JGNuNr3sgJsUbydHRmIGEbY1SesG12zTGnzrBY8KWxTT5adkwhjonaY0ve2O1G/twm4Nt
+S9Q4W1UNWF1t3TYMBzc5pmL33L9lXgaEtjBVqmqGrbETzelFh7owDcXUYek3KXVMU3EAhKo9KbrB
+Iz30dMG7RRCM4mPS94yjGLY+7hnTMGzD7HumHWud0IHbHBz3DIXeGP9ybNs2qGUOPTM233rGcBTT
+clR1xDMGnj5oBqWqYTtU0R70DD/L63pGpbqmWpbWDcneWK1jH25sUOpjwAJrKpahUQWmqW73A7b6
+HFyrNl3Yhmobjg3RRvWe2nRh2YBsOo5hUYqmAbWtjSJmK/xnEATd0t531l5hqiq070zxvnOd7efI
+wEw7SwERYPUTphmZUPG/oJl4hliK2o/83ugUk30Djttqrlq2R5S+Q3jzMHH1xYz0/xlTyJuasIxu
+SNSMTjMdl2nUfvsLCV2EQx2rL2N3cPoy+6iF/jFG23HhP4zhHk6Gjji75+ZEKfSeDPq3Y55p6fgU
+phIn0JapDIppb3i6TF8ktkxFcyxdwwwc65W683uvAnvIBBmoKvp2meT8QdaEqaKO9NpTdg2HNRYW
+g1ErHWzJPIB5pmbEwQ02JtNw57U5+jTG63pvSz4YBlQyZ7B96w0f2Hi7yUSV4Wa/N3xY8+29RzFh
+c6vDdm/o53b0ibtbE4+CNbtvuu7gN9Pn2o4OG90NwzWjT713GmbAt2MsQ+2JJl4PkJQd0XaIK0p1
+utFht4MTTNUew+K/bHHFt+PuyWR7IFufh9aHrc1Rdv8jdXtkOXK+qXe+Dtf3VsQnh97NFf5RpP+p
+Hw/WNE01x744t5dPtn6q2TzynT/dbcXGsRtfl33Txq/LT3OdUYrRnpWjIIe75SjpC4EFbx4F5fXf
+xUt7d6D7JXGZe/4E8Ns4DbNbd5ln1bqBx6EzPtJ8nDYdqxNseENR6IIo4fVr/jyI75zd5nFZsvRh
+0HK1dkcuqEj7PBiRQxPPv84lUSkmMki8+1rjV/XbuEpbbNPAHfjiafcT/Fe4gyq1xo9R6zzOIEDu
+64ZWB7odiDJeMbwHeUpOWsMW2Yq5+A/B7nuFKo3CfuXiN2Xwv21x66kOjai+pfE+S5I3r9q7WpR2
+quTW0jdmoPlBrtY2OoINuYAf+T95a/M2CqwdPqP32M6nXth9ICHlRd3WmFUa8P/ch2y9Wob3O0Vh
+OYfHNzXClnKEgnPoH0Cmt/jS+AetdqgLxZKdGPxcneRXj/8Hoh1g5LhJAAA=
+
+--Multipart=_Sun__12_Feb_2006_12_50_36_+0900_WIMefRY5WCcUkGW/--
+
+
+From bogus@does.not.exist.com  Wed Mar 14 16:40:00 2012
+From: bogus@does.not.exist.com ()
+Date: Wed, 14 Mar 2012 15:40:00 -0000
+Subject: No subject
+Message-ID: <mailman.1.1331739606.15089.xfce-goodies-dev@lists.berlios.de>
+
+On Thu, 20 Apr 2006 00:23:08 +0300
+Jani Monoses <jani.monoses at gmail.com> wrote:
+>...
+> > NOT DONE:
+> > =======
+> > xfce4-screenshooter-plugin
+> I have posted a port a while ago to the devel list.
+>...
+So I assume we have to look trought the mailing list. 
+Also, I've remarked that the plugins ported by Jasper aren't in berlios svn yet, so if 
+nobody complains, I will probably tomorow update the svn version with the ones from Jasper.
+
+Bountykiller 
+
+
+From bogus@does.not.exist.com  Wed Mar 14 16:40:00 2012
+From: bogus@does.not.exist.com ()
+Date: Wed, 14 Mar 2012 15:40:00 -0000
+Subject: No subject
+Message-ID: <mailman.2.1331739607.15089.xfce-goodies-dev@lists.berlios.de>
+
+bytes (if encoded using UTF-8), so 10 characters -> 80 bytes -> 26 glyphs and
+one truncated character. That's important, because g_locale_to_utf8() will
+return NULL due to the invalid character, and there's no check for that ->
+segfault.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+

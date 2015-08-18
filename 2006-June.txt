@@ -1,0 +1,1091 @@
+From jannis at xfce.org  Fri Jun  2 17:23:53 2006
+From: jannis at xfce.org (Jannis Pohlmann)
+Date: Fri, 2 Jun 2006 17:23:53 +0200
+Subject: New goodies-dev Mailinglist
+Message-ID: <20060602172353.d6bc7141.jannis@xfce.org>
+
+Hi all,
+
+Auke was so kind to create a new mailinglist on our server, so that we
+no longer have to use the one on BerliOS. This is one of the last steps
+of completely moving the Goodies project over to our own server
+infrastructure.
+
+You can subscribe to this new mailinglist on
+
+  http://foo-projects.org/mailman/listinfo/goodies-dev
+
+I hope all of you will follow the call so that we can drop (or at
+least, clear) our BerliOS account in the near future.
+
+Thanks,
+Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060602/97f194a8/attachment.pgp>
+
+From jasper at xfce.org  Fri Jun  2 19:49:50 2006
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Fri, 02 Jun 2006 19:49:50 +0200
+Subject: Locking/redirecting berlios
+Message-ID: <44807A3E.3040604@xfce.org>
+
+Is anyone going to make sure the berlios resources -- svn, website, 
+mailing list and bug tracker -- are either locked or redirected to the 
+appropriate xfce.org location? What would be a good time to start doing 
+that?
+
+	Jasper
+
+
+From bugzilla-daemon at xfce.org  Sat Jun  3 23:35:40 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat,  3 Jun 2006 21:35:40 +0000 (UTC)
+Subject: [Bug 1892] New: high cpu usage when flashing
+Message-ID: <bug-1892-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1892
+
+           Summary: high cpu usage when flashing
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Other
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: windowlist
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: remenic at gmail.com
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.1)
+Gecko/20060124 Firefox/1.5.0.1
+Build Identifier: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.1)
+Gecko/20060124 Firefox/1.5.0.1
+
+Windows having an URGENT state causes the panel to flash the button belonging
+to the window. This is great, however, for something that changes color twice
+per second, CPU usage is rediculously high.
+
+When my CPU runs at ~930MHz CPU usage is around 25% for xfce-panel and 10% for
+xorg (added up).
+
+Surely this could be brought back to at most 1% for xfce-panel. We're talking
+about drawing a button twice per second here.
+
+Reproducible: Always
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Jun  4 11:10:23 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  4 Jun 2006 09:10:23 +0000 (UTC)
+Subject: [Bug 1892] high cpu usage when flashing
+In-Reply-To: <bug-1892-590@http.bugzilla.xfce.org/>
+Message-ID: <20060604091023.68CCFF29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1892
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+         AssignedTo|xfce-goodies-dev at berlios.de |jasper at xfce.org
+
+
+
+
+------- Comment #1 from jasper at xfce.org  2006-06-04 09:10 UTC -------
+(In reply to comment #0)
+...
+> 
+> Surely this could be brought back to at most 1% for xfce-panel. We're talking
+> about drawing a button twice per second here.
+
+If you have any ideas about why it is taking so much CPU or how it could be
+reduced, please let me know. 
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+You are the assignee for the bug, or are watching the assignee.
+
+
+From jasper at xfce.org  Sun Jun  4 20:50:13 2006
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Sun, 04 Jun 2006 20:50:13 +0200
+Subject: Discontinuing berlios svn (Was: Re: goodies commits)
+In-Reply-To: <44832462.4040108@foo-projects.org>
+References: <44832462.4040108@foo-projects.org>
+Message-ID: <44832B65.2080105@xfce.org>
+
+Auke Kok schreef:
+> Hi,
+> 
+> now that we have a working (tested!) svn repository and commits are starting 
+> to come in.
+
+Ok, sorry to hijack this thread. Having a double repository is bad, so 
+if people are starting to use the new SVN, we should do something with 
+the old one...
+
+I wonder if removing the SVN feature from the feature list in the 
+berlios admin area will remove the repository as well. Does anyone know? 
+Alternatively, I could svn remove everything. Any better options to 
+prevent double work?
+
+	Jasper
+
+
+
+From jannis at xfce.org  Sun Jun  4 21:03:09 2006
+From: jannis at xfce.org (Jannis Pohlmann)
+Date: Sun, 4 Jun 2006 21:03:09 +0200
+Subject: Discontinuing berlios svn (Was: Re: goodies commits)
+In-Reply-To: <44832B65.2080105@xfce.org>
+References: <44832462.4040108@foo-projects.org>
+	<44832B65.2080105@xfce.org>
+Message-ID: <20060604210309.af2bcfc1.jannis@xfce.org>
+
+On Sun, 04 Jun 2006 20:50:13 +0200, Jasper Huijsmans wrote:
+
+> Auke Kok schreef:
+> > Hi,
+> > 
+> > now that we have a working (tested!) svn repository and commits are
+> > starting to come in.
+> 
+> Ok, sorry to hijack this thread. Having a double repository is bad,
+> so if people are starting to use the new SVN, we should do something
+> with the old one...
+> 
+> I wonder if removing the SVN feature from the feature list in the 
+> berlios admin area will remove the repository as well. Does anyone
+> know? Alternatively, I could svn remove everything. Any better
+> options to prevent double work?
+
+Removing everything first should be ok. An we can still disable the SVN
+feature afterwards.
+
+- Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060604/6c53c333/attachment.pgp>
+
+From bugzilla-daemon at xfce.org  Sun Jun  4 22:30:19 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  4 Jun 2006 20:30:19 +0000 (UTC)
+Subject: [Bug 699] datetime->calendar behaviour different from clock->calendar/systray-calendar behaviour
+In-Reply-To: <bug-699-590@http.bugzilla.xfce.org/>
+Message-ID: <20060604203019.B3B5DF29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=699
+
+
+juha at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #2 from juha at xfce.org  2006-06-04 20:30 UTC -------
+in 4.4 orage-clock raises calendar (orage)
+and clock plugin does not raise anything
+and datetime does not exist.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Jun  4 22:30:40 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  4 Jun 2006 20:30:40 +0000 (UTC)
+Subject: [Bug 827] datetime-plugin allows no empty fields
+In-Reply-To: <bug-827-590@http.bugzilla.xfce.org/>
+Message-ID: <20060604203040.6A8ADF29F8@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=827
+
+
+juha at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #4 from juha at xfce.org  2006-06-04 20:30 UTC -------
+fixed in 4.4
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Jun  4 22:31:16 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  4 Jun 2006 20:31:16 +0000 (UTC)
+Subject: [Bug 699] datetime->calendar behaviour different from clock->calendar/systray-calendar behaviour
+In-Reply-To: <bug-699-590@http.bugzilla.xfce.org/>
+Message-ID: <20060604203116.547C3F29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=699
+
+
+juha at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|RESOLVED                    |CLOSED
+
+
+
+
+------- Comment #3 from juha at xfce.org  2006-06-04 20:31 UTC -------
+works in 4.4
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Jun  4 22:32:17 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  4 Jun 2006 20:32:17 +0000 (UTC)
+Subject: [Bug 827] datetime-plugin allows no empty fields
+In-Reply-To: <bug-827-590@http.bugzilla.xfce.org/>
+Message-ID: <20060604203217.43E2AF29F8@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=827
+
+
+juha at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|RESOLVED                    |CLOSED
+
+
+
+
+------- Comment #5 from juha at xfce.org  2006-06-04 20:32 UTC -------
+can be done with orage-clock in 4.4
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Jun  4 22:35:36 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  4 Jun 2006 20:35:36 +0000 (UTC)
+Subject: [Bug 1235] Date&Time Plugin : "Week day starts on Monday" doesn't work
+In-Reply-To: <bug-1235-590@http.bugzilla.xfce.org/>
+Message-ID: <20060604203536.04C33F29F8@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1235
+
+
+juha at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #3 from juha at xfce.org  2006-06-04 20:35 UTC -------
+in 4.4 datetime does not exist and new orage-clock
+plugin does not havethis feature since it realy comes from
+the locale
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Jun  4 22:35:51 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun,  4 Jun 2006 20:35:51 +0000 (UTC)
+Subject: [Bug 1235] Date&Time Plugin : "Week day starts on Monday" doesn't work
+In-Reply-To: <bug-1235-590@http.bugzilla.xfce.org/>
+Message-ID: <20060604203551.D9250F29F8@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1235
+
+
+juha at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|RESOLVED                    |CLOSED
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Jun  5 17:18:15 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  5 Jun 2006 15:18:15 +0000 (UTC)
+Subject: [Bug 1898] New: Wavelan plugin for 4.4 does not work for all cards
+Message-ID: <bug-1898-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1898
+
+           Summary: Wavelan plugin for 4.4 does not work for all cards
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: All
+        OS/Version: Linux
+            Status: NEW
+          Severity: major
+          Priority: Medium
+         Component: wavelan
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: jw+xfce at jameswestby.net
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.3)
+Gecko/20060326 Firefox/1.5.0.3 (Debian-1.5.dfsg+1.5.0.3-2)
+Build Identifier: 0.5.0
+
+THe wavelan plugin does not work for all cards, saying there is no device found
+for most.
+
+It seems to work best for ipw2200 based cards. 
+
+I will investigate this problem soon.
+
+If you have a working configuration please post you kernel version, card, and
+driver version here so I can try and spot any patterns. 
+
+Also please step forward if you have any suggestions about a possible cause.
+
+Reproducible: Always
+
+Steps to Reproduce:
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From jannis at xfce.org  Mon Jun  5 17:58:45 2006
+From: jannis at xfce.org (Jannis Pohlmann)
+Date: Mon, 5 Jun 2006 17:58:45 +0200
+Subject: User account requests
+Message-ID: <20060605175845.ba075d9e.jannis@xfce.org>
+
+Hi all,
+
+this message only is for those who haven't requested a user account
+on http://foo-projects.org/node/3 so far, but who need access to the
+goodies SVN in whatever way:
+
+Please enter something descriptive (like e.g. the goodie you're
+working on) into the "Comments" field, if possible. Also enter whether
+you are a developer or translator.
+
+We can hardly check anyone in detail. The fact that we removed most
+people from the project on BerliOS makes it even harder as we can't
+compare against an existing list of developers.
+
+This also is important because all developers will get Wiki access for
+their goodie's page. It would be nice to be able to filter out
+developers at the time they register.
+
+Thanks in advance,
+Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060605/ba77daea/attachment.pgp>
+
+From bugzilla-daemon at xfce.org  Mon Jun  5 22:02:36 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon,  5 Jun 2006 20:02:36 +0000 (UTC)
+Subject: [Bug 1898] Wavelan plugin for 4.4 does not work for all cards
+In-Reply-To: <bug-1898-590@http.bugzilla.xfce.org/>
+Message-ID: <20060605200236.05249F29F9@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1898
+
+
+ranfyy at gmail.com changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |ranfyy at gmail.com
+
+
+
+
+------- Comment #1 from ranfyy at gmail.com  2006-06-05 20:02 UTC -------
+Works here:
+---
+$ uname -a
+Linux vaio 2.6.15-23-686 #1 SMP PREEMPT Tue May 23 14:03:07 UTC 2006 i686
+GNU/Linux
+---
+
+---
+$ cardctl ident
+Socket 0:
+  product info: "INTERSIL", "I-GATE 11M PC Card / PC Card plus", "Version
+01.02", ""
+  manfid: 0x0156, 0x0002
+  function: 6 (network)
+---
+
+Ubuntu 6.06 with hostap driver.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Jun  7 02:49:50 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  7 Jun 2006 00:49:50 +0000 (UTC)
+Subject: [Bug 1906] New: weather plugin measurement unit not persistent
+Message-ID: <bug-1906-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1906
+
+           Summary: weather plugin measurement unit not persistent
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC (x86)
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: weather
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: ktdreyer at gmail.com
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.2)
+Gecko/20060419 CentOS/1.5.0.2-3.c4.centos Firefox/1.5.0.2
+Build Identifier: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.2)
+Gecko/20060419 CentOS/1.5.0.2-3.c4.centos Firefox/1.5.0.2
+
+All other values for the weather plugin's configuration (location code, etc.)
+are saved and reloaded when I restart Xfce except for the Measurement Unit
+value.
+
+I am using I am using the weather plugin 0.5, Xfce 4.4Beta, GTK+ 2.6.7, CentOS
+4.3, kernel 2.6.9-34.EL.
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. Change the Measurement Value from Metric to Imperial
+2. Restart Xfce
+3. The Measurement Value is back to Metric
+
+
+
+
+Someone mentioned this problem in #XFCE earlier today, and another user pointed
+out that the cause of the problem is a misspelling of "celcius" on line 315 of
+plugin.c. Changing "celsius" to "celcius" fixes the problem.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Jun  7 02:51:26 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  7 Jun 2006 00:51:26 +0000 (UTC)
+Subject: [Bug 1906] weather plugin measurement unit not persistent
+In-Reply-To: <bug-1906-590@http.bugzilla.xfce.org/>
+Message-ID: <20060607005126.88632F29F8@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1906
+
+
+
+
+
+------- Comment #1 from ktdreyer at gmail.com  2006-06-07 00:51 UTC -------
+Created an attachment (id=598)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=598&action=view)
+Patch to fix Measurement Unit bug
+
+Attached a patch to plugin.c.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Jun  7 07:35:45 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  7 Jun 2006 05:35:45 +0000 (UTC)
+Subject: [Bug 1906] weather plugin measurement unit not persistent
+In-Reply-To: <bug-1906-590@http.bugzilla.xfce.org/>
+Message-ID: <20060607053545.EB958F29F8@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1906
+
+
+
+
+
+------- Comment #2 from ranfyy at gmail.com  2006-06-07 05:35 UTC -------
+According to 
+http://en.wikipedia.org/wiki/Celsius
+
+celsius is written with "S". There must be another place in the source where it
+falsely is written with "C" in the middle.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Jun  7 07:36:14 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  7 Jun 2006 05:36:14 +0000 (UTC)
+Subject: [Bug 1906] weather plugin measurement unit not persistent
+In-Reply-To: <bug-1906-590@http.bugzilla.xfce.org/>
+Message-ID: <20060607053614.26B71F29F8@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1906
+
+
+ranfyy at gmail.com changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |ranfyy at gmail.com
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Jun  7 09:00:16 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  7 Jun 2006 07:00:16 +0000 (UTC)
+Subject: [Bug 1906] weather plugin measurement unit not persistent
+In-Reply-To: <bug-1906-590@http.bugzilla.xfce.org/>
+Message-ID: <20060607070016.A71DEF29F8@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1906
+
+
+
+
+
+------- Comment #3 from nick at xfce.org  2006-06-07 07:00 UTC -------
+This is already fixed in trunk
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Jun  7 13:17:15 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  7 Jun 2006 11:17:15 +0000 (UTC)
+Subject: [Bug 1906] weather plugin measurement unit not persistent
+In-Reply-To: <bug-1906-590@http.bugzilla.xfce.org/>
+Message-ID: <20060607111715.0F80FF29F8@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1906
+
+
+nick at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #4 from nick at xfce.org  2006-06-07 11:17 UTC -------
+Change to fixed, will be in the new package.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Jun 18 17:35:55 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun, 18 Jun 2006 15:35:55 +0000 (UTC)
+Subject: [Bug 1934] New: Support for taskbar entry DnD into pager
+Message-ID: <bug-1934-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1934
+
+           Summary: Support for taskbar entry DnD into pager
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: All
+        OS/Version: Linux
+            Status: NEW
+          Severity: enhancement
+          Priority: Medium
+         Component: taskbar
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: pollux at xfce.org
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.4)
+Gecko/20060606 Firefox/1.5.0.4
+Build Identifier: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.4)
+Gecko/20060606 Firefox/1.5.0.4
+
+I've just read a blog entry on planet Gnome about the new DnD in their pager,
+they finally implemented support for DnD inside the pager but they also added
+support for DnDing a taskbar entry directly in the pager. I don't know if it's
+very useful but it could avoid some "in Gnome i could ... but in Xfce i can't
+..." reports
+
+Reproducible: Always
+
+Steps to Reproduce:
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Jun 18 17:36:06 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun, 18 Jun 2006 15:36:06 +0000 (UTC)
+Subject: [Bug 1934] Support for taskbar entry DnD into pager
+In-Reply-To: <bug-1934-590@http.bugzilla.xfce.org/>
+Message-ID: <20060618153606.E231FF29FA@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1934
+
+
+pollux at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+         AssignedTo|xfce-goodies-dev at berlios.de |jasper at xfce.org
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Jun 21 01:06:32 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 20 Jun 2006 23:06:32 +0000 (UTC)
+Subject: [Bug 1945] New: clipman crashes noisily when I copy binary junk
+Message-ID: <bug-1945-590@http.bugzilla.xfce.org/>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1945
+
+           Summary: clipman crashes noisily when I copy binary junk
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC (x86)
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: clipman
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: dooglus at gmail.com
+
+
+User-Agent:       Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.4)
+Gecko/20060406 Firefox/1.5.0.4 (Debian-1.5.dfsg+1.5.0.4-1)
+Build Identifier: 0.6-1
+
+I copied some random binary junk into my clipboard using GNU Emacs.  The
+clipman plugin started using all my CPU and writing:
+
+  (xfce4-clipman-plugin:22816): Gdk-WARNING **: Error converting selection from
+UTF8_STRING
+
+over and over again into my session logfile.  After writing half a gigabyte of
+such lines I killed it, because my disk was about to run out of space.
+
+There's no guarantee that the contents of the clipboard are going to be a valid
+UTF8 string, so if clipman isn't able to convert the string on its first
+attempt shouldn't it give up trying?
+
+Reproducible: Didn't try
+
+Steps to Reproduce:
+When it happened, I had used dd to write the first few sectors of a reiserfs
+disk partition to a file, then visited that file in GNU Emacs, and then deleted
+large parts of the file using Emacs.  I have x-select-enable-clipboard set to t
+in Emacs, so whenever I 'kill' regions of the buffer, they get sent to the
+clipboard.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Jun 21 01:09:37 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 20 Jun 2006 23:09:37 +0000 (UTC)
+Subject: [Bug 1945] clipman crashes noisily when I copy binary junk
+In-Reply-To: <bug-1945-590@http.bugzilla.xfce.org/>
+Message-ID: <20060620230937.72388F2A01@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1945
+
+
+
+
+
+------- Comment #1 from dooglus at gmail.com  2006-06-20 23:09 UTC -------
+I just counted them; clipman wrote the following string 4,943,074 times before
+I killed it.  That's too many error messages!  The file I was editing was only
+512k bytes long, so this is more than one message per byte in the file.  I
+would guess clipman was in an infinite loop:
+
+  "(xfce4-clipman-plugin:22816): Gdk-WARNING **: Error converting selection
+from UTF8_STRING"
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Jun 21 17:38:19 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 21 Jun 2006 15:38:19 +0000 (UTC)
+Subject: [Bug 1945] clipman crashes noisily when I copy binary junk
+In-Reply-To: <bug-1945-590@http.bugzilla.xfce.org/>
+Message-ID: <20060621153819.E5542F2A01@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1945
+
+
+
+
+
+------- Comment #2 from nick at xfce.org  2006-06-21 15:38 UTC -------
+I've changed this code in svn, but i looks more like a glib problem. Maybe it's
+indeed better to drop the content of the clip if we can't make it utf8, I'll
+change this.
+
+The problem is you can only use the latest svn version if you also have
+libxfcegui4 from trunk, so you probably have to wait for beta 2.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Jun 21 21:02:48 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 21 Jun 2006 19:02:48 +0000 (UTC)
+Subject: [Bug 1945] clipman crashes noisily when I copy binary junk
+In-Reply-To: <bug-1945-590@http.bugzilla.xfce.org/>
+Message-ID: <20060621190248.984E6F2A01@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1945
+
+
+
+
+
+------- Comment #3 from nick at xfce.org  2006-06-21 19:02 UTC -------
+I'm unable to repreduce this problem, but can you try the new version please?
+It should work with all the 4.4 versions.
+
+http://www.foo-projects.org/~nick/plugins/xfce4-clipman-plugin-0.6.5.tar.bz2
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Jun 21 23:05:59 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 21 Jun 2006 21:05:59 +0000 (UTC)
+Subject: [Bug 1945] clipman crashes noisily when I copy binary junk
+In-Reply-To: <bug-1945-590@http.bugzilla.xfce.org/>
+Message-ID: <20060621210559.F00B8F2A01@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1945
+
+
+
+
+
+------- Comment #4 from dooglus at gmail.com  2006-06-21 21:05 UTC -------
+I tried that version but still get the same problem.
+
+I made a 1-byte file containing just character 0300 (octal), copied that using
+Emacs, and clipman started printing it's error message over and over again.
+
+I don't know how to run clipman so that I can see its output other than by
+running xfce4 inside a FreeNX session.  Is there another way, so that I can run
+FreeNX out of the equation?  ~/.xsession-errors has "...Too much output,
+ignoring rest..." at the end of it, so I can't watch that.  Is there some way
+of invoking clipman from the command line and getting it to run properly?
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Thu Jun 22 00:22:19 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed, 21 Jun 2006 22:22:19 +0000 (UTC)
+Subject: [Bug 1945] clipman crashes noisily when I copy binary junk
+In-Reply-To: <bug-1945-590@http.bugzilla.xfce.org/>
+Message-ID: <20060621222219.DB6D7F2A01@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1945
+
+
+
+
+
+------- Comment #5 from dooglus at gmail.com  2006-06-21 22:22 UTC -------
+Here's a backtrace:
+
+(gdb) where
+#0  0x0804b7cf in clipman_check (clipman=0x80b6af0) at clipman.c:752
+#1  0xa781efb6 in g_timeout_dispatch (source=0x80ba400, callback=0xa77e9f08
+<in6addr_any+22688>, user_data=0x81f6dc0) at gmain.c:3292
+#2  0xa781d1bc in IA__g_main_context_dispatch (context=0x807f370) at
+gmain.c:1916
+#3  0xa782064b in g_main_context_iterate (context=0x807f370, block=1,
+dispatch=1, self=0x80971e8) at gmain.c:2547
+#4  0xa78209a7 in IA__g_main_loop_run (loop=0x80b6998) at gmain.c:2751
+#5  0xa7d644e1 in gtk_main () from /usr/lib/libgtk-x11-2.0.so.0
+#6  0x0804b064 in main (argc=134795216, argv=0x1) at clipman.c:45
+
+The error message is displayed each time clipman_check() calls
+gtk_clipboard_wait_for_text (defaultClip) - which it does regularly, using a
+timer.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri Jun 23 09:51:16 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri, 23 Jun 2006 07:51:16 +0000 (UTC)
+Subject: [Bug 1898] Wavelan plugin for 4.4 does not work for all cards
+In-Reply-To: <bug-1898-590@http.bugzilla.xfce.org/>
+Message-ID: <20060623075116.D4F2CF2A01@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1898
+
+
+
+
+
+------- Comment #2 from pollux at xfce.org  2006-06-23 07:51 UTC -------
+it worked fine with ipw3945 and kernel 2.6.16 but now i've upgraded to 2.6.17
+it always says "No such Wavelan device"
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Jun 25 01:29:11 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat, 24 Jun 2006 23:29:11 +0000 (UTC)
+Subject: [Bug 1510] Patch: Don't show workspace control items when "Include all Workspaces" is off
+In-Reply-To: <bug-1510-590@http.bugzilla.xfce.org/>
+Message-ID: <20060624232911.3C057F2A00@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1510
+
+
+xfce-bug at sstuhr.dk changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #4 from xfce-bug at sstuhr.dk  2006-06-24 23:29 UTC -------
+This bug has been fixed for some time in SVN.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Jun 25 01:29:22 2006
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat, 24 Jun 2006 23:29:22 +0000 (UTC)
+Subject: [Bug 1510] Patch: Don't show workspace control items when "Include all Workspaces" is off
+In-Reply-To: <bug-1510-590@http.bugzilla.xfce.org/>
+Message-ID: <20060624232922.E9A1EF2A00@mocha.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=1510
+
+
+xfce-bug at sstuhr.dk changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|RESOLVED                    |CLOSED
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+

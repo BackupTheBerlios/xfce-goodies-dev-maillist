@@ -1,0 +1,24 @@
+From event.riga at gmail.com  Thu Apr 10 08:32:33 2008
+From: event.riga at gmail.com (event)
+Date: Thu, 10 Apr 2008 09:32:33 +0300
+Subject: xfce weather plugin international problem
+Message-ID: <664d43d60804092332i35799bddv2cc8ddb0b2fafde7@mail.gmail.com>
+
+Dear XFCE4 devs,
+
+Found minor bug with day of week full name.
+In panel-plugin/weather-translate.c the DAY_LOC_N is set to 20
+bytes. It's insufficient for Russian at least:
+Sunday and Monday both need 22 as they are 11 unicode letters long. Could be
+also the problem for other languages.
+
+Would be great to have this fixed.
+Thank you in advance.
+
+-- 
+Vale,
+event
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20080410/1e267039/attachment.html>
+

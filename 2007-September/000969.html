@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Small patch to fix LDADD in xfce4-cpu-graph
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2007-September/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Small%20patch%20to%20fix%20LDADD%20in%20xfce4-cpu-graph&In-Reply-To=%3C7d67c6acf2b1bedd4e96df82fc85f2e6%40localhost%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Small patch to fix LDADD in xfce4-cpu-graph</H1>
+    <B>Harold Aling</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Small%20patch%20to%20fix%20LDADD%20in%20xfce4-cpu-graph&In-Reply-To=%3C7d67c6acf2b1bedd4e96df82fc85f2e6%40localhost%3E"
+       TITLE="Small patch to fix LDADD in xfce4-cpu-graph">h.aling at home.nl
+       </A><BR>
+    <I>Tue Sep  4 09:47:27 CEST 2007</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#969">[ date ]</a>
+              <a href="thread.html#969">[ thread ]</a>
+              <a href="subject.html#969">[ subject ]</a>
+              <a href="author.html#969">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Dear list,
+
+Here's a very simple patch to enable cpugraph to be compiled with
+--as-needed as described here:
+<A HREF="http://wiki.xfce.org/panel_plugins_howto#testing_and_releasing_the_plugin">http://wiki.xfce.org/panel_plugins_howto#testing_and_releasing_the_plugin</A>
+
+
+Index: panel-plugin/Makefile.am
+===================================================================
+--- panel-plugin/Makefile.am    (revision 3136)
++++ panel-plugin/Makefile.am    (working copy)
+@@ -5,7 +5,7 @@
+        -DPACKAGE_LOCALE_DIR=\&quot;$(localedir)\&quot;                   \
+        @LIBXFCE4PANEL_CFLAGS@
+ 
+-xfce4_cpugraph_plugin_LDFLAGS =                                        \
++xfce4_cpugraph_plugin_LDADD =                                  \
+        @LIBXFCE4PANEL_LIBS@
+ 
+ xfce4_cpugraph_plugin_SOURCES =                                        \
+
+
+-H-
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#969">[ date ]</a>
+              <a href="thread.html#969">[ thread ]</a>
+              <a href="subject.html#969">[ subject ]</a>
+              <a href="author.html#969">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

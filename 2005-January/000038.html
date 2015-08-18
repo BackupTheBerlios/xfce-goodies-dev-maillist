@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bug #3083] Problem compiling xfce4-bglist-editor 4.1.9
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-January/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%20%233083%5D%20Problem%20compiling%20xfce4-bglist-editor%204.1.9&In-Reply-To=%3C200501200630.j0K6U72x024666%40unicorn.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000037.html">
+   <LINK REL="Next"  HREF="000039.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bug #3083] Problem compiling xfce4-bglist-editor 4.1.9</H1>
+    <B>noreply at berlios.de</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%20%233083%5D%20Problem%20compiling%20xfce4-bglist-editor%204.1.9&In-Reply-To=%3C200501200630.j0K6U72x024666%40unicorn.berlios.de%3E"
+       TITLE="[Bug #3083] Problem compiling xfce4-bglist-editor 4.1.9">noreply at berlios.de
+       </A><BR>
+    <I>Thu Jan 20 07:30:07 CET 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000037.html">[Bug 699] datetime-&gt;calendar behaviour different from clock-&gt;calendar/systray-calendar behaviour
+</A></li>
+        <LI>Next message: <A HREF="000039.html">[Bug #3084] Problem configuring xfce4-taskmanager 0.0.1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#38">[ date ]</a>
+              <a href="thread.html#38">[ thread ]</a>
+              <a href="subject.html#38">[ subject ]</a>
+              <a href="author.html#38">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bug #3083, was updated on 2005-Jan-20 07:30
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: None
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: pierre
+Assigned to : none
+Summary: Problem compiling xfce4-bglist-editor 4.1.9
+
+Details: $ make
+make  all-recursive
+make[1]: Entering directory `/tmp/xfce4-bglist-editor-4.1.9'
+Making all in src
+make[2]: Entering directory `/tmp/xfce4-bglist-editor-4.1.9/src'
+if gcc -DHAVE_CONFIG_H -I. -I. -I..    -I/usr/local/include/gtk-2.0 -I/usr/local/lib/gtk-2.0/include -I/usr/local/include -I/usr/X11R6/include -I/usr/local/include/atk-1.0 -I/usr/local/include/pango-1.0 -I/usr/local/include/freetype2 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/X11R6/include -I/usr/local/include/xfce4 -I/usr/local/include/gtk-2.0 -I/usr/local/lib/gtk-2.0/include -I/usr/local/include -I/usr/local/include/pango-1.0 -I/usr/local/include/freetype2 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include/atk-1.0 -DLOCALEDIR=\&quot;/usr/local/share/locale\&quot; -s -O3 -march=i686 -MT xfce4_bglist_editor-xfce-image-file-chooser.o -MD -MP -MF &quot;.deps/xfce4_bglist_editor-xfce-image-file-chooser.Tpo&quot; -c -o xfce4_bglist_editor-xfce-image-file-chooser.o `test -f 'xfce-image-file-chooser.c' || echo './'`xfce-image-file-chooser.c; \
+then mv -f &quot;.deps/xfce4_bglist_editor-xfce-image-file-chooser.Tpo&quot; &quot;.deps/xfce4_bglist_editor-xfce-image-file-chooser.Po&quot;; else rm -f &quot;.deps/xfce4_bglist_editor-xfce-image-file-chooser.Tpo&quot;; exit 1; fi
+In file included from xfce-image-file-chooser.c:24:
+xfce-image-file-chooser.h:42: error: parse error before &quot;XfceFileChooser&quot;
+xfce-image-file-chooser.h:42: warning: no semicolon at end of struct or union
+xfce-image-file-chooser.h:45: error: parse error before '}' token
+xfce-image-file-chooser.h:49: error: parse error before &quot;XfceFileChooserClass&quot;
+xfce-image-file-chooser.h:49: warning: no semicolon at end of struct or union
+xfce-image-file-chooser.c:38: error: parse error before '*' token
+xfce-image-file-chooser.c:38: warning: data definition has no type or storage class
+xfce-image-file-chooser.c: In function `xfce_image_file_chooser_get_type':
+xfce-image-file-chooser.c:57: error: invalid application of `sizeof' to incomplete type `xfce-image-file-chooser.h' 
+xfce-image-file-chooser.c:63: error: invalid application of `sizeof' to incomplete type `xfce-image-file-chooser.h' 
+xfce-image-file-chooser.c:68: error: `XFCE_TYPE_FILE_CHOOSER' undeclared (first use in this function)
+xfce-image-file-chooser.c:68: error: (Each undeclared identifier is reported only once
+xfce-image-file-chooser.c:68: error: for each function it appears in.)
+xfce-image-file-chooser.c: In function `xfce_image_file_chooser_finalize':
+xfce-image-file-chooser.c:89: error: dereferencing pointer to incomplete type
+xfce-image-file-chooser.c: In function `xfce_image_file_chooser_init':
+xfce-image-file-chooser.c:151: error: dereferencing pointer to incomplete type
+xfce-image-file-chooser.c: In function `xfce_image_file_chooser_new':
+xfce-image-file-chooser.c:161: error: dereferencing pointer to incomplete type
+make[2]: *** [xfce4_bglist_editor-xfce-image-file-chooser.o] Error 1
+make[2]: Leaving directory `/tmp/xfce4-bglist-editor-4.1.9/src'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/tmp/xfce4-bglist-editor-4.1.9'
+make: *** [all] Error 2
+
+
+For detailed info, follow this link:
+<A HREF="http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=3083&amp;group_id=910">http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=3083&amp;group_id=910</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000037.html">[Bug 699] datetime-&gt;calendar behaviour different from clock-&gt;calendar/systray-calendar behaviour
+</A></li>
+	<LI>Next message: <A HREF="000039.html">[Bug #3084] Problem configuring xfce4-taskmanager 0.0.1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#38">[ date ]</a>
+              <a href="thread.html#38">[ thread ]</a>
+              <a href="subject.html#38">[ subject ]</a>
+              <a href="author.html#38">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

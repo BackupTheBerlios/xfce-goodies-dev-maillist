@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bug 1337] port to 4.3
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-January/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%201337%5D%20port%20to%204.3&In-Reply-To=%3C20060122092148.2F804F2926%40mocha.foo-projects.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000574.html">
+   <LINK REL="Next"  HREF="000576.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bug 1337] port to 4.3</H1>
+    <B>bugzilla-daemon at xfce.org</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%201337%5D%20port%20to%204.3&In-Reply-To=%3C20060122092148.2F804F2926%40mocha.foo-projects.org%3E"
+       TITLE="[Bug 1337] port to 4.3">bugzilla-daemon at xfce.org
+       </A><BR>
+    <I>Sun Jan 22 10:21:48 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000574.html">[Bug 1339] 4.3 port
+</A></li>
+        <LI>Next message: <A HREF="000576.html">Importing xfce4-xfapplet-plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#575">[ date ]</a>
+              <a href="thread.html#575">[ thread ]</a>
+              <a href="subject.html#575">[ subject ]</a>
+              <a href="author.html#575">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+<A HREF="http://bugzilla.xfce.org/show_bug.cgi?id=1337">http://bugzilla.xfce.org/show_bug.cgi?id=1337</A>
+
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jasper at xfce.org</A> changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+         AssignedTo|<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">xfce-goodies-dev at berlios.de</A> |<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jasper at xfce.org</A>
+
+
+
+
+------- Additional Comments From <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jasper at xfce.org</A>  2006-01-22 09:21 UTC -------
+Great, thanks, I have a couple of comments:
+
+- gdk_pixbuf_scale_simple returns a newly created pixbuf, so this leaks memory:
+
+static void
+showdesktop_update_icon (ShowDesktopData * sdd, int size)
+{
+    GdkPixbuf *pb = gdk_pixbuf_copy (sdd-&gt;icon);
+
+    gdk_pixbuf_scale_simple (pb, size, size, GDK_INTERP_BILINEAR);
+    xfce_scaled_image_set_from_pixbuf (XFCE_SCALED_IMAGE (sdd-&gt;image), pb);
+    g_object_unref (G_OBJECT (pb));
+}
+
+- also, the purpose of the scaled image is to scale automatically, so this is
+not needed at all. You can simple create the image once and set the size of the
+button.
+
+- If all you want to do in the set_size callback is change the button size, you
+don't need to do anything, since this is the default behavior if there is no
+callback.
+
+- A question: what happens when a user manually de-iconifies a window? Does the
+window manager reset the 'show desktop' state? In that case we need to reset the
+button as well, I guess.
+
+
+
+-- 
+Configure bugmail: <A HREF="http://bugzilla.xfce.org/userprefs.cgi?tab=email">http://bugzilla.xfce.org/userprefs.cgi?tab=email</A>
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000574.html">[Bug 1339] 4.3 port
+</A></li>
+	<LI>Next message: <A HREF="000576.html">Importing xfce4-xfapplet-plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#575">[ date ]</a>
+              <a href="thread.html#575">[ thread ]</a>
+              <a href="subject.html#575">[ subject ]</a>
+              <a href="author.html#575">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

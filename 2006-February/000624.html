@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-February/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20ANNOUNCE%3A%20Verve%200.1.0%20-%20A%20panel%20command%20line%20plugin&In-Reply-To=%3C20060212121153.975cab7c.jannis%40xfce.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000634.html">
+   <LINK REL="Next"  HREF="000609.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>ANNOUNCE: Verve 0.1.0 - A panel command line plugin</H1>
+    <B>Jannis Pohlmann</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20ANNOUNCE%3A%20Verve%200.1.0%20-%20A%20panel%20command%20line%20plugin&In-Reply-To=%3C20060212121153.975cab7c.jannis%40xfce.org%3E"
+       TITLE="ANNOUNCE: Verve 0.1.0 - A panel command line plugin">jannis at xfce.org
+       </A><BR>
+    <I>Sun Feb 12 12:11:53 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000634.html">ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+</A></li>
+        <LI>Next message: <A HREF="000609.html">ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#624">[ date ]</a>
+              <a href="thread.html#624">[ thread ]</a>
+              <a href="subject.html#624">[ subject ]</a>
+              <a href="author.html#624">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sun, 12 Feb 2006 12:50:36 +0900
+Daichi Kawahata &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">daichi at xfce.org</A>&gt; wrote:
+
+&gt;<i> Hi Jannis, Jasper,
+</I>&gt;<i> 
+</I>&gt;<i> On Sat, 11 Feb 2006 22:24:47 +0100
+</I>&gt;<i> Jasper Huijsmans wrote:
+</I>&gt;<i> 
+</I>&gt;<i> &gt; &gt; ** (xfce4-panel:4182): CRITICAL **: Ein Item wurde unerwartet
+</I>&gt;<i> &gt; &gt; entfernt: &quot;Verve-Kommandozeile&quot;.
+</I>&gt;<i> 
+</I>&gt;<i> I got the same,
+</I>&gt;<i> 
+</I>&gt;<i> (xfce4-panel:653568): Gdk-WARNING **: gdkdrawable-x11.c:904 \
+</I>&gt;<i>   drawable is not a pixmap or window
+</I>&gt;<i> 
+</I>&gt;<i> ** (xfce4-panel:653568): CRITICAL **: An item was unexpectedly
+</I>&gt;<i> removed: \ &quot;Verve Command Line&quot;.
+</I>&gt;<i> 
+</I>&gt;<i> &gt; Well, it basically means your plugin crashes. Maybe I have
+</I>&gt;<i> &gt; different libraries/dependencies installed, so my plugin may
+</I>&gt;<i> &gt; not trigger the crash.
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; I have to think about how to debug an external plugin properly.
+</I>&gt;<i> &gt; Hmm, it would be kinda cool to have 'xfce4-&lt;name&gt;-plugin --debug'
+</I>&gt;<i> &gt; which would run the plugin in a separate window...
+</I>&gt;<i> 
+</I>&gt;<i> &gt;From the crash above, I got a core dumped by xfce4-verve-plugin,
+</I>&gt;<i> attached stack trace shows a similar path to the crash though.
+</I>&gt;<i> 
+</I>&gt;<i> FYI Jannis, the installations in my machine are different from
+</I>&gt;<i> Linux's, i.e. my working SHELL is /usr/freeware/bin/bash,
+</I>&gt;<i> haven't PHP installed etc. which may cause a problem at frame
+</I>&gt;<i> 2 (while compile flag has `-g', it says `No locals.' in the
+</I>&gt;<i> full trace).
+</I>
+No, this shouldn't cause any problems. The shells listed in the
+supported_shells array are just *possible* shells, which Verve searches
+for in $PATH. It only makes use of those who can be found. So
+if /usr/freeware/bin is in your $PATH, &quot;bash&quot; should be found.
+
+Anyway, this part of verve-env.c is almost unused at the moment. It's
+intended to be used in a future feature.
+
+Regards,
+Jannis
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060212/21cdcdc4/attachment.pgp">https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060212/21cdcdc4/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000634.html">ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+</A></li>
+	<LI>Next message: <A HREF="000609.html">ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#624">[ date ]</a>
+              <a href="thread.html#624">[ thread ]</a>
+              <a href="subject.html#624">[ subject ]</a>
+              <a href="author.html#624">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

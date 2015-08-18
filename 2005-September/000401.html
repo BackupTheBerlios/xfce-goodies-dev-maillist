@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> 'hacking' some of XFCE goodies
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-September/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%27hacking%27%20some%20of%20XFCE%20goodies&In-Reply-To=%3C432A99A9.6070901%40szift.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000400.html">
+   <LINK REL="Next"  HREF="000413.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>'hacking' some of XFCE goodies</H1>
+    <B>&#321;ukasz Hejnak</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%27hacking%27%20some%20of%20XFCE%20goodies&In-Reply-To=%3C432A99A9.6070901%40szift.org%3E"
+       TITLE="'hacking' some of XFCE goodies">szift at szift.org
+       </A><BR>
+    <I>Fri Sep 16 12:08:41 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000400.html">'hacking' some of XFCE goodies
+</A></li>
+        <LI>Next message: <A HREF="000413.html">'hacking' some of XFCE goodies
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#401">[ date ]</a>
+              <a href="thread.html#401">[ thread ]</a>
+              <a href="subject.html#401">[ subject ]</a>
+              <a href="author.html#401">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi again :]
+Ok, just to finish the cpugraph-szifted panel-crashing issue
+As I saw 'some' interest in my modification of cpugraph,
+I decided to finally learn some more on C and finish the crashing
+As reading trough I found out about the system() function ;]
+So now I use that instead of the funny 'script' system
+And as system() waits for the runned process to finish up, it won't give 
+the cpugraph any more reasons to crash also..
+
+The only issue now, is that as it waits for the system() to finish up, 
+the whole panel freezes for a nano-second (when top works)..
+I think only a alternate system of getting the data would solve this one
+but I don't have time to go into this right now, maybe in the future.
+
+So all it depends on now is a /tmp dir writable to the user, and the 
+/usr/bin/top program installed.
+The updated version is already available at the standard location:
+<A HREF="http://szift.org/xfce/xfce4-cpugraph-plugin-szifted.tar.bz2">http://szift.org/xfce/xfce4-cpugraph-plugin-szifted.tar.bz2</A>
+
+Have fun :]
+Should there anything other wrong happen, please let me know.
+
+-- 
+Best wishes
+&#321;ukasz Hejnak
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000400.html">'hacking' some of XFCE goodies
+</A></li>
+	<LI>Next message: <A HREF="000413.html">'hacking' some of XFCE goodies
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#401">[ date ]</a>
+              <a href="thread.html#401">[ thread ]</a>
+              <a href="subject.html#401">[ subject ]</a>
+              <a href="author.html#401">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

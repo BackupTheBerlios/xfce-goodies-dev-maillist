@@ -1,0 +1,103 @@
+From nickschermer at gmail.com  Fri Sep  1 13:27:16 2006
+From: nickschermer at gmail.com (Nick Schermer)
+Date: Fri, 1 Sep 2006 13:27:16 +0200
+Subject: [PATCH] NetBSD support for xfce4-battery-plugin
+In-Reply-To: <20060320170816.GA1800@dice.bliss.lan>
+References: <20060320170816.GA1800@dice.bliss.lan>
+Message-ID: <4abe35490609010427k6f30f13ep32bc355badbaccdb@mail.gmail.com>
+
+Probably the fastest replay you've ever had ;-). Patch is applied in
+the 0.4.90.2 release. Thanks.
+
+Nick
+
+
+From offe.holmgren at gmail.com  Thu Sep 28 16:14:23 2006
+From: offe.holmgren at gmail.com (Olof Holmgren)
+Date: Thu, 28 Sep 2006 16:14:23 +0200
+Subject: Linking to Xfce libs - how is it done?
+Message-ID: <353a7aa50609280714n618cc6c8tc22e523f25025ba0@mail.gmail.com>
+
+Hi!
+
+I'm trying to develop a panel app for Xfce (4.4rc1) but I'm new to both Xfce
+and autotools and
+find it hard to get going. What I would like to know is how to link to the
+Xfce4 libraries?
+
+I've downloaded the cpugraph plugin v0.3 as suggested over here:
+http://jameswestby.net/weblog/2006/May
+
+If I do ./configure on the cpugraph plugin I can make and install it with no
+problems,
+but if I do aclocal, autoconf and automake myself and then run ./configure
+the
+configure keeps failing with the following error message:
+
+configure.ac:27: error: possibly undefined macro: AC_PROG_INTLTOOL
+      If this token and others are legitimate, please use m4_pattern_allow.
+      See the Autoconf documentation.
+
+I have tried to look in the autoconf documentation, but I'm not sure what
+I'm really looking for
+so I got no answers there. And it feels as if something is wrong for this
+even to happen.
+Since I don't know what I'm doing or what intltool does, I simple removed
+the line AC_PROG_INTLTOOL
+from the configure.ac. After doing this, I got a little further but the
+./configure still fails, with the following error:
+
+./configure: line 4777: syntax error near unexpected token `LIBXFCE4PANEL,'
+./configure: line 4777: `XDT_CHECK_PACKAGE(LIBXFCE4PANEL, libxfce4panel-1.0,
+4.3.20)'
+
+The line in the configure.ac that seems to be causing the problem is the
+following:
+XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.3.20])
+
+All I want to do is to get the build system up so that I know that I can
+compile my own stuff,
+but I can not get it working. I've spent a long time googling on it, but
+without luck. Im stuck.
+
+If someone could point me in the right direction here, it would be greatly
+appreciated.
+
+Regards
+Olof Holmgren
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060928/93a8d8f9/attachment.html>
+
+From pollux at xfce.org  Thu Sep 28 17:51:48 2006
+From: pollux at xfce.org (=?ISO-8859-1?Q?Jean-Fran=E7ois?= Wauthy)
+Date: Thu, 28 Sep 2006 17:51:48 +0200
+Subject: Linking to Xfce libs - how is it done?
+In-Reply-To: <353a7aa50609280714n618cc6c8tc22e523f25025ba0@mail.gmail.com>
+References: <353a7aa50609280714n618cc6c8tc22e523f25025ba0@mail.gmail.com>
+Message-ID: <1159458708.8438.1.camel@localhost>
+
+On Thu, 2006-09-28 at 16:14 +0200, Olof Holmgren wrote:
+> Hi!
+> 
+hi
+> I'm trying to develop a panel app for Xfce (4.4rc1) but I'm new to
+> both Xfce and autotools and
+> find it hard to get going. What I would like to know is how to link to
+> the Xfce4 libraries?
+
+i haven't taken the time read your mail so i don't know if i can answer
+you questions so far but this ML has been moved to goodies-dev at xfce.org.
+It's more likely you'll get an answer there.
+
+
+-- 
+Jean-Fran?ois Wauthy <pollux at xfce.org>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060928/8e1b832b/attachment.pgp>
+

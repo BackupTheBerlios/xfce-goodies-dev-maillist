@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bug 1206]  New: weather plugin build error on solaris 10 x86
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-November/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%201206%5D%20%20New%3A%20weather%20plugin%20build%20error%20on%20solaris%2010%20x86&In-Reply-To=%3C20051102092100.676E1F2928%40mocha.foo-projects.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000490.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bug 1206]  New: weather plugin build error on solaris 10 x86</H1>
+    <B>bugzilla-daemon at xfce.org</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%201206%5D%20%20New%3A%20weather%20plugin%20build%20error%20on%20solaris%2010%20x86&In-Reply-To=%3C20051102092100.676E1F2928%40mocha.foo-projects.org%3E"
+       TITLE="[Bug 1206]  New: weather plugin build error on solaris 10 x86">bugzilla-daemon at xfce.org
+       </A><BR>
+    <I>Wed Nov  2 10:21:00 CET 2005</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000490.html">[Bug 1206] weather plugin build error on solaris 10 x86
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#489">[ date ]</a>
+              <a href="thread.html#489">[ thread ]</a>
+              <a href="subject.html#489">[ subject ]</a>
+              <a href="author.html#489">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+<A HREF="http://bugzilla.xfce.org/show_bug.cgi?id=1206">http://bugzilla.xfce.org/show_bug.cgi?id=1206</A>
+
+           Summary: weather plugin build error on solaris 10 x86
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: Other
+        OS/Version: other
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: weather
+        AssignedTo: <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">xfce-goodies-dev at berlios.de</A>
+        ReportedBy: <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">nobody at bg.pearl.dtdns.net</A>
+
+
+xfce4 version 4.2.2.  When building on solaris 10 x86 from pkgsrc I 
+receive compiler errors in function create_summary_tab and the build exits. 
+  
+  
+
+Reproducible: Always
+Steps to Reproduce:
+1. cd pkgsrc/misc/xfce4-weather-plugin  
+2. bmake  install 
+3. after fixing the mixer plugin build as described in another forum,  
+everything will build for xfce, except the weather plugin  
+  
+Actual Results:  
+summary_window.c: In function `create_summary_tab': 
+summary_window.c:25: error: syntax error before numeric constant 
+summary_window.c:112: error: invalid lvalue in assignment 
+summary_window.c:114: warning: pointer/integer type mismatch in conditional 
+expression 
+summary_window.c:116: warning: passing arg 1 of `g_free' makes pointer from 
+integer without a cast 
+summary_window.c:120: error: invalid lvalue in assignment 
+summary_window.c:122: warning: pointer/integer type mismatch in conditional 
+expression 
+summary_window.c:124: warning: passing arg 1 of `g_free' makes pointer from 
+integer without a cast 
+summary_window.c:130: error: `vis' undeclared (first use in this function) 
+summary_window.c:130: error: (Each undeclared identifier is reported only once 
+summary_window.c:130: error: for each function it appears in.) 
+gmake: *** [libweather_la-summary_window.lo] Error 1 
+ 
+
+Expected Results:  
+The plugin should have been built and installed  
+
+Here is the link to the xfce forum post, where others are having similar   
+issues with building on solaris/solaris (sparc).  There is a listed  
+fix that works for the mixer plugin and allows compilation to continue until  
+you get to the weather plugin, for which, I've found no fix.  
+  
+<A HREF="http://www.os-cillation.de/cgi-bin/yabb/YaBB.cgi?board=Help;action=display;num=1109782807">http://www.os-cillation.de/cgi-bin/yabb/YaBB.cgi?board=Help;action=display;num=1109782807</A>  
+ 
+You can see that I receive the same error in the weather plugin as another user 
+two xfce versions ago and several lines have been added to summary_window.c 
+since then. 
+  
+  
+# gcc -v    
+Reading specs from /usr/sfw/lib/gcc/i386-pc-solaris2.10/3.4.3/specs    
+Configured with: /builds/sfw10-gate/usr/src/cmd/gcc/gcc-3.4.3/configure    
+--prefix=/usr/sfw --with-as=/usr/sfw/bin/gas --with-gnu-as    
+--with-ld=/usr/ccs/bin/ld --without-gnu-ld --enable-languages=c,c++    
+--enable-shared    
+Thread model: posix    
+gcc version 3.4.3 (csl-sol210-3_4-branch+sol_rpath)    
+    
+--    
+GNU Make 3.80    
+--
+
+-- 
+Configure bugmail: <A HREF="http://bugzilla.xfce.org/userprefs.cgi?tab=email">http://bugzilla.xfce.org/userprefs.cgi?tab=email</A>
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000490.html">[Bug 1206] weather plugin build error on solaris 10 x86
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#489">[ date ]</a>
+              <a href="thread.html#489">[ thread ]</a>
+              <a href="subject.html#489">[ subject ]</a>
+              <a href="author.html#489">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

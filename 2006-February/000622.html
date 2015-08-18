@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-February/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20ANNOUNCE%3A%20Verve%200.1.0%20-%20A%20panel%20command%20line%20plugin&In-Reply-To=%3C43EF061D.3000204%40xfce.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000619.html">
+   <LINK REL="Next"  HREF="000623.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>ANNOUNCE: Verve 0.1.0 - A panel command line plugin</H1>
+    <B>Jasper Huijsmans</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20ANNOUNCE%3A%20Verve%200.1.0%20-%20A%20panel%20command%20line%20plugin&In-Reply-To=%3C43EF061D.3000204%40xfce.org%3E"
+       TITLE="ANNOUNCE: Verve 0.1.0 - A panel command line plugin">jasper at xfce.org
+       </A><BR>
+    <I>Sun Feb 12 10:55:41 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000619.html">ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+</A></li>
+        <LI>Next message: <A HREF="000623.html">ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#622">[ date ]</a>
+              <a href="thread.html#622">[ thread ]</a>
+              <a href="subject.html#622">[ subject ]</a>
+              <a href="author.html#622">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Daichi Kawahata schreef:
+&gt;<i> Hi Jannis, Jasper,
+</I>&gt;<i> 
+</I>&gt;<i> On Sat, 11 Feb 2006 22:24:47 +0100
+</I>&gt;<i> Jasper Huijsmans wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;&gt;<i> ** (xfce4-panel:4182): CRITICAL **: Ein Item wurde unerwartet entfernt:
+</I>&gt;&gt;&gt;<i> &quot;Verve-Kommandozeile&quot;.
+</I>&gt;<i> 
+</I>&gt;<i> I got the same,
+</I>&gt;<i> 
+</I>&gt;<i> (xfce4-panel:653568): Gdk-WARNING **: gdkdrawable-x11.c:904 \
+</I>&gt;<i>   drawable is not a pixmap or window
+</I>&gt;<i> 
+</I>&gt;<i> ** (xfce4-panel:653568): CRITICAL **: An item was unexpectedly removed: \
+</I>&gt;<i>   &quot;Verve Command Line&quot;.
+</I>&gt;<i> 
+</I>&gt;&gt;<i> Well, it basically means your plugin crashes. Maybe I have
+</I>&gt;&gt;<i> different libraries/dependencies installed, so my plugin may
+</I>&gt;&gt;<i> not trigger the crash.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I have to think about how to debug an external plugin properly.
+</I>&gt;&gt;<i> Hmm, it would be kinda cool to have 'xfce4-&lt;name&gt;-plugin --debug'
+</I>&gt;&gt;<i> which would run the plugin in a separate window...
+</I>&gt;<i> 
+</I>&gt;<i> From the crash above, I got a core dumped by xfce4-verve-plugin,
+</I>&gt;<i> attached stack trace shows a similar path to the crash though.
+</I>&gt;<i> 
+</I>&gt;<i> FYI Jannis, the installations in my machine are different from
+</I>&gt;<i> Linux's, i.e. my working SHELL is /usr/freeware/bin/bash,
+</I>&gt;<i> haven't PHP installed etc. which may cause a problem at frame
+</I>&gt;<i> 2 (while compile flag has `-g', it says `No locals.' in the
+</I>&gt;<i> full trace).
+</I>&gt;<i> 
+</I>&gt;<i> Regards,
+</I>
+Daichi, Jannis, please try the attached patch. I replaced 
+g_strv_length() with G_N_ELEMENTS(). The first is only valid for NULL 
+terminated arrays.
+
+	Jasper
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: verve-array-size.patch
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060212/872d02ce/attachment.ksh">https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20060212/872d02ce/attachment.ksh</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000619.html">ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+</A></li>
+	<LI>Next message: <A HREF="000623.html">ANNOUNCE: Verve 0.1.0 - A panel command line plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#622">[ date ]</a>
+              <a href="thread.html#622">[ thread ]</a>
+              <a href="subject.html#622">[ subject ]</a>
+              <a href="author.html#622">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

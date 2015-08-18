@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bug 1261]  New: shows AC eeven when on battery
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-December/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%201261%5D%20%20New%3A%20shows%20AC%20eeven%20when%20on%20battery&In-Reply-To=%3C20051204085658.2AEB1F2927%40mocha.foo-projects.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000525.html">
+   <LINK REL="Next"  HREF="000527.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bug 1261]  New: shows AC eeven when on battery</H1>
+    <B>bugzilla-daemon at xfce.org</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%201261%5D%20%20New%3A%20shows%20AC%20eeven%20when%20on%20battery&In-Reply-To=%3C20051204085658.2AEB1F2927%40mocha.foo-projects.org%3E"
+       TITLE="[Bug 1261]  New: shows AC eeven when on battery">bugzilla-daemon at xfce.org
+       </A><BR>
+    <I>Sun Dec  4 09:56:58 CET 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000525.html">[Bug 1255] Long label messed up in taskbar panel plugin emacs
+</A></li>
+        <LI>Next message: <A HREF="000527.html">Can't install xfce4-mount-plugin-0.4.3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#526">[ date ]</a>
+              <a href="thread.html#526">[ thread ]</a>
+              <a href="subject.html#526">[ subject ]</a>
+              <a href="author.html#526">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+<A HREF="http://bugzilla.xfce.org/show_bug.cgi?id=1261">http://bugzilla.xfce.org/show_bug.cgi?id=1261</A>
+
+           Summary: shows AC eeven when on battery
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: battery
+        AssignedTo: <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">xfce-goodies-dev at berlios.de</A>
+        ReportedBy: <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jani at ubuntu.com</A>
+
+
+reading /proc/acpi/battery on newer linux versions does not work with current code
+so even when unplugged the battery plugin reports it's on AC power.
+see this link for the fix in ubuntu, and the actual patch below
+<A HREF="http://utnubu.alioth.debian.org/scottish/by_maint/pkg-xfce-devel@lists.alioth.debian.org/large/xfce4-battery-plugin/xfce4-battery-plugin_0.3.0-1ubuntu1_packaging.patch">http://utnubu.alioth.debian.org/scottish/by_maint/pkg-xfce-devel@lists.alioth.debian.org/large/xfce4-battery-plugin/xfce4-battery-plugin_0.3.0-1ubuntu1_packaging.patch</A>
+
+--
+/home/jani/hack/ubuntu/xfce/packages/orig/battery/orig/xfce4-battery-plugin-0.3.0/panel-plugin/libacpi.c
+    2003-09-0+++ libacpi.c   2005-10-07 18:05:53.000000000 +0300
+@@ -272,12 +272,29 @@
+   FILE *acpi;
+   char *ptr;
+   char stat;
++  DIR *acdir;
++  struct dirent *ac;
++  char *name;
++  char acstatus[128];
++
++  acdir = opendir(&quot;/proc/acpi/ac_adapter&quot;);
++  if (!acdir)
++    return -1;
++/* Works with ACPI versions newer than feb 2002, but this is for 2.6 kernels
+only anyway */
++  while(ac = readdir(acdir)) {
++
++    name = ac-&gt;d_name;
++
++    /* skip . and .. */
++    if (name[0] == '.')
++        continue;
++    sprintf (acstatus, &quot;/proc/acpi/ac_adapter/%s/state&quot;, name);
++    if (!(acpi = fopen (acstatus, &quot;r&quot;)))
++        return -1;
++    break;
++  }
+
+  if (!(acpi = fopen (&quot;/proc/acpi/ac_adapter/0/status&quot;, &quot;r&quot;)))
+    if (!(acpi = fopen (&quot;/proc/acpi/ac_adapter/ACAD/state&quot;, &quot;r&quot;)))
+      if (!(acpi = fopen (&quot;/proc/acpi/ac_adapter/AC/state&quot;, &quot;r&quot;)))
+                                                                               
+                       
+
+
+Reproducible: Always
+Steps to Reproduce:
+1. 
+2. 
+3.
+
+-- 
+Configure bugmail: <A HREF="http://bugzilla.xfce.org/userprefs.cgi?tab=email">http://bugzilla.xfce.org/userprefs.cgi?tab=email</A>
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000525.html">[Bug 1255] Long label messed up in taskbar panel plugin emacs
+</A></li>
+	<LI>Next message: <A HREF="000527.html">Can't install xfce4-mount-plugin-0.4.3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#526">[ date ]</a>
+              <a href="thread.html#526">[ thread ]</a>
+              <a href="subject.html#526">[ subject ]</a>
+              <a href="author.html#526">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

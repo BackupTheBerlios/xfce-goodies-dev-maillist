@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bug 2106] systemload plugin crashes when trying to change bar color.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-August/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%202106%5D%20systemload%20plugin%20crashes%20when%20trying%20to%20change%20bar%20color.&In-Reply-To=%3C20060802084333.F194BF2A28%40mocha.foo-projects.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000899.html">
+   <LINK REL="Next"  HREF="000901.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bug 2106] systemload plugin crashes when trying to change bar color.</H1>
+    <B>bugzilla-daemon at xfce.org</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%202106%5D%20systemload%20plugin%20crashes%20when%20trying%20to%20change%20bar%20color.&In-Reply-To=%3C20060802084333.F194BF2A28%40mocha.foo-projects.org%3E"
+       TITLE="[Bug 2106] systemload plugin crashes when trying to change bar color.">bugzilla-daemon at xfce.org
+       </A><BR>
+    <I>Wed Aug  2 10:43:33 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000899.html">[Bug 2106] New: systemload plugin crashes when trying to change bar	color.
+</A></li>
+        <LI>Next message: <A HREF="000901.html">[Bug 2106] systemload plugin crashes when trying to change bar color.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#900">[ date ]</a>
+              <a href="thread.html#900">[ thread ]</a>
+              <a href="subject.html#900">[ subject ]</a>
+              <a href="author.html#900">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+<A HREF="http://bugzilla.xfce.org/show_bug.cgi?id=2106">http://bugzilla.xfce.org/show_bug.cgi?id=2106</A>
+
+
+
+
+
+------- Comment #1 from <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">corsac at corsac.net</A>  2006-08-02 08:43 UTC -------
+Here is a backtrace from gdb. I guess the &quot;no symbol times available&quot; means I
+should install some packages with debugging symbols of gtk ?
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0f600130 in g_type_check_instance_cast () from /usr/lib/libgobject-2.0.so.0
+(gdb) bt full
+#0  0x0f600130 in g_type_check_instance_cast ()
+   from /usr/lib/libgobject-2.0.so.0
+No symbol table info available.
+#1  0x100040a4 in ?? ()
+No symbol table info available.
+#2  0x0f5ee0b0 in g_cclosure_marshal_VOID__VOID ()
+   from /usr/lib/libgobject-2.0.so.0
+No symbol table info available.
+#3  0x0f5dd38c in g_closure_invoke () from /usr/lib/libgobject-2.0.so.0
+No symbol table info available.
+#4  0x0f5f1954 in g_signal_chain_from_overridden ()
+   from /usr/lib/libgobject-2.0.so.0
+No symbol table info available.
+#5  0x0f5f2c5c in g_signal_emit_valist () from /usr/lib/libgobject-2.0.so.0
+No symbol table info available.
+#6  0x0f5f2e2c in g_signal_emit () from /usr/lib/libgobject-2.0.so.0
+No symbol table info available.
+#7  0x0fc48f80 in gtk_button_clicked () from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#8  0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#9  0x0fc4b3a4 in _gtk_button_set_depressed ()
+---Type &lt;return&gt; to continue, or q &lt;return&gt; to quit---
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#10 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#11 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#12 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#13 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#14 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#15 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#16 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+---Type &lt;return&gt; to continue, or q &lt;return&gt; to quit---
+#17 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#18 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#19 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#20 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#21 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#22 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#23 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#24 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+---Type &lt;return&gt; to continue, or q &lt;return&gt; to quit---
+No symbol table info available.
+#25 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#26 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#27 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#28 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#29 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#30 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#31 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#32 0x0fc4b3a4 in _gtk_button_set_depressed ()
+---Type &lt;return&gt; to continue, or q &lt;return&gt; to quit---
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#33 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+#34 0x0fc4b3a4 in _gtk_button_set_depressed ()
+   from /usr/lib/libgtk-x11-2.0.so.0
+No symbol table info available.
+Previous frame inner to this frame (corrupt stack?)
+
+
+-- 
+Configure bugmail: <A HREF="http://bugzilla.xfce.org/userprefs.cgi?tab=email">http://bugzilla.xfce.org/userprefs.cgi?tab=email</A>
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000899.html">[Bug 2106] New: systemload plugin crashes when trying to change bar	color.
+</A></li>
+	<LI>Next message: <A HREF="000901.html">[Bug 2106] systemload plugin crashes when trying to change bar color.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#900">[ date ]</a>
+              <a href="thread.html#900">[ thread ]</a>
+              <a href="subject.html#900">[ subject ]</a>
+              <a href="author.html#900">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

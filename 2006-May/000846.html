@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bug 1590] xfce panel crashes with glib2 2.10
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-May/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%201590%5D%20xfce%20panel%20crashes%20with%20glib2%202.10&In-Reply-To=%3C20060518052925.1C469F29FB%40mocha.foo-projects.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000845.html">
+   <LINK REL="Next"  HREF="000848.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bug 1590] xfce panel crashes with glib2 2.10</H1>
+    <B>bugzilla-daemon at xfce.org</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%201590%5D%20xfce%20panel%20crashes%20with%20glib2%202.10&In-Reply-To=%3C20060518052925.1C469F29FB%40mocha.foo-projects.org%3E"
+       TITLE="[Bug 1590] xfce panel crashes with glib2 2.10">bugzilla-daemon at xfce.org
+       </A><BR>
+    <I>Thu May 18 07:29:25 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000845.html">[Bug 1634] bad free() on plugin remove
+</A></li>
+        <LI>Next message: <A HREF="000848.html">[Bug 1244] image of clipman button does not resize to fit the size of the button (wich depends on the size of the panel), looking awful
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#846">[ date ]</a>
+              <a href="thread.html#846">[ thread ]</a>
+              <a href="subject.html#846">[ subject ]</a>
+              <a href="author.html#846">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+<A HREF="http://bugzilla.xfce.org/show_bug.cgi?id=1590">http://bugzilla.xfce.org/show_bug.cgi?id=1590</A>
+
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">nick at xfce.org</A> changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Comment #5 from <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">nick at xfce.org</A>  2006-05-18 05:29 UTC -------
+Fixed in trunk, there were was a wrong g_free 3 times :). Please reopen if
+crash is still there.
+
+
+-- 
+Configure bugmail: <A HREF="http://bugzilla.xfce.org/userprefs.cgi?tab=email">http://bugzilla.xfce.org/userprefs.cgi?tab=email</A>
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000845.html">[Bug 1634] bad free() on plugin remove
+</A></li>
+	<LI>Next message: <A HREF="000848.html">[Bug 1244] image of clipman button does not resize to fit the size of the button (wich depends on the size of the panel), looking awful
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#846">[ date ]</a>
+              <a href="thread.html#846">[ thread ]</a>
+              <a href="subject.html#846">[ subject ]</a>
+              <a href="author.html#846">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

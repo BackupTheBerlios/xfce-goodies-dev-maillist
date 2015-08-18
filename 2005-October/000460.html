@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bug #5401] xfce4-battery-plugin does not see ac_adapter status
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-October/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%20%235401%5D%20xfce4-battery-plugin%20does%20not%20see%20ac_adapter%20status&In-Reply-To=%3C200510201654.j9KGs2qq014590%40unicorn.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000468.html">
+   <LINK REL="Next"  HREF="000469.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bug #5401] xfce4-battery-plugin does not see ac_adapter status</H1>
+    <B>noreply at berlios.de</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%20%235401%5D%20xfce4-battery-plugin%20does%20not%20see%20ac_adapter%20status&In-Reply-To=%3C200510201654.j9KGs2qq014590%40unicorn.berlios.de%3E"
+       TITLE="[Bug #5401] xfce4-battery-plugin does not see ac_adapter status">noreply at berlios.de
+       </A><BR>
+    <I>Thu Oct 20 18:54:02 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000468.html">About PO files in Xfce Goodies
+</A></li>
+        <LI>Next message: <A HREF="000469.html">Aw: Re: About PO files in Xfce Goodies
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#460">[ date ]</a>
+              <a href="thread.html#460">[ thread ]</a>
+              <a href="subject.html#460">[ subject ]</a>
+              <a href="author.html#460">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bug #5401, was updated on 2005-Oct-20 17:54
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: xfce4-battery-plugin
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: josem
+Assigned to : none
+Summary: xfce4-battery-plugin does not see ac_adapter status
+
+Details: This is a bug showed a long time ago.
+I am using debian testing and the battery plugin does not know then I am using only battery. I shows-me the &quot;ac&quot; allways.
+
+I &quot;corrected&quot; the bug on my pc, but it's a bad solution. (It's no solution at all.)
+Just added the line to get the right /proc/acpi file (libacpi.c):
+
+   if (!(acpi = fopen (&quot;/proc/acpi/ac_adapter/0/status&quot;, &quot;r&quot;)))
+    if (!(acpi = fopen (&quot;/proc/acpi/ac_adapter/ACAD/state&quot;, &quot;r&quot;)))
+      if (!(acpi = fopen (&quot;/proc/acpi/ac_adapter/AC/state&quot;, &quot;r&quot;)))
++      if (!(acpi = fopen (&quot;/proc/acpi/ac_adapter/AC0/state&quot;, &quot;r&quot;)))
+        if (!(acpi = fopen (&quot;/proc/acpi/ac_adapter/ADP1/state&quot;, &quot;r&quot;)))
+                return -1;
+
+Maybe you can think in a more elegant way to get this file (like you do with the battery state).
+
+Thanks for the pacience.
+Jos&#233; Martins
+<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jemart at student.dei.uc.pt</A>
+
+For detailed info, follow this link:
+<A HREF="http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=5401&amp;group_id=910">http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=5401&amp;group_id=910</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000468.html">About PO files in Xfce Goodies
+</A></li>
+	<LI>Next message: <A HREF="000469.html">Aw: Re: About PO files in Xfce Goodies
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#460">[ date ]</a>
+              <a href="thread.html#460">[ thread ]</a>
+              <a href="subject.html#460">[ subject ]</a>
+              <a href="author.html#460">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

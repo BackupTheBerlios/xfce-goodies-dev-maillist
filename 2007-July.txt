@@ -1,0 +1,27 @@
+From h.aling at home.nl  Fri Jul  6 21:04:54 2007
+From: h.aling at home.nl (Harold Aling)
+Date: Fri, 06 Jul 2007 21:04:54 +0200
+Subject: xfce4-screenshooter-plugin bugzilla section / crash
+Message-ID: <468E9256.2030805@home.nl>
+
+Dear list,
+
+Can anyone create a bugzilla section for the screenshooter plugin? I 
+can't seem to find it...
+
+The plugin crashes each time I click on 'cancel' in the save screenshot 
+dialog on the SVN version of the plugin... (backtrace is attached if 
+anyone's interested)
+
+-tnx-
+
+
+Harold.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20070706/ef31c203/attachment.html>
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: screenshooter-backtrace
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20070706/ef31c203/attachment.ksh>
+

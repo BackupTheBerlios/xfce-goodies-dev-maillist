@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> xfce-weather-plugin 0.4.0 data storage path
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-January/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20xfce-weather-plugin%200.4.0%20data%20storage%20path&In-Reply-To=%3C41F0A6E9.9040802%40xfce.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000045.html">
+   <LINK REL="Next"  HREF="000044.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>xfce-weather-plugin 0.4.0 data storage path</H1>
+    <B>Jasper Huijsmans</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20xfce-weather-plugin%200.4.0%20data%20storage%20path&In-Reply-To=%3C41F0A6E9.9040802%40xfce.org%3E"
+       TITLE="xfce-weather-plugin 0.4.0 data storage path">jasper at xfce.org
+       </A><BR>
+    <I>Fri Jan 21 07:53:29 CET 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000045.html">xfce-weather-plugin 0.4.0 data storage path
+</A></li>
+        <LI>Next message: <A HREF="000044.html">[Bug 663] added datetime goodie, removed standard panel date, panel disappeared
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#46">[ date ]</a>
+              <a href="thread.html#46">[ thread ]</a>
+              <a href="subject.html#46">[ subject ]</a>
+              <a href="author.html#46">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bob Schl&#228;rmann wrote:
+&gt;<i> On Thu, 20 Jan 2005 22:05:22 +0100
+</I>&gt;<i> Jasper Huijsmans &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">jasper at xfce.org</A>&gt; wrote:
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;&gt;<i>Bob Schl&#228;rmann wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>On Thu, 20 Jan 2005 20:24:58 +0100
+</I>&gt;&gt;&gt;<i>&quot;Markus T.&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">markus at trippelsdorf.de</A>&gt; wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>The xfce-weather-plugin 0.4.0 stores its data
+</I>&gt;&gt;&gt;&gt;<i>in the .xfce4 directory. All other programs 
+</I>&gt;&gt;&gt;&gt;<i>use the new default location .config/xfce4 .
+</I>&gt;&gt;&gt;&gt;<i>The problem is that many people delete their 
+</I>&gt;&gt;&gt;&gt;<i>.xfce4 directory when updating to 4.2..
+</I>&gt;&gt;&gt;&gt;<i>When the .xfce4 directory does not exist, the weather
+</I>&gt;&gt;&gt;&gt;<i>plugin will not work (displaying a network failure error).
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>Please change the storage directory to .config/xfce4 .
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>Strange as my data file already got stored in .config/xfce4. I've
+</I>&gt;&gt;&gt;<i>changed the save code anyway, it now gets saved under .cache/xfce4.
+</I>&gt;&gt;&gt;<i>The newest version is in cvs.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Maybe it's a good idea to do a new release even if the change is very 
+</I>&gt;&gt;<i>small. It would be good to have no plugins using ~/.xfce4 anymore.
+</I>&gt;&gt;<i>What do you think?
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Agree, i've added a new release. Though i'm still not sure this was
+</I>&gt;<i> really a bug, as the path wasn't hard coded but used xfce_get_userdir()
+</I>&gt;<i> to get the save directory.
+</I>&gt;<i> 
+</I>
+That function is only there for backward compatibility and still uses 
+~/.xfce4/. The xfce_resource_* functions should be used instead for 4.2. 
+  Thanks.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000045.html">xfce-weather-plugin 0.4.0 data storage path
+</A></li>
+	<LI>Next message: <A HREF="000044.html">[Bug 663] added datetime goodie, removed standard panel date, panel disappeared
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#46">[ date ]</a>
+              <a href="thread.html#46">[ thread ]</a>
+              <a href="subject.html#46">[ subject ]</a>
+              <a href="author.html#46">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

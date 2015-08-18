@@ -1,0 +1,1387 @@
+From benedikt.meurer at unix-ag.uni-siegen.de  Tue Feb  1 11:11:37 2005
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Tue, 01 Feb 2005 11:11:37 +0100
+Subject: [Fwd: [xfce4-battery-plugin] Status]
+Message-ID: <41FF55D9.30409@unix-ag.uni-siegen.de>
+
+
+-------- Original Message --------
+Subject: [xfce4-battery-plugin] Status
+Date: Fri, 28 Jan 2005 07:41:22 +0100
+From: Fridtjof Busse <fbusse at gmx.de>
+To: Nick Penwarden <toth64 at yahoo.com>,	Benedikt Meurer 
+<benedikt.meurer at unix-ag.uni-siegen.de>
+
+Hi
+Are you still maintaining the battery-plugin?
+I have quite some problems with it under XFCE 4.2 on a Dell Inspiron
+8200:
+First of all, I get lots of
+(xfce-panel:8450): Gtk-CRITICAL **: file gtkprocess.c: line 584
+(gtk_progress_set_precentage): assertion 'percentage >=0 && percentage
+<= 1.0' failed"
+Also, when the battery is fully charged, I get e.g. 109% as charged and
+00:00 as the runtime or 119% with an estimated runtime of 200:00 (and
+even more weird values if I plug the second battery in).
+Monitors like the one from KDE work fine, but I'd like to use the native
+one for XFCE4.
+Any chance this will get fixed?
+Thanks
+-- 
+Fridtjof Busse
+    Calvin: I'm a genius, but I'm a misunderstood genius.  Hobbes: What's
+misunderstood about you?  Calvin: Nobody thinks I'm a genius.  -- Calvin
+
+
+
+From xotazu at cvc.uab.es  Tue Feb  1 19:03:16 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Tue, 01 Feb 2005 19:03:16 +0100
+Subject: taskmanager 0.2.0
+In-Reply-To: <20050201110009.21345.26733.Mailman@bat.berlios.de>
+References: <20050201110009.21345.26733.Mailman@bat.berlios.de>
+Message-ID: <20050201190316.428f5d31@cvc131.uab.es>
+
+
+	Hi:
+
+	I have problems compiling taskamanger 0.2.0 (I had a segmentation fault with
+0.1.0, but it was ok in 0.0.1).
+
+	My system is Slackware 10.0, gcc 3.4.3, xfce 4.2.0, X (x.org) 6.8.1.
+
+	The message I receive when compiling taskmanager 0.2.0 is:
+
+Making all in src
+make[1]: Entering directory `/root/tmp/xfce4-taskmanager-0.2.0/src'
+if gcc -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\"
+-DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"xfce4-taskmanager\"
+-DVERSION=\"0.2.0\"  -I. -I. -I/usr/X11R6/include -I/opt/xfce/include/xfce4
+-I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/include/atk-1.0
+-I/usr/include/pango-1.0 -I/usr/include/freetype2 -I/usr/include/glib-2.0
+-I/usr/lib/glib-2.0/include      -g -O2 -MT functions.o -MD -MP -MF
+".deps/functions.Tpo" -c -o functions.o functions.c; \ then mv -f
+".deps/functions.Tpo" ".deps/functions.Po"; else rm -f ".deps/functions.Tpo";
+exit 1; fi functions.c:23: warning: data definition has no type or storage class
+functions.c: In function `refresh_task_list':
+functions.c:69: warning: assignment makes pointer from integer without a cast
+functions.c:71: warning: comparison between pointer and integer
+functions.c: At top level:
+functions.c:130: error: conflicting types for 'remove_task_from_array'
+functions.c:123: error: previous implicit declaration of
+'remove_task_from_array' was here make[1]: *** [functions.o] Error 1
+make[1]: Leaving directory `/root/tmp/xfce4-taskmanager-0.2.0/src'
+make: *** [all-recursive] Error 1
+
+
+
+cheers
+
+Xavier
+
+
+From bernhard.walle at gmx.de  Tue Feb  1 21:28:37 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Tue, 01 Feb 2005 21:28:37 +0100
+Subject: Taskmanager Icon
+Message-ID: <ctoop1$bro$1@sea.gmane.org>
+
+Hello,
+
+the taskmanager has no icon, which is very bad in my opinion. Does
+anybody have skills and can draw a nice icon which fits into Rodent?
+
+Unfortunately, I'm no artist. :(
+
+
+Regards,
+Bernhard
+
+-- 
+
+
+
+From webmaster at nebulon.de  Tue Feb  1 23:47:30 2005
+From: webmaster at nebulon.de (Johannes Zellner)
+Date: Tue, 01 Feb 2005 23:47:30 +0100
+Subject: taskmanager 0.2.0
+In-Reply-To: <20050201190316.428f5d31@cvc131.uab.es>
+References: <20050201110009.21345.26733.Mailman@bat.berlios.de> <20050201190316.428f5d31@cvc131.uab.es>
+Message-ID: <42000702.5010605@nebulon.de>
+
+Xavier Otazu schrieb:
+
+>	Hi:
+>
+>	I have problems compiling taskamanger 0.2.0 (I had a segmentation fault with
+>0.1.0, but it was ok in 0.0.1).
+>
+>	My system is Slackware 10.0, gcc 3.4.3, xfce 4.2.0, X (x.org) 6.8.1.
+>
+>	The message I receive when compiling taskmanager 0.2.0 is:
+>  
+>
+[...]
+
+Well thanks for feedback, i think i fixed the errors now, please 
+download the 0.2.0 version again
+from berlios
+
+Bye
+    Johannes
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Wed Feb  2 00:14:19 2005
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Wed, 02 Feb 2005 00:14:19 +0100
+Subject: taskmanager 0.2.0
+In-Reply-To: <42000702.5010605@nebulon.de>
+References: <20050201110009.21345.26733.Mailman@bat.berlios.de> <20050201190316.428f5d31@cvc131.uab.es> <42000702.5010605@nebulon.de>
+Message-ID: <42000D4B.5080806@unix-ag.uni-siegen.de>
+
+Johannes Zellner wrote:
+> Xavier Otazu schrieb:
+> 
+>>     Hi:
+>>
+>>     I have problems compiling taskamanger 0.2.0 (I had a segmentation 
+>> fault with
+>> 0.1.0, but it was ok in 0.0.1).
+>>
+>>     My system is Slackware 10.0, gcc 3.4.3, xfce 4.2.0, X (x.org) 6.8.1.
+>>
+>>     The message I receive when compiling taskmanager 0.2.0 is:
+>>  
+>>
+> [...]
+> 
+> Well thanks for feedback, i think i fixed the errors now, please 
+> download the 0.2.0 version again
+> from berlios
+
+Please increment the version if you make changes, or certain package 
+management systems (pkgsrc, ports, portage, ...) will run into trouble.
+
+> Bye
+>    Johannes
+
+Benedikt
+
+
+From kvazar at ua.fm  Wed Feb  2 09:12:17 2005
+From: kvazar at ua.fm (UA.FM kvazar)
+Date: Wed, 02 Feb 2005 10:12:17 +0200
+Subject: Taskmanager Icon
+In-Reply-To: <ctoop1$bro$1@sea.gmane.org>
+References: <ctoop1$bro$1@sea.gmane.org>
+Message-ID: <opslj82r06mswich@krimsonbox.color-pro.in>
+
+Tue, 01 Feb 2005 21:28:37 +0100, Bernhard Walle <bernhard.walle at gmx.de>  
+?????:
+
+> Hello,
+>
+> the taskmanager has no icon, which is very bad in my opinion. Does
+> anybody have skills and can draw a nice icon which fits into Rodent?
+>
+> Unfortunately, I'm no artist. :(
+>
+>
+> Regards,
+> Bernhard
+>
+
+try these icons
+
+-- 
+----------------
+Andriy Podanenko
+-podarok-
+PAK-UANIC
+ICQ 125123884	
+YahooIM podarok_ua
+MSN podarok_
+Jabber podarok at jabber.org
+AIM podarokua
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: icons.zip
+Type: application/zip
+Size: 61728 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050202/df2bd2e8/attachment.zip>
+
+From kvazar at ua.fm  Wed Feb  2 09:12:17 2005
+From: kvazar at ua.fm (UA.FM kvazar)
+Date: Wed, 02 Feb 2005 10:12:17 +0200
+Subject: Taskmanager Icon
+In-Reply-To: <ctoop1$bro$1@sea.gmane.org>
+References: <ctoop1$bro$1@sea.gmane.org>
+Message-ID: <opslj82r06mswich@krimsonbox.color-pro.in>
+
+Tue, 01 Feb 2005 21:28:37 +0100, Bernhard Walle <bernhard.walle at gmx.de>  
+?????:
+
+> Hello,
+>
+> the taskmanager has no icon, which is very bad in my opinion. Does
+> anybody have skills and can draw a nice icon which fits into Rodent?
+>
+> Unfortunately, I'm no artist. :(
+>
+>
+> Regards,
+> Bernhard
+>
+
+try these icons
+
+-- 
+----------------
+Andriy Podanenko
+-podarok-
+PAK-UANIC
+ICQ 125123884	
+YahooIM podarok_ua
+MSN podarok_
+Jabber podarok at jabber.org
+AIM podarokua
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: icons.zip
+Type: application/zip
+Size: 61728 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050202/df2bd2e8/attachment-0001.zip>
+
+From xotazu at cvc.uab.es  Wed Feb  2 14:39:02 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Wed, 02 Feb 2005 14:39:02 +0100
+Subject: xfce-goodies-dev digest, Vol 1 #164 - 5 msgs
+In-Reply-To: <20050202105300.31172.99992.Mailman@bat.berlios.de>
+References: <20050202105300.31172.99992.Mailman@bat.berlios.de>
+Message-ID: <20050202143902.4d24ed65@cvc131.uab.es>
+
+	Hello:
+
+	I think there is some problem with compressed files. When uncompressing I
+receive 
+
+tar: Skipping to next header
+tar: Archive contains obsolescent base-64 headers
+
+gzip: stdin: invalid compressed data--format violated
+tar: Child returned status 1
+tar: Error exit delayed from previous errors
+
+	from the xfce4-taskmanager-0.2.0.tar.gz file, and
+
+bzip2: Data integrity error when decompressing.
+        Input file = (stdin), output file = (stdout)
+
+It is possible that the compressed file(s) have become corrupted.
+You can use the -tvv option to test integrity of such files.
+
+You can use the `bzip2recover' program to attempt to recover
+data from undamaged sections of corrupted files.
+
+tar: Child returned status 2
+tar: Error exit delayed from previous errors
+
+	from the xfce4-taskmanager-0.2.0.tar.bz2 file.
+
+cheers
+
+Xavier
+
+
+> From: Johannes Zellner <webmaster at nebulon.de>
+> To: xfce-goodies-dev at berlios.de
+> Subject: Re: taskmanager 0.2.0
+> Reply-To: xfce-goodies-dev at lists.berlios.de
+> 
+> Xavier Otazu schrieb:
+> 
+> >	Hi:
+> >
+> >	I have problems compiling taskamanger 0.2.0 (I had a segmentation fault
+with
+> >0.1.0, but it was ok in 0.0.1).
+> >
+> >	My system is Slackware 10.0, gcc 3.4.3, xfce 4.2.0, X (x.org) 6.8.1.
+> >
+> >	The message I receive when compiling taskmanager 0.2.0 is:
+> >  
+> >
+> [...]
+> 
+> Well thanks for feedback, i think i fixed the errors now, please 
+> download the 0.2.0 version again
+> from berlios
+> 
+> Bye
+>     Johannes
+> 
+
+
+
+
+From webmaster at nebulon.de  Wed Feb  2 14:46:19 2005
+From: webmaster at nebulon.de (Johannes Zellner)
+Date: Wed, 02 Feb 2005 14:46:19 +0100
+Subject: Taskmanager Icon
+In-Reply-To: <opslj82r06mswich@krimsonbox.color-pro.in>
+References: <ctoop1$bro$1@sea.gmane.org> <opslj82r06mswich@krimsonbox.color-pro.in>
+Message-ID: <4200D9AB.5010808@nebulon.de>
+
+> try these icons
+
+Hey really nice Icons...
+
+tools_003.png : isn't it the icon of kdesysadmin ?
+filemanager_3.png : I really like it....did you create it yourself ?
+window_002.png : nice too, but i think it's better fora filemanger
+
+what do other people think ??
+
+Bye 
+    Johannes
+
+
+
+From xotazu at cvc.uab.es  Wed Feb  2 16:29:04 2005
+From: xotazu at cvc.uab.es (Xavier Otazu)
+Date: Wed, 02 Feb 2005 16:29:04 +0100
+Subject: taskmanager 0.2.1
+In-Reply-To: <20050202143902.4d24ed65@cvc131.uab.es>
+References: <20050202105300.31172.99992.Mailman@bat.berlios.de>
+ <20050202143902.4d24ed65@cvc131.uab.es>
+Message-ID: <20050202162904.0ac7bbd8@cvc131.uab.es>
+
+	Hello:
+
+	I don't know if somebody replied to my last e-mail for the last hours (I
+receive xfce mail-list messages in digest format). If I am missing something,
+I'am sorry.
+
+	I've downloaded 5 minutes ago the 0.2.1 taskmanager. Now I can compile it, but
+I receive again the 'segmentation fault' message.
+
+	I run the executable file with 'ddd', and receive the message:
+
+Program received signal SIGSEGV, Segmentation fault.
+refresh_task_list () at functions.c:82
+
+
+cheers
+
+Xavier
+
+
+On Wed, 2 Feb 2005 14:39:02 +0100
+Xavier Otazu <xotazu at cvc.uab.es> wrote:
+
+> 
+> 	Hello:
+> 
+> 	I think there is some problem with compressed files. When uncompressing
+I
+> receive 
+> 
+> tar: Skipping to next header
+> tar: Archive contains obsolescent base-64 headers
+> 
+> gzip: stdin: invalid compressed data--format violated
+> tar: Child returned status 1
+> tar: Error exit delayed from previous errors
+> 
+> 	from the xfce4-taskmanager-0.2.0.tar.gz file, and
+> 
+> bzip2: Data integrity error when decompressing.
+>         Input file = (stdin), output file = (stdout)
+> 
+> It is possible that the compressed file(s) have become corrupted.
+> You can use the -tvv option to test integrity of such files.
+> 
+> You can use the `bzip2recover' program to attempt to recover
+> data from undamaged sections of corrupted files.
+> 
+> tar: Child returned status 2
+> tar: Error exit delayed from previous errors
+> 
+> 	from the xfce4-taskmanager-0.2.0.tar.bz2 file.
+> 
+> cheers
+> 
+> Xavier
+> 
+> 
+> > From: Johannes Zellner <webmaster at nebulon.de>
+> > To: xfce-goodies-dev at berlios.de
+> > Subject: Re: taskmanager 0.2.0
+> > Reply-To: xfce-goodies-dev at lists.berlios.de
+> > 
+> > Xavier Otazu schrieb:
+> > 
+> > >	Hi:
+> > >
+> > >	I have problems compiling taskamanger 0.2.0 (I had a segmentation fault
+> with
+> > >0.1.0, but it was ok in 0.0.1).
+> > >
+> > >	My system is Slackware 10.0, gcc 3.4.3, xfce 4.2.0, X (x.org) 6.8.1.
+> > >
+> > >	The message I receive when compiling taskmanager 0.2.0 is:
+> > >  
+> > >
+> > [...]
+> > 
+> > Well thanks for feedback, i think i fixed the errors now, please 
+> > download the 0.2.0 version again
+> > from berlios
+> > 
+> > Bye
+> >     Johannes
+> > 
+> 
+> 
+
+
+From jemart at student.dei.uc.pt  Thu Feb  3 01:30:11 2005
+From: jemart at student.dei.uc.pt (=?UTF-8?B?Sm9zw6kgRWR1YXJkbyBNYXJ0aW5z?=)
+Date: Thu, 03 Feb 2005 00:30:11 +0000
+Subject: Taskmanager Icon
+In-Reply-To: <4200D9AB.5010808@nebulon.de>
+References: <ctoop1$bro$1@sea.gmane.org> <opslj82r06mswich@krimsonbox.color-pro.in> <4200D9AB.5010808@nebulon.de>
+Message-ID: <42017093.3030002@student.dei.uc.pt>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+I don't know where do the came, but I like
+window_002.png (most)
+filemanager_3.png
+
+Can you explain from where did filemanager_3.png came? Explain the icon. :-)
+
+Johannes Zellner wrote:
+> 
+>> try these icons
+> 
+> 
+> Hey really nice Icons...
+> 
+> tools_003.png : isn't it the icon of kdesysadmin ?
+> filemanager_3.png : I really like it....did you create it yourself ?
+> window_002.png : nice too, but i think it's better fora filemanger
+> 
+> what do other people think ??
+> 
+> Bye    Johannes
+> 
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+
+- --
+Jos? Eduardo Bastos Nunes Martins
+http://pgp.dei.uc.pt:11371/pks/lookup?search=0xD3BB9CCA&op=index
+http://talkerspt.no-ip.org/
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+Comment: Using GnuPG with Thunderbird - http://enigmail.mozdev.org
+
+iD8DBQFCAXCTJObLD9O7nMoRArBOAJ9viXR4LVdLEFYlsEWPAyzUFYhiMwCgtIjv
+p9qGraqyf9O93M5m1E2z8YY=
+=M/IL
+-----END PGP SIGNATURE-----
+
+
+From kvazar at ua.fm  Thu Feb  3 08:20:30 2005
+From: kvazar at ua.fm (UA.FM kvazar)
+Date: Thu, 03 Feb 2005 09:20:30 +0200
+Subject: Taskmanager Icon
+In-Reply-To: <42017093.3030002@student.dei.uc.pt>
+References: <ctoop1$bro$1@sea.gmane.org> <opslj82r06mswich@krimsonbox.color-pro.in> <4200D9AB.5010808@nebulon.de> <42017093.3030002@student.dei.uc.pt>
+Message-ID: <opsll1cge1mswich@krimsonbox.color-pro.in>
+
+Thu, 03 Feb 2005 00:30:11 +0000, Jos? Eduardo Martins  
+<jemart at student.dei.uc.pt> ?????:
+
+
+>> tools_003.png : isn't it the icon of kdesysadmin ?
+>> filemanager_3.png : I really like it....did you create it yourself ?
+>> window_002.png : nice too, but i think it's better fora filemanger
+>>
+>> what do other people think ??
+>>
+all icons came from this resource
+http://interfacelift.com/
+
+all are free for non-commercial use
+if U need I can try find author (there are near 1000 icons in my pack 8) )
+-- 
+----------------
+Andriy Podanenko
+-podarok-
+PAK-UANIC
+ICQ 125123884	
+YahooIM podarok_ua
+MSN podarok_
+Jabber podarok at jabber.org
+AIM podarokua
+
+
+From bernhard.walle at gmx.de  Fri Feb  4 19:08:37 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Fri, 04 Feb 2005 19:08:37 +0100
+Subject: Xfce4 Netload Plugin 0.3.0
+Message-ID: <4203BA25.1010901@mail.bwalle.de>
+
+Hello,
+
+I just released 0.3.0. Changes are:
+
+======================================================================
+2005-02-04 Bernhard Walle
+	* Added IP address and network interface name to the tooltip
+	  (thanks to Pasi Orovuo for the suggestion)
+	* Released 0.3.0
+======================================================================
+
+@Illka: Can you update APT repository as usual? Thanks!
+
+
+Regards,
+Bernhard
+
+-- 
+
+
+
+From bernhard.walle at gmx.de  Fri Feb  4 19:27:43 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Fri, 04 Feb 2005 19:27:43 +0100
+Subject: Xfce4 Netload Plugin 0.3.0
+In-Reply-To: <4203BA25.1010901@mail.bwalle.de>
+References: <4203BA25.1010901@mail.bwalle.de>
+Message-ID: <cu0epf$v9n$1@sea.gmane.org>
+
+* Bernhard Walle [04.02.2005 19:08]:
+> 
+> I just released 0.3.0. Changes are:
+> 
+> ======================================================================
+> 2005-02-04 Bernhard Walle
+> 	* Added IP address and network interface name to the tooltip
+> 	  (thanks to Pasi Orovuo for the suggestion)
+> 	* Released 0.3.0
+> ======================================================================
+> 
+> @Illka: Can you update APT repository as usual? Thanks!
+
+I'll release 0.3.1 in a few minutes. DONT'T USE 0.3.0 since it opens
+sockets and doesn't close them.
+
+
+Regards,
+Bernhard
+
+-- 
+
+
+
+From bugzilla-daemon at xfce.org  Sat Feb  5 23:36:20 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat,  5 Feb 2005 22:36:20 +0000 (UTC)
+Subject: [Bug 756]  New: WaveLAN plugin should autohide when WaveLAN device can not be found
+Message-ID: <20050205223620.8870D1F7169@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=756
+
+           Summary: WaveLAN plugin should autohide when WaveLAN device can
+                    not be found
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: wavelan
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: andrew.g.r.holmes at gmail.com
+
+
+The WaveLAN plugin should autohide when the WaveLAN device can not be found
+(since it then must be offline) if "Autohide when offline" option is selected,
+but it doesn't.
+
+Reproducible: Always
+Steps to Reproduce:
+1. Select the "Autohide when offline" option in preferences.
+2. rmmod <device kernel module>
+
+Actual Results:  
+Quality bar goes red and tooltip reads "No such WaveLAN device".
+
+Expected Results:  
+Autohide.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From noreply at berlios.de  Sun Feb  6 01:59:26 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Sun, 6 Feb 2005 01:59:26 +0100 (CET)
+Subject: [Patch #318] Bash-like autocompletion for xfce4-minicmd-plugin
+Message-ID: <200502060059.j160xQJE004457@unicorn.berlios.de>
+
+Patch #318 has been updated. 
+
+Project: xfce-goodies
+Category: None
+Status: Open
+Submitted by: quaqo
+Assigned to : none
+Summary: Bash-like autocompletion for xfce4-minicmd-plugin
+
+-------------------------------------------------------
+For more info, visit:
+
+http://developer.berlios.de/patch/?func=detailpatch&patch_id=318&group_id=910
+
+
+From bugzilla-daemon at xfce.org  Tue Feb  8 13:48:45 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue,  8 Feb 2005 12:48:45 +0000 (UTC)
+Subject: [Bug 660] Taskbar plugin causes panel to 'shake' when available space changes using "Expand to fill screen"
+Message-ID: <20050208124845.501BD1F7064@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=660
+
+
+
+
+
+------- Additional Comments From h.aling at home.nl  2005-02-08 12:48 UTC -------
+Same here... 'expand to fill screen' is the problem I believe... (multiple machines)
+
+Harold.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue Feb  8 13:51:24 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue,  8 Feb 2005 12:51:24 +0000 (UTC)
+Subject: [Bug 660] Taskbar plugin causes panel to 'shake' when available space changes using "Expand to fill screen"
+Message-ID: <20050208125124.7F6A81F7111@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=660
+
+
+h.aling at home.nl changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |h.aling at home.nl
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Wed Feb  9 11:16:37 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Wed,  9 Feb 2005 10:16:37 +0000 (UTC)
+Subject: [Bug 756] WaveLAN plugin should autohide when WaveLAN device can not be found
+Message-ID: <20050209101637.433F61F704B@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=756
+
+
+benny at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |INVALID
+
+
+
+
+------- Additional Comments From benny at xfce.org  2005-02-09 10:16 UTC -------
+"Offline" means: The interface is present, but not active.
+
+The reason for this definition is simple: If the wavelan plugin would hide as
+well if the interface is not present, then you wouldn't be able to change it
+from the user interface. Imagine, you had a "wi0" wireless card, but now bought
+a new one, which is recognized as "ath0", then you wouldn't be able to
+change/remove the wavelan plugin from the panel (only by editing the
+contents.xml manually), because the "wi0" device is no longer present and
+therefore the wavelan plugin is hidden.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From jb_dul at yahoo.com  Thu Feb 10 18:51:04 2005
+From: jb_dul at yahoo.com (Jean-baptiste Dulong)
+Date: Thu, 10 Feb 2005 18:51:04 +0100 (CET)
+Subject: basic questions for new plugin
+Message-ID: <20050210175104.25161.qmail@web12308.mail.yahoo.com>
+
+Hi,
+I'm working on a new little plugin that behaves like
+the "kwikdisk -removable media utility" in KDE. The
+plugin is far from being complete but it is working ok
+and could possibly be released.
+
+- Where can i post/send a first source tarball ??
+
+- Is there an easy way to ship an icon with it ? I
+curently load an icon from KDE which looks fine, but i
+don't know how to include it in the project (and use
+autoconf to install it in the right location).
+
+thanks.
+
+
+
+	
+
+	
+		
+D?couvrez le nouveau Yahoo! Mail : 250 Mo d'espace de stockage pour vos mails ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com/
+
+
+From bugzilla-daemon at xfce.org  Sat Feb 12 00:23:32 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri, 11 Feb 2005 23:23:32 +0000 (UTC)
+Subject: [Bug 660] Taskbar plugin causes panel to 'shake' when available space changes using "Expand to fill screen"
+Message-ID: <20050211232332.ABD441F71E3@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=660
+
+
+
+
+
+------- Additional Comments From lins at email.it  2005-02-11 23:23 UTC -------
+Same problem on my slackware 10.1 with XFCE 4.2.0 compiled by Patrick and
+taskbar plugin
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From masse_nicolas at yahoo.fr  Sat Feb 12 12:36:43 2005
+From: masse_nicolas at yahoo.fr (masse nicolas)
+Date: Sat, 12 Feb 2005 12:36:43 +0100 (CET)
+Subject: basic questions for new plugin
+In-Reply-To: <20050210175104.25161.qmail@web12308.mail.yahoo.com>
+Message-ID: <20050212113643.95831.qmail@web26006.mail.ukl.yahoo.com>
+
+I have exactly the same questions.
+I also made a plugin. Mine works like the quicklounge
+applet in gnome. I would like to share it, so please
+reply us.
+
+thanks.
+
+ --- Jean-baptiste Dulong <jb_dul at yahoo.com> a ?crit :
+
+> Hi,
+> I'm working on a new little plugin that behaves like
+> the "kwikdisk -removable media utility" in KDE. The
+> plugin is far from being complete but it is working
+> ok
+> and could possibly be released.
+> 
+> - Where can i post/send a first source tarball ??
+> 
+> - Is there an easy way to ship an icon with it ? I
+> curently load an icon from KDE which looks fine, but
+> i
+> don't know how to include it in the project (and use
+> autoconf to install it in the right location).
+> 
+> thanks.
+> 
+> 
+> 
+> 	
+> 
+> 	
+> 		
+> D?couvrez le nouveau Yahoo! Mail : 250 Mo d'espace
+> de stockage pour vos mails ! 
+> Cr?ez votre Yahoo! Mail sur
+> http://fr.mail.yahoo.com/
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+>
+http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>  
+
+
+	
+
+	
+		
+D?couvrez le nouveau Yahoo! Mail : 250 Mo d'espace de stockage pour vos mails ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com/
+
+
+From justame at gmail.com  Sat Feb 12 15:31:41 2005
+From: justame at gmail.com (just me)
+Date: Sat, 12 Feb 2005 16:31:41 +0200
+Subject: (no subject)
+Message-ID: <51ca7efe050212063151d0bf90@mail.gmail.com>
+
+justame at gmail.com
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Tue Feb 15 09:39:34 2005
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Tue, 15 Feb 2005 09:39:34 +0100
+Subject: [Fwd: [xfce-goodies - Help] xfce4-datetime-plugins shows only 1 line]
+Message-ID: <4211B546.70208@unix-ag.uni-siegen.de>
+
+
+-------- Original Message --------
+Subject: [xfce-goodies - Help] xfce4-datetime-plugins shows only 1 line
+Date: Tue, 15 Feb 2005 08:44:50 +0100 (CET)
+From: noreply at berlios.de
+To: noreply at berlios.de
+
+Read and respond to this message at:
+http://developer.berlios.de/forum/message.php?msg_id=15298
+By: dochofa
+
+I've installed the datetime-plugin v0.3.0 from the original debian-sid 
+package.
+The plugin shows the correct date and time on the panel in 2 lines. Now 
+I got
+an upgrade to v0.3.1 via apt and date and time is shown only in 1 line. 
+Howto
+change back to 2 line display?
+
+______________________________________________________________________
+You are receiving this email because you elected to monitor this forum.
+To stop monitoring this forum, login to BerliOS Developer and visit:
+http://developer.berlios.de/forum/monitor.php?forum_id=2748
+
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Tue Feb 15 15:56:04 2005
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Tue, 15 Feb 2005 15:56:04 +0100
+Subject: basic questions for new plugin
+In-Reply-To: <20050210175104.25161.qmail@web12308.mail.yahoo.com>
+References: <20050210175104.25161.qmail@web12308.mail.yahoo.com>
+Message-ID: <42120D84.8@unix-ag.uni-siegen.de>
+
+Jean-baptiste Dulong wrote:
+> Hi,
+
+Hello Jean-Baptiste,
+
+(Sorry, for the late reply)
+
+> - Where can i post/send a first source tarball ??
+
+Send them to xfce-goodies-dev and xfce at xfce.org, and probably post them 
+on the Xfce forum as well.
+
+> - Is there an easy way to ship an icon with it ? I
+> curently load an icon from KDE which looks fine, but i
+> don't know how to include it in the project (and use
+> autoconf to install it in the right location).
+
+autoconf can't do that, but automake can do. E.g. if your icon is named 
+"myicon.png" and its included in the project directory (either the 
+toplevel directory or the panel-plugin/ dir), then you need to edit 
+Makefile.am to include the following lines:
+
+iconsdir = $(datadir)/myproject/icons
+icons_DATA = myicon.png
+
+Adjust the iconsdir path as necessary, but keep it relative to 
+$(datadir) - this expands to $(prefix)/share.
+
+Afterwards, rerun autogen.sh.
+
+> thanks.
+
+HTH,
+Benedikt
+
+
+From masse_nicolas at yahoo.fr  Thu Feb 17 13:28:14 2005
+From: masse_nicolas at yahoo.fr (masse nicolas)
+Date: Thu, 17 Feb 2005 13:28:14 +0100 (CET)
+Subject: new plugin: quicklauncher
+In-Reply-To: <42120D84.8@unix-ag.uni-siegen.de>
+Message-ID: <20050217122814.28841.qmail@web26002.mail.ukl.yahoo.com>
+
+Hi guys.
+
+Here is a new plugin I made for the xfce4-panel. It
+behave like the quick launge applet in gnome. I made
+because there wasn't such things, and I found this is
+very usefull. 
+
+If you have any problem, contact me.
+
+Enjoy it! ;)
+
+Masse Nicolas
+
+
+	
+
+	
+		
+D?couvrez le nouveau Yahoo! Mail : 250 Mo d'espace de stockage pour vos mails ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com/
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: quicklauncher-plugin-0.5.tar.gz
+Type: application/x-gzip
+Size: 366462 bytes
+Desc: quicklauncher-plugin-0.5.tar.gz
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050217/47964cb7/attachment.bin>
+
+From jasper at xfce.org  Thu Feb 17 15:11:48 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Thu, 17 Feb 2005 15:11:48 +0100
+Subject: new plugin: quicklauncher
+In-Reply-To: <20050217122814.28841.qmail@web26002.mail.ukl.yahoo.com>
+References: <42120D84.8@unix-ag.uni-siegen.de> <20050217122814.28841.qmail@web26002.mail.ukl.yahoo.com>
+Message-ID: <20050217141148.GD6285@baudolino.home.nl>
+
+On Thu, Feb 17, 2005 at 01:28:14PM +0100, masse nicolas wrote:
+> Hi guys.
+> 
+> Here is a new plugin I made for the xfce4-panel. It
+> behave like the quick launge applet in gnome. I made
+> because there wasn't such things, and I found this is
+> very usefull. 
+> 
+> If you have any problem, contact me.
+> 
+> Enjoy it! ;)
+> 
+> Masse Nicolas
+> 
+
+Hi,
+
+If you would like to host the plugin on berlios, you should get yourself an
+account on developer.berlios.de (if you don't already have one) and send your
+user name to me, then I can add you to the project.
+
+Thanks,
+	Jasper
+
+PS
+No comment on the plugin, since I haven't tried it yet ;-)
+
+
+From masse_nicolas at yahoo.fr  Thu Feb 17 20:09:23 2005
+From: masse_nicolas at yahoo.fr (masse nicolas)
+Date: Thu, 17 Feb 2005 20:09:23 +0100 (CET)
+Subject: new plugin: quicklauncher
+In-Reply-To: <20050217141148.GD6285@baudolino.home.nl>
+Message-ID: <20050217190923.95958.qmail@web26008.mail.ukl.yahoo.com>
+
+Ok, I made an account. 
+This is " bountykiller "(it's me on the xfce forums :)
+)
+Feel free to already post my plugin, since I dont
+think I would work on this these day (I assume it
+works ok).
+I'll be waiting a few feedback from the users touching
+at it.
+
+Bye.
+
+
+
+ --- Jasper Huijsmans <jasper at xfce.org> a ?crit : 
+> 
+> Hi,
+> 
+> If you would like to host the plugin on berlios, you
+> should get yourself an
+> account on developer.berlios.de (if you don't
+> already have one) and send your
+> user name to me, then I can add you to the project.
+> 
+> Thanks,
+> 	Jasper
+> 
+> PS
+> No comment on the plugin, since I haven't tried it
+> yet ;-)
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+>
+http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+>  
+
+
+	
+
+	
+		
+D?couvrez le nouveau Yahoo! Mail : 250 Mo d'espace de stockage pour vos mails ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com/
+
+
+From webmaster at nebulon.de  Fri Feb 18 15:59:30 2005
+From: webmaster at nebulon.de (Johannes Zellner)
+Date: Fri, 18 Feb 2005 15:59:30 +0100
+Subject: new plugin: quicklauncher
+In-Reply-To: <20050217122814.28841.qmail@web26002.mail.ukl.yahoo.com>
+References: <20050217122814.28841.qmail@web26002.mail.ukl.yahoo.com>
+Message-ID: <421602D2.8090606@nebulon.de>
+
+masse nicolas wrote:
+
+>Hi guys.
+>  
+>
+Hello
+
+>Here is a new plugin I made for the xfce4-panel. It
+>behave like the quick launge applet in gnome. I made
+>because there wasn't such things, and I found this is
+>very usefull. 
+>  
+>
+Works nice on my panel ;)
+And I really like the quick adding/removing of launchers,
+but please tell me, what's the real difference to the normal "starter"?
+Probably I'm to blind to see ;)
+
+>If you have any problem, contact me.
+>  
+>
+Hm no problems ;)
+
+>Enjoy it! ;)
+>
+>Masse Nicolas
+>  
+>
+Bye
+    Johannes
+
+
+From masse_nicolas at yahoo.fr  Sun Feb 20 11:55:30 2005
+From: masse_nicolas at yahoo.fr (masse nicolas)
+Date: Sun, 20 Feb 2005 11:55:30 +0100 (CET)
+Subject: new plugin: quicklauncher
+In-Reply-To: <421602D2.8090606@nebulon.de>
+Message-ID: <20050220105530.81692.qmail@web26001.mail.ukl.yahoo.com>
+
+ --- Johannes Zellner <webmaster at nebulon.de> a ?crit :
+
+> Works nice on my panel ;)
+> And I really like the quick adding/removing of
+> launchers,
+
+:D :D :D
+
+> but please tell me, what's the real difference to
+> the normal "starter"?
+> Probably I'm to blind to see ;)
+> 
+>  
+
+The difference is that you can have your launchers on
+2 lines (or 3 if you make the panel bigger) instead of
+having them on 1 line. This way they take less place
+(usefull if like me you have a lot of launcher and you
+don't want them to take all the width of the screen)
+
+Not a big difference, but I wanted to have...
+
+
+
+
+
+	
+
+	
+		
+D?couvrez le nouveau Yahoo! Mail : 250 Mo d'espace de stockage pour vos mails ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com/
+
+
+From webmaster at nebulon.de  Sun Feb 20 13:37:14 2005
+From: webmaster at nebulon.de (Johannes Zellner)
+Date: Sun, 20 Feb 2005 13:37:14 +0100
+Subject: new plugin: quicklauncher
+In-Reply-To: <20050220105530.81692.qmail@web26001.mail.ukl.yahoo.com>
+References: <20050220105530.81692.qmail@web26001.mail.ukl.yahoo.com>
+Message-ID: <4218847A.7000706@nebulon.de>
+
+>>but please tell me, what's the real difference to
+>>the normal "starter"?
+>>Probably I'm to blind to see ;)
+>>
+>> 
+>>    
+>>
+>
+>The difference is that you can have your launchers on
+>2 lines (or 3 if you make the panel bigger) instead of
+>having them on 1 line. This way they take less place
+>(usefull if like me you have a lot of launcher and you
+>don't want them to take all the width of the screen)
+>
+>Not a big difference, but I wanted to have...
+>  
+>
+Oh i see, well then I would like to merge the two, "starter" and 
+"quicklauncher" so the starters would have the features like the 
+quicklauncher.
+If then the 'lightweight' aspect will not be given anymore, you could 
+add to your quicklauncher the functinality to set the lines and not 
+autosetting them ;)
+
+Bye  
+    Johannes
+
+
+
+From bugzilla-daemon at xfce.org  Sun Feb 20 21:59:39 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sun, 20 Feb 2005 20:59:39 +0000 (UTC)
+Subject: [Bug 791]  New: Hebrew translation is not functional
+Message-ID: <20050220205939.559C01F70C2@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=791
+
+           Summary: Hebrew translation is not functional
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: netload
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: kamberd at yahoo.com
+
+
+Hebrew translation was generated for the netload plugin (and for datetime,
+fsguard, sensors-plugin, showdesktop, weather and xmms-plugin).
+but the translation is not functional (after generating an mo file and placing
+it under /usr/share/locale/he_IL.UTF-8/LC_MESSAGES )
+
+Reproducible: Always
+Steps to Reproduce:
+1. The translated files were submitted to the i18n mailing list
+2. Download the files
+3. Place them correctly
+4. Restart Xfce
+
+Actual Results:  
+Translation is not functional
+
+Expected Results:  
+Hebrew translated plugin
+
+files will be temporally hosted on http://hebxfce.freeownhost.com/xfce-plugins
+from 21.02.05
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sat Feb 26 15:48:08 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat, 26 Feb 2005 14:48:08 +0000 (UTC)
+Subject: [Bug 791] Hebrew translation is not functional
+Message-ID: <20050226144808.587301F7057@espresso.foo-projects.org>
+
+Do NOT reply to this email.  To make further comments on this bug, use
+the URL below:
+http://bugzilla.xfce.org/show_bug.cgi?id=791
+
+
+
+
+
+------- Additional Comments From kamberd at yahoo.com  2005-02-26 14:48 UTC -------
+Sorry, my mistake - the files were in the root folder and are now in the right
+place http://hebxfce.freeownhost.com/xfce-plugins
+
+Dotan
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From noreply at berlios.de  Sun Feb 27 08:54:43 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Sun, 27 Feb 2005 02:54:43 -0500 (EST)
+Subject: [Patch #351] Translation patch for weather plugin
+Message-ID: <200502270754.j1R7shDK022691@unicorn.berlios.de>
+
+Patch #351 has been updated. 
+
+Project: xfce-goodies
+Category: None
+Status: Open
+Submitted by: acli
+Assigned to : none
+Summary: Translation patch for weather plugin
+
+-------------------------------------------------------
+For more info, visit:
+
+http://developer.berlios.de/patch/?func=detailpatch&patch_id=351&group_id=910
+
+
+From noreply at berlios.de  Sun Feb 27 18:52:32 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Sun, 27 Feb 2005 12:52:32 -0500 (EST)
+Subject: [Patch #354] Patch to fix weird redraw problem when text first displayed
+Message-ID: <200502271752.j1RHqWEA024229@unicorn.berlios.de>
+
+Patch #354 has been updated. 
+
+Project: xfce-goodies
+Category: None
+Status: Open
+Submitted by: acli
+Assigned to : none
+Summary: Patch to fix weird redraw problem when text first displayed
+
+-------------------------------------------------------
+For more info, visit:
+
+http://developer.berlios.de/patch/?func=detailpatch&patch_id=354&group_id=910
+
+
+From masse_nicolas at yahoo.fr  Mon Feb 28 14:00:15 2005
+From: masse_nicolas at yahoo.fr (masse nicolas)
+Date: Mon, 28 Feb 2005 14:00:15 +0100 (CET)
+Subject: new plugin: quicklauncher
+Message-ID: <20050228130015.11271.qmail@web26007.mail.ukl.yahoo.com>
+
+Hi,
+I just wanna remeber you the fact that I'm always waiting for being added to the xfce-goodies project, so I can publish my plugin and maintain him. 
+My username: "bountykiller".
+ 
+Thx  ;-)
+
+
+masse nicolas <masse_nicolas at yahoo.fr> wrote:
+Ok, I made an account. 
+This is " bountykiller "(it's me on the xfce forums :)
+)
+Feel free to already post my plugin, since I dont
+think I would work on this these day (I assume it
+works ok).
+I'll be waiting a few feedback from the users touching
+at it.
+
+Bye.
+
+
+
+--- Jasper Huijsmans a ?crit : 
+> 
+> Hi,
+> 
+> If you would like to host the plugin on berlios, you
+> should get yourself an
+> account on developer.berlios.de (if you don't
+> already have one) and send your
+> user name to me, then I can add you to the project.
+> 
+> Thanks,
+> Jasper
+> 
+> PS
+> No comment on the plugin, since I haven't tried it
+> yet ;-)
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+>
+http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+
+
+
+
+
+
+D?couvrez le nouveau Yahoo! Mail : 250 Mo d'espace de stockage pour vos mails ! 
+Cr?ez votre Yahoo! Mail sur http://fr.mail.yahoo.com/
+
+		
+---------------------------------
+ D?couvrez le nouveau Yahoo! Mail : 250 Mo d'espace de stockage pour vos mails !
+Cr?ez votre Yahoo! Mail
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050228/17f16964/attachment.html>
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Mon Feb 28 18:08:07 2005
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Mon, 28 Feb 2005 18:08:07 +0100
+Subject: new plugin: quicklauncher
+In-Reply-To: <20050228130015.11271.qmail@web26007.mail.ukl.yahoo.com>
+References: <20050228130015.11271.qmail@web26007.mail.ukl.yahoo.com>
+Message-ID: <42234FF7.7040805@unix-ag.uni-siegen.de>
+
+masse nicolas wrote:
+> Hi,
+> I just wanna remeber you the fact that I'm always waiting for being 
+> added to the xfce-goodies project, so I can publish my plugin and 
+> maintain him.
+> My username: "bountykiller".
+
+Done, sorry for the delay.
+
+> Thx  ;-)
+
+greets,
+Benedikt
+
+

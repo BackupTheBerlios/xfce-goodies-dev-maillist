@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bug #4600] fix to battery plugin acpi percent&gt;100
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-July/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%20%234600%5D%20fix%20to%20battery%20plugin%20acpi%20percent%3E100&In-Reply-To=%3C200507170222.j6H2MBWb002969%40unicorn.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000338.html">
+   <LINK REL="Next"  HREF="000341.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bug #4600] fix to battery plugin acpi percent&gt;100</H1>
+    <B>noreply at berlios.de</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20%5BBug%20%234600%5D%20fix%20to%20battery%20plugin%20acpi%20percent%3E100&In-Reply-To=%3C200507170222.j6H2MBWb002969%40unicorn.berlios.de%3E"
+       TITLE="[Bug #4600] fix to battery plugin acpi percent&gt;100">noreply at berlios.de
+       </A><BR>
+    <I>Sun Jul 17 04:22:11 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000338.html">Gmail Plugin
+</A></li>
+        <LI>Next message: <A HREF="000341.html">[Bug 1080] panel ontopness broken
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#339">[ date ]</a>
+              <a href="thread.html#339">[ thread ]</a>
+              <a href="subject.html#339">[ subject ]</a>
+              <a href="author.html#339">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bug #4600, was updated on 2005-Jul-16 18:22
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: xfce4-battery-plugin
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: aurther
+Assigned to : none
+Summary: fix to battery plugin acpi percent&gt;100
+
+Details: ACPI battery percent is shown as greater than zero. This is due to a quirk in the way kernel reports battery capacity in /proc/
+
+Result is that when the battery is fully charged the plugin spits out an error message every second and shows battery percentage &gt;100
+
+Fix:
+to file libacpi.c
+
+560c560
+&lt;             acpistate-&gt;percentage = percent;
+---
+&gt;<i>             acpistate-&gt;percentage = (percent&gt;100?100:percent);
+</I>
+(sorry for the haphazard bug report... but i have a feeling that this code is not being maintained)
+
+For detailed info, follow this link:
+<A HREF="http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=4600&amp;group_id=910">http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=4600&amp;group_id=910</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000338.html">Gmail Plugin
+</A></li>
+	<LI>Next message: <A HREF="000341.html">[Bug 1080] panel ontopness broken
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#339">[ date ]</a>
+              <a href="thread.html#339">[ thread ]</a>
+              <a href="subject.html#339">[ subject ]</a>
+              <a href="author.html#339">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

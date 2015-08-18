@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Enable xfce4-minicmd-plugin to launch web- and ftp-adresses
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2006-January/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Enable%20xfce4-minicmd-plugin%20to%20launch%20web-%20and%20ftp-adresses&In-Reply-To=%3CBAY109-F61AFC8F357F4DBE71A9B39F180%40phx.gbl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000562.html">
+   <LINK REL="Next"  HREF="000563.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Enable xfce4-minicmd-plugin to launch web- and ftp-adresses</H1>
+    <B>Kristian Rumberg</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Enable%20xfce4-minicmd-plugin%20to%20launch%20web-%20and%20ftp-adresses&In-Reply-To=%3CBAY109-F61AFC8F357F4DBE71A9B39F180%40phx.gbl%3E"
+       TITLE="Enable xfce4-minicmd-plugin to launch web- and ftp-adresses">puh_world at hotmail.com
+       </A><BR>
+    <I>Sun Jan 15 20:47:35 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000562.html">xfce4-screenshooter
+</A></li>
+        <LI>Next message: <A HREF="000563.html">A corrupted PNG image in xfce4-artwork
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#560">[ date ]</a>
+              <a href="thread.html#560">[ thread ]</a>
+              <a href="subject.html#560">[ subject ]</a>
+              <a href="author.html#560">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi
+
+I'm very new at this, but I'v been using gnu/linux now and I know basic 
+programming. I love Xfce4 but I found it frustrating that you couldn't 
+launch a browser or ftp-client by entering that kind of address in the 
+mini-command-line so I wrote a tiny hack :P  It's not very pretty code and 
+I/you should make it configurable so that the user can select which browser 
+to use for ftp sftp and http - maybe something for the settings manager?
+
+Anyhow since I want to help but don't know where to send my code I post it 
+here (it's not very long). Please send suggestions and tell where I should 
+send my code
+
+///// in command.c    I add these two functions
+
+gboolean cmd_is_httpaddress(const char * cmd)
+{
+  return(!strncmp(cmd, &quot;<A HREF="http://">http://</A>&quot;, 7) || !strncmp(cmd, &quot;www.&quot;, 4));
+}
+
+gboolean cmd_is_ftpaddress(const char * cmd)
+{
+  return(!strncmp(cmd, &quot;<A HREF="ftp://">ftp://</A>&quot;, 6) || !strncmp(cmd, &quot;<A HREF="sftp://">sftp://</A>&quot;, 7) );
+}
+
+/// end code
+
+
+Then I modify do_run  into this
+
+static gboolean do_run(const char *cmd, gboolean in_terminal)
+{
+    gchar *execute, *path;
+    gboolean success;
+
+    g_return_val_if_fail(cmd != NULL, FALSE);
+
+
+    /* check if the user has entered a http or www command */
+    if (cmd_is_httpaddress(cmd))
+    {
+      execute = g_strconcat(&quot;firefox &quot;, cmd, NULL);
+      success = exec_command(execute);
+      g_free(execute);
+
+      return success;
+    }
+
+    /* check if the user has entered a sftp or ftp command */
+    if (cmd_is_ftpaddress(cmd))
+    {
+      execute = g_strconcat(&quot;nautilus &quot;, cmd, NULL);
+      success = exec_command(execute);
+      g_free(execute);
+
+      return success;
+    }
+
+// and the function continues
+
+What do you think? My solution is not very pretty but it sure works (not 
+very safe though), and it can be modifies into becoming a lot more 
+configurable, but I just needed this code for myself so I wrote it :P  Maybe 
+you like it too?
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000562.html">xfce4-screenshooter
+</A></li>
+	<LI>Next message: <A HREF="000563.html">A corrupted PNG image in xfce4-artwork
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#560">[ date ]</a>
+              <a href="thread.html#560">[ thread ]</a>
+              <a href="subject.html#560">[ subject ]</a>
+              <a href="author.html#560">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

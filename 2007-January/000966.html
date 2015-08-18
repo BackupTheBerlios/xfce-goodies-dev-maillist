@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Problems to install final xfce-goodies 4.4.0
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Problems%20to%20install%20final%20xfce-goodies%204.4.0&In-Reply-To=%3C8677.44053.195.37.205.21.1169471018.squirrel%40webmailer.hosteurope.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000965.html">
+   <LINK REL="Next"  HREF="000967.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Problems to install final xfce-goodies 4.4.0</H1>
+    <B>Andreas Korzinowski</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20Problems%20to%20install%20final%20xfce-goodies%204.4.0&In-Reply-To=%3C8677.44053.195.37.205.21.1169471018.squirrel%40webmailer.hosteurope.de%3E"
+       TITLE="Problems to install final xfce-goodies 4.4.0">andreas at korzinowski.de
+       </A><BR>
+    <I>Mon Jan 22 14:03:38 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000965.html">Problems to install final xfce-goodies 4.4.0
+</A></li>
+        <LI>Next message: <A HREF="000967.html">Clipman 'select text in xterm' issue (Forwarded)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#966">[ date ]</a>
+              <a href="thread.html#966">[ thread ]</a>
+              <a href="subject.html#966">[ subject ]</a>
+              <a href="author.html#966">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Mike,
+
+thats it, after installing the package libpcre3-dev all works fine.
+On the main-site i have seen a list, what packages are needed for
+installing xfce4 4.4.0.
+I think it seems helpful to publish a list of the dependencies from the
+goodies-installer to.
+
+Yeah, i think xfce4 is a great job, my gratulations :-))
+
+
+Best Regards
+
+Andreas
+
+
+
+
+Mike Massonnet wrote:
+&gt;<i> On Mon, Jan 22, 2007 at 12:39:10AM +0100, Andreas Korzinowski wrote:
+</I>&gt;&gt;<i> Hi there,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> i am testing the fresh final version of the installation-pakets.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> When installing xfce-goodies 4.4.0 the following failure apears:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> verve.c:25:18: error: pcre.h: No such file or directory
+</I>&gt;<i>                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+</I>&gt;<i>
+</I>&gt;<i> % dpkg -S /usr/include/pcre.h                      [07-01-22-1:13]
+</I>&gt;<i> libpcre3-dev: /usr/include/pcre.h
+</I>&gt;<i>
+</I>&gt;<i> Obviously you need to install the dev package (whatever way it is called
+</I>&gt;<i> on your system) for libpcre.
+</I>&gt;<i>
+</I>&gt;&gt;<i> verve.c: In function &#145;verve_is_url&#146;:
+</I>&gt;&gt;<i> verve.c:197: error: &#145;pcre&#146; undeclared (first use in this function)
+</I>&gt;&gt;<i> verve.c:197: error: (Each undeclared identifier is reported only once
+</I>&gt;&gt;<i> verve.c:197: error: for each function it appears in.)
+</I>&gt;&gt;<i> verve.c:197: error: &#145;pattern&#146; undeclared (first use in this function)
+</I>&gt;&gt;<i> verve.c: In function &#145;verve_is_email&#146;:
+</I>&gt;&gt;<i> verve.c:244: error: &#145;pcre&#146; undeclared (first use in this function)
+</I>&gt;&gt;<i> verve.c:244: error: &#145;pattern&#146; undeclared (first use in this function)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Best Regards
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Andreas
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Cheers,
+</I>&gt;<i> Mike
+</I>&gt;<i> PS: note that this list is being replaced by <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">goodies-dev at xfce.org</A>
+</I>&gt;<i> --
+</I>&gt;<i>  Mike (m8t) Massonnet <A HREF="http://massonnet.org/">http://massonnet.org/</A>     __oo
+</I>&gt;<i>  GnuPG 0--&quot; 0xF8C80F97                      ---(_)_&quot;&gt;
+</I>&gt;<i>  C4DA 431D 52F9 F930 3E5B  3E3D 546C 89D9 F8C8 0F97
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> xfce-goodies-dev mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">xfce-goodies-dev at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev</A>
+</I>&gt;<i>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000965.html">Problems to install final xfce-goodies 4.4.0
+</A></li>
+	<LI>Next message: <A HREF="000967.html">Clipman 'select text in xterm' issue (Forwarded)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#966">[ date ]</a>
+              <a href="thread.html#966">[ thread ]</a>
+              <a href="subject.html#966">[ subject ]</a>
+              <a href="author.html#966">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

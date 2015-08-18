@@ -1,0 +1,450 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> xfce4-hwsensors-plugin
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xfce-goodies-dev/2005-July/index.html" >
+   <LINK REL="made" HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20xfce4-hwsensors-plugin&In-Reply-To=%3C1122817062.30539.10.camel%40localhost.localdomain%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000365.html">
+   <LINK REL="Next"  HREF="000367.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>xfce4-hwsensors-plugin</H1>
+    <B>Myles Green</B> 
+    <A HREF="mailto:xfce-goodies-dev%40lists.berlios.de?Subject=Re%3A%20xfce4-hwsensors-plugin&In-Reply-To=%3C1122817062.30539.10.camel%40localhost.localdomain%3E"
+       TITLE="xfce4-hwsensors-plugin">rmg57 at telus.net
+       </A><BR>
+    <I>Sun Jul 31 15:37:42 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000365.html">xfce4-hwsensors-plugin
+</A></li>
+        <LI>Next message: <A HREF="000367.html">xfce4-hwsensors-plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#366">[ date ]</a>
+              <a href="thread.html#366">[ thread ]</a>
+              <a href="subject.html#366">[ subject ]</a>
+              <a href="author.html#366">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sun, 2005-31-07 at 07:26 -0600, Myles Green wrote:
+&gt;<i> Ah! Many thanks, just checked out revision 754, will let you (all)
+</I>&gt;<i> know
+</I>&gt;<i> how it turns out.
+</I>&gt;<i> 
+</I>Oops! I did  a plain &quot;./configure&quot; (no flags etc.) followed by make as
+the mortal user (ie. non-root user). The output of make follows:
+
+make  all-recursive
+make[1]: Entering directory `/home/myles/tmp/xfce4-sensors-plugin'
+Making all in panel-plugin
+make[2]: Entering directory
+`/home/myles/tmp/xfce4-sensors-plugin/panel-plugin'
+if /bin/sh ../libtool --tag=CC --mode=compile gcc -DHAVE_CONFIG_H -I.
+-I. -I.. -DG_LOG_DOMAIN=\&quot;xfce4-sensors-plugin\&quot;   -DXTHREADS
+-I/usr/include/xfce4 -I/usr/X11R6/include -I/usr/include/libxml2
+-I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include
+-I/usr/include/pango-1.0 -I/usr/include/freetype2
+-I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include
+-I/usr/include/atk-1.0   -DXFCE_PANEL_THREADED=1 -DXFCE_PANEL_LOCK
+\(\)=gdk_threads_enter\(\) -DXFCE_PANEL_UNLOCK\(\)=gdk_threads_leave\(\)
+-DPACKAGE_LOCALE_DIR=\&quot;/usr/local/share/locale\&quot; -g -O2 -MT
+libsensors_la-sensors.lo -MD -MP -MF &quot;.deps/libsensors_la-sensors.Tpo&quot;
+-c -o libsensors_la-sensors.lo `test -f 'sensors.c' || echo
+'./'`sensors.c; \
+then mv -f &quot;.deps/libsensors_la-sensors.Tpo&quot;
+&quot;.deps/libsensors_la-sensors.Plo&quot;; else rm -f
+&quot;.deps/libsensors_la-sensors.Tpo&quot;; exit 1; fi
+mkdir .libs
+ gcc -DHAVE_CONFIG_H -I. -I. -I.. -DG_LOG_DOMAIN=\&quot;xfce4-sensors-plugin
+\&quot; -DXTHREADS -I/usr/include/xfce4 -I/usr/X11R6/include
+-I/usr/include/libxml2 -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include
+-I/usr/include/pango-1.0 -I/usr/include/freetype2
+-I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include
+-I/usr/include/atk-1.0 -DXFCE_PANEL_THREADED=1
+&quot;-DXFCE_PANEL_LOCK()=gdk_threads_enter()&quot;
+&quot;-DXFCE_PANEL_UNLOCK()=gdk_threads_leave()&quot; -DPACKAGE_LOCALE_DIR=
+\&quot;/usr/local/share/locale\&quot; -g -O2 -MT libsensors_la-sensors.lo -MD -MP
+-MF .deps/libsensors_la-sensors.Tpo -c sensors.c  -fPIC -DPIC
+-o .libs/libsensors_la-sensors.o
+In file included from sensors.c:21:
+sensors.h:40:29: error: sensors/sensors.h: No such file or directory
+In file included from sensors.c:21:
+sensors.h:126: warning: no semicolon at end of struct or union
+sensors.h:126: error: syntax error before '*' token
+sensors.h:169: error: syntax error before '}' token
+sensors.h:170: warning: data definition has no type or storage class
+sensors.h:178: error: syntax error before 't_sensors'
+sensors.h:178: warning: no semicolon at end of struct or union
+sensors.h:198: error: syntax error before '}' token
+sensors.h:199: warning: data definition has no type or storage class
+sensors.c: In function 'sensors_show_panel':
+sensors.c:28: error: 'st' undeclared (first use in this function)
+sensors.c:28: error: (Each undeclared identifier is reported only once
+sensors.c:28: error: for each function it appears in.)
+sensors.c:28: error: syntax error before ')' token
+sensors.c: At top level:
+sensors.c:78: error: syntax error before 't_sensors'
+sensors.c: In function 'sensors_get_percentage':
+sensors.c:80: error: 'st' undeclared (first use in this function)
+sensors.c:80: error: 'chipNum' undeclared (first use in this function)
+sensors.c:80: error: 'feature' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:92: error: syntax error before '*' token
+sensors.c: In function 'sensors_remove_graphical_panel':
+sensors.c:95: error: 'st' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:113: error: syntax error before '*' token
+sensors.c: In function 'sensors_update_graphical_panel':
+sensors.c:117: error: 'st' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:139: error: syntax error before '*' token
+sensors.c: In function 'sensors_add_graphical_panel':
+sensors.c:142: error: 'st' undeclared (first use in this function)
+sensors.c: In function 'sensors_set_orientation':
+sensors.c:220: error: 'st' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:252: error: syntax error before '*' token
+sensors.c: In function 'sensors_show_graphical_panel':
+sensors.c:254: error: 'st' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:265: error: syntax error before '*' token
+sensors.c: In function 'sensors_show_text_panel':
+sensors.c:274: error: 'st' undeclared (first use in this function)
+sensors.c: In function 'sensors_date_tooltip':
+sensors.c:425: error: 'st' undeclared (first use in this function)
+sensors.c:425: error: syntax error before ')' token
+sensors.c: At top level:
+sensors.c:525: error: syntax error before '*' token
+sensors.c: In function 'create_panel_widget':
+sensors.c:527: error: 'st' undeclared (first use in this function)
+sensors.c: In function 'execute_command':
+sensors.c:555: error: 'st' undeclared (first use in this function)
+sensors.c:555: error: syntax error before ')' token
+sensors.c: At top level:
+sensors.c:620: error: syntax error before '*' token
+sensors.c: In function 'sensors_new':
+sensors.c:625: error: 'st' undeclared (first use in this function)
+sensors.c:625: error: syntax error before ')' token
+sensors.c: In function 'sensors_free':
+sensors.c:789: error: 'st' undeclared (first use in this function)
+sensors.c: In function 'sensors_attach_callback':
+sensors.c:825: error: 'st' undeclared (first use in this function)
+sensors.c: In function 'sensors_set_size':
+sensors.c:836: error: 'st' undeclared (first use in this function)
+sensors.c:836: error: syntax error before ')' token
+sensors.c: At top level:
+sensors.c:844: error: syntax error before 't_sensors'
+sensors.c: In function 'getIdFromAddress':
+sensors.c:847: error: 'st' undeclared (first use in this function)
+sensors.c:847: error: 'chip' undeclared (first use in this function)
+sensors.c:848: error: 'addr' undeclared (first use in this function)
+sensors.c: In function 'sensors_write_config':
+sensors.c:864: error: 'st' undeclared (first use in this function)
+sensors.c:864: error: syntax error before ')' token
+sensors.c:869: warning: pointer targets in passing argument 3 of
+'xmlNewTextChild' differ in signedness
+sensors.c:871: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:871: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:874: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:874: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:877: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:877: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:880: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:880: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:883: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:883: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:886: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:886: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:890: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:890: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:893: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:893: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:897: warning: pointer targets in passing argument 3 of
+'xmlNewTextChild' differ in signedness
+sensors.c:899: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:899: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:903: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:903: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:912: warning: pointer targets in passing argument 3 of
+'xmlNewTextChild' differ in signedness
+sensors.c:915: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:915: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:918: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:918: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:921: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:921: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:924: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:924: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:927: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:927: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:930: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:930: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c:933: warning: pointer targets in passing argument 2 of
+'xmlSetProp' differ in signedness
+sensors.c:933: warning: pointer targets in passing argument 3 of
+'xmlSetProp' differ in signedness
+sensors.c: In function 'sensors_read_config':
+sensors.c:949: error: 'st' undeclared (first use in this function)
+sensors.c:949: error: syntax error before ')' token
+sensors.c:957: warning: pointer targets in passing argument 2 of
+'xmlStrEqual' differ in signedness
+sensors.c:962: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:968: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:974: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:980: warning: pointer targets in passing argument 1 of
+'g_strdup' differ in signedness
+sensors.c:986: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:992: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:999: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:1003: warning: pointer targets in passing argument 1 of
+'g_strdup' differ in signedness
+sensors.c:1016: warning: pointer targets in passing argument 2 of
+'xmlStrEqual' differ in signedness
+sensors.c:1024: warning: pointer targets in passing argument 1 of
+'g_strdup' differ in signedness
+sensors.c:1030: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:1049: warning: pointer targets in passing argument 2 of
+'xmlStrEqual' differ in signedness
+sensors.c:1057: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:1064: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:1075: warning: pointer targets in passing argument 1 of
+'g_strdup' differ in signedness
+sensors.c:1082: warning: pointer targets in passing argument 1 of
+'g_strdup' differ in signedness
+sensors.c:1089: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:1096: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c:1103: warning: pointer targets in passing argument 1 of 'atoi'
+differ in signedness
+sensors.c: At top level:
+sensors.c:1137: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'show_title_toggled':
+sensors.c:1139: error: 'sd' undeclared (first use in this function)
+sensors.c:1140: error: 'widget' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1150: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'show_labels_toggled':
+sensors.c:1152: error: 'sd' undeclared (first use in this function)
+sensors.c:1153: error: 'widget' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1163: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'new_ui_toggled':
+sensors.c:1165: error: 'sd' undeclared (first use in this function)
+sensors.c:1169: error: 'widget' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1178: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'sensor_entry_changed':
+sensors.c:1183: error: 'widget' undeclared (first use in this function)
+sensors.c:1186: error: 'sd' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1199: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'gtk_font_size_change':
+sensors.c:1203: error: 'widget' undeclared (first use in this function)
+sensors.c:1205: error: 'sd' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1221: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'adjustment_value_changed':
+sensors.c:1225: error: 'sd' undeclared (first use in this function)
+sensors.c:1226: error: 'widget' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1242: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'execCommand_toggled':
+sensors.c:1244: error: 'sd' undeclared (first use in this function)
+sensors.c:1245: error: 'widget' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1258: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'minimum_changed':
+sensors.c:1260: error: 'new_value' undeclared (first use in this
+function)
+sensors.c:1263: error: 'sd' undeclared (first use in this function)
+sensors.c:1268: error: 'path_str' undeclared (first use in this
+function)
+sensors.c: At top level:
+sensors.c:1294: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'maximum_changed':
+sensors.c:1296: error: 'new_value' undeclared (first use in this
+function)
+sensors.c:1299: error: 'sd' undeclared (first use in this function)
+sensors.c:1304: error: 'path_str' undeclared (first use in this
+function)
+sensors.c: At top level:
+sensors.c:1330: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'gtk_cell_color_edited':
+sensors.c:1335: error: 'new_color' undeclared (first use in this
+function)
+sensors.c:1346: error: 'sd' undeclared (first use in this function)
+sensors.c:1351: error: 'path_str' undeclared (first use in this
+function)
+sensors.c: At top level:
+sensors.c:1375: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'gtk_cell_text_edited':
+sensors.c:1379: error: 'sd' undeclared (first use in this function)
+sensors.c:1387: error: 'path_str' undeclared (first use in this
+function)
+sensors.c:1394: error: 'new_text' undeclared (first use in this
+function)
+sensors.c: At top level:
+sensors.c:1412: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'gtk_cell_toggle':
+sensors.c:1416: error: 'sd' undeclared (first use in this function)
+sensors.c:1424: error: 'path_str' undeclared (first use in this
+function)
+sensors.c: At top level:
+sensors.c:1453: error: syntax error before '*' token
+sensors.c: In function 'init_widgets':
+sensors.c:1458: error: 'sd' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1535: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'add_ui_style_box':
+sensors.c:1546: error: 'sd' undeclared (first use in this function)
+sensors.c:1548: error: 'sg' undeclared (first use in this function)
+sensors.c:1551: error: 'vbox' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1559: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'add_labels_box':
+sensors.c:1567: error: 'sd' undeclared (first use in this function)
+sensors.c:1574: error: 'sg' undeclared (first use in this function)
+sensors.c:1577: error: 'vbox' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1585: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'add_title_box':
+sensors.c:1596: error: 'sd' undeclared (first use in this function)
+sensors.c:1598: error: 'sg' undeclared (first use in this function)
+sensors.c:1601: error: 'vbox' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1609: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'add_type_box':
+sensors.c:1617: error: 'vbox' undeclared (first use in this function)
+sensors.c:1621: error: 'sg' undeclared (first use in this function)
+sensors.c:1625: error: 'sd' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1635: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'add_sensor_settings_box':
+sensors.c:1646: error: 'sd' undeclared (first use in this function)
+sensors.c:1654: warning: passing argument 1 of 'gtk_label_new' makes
+pointer from integer without a cast
+sensors.c:1734: error: 'vbox' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1745: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'add_font_size_box':
+sensors.c:1753: error: 'sd' undeclared (first use in this function)
+sensors.c:1767: error: 'vbox' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1779: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'add_update_time_box':
+sensors.c:1789: error: 'sd' undeclared (first use in this function)
+sensors.c:1800: error: 'vbox' undeclared (first use in this function)
+sensors.c: At top level:
+sensors.c:1812: error: syntax error before 'SensorsDialog'
+sensors.c: In function 'add_command_box':
+sensors.c:1818: error: 'sd' undeclared (first use in this function)
+sensors.c:1832: error: 'vbox' undeclared (first use in this function)
+sensors.c: In function 'apply_options_callback':
+sensors.c:1850: error: 'sd' undeclared (first use in this function)
+sensors.c:1850: error: syntax error before ')' token
+sensors.c:1851: error: 'st' undeclared (first use in this function)
+sensors.c: In function 'sensors_create_options':
+sensors.c:1870: error: 'sd' undeclared (first use in this function)
+sensors.c:1874: error: syntax error before ')' token
+sensors.c: In function 'create_sensors_control':
+sensors.c:1926: error: 'sensors' undeclared (first use in this function)
+make[2]: *** [libsensors_la-sensors.lo] Error 1
+make[2]: Leaving directory
+`/home/myles/tmp/xfce4-sensors-plugin/panel-plugin'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/home/myles/tmp/xfce4-sensors-plugin'
+make: *** [all] Error 2
+
+FWIW, I have sensors working already and showing up just fine in
+gkrellm.
+
+Suggestions on where to go from here would be appreciated...
+
+Best,
+Myles
+-- 
+Robert M. Green :: Calgary AB Canada
+Debian GNU/Linux Unstable &quot;Sid&quot;
+&quot;Linux *is* user-friendly, it's just 
+picky about who it's friends are!&quot;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: This is a digitally signed message part
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050731/149c5c83/attachment.pgp">https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050731/149c5c83/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000365.html">xfce4-hwsensors-plugin
+</A></li>
+	<LI>Next message: <A HREF="000367.html">xfce4-hwsensors-plugin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#366">[ date ]</a>
+              <a href="thread.html#366">[ thread ]</a>
+              <a href="subject.html#366">[ subject ]</a>
+              <a href="author.html#366">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xfce-goodies-dev">More information about the xfce-goodies-dev
+mailing list</a><br>
+</body></html>

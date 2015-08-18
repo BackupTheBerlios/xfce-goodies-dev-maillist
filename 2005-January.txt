@@ -1,0 +1,1852 @@
+From bugzilla-daemon at xfce.org  Tue Jan  4 17:24:57 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue,  4 Jan 2005 16:24:57 +0000 (UTC)
+Subject: [Bug 657] Panel takes long time to load when weather plugin cannot contact information site
+Message-ID: <20050104162457.C89571F7041@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=657
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+         AssignedTo|jasper at xfce.org             |xfce-goodies-dev at berlios.de
+          Component|xfce4-panel                 |weather
+            Product|Xfce                        |Xfce Panel Plugins
+   Target Milestone|unknown                     |---
+            Version|4.1.99.3 (4.2RC3)           |unspecified
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-01-04 16:24 UTC -------
+There's no way the panel can know about this. It's the same with the mail
+checker and POP3. The real solution will probably involve making the plugins
+separate processes.
+
+Because you left me the option, I'm reassigning this ;-)
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From jasper at xfce.org  Wed Jan  5 08:29:48 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Wed, 05 Jan 2005 08:29:48 +0100
+Subject: New plugin: xfce4-sensors-plugin
+In-Reply-To: <1103979038.30137.12.camel@TIM700>
+References: <41CC24F2.1050003@unix-ag.uni-siegen.de> <1103979038.30137.12.camel@TIM700>
+Message-ID: <41DB976C.6090303@xfce.org>
+
+Fabian Nowak wrote:
+> Hi all!
+> 
+> Does any of you already use that plugin or did at least try and notice
+> some negative or positive things? 
+> I'd really like to get some feedback, e.g. usability, are there too
+> manyfeatures or are features missing? Is popup help required?
+> Did all users notice that both the value color and the sensor feature
+> name for the popup can be changed?
+
+
+Hi Fabian,
+
+I finally got around to installing your plugin and I must say I like it 
+very much. Thanks!
+
+	Jasper
+
+
+From bugzilla-daemon at xfce.org  Fri Jan  7 14:37:04 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri,  7 Jan 2005 13:37:04 +0000 (UTC)
+Subject: [Bug 660]  New: Taskbar plugin causes panel to 'shake' when available space changes using "Expand to fill screen"
+Message-ID: <20050107133704.049121F7045@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=660
+
+           Summary: Taskbar plugin causes panel to 'shake' when available
+                    space changes using "Expand to fill screen"
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: normal
+          Priority: Medium
+         Component: taskbar
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: umkowa17 at cc.umanitoba.ca
+
+
+When the taskbar plugin is in the panel with "Expand to fill screen" enabled,
+and I do something that changes (increasing or decreasing) the available space,
+such as adding an item to the panel, removing an icon from the panel, or
+changing the amount of workspaces (with the graphical pager on the panel), the
+panel will 'shake' (resizing itself?) for a variable amount of time (~1-5
+seconds).  The xorg composite extension is disabled.
+
+
+Reproducible: Always
+Steps to Reproduce:
+1. Enable the panel taskbar plugin
+2. Enable its "Expand to fill screen" option"
+3. Enable the System Buttons taskbar plugin
+4. Toggle the option to "Hide" Button 2 (try a few times)
+
+Actual Results:  
+The panel resized itself many times before stopping.
+
+Expected Results:  
+A single resizing before halting
+
+I'm using the AMD64 deb packages (4.2 RC3) in Ubuntu from
+http://www.it-weber.net/debian/xfce4/
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Fri Jan  7 20:33:18 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Fri,  7 Jan 2005 19:33:18 +0000 (UTC)
+Subject: [Bug 660] Taskbar plugin causes panel to 'shake' when available space changes using "Expand to fill screen"
+Message-ID: <20050107193318.662FD1F7069@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=660
+
+
+
+
+
+------- Additional Comments From fourdan at xfce.org  2005-01-07 19:33 UTC -------
+I confirm this behaviour and I suspect this to be the cause of bug #607
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sat Jan  8 21:02:27 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat,  8 Jan 2005 20:02:27 +0000 (UTC)
+Subject: [Bug 663]  New: added datetime goodie, removed standard panel date, panel disappeared
+Message-ID: <20050108200227.1CF711F7045@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=663
+
+           Summary: added datetime goodie, removed standard panel date,
+                    panel disappeared
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: minor
+          Priority: Medium
+         Component: datetime
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: jlarue at jlarue.com
+
+
+I downloaded, through the os-cillation installer, the xfce goodies. It proceeded
+without incident. I added the notes goodie and tried to launch it. It failed --
+nothing happened. I loaded the date time goodie, which I liked better than the
+panel default time. So I removed the original date from the panel -- and the
+panel disappeared. I logged out and in; no panel. I right clicked on the
+desktop, launched xfce4-panel, and it came back. I saved the session, and logged
+out. Logged back in, and it was back.
+
+Reproducible: Always
+Steps to Reproduce:
+1. 
+2. 
+3.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sat Jan  8 21:12:09 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat,  8 Jan 2005 20:12:09 +0000 (UTC)
+Subject: [Bug 663] added datetime goodie, removed standard panel date, panel disappeared
+Message-ID: <20050108201209.5D5AC1F7045@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=663
+
+
+
+
+
+------- Additional Comments From jlarue at jlarue.com  2005-01-08 20:12 UTC -------
+I can reproduce it.
+
+1. Add Notes to panel.
+2. click on icon to launch. I tried both as "make sticky" and unselected "make
+sticky."
+3. I deleted the icon from the panel.
+4. In about five seconds, the panel disappears.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sat Jan  8 22:46:22 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat,  8 Jan 2005 21:46:22 +0000 (UTC)
+Subject: [Bug 663] added datetime goodie, removed standard panel date, panel disappeared
+Message-ID: <20050108214622.CDEE91F7045@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=663
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+           Severity|minor                       |major
+          Component|datetime                    |notes
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-01-08 21:46 UTC -------
+Confirmed. It's a crash in the notes plugin when removing it. Almost certainly a
+case where it doesn't cleanup it's timeout(s) properly.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Sun Jan  9 00:03:17 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat,  8 Jan 2005 23:03:17 +0000 (UTC)
+Subject: [Bug 663] added datetime goodie, removed standard panel date, panel disappeared
+Message-ID: <20050108230317.953A31F7045@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=663
+
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-01-08 23:03 UTC -------
+Created an attachment (id=142)
+ --> (http://bugzilla.xfce.org/attachment.cgi?id=142&action=view)
+Remove timeout when removing plugin
+
+This patch fixes the problem (I have already committed it to CVS).
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Jan 10 12:40:56 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 10 Jan 2005 11:40:56 +0000 (UTC)
+Subject: [Bug 670]  New: Panel crashes when closing one of the folded apps with right click and context menu
+Message-ID: <20050110114056.2C3B71F7052@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=670
+
+           Summary: Panel crashes when closing one of the folded apps with
+                    right click and context menu
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: major
+          Priority: Medium
+         Component: taskbar
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: lzap at seznam.cz
+
+
+Panel crashes when closing one of the folded apps with right click and context
+menu (selecting CLOSE).
+
+Iam using XFce 4.2 beta from Mandrakelinux cooker.
+
+Reproducible: Always
+Steps to Reproduce:
+1. Let taskbar to fold several apps into one 
+2. Context menu - Close
+3. Core dumped
+
+Actual Results:  
+Crash
+
+Expected Results:  
+Closing the app
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Jan 10 17:15:47 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 10 Jan 2005 16:15:47 +0000 (UTC)
+Subject: [Bug 670] Panel crashes when closing one of the folded apps with right click and context menu
+Message-ID: <20050110161547.318051F7043@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=670
+
+
+
+
+
+------- Additional Comments From benny at xfce.org  2005-01-10 16:15 UTC -------
+Please upgrade to 4.2RC3 and try again.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Jan 10 17:58:09 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 10 Jan 2005 16:58:09 +0000 (UTC)
+Subject: [Bug 670] Panel crashes when closing one of the folded apps with right click and context menu
+Message-ID: <20050110165809.2FE551F7043@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=670
+
+
+
+
+
+------- Additional Comments From bernhard.walle at gmx.de  2005-01-10 16:58 UTC -------
+[~] $ xfdesktop --version
+        This is xfdesktop version 4.1.99.3 for Xfce 4.1.99.2
+        built with GTK+-2.4.9, linked with GTK+-2.4.9.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Jan 10 17:58:58 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 10 Jan 2005 16:58:58 +0000 (UTC)
+Subject: [Bug 670] Panel crashes when closing one of the folded apps with right click and context menu
+Message-ID: <20050110165858.B5C1F1F7043@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=670
+
+
+
+
+
+------- Additional Comments From bernhard.walle at gmx.de  2005-01-10 16:58 UTC -------
+Ignore my comment.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Jan 10 18:24:48 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 10 Jan 2005 17:24:48 +0000 (UTC)
+Subject: [Bug 670] Panel crashes when closing one of the folded apps with right click and context menu
+Message-ID: <20050110172448.99B511F70C5@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=670
+
+
+
+
+
+------- Additional Comments From lzap at seznam.cz  2005-01-10 17:24 UTC -------
+[lzap at teepee xml]$ xfdesktop --version
+        This is xfdesktop version 4.1.99.1 for Xfce 4.1.99.1
+        built with GTK+-2.4.13, linked with GTK+-2.4.9.
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Tue Jan 11 08:13:10 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 11 Jan 2005 07:13:10 +0000 (UTC)
+Subject: [Bug 674]  New: Setting layout with setxkbmap freezes xkb applet
+Message-ID: <20050111071310.7ED4F1F7049@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=674
+
+           Summary: Setting layout with setxkbmap freezes xkb applet
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: blocker
+          Priority: Medium
+         Component: xkb
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: lzap at seznam.cz
+
+
+When you change setting of the keyboard with the command "setxkbmap", the xbk
+applet do not change the icon and it freezes whole panel.
+
+Reproducible: Always
+Steps to Reproduce:
+1. Install at least two kb layouts
+2. Install the panel, run the console and run "setxkbmap XX" where XX is code
+3. The panel freezes
+
+Actual Results:  
+You need to restart X
+
+Expected Results:  
+Changed the icon, ability to re-set the layout with the clicking on the xkb
+
+XFce 4.2 JUST ROCKS!
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bernhard.walle at gmx.de  Wed Jan 12 00:24:54 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Wed, 12 Jan 2005 00:24:54 +0100
+Subject: Netload/Systemload bar height
+Message-ID: <cs1n87$o8$1@sea.gmane.org>
+
+Hello,
+
+for Xfce 4.2, the bar of the systemload and netload plugins are (at 
+least if the panel is in "small mode") too hight so that the panel 
+increases height if the plugin is loaded.
+
+I don't want this. I changed the code of my netload plugin. What about 
+the system load plugin, which seems (well, maybe the netload plugin 
+seems too but it isn't) to be unmaintained?
+
+
+Regards,
+Bernhard
+
+-- 
+
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Thu Jan 13 10:20:13 2005
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Thu, 13 Jan 2005 10:20:13 +0100
+Subject: Netload/Systemload bar height
+In-Reply-To: <cs1n87$o8$1@sea.gmane.org>
+References: <cs1n87$o8$1@sea.gmane.org>
+Message-ID: <41E63D4D.5080305@unix-ag.uni-siegen.de>
+
+Bernhard Walle wrote:
+> Hello,
+
+Hello Bernhard,
+
+> for Xfce 4.2, the bar of the systemload and netload plugins are (at 
+> least if the panel is in "small mode") too hight so that the panel 
+> increases height if the plugin is loaded.
+> 
+> I don't want this. I changed the code of my netload plugin. What about 
+> the system load plugin, which seems (well, maybe the netload plugin 
+> seems too but it isn't) to be unmaintained?
+
+I haven't heard anything from Riccardo for over a year now, so I guess
+we can call the sysload plugin "unmaintained". Please go on and do the
+required changes (and release a new version of the sysload plugin).
+
+BTW: If you plan to release new versions for 4.2.0, do it until saturday
+evening, so we can include them in the new goodies installer for 4.2.0.
+
+> Regards,
+> Bernhard
+
+greets,
+Benedikt
+
+
+
+From jasper at xfce.org  Thu Jan 13 17:07:06 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Thu, 13 Jan 2005 17:07:06 +0100
+Subject: Xfce 4.2 (Was: Netload/Systemload bar height)
+In-Reply-To: <41E63D4D.5080305@unix-ag.uni-siegen.de>
+References: <cs1n87$o8$1@sea.gmane.org> <41E63D4D.5080305@unix-ag.uni-siegen.de>
+Message-ID: <20050113160706.GA4759@baudolino.home.nl>
+
+On Thu, Jan 13, 2005 at 10:20:13AM +0100, Benedikt Meurer wrote:
+...
+> 
+> BTW: If you plan to release new versions for 4.2.0, do it until saturday
+> evening, so we can include them in the new goodies installer for 4.2.0.
+> 
+
+Hmm, would it be an idea to do a quick review of all goodies before saturday
+evening and do new releases if required?
+
+*checks agenda* 
+
+... damn, I won't really have much time, but I can have a quick look this 
+evening.
+
+	Jasper
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Thu Jan 13 17:19:28 2005
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Thu, 13 Jan 2005 17:19:28 +0100
+Subject: Xfce 4.2 (Was: Netload/Systemload bar height)
+In-Reply-To: <20050113160706.GA4759@baudolino.home.nl>
+References: <cs1n87$o8$1@sea.gmane.org> <41E63D4D.5080305@unix-ag.uni-siegen.de> <20050113160706.GA4759@baudolino.home.nl>
+Message-ID: <41E69F90.2070509@unix-ag.uni-siegen.de>
+
+Jasper Huijsmans wrote:
+> On Thu, Jan 13, 2005 at 10:20:13AM +0100, Benedikt Meurer wrote:
+> ...
+> 
+>>BTW: If you plan to release new versions for 4.2.0, do it until saturday
+>>evening, so we can include them in the new goodies installer for 4.2.0.
+>>
+> 
+> 
+> Hmm, would it be an idea to do a quick review of all goodies before saturday
+> evening and do new releases if required?
+> 
+> *checks agenda* 
+> 
+> ... damn, I won't really have much time, but I can have a quick look this 
+> evening.
+
+I've been told that the weather plugin still crashes the panel when 
+being removed, but I can't reproduce it here. Still, that makes the 
+weather plugin a good candidate to look at.
+
+In addition, I think that saturday evening is impossible for me to 
+handle, so new releases need to happen until saturday morning (CET), 
+which leaves about 32 hours for everyone that wants to check his plugin.
+
+> 	Jasper
+
+Benedikt
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Thu Jan 13 12:52:05 2005
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Thu, 13 Jan 2005 12:52:05 +0100
+Subject: Netload/Systemload bar height
+In-Reply-To: <cs1n87$o8$1@sea.gmane.org>
+References: <cs1n87$o8$1@sea.gmane.org>
+Message-ID: <41E660E5.8010809@unix-ag.uni-siegen.de>
+
+Bernhard Walle wrote:
+> Hello,
+
+Hello Bernhard,
+
+> for Xfce 4.2, the bar of the systemload and netload plugins are (at 
+> least if the panel is in "small mode") too hight so that the panel 
+> increases height if the plugin is loaded.
+> 
+> I don't want this. I changed the code of my netload plugin. What about 
+> the system load plugin, which seems (well, maybe the netload plugin 
+> seems too but it isn't) to be unmaintained?
+
+I haven't heard anything from Riccardo for over a year now, so I guess
+we can call the sysload plugin "unmaintained". Please go on and do the
+required changes (and release a new version of the sysload plugin).
+
+BTW: If you plan to release new versions for 4.2.0, do it until saturday
+evening, so we can include them in the new goodies installer for 4.2.0.
+
+> Regards,
+> Bernhard
+
+greets,
+Benedikt
+
+
+
+From jasper at xfce.org  Thu Jan 13 19:38:22 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Thu, 13 Jan 2005 19:38:22 +0100
+Subject: Xfce 4.2 (Was: Netload/Systemload bar height)
+In-Reply-To: <41E69F90.2070509@unix-ag.uni-siegen.de>
+References: <cs1n87$o8$1@sea.gmane.org> <41E63D4D.5080305@unix-ag.uni-siegen.de> <20050113160706.GA4759@baudolino.home.nl> <41E69F90.2070509@unix-ag.uni-siegen.de>
+Message-ID: <41E6C01E.1050001@xfce.org>
+
+Benedikt Meurer wrote:
+...
+> I've been told that the weather plugin still crashes the panel when 
+> being removed, but I can't reproduce it here. Still, that makes the 
+> weather plugin a good candidate to look at.
+> 
+
+Hmm, I believe this is the notes plugin and I fixed that, but it does 
+still need a release. I'll have a look anyway, thanks.
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Thu Jan 13 19:58:25 2005
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Thu, 13 Jan 2005 19:58:25 +0100
+Subject: Xfce 4.2 (Was: Netload/Systemload bar height)
+In-Reply-To: <41E6C01E.1050001@xfce.org>
+References: <cs1n87$o8$1@sea.gmane.org> <41E63D4D.5080305@unix-ag.uni-siegen.de> <20050113160706.GA4759@baudolino.home.nl> <41E69F90.2070509@unix-ag.uni-siegen.de> <41E6C01E.1050001@xfce.org>
+Message-ID: <41E6C4D1.1070403@unix-ag.uni-siegen.de>
+
+Jasper Huijsmans wrote:
+> Benedikt Meurer wrote:
+> ...
+> 
+>> I've been told that the weather plugin still crashes the panel when 
+>> being removed, but I can't reproduce it here. Still, that makes the 
+>> weather plugin a good candidate to look at.
+>>
+> 
+> Hmm, I believe this is the notes plugin and I fixed that, but it does 
+> still need a release. I'll have a look anyway, thanks.
+
+We've included that fix in the Debian Packages for Xfld already. 
+Question is: New release or add the patch to the installer as well?
+
+Benedikt
+
+
+From jasper at xfce.org  Thu Jan 13 20:05:59 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Thu, 13 Jan 2005 20:05:59 +0100
+Subject: Xfce 4.2 (Was: Netload/Systemload bar height)
+In-Reply-To: <41E6C4D1.1070403@unix-ag.uni-siegen.de>
+References: <cs1n87$o8$1@sea.gmane.org> <41E63D4D.5080305@unix-ag.uni-siegen.de> <20050113160706.GA4759@baudolino.home.nl> <41E69F90.2070509@unix-ag.uni-siegen.de> <41E6C01E.1050001@xfce.org> <41E6C4D1.1070403@unix-ag.uni-siegen.de>
+Message-ID: <41E6C697.2010602@xfce.org>
+
+Benedikt Meurer wrote:
+> Jasper Huijsmans wrote:
+> 
+>> Benedikt Meurer wrote:
+>> ...
+>>
+>>> I've been told that the weather plugin still crashes the panel when 
+>>> being removed, but I can't reproduce it here. Still, that makes the 
+>>> weather plugin a good candidate to look at.
+>>>
+>>
+>> Hmm, I believe this is the notes plugin and I fixed that, but it does 
+>> still need a release. I'll have a look anyway, thanks.
+> 
+> 
+> We've included that fix in the Debian Packages for Xfld already. 
+> Question is: New release or add the patch to the installer as well?
+> 
+
+It's a crash bug, there is a fix, a new release seems the best solution.
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Thu Jan 13 20:09:29 2005
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Thu, 13 Jan 2005 20:09:29 +0100
+Subject: Xfce 4.2 (Was: Netload/Systemload bar height)
+In-Reply-To: <41E6C697.2010602@xfce.org>
+References: <cs1n87$o8$1@sea.gmane.org> <41E63D4D.5080305@unix-ag.uni-siegen.de> <20050113160706.GA4759@baudolino.home.nl> <41E69F90.2070509@unix-ag.uni-siegen.de> <41E6C01E.1050001@xfce.org> <41E6C4D1.1070403@unix-ag.uni-siegen.de> <41E6C697.2010602@xfce.org>
+Message-ID: <41E6C769.9020208@unix-ag.uni-siegen.de>
+
+Jasper Huijsmans wrote:
+> Benedikt Meurer wrote:
+> 
+>> Jasper Huijsmans wrote:
+>>
+>>> Benedikt Meurer wrote:
+>>> ...
+>>>
+>>>> I've been told that the weather plugin still crashes the panel when 
+>>>> being removed, but I can't reproduce it here. Still, that makes the 
+>>>> weather plugin a good candidate to look at.
+>>>>
+>>>
+>>> Hmm, I believe this is the notes plugin and I fixed that, but it does 
+>>> still need a release. I'll have a look anyway, thanks.
+>>
+>>
+>>
+>> We've included that fix in the Debian Packages for Xfld already. 
+>> Question is: New release or add the patch to the installer as well?
+>>
+> 
+> It's a crash bug, there is a fix, a new release seems the best solution.
+
+K, will you do it?
+
+Benedikt
+
+
+From jasper at xfce.org  Thu Jan 13 20:24:53 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Thu, 13 Jan 2005 20:24:53 +0100
+Subject: Xfce 4.2 (Was: Netload/Systemload bar height)
+In-Reply-To: <41E6C769.9020208@unix-ag.uni-siegen.de>
+References: <cs1n87$o8$1@sea.gmane.org> <41E63D4D.5080305@unix-ag.uni-siegen.de> <20050113160706.GA4759@baudolino.home.nl> <41E69F90.2070509@unix-ag.uni-siegen.de> <41E6C01E.1050001@xfce.org> <41E6C4D1.1070403@unix-ag.uni-siegen.de> <41E6C697.2010602@xfce.org> <41E6C769.9020208@unix-ag.uni-siegen.de>
+Message-ID: <41E6CB05.8010704@xfce.org>
+
+Benedikt Meurer wrote:
+> Jasper Huijsmans wrote:
+> 
+>> Benedikt Meurer wrote:
+>>
+>>> Jasper Huijsmans wrote:
+>>>
+>>>> Benedikt Meurer wrote:
+>>>> ...
+>>>>
+>>>>> I've been told that the weather plugin still crashes the panel when 
+>>>>> being removed, but I can't reproduce it here. Still, that makes the 
+>>>>> weather plugin a good candidate to look at.
+>>>>>
+>>>>
+>>>> Hmm, I believe this is the notes plugin and I fixed that, but it 
+>>>> does still need a release. I'll have a look anyway, thanks.
+>>>
+>>>
+>>>
+>>>
+>>> We've included that fix in the Debian Packages for Xfld already. 
+>>> Question is: New release or add the patch to the installer as well?
+>>>
+>>
+>> It's a crash bug, there is a fix, a new release seems the best solution.
+> 
+> 
+> K, will you do it?
+> 
+
+Yes, no problem.
+
+
+From bernhard.walle at gmx.de  Thu Jan 13 17:50:00 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Thu, 13 Jan 2005 17:50:00 +0100
+Subject: Netload/Systemload bar height
+In-Reply-To: <41E63D4D.5080305@unix-ag.uni-siegen.de>
+References: <cs1n87$o8$1@sea.gmane.org> <41E63D4D.5080305@unix-ag.uni-siegen.de>
+Message-ID: <cs68rp$tn3$1@sea.gmane.org>
+
+Benedikt Meurer wrote:
+> Bernhard Walle wrote:
+> 
+>> for Xfce 4.2, the bar of the systemload and netload plugins are (at 
+>> least if the panel is in "small mode") too hight so that the panel 
+>> increases height if the plugin is loaded.
+>>
+>> I don't want this. I changed the code of my netload plugin. What about 
+>> the system load plugin, which seems (well, maybe the netload plugin 
+>> seems too but it isn't) to be unmaintained?
+> 
+> I haven't heard anything from Riccardo for over a year now, so I guess
+> we can call the sysload plugin "unmaintained". Please go on and do the
+> required changes (and release a new version of the sysload plugin).
+
+If the system load plugin is unmaintained, you can take me new 
+maintainer. I don't plan to do much work on the plugin, but I think it's 
+better than no maintainer at all.
+
+If nobody is against, I'll make the releases today.
+
+
+Regards,
+Bernhard
+
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Thu Jan 13 20:41:20 2005
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Thu, 13 Jan 2005 20:41:20 +0100
+Subject: Netload/Systemload bar height
+In-Reply-To: <cs68rp$tn3$1@sea.gmane.org>
+References: <cs1n87$o8$1@sea.gmane.org> <41E63D4D.5080305@unix-ag.uni-siegen.de> <cs68rp$tn3$1@sea.gmane.org>
+Message-ID: <41E6CEE0.5050303@unix-ag.uni-siegen.de>
+
+Bernhard Walle wrote:
+> Benedikt Meurer wrote:
+> 
+>> Bernhard Walle wrote:
+>>
+>>> for Xfce 4.2, the bar of the systemload and netload plugins are (at 
+>>> least if the panel is in "small mode") too hight so that the panel 
+>>> increases height if the plugin is loaded.
+>>>
+>>> I don't want this. I changed the code of my netload plugin. What 
+>>> about the system load plugin, which seems (well, maybe the netload 
+>>> plugin seems too but it isn't) to be unmaintained?
+>>
+>>
+>> I haven't heard anything from Riccardo for over a year now, so I guess
+>> we can call the sysload plugin "unmaintained". Please go on and do the
+>> required changes (and release a new version of the sysload plugin).
+> 
+> 
+> If the system load plugin is unmaintained, you can take me new 
+> maintainer. I don't plan to do much work on the plugin, but I think it's 
+> better than no maintainer at all.
+> 
+> If nobody is against, I'll make the releases today.
+
+Thank you.
+
+> Regards,
+> Bernhard
+
+Benedikt
+
+
+From jasper at xfce.org  Thu Jan 13 20:46:00 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Thu, 13 Jan 2005 20:46:00 +0100
+Subject: Netload/Systemload bar height
+In-Reply-To: <cs68rp$tn3$1@sea.gmane.org>
+References: <cs1n87$o8$1@sea.gmane.org> <41E63D4D.5080305@unix-ag.uni-siegen.de> <cs68rp$tn3$1@sea.gmane.org>
+Message-ID: <41E6CFF8.7040008@xfce.org>
+
+Bernhard Walle wrote:
+> Benedikt Meurer wrote:
+> 
+>> Bernhard Walle wrote:
+>>
+>>> for Xfce 4.2, the bar of the systemload and netload plugins are (at 
+>>> least if the panel is in "small mode") too hight so that the panel 
+>>> increases height if the plugin is loaded.
+>>>
+>>> I don't want this. I changed the code of my netload plugin. What 
+>>> about the system load plugin, which seems (well, maybe the netload 
+>>> plugin seems too but it isn't) to be unmaintained?
+>>
+>>
+>> I haven't heard anything from Riccardo for over a year now, so I guess
+>> we can call the sysload plugin "unmaintained". Please go on and do the
+>> required changes (and release a new version of the sysload plugin).
+> 
+> 
+> If the system load plugin is unmaintained, you can take me new 
+> maintainer. I don't plan to do much work on the plugin, but I think it's 
+> better than no maintainer at all.
+> 
+> If nobody is against, I'll make the releases today.
+> 
+
+That's great, thanks.
+
+
+From bernhard.walle at gmx.de  Thu Jan 13 22:20:16 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Thu, 13 Jan 2005 22:20:16 +0100
+Subject: Netload/Systemload bar height
+In-Reply-To: <41E6CEE0.5050303@unix-ag.uni-siegen.de>
+References: <cs1n87$o8$1@sea.gmane.org> <41E63D4D.5080305@unix-ag.uni-siegen.de> <cs68rp$tn3$1@sea.gmane.org> <41E6CEE0.5050303@unix-ag.uni-siegen.de>
+Message-ID: <cs6omh$hs2$1@sea.gmane.org>
+
+Benedikt Meurer wrote:
+>>
+>> If nobody is against, I'll make the releases today.
+> 
+> Thank you.
+
+Done.
+
+
+Regards,
+Bernhard
+
+
+
+From jasper at xfce.org  Thu Jan 13 23:00:34 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Thu, 13 Jan 2005 23:00:34 +0100
+Subject: xfce4-weather-plugin 0.4.0
+Message-ID: <41E6EF82.7080300@xfce.org>
+
+I took the liberty of making a new file release for the weather plugin. 
+It fixes a crash when removing and readding the plugin.
+
+Bob, I hope you don't mind me doing this without asking you, but I 
+really wanted to get this out before we release 4.2. My apologies.
+
+	jasper
+
+
+From jasper at xfce.org  Thu Jan 13 23:04:33 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Thu, 13 Jan 2005 23:04:33 +0100
+Subject: xfce4-notes-plugin 0.10.0
+Message-ID: <41E6F071.4060306@xfce.org>
+
+I just made a new file release for the notes plugin. It fixes a crash 
+when removing the plugin, fixes stickyness after restart and uses the 
+new 4.2 file locations.
+
+Jakob, my apologies for doing this without asking you first, but I 
+really wanted to get this out before Xfce 4.2.
+
+	Jasper
+
+
+From bob2 at dsv.nl  Fri Jan 14 12:03:30 2005
+From: bob2 at dsv.nl (Bob =?ISO-8859-1?Q?Schl=E4rmann?=)
+Date: Fri, 14 Jan 2005 12:03:30 +0100
+Subject: xfce4-weather-plugin 0.4.0
+In-Reply-To: <41E6EF82.7080300@xfce.org>
+References: <41E6EF82.7080300@xfce.org>
+Message-ID: <20050114120330.69c68799@ws01.atreidis.nl.eu.org>
+
+On Thu, 13 Jan 2005 23:00:34 +0100
+Jasper Huijsmans <jasper at xfce.org> wrote:
+
+> I took the liberty of making a new file release for the weather
+> plugin. It fixes a crash when removing and readding the plugin.
+> 
+> Bob, I hope you don't mind me doing this without asking you, but I 
+> really wanted to get this out before we release 4.2. 
+Not at all and thanks for fixing that bug, i didn't know of
+control_class_set_unloadable().
+
+--
+Bob
+
+
+From jasper at xfce.org  Fri Jan 14 12:36:19 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Fri, 14 Jan 2005 12:36:19 +0100
+Subject: xfce4-weather-plugin 0.4.0
+In-Reply-To: <20050114120330.69c68799@ws01.atreidis.nl.eu.org>
+References: <41E6EF82.7080300@xfce.org> <20050114120330.69c68799@ws01.atreidis.nl.eu.org>
+Message-ID: <20050114113619.GB23524@baudolino.home.nl>
+
+On Fri, Jan 14, 2005 at 12:03:30PM +0100, Bob Schl?rmann wrote:
+> On Thu, 13 Jan 2005 23:00:34 +0100
+> Jasper Huijsmans <jasper at xfce.org> wrote:
+> 
+> > I took the liberty of making a new file release for the weather
+> > plugin. It fixes a crash when removing and readding the plugin.
+> > 
+> > Bob, I hope you don't mind me doing this without asking you, but I 
+> > really wanted to get this out before we release 4.2. 
+> Not at all and thanks for fixing that bug, i didn't know of
+> control_class_set_unloadable().
+> 
+
+Hehe, even I forgot until now ;-) I really should write a bit of documentation
+for the panel...
+
+
+
+
+From riccardo.persichetti at tin.it  Fri Jan 14 20:19:31 2005
+From: riccardo.persichetti at tin.it (Riccardo Persichetti)
+Date: Fri, 14 Jan 2005 20:19:31 +0100
+Subject: Netload/Systemload bar height
+In-Reply-To: <cs68rp$tn3$1@sea.gmane.org>
+References: <cs1n87$o8$1@sea.gmane.org>
+	<41E63D4D.5080305@unix-ag.uni-siegen.de>
+	<cs68rp$tn3$1@sea.gmane.org>
+Message-ID: <20050114201931.60d462e2@ricpersi.dyndns.org>
+
+On Thu, 13 Jan 2005 17:50:00 +0100
+Bernhard Walle <bernhard.walle at gmx.de> wrote:
+
+> Benedikt Meurer wrote:
+>
+>> Bernhard Walle wrote:
+>>
+>>> for Xfce 4.2, the bar of the systemload and netload plugins are (at
+>>> least if the panel is in "small mode") too hight so that the panel
+>>> increases height if the plugin is loaded.
+>>>
+>>> I don't want this. I changed the code of my netload plugin. What
+>>> about the system load plugin, which seems (well, maybe the netload
+>>> plugin seems too but it isn't) to be unmaintained?
+>>
+>> I haven't heard anything from Riccardo for over a year now, so I
+>> guess we can call the sysload plugin "unmaintained". Please go
+>> on and do the required changes (and release a new version of the
+>> sysload plugin).
+>
+> If the system load plugin is unmaintained, you can take me new
+> maintainer. I don't plan to do much work on the plugin, but I think
+> it's better than no maintainer at all.
+
+hi all,
+
+  even if i haven't updated the plugin for some time now i'd
+still like to play with it when i have the time to.
+i've followed silently the mailing list and in the meantime
+i got a degree and took a small vacation.
+i know i've been quite busy but if you don't mind i'd keep
+maintaining the systemload plugin..
+well, of course patches are welcome and the developers can
+update the plugin whenever they want to.
+
+regards,
+
+  riccardo
+
+-- 
+.-----------------------------.
+| riccardo.persichetti at tin.it |
+`-----------------------------'
+
+
+From bernhard.walle at gmx.de  Fri Jan 14 20:43:50 2005
+From: bernhard.walle at gmx.de (Bernhard Walle)
+Date: Fri, 14 Jan 2005 20:43:50 +0100
+Subject: Netload/Systemload bar height
+In-Reply-To: <20050114201931.60d462e2@ricpersi.dyndns.org>
+References: <cs1n87$o8$1@sea.gmane.org>	<41E63D4D.5080305@unix-ag.uni-siegen.de>	<cs68rp$tn3$1@sea.gmane.org> <20050114201931.60d462e2@ricpersi.dyndns.org>
+Message-ID: <cs97dn$8dp$1@sea.gmane.org>
+
+Riccardo Persichetti wrote:
+> 
+>   even if i haven't updated the plugin for some time now i'd
+> still like to play with it when i have the time to.
+> i've followed silently the mailing list and in the meantime
+> i got a degree and took a small vacation.
+> i know i've been quite busy but if you don't mind i'd keep
+> maintaining the systemload plugin..
+> well, of course patches are welcome and the developers can
+> update the plugin whenever they want to.
+
+I'm very sorry. I hope you accept the height patch. Should I revert the 
+AUTHORS and README and release a new version? Or would you like to do it.
+
+
+Regards,
+Bernhard
+
+
+-- 
+
+
+
+From riccardo.persichetti at tin.it  Sat Jan 15 12:28:07 2005
+From: riccardo.persichetti at tin.it (Riccardo Persichetti)
+Date: Sat, 15 Jan 2005 12:28:07 +0100
+Subject: Netload/Systemload bar height
+In-Reply-To: <cs97dn$8dp$1@sea.gmane.org>
+References: <cs1n87$o8$1@sea.gmane.org>
+	<41E63D4D.5080305@unix-ag.uni-siegen.de>
+	<cs68rp$tn3$1@sea.gmane.org>
+	<20050114201931.60d462e2@ricpersi.dyndns.org>
+	<cs97dn$8dp$1@sea.gmane.org>
+Message-ID: <20050115122807.7313d248@ricpersi.dyndns.org>
+
+Hi Bernhard
+
+On Fri, 14 Jan 2005 20:43:50 +0100
+Bernhard Walle <bernhard.walle at gmx.de> wrote:
+
+> I'm very sorry. I hope you accept the height patch. Should I revert
+> the AUTHORS and README and release a new version? Or would you like to
+> do it.
+>
+no problem at all.. after all i've been too busy in the last months to
+hack on the systemload plugin, it's my fault..
+i hope i'll have time to play with it in the future.
+
+i'll take care of the new release, thanks for the patch.
+
+> Regards, Bernhard
+> 
+regards,
+
+  riccardo
+
+
+-- 
+.-----------------------------.
+| riccardo.persichetti at tin.it |
+`-----------------------------'
+
+
+From bugzilla-daemon at xfce.org  Mon Jan 17 18:36:52 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 17 Jan 2005 17:36:52 +0000 (UTC)
+Subject: [Bug 699]  New: datetime->calendar behaviour different from clock->calendar/systray-calendar behaviour
+Message-ID: <20050117173652.6B5211F7041@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=699
+
+           Summary: datetime->calendar behaviour different from clock-
+                    >calendar/systray-calendar behaviour
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: minor
+          Priority: Medium
+         Component: datetime
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: Lasse at hardwareonline.dk
+
+
+I am experiencing some inconsistency in the way the datetime plugin is working.
+With both the calendar-systray icon, and with the time->calendar (clicking on time to get the calendar) 
+I can double-click any day to add new appointments, but with datetime I cannot?
+
+Reproducible: Always
+Steps to Reproduce:
+1. Add datetime plugin to panel
+2. Add time plugin to panel
+3. Click both to get calendar showing
+4. Now try double-clicking on a date in the calendar that "time" is showing, works fine
+5. Ditto for the datetime, nothing.....
+
+Actual Results:  
+Cannot add stuff to the datetime calendar
+
+Expected Results:  
+Have been able to add stuff to the calender that datetime is showing.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From thisnukes4u at gmail.com  Tue Jan 18 00:25:32 2005
+From: thisnukes4u at gmail.com (Thomas Coppi)
+Date: Mon, 17 Jan 2005 15:25:32 -0800
+Subject: XMMS-Plugin Patch
+Message-ID: <5e04a4c60501171525573ff287@mail.gmail.com>
+
+I have created a patch to fix the XMMS-Plugin problem with tooltips,
+but I observed that it hasn't been updated in over a year, so I don't
+know if the maintainer is around still or if this list is even active.
+ The patch is attached.
+-- 
+http://thisnukes4u.net
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xmms-plugin-fix-tooltips.patch
+Type: application/octet-stream
+Size: 2915 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/xfce-goodies-dev/attachments/20050117/1eacabe0/attachment.obj>
+
+From bugzilla-daemon at xfce.org  Tue Jan 18 15:32:49 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Tue, 18 Jan 2005 14:32:49 +0000 (UTC)
+Subject: [Bug 699] datetime->calendar behaviour different from clock->calendar/systray-calendar behaviour
+Message-ID: <20050118143249.E5B041F705A@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=699
+
+
+choe.hwanjin at gmail.com changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |choe.hwanjin at gmail.com
+
+
+
+
+------- Additional Comments From choe.hwanjin at gmail.com  2005-01-18 14:32 UTC -------
+It is not still implemented.
+I will do it soon, but I don't have much time recently :)
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From noreply at berlios.de  Thu Jan 20 07:30:07 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Thu, 20 Jan 2005 07:30:07 +0100 (CET)
+Subject: [Bug #3083] Problem compiling xfce4-bglist-editor 4.1.9
+Message-ID: <200501200630.j0K6U72x024666@unicorn.berlios.de>
+
+Bug #3083, was updated on 2005-Jan-20 07:30
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: None
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: pierre
+Assigned to : none
+Summary: Problem compiling xfce4-bglist-editor 4.1.9
+
+Details: $ make
+make  all-recursive
+make[1]: Entering directory `/tmp/xfce4-bglist-editor-4.1.9'
+Making all in src
+make[2]: Entering directory `/tmp/xfce4-bglist-editor-4.1.9/src'
+if gcc -DHAVE_CONFIG_H -I. -I. -I..    -I/usr/local/include/gtk-2.0 -I/usr/local/lib/gtk-2.0/include -I/usr/local/include -I/usr/X11R6/include -I/usr/local/include/atk-1.0 -I/usr/local/include/pango-1.0 -I/usr/local/include/freetype2 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/X11R6/include -I/usr/local/include/xfce4 -I/usr/local/include/gtk-2.0 -I/usr/local/lib/gtk-2.0/include -I/usr/local/include -I/usr/local/include/pango-1.0 -I/usr/local/include/freetype2 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include/atk-1.0 -DLOCALEDIR=\"/usr/local/share/locale\" -s -O3 -march=i686 -MT xfce4_bglist_editor-xfce-image-file-chooser.o -MD -MP -MF ".deps/xfce4_bglist_editor-xfce-image-file-chooser.Tpo" -c -o xfce4_bglist_editor-xfce-image-file-chooser.o `test -f 'xfce-image-file-chooser.c' || echo './'`xfce-image-file-chooser.c; \
+then mv -f ".deps/xfce4_bglist_editor-xfce-image-file-chooser.Tpo" ".deps/xfce4_bglist_editor-xfce-image-file-chooser.Po"; else rm -f ".deps/xfce4_bglist_editor-xfce-image-file-chooser.Tpo"; exit 1; fi
+In file included from xfce-image-file-chooser.c:24:
+xfce-image-file-chooser.h:42: error: parse error before "XfceFileChooser"
+xfce-image-file-chooser.h:42: warning: no semicolon at end of struct or union
+xfce-image-file-chooser.h:45: error: parse error before '}' token
+xfce-image-file-chooser.h:49: error: parse error before "XfceFileChooserClass"
+xfce-image-file-chooser.h:49: warning: no semicolon at end of struct or union
+xfce-image-file-chooser.c:38: error: parse error before '*' token
+xfce-image-file-chooser.c:38: warning: data definition has no type or storage class
+xfce-image-file-chooser.c: In function `xfce_image_file_chooser_get_type':
+xfce-image-file-chooser.c:57: error: invalid application of `sizeof' to incomplete type `xfce-image-file-chooser.h' 
+xfce-image-file-chooser.c:63: error: invalid application of `sizeof' to incomplete type `xfce-image-file-chooser.h' 
+xfce-image-file-chooser.c:68: error: `XFCE_TYPE_FILE_CHOOSER' undeclared (first use in this function)
+xfce-image-file-chooser.c:68: error: (Each undeclared identifier is reported only once
+xfce-image-file-chooser.c:68: error: for each function it appears in.)
+xfce-image-file-chooser.c: In function `xfce_image_file_chooser_finalize':
+xfce-image-file-chooser.c:89: error: dereferencing pointer to incomplete type
+xfce-image-file-chooser.c: In function `xfce_image_file_chooser_init':
+xfce-image-file-chooser.c:151: error: dereferencing pointer to incomplete type
+xfce-image-file-chooser.c: In function `xfce_image_file_chooser_new':
+xfce-image-file-chooser.c:161: error: dereferencing pointer to incomplete type
+make[2]: *** [xfce4_bglist_editor-xfce-image-file-chooser.o] Error 1
+make[2]: Leaving directory `/tmp/xfce4-bglist-editor-4.1.9/src'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/tmp/xfce4-bglist-editor-4.1.9'
+make: *** [all] Error 2
+
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=3083&group_id=910
+
+
+From noreply at berlios.de  Thu Jan 20 07:49:17 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Thu, 20 Jan 2005 07:49:17 +0100 (CET)
+Subject: [Bug #3084] Problem configuring xfce4-taskmanager 0.0.1
+Message-ID: <200501200649.j0K6nHDn025284@unicorn.berlios.de>
+
+Bug #3084, was updated on 2005-Jan-20 07:49
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: None
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: pierre
+Assigned to : none
+Summary: Problem configuring xfce4-taskmanager 0.0.1
+
+Details: $ ./configure       
+configure: error: cannot find install-sh or install.sh in . ./.. ./../..
+
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=3084&group_id=910
+
+
+From noreply at berlios.de  Thu Jan 20 19:36:44 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Thu, 20 Jan 2005 19:36:44 +0100 (CET)
+Subject: [Feature #533] directory for xfce4-genmon-plugin 1.1
+Message-ID: <200501201836.j0KIaiSw028035@unicorn.berlios.de>
+
+Feature Request #533, was updated on 2005-Jan-20 19:36
+You can respond by visiting: 
+http://developer.berlios.de/feature/?func=detailfeature&feature_id=533&group_id=910
+
+Category: None
+Status: Open
+Priority: 5
+Summary: directory for xfce4-genmon-plugin 1.1
+
+By: pierre
+Date: 2005-Jan-20 19:36
+
+Message:
+Logged In: YES 
+user_id=4049
+Browser: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.5) Gecko/20041217
+
+When you untar xfce4-GenMon-plugin-1.1.tar.gz it
+creates a directory named  "xfce4-genmon-plugin-1.1"
+It would be better if the tarball was named
+xfce4-genmon-plugin-1.1.tar.gz (same name as the
+directory).
+
+Regards,
+
+
+----------------------------------------------------------------------
+You can respond by visiting: 
+http://developer.berlios.de/feature/?func=detailfeature&feature_id=533&group_id=910
+
+
+From markus at trippelsdorf.de  Thu Jan 20 20:24:58 2005
+From: markus at trippelsdorf.de (Markus T.)
+Date: Thu, 20 Jan 2005 20:24:58 +0100
+Subject: xfce-weather-plugin 0.4.0 data storage path
+Message-ID: <pan.2005.01.20.19.24.58.136402@trippelsdorf.de>
+
+The xfce-weather-plugin 0.4.0 stores its data
+in the .xfce4 directory. All other programs 
+use the new default location .config/xfce4 .
+The problem is that many people delete their 
+.xfce4 directory when updating to 4.2..
+When the .xfce4 directory does not exist, the weather
+plugin will not work (displaying a network failure error).
+
+Please change the storage directory to .config/xfce4 .
+
+Thanks.
+Markus
+
+
+
+From bob2 at dsv.nl  Thu Jan 20 21:54:15 2005
+From: bob2 at dsv.nl (Bob =?ISO-8859-1?Q?Schl=E4rmann?=)
+Date: Thu, 20 Jan 2005 21:54:15 +0100
+Subject: xfce-weather-plugin 0.4.0 data storage path
+In-Reply-To: <pan.2005.01.20.19.24.58.136402@trippelsdorf.de>
+References: <pan.2005.01.20.19.24.58.136402@trippelsdorf.de>
+Message-ID: <20050120215415.0da032f6@ws01.atreidis.nl.eu.org>
+
+On Thu, 20 Jan 2005 20:24:58 +0100
+"Markus T." <markus at trippelsdorf.de> wrote:
+
+> The xfce-weather-plugin 0.4.0 stores its data
+> in the .xfce4 directory. All other programs 
+> use the new default location .config/xfce4 .
+> The problem is that many people delete their 
+> .xfce4 directory when updating to 4.2..
+> When the .xfce4 directory does not exist, the weather
+> plugin will not work (displaying a network failure error).
+> 
+> Please change the storage directory to .config/xfce4 .
+
+Strange as my data file already got stored in .config/xfce4. I've
+changed the save code anyway, it now gets saved under .cache/xfce4. The
+newest version is in cvs.
+
+--
+Bob
+
+
+From jasper at xfce.org  Thu Jan 20 22:05:22 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Thu, 20 Jan 2005 22:05:22 +0100
+Subject: xfce-weather-plugin 0.4.0 data storage path
+In-Reply-To: <20050120215415.0da032f6@ws01.atreidis.nl.eu.org>
+References: <pan.2005.01.20.19.24.58.136402@trippelsdorf.de> <20050120215415.0da032f6@ws01.atreidis.nl.eu.org>
+Message-ID: <41F01D12.9050201@xfce.org>
+
+Bob Schl?rmann wrote:
+> On Thu, 20 Jan 2005 20:24:58 +0100
+> "Markus T." <markus at trippelsdorf.de> wrote:
+> 
+> 
+>>The xfce-weather-plugin 0.4.0 stores its data
+>>in the .xfce4 directory. All other programs 
+>>use the new default location .config/xfce4 .
+>>The problem is that many people delete their 
+>>.xfce4 directory when updating to 4.2..
+>>When the .xfce4 directory does not exist, the weather
+>>plugin will not work (displaying a network failure error).
+>>
+>>Please change the storage directory to .config/xfce4 .
+> 
+> 
+> Strange as my data file already got stored in .config/xfce4. I've
+> changed the save code anyway, it now gets saved under .cache/xfce4. The
+> newest version is in cvs.
+> 
+
+Maybe it's a good idea to do a new release even if the change is very 
+small. It would be good to have no plugins using ~/.xfce4 anymore. What 
+do you think?
+
+
+From bugzilla-daemon at xfce.org  Thu Jan 20 22:06:31 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Thu, 20 Jan 2005 21:06:31 +0000 (UTC)
+Subject: [Bug 663] added datetime goodie, removed standard panel date, panel disappeared
+Message-ID: <20050120210631.947901F7048@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=663
+
+
+jasper at xfce.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|NEW                         |RESOLVED
+         Resolution|                            |FIXED
+
+
+
+
+------- Additional Comments From jasper at xfce.org  2005-01-20 21:06 UTC -------
+Latest notes plugin does not have this problem anymore.
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bob2 at dsv.nl  Thu Jan 20 22:40:15 2005
+From: bob2 at dsv.nl (Bob =?ISO-8859-1?Q?Schl=E4rmann?=)
+Date: Thu, 20 Jan 2005 22:40:15 +0100
+Subject: xfce-weather-plugin 0.4.0 data storage path
+In-Reply-To: <41F01D12.9050201@xfce.org>
+References: <pan.2005.01.20.19.24.58.136402@trippelsdorf.de>
+	<20050120215415.0da032f6@ws01.atreidis.nl.eu.org>
+	<41F01D12.9050201@xfce.org>
+Message-ID: <20050120224015.6c18f35d@ws01.atreidis.nl.eu.org>
+
+On Thu, 20 Jan 2005 22:05:22 +0100
+Jasper Huijsmans <jasper at xfce.org> wrote:
+
+> Bob Schl?rmann wrote:
+> > On Thu, 20 Jan 2005 20:24:58 +0100
+> > "Markus T." <markus at trippelsdorf.de> wrote:
+> > 
+> > 
+> >>The xfce-weather-plugin 0.4.0 stores its data
+> >>in the .xfce4 directory. All other programs 
+> >>use the new default location .config/xfce4 .
+> >>The problem is that many people delete their 
+> >>.xfce4 directory when updating to 4.2..
+> >>When the .xfce4 directory does not exist, the weather
+> >>plugin will not work (displaying a network failure error).
+> >>
+> >>Please change the storage directory to .config/xfce4 .
+> > 
+> > 
+> > Strange as my data file already got stored in .config/xfce4. I've
+> > changed the save code anyway, it now gets saved under .cache/xfce4.
+> > The newest version is in cvs.
+> > 
+> 
+> Maybe it's a good idea to do a new release even if the change is very 
+> small. It would be good to have no plugins using ~/.xfce4 anymore.
+> What do you think?
+
+Agree, i've added a new release. Though i'm still not sure this was
+really a bug, as the path wasn't hard coded but used xfce_get_userdir()
+to get the save directory.
+
+--
+Bob
+
+
+From jasper at xfce.org  Fri Jan 21 07:53:29 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Fri, 21 Jan 2005 07:53:29 +0100
+Subject: xfce-weather-plugin 0.4.0 data storage path
+In-Reply-To: <20050120224015.6c18f35d@ws01.atreidis.nl.eu.org>
+References: <pan.2005.01.20.19.24.58.136402@trippelsdorf.de>	<20050120215415.0da032f6@ws01.atreidis.nl.eu.org>	<41F01D12.9050201@xfce.org> <20050120224015.6c18f35d@ws01.atreidis.nl.eu.org>
+Message-ID: <41F0A6E9.9040802@xfce.org>
+
+Bob Schl?rmann wrote:
+> On Thu, 20 Jan 2005 22:05:22 +0100
+> Jasper Huijsmans <jasper at xfce.org> wrote:
+> 
+> 
+>>Bob Schl?rmann wrote:
+>>
+>>>On Thu, 20 Jan 2005 20:24:58 +0100
+>>>"Markus T." <markus at trippelsdorf.de> wrote:
+>>>
+>>>
+>>>
+>>>>The xfce-weather-plugin 0.4.0 stores its data
+>>>>in the .xfce4 directory. All other programs 
+>>>>use the new default location .config/xfce4 .
+>>>>The problem is that many people delete their 
+>>>>.xfce4 directory when updating to 4.2..
+>>>>When the .xfce4 directory does not exist, the weather
+>>>>plugin will not work (displaying a network failure error).
+>>>>
+>>>>Please change the storage directory to .config/xfce4 .
+>>>
+>>>
+>>>Strange as my data file already got stored in .config/xfce4. I've
+>>>changed the save code anyway, it now gets saved under .cache/xfce4.
+>>>The newest version is in cvs.
+>>>
+>>
+>>Maybe it's a good idea to do a new release even if the change is very 
+>>small. It would be good to have no plugins using ~/.xfce4 anymore.
+>>What do you think?
+> 
+> 
+> Agree, i've added a new release. Though i'm still not sure this was
+> really a bug, as the path wasn't hard coded but used xfce_get_userdir()
+> to get the save directory.
+> 
+
+That function is only there for backward compatibility and still uses 
+~/.xfce4/. The xfce_resource_* functions should be used instead for 4.2. 
+  Thanks.
+
+
+From roger_seguin at msn.com  Fri Jan 21 10:33:08 2005
+From: roger_seguin at msn.com (roger@msn)
+Date: Fri, 21 Jan 2005 20:33:08 +1100
+Subject: Fwd: [Feature #533] directory for xfce4-genmon-plugin 1.1
+Message-ID: <200501212033.08644.roger_seguin@msn.com>
+
+Hi,
+
+Now fixed.
+However I couldn't close this feature request since I didn't have the 
+privileges (!?) to do so.
+
+Cheers,
+Roger
+
+----------  Forwarded Message  ----------
+
+Subject: [Feature #533] directory for xfce4-genmon-plugin 1.1
+Date: Fri, 21 Jan 2005 05:36
+From: noreply at berlios.de
+To: noreply at berlios.de
+
+Feature Request #533, was updated on 2005-Jan-20 19:36
+You can respond by visiting:
+http://developer.berlios.de/feature/?func=detailfeature&feature_id=533&group_
+id=910
+
+Category: None
+Status: Open
+Priority: 5
+Summary: directory for xfce4-genmon-plugin 1.1
+
+By: pierre
+Date: 2005-Jan-20 19:36
+
+Message:
+Logged In: YES
+user_id=4049
+Browser: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.5) Gecko/20041217
+
+When you untar xfce4-GenMon-plugin-1.1.tar.gz it
+creates a directory named  "xfce4-genmon-plugin-1.1"
+It would be better if the tarball was named
+xfce4-genmon-plugin-1.1.tar.gz (same name as the
+directory).
+
+Regards,
+
+
+----------------------------------------------------------------------
+You can respond by visiting:
+http://developer.berlios.de/feature/?func=detailfeature&feature_id=533&group_
+id=910 _______________________________________________
+xfce-goodies-dev mailing list
+xfce-goodies-dev at lists.berlios.de
+http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+-------------------------------------------------------
+
+
+From jasper at xfce.org  Fri Jan 21 10:43:43 2005
+From: jasper at xfce.org (Jasper Huijsmans)
+Date: Fri, 21 Jan 2005 10:43:43 +0100
+Subject: Fwd: [Feature #533] directory for xfce4-genmon-plugin 1.1
+In-Reply-To: <200501212033.08644.roger_seguin@msn.com>
+References: <200501212033.08644.roger_seguin@msn.com>
+Message-ID: <20050121094343.GB15031@baudolino.home.nl>
+
+I closed it. Very strange, you should have all relevant permissions...
+
+On Fri, Jan 21, 2005 at 08:33:08PM +1100, roger at msn wrote:
+> Hi,
+> 
+> Now fixed.
+> However I couldn't close this feature request since I didn't have the 
+> privileges (!?) to do so.
+> 
+> Cheers,
+> Roger
+> 
+> ----------  Forwarded Message  ----------
+> 
+> Subject: [Feature #533] directory for xfce4-genmon-plugin 1.1
+> Date: Fri, 21 Jan 2005 05:36
+> From: noreply at berlios.de
+> To: noreply at berlios.de
+> 
+> Feature Request #533, was updated on 2005-Jan-20 19:36
+> You can respond by visiting:
+> http://developer.berlios.de/feature/?func=detailfeature&feature_id=533&group_
+> id=910
+> 
+> Category: None
+> Status: Open
+> Priority: 5
+> Summary: directory for xfce4-genmon-plugin 1.1
+> 
+> By: pierre
+> Date: 2005-Jan-20 19:36
+> 
+> Message:
+> Logged In: YES
+> user_id=4049
+> Browser: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.5) Gecko/20041217
+> 
+> When you untar xfce4-GenMon-plugin-1.1.tar.gz it
+> creates a directory named  "xfce4-genmon-plugin-1.1"
+> It would be better if the tarball was named
+> xfce4-genmon-plugin-1.1.tar.gz (same name as the
+> directory).
+> 
+> Regards,
+> 
+> 
+> ----------------------------------------------------------------------
+> You can respond by visiting:
+> http://developer.berlios.de/feature/?func=detailfeature&feature_id=533&group_
+> id=910 _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+> 
+> -------------------------------------------------------
+> _______________________________________________
+> xfce-goodies-dev mailing list
+> xfce-goodies-dev at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xfce-goodies-dev
+
+
+From benedikt.meurer at unix-ag.uni-siegen.de  Fri Jan 21 14:38:47 2005
+From: benedikt.meurer at unix-ag.uni-siegen.de (Benedikt Meurer)
+Date: Fri, 21 Jan 2005 14:38:47 +0100
+Subject: Fwd: [Feature #533] directory for xfce4-genmon-plugin 1.1
+In-Reply-To: <200501212033.08644.roger_seguin@msn.com>
+References: <200501212033.08644.roger_seguin@msn.com>
+Message-ID: <41F105E7.1050103@unix-ag.uni-siegen.de>
+
+roger at msn wrote:
+> Hi,
+> 
+> Now fixed.
+> However I couldn't close this feature request since I didn't have the 
+> privileges (!?) to do so.
+
+Should be fixed now.
+
+> Cheers,
+> Roger
+
+greets,
+Benedikt
+
+
+From noreply at berlios.de  Fri Jan 21 19:43:15 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Fri, 21 Jan 2005 19:43:15 +0100 (CET)
+Subject: [Bug #3093] xfce4-mini command line and executing commands
+Message-ID: <200501211843.j0LIhFhs000147@unicorn.berlios.de>
+
+Bug #3093, was updated on 2005-Jan-21 19:43
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: None
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: none
+Assigned to : none
+Summary: xfce4-mini command line and executing commands
+
+Details: Ther's a problem with mini command plugin for xfce4.
+For example typing :
+
+kill `pidof xmms`
+
+Will not kill xmms as `pidof xmms` will not be executed and thus not replaced by its return value - pid of xmms. It's not just pidof - nothing is executed when put in ` `
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=3093&group_id=910
+
+
+From noreply at berlios.de  Sat Jan 22 10:56:48 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Sat, 22 Jan 2005 10:56:48 +0100 (CET)
+Subject: [Feature #534] xfce-mini-command: executing `commands`
+Message-ID: <200501220956.j0M9umWI019184@unicorn.berlios.de>
+
+Feature Request #534, was updated on 2005-Jan-22 10:56
+You can respond by visiting: 
+http://developer.berlios.de/feature/?func=detailfeature&feature_id=534&group_id=910
+
+Category: None
+Status: Open
+Priority: 5
+Summary: xfce-mini-command: executing `commands`
+
+By: btm
+Date: 2005-Jan-22 10:56
+
+Message:
+Logged In: NO 
+Browser: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.5) Gecko/20041107 Firefox/1.0
+
+It wold be nice if you could use `commands` ( eg: kill
+`pidof xmms` ) in the mini-command plugin.
+
+----------------------------------------------------------------------
+You can respond by visiting: 
+http://developer.berlios.de/feature/?func=detailfeature&feature_id=534&group_id=910
+
+
+From noreply at berlios.de  Sun Jan 23 01:35:28 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Sun, 23 Jan 2005 01:35:28 +0100 (CET)
+Subject: [Feature #535] Directory for xfce4-showdesktop-plugin
+Message-ID: <200501230035.j0N0ZSem003542@unicorn.berlios.de>
+
+Feature Request #535, was updated on 2005-Jan-23 01:35
+You can respond by visiting: 
+http://developer.berlios.de/feature/?func=detailfeature&feature_id=535&group_id=910
+
+Category: None
+Status: Open
+Priority: 5
+Summary: Directory for xfce4-showdesktop-plugin
+
+By: pierre
+Date: 2005-Jan-23 01:35
+
+Message:
+Logged In: YES 
+user_id=4049
+Browser: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.5) Gecko/20041217
+
+When you untar xfce4-showdesktop-plugin-0.4.0.tar.gz it
+creates a directory named "xfce4-showdesktop-plugin"
+It would be better if this directory would be named
+"xfce4-showdesktop-plugin-0.4.0" (with the version number).
+
+
+----------------------------------------------------------------------
+You can respond by visiting: 
+http://developer.berlios.de/feature/?func=detailfeature&feature_id=535&group_id=910
+
+
+From noreply at berlios.de  Wed Jan 26 09:24:19 2005
+From: noreply at berlios.de (noreply at berlios.de)
+Date: Wed, 26 Jan 2005 09:24:19 +0100 (CET)
+Subject: [Bug #3126] cannot load plugin
+Message-ID: <200501260824.j0Q8OJq4000840@unicorn.berlios.de>
+
+Bug #3126, was updated on 2005-Jan-26 09:24
+Here is a current snapshot of the bug.
+
+Project: Goodies for the Xfce desktop
+Category: xfce4-battery-plugin
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: none
+Assigned to : none
+Summary: cannot load plugin
+
+Details: I am a Slackware user - upgraded to xfce4.2 and tried to reinstall all my favourite plugins - battery, netload and systemload. 
+
+error message produced by system : xfce4-panel : 10584 : WARNING ** : module /usr/lib/xfce4/panel-plugins/PLUGINFILE.so cannot be  opened : /usr/lib/xfce4/panel-plugins/PLUGINFILE.so undefined symbol : g_return_if_fail_warning
+
+
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=3126&group_id=910
+
+
+From bugzilla-daemon at xfce.org  Sun Jan 30 00:58:59 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Sat, 29 Jan 2005 23:58:59 +0000 (UTC)
+Subject: [Bug 674] Setting layout with setxkbmap freezes xkb applet
+Message-ID: <20050129235859.6D59E1F704B@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=674
+
+
+andrewski at fr.st changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |andrewski at fr.st
+
+
+
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
+From bugzilla-daemon at xfce.org  Mon Jan 31 23:05:11 2005
+From: bugzilla-daemon at xfce.org (bugzilla-daemon at xfce.org)
+Date: Mon, 31 Jan 2005 22:05:11 +0000 (UTC)
+Subject: [Bug 750]  New: Notes plugin does not use user-specified icon
+Message-ID: <20050131220511.837311F7049@espresso.foo-projects.org>
+
+http://bugzilla.xfce.org/show_bug.cgi?id=750
+
+           Summary: Notes plugin does not use user-specified icon
+           Product: Xfce Panel Plugins
+           Version: unspecified
+          Platform: PC
+        OS/Version: Linux
+            Status: NEW
+          Severity: trivial
+          Priority: Medium
+         Component: notes
+        AssignedTo: xfce-goodies-dev at berlios.de
+        ReportedBy: andrewski at fr.st
+
+
+As of 4.2.0, the notes plugin no longer uses any user-specified icon.  The
+default is supplied instead.
+
+And while we're on the topic, is it possible (in future versions) to have the
+notes plugin use an icon from the GTK theme?
+
+-- 
+Configure bugmail: http://bugzilla.xfce.org/userprefs.cgi?tab=email
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+
